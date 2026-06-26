@@ -4,10 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>ApplyMate India - Scholarship Finder for Indian Students</title>
-  <meta name="description" content="ApplyMate India helps Indian students find possible scholarships, eligibility notes, document checklists, and official apply links." />
+  <title>Scholarship Guides for Indian Students - ApplyMate India</title>
+  <meta name="description" content="Read detailed scholarship guides for NSP, AP Jnanabhumi, Telangana ePASS, engineering students, girl students, and required scholarship documents." />
   <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://applymate-india.netlify.app/" />
+  <link rel="canonical" href="https://applymate-india.netlify.app/guides.html" />
 
   <!-- Paste Google AdSense code here after approval/setup -->
 
@@ -34,145 +34,78 @@
     </div>
   </nav>
 
-  <header class="hero">
-    <div class="hero-content">
-      <div class="tagline">Student Support • India</div>
-
-      <h1>Find scholarships you may be eligible for.</h1>
+  <main class="content-page">
+    <section class="content-card">
+      <h1>Scholarship Guides for Indian Students</h1>
+      <span class="last-updated">Last updated: 26 June 2026</span>
 
       <p>
-        Check possible schemes, document requirements, eligibility notes, official source links, and application guidance in one simple place.
+        These guides explain common scholarship options and document requirements in simple language.
+        Each guide is written to help students understand the basics before visiting official scholarship portals.
       </p>
 
-      <p class="beta-note">
-        Beta version: scholarship information is simplified for students. Always verify final details on the official portal.
-      </p>
-
-      <div class="hero-actions">
-        <a href="#finder" class="hero-btn">Check Eligibility</a>
-        <a href="guides.html" class="hero-btn secondary-hero-btn">Read Guides</a>
-      </div>
-
-      <div class="hero-stats">
-        <div>
-          <strong>10+</strong>
-          <span>Starter schemes</span>
-        </div>
-        <div>
-          <strong>Free</strong>
-          <span>No login needed</span>
-        </div>
-        <div>
-          <strong>Updated</strong>
-          <span>Source-based info</span>
-        </div>
-      </div>
-    </div>
-  </header>
-
-  <main>
-    <section class="seo-intro">
-      <h2>Scholarship help for students in India</h2>
       <p>
-        ApplyMate India is built for students who want a quick starting point before applying for scholarships.
-        You can filter by state, education level, category, and income range. The app also shows common document checklists,
-        source notes, and official portal links so students can verify details directly.
+        ApplyMate India is not an official scholarship portal. Always verify final eligibility, deadlines, income limits,
+        and required documents on the official portal before applying.
       </p>
+
+      <div class="guide-list">
+        <a class="guide-card" href="nsp-scholarship-guide.html">
+          <h2>NSP Scholarship Guide</h2>
+          <p>
+            Learn how students can use the National Scholarship Portal and what details to check before applying.
+          </p>
+        </a>
+
+        <a class="guide-card" href="ap-jnanabhumi-guide.html">
+          <h2>AP Jnanabhumi Guide</h2>
+          <p>
+            Understand basic document requirements and application checks for Andhra Pradesh post-matric scholarships.
+          </p>
+        </a>
+
+        <a class="guide-card" href="telangana-epass-guide.html">
+          <h2>Telangana ePASS Guide</h2>
+          <p>
+            Beginner-friendly guide for Telangana ePASS scholarship documents, eligibility checks, and common mistakes.
+          </p>
+        </a>
+
+        <a class="guide-card" href="engineering-scholarships.html">
+          <h2>Engineering Scholarships</h2>
+          <p>
+            Scholarship guidance for engineering students, including state, central, category, and special-group options.
+          </p>
+        </a>
+
+        <a class="guide-card" href="girl-student-scholarships.html">
+          <h2>Girl Student Scholarships</h2>
+          <p>
+            Guide for girl students looking for technical education, merit, state, and national scholarship support.
+          </p>
+        </a>
+
+        <a class="guide-card" href="documents-needed-for-scholarships.html">
+          <h2>Documents Needed</h2>
+          <p>
+            Checklist of common scholarship documents such as Aadhaar, income certificate, bank passbook, and bonafide.
+          </p>
+        </a>
+      </div>
+
+      <h2>How to use these guides</h2>
+      <ol>
+        <li>Start with the guide that matches your state or education level.</li>
+        <li>Check the document list before applying.</li>
+        <li>Use the official portal link for final application and verification.</li>
+        <li>Report outdated information using the Contact page.</li>
+      </ol>
+
+      <h2>Important note</h2>
       <p>
-        This website is not an official scholarship portal. Always confirm eligibility, deadlines, income limits,
-        and documents on the official government or scholarship website before applying.
+        Scholarship rules, deadlines, income limits, and required documents may change. These guides are only for
+        student awareness and basic preparation. Final details should always be confirmed on the official scholarship portal.
       </p>
-    </section>
-
-    <section class="card" id="finder">
-      <div class="card-heading">
-        <div>
-          <h2>Check Your Eligibility</h2>
-          <p>Select your details and get possible scholarship matches.</p>
-        </div>
-      </div>
-
-      <div class="form-grid">
-        <div class="field full">
-          <label for="search">Search Keyword</label>
-          <input
-            type="text"
-            id="search"
-            placeholder="Search engineering, girl, minority, degree, AP..."
-          />
-        </div>
-
-        <div class="field">
-          <label for="state">State</label>
-          <select id="state">
-            <option value="any">Any State</option>
-            <option value="andhra-pradesh">Andhra Pradesh</option>
-            <option value="telangana">Telangana</option>
-            <option value="national">National</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="education">Education Level</label>
-          <select id="education">
-            <option value="school">School</option>
-            <option value="intermediate">Intermediate</option>
-            <option value="degree">Degree</option>
-            <option value="engineering">Engineering</option>
-            <option value="pg">Post Graduation</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="category">Category / Special Group</label>
-          <select id="category">
-            <option value="general">General</option>
-            <option value="sc">SC</option>
-            <option value="st">ST</option>
-            <option value="bc">BC / OBC</option>
-            <option value="obc">OBC</option>
-            <option value="minority">Minority</option>
-            <option value="ebc">EBC / EWS</option>
-            <option value="ews">EWS</option>
-            <option value="kapu">Kapu</option>
-            <option value="girls">Girls</option>
-            <option value="disabled">Disabled</option>
-          </select>
-        </div>
-
-        <div class="field">
-          <label for="income">Annual Family Income</label>
-          <select id="income">
-            <option value="100000">₹1 lakh or below</option>
-            <option value="200000">₹2 lakh or below</option>
-            <option value="250000">₹2.5 lakh or below</option>
-            <option value="350000">₹3.5 lakh or below</option>
-            <option value="500000">₹5 lakh or below</option>
-            <option value="800000">₹8 lakh or below</option>
-            <option value="1000000">Above ₹8 lakh</option>
-          </select>
-        </div>
-      </div>
-
-      <div class="button-row">
-        <button onclick="findScholarships()">Find Scholarships</button>
-        <button class="secondary-btn" onclick="clearFilters()">Clear</button>
-      </div>
-
-      <div class="mini-note">
-        Always verify final details on the official portal before applying.
-      </div>
-    </section>
-
-    <section id="resultSummary"></section>
-    <section id="results"></section>
-
-    <section class="content-strip">
-      <h2>Helpful scholarship guides</h2>
-      <p>
-        Read detailed guides about NSP, AP Jnanabhumi, Telangana ePASS, engineering scholarships, girl student scholarships, and documents required for scholarship applications.
-      </p>
-      <a href="guides.html" class="text-btn">Open Scholarship Guides</a>
     </section>
   </main>
 
@@ -192,6 +125,5 @@
     </div>
   </footer>
 
-  <script src="script.js"></script>
 </body>
 </html>
