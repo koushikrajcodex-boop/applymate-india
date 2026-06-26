@@ -7,6 +7,13 @@
   --primary-dark: #1d4ed8;
   --accent: #10b981;
   --border: #dbe4f0;
+  --soft: #f8fafc;
+  --success-bg: #ecfdf5;
+  --success-border: #bbf7d0;
+  --success-text: #065f46;
+  --warning-bg: #fffbeb;
+  --warning-border: #fde68a;
+  --warning-text: #92400e;
   --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
 }
 
@@ -52,7 +59,8 @@ a:hover {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background: rgba(255, 255, 255, 0.82);
+  gap: 14px;
+  background: rgba(255, 255, 255, 0.86);
   border: 1px solid var(--border);
   border-radius: 24px;
   box-shadow: var(--shadow);
@@ -66,6 +74,7 @@ a:hover {
   font-weight: 900;
   font-size: 20px;
   color: var(--text);
+  white-space: nowrap;
 }
 
 .logo:hover {
@@ -85,15 +94,16 @@ a:hover {
 
 .nav-links {
   display: flex;
-  gap: 16px;
+  gap: 14px;
   flex-wrap: wrap;
   justify-content: flex-end;
 }
 
 .nav-links a {
   color: var(--muted);
-  font-weight: 700;
+  font-weight: 800;
   font-size: 14px;
+  padding: 6px 2px;
 }
 
 .nav-links a:hover {
@@ -114,7 +124,7 @@ a:hover {
 }
 
 .hero-content {
-  max-width: 760px;
+  max-width: 780px;
 }
 
 .tagline {
@@ -158,6 +168,7 @@ a:hover {
   background: white;
   color: var(--primary-dark);
   font-weight: 900;
+  transition: 0.2s ease;
 }
 
 .hero-btn:hover {
@@ -204,7 +215,7 @@ main {
 .content-strip,
 .card,
 .content-card {
-  background: rgba(255, 255, 255, 0.92);
+  background: rgba(255, 255, 255, 0.94);
   border: 1px solid var(--border);
   border-radius: 28px;
   box-shadow: var(--shadow);
@@ -268,7 +279,7 @@ select {
   padding: 14px 15px;
   border: 1px solid var(--border);
   border-radius: 16px;
-  background: #f8fafc;
+  background: var(--soft);
   color: var(--text);
   font-size: 15px;
   outline: none;
@@ -280,7 +291,8 @@ select:focus {
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
 
-.button-row {
+.button-row,
+.quick-actions {
   display: flex;
   gap: 12px;
   flex-wrap: wrap;
@@ -298,20 +310,24 @@ button,
   color: white;
   font-weight: 900;
   font-size: 15px;
+  transition: 0.2s ease;
 }
 
 button:hover,
 .text-btn:hover {
   background: var(--primary-dark);
   text-decoration: none;
+  transform: translateY(-1px);
 }
 
-.secondary-btn {
+.secondary-btn,
+.secondary-action {
   background: #e2e8f0;
   color: var(--text);
 }
 
-.secondary-btn:hover {
+.secondary-btn:hover,
+.secondary-action:hover {
   background: #cbd5e1;
 }
 
@@ -325,9 +341,9 @@ button:hover,
   margin: 18px 0;
   padding: 16px;
   border-radius: 18px;
-  background: #ecfdf5;
-  border: 1px solid #bbf7d0;
-  color: #065f46;
+  background: var(--success-bg);
+  border: 1px solid var(--success-border);
+  color: var(--success-text);
   font-weight: 900;
 }
 
@@ -369,7 +385,7 @@ button:hover,
   margin-top: 14px;
   padding: 16px;
   border-radius: 18px;
-  background: #f8fafc;
+  background: var(--soft);
 }
 
 .docs ul {
@@ -407,7 +423,7 @@ button:hover,
 }
 
 .content-card h2 {
-  margin-top: 32px;
+  margin-top: 34px;
   font-size: 26px;
 }
 
@@ -415,10 +431,30 @@ button:hover,
   margin-bottom: 6px;
 }
 
+.content-card p,
+.content-card li {
+  font-size: 16px;
+}
+
+.content-card ul,
+.content-card ol {
+  padding-left: 24px;
+}
+
 .last-updated {
   display: inline-block;
   margin-bottom: 20px;
   color: var(--muted);
+  font-weight: 800;
+}
+
+.notice-box {
+  margin: 22px 0;
+  padding: 16px 18px;
+  border-radius: 18px;
+  background: var(--warning-bg);
+  border: 1px solid var(--warning-border);
+  color: var(--warning-text);
   font-weight: 800;
 }
 
@@ -431,7 +467,7 @@ button:hover,
 
 .guide-card {
   display: block;
-  background: #f8fafc;
+  background: var(--soft);
   border: 1px solid #e2e8f0;
   border-radius: 22px;
   padding: 20px;
@@ -466,14 +502,14 @@ button:hover,
 .article-card {
   padding: 20px;
   border-radius: 22px;
-  background: #f8fafc;
+  background: var(--soft);
   border: 1px solid var(--border);
 }
 
 .contact-box {
   padding: 18px;
   border-radius: 20px;
-  background: #f8fafc;
+  background: var(--soft);
   border: 1px solid var(--border);
 }
 
@@ -550,11 +586,13 @@ footer {
     font-size: 13px;
   }
 
-  .hero-actions {
+  .hero-actions,
+  .quick-actions {
     flex-direction: column;
   }
 
-  .hero-btn {
+  .hero-btn,
+  .text-btn {
     text-align: center;
   }
 }
