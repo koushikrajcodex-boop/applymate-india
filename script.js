@@ -335,7 +335,7 @@ function displayResults(results) {
         <p class="info"><strong>Eligibility Note:</strong> ${scheme.eligibilityNote}</p>
         <p class="info"><strong>Deadline:</strong> ${scheme.deadline}</p>
         <p class="info">
-          <strong>Official Link:</strong> 
+          <strong>Official Link:</strong>
           <a href="${scheme.link}" target="_blank">Apply / Verify</a>
         </p>
 
