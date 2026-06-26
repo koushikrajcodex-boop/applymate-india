@@ -7,6 +7,7 @@ const scholarships = [
     maxIncome: 200000,
     deadline: "Check official Jnanabhumi portal",
     link: "https://jnanabhumi.ap.gov.in/",
+    sourceName: "Official Jnanabhumi Portal",
     lastVerified: "26 June 2026",
     eligibilityNote: "For AP post-matric students. Exact rules vary by welfare department/category, so verify on the official portal.",
     documents: [
@@ -27,6 +28,7 @@ const scholarships = [
     maxIncome: 200000,
     deadline: "Check official Telangana ePASS portal",
     link: "https://telanganaepass.cgg.gov.in/",
+    sourceName: "Official Telangana ePASS Portal",
     lastVerified: "26 June 2026",
     eligibilityNote: "For Telangana post-matric students from eligible welfare categories. Income limits can vary by category/rural/urban status.",
     documents: [
@@ -48,6 +50,7 @@ const scholarships = [
     maxIncome: 100000,
     deadline: "Check official Telangana ePASS portal",
     link: "https://telanganaepass.cgg.gov.in/",
+    sourceName: "Official Telangana ePASS Portal",
     lastVerified: "26 June 2026",
     eligibilityNote: "For Telangana disabled welfare students. Verify exact current income and document rules on ePASS.",
     documents: [
@@ -68,6 +71,7 @@ const scholarships = [
     maxIncome: 800000,
     deadline: "Check official AICTE / NSP portal",
     link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal / AICTE",
     lastVerified: "26 June 2026",
     eligibilityNote: "For girl students admitted to AICTE-approved technical degree/diploma courses. Maximum two girl children per family.",
     documents: [
@@ -88,6 +92,7 @@ const scholarships = [
     maxIncome: 800000,
     deadline: "Check official AICTE / NSP portal",
     link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal / AICTE",
     lastVerified: "26 June 2026",
     eligibilityNote: "For specially-abled students in AICTE-approved technical courses.",
     documents: [
@@ -108,6 +113,7 @@ const scholarships = [
     maxIncome: 350000,
     deadline: "Check NSP / state education department",
     link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal",
     lastVerified: "26 June 2026",
     eligibilityNote: "For eligible school students. Selection is usually through state-level exam/process.",
     documents: [
@@ -127,6 +133,7 @@ const scholarships = [
     maxIncome: 250000,
     deadline: "Check NSP / state portal",
     link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal / State Portal",
     lastVerified: "26 June 2026",
     eligibilityNote: "For SC students pursuing post-matric studies. Implementation may happen through state portals or NSP.",
     documents: [
@@ -147,6 +154,7 @@ const scholarships = [
     maxIncome: 250000,
     deadline: "Check NSP / state portal",
     link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal / State Portal",
     lastVerified: "26 June 2026",
     eligibilityNote: "For ST students pursuing post-matric studies. Exact process depends on state/UT.",
     documents: [
@@ -167,6 +175,7 @@ const scholarships = [
     maxIncome: 250000,
     deadline: "Check NSP / state portal",
     link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal / State Portal",
     lastVerified: "26 June 2026",
     eligibilityNote: "For eligible OBC/EBC/DNT students. Exact category mapping depends on state rules.",
     documents: [
@@ -178,101 +187,31 @@ const scholarships = [
       "Institution bonafide certificate",
       "Fee receipt if required"
     ]
-  },
-  {
-    name: "Pre-Matric Scholarship for Students with Disabilities",
-    state: "national",
-    education: ["school"],
-    categories: ["disabled"],
-    maxIncome: 250000,
-    deadline: "Check NSP portal",
-    link: "https://scholarships.gov.in/",
-    lastVerified: "26 June 2026",
-    eligibilityNote: "For students with benchmark disabilities studying in eligible school classes.",
-    documents: [
-      "Aadhaar card",
-      "Disability certificate",
-      "Income certificate",
-      "School bonafide certificate",
-      "Previous marks memo",
-      "Bank account details",
-      "Passport-size photo"
-    ]
-  },
-  {
-    name: "Post-Matric Scholarship for Students with Disabilities",
-    state: "national",
-    education: ["intermediate", "degree", "engineering", "pg"],
-    categories: ["disabled"],
-    maxIncome: 250000,
-    deadline: "Check NSP portal",
-    link: "https://scholarships.gov.in/",
-    lastVerified: "26 June 2026",
-    eligibilityNote: "For students with benchmark disabilities pursuing post-matric education.",
-    documents: [
-      "Aadhaar card",
-      "Disability certificate",
-      "Income certificate",
-      "Previous marks memo",
-      "Bank passbook",
-      "Institution bonafide certificate",
-      "Fee receipt if required"
-    ]
-  },
-  {
-    name: "Top Class Education Scholarship for Students with Disabilities",
-    state: "national",
-    education: ["degree", "engineering", "pg"],
-    categories: ["disabled"],
-    maxIncome: 800000,
-    deadline: "Check NSP portal",
-    link: "https://scholarships.gov.in/",
-    lastVerified: "26 June 2026",
-    eligibilityNote: "For students with benchmark disabilities in notified top-class institutions.",
-    documents: [
-      "Aadhaar card",
-      "Disability certificate",
-      "Income certificate",
-      "Admission proof",
-      "Previous marks memo",
-      "Bank passbook",
-      "Institution bonafide certificate"
-    ]
-  },
-  {
-    name: "Top Class Education Scheme for OBC / EBC / DNT Students",
-    state: "national",
-    education: ["degree", "engineering", "pg"],
-    categories: ["bc", "obc", "ebc", "ews"],
-    maxIncome: 250000,
-    deadline: "Check NSP portal",
-    link: "https://scholarships.gov.in/",
-    lastVerified: "26 June 2026",
-    eligibilityNote: "For eligible OBC/EBC/DNT students admitted to prescribed full-time courses/institutions.",
-    documents: [
-      "Aadhaar card",
-      "OBC/EBC/category certificate",
-      "Income certificate",
-      "Admission proof",
-      "Previous marks memo",
-      "Bank passbook",
-      "Institution bonafide certificate"
-    ]
   }
 ];
 
 function findScholarships() {
-  const searchText = document.getElementById("search").value.toLowerCase().trim();
-  const selectedState = document.getElementById("state").value;
-  const selectedEducation = document.getElementById("education").value;
-  const selectedCategory = document.getElementById("category").value;
-  const selectedIncome = Number(document.getElementById("income").value);
+  const searchInput = document.getElementById("search");
+  const stateInput = document.getElementById("state");
+  const educationInput = document.getElementById("education");
+  const categoryInput = document.getElementById("category");
+  const incomeInput = document.getElementById("income");
+
+  if (!searchInput || !stateInput || !educationInput || !categoryInput || !incomeInput) {
+    return;
+  }
+
+  const searchText = searchInput.value.toLowerCase().trim();
+  const selectedState = stateInput.value;
+  const selectedEducation = educationInput.value;
+  const selectedCategory = categoryInput.value;
+  const selectedIncome = Number(incomeInput.value);
 
   const results = scholarships.filter((scheme) => {
     const stateMatch =
+      selectedState === "any" ||
       scheme.state === selectedState ||
-      scheme.state === "national" ||
-      selectedState === "any";
+      scheme.state === "national";
 
     const educationMatch = scheme.education.includes(selectedEducation);
     const categoryMatch = scheme.categories.includes(selectedCategory);
@@ -285,10 +224,10 @@ function findScholarships() {
       ${scheme.categories.join(" ")}
       ${scheme.documents.join(" ")}
       ${scheme.eligibilityNote}
+      ${scheme.sourceName}
     `.toLowerCase();
 
-    const searchMatch =
-      searchText === "" || searchableText.includes(searchText);
+    const searchMatch = searchText === "" || searchableText.includes(searchText);
 
     return stateMatch && educationMatch && categoryMatch && incomeMatch && searchMatch;
   });
@@ -299,6 +238,10 @@ function findScholarships() {
 function displayResults(results) {
   const resultSummary = document.getElementById("resultSummary");
   const resultsDiv = document.getElementById("results");
+
+  if (!resultSummary || !resultsDiv) {
+    return;
+  }
 
   if (results.length === 0) {
     resultSummary.innerHTML = "";
@@ -327,6 +270,11 @@ function displayResults(results) {
       `I found this scholarship on ApplyMate India: ${scheme.name}. Official link: ${scheme.link}`
     );
 
+    const reportSubject = encodeURIComponent(`Scholarship correction: ${scheme.name}`);
+    const reportBody = encodeURIComponent(
+      `Scholarship name: ${scheme.name}\nIssue found:\nOfficial source link:\nSuggested correction:`
+    );
+
     return `
       <div class="scholarship">
         <span class="badge">You may be eligible</span>
@@ -334,10 +282,15 @@ function displayResults(results) {
 
         <p class="info"><strong>Eligibility Note:</strong> ${scheme.eligibilityNote}</p>
         <p class="info"><strong>Deadline:</strong> ${scheme.deadline}</p>
+
         <p class="info">
           <strong>Official Link:</strong>
           <a href="${scheme.link}" target="_blank">Apply / Verify</a>
         </p>
+
+        <div class="source-line">
+          Source: ${scheme.sourceName} • Last verified: ${scheme.lastVerified}
+        </div>
 
         <div class="docs">
           <strong>Documents Needed:</strong>
@@ -350,25 +303,43 @@ function displayResults(results) {
           </a>
         </p>
 
-        <span class="verified">Last verified: ${scheme.lastVerified}</span>
+        <a class="report-link" href="mailto:koushikrajcodex@gmail.com?subject=${reportSubject}&body=${reportBody}">
+          Report incorrect information
+        </a>
       </div>
     `;
   }).join("");
 }
 
 function clearFilters() {
-  document.getElementById("search").value = "";
-  document.getElementById("state").value = "any";
-  document.getElementById("education").value = "school";
-  document.getElementById("category").value = "general";
-  document.getElementById("income").value = "100000";
+  const searchInput = document.getElementById("search");
+  const stateInput = document.getElementById("state");
+  const educationInput = document.getElementById("education");
+  const categoryInput = document.getElementById("category");
+  const incomeInput = document.getElementById("income");
+  const resultSummary = document.getElementById("resultSummary");
+  const resultsDiv = document.getElementById("results");
 
-  document.getElementById("resultSummary").innerHTML = "";
-  document.getElementById("results").innerHTML = "";
+  if (searchInput) searchInput.value = "";
+  if (stateInput) stateInput.value = "any";
+  if (educationInput) educationInput.value = "school";
+  if (categoryInput) categoryInput.value = "general";
+  if (incomeInput) incomeInput.value = "100000";
+
+  if (resultSummary) resultSummary.innerHTML = "";
+  if (resultsDiv) resultsDiv.innerHTML = "";
 }
 
-document.getElementById("search").addEventListener("input", findScholarships);
-document.getElementById("state").addEventListener("change", findScholarships);
-document.getElementById("education").addEventListener("change", findScholarships);
-document.getElementById("category").addEventListener("change", findScholarships);
-document.getElementById("income").addEventListener("change", findScholarships);
+document.addEventListener("DOMContentLoaded", () => {
+  const searchInput = document.getElementById("search");
+  const stateInput = document.getElementById("state");
+  const educationInput = document.getElementById("education");
+  const categoryInput = document.getElementById("category");
+  const incomeInput = document.getElementById("income");
+
+  if (searchInput) searchInput.addEventListener("input", findScholarships);
+  if (stateInput) stateInput.addEventListener("change", findScholarships);
+  if (educationInput) educationInput.addEventListener("change", findScholarships);
+  if (categoryInput) categoryInput.addEventListener("change", findScholarships);
+  if (incomeInput) incomeInput.addEventListener("change", findScholarships);
+});
