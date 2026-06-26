@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>ApplyMate India</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <div class="logo">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </div>
+
+    <div class="nav-pill">Scholarship Finder</div>
+  </nav>
+
+  <header class="hero">
+    <div class="hero-content">
+      <div class="tagline">Student Support • India</div>
+
+      <h1>Find scholarships you may be eligible for.</h1>
+
+      <p>
+        Check schemes, document requirements, eligibility notes, and official apply links in one simple place.
+      </p>
+
+      <div class="hero-stats">
+        <div>
+          <strong>10+</strong>
+          <span>Starter schemes</span>
+        </div>
+        <div>
+          <strong>Free</strong>
+          <span>No login needed</span>
+        </div>
+        <div>
+          <strong>Fast</strong>
+          <span>Instant filtering</span>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="card">
+      <div class="card-heading">
+        <div>
+          <h2>Check Your Eligibility</h2>
+          <p>Select your details and get possible scholarship matches.</p>
+        </div>
+      </div>
+
+      <div class="form-grid">
+        <div class="field full">
+          <label for="search">Search Keyword</label>
+          <input 
+            type="text" 
+            id="search" 
+            placeholder="Search engineering, girl, minority, degree, AP..." 
+          />
+        </div>
+
+        <div class="field">
+          <label for="state">State</label>
+          <select id="state">
+            <option value="any">Any State</option>
+            <option value="andhra-pradesh">Andhra Pradesh</option>
+            <option value="telangana">Telangana</option>
+            <option value="national">National</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="education">Education Level</label>
+          <select id="education">
+            <option value="school">School</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="degree">Degree</option>
+            <option value="engineering">Engineering</option>
+            <option value="pg">Post Graduation</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="category">Category / Special Group</label>
+          <select id="category">
+            <option value="general">General</option>
+            <option value="sc">SC</option>
+            <option value="st">ST</option>
+            <option value="bc">BC / OBC</option>
+            <option value="obc">OBC</option>
+            <option value="minority">Minority</option>
+            <option value="ebc">EBC / EWS</option>
+            <option value="ews">EWS</option>
+            <option value="kapu">Kapu</option>
+            <option value="girls">Girls</option>
+            <option value="disabled">Disabled</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="income">Annual Family Income</label>
+          <select id="income">
+            <option value="100000">₹1 lakh or below</option>
+            <option value="200000">₹2 lakh or below</option>
+            <option value="250000">₹2.5 lakh or below</option>
+            <option value="350000">₹3.5 lakh or below</option>
+            <option value="500000">₹5 lakh or below</option>
+            <option value="800000">₹8 lakh or below</option>
+            <option value="1000000">Above ₹8 lakh</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button onclick="findScholarships()">Find Scholarships</button>
+        <button class="secondary-btn" onclick="clearFilters()">Clear</button>
+      </div>
+
+      <div class="mini-note">
+        Always verify final details on the official portal before applying.
+      </div>
+    </section>
+
+    <section id="resultSummary"></section>
+    <section id="results"></section>
+  </main>
+
+  <footer>
+    <p>
+      ApplyMate India is an informational tool. Scholarship rules, income limits, deadlines, and required documents may change.
+      Always verify on the official portal before applying.
+    </p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
