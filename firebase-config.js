@@ -3,7 +3,7 @@ import { getAuth } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-aut
 import { getFirestore } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyC5nxqToklIkAPJn4CYrs_kK4OCmpqp5WI",
+  apiKey: "AIzaSyC5nxqTok1IkAPJn4CYrs_kK4OCmpqp5WI",
   authDomain: "applymate-india.firebaseapp.com",
   projectId: "applymate-india",
   storageBucket: "applymate-india.firebasestorage.app",
