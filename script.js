@@ -14,7 +14,14 @@ const scholarships = [
     sourceName: "Official Jnanabhumi Portal",
     eligibilityNote: "For eligible Andhra Pradesh post-matric students. Rules may vary by department and category.",
     incomeNote: "Income rules can vary by category. Verify on Jnanabhumi.",
-    documents: ["Aadhaar card", "Income certificate", "Caste/category certificate if applicable", "Bank passbook", "Previous marks memo", "College bonafide certificate"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "Caste/category certificate if applicable",
+      "Bank passbook",
+      "Previous marks memo",
+      "College bonafide certificate"
+    ],
     tags: ["ap", "andhra", "post matric", "fee reimbursement", "jnanabhumi"],
     priority: 95
   },
@@ -30,7 +37,14 @@ const scholarships = [
     sourceName: "Official Jnanabhumi Portal",
     eligibilityNote: "For eligible school students in Andhra Pradesh. Exact class/category rules should be checked officially.",
     incomeNote: "Income/category rules can vary. Verify before applying.",
-    documents: ["Aadhaar card", "Income certificate", "Caste/category certificate if applicable", "School bonafide certificate", "Previous class marks memo", "Bank account details"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "Caste/category certificate if applicable",
+      "School bonafide certificate",
+      "Previous class marks memo",
+      "Bank account details"
+    ],
     tags: ["ap", "andhra", "pre matric", "school", "jnanabhumi"],
     priority: 82
   },
@@ -46,7 +60,15 @@ const scholarships = [
     sourceName: "Official Telangana ePASS Portal",
     eligibilityNote: "For eligible Telangana post-matric students from welfare categories.",
     incomeNote: "Income limits can vary by category and current rules.",
-    documents: ["Aadhaar card", "Income certificate", "Caste/category certificate", "SSC / 10th marks memo", "Previous marks memo", "Bank passbook", "College bonafide certificate"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "Caste/category certificate",
+      "SSC / 10th marks memo",
+      "Previous marks memo",
+      "Bank passbook",
+      "College bonafide certificate"
+    ],
     tags: ["telangana", "ts", "epass", "post matric", "fee reimbursement"],
     priority: 95
   },
@@ -62,7 +84,14 @@ const scholarships = [
     sourceName: "Official Telangana ePASS Portal",
     eligibilityNote: "For eligible school students in Telangana.",
     incomeNote: "Verify current income and class rules on ePASS.",
-    documents: ["Aadhaar card", "Income certificate", "Caste/category certificate", "School bonafide certificate", "Previous class marks memo", "Bank account details"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "Caste/category certificate",
+      "School bonafide certificate",
+      "Previous class marks memo",
+      "Bank account details"
+    ],
     tags: ["telangana", "ts", "epass", "pre matric", "school"],
     priority: 82
   },
@@ -78,7 +107,13 @@ const scholarships = [
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible school students. Selection and rules depend on official notification.",
     incomeNote: "Usually income-based. Verify state/NSP instructions.",
-    documents: ["Aadhaar card", "Income certificate", "School certificate", "Previous marks memo", "Bank account details"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "School certificate",
+      "Previous marks memo",
+      "Bank account details"
+    ],
     tags: ["national", "nsp", "school", "merit", "nmms"],
     priority: 88
   },
@@ -94,7 +129,13 @@ const scholarships = [
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible meritorious college/university students as per official rules.",
     incomeNote: "Income limit and merit rules should be verified on NSP.",
-    documents: ["Aadhaar card", "Income certificate", "Marks memo", "Bank passbook", "College bonafide certificate"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "Marks memo",
+      "Bank passbook",
+      "College bonafide certificate"
+    ],
     tags: ["national", "college", "degree", "university", "merit", "nsp"],
     priority: 86
   },
@@ -110,7 +151,14 @@ const scholarships = [
     sourceName: "AICTE",
     eligibilityNote: "For eligible girl students pursuing technical education as per AICTE rules.",
     incomeNote: "Family income rules should be checked on official AICTE/NSP notification.",
-    documents: ["Aadhaar card", "Income certificate", "Admission proof", "Marks memo", "Bank details", "College bonafide certificate"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "Admission proof",
+      "Marks memo",
+      "Bank details",
+      "College bonafide certificate"
+    ],
     tags: ["aicte", "pragati", "girls", "engineering", "technical"],
     priority: 92
   },
@@ -126,7 +174,14 @@ const scholarships = [
     sourceName: "AICTE",
     eligibilityNote: "For eligible specially abled students pursuing technical education.",
     incomeNote: "Verify latest income/disability conditions in official notification.",
-    documents: ["Aadhaar card", "Disability certificate", "Income certificate", "Admission proof", "Marks memo", "Bank details"],
+    documents: [
+      "Aadhaar card",
+      "Disability certificate",
+      "Income certificate",
+      "Admission proof",
+      "Marks memo",
+      "Bank details"
+    ],
     tags: ["aicte", "saksham", "disabled", "engineering", "technical"],
     priority: 92
   },
@@ -142,7 +197,13 @@ const scholarships = [
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible minority community students as per official rules.",
     incomeNote: "Income limit can change. Verify on NSP.",
-    documents: ["Aadhaar card", "Income certificate", "Community certificate if required", "Marks memo", "Bank account details"],
+    documents: [
+      "Aadhaar card",
+      "Income certificate",
+      "Community certificate if required",
+      "Marks memo",
+      "Bank account details"
+    ],
     tags: ["minority", "nsp", "post matric", "national"],
     priority: 84
   },
@@ -158,7 +219,13 @@ const scholarships = [
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible students with benchmark disabilities as per official scheme rules.",
     incomeNote: "Income and disability rules should be verified officially.",
-    documents: ["Aadhaar card", "Disability certificate", "Income certificate", "Marks memo", "Bank details"],
+    documents: [
+      "Aadhaar card",
+      "Disability certificate",
+      "Income certificate",
+      "Marks memo",
+      "Bank details"
+    ],
     tags: ["disabled", "disability", "nsp", "national"],
     priority: 88
   }
