@@ -1,10 +1,10 @@
-**# ApplyMate India
+# ApplyMate India
 
-ApplyMate India is a simple scholarship finder web app for Indian students.
+ApplyMate India is a scholarship finder and student dashboard web app for Indian students.
 
 ## Live Demo
 
-https://applymate-india.netlify.app/
+https://koushikrajcodex-boop.github.io/applymate-india/
 
 ## Features
 
@@ -12,6 +12,11 @@ https://applymate-india.netlify.app/
 - Search by keyword
 - Document checklist
 - Official apply links
+- Scholarship guide pages
+- Student login and registration
+- Student profile dashboard
+- Saved scholarships
+- Application tracker
 - WhatsApp sharing
 - Mobile-friendly modern UI
 
@@ -20,8 +25,14 @@ https://applymate-india.netlify.app/
 - HTML
 - CSS
 - JavaScript
-- Netlify
+- Firebase Authentication
+- Cloud Firestore
+- GitHub Pages
 
-## Disclaimer
+## Important Note
 
-Scholarship rules, deadlines, income limits, and required documents may change. Always verify details on the official portal before applying.**
+ApplyMate India is not an official scholarship portal. Scholarship rules, deadlines, income limits, and required documents may change. Always verify final details on the official portal before applying.
+
+## Contact
+
+koushikrajcodex@gmail.com
