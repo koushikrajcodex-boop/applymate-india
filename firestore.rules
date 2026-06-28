@@ -1,1 +1,178 @@
-firestore.rules
+rules_version = '2';
+
+service cloud.firestore {
+  match /databases/{database}/documents {
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
+    function isOwner(userId) {
+      return isSignedIn()
+        && request.auth.uid == userId;
+    }
+
+    function isValidProfile() {
+      let data = request.resource.data;
+
+      return data.keys().hasAll([
+          'email',
+          'profileCompleted',
+          'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'email',
+          'name',
+          'state',
+          'education',
+          'category',
+          'gender',
+          'disability',
+          'income',
+          'percentage',
+          'profileCompleted',
+          'createdAt',
+          'updatedAt'
+        ])
+        && data.email is string
+        && data.email == request.auth.token.email
+        && data.profileCompleted is bool
+        && data.get('name', '') is string
+        && data.get('name', '').size() <= 100
+        && data.get('state', '') is string
+        && data.get('state', '').size() <= 100
+        && data.get('education', '') is string
+        && data.get('education', '').size() <= 100
+        && data.get('category', '') is string
+        && data.get('category', '').size() <= 100
+        && data.get('gender', '') is string
+        && data.get('gender', '').size() <= 50
+        && data.get('disability', '') is string
+        && data.get('disability', '').size() <= 50
+        && data.get('income', '') is string
+        && data.get('income', '').size() <= 30
+        && data.get('percentage', '') is string
+        && data.get('percentage', '').size() <= 30
+        && data.createdAt is timestamp
+        && data.get(
+          'updatedAt',
+          request.time
+        ) is timestamp;
+    }
+
+    function isValidSavedScholarship() {
+      let data = request.resource.data;
+
+      return data.keys().hasAll([
+          'name',
+          'link',
+          'source',
+          'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'name',
+          'link',
+          'source',
+          'createdAt'
+        ])
+        && data.name is string
+        && data.name.size() > 0
+        && data.name.size() <= 200
+        && data.link is string
+        && data.link.size() <= 2048
+        && (
+          data.link == ''
+          || data.link.matches('https://.+')
+          || data.link.matches('http://.+')
+        )
+        && data.source in [
+          'dashboard-manual',
+          'homepage-finder'
+        ]
+        && data.createdAt is timestamp;
+    }
+
+    function isValidApplication() {
+      let data = request.resource.data;
+
+      return data.keys().hasAll([
+          'name',
+          'status',
+          'note',
+          'createdAt'
+        ])
+        && data.keys().hasOnly([
+          'name',
+          'status',
+          'note',
+          'createdAt'
+        ])
+        && data.name is string
+        && data.name.size() > 0
+        && data.name.size() <= 200
+        && data.status in [
+          'Not Applied',
+          'Applied',
+          'Under Review',
+          'Approved',
+          'Rejected'
+        ]
+        && data.note is string
+        && data.note.size() <= 1000
+        && data.createdAt is timestamp;
+    }
+
+    match /users/{userId} {
+      allow read: if isOwner(userId);
+
+      allow create: if isOwner(userId)
+        && isValidProfile()
+        && request.resource.data.createdAt
+          == request.time;
+
+      allow update: if isOwner(userId)
+        && isValidProfile()
+        && request.resource.data.createdAt
+          == resource.data.createdAt
+        && request.resource.data.updatedAt
+          == request.time;
+
+      allow delete: if isOwner(userId);
+
+      match /savedScholarships/{scholarshipId} {
+        allow read: if isOwner(userId);
+
+        allow create: if isOwner(userId)
+          && isValidSavedScholarship()
+          && request.resource.data.createdAt
+            == request.time;
+
+        allow update: if isOwner(userId)
+          && isValidSavedScholarship()
+          && request.resource.data.createdAt
+            == resource.data.createdAt;
+
+        allow delete: if isOwner(userId);
+      }
+
+      match /applications/{applicationId} {
+        allow read: if isOwner(userId);
+
+        allow create: if isOwner(userId)
+          && isValidApplication()
+          && request.resource.data.createdAt
+            == request.time;
+
+        allow update: if isOwner(userId)
+          && isValidApplication()
+          && request.resource.data.createdAt
+            == resource.data.createdAt;
+
+        allow delete: if isOwner(userId);
+      }
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
+    }
+  }
+}
