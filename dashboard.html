@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Dashboard - ApplyMate India</title>
+  <meta name="description" content="Student dashboard for ApplyMate India with profile, saved scholarships, and application tracker." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+      <button id="logoutBtn" class="secondary-btn">Logout</button>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <h1>Student Dashboard</h1>
+      <span class="last-updated" id="userEmail">Checking login...</span>
+
+      <p>
+        Manage your student profile, save scholarships, and track application status.
+      </p>
+
+      <div class="notice-box">
+        This dashboard is for personal tracking only. Final scholarship applications must be submitted on official portals.
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>Personal Profile</h2>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="profileName">Full Name</label>
+          <input type="text" id="profileName" placeholder="Your name" />
+        </div>
+
+        <div class="field">
+          <label for="profileState">State</label>
+          <select id="profileState">
+            <option value="">Select state</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="National">National / Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileEducation">Education</label>
+          <select id="profileEducation">
+            <option value="">Select education</option>
+            <option value="School">School</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Degree">Degree</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Post Graduation">Post Graduation</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileCategory">Category</label>
+          <select id="profileCategory">
+            <option value="">Select category</option>
+            <option value="General">General</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="BC/OBC">BC / OBC</option>
+            <option value="Minority">Minority</option>
+            <option value="EWS/EBC">EWS / EBC</option>
+            <option value="Kapu">Kapu</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileGender">Gender</label>
+          <select id="profileGender">
+            <option value="">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileDisability">Disability</label>
+          <select id="profileDisability">
+            <option value="">Select</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileIncome">Annual Family Income</label>
+          <input type="number" id="profileIncome" placeholder="Example: 200000" />
+        </div>
+
+        <div class="field">
+          <label for="profilePercentage">Percentage / CGPA</label>
+          <input type="text" id="profilePercentage" placeholder="Example: 85% or 8.5 CGPA" />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="saveProfileBtn">Save Profile</button>
+      </div>
+
+      <p id="profileMessage" class="mini-note"></p>
+    </section>
+
+    <section class="content-card">
+      <h2>Saved Scholarships</h2>
+      <p>Save scholarships you want to apply for later.</p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="savedName">Scholarship Name</label>
+          <input type="text" id="savedName" placeholder="Example: AICTE Pragati Scholarship" />
+        </div>
+
+        <div class="field">
+          <label for="savedLink">Official Link</label>
+          <input type="url" id="savedLink" placeholder="https://..." />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="addSavedBtn">Save Scholarship</button>
+      </div>
+
+      <div id="savedList"></div>
+    </section>
+
+    <section class="content-card">
+      <h2>Application Tracker</h2>
+      <p>Track scholarship applications manually.</p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="appName">Scholarship Name</label>
+          <input type="text" id="appName" placeholder="Example: Telangana ePASS" />
+        </div>
+
+        <div class="field">
+          <label for="appStatus">Status</label>
+          <select id="appStatus">
+            <option value="Not Applied">🟢 Not Applied</option>
+            <option value="Applied">🟡 Applied</option>
+            <option value="Under Review">🔵 Under Review</option>
+            <option value="Approved">✅ Approved</option>
+            <option value="Rejected">❌ Rejected</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="appNote">Note</label>
+          <input type="text" id="appNote" placeholder="Example: Need income certificate" />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="addApplicationBtn">Add / Track Application</button>
+      </div>
+
+      <div id="applicationList"></div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      ApplyMate India dashboard is for student planning only. Always apply on official portals.
+    </p>
+
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script type="module" src="dashboard.js"></script>
+</body>
+</html>
