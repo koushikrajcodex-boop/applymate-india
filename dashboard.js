@@ -9,7 +9,6 @@ import {
   doc,
   getDoc,
   setDoc,
-  updateDoc,
   collection,
   addDoc,
   getDocs,
@@ -107,6 +106,7 @@ addSavedBtn?.addEventListener("click", async () => {
     await addDoc(collection(db, "users", currentUser.uid, "savedScholarships"), {
       name,
       link,
+      source: "dashboard-manual",
       createdAt: serverTimestamp()
     });
 
@@ -268,6 +268,7 @@ async function loadApplications() {
 }
 
 function showProfileMessage(message, isError = false) {
+  if (!profileMessage) return;
   profileMessage.textContent = message;
   profileMessage.style.color = isError ? "#b42318" : "#067647";
 }
