@@ -1,6 +1,4 @@
-from pathlib import Path
-
-dashboard_js = r'''import { auth, db } from "./firebase-config.js";
+import { auth, db } from "./firebase-config.js";
 
 import {
   onAuthStateChanged,
@@ -310,6 +308,7 @@ saveProfileBtn?.addEventListener("click", async () => {
 
   try {
     const userRef = doc(db, "users", currentUser.uid);
+
     const profileData = {
       email: currentUser.email || "",
       name,
@@ -494,6 +493,7 @@ function renderRecommendations(profile) {
 
   recommendationSummary.textContent =
     `You are eligible for these ${matches.length} scholarships based on your saved profile.`;
+
   recommendationList.replaceChildren();
 
   matches.forEach((scholarship) => {
@@ -504,18 +504,26 @@ function renderRecommendations(profile) {
 function getRecommendedScholarships(profile) {
   return scholarships
     .map((scholarship) => {
-      const stateMatch = scholarship.state === profile.state || scholarship.state === "national";
+      const stateMatch =
+        scholarship.state === profile.state ||
+        scholarship.state === "national";
+
       const educationMatch = scholarship.education.includes(profile.education);
+
       const categoryMatch =
         scholarship.categories.includes(profile.category) ||
         scholarship.categories.includes("general");
+
       const incomeMatch = profile.income <= scholarship.maxIncome;
+
       const genderMatch =
         scholarship.genders.includes("any") ||
         scholarship.genders.includes(profile.gender);
+
       const disabilityMatch =
         scholarship.disability === "any" ||
         scholarship.disability === profile.disability;
+
       const percentageMatch =
         profile.percentage === null ||
         profile.percentage >= scholarship.minPercentage;
@@ -533,11 +541,16 @@ function getRecommendedScholarships(profile) {
       }
 
       let score = scholarship.priority || 50;
+
       if (scholarship.state === profile.state) score += 20;
       if (scholarship.categories.includes(profile.category)) score += 15;
       if (scholarship.genders.includes(profile.gender)) score += 10;
-      if (scholarship.disability === profile.disability && profile.disability === "yes") score += 15;
-      if (profile.percentage !== null && profile.percentage >= scholarship.minPercentage) score += 10;
+      if (scholarship.disability === profile.disability && profile.disability === "yes") {
+        score += 15;
+      }
+      if (profile.percentage !== null && profile.percentage >= scholarship.minPercentage) {
+        score += 10;
+      }
 
       return { ...scholarship, score };
     })
@@ -598,6 +611,7 @@ function createRecommendationCard(scholarship) {
   saveButton.type = "button";
   saveButton.className = "secondary-btn";
   saveButton.textContent = "Save to Dashboard";
+
   saveButton.addEventListener("click", async () => {
     setButtonBusy(saveButton, true, "Saving...");
 
@@ -607,6 +621,7 @@ function createRecommendationCard(scholarship) {
         link: scholarship.link,
         source: "dashboard-recommendation"
       });
+
       saveButton.textContent = "Saved ✅";
       await loadSavedScholarships();
     } catch (error) {
@@ -620,6 +635,7 @@ function createRecommendationCard(scholarship) {
   trackButton.type = "button";
   trackButton.className = "secondary-btn";
   trackButton.textContent = "Add to Tracker";
+
   trackButton.addEventListener("click", async () => {
     setButtonBusy(trackButton, true, "Adding...");
 
@@ -631,6 +647,7 @@ function createRecommendationCard(scholarship) {
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp()
       });
+
       trackButton.textContent = "Added ✅";
       await loadApplications();
     } catch (error) {
@@ -641,7 +658,17 @@ function createRecommendationCard(scholarship) {
   });
 
   actions.append(officialLink, saveButton, trackButton);
-  card.append(badge, heading, eligibility, income, deadline, verified, actions);
+
+  card.append(
+    badge,
+    heading,
+    eligibility,
+    income,
+    deadline,
+    verified,
+    actions
+  );
+
   return card;
 }
 
@@ -658,6 +685,7 @@ async function saveScholarshipToFirestore(item) {
   }
 
   const alreadySaved = await isScholarshipAlreadySaved(name);
+
   if (alreadySaved) {
     throw new Error("This scholarship is already saved.");
   }
@@ -677,7 +705,9 @@ async function isScholarshipAlreadySaved(name) {
   const snapshot = await getDocs(savedRef);
   const normalizedName = normalizeText(name);
 
-  return snapshot.docs.some((item) => normalizeText(item.data().name) === normalizedName);
+  return snapshot.docs.some((item) => {
+    return normalizeText(item.data().name) === normalizedName;
+  });
 }
 
 async function loadSavedScholarships() {
@@ -699,7 +729,10 @@ async function loadSavedScholarships() {
 
     snapshot.forEach((documentSnapshot) => {
       savedList.appendChild(
-        createSavedScholarshipCard(documentSnapshot.id, documentSnapshot.data())
+        createSavedScholarshipCard(
+          documentSnapshot.id,
+          documentSnapshot.data()
+        )
       );
     });
   } catch (error) {
@@ -727,7 +760,10 @@ async function loadApplications() {
 
     snapshot.forEach((documentSnapshot) => {
       applicationList.appendChild(
-        createApplicationCard(documentSnapshot.id, documentSnapshot.data())
+        createApplicationCard(
+          documentSnapshot.id,
+          documentSnapshot.data()
+        )
       );
     });
   } catch (error) {
@@ -768,6 +804,7 @@ function createSavedScholarshipCard(documentId, item) {
   removeButton.className = "secondary-btn";
   removeButton.type = "button";
   removeButton.textContent = "Remove";
+
   removeButton.addEventListener("click", async () => {
     const confirmed = window.confirm("Remove this saved scholarship?");
     if (!confirmed || !currentUser) return;
@@ -775,7 +812,16 @@ function createSavedScholarshipCard(documentId, item) {
     setButtonBusy(removeButton, true, "Removing...");
 
     try {
-      await deleteDoc(doc(db, "users", currentUser.uid, "savedScholarships", documentId));
+      await deleteDoc(
+        doc(
+          db,
+          "users",
+          currentUser.uid,
+          "savedScholarships",
+          documentId
+        )
+      );
+
       await loadSavedScholarships();
     } catch (error) {
       console.error("Scholarship removal error:", error);
@@ -832,18 +878,25 @@ function createApplicationCard(documentId, item) {
   updateButton.className = "secondary-btn";
   updateButton.type = "button";
   updateButton.textContent = "Update Status";
+
   updateButton.addEventListener("click", async () => {
     const newStatus = statusSelect.value;
 
-    if (!VALID_APPLICATION_STATUSES.includes(newStatus) || !currentUser) return;
+    if (!VALID_APPLICATION_STATUSES.includes(newStatus) || !currentUser) {
+      return;
+    }
 
     setButtonBusy(updateButton, true, "Updating...");
 
     try {
-      await updateDoc(doc(db, "users", currentUser.uid, "applications", documentId), {
-        status: newStatus,
-        updatedAt: serverTimestamp()
-      });
+      await updateDoc(
+        doc(db, "users", currentUser.uid, "applications", documentId),
+        {
+          status: newStatus,
+          updatedAt: serverTimestamp()
+        }
+      );
+
       await loadApplications();
     } catch (error) {
       console.error("Application status update error:", error);
@@ -856,6 +909,7 @@ function createApplicationCard(documentId, item) {
   removeButton.className = "secondary-btn";
   removeButton.type = "button";
   removeButton.textContent = "Remove";
+
   removeButton.addEventListener("click", async () => {
     const confirmed = window.confirm("Remove this tracked application?");
     if (!confirmed || !currentUser) return;
@@ -863,7 +917,10 @@ function createApplicationCard(documentId, item) {
     setButtonBusy(removeButton, true, "Removing...");
 
     try {
-      await deleteDoc(doc(db, "users", currentUser.uid, "applications", documentId));
+      await deleteDoc(
+        doc(db, "users", currentUser.uid, "applications", documentId)
+      );
+
       await loadApplications();
     } catch (error) {
       console.error("Application removal error:", error);
@@ -876,7 +933,14 @@ function createApplicationCard(documentId, item) {
   actions.className = "button-row";
   actions.append(statusSelect, updateButton, removeButton);
 
-  card.append(badge, heading, statusParagraph, noteParagraph, actions);
+  card.append(
+    badge,
+    heading,
+    statusParagraph,
+    noteParagraph,
+    actions
+  );
+
   return card;
 }
 
@@ -894,24 +958,29 @@ function normalizeProfile(profile) {
 
 function mapState(value) {
   const text = normalizeText(value);
+
   if (text.includes("andhra")) return "andhra-pradesh";
   if (text.includes("telangana")) return "telangana";
   if (text.includes("national")) return "national";
+
   return "";
 }
 
 function mapEducation(value) {
   const text = normalizeText(value);
+
   if (text.includes("school")) return "school";
   if (text.includes("intermediate")) return "intermediate";
   if (text.includes("degree")) return "degree";
   if (text.includes("engineering")) return "engineering";
   if (text.includes("post") || text.includes("pg")) return "pg";
+
   return "";
 }
 
 function mapCategory(value) {
   const text = normalizeText(value);
+
   if (text.includes("general")) return "general";
   if (text === "sc") return "sc";
   if (text === "st") return "st";
@@ -919,29 +988,38 @@ function mapCategory(value) {
   if (text.includes("minority")) return "minority";
   if (text.includes("ews") || text.includes("ebc")) return "ews";
   if (text.includes("kapu")) return "kapu";
+
   return "";
 }
 
 function mapGender(value) {
   const text = normalizeText(value);
+
   if (text.includes("female")) return "female";
   if (text === "male") return "male";
+
   return "any";
 }
 
 function mapDisability(value) {
   const text = normalizeText(value);
+
   if (text === "yes") return "yes";
   if (text === "no") return "no";
+
   return "any";
 }
 
 function parsePercentage(value) {
   const text = String(value || "").trim().toLowerCase();
+
   if (!text) return null;
 
   const number = Number(text.replace(/[^0-9.]/g, ""));
-  if (!Number.isFinite(number) || number < 0) return null;
+
+  if (!Number.isFinite(number) || number < 0) {
+    return null;
+  }
 
   if (text.includes("cgpa") || number <= 10) {
     return Math.min(number * 10, 100);
@@ -952,13 +1030,16 @@ function parsePercentage(value) {
 
 function normalizeHttpUrl(value) {
   const text = String(value || "").trim();
+
   if (!text) return "";
 
   try {
     const url = new URL(text);
+
     if (url.protocol !== "https:" && url.protocol !== "http:") {
       return "";
     }
+
     return url.href;
   } catch {
     return "";
@@ -984,12 +1065,15 @@ function showContainerMessage(container, message) {
 
 function showProfileMessage(message, isError = false) {
   if (!profileMessage) return;
+
   profileMessage.textContent = message;
   profileMessage.style.color = isError ? "#b42318" : "#067647";
 }
 
 function setElementValue(element, value) {
-  if (element) element.value = String(value || "");
+  if (element) {
+    element.value = String(value || "");
+  }
 }
 
 function setButtonBusy(button, busy, busyText = "Working...") {
@@ -1006,8 +1090,3 @@ function setButtonBusy(button, busy, busyText = "Working...") {
   button.disabled = false;
   delete button.dataset.originalText;
 }
-'''
-
-path = Path("/mnt/data/dashboard.js")
-path.write_text(dashboard_js, encoding="utf-8")
-path
