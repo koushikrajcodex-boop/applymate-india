@@ -1,4 +1,6 @@
-import { auth, db } from "./firebase-config.js";
+from pathlib import Path
+
+dashboard_js = r'''import { auth, db } from "./firebase-config.js";
 
 import {
   onAuthStateChanged,
@@ -13,6 +15,7 @@ import {
   addDoc,
   getDocs,
   deleteDoc,
+  updateDoc,
   serverTimestamp,
   query,
   orderBy
@@ -32,6 +35,9 @@ const profilePercentage = document.getElementById("profilePercentage");
 const saveProfileBtn = document.getElementById("saveProfileBtn");
 const profileMessage = document.getElementById("profileMessage");
 
+const recommendationSummary = document.getElementById("recommendationSummary");
+const recommendationList = document.getElementById("recommendationList");
+
 const savedName = document.getElementById("savedName");
 const savedLink = document.getElementById("savedLink");
 const addSavedBtn = document.getElementById("addSavedBtn");
@@ -43,13 +49,196 @@ const appNote = document.getElementById("appNote");
 const addApplicationBtn = document.getElementById("addApplicationBtn");
 const applicationList = document.getElementById("applicationList");
 
-const VALID_APPLICATION_STATUSES = new Set([
+const LAST_VERIFIED = "28 June 2026";
+
+const VALID_APPLICATION_STATUSES = [
   "Not Applied",
   "Applied",
   "Under Review",
   "Approved",
   "Rejected"
-]);
+];
+
+const STATUS_LABELS = {
+  "Not Applied": "🟢 Not Applied",
+  "Applied": "🟡 Applied",
+  "Under Review": "🔵 Under Review",
+  "Approved": "✅ Approved",
+  "Rejected": "❌ Rejected"
+};
+
+const scholarships = [
+  {
+    name: "Andhra Pradesh Post-Matric Scholarship - Jnanabhumi",
+    state: "andhra-pradesh",
+    stateLabel: "Andhra Pradesh",
+    education: ["intermediate", "degree", "engineering", "pg"],
+    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "kapu", "disabled"],
+    genders: ["any"],
+    disability: "any",
+    maxIncome: 200000,
+    minPercentage: 0,
+    deadline: "Check official Jnanabhumi portal",
+    link: "https://jnanabhumi.ap.gov.in/",
+    sourceName: "Official Jnanabhumi Portal",
+    eligibilityNote: "For eligible Andhra Pradesh post-matric students. Rules may vary by department and category.",
+    incomeNote: "Income rules can vary by category. Verify on Jnanabhumi.",
+    priority: 95
+  },
+  {
+    name: "Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
+    state: "andhra-pradesh",
+    stateLabel: "Andhra Pradesh",
+    education: ["school"],
+    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "kapu", "disabled"],
+    genders: ["any"],
+    disability: "any",
+    maxIncome: 200000,
+    minPercentage: 0,
+    deadline: "Check official Jnanabhumi portal",
+    link: "https://jnanabhumi.ap.gov.in/",
+    sourceName: "Official Jnanabhumi Portal",
+    eligibilityNote: "For eligible school students in Andhra Pradesh. Exact rules should be checked officially.",
+    incomeNote: "Income/category rules can vary. Verify before applying.",
+    priority: 82
+  },
+  {
+    name: "Telangana ePASS Post-Matric Scholarship",
+    state: "telangana",
+    stateLabel: "Telangana",
+    education: ["intermediate", "degree", "engineering", "pg"],
+    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "disabled"],
+    genders: ["any"],
+    disability: "any",
+    maxIncome: 200000,
+    minPercentage: 0,
+    deadline: "Check official Telangana ePASS portal",
+    link: "https://telanganaepass.cgg.gov.in/",
+    sourceName: "Official Telangana ePASS Portal",
+    eligibilityNote: "For eligible Telangana post-matric students from welfare categories.",
+    incomeNote: "Income limits can vary by category and current rules.",
+    priority: 95
+  },
+  {
+    name: "Telangana ePASS Pre-Matric Scholarship",
+    state: "telangana",
+    stateLabel: "Telangana",
+    education: ["school"],
+    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "disabled"],
+    genders: ["any"],
+    disability: "any",
+    maxIncome: 200000,
+    minPercentage: 0,
+    deadline: "Check official Telangana ePASS portal",
+    link: "https://telanganaepass.cgg.gov.in/",
+    sourceName: "Official Telangana ePASS Portal",
+    eligibilityNote: "For eligible school students in Telangana.",
+    incomeNote: "Verify current income and class rules on ePASS.",
+    priority: 82
+  },
+  {
+    name: "National Means-cum-Merit Scholarship Scheme - NMMSS",
+    state: "national",
+    stateLabel: "National",
+    education: ["school"],
+    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
+    genders: ["any"],
+    disability: "any",
+    maxIncome: 350000,
+    minPercentage: 55,
+    deadline: "Check NSP / state education department",
+    link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal",
+    eligibilityNote: "For eligible school students. Selection and rules depend on official notification.",
+    incomeNote: "Usually income-based. Verify state/NSP instructions.",
+    priority: 88
+  },
+  {
+    name: "Central Sector Scheme of Scholarship for College and University Students",
+    state: "national",
+    stateLabel: "National",
+    education: ["degree", "engineering", "pg"],
+    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
+    genders: ["any"],
+    disability: "any",
+    maxIncome: 450000,
+    minPercentage: 80,
+    deadline: "Check National Scholarship Portal",
+    link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal",
+    eligibilityNote: "For eligible meritorious college/university students as per official rules.",
+    incomeNote: "Income limit and merit rules should be verified on NSP.",
+    priority: 86
+  },
+  {
+    name: "AICTE Pragati Scholarship for Girl Students",
+    state: "national",
+    stateLabel: "National",
+    education: ["engineering"],
+    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews", "kapu"],
+    genders: ["female"],
+    disability: "any",
+    maxIncome: 800000,
+    minPercentage: 0,
+    deadline: "Check AICTE / NSP portal",
+    link: "https://www.aicte-india.org/",
+    sourceName: "AICTE",
+    eligibilityNote: "For eligible girl students pursuing technical education as per AICTE rules.",
+    incomeNote: "Family income rules should be checked on official AICTE/NSP notification.",
+    priority: 92
+  },
+  {
+    name: "AICTE Saksham Scholarship for Specially Abled Students",
+    state: "national",
+    stateLabel: "National",
+    education: ["engineering"],
+    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews", "kapu", "disabled"],
+    genders: ["any"],
+    disability: "yes",
+    maxIncome: 800000,
+    minPercentage: 0,
+    deadline: "Check AICTE / NSP portal",
+    link: "https://www.aicte-india.org/",
+    sourceName: "AICTE",
+    eligibilityNote: "For eligible specially abled students pursuing technical education.",
+    incomeNote: "Verify latest income/disability conditions in official notification.",
+    priority: 92
+  },
+  {
+    name: "Post Matric Scholarship for Minorities",
+    state: "national",
+    stateLabel: "National",
+    education: ["intermediate", "degree", "engineering", "pg"],
+    categories: ["minority"],
+    genders: ["any"],
+    disability: "any",
+    maxIncome: 200000,
+    minPercentage: 50,
+    deadline: "Check NSP",
+    link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal",
+    eligibilityNote: "For eligible minority community students as per official rules.",
+    incomeNote: "Income limit can change. Verify on NSP.",
+    priority: 84
+  },
+  {
+    name: "Scholarship for Students with Disabilities",
+    state: "national",
+    stateLabel: "National",
+    education: ["school", "intermediate", "degree", "engineering", "pg"],
+    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews", "kapu", "disabled"],
+    genders: ["any"],
+    disability: "yes",
+    maxIncome: 250000,
+    minPercentage: 0,
+    deadline: "Check NSP",
+    link: "https://scholarships.gov.in/",
+    sourceName: "National Scholarship Portal",
+    eligibilityNote: "For eligible students with benchmark disabilities as per official scheme rules.",
+    incomeNote: "Income and disability rules should be verified officially.",
+    priority: 88
+  }
+];
 
 let currentUser = null;
 
@@ -107,6 +296,11 @@ saveProfileBtn?.addEventListener("click", async () => {
     return;
   }
 
+  if (percentage && parsePercentage(percentage) === null) {
+    showProfileMessage("Enter percentage like 85% or CGPA like 8.5.", true);
+    return;
+  }
+
   if (percentage.length > 30) {
     showProfileMessage("Percentage / CGPA must be 30 characters or fewer.", true);
     return;
@@ -116,8 +310,7 @@ saveProfileBtn?.addEventListener("click", async () => {
 
   try {
     const userRef = doc(db, "users", currentUser.uid);
-
-    await setDoc(userRef, {
+    const profileData = {
       email: currentUser.email || "",
       name,
       state: profileState?.value || "",
@@ -129,9 +322,12 @@ saveProfileBtn?.addEventListener("click", async () => {
       percentage,
       profileCompleted: true,
       updatedAt: serverTimestamp()
-    }, { merge: true });
+    };
 
-    showProfileMessage("Profile saved successfully.");
+    await setDoc(userRef, profileData, { merge: true });
+
+    showProfileMessage("Profile saved successfully. Recommendations updated.");
+    renderRecommendations(profileData);
   } catch (error) {
     console.error("Profile save error:", error);
     showProfileMessage("Could not save profile. Please try again.", true);
@@ -168,15 +364,11 @@ addSavedBtn?.addEventListener("click", async () => {
   setButtonBusy(addSavedBtn, true, "Saving...");
 
   try {
-    await addDoc(
-      collection(db, "users", currentUser.uid, "savedScholarships"),
-      {
-        name,
-        link,
-        source: "dashboard-manual",
-        createdAt: serverTimestamp()
-      }
-    );
+    await saveScholarshipToFirestore({
+      name,
+      link,
+      source: "dashboard-manual"
+    });
 
     if (savedName) savedName.value = "";
     if (savedLink) savedLink.value = "";
@@ -184,7 +376,7 @@ addSavedBtn?.addEventListener("click", async () => {
     await loadSavedScholarships();
   } catch (error) {
     console.error("Scholarship save error:", error);
-    alert("Could not save the scholarship. Please try again.");
+    alert(error.message || "Could not save the scholarship. Please try again.");
   } finally {
     setButtonBusy(addSavedBtn, false);
   }
@@ -208,7 +400,7 @@ addApplicationBtn?.addEventListener("click", async () => {
     return;
   }
 
-  if (!VALID_APPLICATION_STATUSES.has(status)) {
+  if (!VALID_APPLICATION_STATUSES.includes(status)) {
     alert("Select a valid application status.");
     return;
   }
@@ -225,7 +417,8 @@ addApplicationBtn?.addEventListener("click", async () => {
       name,
       status,
       note,
-      createdAt: serverTimestamp()
+      createdAt: serverTimestamp(),
+      updatedAt: serverTimestamp()
     });
 
     if (appName) appName.value = "";
@@ -248,11 +441,14 @@ async function loadProfile() {
   const userSnap = await getDoc(userRef);
 
   if (!userSnap.exists()) {
-    await setDoc(userRef, {
+    const emptyProfile = {
       email: currentUser.email || "",
       createdAt: serverTimestamp(),
       profileCompleted: false
-    });
+    };
+
+    await setDoc(userRef, emptyProfile);
+    renderRecommendations(emptyProfile);
     return;
   }
 
@@ -266,6 +462,222 @@ async function loadProfile() {
   setElementValue(profileDisability, data.disability);
   setElementValue(profileIncome, data.income);
   setElementValue(profilePercentage, data.percentage);
+
+  renderRecommendations(data);
+}
+
+function renderRecommendations(profile) {
+  if (!recommendationSummary || !recommendationList) return;
+
+  const normalizedProfile = normalizeProfile(profile);
+
+  if (
+    !normalizedProfile.state ||
+    !normalizedProfile.education ||
+    !normalizedProfile.category ||
+    !normalizedProfile.income
+  ) {
+    recommendationSummary.textContent =
+      "Complete state, education, category, and income to get automatic recommendations.";
+    recommendationList.replaceChildren();
+    return;
+  }
+
+  const matches = getRecommendedScholarships(normalizedProfile);
+
+  if (matches.length === 0) {
+    recommendationSummary.textContent =
+      "No matching scholarships found for your profile right now. Try updating your profile or check again later.";
+    recommendationList.replaceChildren();
+    return;
+  }
+
+  recommendationSummary.textContent =
+    `You are eligible for these ${matches.length} scholarships based on your saved profile.`;
+  recommendationList.replaceChildren();
+
+  matches.forEach((scholarship) => {
+    recommendationList.appendChild(createRecommendationCard(scholarship));
+  });
+}
+
+function getRecommendedScholarships(profile) {
+  return scholarships
+    .map((scholarship) => {
+      const stateMatch = scholarship.state === profile.state || scholarship.state === "national";
+      const educationMatch = scholarship.education.includes(profile.education);
+      const categoryMatch =
+        scholarship.categories.includes(profile.category) ||
+        scholarship.categories.includes("general");
+      const incomeMatch = profile.income <= scholarship.maxIncome;
+      const genderMatch =
+        scholarship.genders.includes("any") ||
+        scholarship.genders.includes(profile.gender);
+      const disabilityMatch =
+        scholarship.disability === "any" ||
+        scholarship.disability === profile.disability;
+      const percentageMatch =
+        profile.percentage === null ||
+        profile.percentage >= scholarship.minPercentage;
+
+      if (
+        !stateMatch ||
+        !educationMatch ||
+        !categoryMatch ||
+        !incomeMatch ||
+        !genderMatch ||
+        !disabilityMatch ||
+        !percentageMatch
+      ) {
+        return null;
+      }
+
+      let score = scholarship.priority || 50;
+      if (scholarship.state === profile.state) score += 20;
+      if (scholarship.categories.includes(profile.category)) score += 15;
+      if (scholarship.genders.includes(profile.gender)) score += 10;
+      if (scholarship.disability === profile.disability && profile.disability === "yes") score += 15;
+      if (profile.percentage !== null && profile.percentage >= scholarship.minPercentage) score += 10;
+
+      return { ...scholarship, score };
+    })
+    .filter(Boolean)
+    .sort((a, b) => b.score - a.score);
+}
+
+function createRecommendationCard(scholarship) {
+  const card = document.createElement("div");
+  card.className = "scholarship";
+
+  const badge = document.createElement("span");
+  badge.className = "badge";
+  badge.textContent = scholarship.stateLabel;
+
+  const heading = document.createElement("h3");
+  heading.textContent = scholarship.name;
+
+  const eligibility = document.createElement("p");
+  eligibility.className = "info";
+  eligibility.append(
+    createStrongText("Eligibility note:"),
+    document.createTextNode(` ${scholarship.eligibilityNote}`)
+  );
+
+  const income = document.createElement("p");
+  income.className = "info";
+  income.append(
+    createStrongText("Income note:"),
+    document.createTextNode(` ${scholarship.incomeNote}`)
+  );
+
+  const deadline = document.createElement("p");
+  deadline.className = "info";
+  deadline.append(
+    createStrongText("Deadline:"),
+    document.createTextNode(` ${scholarship.deadline}`)
+  );
+
+  const verified = document.createElement("p");
+  verified.className = "info";
+  verified.append(
+    createStrongText("Last verified:"),
+    document.createTextNode(` ${LAST_VERIFIED}`)
+  );
+
+  const actions = document.createElement("div");
+  actions.className = "button-row";
+
+  const officialLink = document.createElement("a");
+  officialLink.className = "text-btn";
+  officialLink.href = scholarship.link;
+  officialLink.target = "_blank";
+  officialLink.rel = "noopener noreferrer";
+  officialLink.textContent = "Official Link";
+
+  const saveButton = document.createElement("button");
+  saveButton.type = "button";
+  saveButton.className = "secondary-btn";
+  saveButton.textContent = "Save to Dashboard";
+  saveButton.addEventListener("click", async () => {
+    setButtonBusy(saveButton, true, "Saving...");
+
+    try {
+      await saveScholarshipToFirestore({
+        name: scholarship.name,
+        link: scholarship.link,
+        source: "dashboard-recommendation"
+      });
+      saveButton.textContent = "Saved ✅";
+      await loadSavedScholarships();
+    } catch (error) {
+      console.error("Recommendation save error:", error);
+      setButtonBusy(saveButton, false);
+      alert(error.message || "Could not save this scholarship.");
+    }
+  });
+
+  const trackButton = document.createElement("button");
+  trackButton.type = "button";
+  trackButton.className = "secondary-btn";
+  trackButton.textContent = "Add to Tracker";
+  trackButton.addEventListener("click", async () => {
+    setButtonBusy(trackButton, true, "Adding...");
+
+    try {
+      await addDoc(collection(db, "users", currentUser.uid, "applications"), {
+        name: scholarship.name,
+        status: "Not Applied",
+        note: "Added from personalized recommendations.",
+        createdAt: serverTimestamp(),
+        updatedAt: serverTimestamp()
+      });
+      trackButton.textContent = "Added ✅";
+      await loadApplications();
+    } catch (error) {
+      console.error("Tracker add error:", error);
+      setButtonBusy(trackButton, false);
+      alert("Could not add this scholarship to tracker.");
+    }
+  });
+
+  actions.append(officialLink, saveButton, trackButton);
+  card.append(badge, heading, eligibility, income, deadline, verified, actions);
+  return card;
+}
+
+async function saveScholarshipToFirestore(item) {
+  if (!currentUser) {
+    throw new Error("Please log in first.");
+  }
+
+  const name = String(item.name || "").trim().slice(0, 200);
+  const link = normalizeHttpUrl(item.link);
+
+  if (!name) {
+    throw new Error("Scholarship name is missing.");
+  }
+
+  const alreadySaved = await isScholarshipAlreadySaved(name);
+  if (alreadySaved) {
+    throw new Error("This scholarship is already saved.");
+  }
+
+  await addDoc(collection(db, "users", currentUser.uid, "savedScholarships"), {
+    name,
+    link,
+    source: item.source || "dashboard",
+    createdAt: serverTimestamp()
+  });
+}
+
+async function isScholarshipAlreadySaved(name) {
+  if (!currentUser) return false;
+
+  const savedRef = collection(db, "users", currentUser.uid, "savedScholarships");
+  const snapshot = await getDocs(savedRef);
+  const normalizedName = normalizeText(name);
+
+  return snapshot.docs.some((item) => normalizeText(item.data().name) === normalizedName);
 }
 
 async function loadSavedScholarships() {
@@ -274,12 +686,7 @@ async function loadSavedScholarships() {
   showContainerMessage(savedList, "Loading saved scholarships...");
 
   try {
-    const savedRef = collection(
-      db,
-      "users",
-      currentUser.uid,
-      "savedScholarships"
-    );
+    const savedRef = collection(db, "users", currentUser.uid, "savedScholarships");
     const savedQuery = query(savedRef, orderBy("createdAt", "desc"));
     const snapshot = await getDocs(savedQuery);
 
@@ -292,10 +699,7 @@ async function loadSavedScholarships() {
 
     snapshot.forEach((documentSnapshot) => {
       savedList.appendChild(
-        createSavedScholarshipCard(
-          documentSnapshot.id,
-          documentSnapshot.data()
-        )
+        createSavedScholarshipCard(documentSnapshot.id, documentSnapshot.data())
       );
     });
   } catch (error) {
@@ -310,16 +714,8 @@ async function loadApplications() {
   showContainerMessage(applicationList, "Loading applications...");
 
   try {
-    const applicationsRef = collection(
-      db,
-      "users",
-      currentUser.uid,
-      "applications"
-    );
-    const applicationsQuery = query(
-      applicationsRef,
-      orderBy("createdAt", "desc")
-    );
+    const applicationsRef = collection(db, "users", currentUser.uid, "applications");
+    const applicationsQuery = query(applicationsRef, orderBy("createdAt", "desc"));
     const snapshot = await getDocs(applicationsQuery);
 
     applicationList.replaceChildren();
@@ -331,10 +727,7 @@ async function loadApplications() {
 
     snapshot.forEach((documentSnapshot) => {
       applicationList.appendChild(
-        createApplicationCard(
-          documentSnapshot.id,
-          documentSnapshot.data()
-        )
+        createApplicationCard(documentSnapshot.id, documentSnapshot.data())
       );
     });
   } catch (error) {
@@ -382,15 +775,7 @@ function createSavedScholarshipCard(documentId, item) {
     setButtonBusy(removeButton, true, "Removing...");
 
     try {
-      await deleteDoc(
-        doc(
-          db,
-          "users",
-          currentUser.uid,
-          "savedScholarships",
-          documentId
-        )
-      );
+      await deleteDoc(doc(db, "users", currentUser.uid, "savedScholarships", documentId));
       await loadSavedScholarships();
     } catch (error) {
       console.error("Scholarship removal error:", error);
@@ -407,13 +792,13 @@ function createApplicationCard(documentId, item) {
   const card = document.createElement("div");
   card.className = "scholarship";
 
-  const status = VALID_APPLICATION_STATUSES.has(item.status)
+  const status = VALID_APPLICATION_STATUSES.includes(item.status)
     ? item.status
     : "Not Applied";
 
   const badge = document.createElement("span");
   badge.className = "badge";
-  badge.textContent = status;
+  badge.textContent = STATUS_LABELS[status] || status;
 
   const heading = document.createElement("h3");
   heading.textContent = String(item.name || "Untitled scholarship");
@@ -422,7 +807,7 @@ function createApplicationCard(documentId, item) {
   statusParagraph.className = "info";
   statusParagraph.append(
     createStrongText("Status:"),
-    document.createTextNode(` ${status}`)
+    document.createTextNode(` ${STATUS_LABELS[status] || status}`)
   );
 
   const noteParagraph = document.createElement("p");
@@ -431,6 +816,41 @@ function createApplicationCard(documentId, item) {
     createStrongText("Note:"),
     document.createTextNode(` ${item.note || "No note added."}`)
   );
+
+  const statusSelect = document.createElement("select");
+  statusSelect.className = "status-select";
+
+  VALID_APPLICATION_STATUSES.forEach((statusOption) => {
+    const option = document.createElement("option");
+    option.value = statusOption;
+    option.textContent = STATUS_LABELS[statusOption];
+    option.selected = statusOption === status;
+    statusSelect.appendChild(option);
+  });
+
+  const updateButton = document.createElement("button");
+  updateButton.className = "secondary-btn";
+  updateButton.type = "button";
+  updateButton.textContent = "Update Status";
+  updateButton.addEventListener("click", async () => {
+    const newStatus = statusSelect.value;
+
+    if (!VALID_APPLICATION_STATUSES.includes(newStatus) || !currentUser) return;
+
+    setButtonBusy(updateButton, true, "Updating...");
+
+    try {
+      await updateDoc(doc(db, "users", currentUser.uid, "applications", documentId), {
+        status: newStatus,
+        updatedAt: serverTimestamp()
+      });
+      await loadApplications();
+    } catch (error) {
+      console.error("Application status update error:", error);
+      setButtonBusy(updateButton, false);
+      alert("Could not update status. Please try again.");
+    }
+  });
 
   const removeButton = document.createElement("button");
   removeButton.className = "secondary-btn";
@@ -443,9 +863,7 @@ function createApplicationCard(documentId, item) {
     setButtonBusy(removeButton, true, "Removing...");
 
     try {
-      await deleteDoc(
-        doc(db, "users", currentUser.uid, "applications", documentId)
-      );
+      await deleteDoc(doc(db, "users", currentUser.uid, "applications", documentId));
       await loadApplications();
     } catch (error) {
       console.error("Application removal error:", error);
@@ -454,14 +872,82 @@ function createApplicationCard(documentId, item) {
     }
   });
 
-  card.append(
-    badge,
-    heading,
-    statusParagraph,
-    noteParagraph,
-    removeButton
-  );
+  const actions = document.createElement("div");
+  actions.className = "button-row";
+  actions.append(statusSelect, updateButton, removeButton);
+
+  card.append(badge, heading, statusParagraph, noteParagraph, actions);
   return card;
+}
+
+function normalizeProfile(profile) {
+  return {
+    state: mapState(profile.state),
+    education: mapEducation(profile.education),
+    category: mapCategory(profile.category),
+    gender: mapGender(profile.gender),
+    disability: mapDisability(profile.disability),
+    income: Number(profile.income || 0),
+    percentage: parsePercentage(profile.percentage)
+  };
+}
+
+function mapState(value) {
+  const text = normalizeText(value);
+  if (text.includes("andhra")) return "andhra-pradesh";
+  if (text.includes("telangana")) return "telangana";
+  if (text.includes("national")) return "national";
+  return "";
+}
+
+function mapEducation(value) {
+  const text = normalizeText(value);
+  if (text.includes("school")) return "school";
+  if (text.includes("intermediate")) return "intermediate";
+  if (text.includes("degree")) return "degree";
+  if (text.includes("engineering")) return "engineering";
+  if (text.includes("post") || text.includes("pg")) return "pg";
+  return "";
+}
+
+function mapCategory(value) {
+  const text = normalizeText(value);
+  if (text.includes("general")) return "general";
+  if (text === "sc") return "sc";
+  if (text === "st") return "st";
+  if (text.includes("bc") || text.includes("obc")) return "obc";
+  if (text.includes("minority")) return "minority";
+  if (text.includes("ews") || text.includes("ebc")) return "ews";
+  if (text.includes("kapu")) return "kapu";
+  return "";
+}
+
+function mapGender(value) {
+  const text = normalizeText(value);
+  if (text.includes("female")) return "female";
+  if (text === "male") return "male";
+  return "any";
+}
+
+function mapDisability(value) {
+  const text = normalizeText(value);
+  if (text === "yes") return "yes";
+  if (text === "no") return "no";
+  return "any";
+}
+
+function parsePercentage(value) {
+  const text = String(value || "").trim().toLowerCase();
+  if (!text) return null;
+
+  const number = Number(text.replace(/[^0-9.]/g, ""));
+  if (!Number.isFinite(number) || number < 0) return null;
+
+  if (text.includes("cgpa") || number <= 10) {
+    return Math.min(number * 10, 100);
+  }
+
+  return Math.min(number, 100);
 }
 
 function normalizeHttpUrl(value) {
@@ -477,6 +963,10 @@ function normalizeHttpUrl(value) {
   } catch {
     return "";
   }
+}
+
+function normalizeText(value) {
+  return String(value || "").trim().toLowerCase();
 }
 
 function createStrongText(text) {
@@ -516,3 +1006,8 @@ function setButtonBusy(button, busy, busyText = "Working...") {
   button.disabled = false;
   delete button.dataset.originalText;
 }
+'''
+
+path = Path("/mnt/data/dashboard.js")
+path.write_text(dashboard_js, encoding="utf-8")
+path
