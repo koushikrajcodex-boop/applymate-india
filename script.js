@@ -147,22 +147,6 @@ const scholarships = [
     priority: 84
   },
   {
-    name: "Pre Matric Scholarship for Minorities",
-    state: "national",
-    stateLabel: "National",
-    education: ["school"],
-    categories: ["minority"],
-    maxIncome: 100000,
-    deadline: "Check NSP",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible minority school students as per official rules.",
-    incomeNote: "Verify latest income rules on NSP.",
-    documents: ["Aadhaar card", "Income certificate", "School certificate", "Previous marks memo", "Bank details"],
-    tags: ["minority", "pre matric", "school", "nsp"],
-    priority: 80
-  },
-  {
     name: "Scholarship for Students with Disabilities",
     state: "national",
     stateLabel: "National",
@@ -177,22 +161,6 @@ const scholarships = [
     documents: ["Aadhaar card", "Disability certificate", "Income certificate", "Marks memo", "Bank details"],
     tags: ["disabled", "disability", "nsp", "national"],
     priority: 88
-  },
-  {
-    name: "AP Kapu Welfare Scholarship Support",
-    state: "andhra-pradesh",
-    stateLabel: "Andhra Pradesh",
-    education: ["intermediate", "degree", "engineering", "pg"],
-    categories: ["kapu"],
-    maxIncome: 200000,
-    deadline: "Check AP welfare portals",
-    link: "https://jnanabhumi.ap.gov.in/",
-    sourceName: "AP Jnanabhumi / Welfare Department",
-    eligibilityNote: "For eligible Kapu community students depending on current AP rules.",
-    incomeNote: "Verify income and category rules on official portal.",
-    documents: ["Aadhaar card", "Income certificate", "Caste/community certificate", "Marks memo", "Bank passbook", "Bonafide certificate"],
-    tags: ["ap", "kapu", "welfare", "jnanabhumi"],
-    priority: 78
   }
 ];
 
