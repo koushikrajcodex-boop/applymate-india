@@ -596,3 +596,30 @@ footer {
     text-align: center;
   }
 }
+.dashboard-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.mini-note {
+  margin-top: 14px;
+  color: var(--muted);
+  font-weight: 600;
+}
+
+.secondary-btn {
+  background: #eef2f7;
+  color: var(--text);
+  border: 1px solid var(--border);
+}
+
+.secondary-btn:hover {
+  background: #e2e8f0;
+}
+
+.nav-links button {
+  padding: 10px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  font-weight: 800;
+}
