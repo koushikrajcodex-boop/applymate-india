@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Login - ApplyMate India</title>
+  <meta name="description" content="Login or register for ApplyMate India to save scholarships and track applications." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/login.html" />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <h1>Login / Register</h1>
+      <span class="last-updated">Student account access</span>
+
+      <p>
+        Create an account to save scholarships, complete your profile, and track your application status.
+      </p>
+
+      <div class="form-grid">
+        <div class="field full">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" />
+        </div>
+
+        <div class="field full">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Minimum 6 characters" />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="registerBtn">Register</button>
+        <button id="loginBtn" class="secondary-btn">Login</button>
+      </div>
+
+      <p id="authMessage" class="mini-note"></p>
+
+      <div class="notice-box">
+        ApplyMate India never asks for scholarship payment. Use official portals for final scholarship application.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>
+      ApplyMate India is an informational tool. Always verify scholarship details on official portals before applying.
+    </p>
+
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script type="module" src="auth.js"></script>
+</body>
+</html>
