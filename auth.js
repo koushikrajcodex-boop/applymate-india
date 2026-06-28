@@ -60,6 +60,7 @@ registerBtn?.addEventListener("click", async () => {
     });
 
     showMessage("Account created successfully. Redirecting...");
+
     setTimeout(() => {
       window.location.href = "dashboard.html";
     }, 800);
@@ -89,6 +90,7 @@ loginBtn?.addEventListener("click", async () => {
     await signInWithEmailAndPassword(auth, email, password);
 
     showMessage("Login successful. Redirecting...");
+
     setTimeout(() => {
       window.location.href = "dashboard.html";
     }, 800);
