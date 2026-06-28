@@ -4,172 +4,87 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Login / Register - ApplyMate India</title>
-  <meta name="description" content="Login or register to use ApplyMate India dashboard." />
+  <title>Login - ApplyMate India</title>
+  <meta name="description" content="Login or register for ApplyMate India to save scholarships and track applications." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/login.html" />
 
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <header class="site-header">
-    <a href="index.html" class="brand-link">
-      <div class="logo">A</div>
-      <div>
-        <strong>ApplyMate India</strong>
-        <span>Scholarship Finder</span>
-      </div>
+
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
     </a>
 
-    <nav class="nav-links">
+    <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="guides.html">Guides</a>
       <a href="dashboard.html">Dashboard</a>
-      <a href="login.html" class="active">Login</a>
+      <a href="login.html">Login</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy</a>
       <a href="disclaimer.html">Disclaimer</a>
       <a href="editorial-policy.html">Editorial Policy</a>
       <a href="contact.html">Contact</a>
-    </nav>
-  </header>
+    </div>
+  </nav>
 
-  <main class="page-shell">
-    <section class="auth-hero">
-      <span class="badge">Student Account</span>
+  <main class="content-page">
+    <section class="content-card">
       <h1>Login / Register</h1>
+      <span class="last-updated">Student account access</span>
+
       <p>
-        Create an account to save scholarships, complete your profile,
-        and track application status.
+        Create an account to save scholarships, complete your profile, and track your application status.
       </p>
-    </section>
 
-    <p id="authMessage" class="message" hidden></p>
-
-    <section class="auth-grid">
-      <!-- Login Form -->
-      <form id="loginForm" class="panel">
-        <h2>Login</h2>
-
-        <label>
-          Email
-          <input id="loginEmail" type="email" placeholder="you@example.com" required />
-        </label>
-
-        <label>
-          Password
-          <input id="loginPassword" type="password" placeholder="Password" required />
-        </label>
-
-        <button class="primary-btn" type="submit">Login</button>
-      </form>
-
-      <!-- Register Form -->
-      <form id="registerForm" class="panel">
-        <h2>Register</h2>
-
-        <label>
-          Full Name
-          <input id="registerName" type="text" placeholder="Your full name" required />
-        </label>
-
-        <label>
-          Email
-          <input id="registerEmail" type="email" placeholder="you@example.com" required />
-        </label>
-
-        <label>
-          Password
-          <input id="registerPassword" type="password" minlength="6" placeholder="Minimum 6 characters" required />
-        </label>
-
-        <div class="two-col">
-          <label>
-            State
-            <select id="registerState" required>
-              <option value="">Select state</option>
-              <option value="Andhra Pradesh">Andhra Pradesh</option>
-              <option value="Telangana">Telangana</option>
-              <option value="National">National / Other</option>
-            </select>
-          </label>
-
-          <label>
-            Course
-            <select id="registerCourse" required>
-              <option value="">Select course</option>
-              <option value="School">School</option>
-              <option value="Intermediate">Intermediate</option>
-              <option value="Degree">Degree</option>
-              <option value="Engineering">Engineering</option>
-              <option value="Post Graduation">Post Graduation</option>
-            </select>
-          </label>
+      <div class="form-grid">
+        <div class="field full">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Enter your email" />
         </div>
 
-        <div class="two-col">
-          <label>
-            Category
-            <select id="registerCategory" required>
-              <option value="">Select category</option>
-              <option value="General">General</option>
-              <option value="SC">SC</option>
-              <option value="ST">ST</option>
-              <option value="BC / OBC">BC / OBC</option>
-              <option value="Minority">Minority</option>
-              <option value="EWS / EBC">EWS / EBC</option>
-              <option value="Kapu">Kapu</option>
-            </select>
-          </label>
-
-          <label>
-            Gender
-            <select id="registerGender" required>
-              <option value="">Select gender</option>
-              <option value="Male">Male</option>
-              <option value="Female">Female</option>
-              <option value="Prefer not to say">Prefer not to say</option>
-            </select>
-          </label>
+        <div class="field full">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="Minimum 6 characters" />
         </div>
+      </div>
 
-        <div class="two-col">
-          <label>
-            Disability
-            <select id="registerDisability" required>
-              <option value="No">No</option>
-              <option value="Yes">Yes</option>
-            </select>
-          </label>
+      <div class="button-row">
+        <button id="registerBtn">Register</button>
+        <button id="loginBtn" class="secondary-btn">Login</button>
+      </div>
 
-          <label>
-            Annual Family Income
-            <input id="registerIncome" type="number" min="0" placeholder="Example: 200000" required />
-          </label>
-        </div>
+      <p id="authMessage" class="mini-note"></p>
 
-        <label>
-          Percentage / CGPA
-          <input id="registerPercentage" type="number" min="0" step="0.01" placeholder="Example: 85" required />
-        </label>
-
-        <button class="primary-btn" type="submit">Create Account</button>
-      </form>
-    </section>
-
-    <section class="notice-card">
-      ApplyMate India never asks for scholarship payment. Use official portals for final scholarship application.
+      <div class="notice-box">
+        ApplyMate India never asks for scholarship payment. Use official portals for final scholarship application.
+      </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <p>ApplyMate India is an informational tool. Always verify scholarship details on official portals before applying.</p>
-    <div>
+  <footer>
+    <p>
+      ApplyMate India is an informational tool. Always verify scholarship details on official portals before applying.
+    </p>
+
+    <div class="footer-links">
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="disclaimer.html">Disclaimer</a>
+      <a href="editorial-policy.html">Editorial Policy</a>
       <a href="contact.html">Contact</a>
     </div>
   </footer>
 
-  <script type="module" src="app.js"></script>
+  <script type="module" src="auth.js"></script>
 </body>
 </html>
