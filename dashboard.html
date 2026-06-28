@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Dashboard - ApplyMate India</title>
-  <meta name="description" content="Student dashboard for ApplyMate India with profile, saved scholarships, and application tracker." />
+  <meta name="description" content="Student dashboard for ApplyMate India with personalized recommendations, profile, saved scholarships, and application tracker." />
   <meta name="robots" content="noindex, nofollow" />
 
   <link rel="stylesheet" href="style.css" />
@@ -36,7 +36,8 @@
       <span class="last-updated" id="userEmail">Checking login...</span>
 
       <p>
-        Manage your student profile, save scholarships, and track application status.
+        Manage your student profile, get personalized scholarship recommendations,
+        save scholarships, and track application status.
       </p>
 
       <div class="notice-box">
@@ -46,6 +47,9 @@
 
     <section class="content-card">
       <h2>Personal Profile</h2>
+      <p class="mini-note">
+        Complete your profile to automatically see scholarships you may be eligible for.
+      </p>
 
       <div class="form-grid">
         <div class="field">
@@ -126,6 +130,14 @@
       <p id="profileMessage" class="mini-note"></p>
     </section>
 
+    <section class="content-card" id="recommendationsSection">
+      <h2>Personalized Scholarship Recommendations</h2>
+      <p id="recommendationSummary" class="mini-note">
+        Save your profile to see automatic scholarship recommendations.
+      </p>
+      <div id="recommendationList"></div>
+    </section>
+
     <section class="content-card">
       <h2>Saved Scholarships</h2>
       <p>Save scholarships you want to apply for later.</p>
@@ -151,7 +163,7 @@
 
     <section class="content-card">
       <h2>Application Tracker</h2>
-      <p>Track scholarship applications manually.</p>
+      <p>Track scholarship applications manually and update their status anytime.</p>
 
       <div class="form-grid">
         <div class="field">
