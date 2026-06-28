@@ -19,10 +19,14 @@
 
 html {
   scroll-behavior: smooth;
+  width: 100%;
+  overflow-x: hidden;
 }
 
 body {
   margin: 0;
+  width: 100%;
+  overflow-x: hidden;
   font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
   background:
     radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 30%),
@@ -42,7 +46,8 @@ a:hover {
 
 button,
 input,
-select {
+select,
+textarea {
   font: inherit;
 }
 
@@ -63,7 +68,7 @@ button:disabled {
   pointer-events: none;
 }
 
-/* NAVBAR FIX */
+/* NAVBAR */
 .navbar {
   position: sticky;
   top: 0;
@@ -91,9 +96,6 @@ button:disabled {
   height: auto;
   background: transparent;
   border-radius: 0;
-}
-
-.navbar .logo:hover {
   text-decoration: none;
 }
 
@@ -127,13 +129,15 @@ button:disabled {
   color: var(--primary);
 }
 
-/* GENERAL LAYOUT */
+/* LAYOUT */
 main {
   width: min(1120px, 92%);
   margin: 0 auto;
 }
 
 .content-page {
+  width: min(1120px, 92%);
+  margin: 0 auto;
   padding: 34px 0 60px;
 }
 
@@ -142,7 +146,7 @@ main {
 .seo-intro,
 .content-strip,
 .hero-content {
-  background: rgba(255, 255, 255, 0.95);
+  background: rgba(255, 255, 255, 0.96);
   border: 1px solid var(--border);
   border-radius: var(--radius);
   box-shadow: var(--shadow);
@@ -305,6 +309,7 @@ main {
   margin-bottom: 20px;
 }
 
+/* FORMS */
 .form-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -328,7 +333,8 @@ label {
 }
 
 input,
-select {
+select,
+textarea {
   width: 100%;
   padding: 13px 14px;
   border: 1px solid var(--border);
@@ -339,7 +345,8 @@ select {
 }
 
 input:focus,
-select:focus {
+select:focus,
+textarea:focus {
   border-color: var(--primary);
   box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.12);
 }
@@ -373,7 +380,7 @@ button:not(.tab-btn) {
   background: var(--primary-dark);
 }
 
-/* RESULTS / SCHOLARSHIP CARDS */
+/* SCHOLARSHIP CARDS */
 #resultSummary,
 #results {
   margin: 24px 0;
@@ -442,68 +449,6 @@ footer {
   font-weight: 700;
 }
 
-/* COMPATIBILITY FOR ACCIDENTAL PHASE 2 CLASSES */
-.app-header {
-  position: sticky;
-  top: 0;
-  z-index: 50;
-  padding: 16px 5%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  gap: 18px;
-  background: rgba(255, 255, 255, 0.92);
-  backdrop-filter: blur(16px);
-  border-bottom: 1px solid var(--border);
-}
-
-.brand {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-.brand .logo {
-  width: 42px;
-  height: 42px;
-  display: grid;
-  place-items: center;
-  border-radius: 14px;
-  background: linear-gradient(135deg, #2563eb, #7c3aed);
-  color: #ffffff;
-  font-weight: 900;
-}
-
-.brand h1 {
-  margin: 0;
-  font-size: 1.15rem;
-}
-
-.brand p {
-  margin: 0;
-  color: var(--muted);
-}
-
-.header-actions {
-  display: flex;
-  gap: 12px;
-  align-items: center;
-  flex-wrap: wrap;
-}
-
-.panel,
-.hero-card,
-.dashboard-hero,
-.empty-state,
-.scholarship-card {
-  background: rgba(255, 255, 255, 0.95);
-  border: 1px solid var(--border);
-  border-radius: var(--radius);
-  box-shadow: var(--shadow);
-  padding: 24px;
-  margin-bottom: 22px;
-}
-
 /* MOBILE */
 @media (max-width: 900px) {
   .navbar {
@@ -531,7 +476,8 @@ footer {
 
 @media (max-width: 620px) {
   main,
-  .hero {
+  .hero,
+  .content-page {
     width: 94%;
   }
 
@@ -579,15 +525,6 @@ footer {
   .text-btn,
   .secondary-btn,
   .button-row button {
-    width: 100%;
-  }
-
-  .app-header {
-    align-items: flex-start;
-    flex-direction: column;
-  }
-
-  .header-actions {
     width: 100%;
   }
 }
