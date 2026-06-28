@@ -37,6 +37,10 @@ registerBtn?.addEventListener("click", async () => {
     return;
   }
 
+  registerBtn.disabled = true;
+  loginBtn.disabled = true;
+  showMessage("Creating account...");
+
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email, password);
     const user = userCredential.user;
@@ -60,7 +64,11 @@ registerBtn?.addEventListener("click", async () => {
       window.location.href = "dashboard.html";
     }, 800);
   } catch (error) {
-    showMessage(getFriendlyError(error.code), true);
+    console.error("Register error:", error);
+    showMessage(`${getFriendlyError(error.code)} (${error.code})`, true);
+  } finally {
+    registerBtn.disabled = false;
+    loginBtn.disabled = false;
   }
 });
 
@@ -73,6 +81,10 @@ loginBtn?.addEventListener("click", async () => {
     return;
   }
 
+  registerBtn.disabled = true;
+  loginBtn.disabled = true;
+  showMessage("Logging in...");
+
   try {
     await signInWithEmailAndPassword(auth, email, password);
 
@@ -81,7 +93,11 @@ loginBtn?.addEventListener("click", async () => {
       window.location.href = "dashboard.html";
     }, 800);
   } catch (error) {
-    showMessage(getFriendlyError(error.code), true);
+    console.error("Login error:", error);
+    showMessage(`${getFriendlyError(error.code)} (${error.code})`, true);
+  } finally {
+    registerBtn.disabled = false;
+    loginBtn.disabled = false;
   }
 });
 
@@ -93,6 +109,12 @@ function getFriendlyError(code) {
       return "Please enter a valid email address.";
     case "auth/weak-password":
       return "Password is too weak. Use at least 6 characters.";
+    case "auth/operation-not-allowed":
+      return "Email/Password login is not enabled in Firebase.";
+    case "auth/configuration-not-found":
+      return "Firebase Authentication is not configured properly.";
+    case "auth/unauthorized-domain":
+      return "This website domain is not authorized in Firebase.";
     case "auth/user-not-found":
       return "No account found with this email. Please register first.";
     case "auth/wrong-password":
@@ -100,6 +122,9 @@ function getFriendlyError(code) {
       return "Incorrect email or password.";
     case "auth/network-request-failed":
       return "Network error. Check your internet connection.";
+    case "permission-denied":
+    case "firestore/permission-denied":
+      return "Firestore permission denied. Check Firestore rules.";
     default:
       return "Something went wrong. Please try again.";
   }
