@@ -52,7 +52,10 @@ onAuthStateChanged(auth, async (user) => {
   }
 
   currentUser = user;
-  userEmail.textContent = `Logged in as: ${user.email}`;
+
+  if (userEmail) {
+    userEmail.textContent = `Logged in as: ${user.email}`;
+  }
 
   await loadProfile();
   await loadSavedScholarships();
@@ -179,92 +182,102 @@ async function loadProfile() {
 }
 
 async function loadSavedScholarships() {
-  if (!currentUser) return;
+  if (!currentUser || !savedList) return;
 
   savedList.innerHTML = "<p class='mini-note'>Loading saved scholarships...</p>";
 
-  const savedRef = collection(db, "users", currentUser.uid, "savedScholarships");
-  const savedQuery = query(savedRef, orderBy("createdAt", "desc"));
-  const snapshot = await getDocs(savedQuery);
+  try {
+    const savedRef = collection(db, "users", currentUser.uid, "savedScholarships");
+    const savedQuery = query(savedRef, orderBy("createdAt", "desc"));
+    const snapshot = await getDocs(savedQuery);
 
-  if (snapshot.empty) {
-    savedList.innerHTML = "<p class='mini-note'>No saved scholarships yet.</p>";
-    return;
-  }
+    if (snapshot.empty) {
+      savedList.innerHTML = "<p class='mini-note'>No saved scholarships yet.</p>";
+      return;
+    }
 
-  savedList.innerHTML = "";
+    savedList.innerHTML = "";
 
-  snapshot.forEach((docSnap) => {
-    const item = docSnap.data();
-    const id = docSnap.id;
+    snapshot.forEach((docSnap) => {
+      const item = docSnap.data();
+      const id = docSnap.id;
 
-    const card = document.createElement("div");
-    card.className = "scholarship";
+      const card = document.createElement("div");
+      card.className = "scholarship";
 
-    card.innerHTML = `
-      <span class="badge">Saved</span>
-      <h3>${escapeHtml(item.name)}</h3>
-      ${
-        item.link
-          ? `<p><a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">Official link</a></p>`
-          : `<p class="mini-note">No link added.</p>`
-      }
-      <button class="secondary-btn" data-delete-saved="${id}">Remove</button>
-    `;
+      card.innerHTML = `
+        <span class="badge">Saved</span>
+        <h3>${escapeHtml(item.name)}</h3>
+        ${
+          item.link
+            ? `<p><a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">Official link</a></p>`
+            : `<p class="mini-note">No link added.</p>`
+        }
+        <button class="secondary-btn" data-delete-saved="${id}">Remove</button>
+      `;
 
-    savedList.appendChild(card);
-  });
-
-  document.querySelectorAll("[data-delete-saved]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const id = button.getAttribute("data-delete-saved");
-      await deleteDoc(doc(db, "users", currentUser.uid, "savedScholarships", id));
-      await loadSavedScholarships();
+      savedList.appendChild(card);
     });
-  });
+
+    document.querySelectorAll("[data-delete-saved]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const id = button.getAttribute("data-delete-saved");
+        await deleteDoc(doc(db, "users", currentUser.uid, "savedScholarships", id));
+        await loadSavedScholarships();
+      });
+    });
+  } catch (error) {
+    savedList.innerHTML = "<p class='mini-note'>Could not load saved scholarships.</p>";
+    console.error(error);
+  }
 }
 
 async function loadApplications() {
-  if (!currentUser) return;
+  if (!currentUser || !applicationList) return;
 
   applicationList.innerHTML = "<p class='mini-note'>Loading applications...</p>";
 
-  const appsRef = collection(db, "users", currentUser.uid, "applications");
-  const appsQuery = query(appsRef, orderBy("createdAt", "desc"));
-  const snapshot = await getDocs(appsQuery);
+  try {
+    const appsRef = collection(db, "users", currentUser.uid, "applications");
+    const appsQuery = query(appsRef, orderBy("createdAt", "desc"));
+    const snapshot = await getDocs(appsQuery);
 
-  if (snapshot.empty) {
-    applicationList.innerHTML = "<p class='mini-note'>No tracked applications yet.</p>";
-    return;
-  }
+    if (snapshot.empty) {
+      applicationList.innerHTML = "<p class='mini-note'>No tracked applications yet.</p>";
+      return;
+    }
 
-  applicationList.innerHTML = "";
+    applicationList.innerHTML = "";
 
-  snapshot.forEach((docSnap) => {
-    const item = docSnap.data();
-    const id = docSnap.id;
+    snapshot.forEach((docSnap) => {
+      const item = docSnap.data();
+      const id = docSnap.id;
 
-    const card = document.createElement("div");
-    card.className = "scholarship";
+      const card = document.createElement("div");
+      card.className = "scholarship";
 
-    card.innerHTML = `
-      <span class="badge">${escapeHtml(item.status)}</span>
-      <h3>${escapeHtml(item.name)}</h3>
-      <p class="info"><strong>Status:</strong> ${escapeHtml(item.status)}</p>
-      <p class="info"><strong>Note:</strong> ${escapeHtml(item.note || "No note added.")}</p>
-      <button class="secondary-btn" data-delete-app="${id}">Remove</button>
-    `;
+      card.innerHTML = `
+        <span class="badge">${escapeHtml(item.status)}</span>
+        <h3>${escapeHtml(item.name)}</h3>
+        <p class="info"><strong>Status:</strong> ${escapeHtml(item.status)}</p>
+        <p class="info"><strong>Note:</strong> ${escapeHtml(item.note || "No note added.")}</p>
+        <button class="secondary-btn" data-delete-app="${id}">Remove</button>
+      `;
 
-    applicationList.appendChild(card);
-  });
-
-  document.querySelectorAll("[data-delete-app]").forEach((button) => {
-    button.addEventListener("click", async () => {
-      const id = button.getAttribute("data-delete-app");
-      await deleteDoc(doc(db, "users", currentUser.uid, "applications", id));
-      await loadApplications();
+      applicationList.appendChild(card);
     });
-  });
+
+    document.querySelectorAll("[data-delete-app]").forEach((button) => {
+      button.addEventListener("click", async () => {
+        const id = button.getAttribute("data-delete-app");
+        await deleteDoc(doc(db, "users", currentUser.uid, "applications", id));
+        await loadApplications();
+      });
+    });
+  } catch (error) {
+    applicationList.innerHTML = "<p class='mini-note'>Could not load applications.</p>";
+    console.error(error);
+  }
 }
 
 function showProfileMessage(message, isError = false) {
