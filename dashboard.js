@@ -263,7 +263,6 @@ onAuthStateChanged(auth, async (user) => {
     showProfileMessage("Some dashboard data could not be loaded.", true);
   }
 });
-
 logoutBtn?.addEventListener("click", async () => {
   logoutBtn.disabled = true;
 
@@ -485,8 +484,7 @@ function renderRecommendations(profile) {
   const matches = getRecommendedScholarships(normalizedProfile);
 
   if (matches.length === 0) {
-    recommendationSummary.textContent =
-      "No matching scholarships found for your profile right now. Try updating your profile or check again later.";
+    recommendationSummary.textContent = getNoMatchReason(normalizedProfile);
     recommendationList.replaceChildren();
     return;
   }
@@ -556,6 +554,75 @@ function getRecommendedScholarships(profile) {
     })
     .filter(Boolean)
     .sort((a, b) => b.score - a.score);
+}
+function getNoMatchReason(profile) {
+  const possibleByStateEducation = scholarships.filter((scholarship) => {
+    const stateMatch =
+      scholarship.state === profile.state ||
+      scholarship.state === "national";
+
+    const educationMatch = scholarship.education.includes(profile.education);
+
+    return stateMatch && educationMatch;
+  });
+
+  if (possibleByStateEducation.length === 0) {
+    return "No scholarships found for your current state and education level. Try checking official portals or update your education/state if entered incorrectly.";
+  }
+
+  const incomeEligible = possibleByStateEducation.some((scholarship) => {
+    return profile.income <= scholarship.maxIncome;
+  });
+
+  if (!incomeEligible) {
+    return "No scholarships found because your annual family income is above the current listed limits. Please verify scheme rules on official portals.";
+  }
+
+  const categoryEligible = possibleByStateEducation.some((scholarship) => {
+    return (
+      scholarship.categories.includes(profile.category) ||
+      scholarship.categories.includes("general")
+    );
+  });
+
+  if (!categoryEligible) {
+    return "No scholarships found for your selected category right now. Try checking official portals for latest category-specific schemes.";
+  }
+
+  const genderEligible = possibleByStateEducation.some((scholarship) => {
+    return (
+      scholarship.genders.includes("any") ||
+      scholarship.genders.includes(profile.gender)
+    );
+  });
+
+  if (!genderEligible) {
+    return "No scholarships found for your selected gender and education level right now.";
+  }
+
+  const disabilityEligible = possibleByStateEducation.some((scholarship) => {
+    return (
+      scholarship.disability === "any" ||
+      scholarship.disability === profile.disability
+    );
+  });
+
+  if (!disabilityEligible) {
+    return "No scholarships found for your disability status right now.";
+  }
+
+  const percentageEligible = possibleByStateEducation.some((scholarship) => {
+    return (
+      profile.percentage === null ||
+      profile.percentage >= scholarship.minPercentage
+    );
+  });
+
+  if (!percentageEligible) {
+    return "No scholarships found because your percentage/CGPA is below the listed merit requirement.";
+  }
+
+  return "No matching scholarships found for your profile right now. Try updating your profile or check official portals for latest schemes.";
 }
 
 function createRecommendationCard(scholarship) {
