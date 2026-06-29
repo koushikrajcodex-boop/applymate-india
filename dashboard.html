@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Dashboard - ApplyMate India</title>
-  <meta name="description" content="Student dashboard for ApplyMate India with personalized recommendations, profile, saved scholarships, and application tracker." />
+  <meta name="description" content="Student dashboard for ApplyMate India with personalized scholarship recommendations, advanced filters, saved scholarships, comparison, and application tracker." />
   <meta name="robots" content="noindex, nofollow" />
 
   <link rel="stylesheet" href="style.css" />
@@ -36,8 +36,9 @@
       <span class="last-updated" id="userEmail">Checking login...</span>
 
       <p>
-        Manage your student profile, get personalized scholarship recommendations,
-        save scholarships, and track application status.
+        Manage your profile, get personalized scholarship recommendations,
+        search and filter scholarships, compare schemes, save scholarships,
+        and track your application status.
       </p>
 
       <div class="notice-box">
@@ -131,11 +132,125 @@
     </section>
 
     <section class="content-card" id="recommendationsSection">
-      <h2>Personalized Scholarship Recommendations</h2>
-      <p id="recommendationSummary" class="mini-note">
-        Save your profile to see automatic scholarship recommendations.
-      </p>
+      <div class="card-heading">
+        <div>
+          <h2>Personalized Scholarship Recommendations</h2>
+          <p id="recommendationSummary" class="mini-note">
+            Save your profile to see automatic scholarship recommendations.
+          </p>
+        </div>
+      </div>
+
+      <div class="filter-panel">
+        <h3>Search & Filters</h3>
+        <p class="mini-note">
+          Search your recommended scholarships and filter them by state, course, category, gender, disability, and deadline status.
+        </p>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="recommendationSearch">Search Scholarship</label>
+            <input type="search" id="recommendationSearch" placeholder="Search by scholarship name, portal, eligibility, or state..." />
+          </div>
+
+          <div class="field">
+            <label for="filterState">State</label>
+            <select id="filterState">
+              <option value="">All states</option>
+              <option value="andhra-pradesh">Andhra Pradesh</option>
+              <option value="telangana">Telangana</option>
+              <option value="national">National</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterEducation">Course / Education</label>
+            <select id="filterEducation">
+              <option value="">All courses</option>
+              <option value="school">School</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="degree">Degree</option>
+              <option value="engineering">Engineering</option>
+              <option value="pg">Post Graduation</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterCategory">Category</label>
+            <select id="filterCategory">
+              <option value="">All categories</option>
+              <option value="general">General</option>
+              <option value="sc">SC</option>
+              <option value="st">ST</option>
+              <option value="obc">BC / OBC</option>
+              <option value="minority">Minority</option>
+              <option value="ews">EWS / EBC</option>
+              <option value="kapu">Kapu</option>
+              <option value="disabled">Disabled</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterGender">Gender</label>
+            <select id="filterGender">
+              <option value="">All genders</option>
+              <option value="any">Any</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterDisability">Disability</label>
+            <select id="filterDisability">
+              <option value="">All</option>
+              <option value="any">Any</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterDeadline">Deadline Status</label>
+            <select id="filterDeadline">
+              <option value="">All deadlines</option>
+              <option value="unknown">Date not added</option>
+              <option value="safe">Safe</option>
+              <option value="soon">Closing soon</option>
+              <option value="expired">Expired</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="resetFiltersBtn" type="button" class="secondary-btn">Reset Filters</button>
+        </div>
+
+        <p id="recommendationCount" class="mini-note"></p>
+      </div>
+
       <div id="recommendationList"></div>
+    </section>
+
+    <section class="content-card" id="comparisonSection">
+      <div class="card-heading">
+        <div>
+          <h2>Scholarship Comparison</h2>
+          <p class="mini-note">
+            Select scholarships from recommendations to compare eligibility, income limit, deadline, and official portal.
+          </p>
+        </div>
+      </div>
+
+      <div id="compareList" class="compare-list">
+        <p class="mini-note">No scholarships selected for comparison yet.</p>
+      </div>
+
+      <div class="button-row">
+        <button id="clearCompareBtn" type="button" class="secondary-btn">Clear Comparison</button>
+      </div>
+
+      <div id="comparisonTableWrap" class="comparison-table-wrap"></div>
     </section>
 
     <section class="content-card">
