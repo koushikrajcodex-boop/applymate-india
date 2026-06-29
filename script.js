@@ -242,9 +242,17 @@ function findScholarships() {
     .map((scholarship) => {
       let score = scholarship.priority || 50;
 
-      const stateMatch = state === "any" || scholarship.state === state || scholarship.state === "national";
+      const stateMatch =
+        state === "any" ||
+        scholarship.state === state ||
+        scholarship.state === "national";
+
       const educationMatch = scholarship.education.includes(education);
-      const categoryMatch = scholarship.categories.includes(category) || scholarship.categories.includes("general");
+
+      const categoryMatch =
+        scholarship.categories.includes(category) ||
+        scholarship.categories.includes("general");
+
       const incomeMatch = income <= scholarship.maxIncome;
 
       if (!stateMatch || !educationMatch || !categoryMatch || !incomeMatch) {
@@ -264,7 +272,9 @@ function findScholarships() {
           scholarship.incomeNote,
           scholarship.sourceName,
           ...scholarship.tags
-        ].join(" ").toLowerCase();
+        ]
+          .join(" ")
+          .toLowerCase();
 
         if (!searchable.includes(search)) {
           return null;
@@ -273,7 +283,10 @@ function findScholarships() {
         score += 20;
       }
 
-      return { ...scholarship, score };
+      return {
+        ...scholarship,
+        score
+      };
     })
     .filter(Boolean)
     .sort((a, b) => b.score - a.score);
@@ -290,53 +303,85 @@ function renderResults(results) {
   if (results.length === 0) {
     resultSummary.innerHTML = `
       <div class="content-strip">
-        <h2>No Scholarships Found</h2>
+        <span class="badge">No Match Found</span>
+        <h2>No scholarships found for this combination.</h2>
+
         <p>
-          No matching scholarships were found for your selected details right now.
-          Try changing state, category, income, or education filters.
+          We could not find a matching scholarship for your selected state, education,
+          category, income range, or search keyword right now.
+        </p>
+
+        <div class="notice-box">
+          Try these quick fixes:
+          <br />
+          ✅ Change your category or special group
+          <br />
+          ✅ Increase the income range if your income is higher
+          <br />
+          ✅ Select "Any State" to include National scholarships
+          <br />
+          ✅ Remove the search keyword and try again
+        </div>
+
+        <div class="button-row">
+          <button onclick="clearFilters()">Reset Filters</button>
+          <a href="login.html" class="secondary-btn">Create Account / Login</a>
+          <a href="guides.html" class="secondary-btn">Read Scholarship Guides</a>
+        </div>
+
+        <p class="mini-note">
+          Scholarship rules and deadlines change often. Always check official portals for the latest updates.
         </p>
       </div>
     `;
+
     resultsContainer.innerHTML = "";
     return;
   }
 
   resultSummary.innerHTML = `
     <div class="content-strip">
+      <span class="badge">Possible Matches</span>
       <h2>You may be eligible for these ${results.length} scholarships.</h2>
-      <p>These are possible matches based on your selected details. Verify final eligibility on official portals.</p>
+      <p>
+        These are possible matches based on your selected details.
+        Verify final eligibility on official portals before applying.
+      </p>
     </div>
   `;
 
-  resultsContainer.innerHTML = results.map((scholarship) => {
-    const documents = scholarship.documents
-      .map((doc) => `<li>${escapeHtml(doc)}</li>`)
-      .join("");
+  resultsContainer.innerHTML = results
+    .map((scholarship) => {
+      const documents = scholarship.documents
+        .map((doc) => `<li>${escapeHtml(doc)}</li>`)
+        .join("");
 
-    return `
-      <article class="scholarship">
-        <span class="badge">${escapeHtml(scholarship.stateLabel)}</span>
-        <h3>${escapeHtml(scholarship.name)}</h3>
+      return `
+        <article class="scholarship">
+          <span class="badge">${escapeHtml(scholarship.stateLabel)}</span>
+          <h3>${escapeHtml(scholarship.name)}</h3>
 
-        <p class="info"><strong>Eligibility note:</strong> ${escapeHtml(scholarship.eligibilityNote)}</p>
-        <p class="info"><strong>Income note:</strong> ${escapeHtml(scholarship.incomeNote)}</p>
-        <p class="info"><strong>Deadline:</strong> ${escapeHtml(scholarship.deadline)}</p>
-        <p class="info"><strong>Last verified:</strong> ${escapeHtml(LAST_VERIFIED)}</p>
+          <p class="info"><strong>Eligibility note:</strong> ${escapeHtml(scholarship.eligibilityNote)}</p>
+          <p class="info"><strong>Income note:</strong> ${escapeHtml(scholarship.incomeNote)}</p>
+          <p class="info"><strong>Deadline:</strong> ${escapeHtml(scholarship.deadline)}</p>
+          <p class="info"><strong>Last verified:</strong> ${escapeHtml(LAST_VERIFIED)}</p>
 
-        <h4>Common documents</h4>
-        <ul>${documents}</ul>
+          <h4>Common documents</h4>
+          <ul>${documents}</ul>
 
-        <div class="button-row">
-          <a class="text-btn" href="${escapeHtml(scholarship.link)}" target="_blank" rel="noopener noreferrer">
-            Official Link
-          </a>
-          <a class="secondary-btn" href="mailto:${CONTACT_EMAIL}?subject=Correction for ${encodeURIComponent(scholarship.name)}">
-            Report Correction
-          </a>
-        </div>
-      </article>
-    `;
-  }).join("");
+          <div class="button-row">
+            <a class="text-btn" href="${escapeHtml(scholarship.link)}" target="_blank" rel="noopener noreferrer">
+              Official Link
+            </a>
+
+            <a class="secondary-btn" href="mailto:${CONTACT_EMAIL}?subject=Correction for ${encodeURIComponent(scholarship.name)}">
+              Report Correction
+            </a>
+          </div>
+        </article>
+      `;
+    })
+    .join("");
 }
 
 function clearFilters() {
