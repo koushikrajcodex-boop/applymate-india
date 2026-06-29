@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Admin Panel - ApplyMate India</title>
+  <meta name="description" content="Admin panel for ApplyMate India to manage scholarships and view analytics." />
+  <meta name="robots" content="noindex, nofollow" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css" />
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India Admin</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Student Dashboard</a>
+      <a href="contact.html">Contact</a>
+      <button id="adminLogoutBtn" class="secondary-btn" type="button">Logout</button>
+    </div>
+  </nav>
+
+  <main class="content-page">
+
+    <section class="content-card admin-hero">
+      <span class="tagline">Admin Access</span>
+      <h1>ApplyMate India Admin Panel</h1>
+      <p id="adminEmail" class="last-updated">Checking admin access...</p>
+
+      <div class="notice-box">
+        Only authorized admins can manage scholarships. Student users should use the normal dashboard.
+      </div>
+    </section>
+
+    <section id="adminLockedSection" class="content-card hidden">
+      <h2>Access Denied</h2>
+      <p class="mini-note">
+        You are logged in, but this account is not allowed to access the admin panel.
+      </p>
+
+      <div class="button-row">
+        <a class="text-btn" href="dashboard.html">Go to Student Dashboard</a>
+      </div>
+    </section>
+
+    <section id="adminContent" class="hidden">
+
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>Admin Analytics</h2>
+            <p class="mini-note">
+              Quick overview of scholarships and admin-managed data.
+            </p>
+          </div>
+
+          <button id="refreshAdminBtn" class="secondary-btn" type="button">
+            Refresh
+          </button>
+        </div>
+
+        <div class="admin-stats-grid">
+          <div class="admin-stat-card">
+            <span>Total Scholarships</span>
+            <strong id="totalScholarshipsCount">0</strong>
+          </div>
+
+          <div class="admin-stat-card">
+            <span>Active Scholarships</span>
+            <strong id="activeScholarshipsCount">0</strong>
+          </div>
+
+          <div class="admin-stat-card">
+            <span>National Scholarships</span>
+            <strong id="nationalScholarshipsCount">0</strong>
+          </div>
+
+          <div class="admin-stat-card">
+            <span>State Scholarships</span>
+            <strong id="stateScholarshipsCount">0</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>Add / Edit Scholarship</h2>
+            <p class="mini-note">
+              Add official scholarship details. Students will see these in future recommendation upgrades.
+            </p>
+          </div>
+
+          <button id="clearScholarshipFormBtn" class="secondary-btn" type="button">
+            Clear Form
+          </button>
+        </div>
+
+        <input type="hidden" id="editingScholarshipId" />
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="adminScholarshipName">Scholarship Name</label>
+            <input type="text" id="adminScholarshipName" placeholder="Example: AICTE Pragati Scholarship" />
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipState">State</label>
+            <select id="adminScholarshipState">
+              <option value="">Select state</option>
+              <option value="national">National</option>
+              <option value="andhra-pradesh">Andhra Pradesh</option>
+              <option value="telangana">Telangana</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipStatus">Status</label>
+            <select id="adminScholarshipStatus">
+              <option value="active">Active</option>
+              <option value="draft">Draft</option>
+              <option value="closed">Closed</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipAmount">Amount</label>
+            <input type="text" id="adminScholarshipAmount" placeholder="Example: ₹50,000 or Varies" />
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipIncome">Max Income Limit</label>
+            <input type="number" id="adminScholarshipIncome" placeholder="Example: 200000" />
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipMinPercentage">Minimum Percentage</label>
+            <input type="number" id="adminScholarshipMinPercentage" placeholder="Example: 50" />
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipDeadline">Deadline Text</label>
+            <input type="text" id="adminScholarshipDeadline" placeholder="Example: Check official portal" />
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipDeadlineDate">Deadline Date</label>
+            <input type="date" id="adminScholarshipDeadlineDate" />
+          </div>
+
+          <div class="field full">
+            <label for="adminScholarshipLink">Official Link</label>
+            <input type="url" id="adminScholarshipLink" placeholder="https://..." />
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipEducation">Education Levels</label>
+            <input type="text" id="adminScholarshipEducation" placeholder="school, intermediate, degree, engineering, pg" />
+            <span class="mini-note">Use comma-separated values.</span>
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipCategories">Categories</label>
+            <input type="text" id="adminScholarshipCategories" placeholder="general, sc, st, obc, ews, minority" />
+            <span class="mini-note">Use comma-separated values.</span>
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipGenders">Genders</label>
+            <input type="text" id="adminScholarshipGenders" placeholder="any, male, female" />
+            <span class="mini-note">Use comma-separated values.</span>
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipDisability">Disability Rule</label>
+            <select id="adminScholarshipDisability">
+              <option value="any">Any</option>
+              <option value="yes">Only specially abled students</option>
+              <option value="no">Not disability-specific</option>
+            </select>
+          </div>
+
+          <div class="field full">
+            <label for="adminScholarshipEligibility">Eligibility Note</label>
+            <textarea id="adminScholarshipEligibility" rows="4" placeholder="Write short eligibility details..."></textarea>
+          </div>
+
+          <div class="field full">
+            <label for="adminScholarshipIncomeNote">Income Note</label>
+            <textarea id="adminScholarshipIncomeNote" rows="3" placeholder="Write income rule details..."></textarea>
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipPriority">Priority Score</label>
+            <input type="number" id="adminScholarshipPriority" placeholder="Example: 90" />
+          </div>
+
+          <div class="field">
+            <label for="adminScholarshipSource">Source Name</label>
+            <input type="text" id="adminScholarshipSource" placeholder="Example: NSP / AICTE / Jnanabhumi" />
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="saveScholarshipAdminBtn" type="button">Save Scholarship</button>
+        </div>
+
+        <p id="adminFormMessage" class="mini-note"></p>
+      </section>
+
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>Manage Scholarships</h2>
+            <p class="mini-note">
+              View, edit, and delete scholarships added through the admin panel.
+            </p>
+          </div>
+        </div>
+
+        <div class="filter-panel">
+          <div class="form-grid">
+            <div class="field full">
+              <label for="adminSearch">Search Scholarships</label>
+              <input type="search" id="adminSearch" placeholder="Search by name, state, source, category..." />
+            </div>
+
+            <div class="field">
+              <label for="adminFilterState">Filter State</label>
+              <select id="adminFilterState">
+                <option value="">All states</option>
+                <option value="national">National</option>
+                <option value="andhra-pradesh">Andhra Pradesh</option>
+                <option value="telangana">Telangana</option>
+              </select>
+            </div>
+
+            <div class="field">
+              <label for="adminFilterStatus">Filter Status</label>
+              <select id="adminFilterStatus">
+                <option value="">All statuses</option>
+                <option value="active">Active</option>
+                <option value="draft">Draft</option>
+                <option value="closed">Closed</option>
+              </select>
+            </div>
+          </div>
+        </div>
+
+        <p id="adminScholarshipCount" class="mini-note"></p>
+        <div id="adminScholarshipList"></div>
+      </section>
+
+    </section>
+
+  </main>
+
+  <footer>
+    <p>
+      ApplyMate India Admin Panel. Manage scholarship data carefully and verify official sources before publishing.
+    </p>
+
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="dashboard.html">Student Dashboard</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script type="module" src="admin.js"></script>
+</body>
+</html>
