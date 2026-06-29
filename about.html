@@ -4,123 +4,348 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>About ApplyMate India - Scholarship Finder for Students</title>
-  <meta name="description" content="Learn about ApplyMate India, a free informational scholarship finder, student dashboard, and guide website for Indian students." />
-  <meta name="robots" content="index, follow" />
-  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/about.html" />
+  <title>Dashboard - ApplyMate India</title>
+  <meta name="description" content="Student dashboard for ApplyMate India with personalized scholarship recommendations, notifications, filters, saved scholarships, comparison, and application tracker." />
+  <meta name="robots" content="noindex, nofollow" />
 
-  <link rel="stylesheet" href="style.css" /> 
+  <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="assistant.css" />
 </head>
 <body>
 
   <div class="page-bg"></div>
 
- <nav class="navbar">
-  <a class="logo" href="index.html">
-    <span class="logo-icon">A</span>
-    <span>ApplyMate India</span>
-  </a>
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
 
-  <div class="nav-links">
-    <a href="index.html">Home</a>
-    <a href="scholarships.html">Scholarships</a>
-    <a href="guides.html">Guides</a>
-    <a href="dashboard.html">Dashboard</a>
-    <a href="login.html">Login</a>
-    <a href="about.html">About</a>
-    <a href="privacy.html">Privacy</a>
-    <a href="disclaimer.html">Disclaimer</a>
-    <a href="editorial-policy.html">Editorial Policy</a>
-    <a href="contact.html">Contact</a>
-  </div>
-</nav>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="contact.html">Contact</a>
+
+      <button id="notificationToggleBtn" class="notification-btn" type="button" aria-label="Open notifications">
+        🔔
+        <span id="notificationBadge" class="notification-badge hidden">0</span>
+      </button>
+
+      <button id="logoutBtn" class="secondary-btn">Logout</button>
+    </div>
+  </nav>
 
   <main class="content-page">
+
+    <section id="notificationPanel" class="content-card notification-panel hidden">
+      <div class="card-heading">
+        <div>
+          <h2>Notification Center</h2>
+          <p class="mini-note">
+            Deadline alerts, profile reminders, saved scholarship updates, and application tracker notices.
+          </p>
+        </div>
+
+        <button id="markNotificationsReadBtn" class="secondary-btn" type="button">
+          Mark All as Read
+        </button>
+      </div>
+
+      <div id="notificationList">
+        <p class="mini-note">Loading notifications...</p>
+      </div>
+    </section>
+
     <section class="content-card">
-      <h1>About ApplyMate India</h1>
-      <span class="last-updated">Last updated: 28 June 2026</span>
+      <h1>Student Dashboard</h1>
+      <span class="last-updated" id="userEmail">Checking login...</span>
 
       <p>
-        ApplyMate India is a free student-help website created to make scholarship discovery easier for Indian students.
-        Many students miss scholarship opportunities because information is spread across different portals, notices,
-        and official websites. ApplyMate India gives students a simple starting point with scholarship matches,
-        document checklists, guide pages, official verification links, and an optional student dashboard.
+        Manage your profile, get personalized scholarship recommendations,
+        search and filter scholarships, compare schemes, save scholarships,
+        track applications, and receive useful alerts.
       </p>
 
       <div class="notice-box">
-        <strong>Important:</strong> ApplyMate India is not an official government portal and does not collect or submit
-        scholarship applications on behalf of students. Students must always verify final details and apply through
-        the official scholarship portal.
+        This dashboard is for personal tracking only. Final scholarship applications must be submitted on official portals.
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>Personal Profile</h2>
+      <p class="mini-note">
+        Complete your profile to automatically see scholarships you may be eligible for.
+      </p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="profileName">Full Name</label>
+          <input type="text" id="profileName" placeholder="Your name" />
+        </div>
+
+        <div class="field">
+          <label for="profileState">State</label>
+          <select id="profileState">
+            <option value="">Select state</option>
+            <option value="Andhra Pradesh">Andhra Pradesh</option>
+            <option value="Telangana">Telangana</option>
+            <option value="National">National / Other</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileEducation">Education</label>
+          <select id="profileEducation">
+            <option value="">Select education</option>
+            <option value="School">School</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Degree">Degree</option>
+            <option value="Engineering">Engineering</option>
+            <option value="Post Graduation">Post Graduation</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileCategory">Category</label>
+          <select id="profileCategory">
+            <option value="">Select category</option>
+            <option value="General">General</option>
+            <option value="SC">SC</option>
+            <option value="ST">ST</option>
+            <option value="BC/OBC">BC / OBC</option>
+            <option value="Minority">Minority</option>
+            <option value="EWS/EBC">EWS / EBC</option>
+            <option value="Kapu">Kapu</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileGender">Gender</label>
+          <select id="profileGender">
+            <option value="">Select gender</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Prefer not to say">Prefer not to say</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileDisability">Disability</label>
+          <select id="profileDisability">
+            <option value="">Select</option>
+            <option value="No">No</option>
+            <option value="Yes">Yes</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileIncome">Annual Family Income</label>
+          <input type="number" id="profileIncome" placeholder="Example: 200000" />
+        </div>
+
+        <div class="field">
+          <label for="profilePercentage">Percentage / CGPA</label>
+          <input type="text" id="profilePercentage" placeholder="Example: 85% or 8.5 CGPA" />
+        </div>
       </div>
 
-      <h2>What ApplyMate India helps with</h2>
-      <ul>
-        <li>Finding possible scholarships based on state, education level, category, and income range</li>
-        <li>Understanding common documents needed for scholarship applications</li>
-        <li>Reading beginner-friendly guides for NSP, AP Jnanabhumi, Telangana ePASS, and other student topics</li>
-        <li>Accessing official portal links for final verification</li>
-        <li>Creating an optional account to save scholarships and track applications</li>
-        <li>Maintaining a basic student profile for planning purposes</li>
-        <li>Reporting incorrect or outdated information for correction</li>
-      </ul>
+      <div class="button-row">
+        <button id="saveProfileBtn">Save Profile</button>
+      </div>
 
-      <h2>Student dashboard</h2>
-      <p>
-        ApplyMate India includes an optional student dashboard. Logged-in users can save scholarships, fill basic profile
-        details, and manually track scholarship application status such as Not Applied, Applied, Under Review, Approved,
-        or Rejected.
-      </p>
-
-      <p>
-        The dashboard is for personal planning only. It does not send applications to government portals and it does not
-        guarantee scholarship approval.
-      </p>
-
-      <h2>What ApplyMate India does not do</h2>
-      <ul>
-        <li>It does not guarantee scholarship approval or selection</li>
-        <li>It does not replace official portals</li>
-        <li>It does not submit applications on behalf of students</li>
-        <li>It does not ask for payment to show scholarship information</li>
-        <li>It does not verify or approve student documents</li>
-        <li>It does not decide scholarship eligibility officially</li>
-      </ul>
-
-      <h2>How information is handled</h2>
-      <p>
-        Scholarship information is simplified for student awareness. Since rules, deadlines, income limits, and documents
-        can change, ApplyMate India uses source notes, last verified dates, disclaimers, and correction links to improve
-        transparency.
-      </p>
-
-      <p>
-        To understand how information is selected and reviewed, read the
-        <a href="editorial-policy.html">Editorial Policy</a>.
-      </p>
-
-      <h2>Why this project was created</h2>
-      <p>
-        This project was created to help students quickly understand where to start. Scholarship portals can sometimes feel
-        confusing for beginners, especially when students are not sure which documents are needed or which portal applies
-        to them. ApplyMate India gives a simple starting point before students visit the official website.
-      </p>
-
-      <h2>Contact and corrections</h2>
-      <p>
-        If you find incorrect scholarship information or want to suggest a scholarship to add, please use the
-        <a href="contact.html">Contact page</a>.
-      </p>
+      <p id="profileMessage" class="mini-note"></p>
     </section>
+
+    <section class="content-card" id="recommendationsSection">
+      <div class="card-heading">
+        <div>
+          <h2>Personalized Scholarship Recommendations</h2>
+          <p id="recommendationSummary" class="mini-note">
+            Save your profile to see automatic scholarship recommendations.
+          </p>
+        </div>
+      </div>
+
+      <div class="filter-panel">
+        <h3>Search & Filters</h3>
+        <p class="mini-note">
+          Search your recommended scholarships and filter them by state, course, category, gender, disability, and deadline status.
+        </p>
+
+        <div class="form-grid">
+          <div class="field full">
+            <label for="recommendationSearch">Search Scholarship</label>
+            <input type="search" id="recommendationSearch" placeholder="Search by scholarship name, portal, eligibility, or state..." />
+          </div>
+
+          <div class="field">
+            <label for="filterState">State</label>
+            <select id="filterState">
+              <option value="">All states</option>
+              <option value="andhra-pradesh">Andhra Pradesh</option>
+              <option value="telangana">Telangana</option>
+              <option value="national">National</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterEducation">Course / Education</label>
+            <select id="filterEducation">
+              <option value="">All courses</option>
+              <option value="school">School</option>
+              <option value="intermediate">Intermediate</option>
+              <option value="degree">Degree</option>
+              <option value="engineering">Engineering</option>
+              <option value="pg">Post Graduation</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterCategory">Category</label>
+            <select id="filterCategory">
+              <option value="">All categories</option>
+              <option value="general">General</option>
+              <option value="sc">SC</option>
+              <option value="st">ST</option>
+              <option value="obc">BC / OBC</option>
+              <option value="minority">Minority</option>
+              <option value="ews">EWS / EBC</option>
+              <option value="kapu">Kapu</option>
+              <option value="disabled">Disabled</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterGender">Gender</label>
+            <select id="filterGender">
+              <option value="">All genders</option>
+              <option value="any">Any</option>
+              <option value="male">Male</option>
+              <option value="female">Female</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterDisability">Disability</label>
+            <select id="filterDisability">
+              <option value="">All</option>
+              <option value="any">Any</option>
+              <option value="no">No</option>
+              <option value="yes">Yes</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="filterDeadline">Deadline Status</label>
+            <select id="filterDeadline">
+              <option value="">All deadlines</option>
+              <option value="unknown">Date not added</option>
+              <option value="safe">Safe</option>
+              <option value="soon">Closing soon</option>
+              <option value="expired">Expired</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="button-row">
+          <button id="resetFiltersBtn" type="button" class="secondary-btn">Reset Filters</button>
+        </div>
+
+        <p id="recommendationCount" class="mini-note"></p>
+      </div>
+
+      <div id="recommendationList"></div>
+    </section>
+
+    <section class="content-card" id="comparisonSection">
+      <div class="card-heading">
+        <div>
+          <h2>Scholarship Comparison</h2>
+          <p class="mini-note">
+            Select scholarships from recommendations to compare eligibility, income limit, deadline, and official portal.
+          </p>
+        </div>
+      </div>
+
+      <div id="compareList" class="compare-list">
+        <p class="mini-note">No scholarships selected for comparison yet.</p>
+      </div>
+
+      <div class="button-row">
+        <button id="clearCompareBtn" type="button" class="secondary-btn">Clear Comparison</button>
+      </div>
+
+      <div id="comparisonTableWrap" class="comparison-table-wrap"></div>
+    </section>
+
+    <section class="content-card">
+      <h2>Saved Scholarships</h2>
+      <p>Save scholarships you want to apply for later.</p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="savedName">Scholarship Name</label>
+          <input type="text" id="savedName" placeholder="Example: AICTE Pragati Scholarship" />
+        </div>
+
+        <div class="field">
+          <label for="savedLink">Official Link</label>
+          <input type="url" id="savedLink" placeholder="https://..." />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="addSavedBtn">Save Scholarship</button>
+      </div>
+
+      <div id="savedList"></div>
+    </section>
+
+    <section class="content-card">
+      <h2>Application Tracker</h2>
+      <p>Track scholarship applications manually and update their status anytime.</p>
+
+      <div class="form-grid">
+        <div class="field">
+          <label for="appName">Scholarship Name</label>
+          <input type="text" id="appName" placeholder="Example: Telangana ePASS" />
+        </div>
+
+        <div class="field">
+          <label for="appStatus">Status</label>
+          <select id="appStatus">
+            <option value="Not Applied">🟢 Not Applied</option>
+            <option value="Applied">🟡 Applied</option>
+            <option value="Under Review">🔵 Under Review</option>
+            <option value="Approved">✅ Approved</option>
+            <option value="Rejected">❌ Rejected</option>
+          </select>
+        </div>
+
+        <div class="field full">
+          <label for="appNote">Note</label>
+          <input type="text" id="appNote" placeholder="Example: Need income certificate" />
+        </div>
+      </div>
+
+      <div class="button-row">
+        <button id="addApplicationBtn">Add / Track Application</button>
+      </div>
+
+      <div id="applicationList"></div>
+    </section>
+
   </main>
 
   <footer>
     <p>
-      ApplyMate India is an informational tool. Scholarship rules, income limits, deadlines, and required documents may change.
-      Always verify on the official portal before applying.
+      ApplyMate India dashboard is for student planning only. Always apply on official portals.
     </p>
 
     <div class="footer-links">
+      <a href="scholarships.html">Scholarships</a>
       <a href="guides.html">Guides</a>
       <a href="dashboard.html">Dashboard</a>
       <a href="login.html">Login</a>
@@ -132,5 +357,8 @@
     </div>
   </footer>
 
+  <script src="script.js"></script>
+  <script src="assistant.js"></script>
+  <script type="module" src="dashboard.js"></script>
 </body>
 </html>
