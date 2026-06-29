@@ -22,6 +22,12 @@ import {
 const userEmail = document.getElementById("userEmail");
 const logoutBtn = document.getElementById("logoutBtn");
 
+const notificationToggleBtn = document.getElementById("notificationToggleBtn");
+const notificationBadge = document.getElementById("notificationBadge");
+const notificationPanel = document.getElementById("notificationPanel");
+const notificationList = document.getElementById("notificationList");
+const markNotificationsReadBtn = document.getElementById("markNotificationsReadBtn");
+
 const profileName = document.getElementById("profileName");
 const profileState = document.getElementById("profileState");
 const profileEducation = document.getElementById("profileEducation");
@@ -274,9 +280,14 @@ const scholarships = [
 ];
 
 let currentUser = null;
+let latestProfile = {};
 let latestRecommendedScholarships = [];
 let filteredRecommendedScholarships = [];
 let compareScholarships = [];
+let savedScholarshipItems = [];
+let applicationItems = [];
+let notificationItems = [];
+let readNotificationKeys = [];
 
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
@@ -291,6 +302,7 @@ onAuthStateChanged(auth, async (user) => {
   }
 
   try {
+    setupNotificationEvents();
     setupFilterEvents();
     setupComparisonEvents();
 
@@ -299,6 +311,8 @@ onAuthStateChanged(auth, async (user) => {
       loadSavedScholarships(),
       loadApplications()
     ]);
+
+    refreshNotifications();
   } catch (error) {
     console.error("Dashboard loading error:", error);
     showProfileMessage("Some dashboard data could not be loaded.", true);
@@ -366,8 +380,14 @@ saveProfileBtn?.addEventListener("click", async () => {
 
     await setDoc(userRef, profileData, { merge: true });
 
-    showProfileMessage("Profile saved successfully. Recommendations updated.");
+    latestProfile = {
+      ...latestProfile,
+      ...profileData
+    };
+
+    showProfileMessage("Profile saved successfully. Recommendations and notifications updated.");
     renderRecommendations(profileData);
+    refreshNotifications();
   } catch (error) {
     console.error("Profile save error:", error);
     showProfileMessage("Could not save profile. Please try again.", true);
@@ -414,6 +434,7 @@ addSavedBtn?.addEventListener("click", async () => {
     if (savedLink) savedLink.value = "";
 
     await loadSavedScholarships();
+    refreshNotifications();
   } catch (error) {
     console.error("Scholarship save error:", error);
     alert(error.message || "Could not save the scholarship. Please try again.");
@@ -466,6 +487,7 @@ addApplicationBtn?.addEventListener("click", async () => {
     if (appStatus) appStatus.value = "Not Applied";
 
     await loadApplications();
+    refreshNotifications();
   } catch (error) {
     console.error("Application save error:", error);
     alert("Could not add the application. Please try again.");
@@ -473,6 +495,34 @@ addApplicationBtn?.addEventListener("click", async () => {
     setButtonBusy(addApplicationBtn, false);
   }
 });
+
+function setupNotificationEvents() {
+  notificationToggleBtn?.addEventListener("click", () => {
+    notificationPanel?.classList.toggle("hidden");
+  });
+
+  markNotificationsReadBtn?.addEventListener("click", async () => {
+    if (!currentUser) return;
+
+    readNotificationKeys = notificationItems.map((item) => item.key);
+
+    renderNotifications();
+
+    try {
+      await setDoc(
+        doc(db, "users", currentUser.uid),
+        {
+          readNotificationKeys,
+          notificationsReadAt: serverTimestamp()
+        },
+        { merge: true }
+      );
+    } catch (error) {
+      console.error("Notification read save error:", error);
+      alert("Notifications were marked here, but could not be saved online.");
+    }
+  });
+}
 
 function setupFilterEvents() {
   const fields = [
@@ -525,11 +575,17 @@ async function loadProfile() {
     };
 
     await setDoc(userRef, emptyProfile);
+    latestProfile = emptyProfile;
+    readNotificationKeys = [];
+
     renderRecommendations(emptyProfile);
+    refreshNotifications();
     return;
   }
 
   const data = userSnap.data();
+  latestProfile = data;
+  readNotificationKeys = normalizeArray(data.readNotificationKeys);
 
   setElementValue(profileName, data.name);
   setElementValue(profileState, data.state);
@@ -541,6 +597,7 @@ async function loadProfile() {
   setElementValue(profilePercentage, data.percentage);
 
   renderRecommendations(data);
+  refreshNotifications();
 }
 
 function renderRecommendations(profile) {
@@ -563,6 +620,7 @@ function renderRecommendations(profile) {
     recommendationList.replaceChildren();
     setText(recommendationCount, "");
     renderComparison();
+    refreshNotifications();
     return;
   }
 
@@ -576,6 +634,7 @@ function renderRecommendations(profile) {
     recommendationList.replaceChildren();
     setText(recommendationCount, "");
     renderComparison();
+    refreshNotifications();
     return;
   }
 
@@ -586,6 +645,7 @@ function renderRecommendations(profile) {
 
   applyRecommendationFilters();
   renderComparison();
+  refreshNotifications();
 }
 
 function applyRecommendationFilters() {
@@ -873,6 +933,7 @@ function createRecommendationCard(scholarship) {
 
       saveButton.textContent = "Saved ✅";
       await loadSavedScholarships();
+      refreshNotifications();
     } catch (error) {
       console.error("Recommendation save error:", error);
       setButtonBusy(saveButton, false);
@@ -899,6 +960,7 @@ function createRecommendationCard(scholarship) {
 
       trackButton.textContent = "Added ✅";
       await loadApplications();
+      refreshNotifications();
     } catch (error) {
       console.error("Tracker add error:", error);
       setButtonBusy(trackButton, false);
@@ -1143,20 +1205,31 @@ async function loadSavedScholarships() {
     const snapshot = await getDocs(savedQuery);
 
     savedList.replaceChildren();
+    savedScholarshipItems = [];
 
     if (snapshot.empty) {
       showContainerMessage(savedList, "No saved scholarships yet.");
+      refreshNotifications();
       return;
     }
 
     snapshot.forEach((documentSnapshot) => {
+      const item = {
+        id: documentSnapshot.id,
+        ...documentSnapshot.data()
+      };
+
+      savedScholarshipItems.push(item);
+
       savedList.appendChild(
         createSavedScholarshipCard(
           documentSnapshot.id,
-          documentSnapshot.data()
+          item
         )
       );
     });
+
+    refreshNotifications();
   } catch (error) {
     console.error("Saved scholarships loading error:", error);
     showContainerMessage(savedList, "Could not load saved scholarships.");
@@ -1174,20 +1247,31 @@ async function loadApplications() {
     const snapshot = await getDocs(applicationsQuery);
 
     applicationList.replaceChildren();
+    applicationItems = [];
 
     if (snapshot.empty) {
       showContainerMessage(applicationList, "No tracked applications yet.");
+      refreshNotifications();
       return;
     }
 
     snapshot.forEach((documentSnapshot) => {
+      const item = {
+        id: documentSnapshot.id,
+        ...documentSnapshot.data()
+      };
+
+      applicationItems.push(item);
+
       applicationList.appendChild(
         createApplicationCard(
           documentSnapshot.id,
-          documentSnapshot.data()
+          item
         )
       );
     });
+
+    refreshNotifications();
   } catch (error) {
     console.error("Applications loading error:", error);
     showContainerMessage(applicationList, "Could not load applications.");
@@ -1256,6 +1340,7 @@ function createSavedScholarshipCard(documentId, item) {
       );
 
       await loadSavedScholarships();
+      refreshNotifications();
     } catch (error) {
       console.error("Scholarship removal error:", error);
       setButtonBusy(removeButton, false);
@@ -1339,6 +1424,7 @@ function createApplicationCard(documentId, item) {
       );
 
       await loadApplications();
+      refreshNotifications();
     } catch (error) {
       console.error("Application status update error:", error);
       setButtonBusy(updateButton, false);
@@ -1363,6 +1449,7 @@ function createApplicationCard(documentId, item) {
       );
 
       await loadApplications();
+      refreshNotifications();
     } catch (error) {
       console.error("Application removal error:", error);
       setButtonBusy(removeButton, false);
@@ -1383,6 +1470,230 @@ function createApplicationCard(documentId, item) {
   );
 
   return card;
+}
+
+function refreshNotifications() {
+  notificationItems = buildNotificationItems();
+  renderNotifications();
+  persistNotificationSnapshot();
+}
+
+function buildNotificationItems() {
+  const items = [];
+  const normalizedProfile = normalizeProfile(latestProfile || {});
+
+  const requiredProfileMissing =
+    !normalizedProfile.state ||
+    !normalizedProfile.education ||
+    !normalizedProfile.category ||
+    !normalizedProfile.income;
+
+  if (requiredProfileMissing) {
+    items.push({
+      key: "profile-incomplete",
+      type: "warning",
+      icon: "👤",
+      title: "Complete your profile",
+      message: "Add your state, education, category, and income to unlock personalized scholarship recommendations."
+    });
+  } else {
+    items.push({
+      key: `profile-ready-${normalizedProfile.state}-${normalizedProfile.education}-${normalizedProfile.category}`,
+      type: "success",
+      icon: "✅",
+      title: "Profile ready",
+      message: "Your profile is ready for personalized scholarship matching."
+    });
+  }
+
+  if (latestRecommendedScholarships.length > 0) {
+    items.push({
+      key: `recommendations-${latestRecommendedScholarships.length}`,
+      type: "success",
+      icon: "🎯",
+      title: `${latestRecommendedScholarships.length} scholarship recommendation${latestRecommendedScholarships.length === 1 ? "" : "s"} found`,
+      message: "Review your matched scholarships and save the ones you want to apply for later."
+    });
+  }
+
+  const unknownDeadlineCount = latestRecommendedScholarships.filter((scholarship) => {
+    return getScholarshipDeadlineStatus(scholarship.deadlineDate) === "unknown";
+  }).length;
+
+  if (unknownDeadlineCount > 0) {
+    items.push({
+      key: `deadline-unknown-${unknownDeadlineCount}`,
+      type: "info",
+      icon: "⏰",
+      title: "Verify official deadlines",
+      message: `${unknownDeadlineCount} recommended scholarship${unknownDeadlineCount === 1 ? " has" : "s have"} no fixed deadline date added yet. Check the official portal before applying.`
+    });
+  }
+
+  const closingSoon = latestRecommendedScholarships.filter((scholarship) => {
+    return getScholarshipDeadlineStatus(scholarship.deadlineDate) === "soon";
+  });
+
+  if (closingSoon.length > 0) {
+    items.push({
+      key: `deadline-soon-${closingSoon.length}`,
+      type: "warning",
+      icon: "⚠️",
+      title: `${closingSoon.length} deadline${closingSoon.length === 1 ? " is" : "s are"} closing soon`,
+      message: "Apply early and verify the final date on the official portal."
+    });
+  }
+
+  const expiredScholarships = latestRecommendedScholarships.filter((scholarship) => {
+    return getScholarshipDeadlineStatus(scholarship.deadlineDate) === "expired";
+  });
+
+  if (expiredScholarships.length > 0) {
+    items.push({
+      key: `deadline-expired-${expiredScholarships.length}`,
+      type: "danger",
+      icon: "⛔",
+      title: `${expiredScholarships.length} deadline${expiredScholarships.length === 1 ? " appears" : "s appear"} expired`,
+      message: "Check the official portal for reopening or the next application cycle."
+    });
+  }
+
+  if (savedScholarshipItems.length > 0) {
+    items.push({
+      key: `saved-${savedScholarshipItems.length}`,
+      type: "info",
+      icon: "📌",
+      title: `${savedScholarshipItems.length} saved scholarship${savedScholarshipItems.length === 1 ? "" : "s"}`,
+      message: "Open your saved list regularly so you do not miss application windows."
+    });
+  }
+
+  const notAppliedCount = applicationItems.filter((item) => {
+    return normalizeText(item.status) === normalizeText("Not Applied");
+  }).length;
+
+  if (notAppliedCount > 0) {
+    items.push({
+      key: `tracker-not-applied-${notAppliedCount}`,
+      type: "warning",
+      icon: "🟢",
+      title: `${notAppliedCount} tracked application${notAppliedCount === 1 ? "" : "s"} not applied yet`,
+      message: "Update the status after you submit applications on official portals."
+    });
+  }
+
+  const underReviewCount = applicationItems.filter((item) => {
+    return normalizeText(item.status) === normalizeText("Under Review");
+  }).length;
+
+  if (underReviewCount > 0) {
+    items.push({
+      key: `tracker-under-review-${underReviewCount}`,
+      type: "info",
+      icon: "🔵",
+      title: `${underReviewCount} application${underReviewCount === 1 ? "" : "s"} under review`,
+      message: "Keep documents ready in case the portal asks for correction or verification."
+    });
+  }
+
+  return items;
+}
+
+function renderNotifications() {
+  if (!notificationList || !notificationBadge) return;
+
+  notificationList.replaceChildren();
+
+  const unreadCount = notificationItems.filter((item) => {
+    return !readNotificationKeys.includes(item.key);
+  }).length;
+
+  if (unreadCount > 0) {
+    notificationBadge.textContent = String(unreadCount);
+    notificationBadge.classList.remove("hidden");
+  } else {
+    notificationBadge.textContent = "0";
+    notificationBadge.classList.add("hidden");
+  }
+
+  if (notificationItems.length === 0) {
+    showContainerMessage(notificationList, "No notifications yet.");
+    return;
+  }
+
+  notificationItems.forEach((item) => {
+    notificationList.appendChild(createNotificationCard(item));
+  });
+}
+
+function createNotificationCard(item) {
+  const card = document.createElement("div");
+  card.className = getNotificationCardClass(item);
+
+  const icon = document.createElement("span");
+  icon.className = "notification-icon";
+  icon.textContent = item.icon || "🔔";
+
+  const body = document.createElement("div");
+
+  const title = document.createElement("h3");
+  title.textContent = item.title;
+
+  const message = document.createElement("p");
+  message.textContent = item.message;
+
+  const status = document.createElement("span");
+  status.className = "notification-status";
+  status.textContent = readNotificationKeys.includes(item.key) ? "Read" : "Unread";
+
+  body.append(title, message, status);
+  card.append(icon, body);
+
+  return card;
+}
+
+function getNotificationCardClass(item) {
+  const classes = ["notification-card"];
+
+  if (item.type === "success") {
+    classes.push("notification-success");
+  } else if (item.type === "warning") {
+    classes.push("notification-warning");
+  } else if (item.type === "danger") {
+    classes.push("notification-danger");
+  } else {
+    classes.push("notification-info");
+  }
+
+  if (!readNotificationKeys.includes(item.key)) {
+    classes.push("notification-unread");
+  }
+
+  return classes.join(" ");
+}
+
+async function persistNotificationSnapshot() {
+  if (!currentUser) return;
+
+  try {
+    await setDoc(
+      doc(db, "users", currentUser.uid),
+      {
+        notifications: notificationItems.map((item) => ({
+          key: item.key,
+          type: item.type,
+          title: item.title,
+          message: item.message,
+          icon: item.icon || "🔔",
+          generatedAt: new Date().toISOString(),
+          read: readNotificationKeys.includes(item.key)
+        }))
+      },
+      { merge: true }
+    );
+  } catch (error) {
+    console.warn("Notification snapshot save skipped:", error);
+  }
 }
 
 function getDeadlineReminderText(deadlineDate) {
@@ -1587,6 +1898,16 @@ function normalizeHttpUrl(value) {
 
 function normalizeText(value) {
   return String(value || "").trim().toLowerCase();
+}
+
+function normalizeArray(value) {
+  if (!Array.isArray(value)) {
+    return [];
+  }
+
+  return value
+    .map((item) => String(item || "").trim())
+    .filter(Boolean);
 }
 
 function createStrongText(text) {
