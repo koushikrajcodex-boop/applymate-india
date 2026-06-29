@@ -18,7 +18,8 @@ import {
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const ADMIN_EMAILS = [
-  "lastwarrior324@gmail.com"
+  "lastwarrior324@gmail.com",
+  "koushikrajcodex@gmail.com"
 ];
 
 const adminLogoutBtn = document.getElementById("adminLogoutBtn");
