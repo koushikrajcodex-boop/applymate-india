@@ -378,6 +378,27 @@ button:not(.tab-btn) {
   background: var(--primary-dark);
 }
 
+.status-select {
+  min-width: 220px;
+}
+
+/* FILTER PANEL */
+.filter-panel {
+  margin: 22px 0;
+  padding: 22px;
+  border-radius: 20px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+}
+
+.filter-panel h3 {
+  margin: 0 0 6px;
+}
+
+.filter-panel .button-row {
+  margin-top: 16px;
+}
+
 /* SCHOLARSHIP CARDS */
 #resultSummary,
 #results {
@@ -424,6 +445,7 @@ button:not(.tab-btn) {
   margin-top: 12px;
 }
 
+/* DEADLINE REMINDERS */
 .deadline-reminder {
   margin-top: 10px;
   padding: 12px 14px;
@@ -453,6 +475,71 @@ button:not(.tab-btn) {
   background: #fef3f2;
   color: #b42318;
   border-color: #fecdca;
+}
+
+/* COMPARISON */
+.compare-list {
+  margin-top: 12px;
+}
+
+.compare-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin: 14px 0;
+}
+
+.compare-chip {
+  padding: 9px 12px;
+  border-radius: 999px;
+  background: #eef4ff;
+  color: #1e3a8a;
+  border: 1px solid #c7d7fe;
+  font-weight: 800;
+}
+
+.compare-chip:hover {
+  background: #dbeafe;
+}
+
+.comparison-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+  margin-top: 18px;
+  border-radius: 18px;
+  border: 1px solid var(--border);
+}
+
+.comparison-table {
+  width: 100%;
+  min-width: 760px;
+  border-collapse: collapse;
+  background: #ffffff;
+}
+
+.comparison-table th,
+.comparison-table td {
+  padding: 14px 16px;
+  border-bottom: 1px solid var(--border);
+  text-align: left;
+  vertical-align: top;
+}
+
+.comparison-table th {
+  background: #eef4ff;
+  color: #1e3a8a;
+  font-weight: 900;
+}
+
+.comparison-table td:first-child {
+  font-weight: 900;
+  color: var(--text);
+  background: #f8fafc;
+  width: 180px;
+}
+
+.comparison-table tr:last-child td {
+  border-bottom: none;
 }
 
 /* FOOTER */
@@ -500,6 +587,10 @@ footer {
 
   .field.full {
     grid-column: auto;
+  }
+
+  .card-heading {
+    flex-direction: column;
   }
 }
 
@@ -553,7 +644,18 @@ footer {
   .secondary-hero-btn,
   .text-btn,
   .secondary-btn,
-  .button-row button {
+  .button-row button,
+  .status-select {
     width: 100%;
+  }
+
+  .filter-panel {
+    padding: 16px;
+  }
+
+  .comparison-table th,
+  .comparison-table td {
+    padding: 12px;
+    font-size: 0.9rem;
   }
 }
