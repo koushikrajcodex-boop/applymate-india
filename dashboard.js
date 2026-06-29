@@ -35,6 +35,19 @@ const profileMessage = document.getElementById("profileMessage");
 
 const recommendationSummary = document.getElementById("recommendationSummary");
 const recommendationList = document.getElementById("recommendationList");
+const recommendationSearch = document.getElementById("recommendationSearch");
+const filterState = document.getElementById("filterState");
+const filterEducation = document.getElementById("filterEducation");
+const filterCategory = document.getElementById("filterCategory");
+const filterGender = document.getElementById("filterGender");
+const filterDisability = document.getElementById("filterDisability");
+const filterDeadline = document.getElementById("filterDeadline");
+const resetFiltersBtn = document.getElementById("resetFiltersBtn");
+const recommendationCount = document.getElementById("recommendationCount");
+
+const compareList = document.getElementById("compareList");
+const clearCompareBtn = document.getElementById("clearCompareBtn");
+const comparisonTableWrap = document.getElementById("comparisonTableWrap");
 
 const savedName = document.getElementById("savedName");
 const savedLink = document.getElementById("savedLink");
@@ -49,6 +62,7 @@ const applicationList = document.getElementById("applicationList");
 
 const LAST_VERIFIED = "28 June 2026";
 const DEADLINE_SOON_DAYS = 15;
+const MAX_COMPARE_ITEMS = 4;
 
 const VALID_APPLICATION_STATUSES = [
   "Not Applied",
@@ -77,6 +91,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 200000,
     minPercentage: 0,
+    amount: "Varies as per official rules",
     deadline: "Check official Jnanabhumi portal",
     deadlineDate: "",
     link: "https://jnanabhumi.ap.gov.in/",
@@ -95,6 +110,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 200000,
     minPercentage: 0,
+    amount: "Varies as per official rules",
     deadline: "Check official Jnanabhumi portal",
     deadlineDate: "",
     link: "https://jnanabhumi.ap.gov.in/",
@@ -113,6 +129,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 200000,
     minPercentage: 0,
+    amount: "Varies as per official rules",
     deadline: "Check official Telangana ePASS portal",
     deadlineDate: "",
     link: "https://telanganaepass.cgg.gov.in/",
@@ -131,6 +148,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 200000,
     minPercentage: 0,
+    amount: "Varies as per official rules",
     deadline: "Check official Telangana ePASS portal",
     deadlineDate: "",
     link: "https://telanganaepass.cgg.gov.in/",
@@ -149,6 +167,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 350000,
     minPercentage: 55,
+    amount: "Varies as per official rules",
     deadline: "Check NSP / state education department",
     deadlineDate: "",
     link: "https://scholarships.gov.in/",
@@ -167,6 +186,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 450000,
     minPercentage: 80,
+    amount: "Varies as per official rules",
     deadline: "Check National Scholarship Portal",
     deadlineDate: "",
     link: "https://scholarships.gov.in/",
@@ -185,6 +205,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 800000,
     minPercentage: 0,
+    amount: "Varies as per official rules",
     deadline: "Check AICTE / NSP portal",
     deadlineDate: "",
     link: "https://www.aicte-india.org/",
@@ -203,6 +224,7 @@ const scholarships = [
     disability: "yes",
     maxIncome: 800000,
     minPercentage: 0,
+    amount: "Varies as per official rules",
     deadline: "Check AICTE / NSP portal",
     deadlineDate: "",
     link: "https://www.aicte-india.org/",
@@ -221,6 +243,7 @@ const scholarships = [
     disability: "any",
     maxIncome: 200000,
     minPercentage: 50,
+    amount: "Varies as per official rules",
     deadline: "Check NSP",
     deadlineDate: "",
     link: "https://scholarships.gov.in/",
@@ -239,6 +262,7 @@ const scholarships = [
     disability: "yes",
     maxIncome: 250000,
     minPercentage: 0,
+    amount: "Varies as per official rules",
     deadline: "Check NSP",
     deadlineDate: "",
     link: "https://scholarships.gov.in/",
@@ -250,6 +274,9 @@ const scholarships = [
 ];
 
 let currentUser = null;
+let latestRecommendedScholarships = [];
+let filteredRecommendedScholarships = [];
+let compareScholarships = [];
 
 onAuthStateChanged(auth, async (user) => {
   if (!user) {
@@ -264,6 +291,9 @@ onAuthStateChanged(auth, async (user) => {
   }
 
   try {
+    setupFilterEvents();
+    setupComparisonEvents();
+
     await Promise.all([
       loadProfile(),
       loadSavedScholarships(),
@@ -444,6 +474,43 @@ addApplicationBtn?.addEventListener("click", async () => {
   }
 });
 
+function setupFilterEvents() {
+  const fields = [
+    recommendationSearch,
+    filterState,
+    filterEducation,
+    filterCategory,
+    filterGender,
+    filterDisability,
+    filterDeadline
+  ];
+
+  fields.forEach((field) => {
+    field?.addEventListener("input", applyRecommendationFilters);
+    field?.addEventListener("change", applyRecommendationFilters);
+  });
+
+  resetFiltersBtn?.addEventListener("click", () => {
+    setElementValue(recommendationSearch, "");
+    setElementValue(filterState, "");
+    setElementValue(filterEducation, "");
+    setElementValue(filterCategory, "");
+    setElementValue(filterGender, "");
+    setElementValue(filterDisability, "");
+    setElementValue(filterDeadline, "");
+
+    applyRecommendationFilters();
+  });
+}
+
+function setupComparisonEvents() {
+  clearCompareBtn?.addEventListener("click", () => {
+    compareScholarships = [];
+    renderComparison();
+    applyRecommendationFilters();
+  });
+}
+
 async function loadProfile() {
   if (!currentUser) return;
 
@@ -487,26 +554,113 @@ function renderRecommendations(profile) {
     !normalizedProfile.category ||
     !normalizedProfile.income
   ) {
+    latestRecommendedScholarships = [];
+    filteredRecommendedScholarships = [];
+
     recommendationSummary.textContent =
       "Complete state, education, category, and income to get automatic recommendations.";
+
     recommendationList.replaceChildren();
+    setText(recommendationCount, "");
+    renderComparison();
     return;
   }
 
   const matches = getRecommendedScholarships(normalizedProfile);
 
   if (matches.length === 0) {
+    latestRecommendedScholarships = [];
+    filteredRecommendedScholarships = [];
+
     recommendationSummary.textContent = getNoMatchReason(normalizedProfile);
     recommendationList.replaceChildren();
+    setText(recommendationCount, "");
+    renderComparison();
     return;
   }
+
+  latestRecommendedScholarships = matches;
 
   recommendationSummary.textContent =
     `You are eligible for these ${matches.length} scholarships based on your saved profile.`;
 
+  applyRecommendationFilters();
+  renderComparison();
+}
+
+function applyRecommendationFilters() {
+  if (!recommendationList) return;
+
+  const searchText = normalizeText(recommendationSearch?.value || "");
+  const stateValue = filterState?.value || "";
+  const educationValue = filterEducation?.value || "";
+  const categoryValue = filterCategory?.value || "";
+  const genderValue = filterGender?.value || "";
+  const disabilityValue = filterDisability?.value || "";
+  const deadlineValue = filterDeadline?.value || "";
+
+  filteredRecommendedScholarships = latestRecommendedScholarships.filter((scholarship) => {
+    const searchableText = normalizeText([
+      scholarship.name,
+      scholarship.stateLabel,
+      scholarship.sourceName,
+      scholarship.eligibilityNote,
+      scholarship.incomeNote,
+      scholarship.deadline,
+      scholarship.amount
+    ].join(" "));
+
+    const searchMatch = !searchText || searchableText.includes(searchText);
+    const stateMatch = !stateValue || scholarship.state === stateValue;
+    const educationMatch = !educationValue || scholarship.education.includes(educationValue);
+    const categoryMatch = !categoryValue || scholarship.categories.includes(categoryValue);
+
+    const genderMatch =
+      !genderValue ||
+      scholarship.genders.includes(genderValue) ||
+      scholarship.genders.includes("any");
+
+    const disabilityMatch =
+      !disabilityValue ||
+      scholarship.disability === disabilityValue ||
+      scholarship.disability === "any";
+
+    const deadlineMatch =
+      !deadlineValue ||
+      getScholarshipDeadlineStatus(scholarship.deadlineDate) === deadlineValue;
+
+    return (
+      searchMatch &&
+      stateMatch &&
+      educationMatch &&
+      categoryMatch &&
+      genderMatch &&
+      disabilityMatch &&
+      deadlineMatch
+    );
+  });
+
   recommendationList.replaceChildren();
 
-  matches.forEach((scholarship) => {
+  if (latestRecommendedScholarships.length === 0) {
+    setText(recommendationCount, "");
+    return;
+  }
+
+  setText(
+    recommendationCount,
+    `Showing ${filteredRecommendedScholarships.length} of ${latestRecommendedScholarships.length} recommended scholarships.`
+  );
+
+  if (filteredRecommendedScholarships.length === 0) {
+    showContainerMessage(
+      recommendationList,
+      "No recommended scholarships match your current filters. Try resetting filters."
+    );
+    return;
+  }
+
+  filteredRecommendedScholarships.forEach((scholarship) => {
     recommendationList.appendChild(createRecommendationCard(scholarship));
   });
 }
@@ -651,6 +805,13 @@ function createRecommendationCard(scholarship) {
   const heading = document.createElement("h3");
   heading.textContent = scholarship.name;
 
+  const amount = document.createElement("p");
+  amount.className = "info";
+  amount.append(
+    createStrongText("Amount:"),
+    document.createTextNode(` ${scholarship.amount || "Varies as per official rules"}`)
+  );
+
   const eligibility = document.createElement("p");
   eligibility.className = "info";
   eligibility.append(
@@ -745,11 +906,23 @@ function createRecommendationCard(scholarship) {
     }
   });
 
-  actions.append(officialLink, saveButton, trackButton);
+  const compareButton = document.createElement("button");
+  compareButton.type = "button";
+  compareButton.className = "secondary-btn";
+  compareButton.textContent = isScholarshipInCompare(scholarship)
+    ? "Remove Compare"
+    : "Compare";
+
+  compareButton.addEventListener("click", () => {
+    toggleCompareScholarship(scholarship);
+  });
+
+  actions.append(officialLink, saveButton, trackButton, compareButton);
 
   card.append(
     badge,
     heading,
+    amount,
     eligibility,
     income,
     deadline,
@@ -759,6 +932,164 @@ function createRecommendationCard(scholarship) {
   );
 
   return card;
+}
+
+function toggleCompareScholarship(scholarship) {
+  const exists = isScholarshipInCompare(scholarship);
+
+  if (exists) {
+    compareScholarships = compareScholarships.filter((item) => {
+      return normalizeText(item.name) !== normalizeText(scholarship.name);
+    });
+
+    renderComparison();
+    applyRecommendationFilters();
+    return;
+  }
+
+  if (compareScholarships.length >= MAX_COMPARE_ITEMS) {
+    alert(`You can compare up to ${MAX_COMPARE_ITEMS} scholarships at a time.`);
+    return;
+  }
+
+  compareScholarships.push(scholarship);
+  renderComparison();
+  applyRecommendationFilters();
+}
+
+function isScholarshipInCompare(scholarship) {
+  return compareScholarships.some((item) => {
+    return normalizeText(item.name) === normalizeText(scholarship.name);
+  });
+}
+
+function renderComparison() {
+  if (!compareList || !comparisonTableWrap) return;
+
+  compareList.replaceChildren();
+  comparisonTableWrap.replaceChildren();
+
+  if (compareScholarships.length === 0) {
+    showContainerMessage(compareList, "No scholarships selected for comparison yet.");
+    return;
+  }
+
+  const selectedHeading = document.createElement("p");
+  selectedHeading.className = "mini-note";
+  selectedHeading.textContent =
+    `${compareScholarships.length} scholarship${compareScholarships.length === 1 ? "" : "s"} selected.`;
+
+  const chipRow = document.createElement("div");
+  chipRow.className = "compare-chip-row";
+
+  compareScholarships.forEach((scholarship) => {
+    const chip = document.createElement("button");
+    chip.type = "button";
+    chip.className = "compare-chip";
+    chip.textContent = `${scholarship.name} ×`;
+
+    chip.addEventListener("click", () => {
+      compareScholarships = compareScholarships.filter((item) => {
+        return normalizeText(item.name) !== normalizeText(scholarship.name);
+      });
+
+      renderComparison();
+      applyRecommendationFilters();
+    });
+
+    chipRow.appendChild(chip);
+  });
+
+  compareList.append(selectedHeading, chipRow);
+  comparisonTableWrap.appendChild(createComparisonTable(compareScholarships));
+}
+
+function createComparisonTable(items) {
+  const table = document.createElement("table");
+  table.className = "comparison-table";
+
+  const thead = document.createElement("thead");
+  const headRow = document.createElement("tr");
+
+  const featureHead = document.createElement("th");
+  featureHead.textContent = "Feature";
+  headRow.appendChild(featureHead);
+
+  items.forEach((item) => {
+    const th = document.createElement("th");
+    th.textContent = item.name;
+    headRow.appendChild(th);
+  });
+
+  thead.appendChild(headRow);
+
+  const tbody = document.createElement("tbody");
+
+  const rows = [
+    {
+      label: "State",
+      value: (item) => item.stateLabel
+    },
+    {
+      label: "Amount",
+      value: (item) => item.amount || "Varies as per official rules"
+    },
+    {
+      label: "Course / Education",
+      value: (item) => formatList(item.education)
+    },
+    {
+      label: "Category",
+      value: (item) => formatList(item.categories)
+    },
+    {
+      label: "Gender",
+      value: (item) => formatList(item.genders)
+    },
+    {
+      label: "Disability",
+      value: (item) => formatDisability(item.disability)
+    },
+    {
+      label: "Income Limit",
+      value: (item) => `Up to ₹${formatIndianNumber(item.maxIncome)}`
+    },
+    {
+      label: "Minimum Marks",
+      value: (item) => item.minPercentage > 0 ? `${item.minPercentage}%` : "Not specified"
+    },
+    {
+      label: "Deadline",
+      value: (item) => item.deadline
+    },
+    {
+      label: "Deadline Status",
+      value: (item) => getDeadlineReminderText(item.deadlineDate)
+    },
+    {
+      label: "Official Portal",
+      value: (item) => item.sourceName || "Official portal"
+    }
+  ];
+
+  rows.forEach((row) => {
+    const tr = document.createElement("tr");
+
+    const labelCell = document.createElement("td");
+    labelCell.textContent = row.label;
+    tr.appendChild(labelCell);
+
+    items.forEach((item) => {
+      const td = document.createElement("td");
+      td.textContent = row.value(item);
+      tr.appendChild(td);
+    });
+
+    tbody.appendChild(tr);
+  });
+
+  table.append(thead, tbody);
+  return table;
 }
 
 async function saveScholarshipToFirestore(item) {
@@ -1077,21 +1408,39 @@ function getDeadlineReminderText(deadlineDate) {
 }
 
 function getDeadlineReminderClass(deadlineDate) {
-  const deadlineInfo = getDeadlineInfo(deadlineDate);
+  const status = getScholarshipDeadlineStatus(deadlineDate);
 
-  if (!deadlineInfo.hasDate) {
+  if (status === "unknown") {
     return "mini-note deadline-reminder deadline-unknown";
   }
 
-  if (deadlineInfo.daysLeft < 0) {
+  if (status === "expired") {
     return "mini-note deadline-reminder deadline-expired";
   }
 
-  if (deadlineInfo.daysLeft <= DEADLINE_SOON_DAYS) {
+  if (status === "soon") {
     return "mini-note deadline-reminder deadline-soon";
   }
 
   return "mini-note deadline-reminder deadline-safe";
+}
+
+function getScholarshipDeadlineStatus(deadlineDate) {
+  const deadlineInfo = getDeadlineInfo(deadlineDate);
+
+  if (!deadlineInfo.hasDate) {
+    return "unknown";
+  }
+
+  if (deadlineInfo.daysLeft < 0) {
+    return "expired";
+  }
+
+  if (deadlineInfo.daysLeft <= DEADLINE_SOON_DAYS) {
+    return "soon";
+  }
+
+  return "safe";
 }
 
 function getDeadlineInfo(deadlineDate) {
@@ -1266,6 +1615,12 @@ function setElementValue(element, value) {
   }
 }
 
+function setText(element, value) {
+  if (element) {
+    element.textContent = value;
+  }
+}
+
 function setButtonBusy(button, busy, busyText = "Working...") {
   if (!button) return;
 
@@ -1279,4 +1634,61 @@ function setButtonBusy(button, busy, busyText = "Working...") {
   button.textContent = button.dataset.originalText || button.textContent;
   button.disabled = false;
   delete button.dataset.originalText;
+}
+
+function formatList(items) {
+  if (!Array.isArray(items) || items.length === 0) {
+    return "Not specified";
+  }
+
+  return items
+    .map((item) => {
+      const text = String(item || "").trim();
+
+      const labels = {
+        "andhra-pradesh": "Andhra Pradesh",
+        "telangana": "Telangana",
+        "national": "National",
+        "school": "School",
+        "intermediate": "Intermediate",
+        "degree": "Degree",
+        "engineering": "Engineering",
+        "pg": "Post Graduation",
+        "general": "General",
+        "sc": "SC",
+        "st": "ST",
+        "bc": "BC",
+        "obc": "OBC",
+        "ebc": "EBC",
+        "ews": "EWS",
+        "minority": "Minority",
+        "kapu": "Kapu",
+        "disabled": "Disabled",
+        "any": "Any",
+        "male": "Male",
+        "female": "Female"
+      };
+
+      return labels[text] || text;
+    })
+    .join(", ");
+}
+
+function formatDisability(value) {
+  const text = normalizeText(value);
+
+  if (text === "yes") return "Only for disabled students";
+  if (text === "no") return "Not disability-specific";
+
+  return "Any";
+}
+
+function formatIndianNumber(value) {
+  const number = Number(value || 0);
+
+  if (!Number.isFinite(number)) {
+    return "0";
+  }
+
+  return number.toLocaleString("en-IN");
 }
