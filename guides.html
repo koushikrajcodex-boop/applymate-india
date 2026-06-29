@@ -4,12 +4,46 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-  <title>Dashboard - ApplyMate India</title>
-  <meta name="description" content="Student dashboard for ApplyMate India with personalized scholarship recommendations, notifications, filters, saved scholarships, comparison, and application tracker." />
-  <meta name="robots" content="noindex, nofollow" />
+  <title>Scholarship Mistakes to Avoid - ApplyMate India</title>
+  <meta name="description" content="Learn the most common scholarship application mistakes students should avoid, including wrong documents, late submission, incorrect bank details, and missing verification steps." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/scholarship-mistakes-to-avoid.html" />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="assistant.css" />
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "What is the biggest scholarship application mistake?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "One major scholarship application mistake is waiting until the last date. Students should apply early because portals may slow down and documents or verification steps may take extra time."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Why do scholarship applications get rejected?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Scholarship applications may be rejected because of wrong documents, spelling mismatch, incorrect bank details, wrong scheme selection, income limit issues, or missed verification steps."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "How can students avoid scholarship delays?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Students can avoid delays by checking official eligibility rules, uploading clear documents, using correct details, saving acknowledgement numbers, and tracking institute verification status regularly."
+        }
+      }
+    ]
+  }
+  </script>
 </head>
 <body>
 
@@ -26,322 +60,145 @@
       <a href="scholarships.html">Scholarships</a>
       <a href="guides.html">Guides</a>
       <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="editorial-policy.html">Editorial Policy</a>
       <a href="contact.html">Contact</a>
-
-      <button id="notificationToggleBtn" class="notification-btn" type="button" aria-label="Open notifications">
-        🔔
-        <span id="notificationBadge" class="notification-badge hidden">0</span>
-      </button>
-
-      <button id="logoutBtn" class="secondary-btn">Logout</button>
     </div>
   </nav>
 
   <main class="content-page">
-
-    <section id="notificationPanel" class="content-card notification-panel hidden">
-      <div class="card-heading">
-        <div>
-          <h2>Notification Center</h2>
-          <p class="mini-note">
-            Deadline alerts, profile reminders, saved scholarship updates, and application tracker notices.
-          </p>
-        </div>
-
-        <button id="markNotificationsReadBtn" class="secondary-btn" type="button">
-          Mark All as Read
-        </button>
-      </div>
-
-      <div id="notificationList">
-        <p class="mini-note">Loading notifications...</p>
-      </div>
-    </section>
-
     <section class="content-card">
-      <h1>Student Dashboard</h1>
-      <span class="last-updated" id="userEmail">Checking login...</span>
+      <h1>Scholarship Mistakes Students Should Avoid</h1>
+      <span class="last-updated">Last updated: June 2026</span>
 
       <p>
-        Manage your profile, get personalized scholarship recommendations,
-        search and filter scholarships, compare schemes, save scholarships,
-        track applications, and receive useful alerts.
+        Many students lose scholarship opportunities not because they are ineligible, but because of simple mistakes
+        during registration, document upload, application submission, or verification.
+      </p>
+
+      <p>
+        This guide explains common scholarship mistakes and how students can avoid them before applying on official portals
+        such as NSP, Jnanabhumi, Telangana ePASS, AICTE, university portals, and private scholarship websites.
       </p>
 
       <div class="notice-box">
-        This dashboard is for personal tracking only. Final scholarship applications must be submitted on official portals.
+        ApplyMate India is an informational student helper. Always verify final application rules, deadlines,
+        and required documents on the official scholarship portal.
       </div>
-    </section>
 
-    <section class="content-card">
-      <h2>Personal Profile</h2>
-      <p class="mini-note">
-        Complete your profile to automatically see scholarships you may be eligible for.
+      <h2>1. Waiting until the last date</h2>
+      <p>
+        Scholarship portals can become slow near deadlines. Students may also need time for document corrections,
+        institute verification, or bank detail updates. Apply early whenever possible.
       </p>
 
-      <div class="form-grid">
-        <div class="field">
-          <label for="profileName">Full Name</label>
-          <input type="text" id="profileName" placeholder="Your name" />
-        </div>
+      <h2>2. Entering name differently from documents</h2>
+      <p>
+        Your name should match your official documents such as Aadhaar, marks memo, school or college records,
+        and bank account details where required. Small spelling differences can create verification problems.
+      </p>
 
-        <div class="field">
-          <label for="profileState">State</label>
-          <select id="profileState">
-            <option value="">Select state</option>
-            <option value="Andhra Pradesh">Andhra Pradesh</option>
-            <option value="Telangana">Telangana</option>
-            <option value="National">National / Other</option>
-          </select>
-        </div>
+      <h2>3. Uploading unclear documents</h2>
+      <p>
+        Blurry images, cropped certificates, wrong file formats, or unreadable documents may lead to rejection
+        or correction requests.
+      </p>
 
-        <div class="field">
-          <label for="profileEducation">Education</label>
-          <select id="profileEducation">
-            <option value="">Select education</option>
-            <option value="School">School</option>
-            <option value="Intermediate">Intermediate</option>
-            <option value="Degree">Degree</option>
-            <option value="Engineering">Engineering</option>
-            <option value="Post Graduation">Post Graduation</option>
-          </select>
-        </div>
+      <h2>4. Selecting the wrong scholarship scheme</h2>
+      <p>
+        Some scholarships are only for specific states, categories, gender, courses, income groups, or education levels.
+        Read the scheme guidelines carefully before applying.
+      </p>
 
-        <div class="field">
-          <label for="profileCategory">Category</label>
-          <select id="profileCategory">
-            <option value="">Select category</option>
-            <option value="General">General</option>
-            <option value="SC">SC</option>
-            <option value="ST">ST</option>
-            <option value="BC/OBC">BC / OBC</option>
-            <option value="Minority">Minority</option>
-            <option value="EWS/EBC">EWS / EBC</option>
-            <option value="Kapu">Kapu</option>
-          </select>
-        </div>
+      <h2>5. Ignoring income limit rules</h2>
+      <p>
+        Many scholarships have strict annual family income limits. Students should check whether the income certificate
+        amount fits the scheme rules before applying.
+      </p>
 
-        <div class="field">
-          <label for="profileGender">Gender</label>
-          <select id="profileGender">
-            <option value="">Select gender</option>
-            <option value="Male">Male</option>
-            <option value="Female">Female</option>
-            <option value="Prefer not to say">Prefer not to say</option>
-          </select>
-        </div>
+      <h2>6. Wrong bank account details</h2>
+      <p>
+        Incorrect account number, IFSC code, inactive bank account, or mismatch in account holder details can delay
+        scholarship payments.
+      </p>
 
-        <div class="field">
-          <label for="profileDisability">Disability</label>
-          <select id="profileDisability">
-            <option value="">Select</option>
-            <option value="No">No</option>
-            <option value="Yes">Yes</option>
-          </select>
-        </div>
+      <h2>7. Forgetting institute verification</h2>
+      <p>
+        Some scholarship applications must be verified by school, college, or institution. Submitting the form alone
+        may not be enough. Students should track the status after submission.
+      </p>
 
-        <div class="field">
-          <label for="profileIncome">Annual Family Income</label>
-          <input type="number" id="profileIncome" placeholder="Example: 200000" />
-        </div>
+      <h2>8. Not saving acknowledgement details</h2>
+      <p>
+        After submission, save your application ID, acknowledgement number, login details, and screenshots of important
+        status pages. These may help during tracking or support requests.
+      </p>
 
-        <div class="field">
-          <label for="profilePercentage">Percentage / CGPA</label>
-          <input type="text" id="profilePercentage" placeholder="Example: 85% or 8.5 CGPA" />
-        </div>
-      </div>
+      <h2>9. Using inactive mobile number or email</h2>
+      <p>
+        Scholarship portals may send OTPs, correction notices, status updates, or login information to your registered
+        mobile number or email. Use details you can access.
+      </p>
 
-      <div class="button-row">
-        <button id="saveProfileBtn">Save Profile</button>
-      </div>
+      <h2>10. Not checking correction window</h2>
+      <p>
+        If an application has errors, some portals may provide a correction window. Missing that window may result in
+        rejection or delay.
+      </p>
 
-      <p id="profileMessage" class="mini-note"></p>
-    </section>
+      <h2>Quick checklist before applying</h2>
+      <ul>
+        <li>Check official eligibility rules.</li>
+        <li>Check deadline and verification deadline.</li>
+        <li>Keep Aadhaar, income certificate, marks memo, and bank details ready.</li>
+        <li>Use correct name and date of birth.</li>
+        <li>Upload clear documents.</li>
+        <li>Save application ID after submission.</li>
+        <li>Track application status regularly.</li>
+        <li>Contact institution if verification is pending.</li>
+      </ul>
 
-    <section class="content-card" id="recommendationsSection">
-      <div class="card-heading">
-        <div>
-          <h2>Personalized Scholarship Recommendations</h2>
-          <p id="recommendationSummary" class="mini-note">
-            Save your profile to see automatic scholarship recommendations.
-          </p>
-        </div>
-      </div>
+      <h2>Helpful ApplyMate tools</h2>
+      <p>
+        You can use ApplyMate India to check possible scholarship matches, save scholarships, compare options,
+        and track your application status in your personal dashboard.
+      </p>
 
-      <div class="filter-panel">
-        <h3>Search & Filters</h3>
-        <p class="mini-note">
-          Search your recommended scholarships and filter them by state, course, category, gender, disability, and deadline status.
-        </p>
+      <h2>FAQs</h2>
 
-        <div class="form-grid">
-          <div class="field full">
-            <label for="recommendationSearch">Search Scholarship</label>
-            <input type="search" id="recommendationSearch" placeholder="Search by scholarship name, portal, eligibility, or state..." />
-          </div>
+      <h3>What is the biggest scholarship application mistake?</h3>
+      <p>
+        One major scholarship application mistake is waiting until the last date. Students should apply early because
+        portals may slow down and documents or verification steps may take extra time.
+      </p>
 
-          <div class="field">
-            <label for="filterState">State</label>
-            <select id="filterState">
-              <option value="">All states</option>
-              <option value="andhra-pradesh">Andhra Pradesh</option>
-              <option value="telangana">Telangana</option>
-              <option value="national">National</option>
-            </select>
-          </div>
+      <h3>Why do scholarship applications get rejected?</h3>
+      <p>
+        Scholarship applications may be rejected because of wrong documents, spelling mismatch, incorrect bank details,
+        wrong scheme selection, income limit issues, or missed verification steps.
+      </p>
 
-          <div class="field">
-            <label for="filterEducation">Course / Education</label>
-            <select id="filterEducation">
-              <option value="">All courses</option>
-              <option value="school">School</option>
-              <option value="intermediate">Intermediate</option>
-              <option value="degree">Degree</option>
-              <option value="engineering">Engineering</option>
-              <option value="pg">Post Graduation</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="filterCategory">Category</label>
-            <select id="filterCategory">
-              <option value="">All categories</option>
-              <option value="general">General</option>
-              <option value="sc">SC</option>
-              <option value="st">ST</option>
-              <option value="obc">BC / OBC</option>
-              <option value="minority">Minority</option>
-              <option value="ews">EWS / EBC</option>
-              <option value="kapu">Kapu</option>
-              <option value="disabled">Disabled</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="filterGender">Gender</label>
-            <select id="filterGender">
-              <option value="">All genders</option>
-              <option value="any">Any</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="filterDisability">Disability</label>
-            <select id="filterDisability">
-              <option value="">All</option>
-              <option value="any">Any</option>
-              <option value="no">No</option>
-              <option value="yes">Yes</option>
-            </select>
-          </div>
-
-          <div class="field">
-            <label for="filterDeadline">Deadline Status</label>
-            <select id="filterDeadline">
-              <option value="">All deadlines</option>
-              <option value="unknown">Date not added</option>
-              <option value="safe">Safe</option>
-              <option value="soon">Closing soon</option>
-              <option value="expired">Expired</option>
-            </select>
-          </div>
-        </div>
-
-        <div class="button-row">
-          <button id="resetFiltersBtn" type="button" class="secondary-btn">Reset Filters</button>
-        </div>
-
-        <p id="recommendationCount" class="mini-note"></p>
-      </div>
-
-      <div id="recommendationList"></div>
-    </section>
-
-    <section class="content-card" id="comparisonSection">
-      <div class="card-heading">
-        <div>
-          <h2>Scholarship Comparison</h2>
-          <p class="mini-note">
-            Select scholarships from recommendations to compare eligibility, income limit, deadline, and official portal.
-          </p>
-        </div>
-      </div>
-
-      <div id="compareList" class="compare-list">
-        <p class="mini-note">No scholarships selected for comparison yet.</p>
-      </div>
+      <h3>How can students avoid scholarship delays?</h3>
+      <p>
+        Students can avoid delays by checking official eligibility rules, uploading clear documents, using correct details,
+        saving acknowledgement numbers, and tracking institute verification status regularly.
+      </p>
 
       <div class="button-row">
-        <button id="clearCompareBtn" type="button" class="secondary-btn">Clear Comparison</button>
+        <a class="text-btn" href="index.html#finder">Check Eligibility</a>
+        <a class="secondary-btn" href="dashboard.html">Open Dashboard</a>
+        <a class="secondary-btn" href="guides.html">Back to Guides</a>
       </div>
-
-      <div id="comparisonTableWrap" class="comparison-table-wrap"></div>
     </section>
-
-    <section class="content-card">
-      <h2>Saved Scholarships</h2>
-      <p>Save scholarships you want to apply for later.</p>
-
-      <div class="form-grid">
-        <div class="field">
-          <label for="savedName">Scholarship Name</label>
-          <input type="text" id="savedName" placeholder="Example: AICTE Pragati Scholarship" />
-        </div>
-
-        <div class="field">
-          <label for="savedLink">Official Link</label>
-          <input type="url" id="savedLink" placeholder="https://..." />
-        </div>
-      </div>
-
-      <div class="button-row">
-        <button id="addSavedBtn">Save Scholarship</button>
-      </div>
-
-      <div id="savedList"></div>
-    </section>
-
-    <section class="content-card">
-      <h2>Application Tracker</h2>
-      <p>Track scholarship applications manually and update their status anytime.</p>
-
-      <div class="form-grid">
-        <div class="field">
-          <label for="appName">Scholarship Name</label>
-          <input type="text" id="appName" placeholder="Example: Telangana ePASS" />
-        </div>
-
-        <div class="field">
-          <label for="appStatus">Status</label>
-          <select id="appStatus">
-            <option value="Not Applied">🟢 Not Applied</option>
-            <option value="Applied">🟡 Applied</option>
-            <option value="Under Review">🔵 Under Review</option>
-            <option value="Approved">✅ Approved</option>
-            <option value="Rejected">❌ Rejected</option>
-          </select>
-        </div>
-
-        <div class="field full">
-          <label for="appNote">Note</label>
-          <input type="text" id="appNote" placeholder="Example: Need income certificate" />
-        </div>
-      </div>
-
-      <div class="button-row">
-        <button id="addApplicationBtn">Add / Track Application</button>
-      </div>
-
-      <div id="applicationList"></div>
-    </section>
-
   </main>
 
   <footer>
     <p>
-      ApplyMate India dashboard is for student planning only. Always apply on official portals.
+      ApplyMate India is an informational tool. Scholarship rules, income limits, deadlines, and required documents may change.
+      Always verify on the official portal before applying.
     </p>
 
     <div class="footer-links">
@@ -359,6 +216,5 @@
 
   <script src="script.js"></script>
   <script src="assistant.js"></script>
-  <script type="module" src="dashboard.js"></script>
 </body>
 </html>
