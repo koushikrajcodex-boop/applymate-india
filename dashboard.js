@@ -48,6 +48,7 @@ const addApplicationBtn = document.getElementById("addApplicationBtn");
 const applicationList = document.getElementById("applicationList");
 
 const LAST_VERIFIED = "28 June 2026";
+const DEADLINE_SOON_DAYS = 15;
 
 const VALID_APPLICATION_STATUSES = [
   "Not Applied",
@@ -77,6 +78,7 @@ const scholarships = [
     maxIncome: 200000,
     minPercentage: 0,
     deadline: "Check official Jnanabhumi portal",
+    deadlineDate: "",
     link: "https://jnanabhumi.ap.gov.in/",
     sourceName: "Official Jnanabhumi Portal",
     eligibilityNote: "For eligible Andhra Pradesh post-matric students. Rules may vary by department and category.",
@@ -94,6 +96,7 @@ const scholarships = [
     maxIncome: 200000,
     minPercentage: 0,
     deadline: "Check official Jnanabhumi portal",
+    deadlineDate: "",
     link: "https://jnanabhumi.ap.gov.in/",
     sourceName: "Official Jnanabhumi Portal",
     eligibilityNote: "For eligible school students in Andhra Pradesh. Exact rules should be checked officially.",
@@ -111,6 +114,7 @@ const scholarships = [
     maxIncome: 200000,
     minPercentage: 0,
     deadline: "Check official Telangana ePASS portal",
+    deadlineDate: "",
     link: "https://telanganaepass.cgg.gov.in/",
     sourceName: "Official Telangana ePASS Portal",
     eligibilityNote: "For eligible Telangana post-matric students from welfare categories.",
@@ -128,6 +132,7 @@ const scholarships = [
     maxIncome: 200000,
     minPercentage: 0,
     deadline: "Check official Telangana ePASS portal",
+    deadlineDate: "",
     link: "https://telanganaepass.cgg.gov.in/",
     sourceName: "Official Telangana ePASS Portal",
     eligibilityNote: "For eligible school students in Telangana.",
@@ -145,6 +150,7 @@ const scholarships = [
     maxIncome: 350000,
     minPercentage: 55,
     deadline: "Check NSP / state education department",
+    deadlineDate: "",
     link: "https://scholarships.gov.in/",
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible school students. Selection and rules depend on official notification.",
@@ -162,6 +168,7 @@ const scholarships = [
     maxIncome: 450000,
     minPercentage: 80,
     deadline: "Check National Scholarship Portal",
+    deadlineDate: "",
     link: "https://scholarships.gov.in/",
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible meritorious college/university students as per official rules.",
@@ -179,6 +186,7 @@ const scholarships = [
     maxIncome: 800000,
     minPercentage: 0,
     deadline: "Check AICTE / NSP portal",
+    deadlineDate: "",
     link: "https://www.aicte-india.org/",
     sourceName: "AICTE",
     eligibilityNote: "For eligible girl students pursuing technical education as per AICTE rules.",
@@ -196,6 +204,7 @@ const scholarships = [
     maxIncome: 800000,
     minPercentage: 0,
     deadline: "Check AICTE / NSP portal",
+    deadlineDate: "",
     link: "https://www.aicte-india.org/",
     sourceName: "AICTE",
     eligibilityNote: "For eligible specially abled students pursuing technical education.",
@@ -213,6 +222,7 @@ const scholarships = [
     maxIncome: 200000,
     minPercentage: 50,
     deadline: "Check NSP",
+    deadlineDate: "",
     link: "https://scholarships.gov.in/",
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible minority community students as per official rules.",
@@ -230,6 +240,7 @@ const scholarships = [
     maxIncome: 250000,
     minPercentage: 0,
     deadline: "Check NSP",
+    deadlineDate: "",
     link: "https://scholarships.gov.in/",
     sourceName: "National Scholarship Portal",
     eligibilityNote: "For eligible students with benchmark disabilities as per official scheme rules.",
@@ -263,6 +274,7 @@ onAuthStateChanged(auth, async (user) => {
     showProfileMessage("Some dashboard data could not be loaded.", true);
   }
 });
+
 logoutBtn?.addEventListener("click", async () => {
   logoutBtn.disabled = true;
 
@@ -543,9 +555,11 @@ function getRecommendedScholarships(profile) {
       if (scholarship.state === profile.state) score += 20;
       if (scholarship.categories.includes(profile.category)) score += 15;
       if (scholarship.genders.includes(profile.gender)) score += 10;
+
       if (scholarship.disability === profile.disability && profile.disability === "yes") {
         score += 15;
       }
+
       if (profile.percentage !== null && profile.percentage >= scholarship.minPercentage) {
         score += 10;
       }
@@ -555,6 +569,7 @@ function getRecommendedScholarships(profile) {
     .filter(Boolean)
     .sort((a, b) => b.score - a.score);
 }
+
 function getNoMatchReason(profile) {
   const possibleByStateEducation = scholarships.filter((scholarship) => {
     const stateMatch =
@@ -657,6 +672,10 @@ function createRecommendationCard(scholarship) {
     document.createTextNode(` ${scholarship.deadline}`)
   );
 
+  const deadlineReminder = document.createElement("p");
+  deadlineReminder.className = getDeadlineReminderClass(scholarship.deadlineDate);
+  deadlineReminder.textContent = getDeadlineReminderText(scholarship.deadlineDate);
+
   const verified = document.createElement("p");
   verified.className = "info";
   verified.append(
@@ -686,6 +705,8 @@ function createRecommendationCard(scholarship) {
       await saveScholarshipToFirestore({
         name: scholarship.name,
         link: scholarship.link,
+        deadline: scholarship.deadline,
+        deadlineDate: scholarship.deadlineDate,
         source: "dashboard-recommendation"
       });
 
@@ -710,7 +731,7 @@ function createRecommendationCard(scholarship) {
       await addDoc(collection(db, "users", currentUser.uid, "applications"), {
         name: scholarship.name,
         status: "Not Applied",
-        note: "Added from personalized recommendations.",
+        note: `Added from personalized recommendations. ${getDeadlineReminderText(scholarship.deadlineDate)}`,
         createdAt: serverTimestamp(),
         updatedAt: serverTimestamp()
       });
@@ -732,6 +753,7 @@ function createRecommendationCard(scholarship) {
     eligibility,
     income,
     deadline,
+    deadlineReminder,
     verified,
     actions
   );
@@ -760,6 +782,8 @@ async function saveScholarshipToFirestore(item) {
   await addDoc(collection(db, "users", currentUser.uid, "savedScholarships"), {
     name,
     link,
+    deadline: String(item.deadline || "").trim(),
+    deadlineDate: String(item.deadlineDate || "").trim(),
     source: item.source || "dashboard",
     createdAt: serverTimestamp()
   });
@@ -867,6 +891,17 @@ function createSavedScholarshipCard(documentId, item) {
       : "No link added.";
   }
 
+  const deadlineParagraph = document.createElement("p");
+  deadlineParagraph.className = "info";
+  deadlineParagraph.append(
+    createStrongText("Deadline:"),
+    document.createTextNode(` ${item.deadline || "Check official portal"}`)
+  );
+
+  const deadlineReminder = document.createElement("p");
+  deadlineReminder.className = getDeadlineReminderClass(item.deadlineDate);
+  deadlineReminder.textContent = getDeadlineReminderText(item.deadlineDate);
+
   const removeButton = document.createElement("button");
   removeButton.className = "secondary-btn";
   removeButton.type = "button";
@@ -897,7 +932,15 @@ function createSavedScholarshipCard(documentId, item) {
     }
   });
 
-  card.append(badge, heading, linkParagraph, removeButton);
+  card.append(
+    badge,
+    heading,
+    linkParagraph,
+    deadlineParagraph,
+    deadlineReminder,
+    removeButton
+  );
+
   return card;
 }
 
@@ -1009,6 +1052,86 @@ function createApplicationCard(documentId, item) {
   );
 
   return card;
+}
+
+function getDeadlineReminderText(deadlineDate) {
+  const deadlineInfo = getDeadlineInfo(deadlineDate);
+
+  if (!deadlineInfo.hasDate) {
+    return "⏰ Reminder: Official deadline date is not added yet. Check the official portal before applying.";
+  }
+
+  if (deadlineInfo.daysLeft < 0) {
+    return "⛔ Deadline status: This deadline appears to be over. Check the official portal for reopening or the next cycle.";
+  }
+
+  if (deadlineInfo.daysLeft === 0) {
+    return "🚨 Deadline reminder: Last day to apply. Verify the official portal immediately.";
+  }
+
+  if (deadlineInfo.daysLeft <= DEADLINE_SOON_DAYS) {
+    return `⚠️ Deadline reminder: ${deadlineInfo.daysLeft} day${deadlineInfo.daysLeft === 1 ? "" : "s"} left to apply.`;
+  }
+
+  return `✅ Deadline reminder: ${deadlineInfo.daysLeft} days left. You still have time, but apply early.`;
+}
+
+function getDeadlineReminderClass(deadlineDate) {
+  const deadlineInfo = getDeadlineInfo(deadlineDate);
+
+  if (!deadlineInfo.hasDate) {
+    return "mini-note deadline-reminder deadline-unknown";
+  }
+
+  if (deadlineInfo.daysLeft < 0) {
+    return "mini-note deadline-reminder deadline-expired";
+  }
+
+  if (deadlineInfo.daysLeft <= DEADLINE_SOON_DAYS) {
+    return "mini-note deadline-reminder deadline-soon";
+  }
+
+  return "mini-note deadline-reminder deadline-safe";
+}
+
+function getDeadlineInfo(deadlineDate) {
+  const text = String(deadlineDate || "").trim();
+
+  if (!text) {
+    return {
+      hasDate: false,
+      daysLeft: null
+    };
+  }
+
+  const deadline = new Date(`${text}T23:59:59`);
+
+  if (Number.isNaN(deadline.getTime())) {
+    return {
+      hasDate: false,
+      daysLeft: null
+    };
+  }
+
+  const now = new Date();
+  const startOfToday = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+
+  const endOfDeadline = new Date(
+    deadline.getFullYear(),
+    deadline.getMonth(),
+    deadline.getDate(),
+    23,
+    59,
+    59
+  );
+
+  const millisecondsPerDay = 1000 * 60 * 60 * 24;
+  const daysLeft = Math.ceil((endOfDeadline - startOfToday) / millisecondsPerDay);
+
+  return {
+    hasDate: true,
+    daysLeft
+  };
 }
 
 function normalizeProfile(profile) {
