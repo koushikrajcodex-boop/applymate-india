@@ -1,0 +1,632 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Active Scholarship Import - ApplyMate India</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css?v=active-import1" />
+  <style>
+    .active-import-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(300px, 0.8fr);
+      gap: 22px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .active-preview-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .active-preview-card {
+      padding: 16px;
+      border-radius: 18px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .active-preview-card h3 {
+      margin: 8px 0 10px;
+      line-height: 1.25;
+    }
+
+    .active-preview-card.invalid {
+      border-color: #fecdca;
+      background: #fffbfa;
+    }
+
+    .active-preview-card.valid {
+      border-color: #abefc6;
+      background: #f6fef9;
+    }
+
+    .active-preview-meta {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .active-preview-meta p,
+    .active-warning-list li {
+      font-size: 0.92rem;
+    }
+
+    .active-preview-meta p {
+      margin: 0;
+      padding: 10px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: #475467;
+    }
+
+    .active-preview-meta strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
+    .active-warning-list {
+      margin: 10px 0 0 18px;
+      color: #b42318;
+    }
+
+    .active-pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .active-pill {
+      display: inline-flex;
+      padding: 7px 10px;
+      border-radius: 999px;
+      font-size: 0.86rem;
+      font-weight: 800;
+      background: #eef4ff;
+      color: #1d4ed8;
+      border: 1px solid #c7d7fe;
+    }
+
+    .active-pill.success {
+      background: #ecfdf3;
+      color: #067647;
+      border-color: #abefc6;
+    }
+
+    .active-pill.danger {
+      background: #fef3f2;
+      color: #b42318;
+      border-color: #fecdca;
+    }
+
+    @media (max-width: 900px) {
+      .active-import-grid,
+      .active-preview-meta {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India Admin</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="admin.html">Admin Panel</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="scholarships.html">Scholarships</a>
+      <button id="activeImportLogoutBtn" class="secondary-btn" type="button">Logout</button>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card admin-hero">
+      <span class="tagline">Active-Only Import</span>
+      <h1>Verified Active Scholarship Import</h1>
+      <p id="activeImportEmail" class="last-updated">Checking admin access...</p>
+
+      <div class="notice-box">
+        <strong>Strict rule:</strong>
+        This page imports only currently active scholarships with an official link, open application window, future deadline date, verified date, and verification note.
+      </div>
+    </section>
+
+    <section id="activeImportLocked" class="content-card hidden">
+      <h2>Access Denied</h2>
+      <p class="mini-note">You are logged in, but this account is not allowed to import scholarships.</p>
+      <div class="button-row">
+        <a class="text-btn" href="dashboard.html">Go to Dashboard</a>
+      </div>
+    </section>
+
+    <section id="activeImportContent" class="hidden">
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>Paste Active Scholarships</h2>
+            <p class="mini-note">
+              Separate each scholarship with three dashes: ---. Invalid or expired records will be skipped automatically.
+            </p>
+          </div>
+        </div>
+
+        <div class="active-import-grid">
+          <div class="field full">
+            <label for="activeImportPrompt">Bulk Assistant Text</label>
+            <textarea id="activeImportPrompt" rows="18" placeholder="Paste active scholarship records here..."></textarea>
+          </div>
+
+          <aside class="admin-assistant-actions">
+            <h3>Active Import Checks</h3>
+            <p class="mini-note">Required for every imported scholarship:</p>
+            <div class="active-pill-row">
+              <span class="active-pill success">status active</span>
+              <span class="active-pill success">window open</span>
+              <span class="active-pill success">official link</span>
+              <span class="active-pill success">future deadline</span>
+              <span class="active-pill success">verified date</span>
+              <span class="active-pill success">verification note</span>
+            </div>
+
+            <div class="button-row assistant-button-row">
+              <button id="activePreviewBtn" type="button">Preview Active Only</button>
+              <button id="activeImportBtn" class="secondary-btn" type="button">Import Valid Records</button>
+              <button id="activeExampleBtn" class="secondary-btn" type="button">Use Example</button>
+              <button id="activeClearBtn" class="secondary-btn" type="button">Clear</button>
+            </div>
+
+            <p id="activeImportMessage" class="mini-note"></p>
+          </aside>
+        </div>
+
+        <div id="activeImportPreview" class="active-preview-grid">
+          <p class="mini-note">Preview will appear here.</p>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India Admin Panel. Import only verified active scholarships.</p>
+    <div class="footer-links">
+      <a href="admin.html">Admin Panel</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </footer>
+
+  <script type="module">
+    import { auth, db } from "./firebase-config.js";
+    import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+    import { collection, getDocs, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const ADMIN_EMAILS = ["lastwarrior324@gmail.com", "koushikrajcodex@gmail.com"];
+
+    const activeImportLogoutBtn = document.getElementById("activeImportLogoutBtn");
+    const activeImportEmail = document.getElementById("activeImportEmail");
+    const activeImportLocked = document.getElementById("activeImportLocked");
+    const activeImportContent = document.getElementById("activeImportContent");
+    const activeImportPrompt = document.getElementById("activeImportPrompt");
+    const activePreviewBtn = document.getElementById("activePreviewBtn");
+    const activeImportBtn = document.getElementById("activeImportBtn");
+    const activeExampleBtn = document.getElementById("activeExampleBtn");
+    const activeClearBtn = document.getElementById("activeClearBtn");
+    const activeImportMessage = document.getElementById("activeImportMessage");
+    const activeImportPreview = document.getElementById("activeImportPreview");
+
+    let currentUser = null;
+    let latestParsed = [];
+
+    const exampleText = `Add Example Active Scholarship 2026.\nStatus active.\nState national.\nEducation degree, engineering.\nGender any.\nAmount Varies as per official rules.\nIncome limit ₹500000.\nMinimum percentage 0.\nCategories general, sc, st, obc, ews, minority.\nDisability any.\nSource Official Source Name.\nOfficial link https://scholarships.gov.in/All-Scholarships\nApplication window open.\nAcademic year 2026-27.\nVerified on 2026-06-30.\nDeadline Apply by 31 October 2026.\nDeadline date 2026-10-31.\nPriority 85.\nEligibility: Add verified eligibility details from the official source.\nIncome note: Add verified income details from the official source.\nVerification note: Official source checked and current application window is open.`;
+
+    onAuthStateChanged(auth, (user) => {
+      currentUser = user;
+
+      if (!user) {
+        window.location.replace("login.html");
+        return;
+      }
+
+      const email = String(user.email || "").toLowerCase();
+      activeImportEmail.textContent = `Logged in as: ${email}`;
+
+      if (!ADMIN_EMAILS.includes(email)) {
+        activeImportLocked.classList.remove("hidden");
+        activeImportContent.classList.add("hidden");
+        return;
+      }
+
+      activeImportLocked.classList.add("hidden");
+      activeImportContent.classList.remove("hidden");
+    });
+
+    activeImportLogoutBtn?.addEventListener("click", async () => {
+      await signOut(auth);
+      window.location.replace("login.html");
+    });
+
+    activePreviewBtn?.addEventListener("click", () => {
+      latestParsed = parseBulk(activeImportPrompt.value || "");
+      renderPreview(latestParsed);
+      const valid = latestParsed.filter((item) => item.warnings.length === 0).length;
+      const invalid = latestParsed.length - valid;
+      showMessage(`Preview complete. Valid active: ${valid}. Skipped/invalid: ${invalid}.`);
+    });
+
+    activeImportBtn?.addEventListener("click", async () => {
+      await importValidRecords();
+    });
+
+    activeExampleBtn?.addEventListener("click", () => {
+      activeImportPrompt.value = exampleText;
+      activeImportPrompt.focus();
+      showMessage("Example added. Click Preview Active Only.");
+    });
+
+    activeClearBtn?.addEventListener("click", () => {
+      activeImportPrompt.value = "";
+      latestParsed = [];
+      renderPreview([]);
+      showMessage("");
+    });
+
+    async function importValidRecords() {
+      if (!currentUser || !ADMIN_EMAILS.includes(String(currentUser.email || "").toLowerCase())) {
+        showMessage("You are not allowed to import scholarships.", true);
+        return;
+      }
+
+      const parsed = latestParsed.length ? latestParsed : parseBulk(activeImportPrompt.value || "");
+      const validRecords = parsed.filter((item) => item.warnings.length === 0).map((item) => item.record);
+
+      if (validRecords.length === 0) {
+        renderPreview(parsed);
+        showMessage("No valid active scholarships found. Missing/expired records are skipped.", true);
+        return;
+      }
+
+      const confirmed = window.confirm(`Import ${validRecords.length} verified active scholarship record(s)? Invalid records will be skipped.`);
+      if (!confirmed) return;
+
+      setBusy(true);
+      showMessage("Importing valid active scholarships...");
+
+      let added = 0;
+      let duplicate = 0;
+      let failed = 0;
+
+      try {
+        const snapshot = await getDocs(collection(db, "scholarships"));
+        const existingNames = new Set(snapshot.docs.map((docSnap) => normalizeName(docSnap.data().name)));
+
+        for (const scholarship of validRecords) {
+          const normalized = normalizeName(scholarship.name);
+          if (!normalized || existingNames.has(normalized)) {
+            duplicate += 1;
+            continue;
+          }
+
+          try {
+            await addDoc(collection(db, "scholarships"), {
+              ...scholarship,
+              sourceType: "active-only-import",
+              createdAt: serverTimestamp(),
+              updatedAt: serverTimestamp(),
+              createdBy: currentUser.email || "",
+              updatedBy: currentUser.email || ""
+            });
+            existingNames.add(normalized);
+            added += 1;
+          } catch (error) {
+            console.error("Active scholarship import failed", error);
+            failed += 1;
+          }
+        }
+
+        showMessage(`Import completed. Added active: ${added}. Duplicates: ${duplicate}. Failed: ${failed}. Skipped invalid: ${parsed.length - validRecords.length}.`);
+      } catch (error) {
+        console.error("Active import failed", error);
+        showMessage("Import failed. Check Firebase rules and admin access.", true);
+      } finally {
+        setBusy(false);
+      }
+    }
+
+    function parseBulk(rawText) {
+      return String(rawText || "")
+        .split(/\n\s*---+\s*\n/)
+        .map((block) => block.trim())
+        .filter(Boolean)
+        .map(parseOne)
+        .filter((item) => item.record.name);
+    }
+
+    function parseOne(block) {
+      const lines = block.split("\n").map((line) => line.trim()).filter(Boolean);
+      const text = block.toLowerCase();
+      const status = normalizeStatus(getValue(block, ["status"]) || (text.includes("status active") ? "active" : ""));
+      const applicationWindow = normalizeWindow(getValue(block, ["application window", "application status", "open status"]) || (text.includes("application window open") ? "open" : ""));
+      const record = {
+        name: getName(block, lines),
+        state: normalizeState(getValue(block, ["state"]), text),
+        stateLabel: "National",
+        status,
+        amount: getValue(block, ["amount", "scholarship amount"]) || "Varies as per official rules",
+        maxIncome: getNumber(getValue(block, ["income limit", "max income", "maximum income", "annual income", "family income"])),
+        minPercentage: getNumber(getValue(block, ["minimum percentage", "min percentage", "percentage", "minimum marks", "marks"])) || 0,
+        deadline: getValue(block, ["deadline", "last date", "closing date"]) || "Check official portal",
+        deadlineDate: normalizeDate(getValue(block, ["deadline date", "last date date", "closing date date"])),
+        link: getLink(block),
+        education: normalizeList(getValue(block, ["education", "education level", "course", "courses"]) || inferEducation(text)),
+        categories: normalizeList(getValue(block, ["categories", "category"]) || inferCategories(text)),
+        genders: normalizeList(getValue(block, ["gender", "genders"]) || inferGender(text)),
+        disability: normalizeDisability(getValue(block, ["disability", "disability allowed", "disability rule"]), text),
+        eligibilityNote: getValue(block, ["eligibility", "eligibility summary", "eligibility note"]) || "",
+        incomeNote: getValue(block, ["income note", "income rule"]) || "",
+        priority: clamp(getNumber(getValue(block, ["priority", "priority score"])), 0, 100, 80),
+        sourceName: getValue(block, ["source", "source name", "provider"]) || "Official Portal",
+        applicationWindow,
+        academicYear: getValue(block, ["academic year", "year"]) || "2026-27",
+        verifiedOn: normalizeDate(getValue(block, ["verified on", "verified date", "last checked"])),
+        verificationNote: getValue(block, ["verification note", "verification", "source note"]),
+        lastChecked: normalizeDate(getValue(block, ["last checked"])) || normalizeDate(getValue(block, ["verified on", "verified date"]))
+      };
+
+      record.stateLabel = getStateLabel(record.state);
+      const warnings = validateActiveRecord(record);
+      return { record, warnings };
+    }
+
+    function validateActiveRecord(record) {
+      const warnings = [];
+      if (record.status !== "active") warnings.push("Status must be active.");
+      if (record.applicationWindow !== "open") warnings.push("Application window must be open.");
+      if (!isValidUrl(record.link)) warnings.push("Official link is missing or invalid.");
+      if (!record.deadlineDate) warnings.push("Deadline date must be in YYYY-MM-DD format.");
+      if (record.deadlineDate && isExpired(record.deadlineDate)) warnings.push("Deadline date is already expired.");
+      if (!record.verifiedOn) warnings.push("Verified on date is required in YYYY-MM-DD format.");
+      if (!record.sourceName || record.sourceName.length < 2) warnings.push("Source name is required.");
+      if (!record.eligibilityNote || record.eligibilityNote.length < 12) warnings.push("Eligibility note is required.");
+      if (!record.incomeNote || record.incomeNote.length < 6) warnings.push("Income note is required.");
+      if (!record.verificationNote || record.verificationNote.length < 12) warnings.push("Verification note is required.");
+      if (!record.education.length) warnings.push("Education levels are required.");
+      if (!record.categories.length) warnings.push("Categories are required.");
+      if (!record.genders.length) warnings.push("Gender field is required.");
+      return warnings;
+    }
+
+    function renderPreview(items) {
+      activeImportPreview.replaceChildren();
+
+      if (!items.length) {
+        activeImportPreview.innerHTML = "<p class='mini-note'>Preview will appear here.</p>";
+        return;
+      }
+
+      items.forEach((item, index) => {
+        const card = document.createElement("article");
+        card.className = `active-preview-card ${item.warnings.length ? "invalid" : "valid"}`;
+
+        const status = document.createElement("span");
+        status.className = item.warnings.length ? "active-pill danger" : "active-pill success";
+        status.textContent = item.warnings.length ? `${index + 1}. Skipped` : `${index + 1}. Ready to import`;
+
+        const title = document.createElement("h3");
+        title.textContent = item.record.name;
+
+        const meta = document.createElement("div");
+        meta.className = "active-preview-meta";
+        addMeta(meta, "Deadline", item.record.deadlineDate || "Missing");
+        addMeta(meta, "Window", item.record.applicationWindow || "Missing");
+        addMeta(meta, "Source", item.record.sourceName || "Missing");
+        addMeta(meta, "State", item.record.stateLabel || "National");
+        addMeta(meta, "Education", item.record.education.join(", ") || "Missing");
+        addMeta(meta, "Categories", item.record.categories.join(", ") || "Missing");
+
+        card.append(status, title, meta);
+
+        if (item.warnings.length) {
+          const list = document.createElement("ul");
+          list.className = "active-warning-list";
+          item.warnings.forEach((warning) => {
+            const li = document.createElement("li");
+            li.textContent = warning;
+            list.appendChild(li);
+          });
+          card.appendChild(list);
+        }
+
+        activeImportPreview.appendChild(card);
+      });
+    }
+
+    function addMeta(container, label, value) {
+      const p = document.createElement("p");
+      p.innerHTML = `<strong>${escapeHtml(label)}</strong>${escapeHtml(value)}`;
+      container.appendChild(p);
+    }
+
+    function getValue(rawText, labels) {
+      const lines = rawText.split("\n");
+      for (const line of lines) {
+        const cleanLine = line.trim();
+        const lower = cleanLine.toLowerCase();
+        for (const label of labels) {
+          const key = label.toLowerCase();
+          if (lower.startsWith(`${key}:`)) return cleanLine.slice(key.length + 1).trim();
+          if (lower.startsWith(`${key} `)) return cleanLine.slice(key.length).replace(/^[:\-\s]+/, "").trim().replace(/\.$/, "");
+          if (lower.startsWith(`${key} -`)) return cleanLine.slice(key.length + 2).trim();
+        }
+      }
+      return "";
+    }
+
+    function getName(rawText, lines) {
+      const labelled = getValue(rawText, ["title", "scholarship name", "name"]);
+      if (labelled) return clean(labelled, 200);
+      const firstLine = lines[0] || "";
+      return clean(firstLine.replace(/^add\s+/i, "").replace(/^title:\s*/i, "").replace(/\.$/, ""), 200);
+    }
+
+    function getLink(rawText) {
+      const labelled = getValue(rawText, ["official link", "link", "url"]);
+      if (isValidUrl(labelled)) return labelled;
+      const match = rawText.match(/https?:\/\/[^\s]+/i);
+      return match ? match[0].replace(/[),.;]+$/, "") : "";
+    }
+
+    function normalizeState(value, text) {
+      const state = clean(value).toLowerCase();
+      if (state.includes("andhra")) return "andhra-pradesh";
+      if (state.includes("telangana")) return "telangana";
+      if (text.includes("andhra") || text.includes("jnanabhumi")) return "andhra-pradesh";
+      if (text.includes("telangana") || text.includes("epass")) return "telangana";
+      return "national";
+    }
+
+    function getStateLabel(state) {
+      if (state === "andhra-pradesh") return "Andhra Pradesh";
+      if (state === "telangana") return "Telangana";
+      return "National";
+    }
+
+    function normalizeStatus(value) {
+      const status = clean(value).toLowerCase();
+      return status === "active" ? "active" : status === "closed" ? "closed" : status === "draft" ? "draft" : "";
+    }
+
+    function normalizeWindow(value) {
+      const windowText = clean(value).toLowerCase();
+      if (windowText.includes("open") || windowText === "yes") return "open";
+      if (windowText.includes("upcoming")) return "upcoming";
+      if (windowText.includes("closed")) return "closed";
+      if (windowText.includes("verify")) return "verify";
+      return "";
+    }
+
+    function normalizeDisability(value, text) {
+      const disability = clean(value).toLowerCase();
+      if (disability.includes("yes") || disability.includes("allowed") || text.includes("disabled") || text.includes("disability")) return "yes";
+      if (disability.includes("no")) return "no";
+      return "any";
+    }
+
+    function inferEducation(text) {
+      const values = [];
+      if (text.includes("school") || text.includes("pre matric") || text.includes("pre-matric")) values.push("school");
+      if (text.includes("intermediate") || text.includes("class xi") || text.includes("class xii")) values.push("intermediate");
+      if (text.includes("degree") || text.includes("ug") || text.includes("college")) values.push("degree");
+      if (text.includes("engineering") || text.includes("technical") || text.includes("b.tech") || text.includes("btech")) values.push("engineering");
+      if (text.includes("pg") || text.includes("post graduate") || text.includes("postgraduate") || text.includes("master")) values.push("pg");
+      if (text.includes("phd") || text.includes("doctoral") || text.includes("researcher")) values.push("pg");
+      return values.length ? values.join(", ") : "degree";
+    }
+
+    function inferCategories(text) {
+      const values = [];
+      if (text.includes("general")) values.push("general");
+      if (hasWord(text, "sc")) values.push("sc");
+      if (hasWord(text, "st")) values.push("st");
+      if (text.includes("obc") || hasWord(text, "bc")) values.push("obc");
+      if (text.includes("ews") || text.includes("ebc")) values.push("ews");
+      if (text.includes("minority")) values.push("minority");
+      if (text.includes("disabled") || text.includes("disability")) values.push("disabled");
+      if (text.includes("kapu")) values.push("kapu");
+      return values.length ? values.join(", ") : "general, sc, st, obc, ews, minority";
+    }
+
+    function inferGender(text) {
+      if (text.includes("female") || text.includes("girl") || text.includes("women")) return "female";
+      if (text.includes("male") || text.includes("boy")) return "male";
+      return "any";
+    }
+
+    function normalizeList(value) {
+      return String(value || "")
+        .split(",")
+        .map((item) => clean(item).toLowerCase())
+        .map((item) => item === "researcher" || item === "phd" ? "pg" : item)
+        .filter(Boolean)
+        .filter((item, index, arr) => arr.indexOf(item) === index);
+    }
+
+    function normalizeDate(value) {
+      const text = clean(value);
+      const iso = text.match(/20[0-9]{2}-[0-9]{1,2}-[0-9]{1,2}/);
+      if (iso) {
+        const parts = iso[0].split("-");
+        return `${parts[0]}-${parts[1].padStart(2, "0")}-${parts[2].padStart(2, "0")}`;
+      }
+      const indian = text.match(/[0-9]{1,2}[-/.][0-9]{1,2}[-/.]20[0-9]{2}/);
+      if (indian) {
+        const parts = indian[0].split(/[-/.]/);
+        return `${parts[2]}-${parts[1].padStart(2, "0")}-${parts[0].padStart(2, "0")}`;
+      }
+      return "";
+    }
+
+    function isExpired(dateText) {
+      const today = new Date().toISOString().slice(0, 10);
+      return String(dateText || "") < today;
+    }
+
+    function isValidUrl(value) {
+      return /^https?:\/\/.+\..+/.test(String(value || "").trim());
+    }
+
+    function getNumber(value) {
+      const text = clean(value).toLowerCase();
+      if (!text || text.includes("not specified")) return 0;
+      const match = text.match(/[0-9][0-9,]*/);
+      return match ? Number(match[0].replace(/,/g, "")) : 0;
+    }
+
+    function clamp(value, min, max, fallback) {
+      const number = Number(value || 0);
+      if (!Number.isFinite(number) || number === 0) return fallback;
+      return Math.max(min, Math.min(number, max));
+    }
+
+    function normalizeName(value) {
+      return clean(value).toLowerCase().replace(/[^a-z0-9]+/g, " ").trim();
+    }
+
+    function clean(value, maxLength = 2000) {
+      return String(value || "").replace(/\s+/g, " ").trim().slice(0, maxLength);
+    }
+
+    function hasWord(text, word) {
+      return String(text || "").split(/[^a-z0-9]+/).includes(word);
+    }
+
+    function escapeHtml(value) {
+      return String(value || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+    }
+
+    function showMessage(message, isError = false) {
+      activeImportMessage.textContent = message;
+      activeImportMessage.style.color = isError ? "#b42318" : "#067647";
+    }
+
+    function setBusy(isBusy) {
+      activeImportBtn.disabled = isBusy;
+      activePreviewBtn.disabled = isBusy;
+      activeImportBtn.textContent = isBusy ? "Importing..." : "Import Valid Records";
+    }
+  </script>
+</body>
+</html>
