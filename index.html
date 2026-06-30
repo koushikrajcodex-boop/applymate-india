@@ -103,8 +103,8 @@
 
       <div class="hero-stats">
         <div>
-          <strong>25+</strong>
-          <span>Scholarship entries</span>
+          <strong id="activeScholarshipHomeCount">Loading...</strong>
+          <span id="activeScholarshipHomeLabel">Active scholarships</span>
         </div>
 
         <div>
@@ -117,6 +117,8 @@
           <span>Student help</span>
         </div>
       </div>
+
+      <p id="activeScholarshipHomeUpdated" class="mini-note">Loading current active scholarship count...</p>
     </div>
   </header>
 
@@ -353,5 +355,6 @@
   <script src="script.js"></script>
   <script src="assistant.js"></script>
   <script type="module" src="save-results.js"></script>
+  <script type="module" src="live-count.js?v=1"></script>
 </body>
 </html>
