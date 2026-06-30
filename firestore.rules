@@ -12,7 +12,11 @@ service cloud.firestore {
     }
 
     function isAdmin() {
-      return isSignedIn() && request.auth.token.admin == true;
+      return isSignedIn()
+        && request.auth.token.email in [
+          "lastwarrior324@gmail.com",
+          "koushikrajcodex@gmail.com"
+        ];
     }
 
     match /users/{userId} {
@@ -29,7 +33,7 @@ service cloud.firestore {
 
     match /scholarships/{scholarshipId} {
       allow read: if true;
-      allow write: if isAdmin();
+      allow create, update, delete: if isAdmin();
     }
   }
 }
