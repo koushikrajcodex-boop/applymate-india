@@ -464,8 +464,8 @@ function renderRecommendations(profile) {
       : ""
   ].filter(Boolean);
 
-  recommendationSummary.textContent
-    `You are eligible for ${matches.lenth} scholarship${matches.length === 1 ? "" : "s"} based on your profile${profileParts.length ? `: ${profileParts.join(", ")}.` : "."}`;
+    recommendationSummary.textContent =
+    `You are eligible for ${matches.length} scholarship${matches.length === 1 ? "" : "s"} based on your profile${profileParts.length ? `: ${profileParts.join(", ")}.` : "."}`;
 
   applyRecommendationFilters();
   renderComparison();
