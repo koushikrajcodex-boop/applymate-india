@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Data Health - ApplyMate India</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Admin-only data quality dashboard for ApplyMate India scholarship records." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css?v=admin4" />
+  <style>
+    .health-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.health-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.health-card strong{display:block;font-size:1.7rem;color:var(--primary)}.health-tools{display:grid;grid-template-columns:1fr 1fr 1fr;gap:12px;align-items:end}.issue-list{display:grid;gap:12px;margin-top:16px}.issue-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.issue-card h3{margin:0 0 8px}.issue-tags{display:flex;gap:8px;flex-wrap:wrap;margin:8px 0}.issue-tag{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef4ff;border:1px solid #c7d7fe;color:#1d4ed8;font-weight:700;font-size:.85rem}.issue-danger{background:#fff1f3;border-color:#fecdd3;color:#be123c}.issue-warning{background:#fffbeb;border-color:#fde68a;color:#92400e}.issue-ok{background:#ecfdf3;border-color:#bbf7d0;color:#067647}@media(max-width:900px){.health-grid,.health-tools{grid-template-columns:1fr}}
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+  <nav class="navbar">
+    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Admin Health</span></a>
+    <div class="nav-links">
+      <a href="admin.html">Admin Panel</a>
+      <a href="active-import.html">Active Import</a>
+      <a href="scholarship-hub.html">Scholarship Hub</a>
+      <a href="index.html">Home</a>
+      <button id="healthLogoutBtn" class="secondary-btn" type="button">Logout</button>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <span class="tagline">Admin Quality Control</span>
+      <h1>Scholarship Data Health Dashboard</h1>
+      <p id="healthAdminEmail" class="last-updated">Checking admin access...</p>
+      <div class="notice-box">Use this dashboard before publishing or importing large batches. It flags expired active records, duplicates, missing official links, weak verification, and incomplete eligibility data.</div>
+      <div class="button-row"><button id="refreshHealthBtn" type="button">Run Health Check</button><button id="exportHealthBtn" class="secondary-btn" type="button">Export Report JSON</button></div>
+    </section>
+
+    <section id="healthLocked" class="content-card hidden">
+      <h2>Access denied</h2>
+      <p class="mini-note">This page is only for ApplyMate India admin accounts.</p>
+      <a class="text-btn" href="dashboard.html">Go to Student Dashboard</a>
+    </section>
+
+    <section id="healthContent" class="hidden">
+      <section class="content-card">
+        <h2>Health Summary</h2>
+        <div class="health-grid">
+          <div class="health-card"><span>Total records</span><strong id="hTotal">0</strong></div>
+          <div class="health-card"><span>Visible active</span><strong id="hVisible">0</strong></div>
+          <div class="health-card"><span>Needs fix</span><strong id="hIssues">0</strong></div>
+          <div class="health-card"><span>Duplicates</span><strong id="hDuplicates">0</strong></div>
+          <div class="health-card"><span>Expired active</span><strong id="hExpired">0</strong></div>
+          <div class="health-card"><span>Missing links</span><strong id="hLinks">0</strong></div>
+          <div class="health-card"><span>Missing deadlines</span><strong id="hDeadline">0</strong></div>
+          <div class="health-card"><span>Weak verification</span><strong id="hVerify">0</strong></div>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Review Issues</h2>
+        <div class="health-tools">
+          <div class="field"><label for="healthSearch">Search</label><input id="healthSearch" type="search" placeholder="Search scholarship name, source, issue..." /></div>
+          <div class="field"><label for="healthIssueFilter">Issue type</label><select id="healthIssueFilter"><option value="">All issues</option><option value="expired-active">Expired active</option><option value="duplicate-name">Duplicate name</option><option value="missing-link">Missing official link</option><option value="missing-deadline">Missing deadline date</option><option value="weak-verification">Weak verification</option><option value="missing-eligibility">Missing eligibility</option><option value="income-risk">Income risk</option></select></div>
+          <div class="field"><label for="healthStatusFilter">Status</label><select id="healthStatusFilter"><option value="">All statuses</option><option value="active">Active</option><option value="draft">Draft</option><option value="closed">Closed</option></select></div>
+        </div>
+        <p id="healthIssueCount" class="mini-note">Run health check to see issues.</p>
+        <div id="healthIssueList" class="issue-list"></div>
+      </section>
+    </section>
+  </main>
+
+  <footer><p>ApplyMate India Admin Health Dashboard. Fix data issues before students rely on records.</p></footer>
+  <script type="module" src="admin-health.js?v=1"></script>
+</body>
+</html>
