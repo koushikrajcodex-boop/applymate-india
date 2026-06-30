@@ -867,7 +867,26 @@ function createRecommendationCard(scholarship) {
 
   const heading = document.createElement("h3");
   heading.textContent = scholarship.name;
+const matchScore = document.createElement("p");
+matchScore.className = "info";
+matchScore.append(
+  createStrongText("Match Score:"),
+  document.createTextNode(` ${Math.min(Number(scholarship.score || 0), 100)}%`)
+);
 
+const whyMatch = document.createElement("div");
+whyMatch.className = "notice-box";
+
+const whyTitle = document.createElement("strong");
+whyTitle.textContent = "Why you qualify:";
+
+const whyList = document.createElement("ul");
+getQualificationReasons(scholarship, latestProfile).forEach((reason) => {
+  const item = document.createElement("li");
+  item.textContent = reason;
+  whyList.appendChild(item);
+});
+whyMatch.append(whyTitle, whyList);
   const amount = document.createElement("p");
   amount.className = "info";
   amount.append(
@@ -985,9 +1004,11 @@ function createRecommendationCard(scholarship) {
   actions.append(officialLink, saveButton, trackButton, compareButton);
 
   card.append(
-    badge,
-    heading,
-    amount,
+   badge,
+   heading,
+   matchScore,
+   whyMatch,
+   amount,
     eligibility,
     income,
     deadline,
@@ -998,7 +1019,48 @@ function createRecommendationCard(scholarship) {
 
   return card;
 }
+function getQualificationReasons(scholarship, profile) {
+  const normalizedProfile = normalizeProfile(profile || {});
+  const reasons = [];
 
+  if (scholarship.state === normalizedProfile.state) {
+    reasons.push(`Your state matches: ${scholarship.stateLabel}.`);
+  } else if (scholarship.state === "national") {
+    reasons.push("This is a national-level scholarship.");
+  }
+
+  if (scholarship.education.includes(normalizedProfile.education)) {
+    reasons.push("Your course/education matches this scholarship.");
+  }
+
+  if (scholarship.categories.includes(normalizedProfile.category) || scholarship.categories.includes("general")) {
+    reasons.push("Your category is included in the eligibility list.");
+  }
+
+  if (Number(normalizedProfile.income || 0) <= Number(scholarship.maxIncome || 0)) {
+    reasons.push(`Your income is within the listed limit of ₹${formatIndianNumber(scholarship.maxIncome)}.`);
+  }
+
+  if (scholarship.genders.includes("any") || scholarship.genders.includes(normalizedProfile.gender)) {
+    reasons.push("Your gender matches the listed eligibility.");
+  }
+
+  if (scholarship.disability === "any" || scholarship.disability === normalizedProfile.disability) {
+    reasons.push("Your disability status matches the listed eligibility.");
+  }
+
+  if (normalizedProfile.percentage === null || normalizedProfile.percentage >= Number(scholarship.minPercentage || 0)) {
+    reasons.push(Number(scholarship.minPercentage || 0) > 0
+      ? `Your marks meet the minimum requirement of ${scholarship.minPercentage}%.`
+      : "No minimum marks requirement is listed for this scholarship.");
+  }
+
+  if (normalizedProfile.year) {
+    reasons.push(`Your current year of study is saved as ${normalizedProfile.year}.`);
+  }
+
+  return reasons.length ? reasons : ["This scholarship matches your saved profile based on available eligibility rules."];
+}
 function toggleCompareScholarship(scholarship) {
   const exists = isScholarshipInCompare(scholarship);
 
