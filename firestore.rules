@@ -3,28 +3,33 @@ rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
 
+    function isSignedIn() {
+      return request.auth != null;
+    }
+
     function isOwner(userId) {
-      return request.auth != null
-        && request.auth.uid == userId;
+      return isSignedIn() && request.auth.uid == userId;
+    }
+
+    function isAdmin() {
+      return isSignedIn() && request.auth.token.admin == true;
     }
 
     match /users/{userId} {
-      allow create, read, update, delete:
-        if isOwner(userId);
+      allow read, write: if isOwner(userId);
 
-      match /savedScholarships/{scholarshipId} {
-        allow create, read, update, delete:
-          if isOwner(userId);
+      match /savedScholarships/{docId} {
+        allow read, write: if isOwner(userId);
       }
 
-      match /applications/{applicationId} {
-        allow create, read, update, delete:
-          if isOwner(userId);
+      match /applications/{docId} {
+        allow read, write: if isOwner(userId);
       }
     }
 
-    match /{document=**} {
-      allow read, write: if false;
+    match /scholarships/{scholarshipId} {
+      allow read: if true;
+      allow write: if isAdmin();
     }
   }
 }
