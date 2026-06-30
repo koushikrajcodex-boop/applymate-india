@@ -10,6 +10,7 @@
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="admin.css?v=admin4" />
+  <link rel="stylesheet" href="admin-assistant.css?v=assistant1" />
 </head>
 <body>
 
@@ -154,6 +155,50 @@
         </div>
 
         <p id="adminToolMessage" class="mini-note"></p>
+      </section>
+
+      <section class="content-card admin-assistant-card">
+        <div class="card-heading">
+          <div>
+            <span class="tagline">Admin Assistant</span>
+            <h2>Scholarship Auto-Fill Assistant</h2>
+            <p class="mini-note">
+              Paste or type scholarship details in normal English. The assistant fills the admin form automatically for review.
+            </p>
+          </div>
+        </div>
+
+        <div class="notice-box">
+          <strong>Safe mode:</strong>
+          This assistant does not use any public API key in the browser. It extracts fields from your text, fills the form, and lets you review before saving.
+        </div>
+
+        <div class="admin-assistant-layout">
+          <div class="field full">
+            <label for="adminAssistantPrompt">Tell the assistant what scholarship to add</label>
+            <textarea id="adminAssistantPrompt" rows="8" placeholder="Example: Add AICTE Pragati Scholarship for girl students. State national. Education engineering. Gender female. Amount ₹50,000 per year. Income limit ₹8,00,000. Categories general, sc, st, obc, minority. Source AICTE. Deadline check AICTE / NSP portal."></textarea>
+          </div>
+
+          <aside class="admin-assistant-actions">
+            <h3>Assistant Actions</h3>
+            <p class="mini-note">
+              Use Fill Form first, then review the live preview and click Save Scholarship.
+            </p>
+
+            <div class="button-row assistant-button-row">
+              <button id="adminAssistantFillBtn" type="button">Fill Form</button>
+              <button id="adminAssistantFillSaveBtn" class="secondary-btn" type="button">Fill + Save</button>
+              <button id="adminAssistantExampleBtn" class="secondary-btn" type="button">Use Example</button>
+              <button id="adminAssistantClearBtn" class="secondary-btn" type="button">Clear</button>
+            </div>
+
+            <p id="adminAssistantMessage" class="mini-note"></p>
+
+            <div id="adminAssistantExtracted" class="admin-assistant-extracted">
+              <p class="mini-note">Extracted fields will appear here after filling.</p>
+            </div>
+          </aside>
+        </div>
       </section>
 
       <section class="content-card">
@@ -378,5 +423,6 @@
   </footer>
 
   <script type="module" src="admin.js?v=admin4"></script>
+  <script src="admin-assistant.js?v=assistant1"></script>
 </body>
 </html>
