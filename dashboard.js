@@ -611,7 +611,7 @@ function applyRecommendationFilters() {
 }
 
 function getRecommendedScholarships(profile) {
-  return scholarships
+  return availableScholarships
     .map((scholarship) => {
       const stateMatch =
         scholarship.state === profile.state ||
@@ -670,7 +670,7 @@ function getRecommendedScholarships(profile) {
 }
 
 function getNoMatchReason(profile) {
-  const possibleByStateEducation = scholarships.filter((scholarship) => {
+  const possibleByStateEducation = availableScholarships.filter((scholarship) => {
     const stateMatch =
       scholarship.state === profile.state ||
       scholarship.state === "national";
