@@ -427,9 +427,10 @@ function renderRecommendations(profile) {
     recommendationSummary.textContent =
       "Complete state, education, category, and income to get automatic recommendations.";
 
-    recommendationList.replaceChildren();
-    setText(recommendationCount, "");
-    renderComparison();
+   recommendationList.replaceChildren();
+renderBestMatch(null);
+setText(recommendationCount, "");
+renderComparison();
     refreshNotifications();
     return;
   }
