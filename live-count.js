@@ -1,3 +1,4 @@
+import "./home-polish.js?v=1";
 import { db } from "./firebase-config.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
