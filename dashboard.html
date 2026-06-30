@@ -33,7 +33,7 @@
         <span id="notificationBadge" class="notification-badge hidden">0</span>
       </button>
 
-      <button id="logoutBtn" class="secondary-btn">Logout</button>
+      <button id="logoutBtn" class="secondary-btn" type="button">Logout</button>
     </div>
   </nav>
 
@@ -74,7 +74,7 @@
     </section>
 
     <section class="content-card">
-      <h2>Personal Profile</h2>
+      <h2>Complete Your Profile</h2>
       <p class="mini-note">
         Complete your profile to automatically see scholarships you may be eligible for.
       </p>
@@ -82,7 +82,7 @@
       <div class="form-grid">
         <div class="field">
           <label for="profileName">Full Name</label>
-          <input type="text" id="profileName" placeholder="Your name" />
+          <input type="text" id="profileName" placeholder="Your name" autocomplete="name" />
         </div>
 
         <div class="field">
@@ -96,14 +96,32 @@
         </div>
 
         <div class="field">
-          <label for="profileEducation">Education</label>
+          <label for="profileEducation">Course / Education</label>
           <select id="profileEducation">
-            <option value="">Select education</option>
+            <option value="">Select course / education</option>
             <option value="School">School</option>
             <option value="Intermediate">Intermediate</option>
             <option value="Degree">Degree</option>
             <option value="Engineering">Engineering</option>
             <option value="Post Graduation">Post Graduation</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="profileYear">Current Year of Study</label>
+          <select id="profileYear">
+            <option value="">Select year</option>
+            <option value="Class 1-5">Class 1-5</option>
+            <option value="Class 6-8">Class 6-8</option>
+            <option value="Class 9">Class 9</option>
+            <option value="Class 10">Class 10</option>
+            <option value="Intermediate 1st Year">Intermediate 1st Year</option>
+            <option value="Intermediate 2nd Year">Intermediate 2nd Year</option>
+            <option value="1st Year">1st Year</option>
+            <option value="2nd Year">2nd Year</option>
+            <option value="3rd Year">3rd Year</option>
+            <option value="4th Year">4th Year</option>
+            <option value="Final Year">Final Year</option>
           </select>
         </div>
 
@@ -132,7 +150,7 @@
         </div>
 
         <div class="field">
-          <label for="profileDisability">Disability</label>
+          <label for="profileDisability">Disability Status</label>
           <select id="profileDisability">
             <option value="">Select</option>
             <option value="No">No</option>
@@ -142,7 +160,7 @@
 
         <div class="field">
           <label for="profileIncome">Annual Family Income</label>
-          <input type="number" id="profileIncome" placeholder="Example: 200000" />
+          <input type="number" id="profileIncome" placeholder="Example: 200000" min="0" inputmode="numeric" />
         </div>
 
         <div class="field">
@@ -152,7 +170,7 @@
       </div>
 
       <div class="button-row">
-        <button id="saveProfileBtn">Save Profile</button>
+        <button id="saveProfileBtn" type="button">Save Profile</button>
       </div>
 
       <p id="profileMessage" class="mini-note"></p>
@@ -161,7 +179,7 @@
     <section class="content-card" id="recommendationsSection">
       <div class="card-heading">
         <div>
-          <h2>Personalized Scholarship Recommendations</h2>
+          <h2>Scholarships You May Be Eligible For</h2>
           <p id="recommendationSummary" class="mini-note">
             Save your profile to see automatic scholarship recommendations.
           </p>
@@ -297,7 +315,7 @@
       </div>
 
       <div class="button-row">
-        <button id="addSavedBtn">Save Scholarship</button>
+        <button id="addSavedBtn" type="button">Save Scholarship</button>
       </div>
 
       <div id="savedList"></div>
@@ -331,7 +349,7 @@
       </div>
 
       <div class="button-row">
-        <button id="addApplicationBtn">Add / Track Application</button>
+        <button id="addApplicationBtn" type="button">Add / Track Application</button>
       </div>
 
       <div id="applicationList"></div>
