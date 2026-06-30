@@ -1,5 +1,6 @@
 import { auth, db } from "./firebase-config.js";
 import { scholarships } from "./scholarships-data.js";
+import { validateScholarships } from "./scholarship-validator.js";
 
 import {
   onAuthStateChanged,
@@ -18,8 +19,13 @@ import {
   serverTimestamp,
   query,
   orderBy
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+} 
+  from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+const scholarshipValidation = validateScholarships(scholarships);
 
+if (!scholarshipValidation.valid) {
+  console.warn("Scholarship data validation errors:", scholarshipValidation.errors);
+}
 const userEmail = document.getElementById("userEmail");
 const logoutBtn = document.getElementById("logoutBtn");
 
