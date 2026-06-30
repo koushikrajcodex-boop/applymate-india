@@ -121,11 +121,13 @@ onAuthStateChanged(auth, async (user) => {
     setupFilterEvents();
     setupComparisonEvents();
 
-    await Promise.all([
-      loadProfile(),
-      loadSavedScholarships(),
-      loadApplications()
-    ]);
+   await loadAvailableScholarships();
+
+await Promise.all([
+  loadProfile(),
+  loadSavedScholarships(),
+  loadApplications()
+]);
 
     refreshNotifications();
   } catch (error) {
@@ -376,7 +378,35 @@ function setupComparisonEvents() {
     applyRecommendationFilters();
   });
 }
+async function loadAvailableScholarships() {
+  try {
+    const scholarshipsQuery = query(
+      collection(db, "scholarships"),
+      orderBy("priority", "desc")
+    );
 
+    const snapshot = await getDocs(scholarshipsQuery);
+
+    const firestoreScholarships = snapshot.docs
+      .map((documentSnapshot) => ({
+        id: documentSnapshot.id,
+        ...documentSnapshot.data()
+      }))
+      .filter((scholarship) => scholarship.status === "active");
+
+    if (firestoreScholarships.length > 0) {
+      availableScholarships = firestoreScholarships;
+      console.info(`Loaded ${firestoreScholarships.length} scholarships from Firestore.`);
+      return;
+    }
+
+    availableScholarships = scholarships;
+    console.info("Using local scholarship data fallback.");
+  } catch (error) {
+    console.warn("Could not load Firestore scholarships. Using local fallback.", error);
+    availableScholarships = scholarships;
+  }
+}
 async function loadProfile() {
   if (!currentUser) return;
 
