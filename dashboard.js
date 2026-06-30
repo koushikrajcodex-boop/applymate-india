@@ -52,7 +52,7 @@ const filterDisability = document.getElementById("filterDisability");
 const filterDeadline = document.getElementById("filterDeadline");
 const resetFiltersBtn = document.getElementById("resetFiltersBtn");
 const recommendationCount = document.getElementById("recommendationCount");
-
+const bestMatchBox = document.getElementById("bestMatchBox");
 const compareList = document.getElementById("compareList");
 const clearCompareBtn = document.getElementById("clearCompareBtn");
 const comparisonTableWrap = document.getElementById("comparisonTableWrap");
@@ -442,6 +442,7 @@ function renderRecommendations(profile) {
 
     recommendationSummary.textContent = getNoMatchReason(normalizedProfile);
     recommendationList.replaceChildren();
+    renderBestMatch(null);
     setText(recommendationCount, "");
     renderComparison();
     refreshNotifications();
@@ -449,7 +450,7 @@ function renderRecommendations(profile) {
   }
 
   latestRecommendedScholarships = matches;
-
+renderBestMatch(matches[0]);
     const profileParts = [
     normalizedProfile.state,
     normalizedProfile.education,
@@ -471,7 +472,59 @@ function renderRecommendations(profile) {
   renderComparison();
   refreshNotifications();
 }
+function renderBestMatch(scholarship) {
+  if (!bestMatchBox) return;
 
+  bestMatchBox.replaceChildren();
+
+  if (!scholarship) {
+    return;
+  }
+
+  const box = document.createElement("div");
+  box.className = "notice-box";
+
+  const title = document.createElement("strong");
+  title.textContent = "Best Match For You";
+
+  const name = document.createElement("p");
+  name.className = "info";
+  name.append(
+    createStrongText("Scholarship:"),
+    document.createTextNode(` ${scholarship.name}`)
+  );
+
+  const score = document.createElement("p");
+  score.className = "info";
+  score.append(
+    createStrongText("Match Score:"),
+    document.createTextNode(` ${Math.min(Number(scholarship.score || 0), 100)}%`)
+  );
+
+  const quality = document.createElement("p");
+  quality.className = "info";
+  quality.append(
+    createStrongText("Match Quality:"),
+    document.createTextNode(` ${getMatchQuality(scholarship.score)}`)
+  );
+
+  const deadline = document.createElement("p");
+  deadline.className = "info";
+  deadline.append(
+    createStrongText("Deadline:"),
+    document.createTextNode(` ${scholarship.deadline}`)
+  );
+
+  const officialLink = document.createElement("a");
+  officialLink.className = "text-btn";
+  officialLink.href = scholarship.link;
+  officialLink.target = "_blank";
+  officialLink.rel = "noopener noreferrer";
+  officialLink.textContent = "Open Official Link";
+
+  box.append(title, name, score, quality, deadline, officialLink);
+  bestMatchBox.appendChild(box);
+}
 function applyRecommendationFilters() {
   if (!recommendationList) return;
 
