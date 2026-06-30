@@ -1,23 +1,39 @@
-import { db } from "./firebase-config.js";
+import { auth, db } from "./firebase-config.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
+const ADMIN_EMAILS = ["lastwarrior324@gmail.com", "koushikrajcodex@gmail.com"];
 let records = [];
 let issues = [];
+let isAdmin = false;
 
 const ids = ["hTotal","hVisible","hIssues","hDuplicates","hExpired","hLinks","hDeadline","hVerify"];
 const $ = (id) => document.getElementById(id);
 
-$("healthContent")?.classList.remove("hidden");
-$("healthLocked")?.classList.add("hidden");
-if ($("healthAdminEmail")) $("healthAdminEmail").textContent = "Read-only Firestore health check";
-
-$("refreshHealthBtn")?.addEventListener("click", runHealthCheck);
+$("refreshHealthBtn")?.addEventListener("click", () => {
+  if (isAdmin) runHealthCheck();
+});
 $("healthSearch")?.addEventListener("input", renderIssues);
 $("healthIssueFilter")?.addEventListener("change", renderIssues);
 $("healthStatusFilter")?.addEventListener("change", renderIssues);
 $("exportHealthBtn")?.addEventListener("click", exportReport);
 
-runHealthCheck();
+onAuthStateChanged(auth, async (user) => {
+  const email = String(user?.email || "").toLowerCase();
+  isAdmin = ADMIN_EMAILS.includes(email);
+
+  if (!isAdmin) {
+    $("healthContent")?.classList.add("hidden");
+    $("healthLocked")?.classList.remove("hidden");
+    if ($("healthAdminEmail")) $("healthAdminEmail").textContent = user ? `Logged in as ${user.email}` : "Login required";
+    return;
+  }
+
+  $("healthContent")?.classList.remove("hidden");
+  $("healthLocked")?.classList.add("hidden");
+  if ($("healthAdminEmail")) $("healthAdminEmail").textContent = `Admin: ${user.email}`;
+  await runHealthCheck();
+});
 
 async function runHealthCheck() {
   const list = $("healthIssueList");
@@ -105,6 +121,7 @@ function card(issue) {
 }
 
 function exportReport() {
+  if (!isAdmin) return;
   const data = JSON.stringify({ generatedAt: new Date().toISOString(), total: records.length, issues }, null, 2);
   const a = document.createElement("a");
   a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
