@@ -5,61 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Scholarship Directory India - ApplyMate India</title>
-  <meta name="description" content="Explore 25+ Indian scholarship entries by national schemes, state portals, engineering, technical education, category, disability, income, and official source links." />
+  <meta name="description" content="Explore Indian scholarships from ApplyMate India, including live admin-added scholarships from Firestore plus national, state, engineering, category, disability, girls, and income-based scholarship entries." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/scholarships.html" />
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="assistant.css" />
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "CollectionPage",
-    "name": "Indian Scholarship Directory - ApplyMate India",
-    "url": "https://koushikrajcodex-boop.github.io/applymate-india/scholarships.html",
-    "description": "A student-friendly directory of Indian scholarships including national, state, technical education, category, disability, and special group scholarship entries.",
-    "inLanguage": "en-IN",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "ApplyMate India",
-      "url": "https://koushikrajcodex-boop.github.io/applymate-india/"
+  <style>
+    .directory-toolbar {
+      display: grid;
+      grid-template-columns: 1.4fr repeat(3, minmax(150px, 0.7fr));
+      gap: 14px;
+      align-items: end;
+      margin-top: 18px;
     }
-  }
-  </script>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "Is ApplyMate India an official scholarship directory?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "No. ApplyMate India is not an official scholarship directory or government portal. It is an informational student helper. Students should always verify final details on official scholarship portals."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "What types of scholarships are listed on ApplyMate India?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "ApplyMate India lists possible scholarship entries such as national scholarships, state scholarships, AICTE technical education schemes, category-based scholarships, disability scholarships, and special group scholarships."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "Can students check eligibility from this directory?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Students can use the ApplyMate India eligibility finder to get possible scholarship matches based on selected details such as state, education level, category, income range, and keyword."
-        }
+    .directory-toolbar .field {
+      margin: 0;
+    }
+
+    .directory-status {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      align-items: center;
+      margin-top: 14px;
+    }
+
+    .directory-count-pill {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: #eef4ff;
+      border: 1px solid #c7d7fe;
+      color: #1d4ed8;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .live-directory-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 18px;
+      margin-top: 20px;
+    }
+
+    .live-scholarship-card {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 20px;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+      box-shadow: var(--shadow);
+    }
+
+    .live-scholarship-card h3 {
+      margin: 10px 0 12px;
+      line-height: 1.25;
+    }
+
+    .live-card-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 8px;
+    }
+
+    .live-card-meta {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin: 14px 0;
+    }
+
+    .live-card-meta p {
+      margin: 0;
+      padding: 10px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: #475467;
+      font-size: 0.92rem;
+    }
+
+    .live-card-meta strong {
+      display: block;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    #engineering {
+      scroll-margin-top: 100px;
+    }
+
+    @media (max-width: 900px) {
+      .directory-toolbar,
+      .live-directory-grid,
+      .live-card-meta {
+        grid-template-columns: 1fr;
       }
-    ]
-  }
-  </script>
+    }
+  </style>
 </head>
 <body>
 
@@ -88,25 +134,20 @@
   <main class="content-page">
 
     <section class="content-card">
-      <span class="tagline">Phase 3 • Scholarship Directory</span>
-
+      <span class="tagline">Phase 3 • Live Scholarship Directory</span>
       <h1>Indian Scholarship Directory</h1>
-
       <span class="last-updated">Last updated: June 2026</span>
 
       <p>
-        This directory lists 25+ scholarship entries for Indian students across national,
-        state, technical education, merit, category, gender, disability, and special-group support.
+        This page now loads live scholarships from the ApplyMate India Firestore database. Scholarships added from the Admin Panel or Bulk Assistant appear here when they are Active / Published.
       </p>
 
       <p>
-        Use this page as a starting point. Scholarship deadlines, eligibility rules, income limits,
-        and document requirements can change. Always verify final details on the official portal before applying.
+        Use this page as a starting point. Scholarship deadlines, eligibility rules, income limits, and document requirements can change. Always verify final details on the official portal before applying.
       </p>
 
       <div class="notice-box">
-        ApplyMate India is not an official scholarship portal. It only simplifies information and links students
-        to official sources for final verification.
+        ApplyMate India is not an official scholarship portal. It only simplifies information and links students to official sources for final verification.
       </div>
 
       <div class="button-row">
@@ -118,41 +159,102 @@
 
     <section class="content-card">
       <h2>Quick Categories</h2>
-
       <div class="guide-list">
-        <a class="guide-card" href="#national">
-          <h2>National Scholarships</h2>
-          <p>NSP, central sector schemes, UGC, ICAR, ministry scholarships, and national-level support.</p>
-        </a>
-
-        <a class="guide-card" href="#engineering">
+        <a class="guide-card" href="scholarships.html#engineering">
           <h2>Engineering / Technical</h2>
-          <p>AICTE Pragati, Saksham, Swanath, and technical education support schemes.</p>
+          <p>Show engineering, AICTE, technical education, diploma, degree, and professional course scholarships.</p>
         </a>
 
-        <a class="guide-card" href="#state">
-          <h2>State Scholarships</h2>
-          <p>Andhra Pradesh Jnanabhumi, Telangana ePASS, and other state scholarship portals.</p>
+        <a class="guide-card" href="scholarships.html#live-directory">
+          <h2>All Live Scholarships</h2>
+          <p>View all scholarships uploaded from the admin panel and bulk import assistant.</p>
         </a>
 
-        <a class="guide-card" href="#category">
-          <h2>Category Based</h2>
-          <p>SC, ST, OBC, EBC, EWS, minority, disability, girls, and special group scholarships.</p>
+        <a class="guide-card" href="dashboard.html">
+          <h2>Personalized Matches</h2>
+          <p>Use your student profile to get automatic eligibility-based recommendations.</p>
         </a>
       </div>
     </section>
 
-    <section class="content-card" id="national">
-      <h2>National Scholarship Schemes</h2>
+    <section class="content-card" id="engineering">
+      <span class="tagline">Live From Firestore</span>
+      <h2 id="live-directory">Live Scholarship Directory</h2>
+      <p class="mini-note">
+        These cards are loaded from Firestore. Admin and Bulk Assistant uploads appear here when status is active.
+      </p>
+
+      <div class="directory-toolbar">
+        <div class="field">
+          <label for="liveScholarshipSearch">Search scholarships</label>
+          <input id="liveScholarshipSearch" type="search" placeholder="Search by name, source, category, amount..." />
+        </div>
+
+        <div class="field">
+          <label for="liveScholarshipState">State</label>
+          <select id="liveScholarshipState">
+            <option value="">All states</option>
+            <option value="national">National</option>
+            <option value="andhra-pradesh">Andhra Pradesh</option>
+            <option value="telangana">Telangana</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="liveScholarshipEducation">Education</label>
+          <select id="liveScholarshipEducation">
+            <option value="">All education levels</option>
+            <option value="school">School</option>
+            <option value="intermediate">Intermediate</option>
+            <option value="degree">Degree</option>
+            <option value="engineering">Engineering</option>
+            <option value="pg">PG</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label for="liveScholarshipCategory">Category</label>
+          <select id="liveScholarshipCategory">
+            <option value="">All categories</option>
+            <option value="general">General</option>
+            <option value="sc">SC</option>
+            <option value="st">ST</option>
+            <option value="obc">OBC</option>
+            <option value="ews">EWS</option>
+            <option value="minority">Minority</option>
+            <option value="disabled">Disability</option>
+            <option value="kapu">Kapu</option>
+          </select>
+        </div>
+      </div>
+
+      <div class="directory-status">
+        <span id="liveScholarshipSource" class="directory-count-pill">Loading Firestore...</span>
+        <span id="liveScholarshipCount" class="directory-count-pill">0 scholarships</span>
+      </div>
+
+      <div class="button-row">
+        <button id="resetLiveScholarshipFilters" class="secondary-btn" type="button">Reset Filters</button>
+        <a class="secondary-btn" href="dashboard.html">Get Personalized Matches</a>
+      </div>
+
+      <div id="liveScholarshipList" class="live-directory-grid">
+        <p class="mini-note">Loading live scholarships...</p>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <span class="tagline">Static Reference</span>
+      <h2>Official Portal Reference</h2>
+      <p>
+        The live directory above is the main dynamic student directory. These official portals are useful for final verification.
+      </p>
 
       <article class="scholarship">
         <span class="badge">National</span>
         <h3>National Scholarship Portal - NSP</h3>
-        <p class="info"><strong>For:</strong> Students applying to central, state, UGC, AICTE, and ministry scholarship schemes.</p>
-        <p class="info"><strong>Useful for:</strong> OTR registration, scholarship application, status tracking, and payment tracking.</p>
+        <p class="info"><strong>For:</strong> Central, state, UGC, AICTE, and ministry scholarship schemes.</p>
         <p class="info"><strong>Deadline:</strong> Depends on selected scheme.</p>
-        <p class="info"><strong>Official portal:</strong> National Scholarship Portal.</p>
-
         <div class="button-row">
           <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
           <a class="secondary-btn" href="nsp-otr-guide.html">Read NSP OTR Guide</a>
@@ -160,165 +262,10 @@
       </article>
 
       <article class="scholarship">
-        <span class="badge">College</span>
-        <h3>Central Sector Scheme of Scholarship for College and University Students</h3>
-        <p class="info"><strong>For:</strong> Meritorious college and university students.</p>
-        <p class="info"><strong>Category:</strong> Merit based.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current application cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, marks memo, bank details, institution details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">School</span>
-        <h3>National Means-cum-Merit Scholarship Scheme - NMMSS</h3>
-        <p class="info"><strong>For:</strong> Eligible school students from income-based backgrounds.</p>
-        <p class="info"><strong>Category:</strong> Merit and income based.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP or state education department.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, school certificate, marks memo, bank account details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Postgraduate</span>
-        <h3>National Scholarship for Post Graduate Studies</h3>
-        <p class="info"><strong>For:</strong> Eligible postgraduate students.</p>
-        <p class="info"><strong>Category:</strong> PG / higher education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for latest application cycle.</p>
-        <p class="info"><strong>Official source:</strong> UGC / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">North East</span>
-        <h3>Ishan Uday Special Scholarship Scheme for North Eastern Region</h3>
-        <p class="info"><strong>For:</strong> Eligible students from the North Eastern Region.</p>
-        <p class="info"><strong>Category:</strong> Regional / higher education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for latest application cycle.</p>
-        <p class="info"><strong>Official source:</strong> UGC / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">ST Students</span>
-        <h3>National Fellowship and Scholarship for Higher Education of ST Students</h3>
-        <p class="info"><strong>For:</strong> Eligible Scheduled Tribe students pursuing higher education.</p>
-        <p class="info"><strong>Category:</strong> ST / higher education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for latest cycle.</p>
-        <p class="info"><strong>Official source:</strong> Ministry of Tribal Affairs / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="content-card" id="engineering">
-      <h2>Engineering and Technical Education Scholarships</h2>
-
-      <article class="scholarship">
-        <span class="badge">Girls</span>
-        <h3>AICTE Pragati Scholarship for Girl Students - Technical Degree</h3>
-        <p class="info"><strong>For:</strong> Girl students pursuing technical degree courses.</p>
-        <p class="info"><strong>Category:</strong> Girls / technical education.</p>
-        <p class="info"><strong>Deadline:</strong> Check AICTE or NSP for current cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, admission proof, marks memo, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-          <a class="secondary-btn" href="girl-student-scholarships.html">Girl Student Guide</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Girls</span>
-        <h3>AICTE Pragati Scholarship for Girl Students - Technical Diploma</h3>
-        <p class="info"><strong>For:</strong> Girl students pursuing technical diploma courses.</p>
-        <p class="info"><strong>Category:</strong> Girls / diploma / technical education.</p>
-        <p class="info"><strong>Deadline:</strong> Check AICTE or NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> AICTE / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Disability</span>
-        <h3>AICTE Saksham Scholarship for Specially Abled Students - Technical Degree</h3>
-        <p class="info"><strong>For:</strong> Specially abled students pursuing technical degree education.</p>
-        <p class="info"><strong>Category:</strong> Disability / technical education.</p>
-        <p class="info"><strong>Deadline:</strong> Check AICTE or NSP for current cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, disability certificate, income certificate, admission proof, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Disability</span>
-        <h3>AICTE Saksham Scholarship for Specially Abled Students - Technical Diploma</h3>
-        <p class="info"><strong>For:</strong> Specially abled students pursuing technical diploma education.</p>
-        <p class="info"><strong>Category:</strong> Disability / diploma / technical education.</p>
-        <p class="info"><strong>Deadline:</strong> Check AICTE or NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> AICTE / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Welfare</span>
-        <h3>AICTE Swanath Scholarship Scheme - Technical Degree</h3>
-        <p class="info"><strong>For:</strong> Eligible students under AICTE Swanath scheme conditions.</p>
-        <p class="info"><strong>Category:</strong> Welfare based / technical degree.</p>
-        <p class="info"><strong>Deadline:</strong> Check AICTE or NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> AICTE / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Welfare</span>
-        <h3>AICTE Swanath Scholarship Scheme - Technical Diploma</h3>
-        <p class="info"><strong>For:</strong> Eligible technical diploma students under Swanath scheme conditions.</p>
-        <p class="info"><strong>Category:</strong> Welfare based / technical diploma.</p>
-        <p class="info"><strong>Deadline:</strong> Check AICTE or NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> AICTE / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="content-card" id="state">
-      <h2>State Scholarship Schemes</h2>
-
-      <article class="scholarship">
         <span class="badge">Andhra Pradesh</span>
-        <h3>Andhra Pradesh Post-Matric Scholarship - Jnanabhumi</h3>
-        <p class="info"><strong>For:</strong> Eligible post-matric students in Andhra Pradesh.</p>
-        <p class="info"><strong>Useful for:</strong> Intermediate, degree, engineering, professional courses, and post-graduation students.</p>
+        <h3>Andhra Pradesh Jnanabhumi</h3>
+        <p class="info"><strong>For:</strong> AP pre-matric, post-matric, fee reimbursement, and state scholarship support.</p>
         <p class="info"><strong>Deadline:</strong> Check official Jnanabhumi portal.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, caste/category certificate, bank passbook, marks memo, bonafide certificate.</p>
-
         <div class="button-row">
           <a class="text-btn" href="https://jnanabhumi.ap.gov.in/" target="_blank" rel="noopener noreferrer">Open Jnanabhumi</a>
           <a class="secondary-btn" href="ap-jnanabhumi-guide.html">Read AP Guide</a>
@@ -326,234 +273,22 @@
       </article>
 
       <article class="scholarship">
-        <span class="badge">Andhra Pradesh</span>
-        <h3>Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi</h3>
-        <p class="info"><strong>For:</strong> Eligible school students in Andhra Pradesh.</p>
-        <p class="info"><strong>Category:</strong> State / school-level scholarship support.</p>
-        <p class="info"><strong>Deadline:</strong> Check official Jnanabhumi portal.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, school bonafide, previous class marks, bank account details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://jnanabhumi.ap.gov.in/" target="_blank" rel="noopener noreferrer">Open Jnanabhumi</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
         <span class="badge">Telangana</span>
-        <h3>Telangana ePASS Post-Matric Scholarship</h3>
-        <p class="info"><strong>For:</strong> Eligible Telangana post-matric students.</p>
-        <p class="info"><strong>Useful for:</strong> Intermediate, degree, engineering, professional courses, and post-graduation students.</p>
-        <p class="info"><strong>Deadline:</strong> Check Telangana ePASS portal.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, caste/category certificate, income certificate, marks memo, bank passbook, bonafide certificate.</p>
-
+        <h3>Telangana ePASS</h3>
+        <p class="info"><strong>For:</strong> Telangana pre-matric, post-matric, fee reimbursement, and overseas scholarship support.</p>
+        <p class="info"><strong>Deadline:</strong> Check official Telangana ePASS portal.</p>
         <div class="button-row">
           <a class="text-btn" href="https://telanganaepass.cgg.gov.in/" target="_blank" rel="noopener noreferrer">Open Telangana ePASS</a>
           <a class="secondary-btn" href="telangana-epass-guide.html">Read Telangana Guide</a>
         </div>
       </article>
-
-      <article class="scholarship">
-        <span class="badge">Telangana</span>
-        <h3>Telangana ePASS Pre-Matric Scholarship</h3>
-        <p class="info"><strong>For:</strong> Eligible school students in Telangana.</p>
-        <p class="info"><strong>Category:</strong> State / school-level support.</p>
-        <p class="info"><strong>Deadline:</strong> Check Telangana ePASS portal.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, school bonafide, previous class marks, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://telanganaepass.cgg.gov.in/" target="_blank" rel="noopener noreferrer">Open Telangana ePASS</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="content-card" id="category">
-      <h2>Category and Special Group Scholarships</h2>
-
-      <article class="scholarship">
-        <span class="badge">SC Students</span>
-        <h3>Central Sector Scholarship of Top Class Education for SC Students</h3>
-        <p class="info"><strong>For:</strong> Eligible SC students pursuing higher education.</p>
-        <p class="info"><strong>Category:</strong> SC / higher education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> Department of Social Justice & Empowerment / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">OBC / EBC / DNT</span>
-        <h3>PM YASASVI Top Class Education in College for OBC, EBC and DNT Students</h3>
-        <p class="info"><strong>For:</strong> Eligible OBC, EBC, and DNT students pursuing college education.</p>
-        <p class="info"><strong>Category:</strong> OBC / EBC / DNT / college education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> Department of Social Justice & Empowerment / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">OBC / EBC / DNT</span>
-        <h3>PM YASASVI Top Class Education in Schools for OBC, EBC and DNT Students</h3>
-        <p class="info"><strong>For:</strong> Eligible school students from OBC, EBC, and DNT communities.</p>
-        <p class="info"><strong>Category:</strong> OBC / EBC / DNT / school education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, category certificate, school details, marks memo, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Minority</span>
-        <h3>Post-Matric Scholarship for Minority Students</h3>
-        <p class="info"><strong>For:</strong> Eligible minority community students.</p>
-        <p class="info"><strong>Category:</strong> Minority / post-matric education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for latest availability.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, income certificate, community certificate if required, marks memo, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Disability</span>
-        <h3>Scholarship for Students with Disabilities</h3>
-        <p class="info"><strong>For:</strong> Eligible students with benchmark disabilities.</p>
-        <p class="info"><strong>Category:</strong> Disability / school / post-matric / higher education.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, disability certificate, income certificate, marks memo, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="content-card">
-      <h2>Other Important Scholarship Groups</h2>
-
-      <article class="scholarship">
-        <span class="badge">Labour Welfare</span>
-        <h3>Financial Assistance for Education to Wards of Beedi/Cine/IOMC/LSDM Workers - Pre Matric</h3>
-        <p class="info"><strong>For:</strong> Eligible school students who are wards of specified worker groups.</p>
-        <p class="info"><strong>Category:</strong> Labour welfare / pre-matric.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, worker eligibility proof, income certificate, school certificate, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Labour Welfare</span>
-        <h3>Financial Assistance for Education to Wards of Beedi/Cine/IOMC/LSDM Workers - Post Matric</h3>
-        <p class="info"><strong>For:</strong> Eligible post-matric students who are wards of specified worker groups.</p>
-        <p class="info"><strong>Category:</strong> Labour welfare / post-matric.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, worker eligibility proof, income certificate, admission proof, marks memo, bank details.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Agriculture</span>
-        <h3>ICAR National Talent Scholarship - Undergraduate</h3>
-        <p class="info"><strong>For:</strong> Eligible undergraduate students under ICAR rules.</p>
-        <p class="info"><strong>Category:</strong> Agriculture / undergraduate education.</p>
-        <p class="info"><strong>Deadline:</strong> Check official portal for current cycle.</p>
-        <p class="info"><strong>Documents:</strong> Aadhaar, admission proof, marks memo, bank details, institution certificate.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">Police / Security</span>
-        <h3>Prime Minister's Scholarship Scheme for Wards of States/UTs Police Personnel Martyred During Terror/Naxal Attacks</h3>
-        <p class="info"><strong>For:</strong> Eligible wards of States/UTs police personnel as per official rules.</p>
-        <p class="info"><strong>Category:</strong> Special group / police personnel wards.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> Ministry of Home Affairs / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-
-      <article class="scholarship">
-        <span class="badge">CAPF / Assam Rifles</span>
-        <h3>Prime Minister's Scholarship Scheme for Central Armed Police Forces and Assam Rifles</h3>
-        <p class="info"><strong>For:</strong> Eligible wards of CAPF and Assam Rifles personnel as per official rules.</p>
-        <p class="info"><strong>Category:</strong> Special group / security personnel wards.</p>
-        <p class="info"><strong>Deadline:</strong> Check NSP for current cycle.</p>
-        <p class="info"><strong>Official source:</strong> Ministry of Home Affairs / NSP.</p>
-
-        <div class="button-row">
-          <a class="text-btn" href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">Open NSP</a>
-        </div>
-      </article>
-    </section>
-
-    <section class="content-card">
-      <h2>Use the Eligibility Finder</h2>
-
-      <p>
-        This directory is useful for browsing, but the eligibility finder is faster. Select your state, education level,
-        category or special group, income range, and keyword to see possible matches.
-      </p>
-
-      <div class="button-row">
-        <a href="index.html#finder" class="text-btn">Check Eligibility</a>
-        <a href="dashboard.html" class="secondary-btn">Open Student Dashboard</a>
-        <a href="scholarship-status-guide.html" class="secondary-btn">Status Guide</a>
-      </div>
-    </section>
-
-    <section class="content-card">
-      <h2>FAQs</h2>
-
-      <h3>Is ApplyMate India an official scholarship directory?</h3>
-      <p>
-        No. ApplyMate India is not an official scholarship directory or government portal.
-        It is an informational student helper. Students should always verify final details on official scholarship portals.
-      </p>
-
-      <h3>What types of scholarships are listed on ApplyMate India?</h3>
-      <p>
-        ApplyMate India lists possible scholarship entries such as national scholarships, state scholarships,
-        AICTE technical education schemes, category-based scholarships, disability scholarships, and special group scholarships.
-      </p>
-
-      <h3>Can students check eligibility from this directory?</h3>
-      <p>
-        Students can use the ApplyMate India eligibility finder to get possible scholarship matches based on selected details
-        such as state, education level, category, income range, and keyword.
-      </p>
     </section>
 
   </main>
 
   <footer>
-    <p>
-      ApplyMate India is an informational tool. Scholarship rules, income limits, deadlines, and required documents may change.
-      Always verify on the official portal before applying.
-    </p>
-
+    <p>© 2026 ApplyMate India. Built to help students discover scholarships faster.</p>
     <div class="footer-links">
-      <a href="scholarships.html">Scholarships</a>
-      <a href="guides.html">Guides</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="login.html">Login</a>
       <a href="about.html">About</a>
       <a href="privacy.html">Privacy Policy</a>
       <a href="disclaimer.html">Disclaimer</a>
@@ -561,9 +296,180 @@
       <a href="contact.html">Contact</a>
     </div>
   </footer>
-  
-<script src="script.js"></script>
-<script src="assistant.js"></script>
 
+  <script type="module">
+    import { db } from "./firebase-config.js";
+    import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const searchBox = document.getElementById("liveScholarshipSearch");
+    const stateFilter = document.getElementById("liveScholarshipState");
+    const educationFilter = document.getElementById("liveScholarshipEducation");
+    const categoryFilter = document.getElementById("liveScholarshipCategory");
+    const listBox = document.getElementById("liveScholarshipList");
+    const countBox = document.getElementById("liveScholarshipCount");
+    const sourceBox = document.getElementById("liveScholarshipSource");
+    const resetBtn = document.getElementById("resetLiveScholarshipFilters");
+
+    let allScholarships = [];
+
+    if (window.location.hash === "#engineering") {
+      educationFilter.value = "engineering";
+    }
+
+    [searchBox, stateFilter, educationFilter, categoryFilter].forEach((item) => {
+      item.addEventListener("input", renderLiveDirectory);
+      item.addEventListener("change", renderLiveDirectory);
+    });
+
+    resetBtn.addEventListener("click", () => {
+      searchBox.value = "";
+      stateFilter.value = "";
+      educationFilter.value = "";
+      categoryFilter.value = "";
+      renderLiveDirectory();
+    });
+
+    loadLiveScholarships();
+
+    async function loadLiveScholarships() {
+      try {
+        const snapshot = await getDocs(collection(db, "scholarships"));
+        allScholarships = snapshot.docs
+          .map((item) => ({ id: item.id, ...item.data() }))
+          .filter((item) => item.status === "active")
+          .sort((a, b) => Number(b.priority || 0) - Number(a.priority || 0));
+
+        sourceBox.textContent = allScholarships.length ? "Source: Firestore live data" : "No active Firestore data";
+        renderLiveDirectory();
+      } catch (error) {
+        console.warn("Firestore directory load failed", error);
+        allScholarships = [];
+        sourceBox.textContent = "Firestore unavailable";
+        listBox.innerHTML = "<p class='mini-note'>Could not load live scholarships. Static portal links are still available below.</p>";
+      }
+    }
+
+    function renderLiveDirectory() {
+      const search = clean(searchBox.value);
+      const state = stateFilter.value;
+      const education = educationFilter.value;
+      const category = categoryFilter.value;
+
+      const visible = allScholarships.filter((item) => {
+        const educationList = toArray(item.education);
+        const categoryList = toArray(item.categories);
+        const text = clean([
+          item.name,
+          item.stateLabel,
+          item.sourceName,
+          item.amount,
+          item.deadline,
+          item.eligibilityNote,
+          item.incomeNote,
+          educationList.join(" "),
+          categoryList.join(" ")
+        ].join(" "));
+
+        const searchOk = !search || text.includes(search);
+        const stateOk = !state || item.state === state;
+        const educationOk = !education || educationList.includes(education);
+        const categoryOk = !category || categoryList.includes(category);
+        return searchOk && stateOk && educationOk && categoryOk;
+      });
+
+      countBox.textContent = `Showing ${visible.length} of ${allScholarships.length} scholarships`;
+      listBox.replaceChildren();
+
+      if (!allScholarships.length) {
+        listBox.innerHTML = "<p class='mini-note'>No active Firestore scholarships found yet. Add scholarships from Admin Panel → Bulk Scholarship Import Assistant.</p>";
+        return;
+      }
+
+      if (!visible.length) {
+        listBox.innerHTML = "<p class='mini-note'>No live scholarships match these filters. Try Reset Filters.</p>";
+        return;
+      }
+
+      visible.forEach((item) => listBox.appendChild(makeCard(item)));
+    }
+
+    function makeCard(item) {
+      const card = document.createElement("article");
+      card.className = "live-scholarship-card";
+
+      const badges = document.createElement("div");
+      badges.className = "live-card-badges";
+      badges.append(makeBadge(item.stateLabel || titleCase(item.state || "National")));
+      badges.append(makeBadge(item.sourceType === "bulk-assistant" ? "Bulk Added" : "Admin Added"));
+
+      const title = document.createElement("h3");
+      title.textContent = item.name || "Unnamed Scholarship";
+
+      const eligibility = document.createElement("p");
+      eligibility.className = "info";
+      eligibility.innerHTML = `<strong>Eligibility:</strong> ${safe(item.eligibilityNote || "Verify on official portal.")}`;
+
+      const meta = document.createElement("div");
+      meta.className = "live-card-meta";
+      addMeta(meta, "Amount", item.amount || "Varies");
+      addMeta(meta, "Deadline", item.deadline || "Check official portal");
+      addMeta(meta, "Income", Number(item.maxIncome || 0) > 0 ? `₹${Number(item.maxIncome).toLocaleString("en-IN")}` : "Check official rules");
+      addMeta(meta, "Education", toArray(item.education).join(", ") || "Any");
+      addMeta(meta, "Categories", toArray(item.categories).join(", ") || "Any");
+      addMeta(meta, "Source", item.sourceName || "Official portal");
+
+      const buttons = document.createElement("div");
+      buttons.className = "button-row";
+
+      if (String(item.link || "").startsWith("http")) {
+        const official = document.createElement("a");
+        official.className = "text-btn";
+        official.href = item.link;
+        official.target = "_blank";
+        official.rel = "noopener noreferrer";
+        official.textContent = "Open Official Link";
+        buttons.appendChild(official);
+      }
+
+      const dashboard = document.createElement("a");
+      dashboard.className = "secondary-btn";
+      dashboard.href = "dashboard.html";
+      dashboard.textContent = "Check Eligibility Match";
+      buttons.appendChild(dashboard);
+
+      card.append(badges, title, eligibility, meta, buttons);
+      return card;
+    }
+
+    function makeBadge(text) {
+      const badge = document.createElement("span");
+      badge.className = "badge";
+      badge.textContent = text;
+      return badge;
+    }
+
+    function addMeta(container, label, value) {
+      const p = document.createElement("p");
+      p.innerHTML = `<strong>${safe(label)}</strong>${safe(value)}`;
+      container.appendChild(p);
+    }
+
+    function toArray(value) {
+      if (Array.isArray(value)) return value.map(clean).filter(Boolean);
+      return String(value || "").split(",").map(clean).filter(Boolean);
+    }
+
+    function clean(value) {
+      return String(value || "").trim().toLowerCase().replaceAll("  ", " ");
+    }
+
+    function titleCase(value) {
+      return String(value || "").replaceAll("-", " ").replace(/^./, (char) => char.toUpperCase());
+    }
+
+    function safe(value) {
+      return String(value || "").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+    }
+  </script>
 </body>
 </html>
