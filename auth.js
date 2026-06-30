@@ -2,7 +2,8 @@ import { auth, db } from "./firebase-config.js";
 
 import {
   createUserWithEmailAndPassword,
-  signInWithEmailAndPassword
+  signInWithEmailAndPassword,
+  sendPasswordResetEmail
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 import {
@@ -15,15 +16,24 @@ const emailInput = document.getElementById("email");
 const passwordInput = document.getElementById("password");
 const registerBtn = document.getElementById("registerBtn");
 const loginBtn = document.getElementById("loginBtn");
+const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
 const authMessage = document.getElementById("authMessage");
 
 registerBtn?.addEventListener("click", register);
 loginBtn?.addEventListener("click", login);
+forgotPasswordBtn?.addEventListener("click", resetPassword);
 
 passwordInput?.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
     event.preventDefault();
     login();
+  }
+});
+
+emailInput?.addEventListener("keydown", (event) => {
+  if (event.key === "Enter" && !passwordInput?.value) {
+    event.preventDefault();
+    resetPassword();
   }
 });
 
@@ -101,6 +111,25 @@ async function login() {
   }
 }
 
+async function resetPassword() {
+  const email = readEmailOnly();
+  if (!email) return;
+
+  setAuthButtonsBusy(true);
+  showMessage("Sending password reset email...");
+
+  try {
+    await sendPasswordResetEmail(auth, email);
+
+    showMessage("Password reset email sent. Check your inbox or spam folder.");
+    setAuthButtonsBusy(false);
+  } catch (error) {
+    console.error("Password reset error:", error);
+    showMessage(getFriendlyError(error.code), true);
+    setAuthButtonsBusy(false);
+  }
+}
+
 function readCredentials() {
   const email = emailInput?.value.trim() || "";
   const password = passwordInput?.value || "";
@@ -110,18 +139,46 @@ function readCredentials() {
     return null;
   }
 
-  if (emailInput && !emailInput.checkValidity()) {
+  if (!isValidEmail(email)) {
     showMessage("Please enter a valid email address.", true);
-    emailInput.focus();
+    emailInput?.focus();
     return null;
   }
 
   return { email, password };
 }
 
+function readEmailOnly() {
+  const email = emailInput?.value.trim() || "";
+
+  if (!email) {
+    showMessage("Enter your registered email to reset your password.", true);
+    emailInput?.focus();
+    return null;
+  }
+
+  if (!isValidEmail(email)) {
+    showMessage("Please enter a valid email address.", true);
+    emailInput?.focus();
+    return null;
+  }
+
+  return email;
+}
+
+function isValidEmail(email) {
+  if (!emailInput) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  }
+
+  emailInput.value = email;
+  return emailInput.checkValidity();
+}
+
 function setAuthButtonsBusy(isBusy) {
   if (registerBtn) registerBtn.disabled = isBusy;
   if (loginBtn) loginBtn.disabled = isBusy;
+  if (forgotPasswordBtn) forgotPasswordBtn.disabled = isBusy;
 }
 
 function showMessage(message, isError = false) {
@@ -139,6 +196,9 @@ function getFriendlyError(code) {
     case "auth/invalid-email":
       return "Please enter a valid email address.";
 
+    case "auth/missing-email":
+      return "Enter your registered email address.";
+
     case "auth/weak-password":
       return "Use a stronger password with at least 6 characters.";
 
@@ -155,6 +215,8 @@ function getFriendlyError(code) {
       return "This account has been disabled.";
 
     case "auth/user-not-found":
+      return "No account found with this email.";
+
     case "auth/wrong-password":
     case "auth/invalid-credential":
       return "Incorrect email or password.";
