@@ -31,6 +31,77 @@
   line-height: 1;
 }
 
+.admin-tool-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 18px;
+  margin-top: 18px;
+}
+
+.admin-tool-card {
+  padding: 20px;
+  border-radius: 20px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.admin-tool-card h3 {
+  margin-bottom: 8px;
+}
+
+.admin-editor-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.5fr) minmax(280px, 0.8fr);
+  gap: 22px;
+  align-items: start;
+}
+
+.admin-editor-form {
+  min-width: 0;
+}
+
+.admin-preview-panel {
+  position: sticky;
+  top: 20px;
+  padding: 20px;
+  border-radius: 22px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+}
+
+.admin-preview-panel h3 {
+  margin: 8px 0 16px;
+}
+
+.admin-live-preview {
+  min-height: 220px;
+}
+
+.admin-preview-card {
+  padding: 18px;
+  border-radius: 18px;
+  background: #ffffff;
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow);
+}
+
+.admin-preview-card h3 {
+  margin: 14px 0 10px;
+  line-height: 1.25;
+}
+
+.admin-preview-meta {
+  display: grid;
+  gap: 8px;
+  margin-top: 14px;
+}
+
+.admin-preview-meta p {
+  margin: 0;
+  color: #475467;
+}
+
 .admin-scholarship-card {
   margin: 18px 0;
   padding: 22px;
@@ -48,7 +119,8 @@
 }
 
 .admin-status-badge,
-.admin-state-badge {
+.admin-state-badge,
+.admin-priority-badge {
   display: inline-flex;
   width: fit-content;
   align-items: center;
@@ -83,6 +155,12 @@
   border: 1px solid #c7d7fe;
 }
 
+.admin-priority-badge {
+  background: #f4f3ff;
+  color: #5925dc;
+  border: 1px solid #d9d6fe;
+}
+
 .admin-scholarship-card h3 {
   margin: 8px 0 16px;
   font-size: 1.25rem;
@@ -113,6 +191,7 @@
 .admin-meta-item span {
   color: #475467;
   font-size: 0.93rem;
+  overflow-wrap: anywhere;
 }
 
 .admin-card-note {
@@ -122,6 +201,34 @@
   background: #eef4ff;
   border: 1px solid #c7d7fe;
   color: #1e3a8a;
+}
+
+.admin-actions {
+  margin-top: 18px;
+}
+
+.admin-activity-log {
+  display: grid;
+  gap: 12px;
+}
+
+.admin-activity-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 14px;
+  border-radius: 16px;
+  background: #f8fafc;
+  border: 1px solid var(--border);
+}
+
+.admin-activity-item strong {
+  color: var(--text);
+}
+
+.admin-activity-item span {
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .danger-btn {
@@ -135,6 +242,7 @@
   font-weight: 900;
   text-decoration: none;
   border: 1px solid #fecdca;
+  cursor: pointer;
 }
 
 .danger-btn:hover {
@@ -155,8 +263,25 @@ textarea {
   color: #b42318;
 }
 
+@media (max-width: 1050px) {
+  .admin-stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .admin-tool-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-editor-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .admin-preview-panel {
+    position: static;
+  }
+}
+
 @media (max-width: 900px) {
-  .admin-stats-grid,
   .admin-meta-grid {
     grid-template-columns: repeat(2, 1fr);
   }
@@ -179,6 +304,10 @@ textarea {
   .admin-card-top {
     flex-direction: column;
     align-items: flex-start;
+  }
+
+  .admin-activity-item {
+    flex-direction: column;
   }
 
   .danger-btn {
