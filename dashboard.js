@@ -663,7 +663,23 @@ function getNoMatchReason(profile) {
 
   return "No matching scholarships found for your profile right now. Try updating your profile or check official portals for latest schemes.";
 }
+function getMatchQuality(score) {
+  const safeScore = Math.min(Number(score || 0), 100);
 
+  if (safeScore >= 90) {
+    return "🟢 Excellent Match";
+  }
+
+  if (safeScore >= 75) {
+    return "🔵 Very Good Match";
+  }
+
+  if (safeScore >= 60) {
+    return "🟡 Good Match";
+  }
+
+  return "⚪ Possible Match";
+}
 function createRecommendationCard(scholarship) {
   const card = document.createElement("div");
   card.className = "scholarship";
@@ -674,12 +690,19 @@ function createRecommendationCard(scholarship) {
 
   const heading = document.createElement("h3");
   heading.textContent = scholarship.name;
-const matchScore = document.createElement("p");
-matchScore.className = "info";
-matchScore.append(
-  createStrongText("Match Score:"),
-  document.createTextNode(` ${Math.min(Number(scholarship.score || 0), 100)}%`)
-);
+  const matchScore = document.createElement("p");
+  matchScore.className = "info";
+  matchScore.append(
+    createStrongText("Match Score:"),
+    document.createTextNode(` ${Math.min(Number(scholarship.score || 0), 100)}%`)
+  );
+
+  const matchQuality = document.createElement("p");
+  matchQuality.className = "info";
+  matchQuality.append(
+    createStrongText("Match Quality:"),
+    document.createTextNode(` ${getMatchQuality(scholarship.score)}`)
+  );
 
 const whyMatch = document.createElement("div");
 whyMatch.className = "notice-box";
@@ -810,11 +833,12 @@ whyMatch.append(whyTitle, whyList);
 
   actions.append(officialLink, saveButton, trackButton, compareButton);
 
-  card.append(
-   badge,
-   heading,
-   matchScore,
-   whyMatch,
+   card.append(
+    badge,
+    heading,
+    matchScore,
+    matchQuality,
+    whyMatch,
    amount,
     eligibility,
     income,
