@@ -31,6 +31,7 @@ const markNotificationsReadBtn = document.getElementById("markNotificationsReadB
 const profileName = document.getElementById("profileName");
 const profileState = document.getElementById("profileState");
 const profileEducation = document.getElementById("profileEducation");
+const profileYear = document.getElementById("profileYear");
 const profileCategory = document.getElementById("profileCategory");
 const profileGender = document.getElementById("profileGender");
 const profileDisability = document.getElementById("profileDisability");
@@ -369,6 +370,7 @@ saveProfileBtn?.addEventListener("click", async () => {
       name,
       state: profileState?.value || "",
       education: profileEducation?.value || "",
+      year: profileYear?.value || "",
       category: profileCategory?.value || "",
       gender: profileGender?.value || "",
       disability: profileDisability?.value || "",
@@ -590,6 +592,7 @@ async function loadProfile() {
   setElementValue(profileName, data.name);
   setElementValue(profileState, data.state);
   setElementValue(profileEducation, data.education);
+  setElementValue(profileYear, data.year);
   setElementValue(profileCategory, data.category);
   setElementValue(profileGender, data.gender);
   setElementValue(profileDisability, data.disability);
@@ -1797,8 +1800,9 @@ function getDeadlineInfo(deadlineDate) {
 function normalizeProfile(profile) {
   return {
     state: mapState(profile.state),
-    education: mapEducation(profile.education),
-    category: mapCategory(profile.category),
+   education: mapEducation(profile.education),
+   year: String(profile.year || "").trim(),
+   category: mapCategory(profile.category),
     gender: mapGender(profile.gender),
     disability: mapDisability(profile.disability),
     income: Number(profile.income || 0),
