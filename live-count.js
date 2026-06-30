@@ -37,17 +37,20 @@ async function loadCount() {
     setHeroStat(0, "Live", "Active scholarships");
     setHeroStat(1, "—", "Closing this week");
     setHeroStat(2, "—", "New this month");
-    if (updatedBox) updatedBox.textContent = "Open the scholarship directory for the latest active list.";
+    if (updatedBox) updatedBox.textContent = "Open the scholarship hub for the latest active list.";
   }
 }
 
 function upgradeHomeScholarshipLinks() {
-  document.querySelectorAll('a[href="scholarships.html"]').forEach((link) => {
-    if (link.textContent.toLowerCase().includes("scholarship")) {
-      link.href = "scholarships-live.html";
-      if (link.textContent.trim() === "View Scholarships") link.textContent = "View Live Scholarships";
-      if (link.textContent.trim() === "Open Scholarship Directory") link.textContent = "Open Live Directory";
-      if (link.textContent.trim() === "Explore Scholarship Directory") link.textContent = "Explore Live Directory";
+  document.querySelectorAll('a[href="scholarships.html"], a[href="scholarships-live.html"]').forEach((link) => {
+    if (link.textContent.toLowerCase().includes("scholarship") || link.textContent.toLowerCase().includes("directory")) {
+      link.href = "scholarship-hub.html";
+      if (link.textContent.trim() === "View Scholarships") link.textContent = "Open Scholarship Hub";
+      if (link.textContent.trim() === "View Live Scholarships") link.textContent = "Open Scholarship Hub";
+      if (link.textContent.trim() === "Open Scholarship Directory") link.textContent = "Open Scholarship Hub";
+      if (link.textContent.trim() === "Open Live Directory") link.textContent = "Open Scholarship Hub";
+      if (link.textContent.trim() === "Explore Scholarship Directory") link.textContent = "Explore Scholarship Hub";
+      if (link.textContent.trim() === "Explore Live Directory") link.textContent = "Explore Scholarship Hub";
     }
   });
 }
