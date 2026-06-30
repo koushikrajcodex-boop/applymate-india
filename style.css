@@ -964,3 +964,29 @@ footer {
   display: inline-block;
   margin-bottom: 0.4rem;
 }
+@media (max-width: 640px) {
+  .form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .button-row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .button-row button,
+  .button-row a {
+    width: 100%;
+    text-align: center;
+  }
+
+  .comparison-table-wrap,
+  #comparisonTableWrap {
+    overflow-x: auto;
+  }
+
+  .notification-panel {
+    width: calc(100vw - 24px);
+    right: 12px;
+  }
+}
