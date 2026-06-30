@@ -19,6 +19,36 @@ service cloud.firestore {
         ];
     }
 
+    function isValidUrl(value) {
+      return value is string
+        && value.size() >= 12
+        && (
+          value.matches('https://.*') ||
+          value.matches('http://.*')
+        );
+    }
+
+    function isValidIsoDate(value) {
+      return value is string
+        && value.matches('20[0-9][0-9]-[0-1][0-9]-[0-3][0-9]');
+    }
+
+    function hasRequiredScholarshipFields() {
+      return request.resource.data.name is string
+        && request.resource.data.name.size() > 2
+        && request.resource.data.status == "active"
+        && request.resource.data.link is string
+        && isValidUrl(request.resource.data.link)
+        && request.resource.data.deadlineDate is string
+        && isValidIsoDate(request.resource.data.deadlineDate)
+        && request.resource.data.sourceName is string
+        && request.resource.data.sourceName.size() > 1
+        && request.resource.data.eligibilityNote is string
+        && request.resource.data.eligibilityNote.size() > 10
+        && request.resource.data.incomeNote is string
+        && request.resource.data.incomeNote.size() > 5;
+    }
+
     match /users/{userId} {
       allow read, write: if isOwner(userId);
 
@@ -33,7 +63,8 @@ service cloud.firestore {
 
     match /scholarships/{scholarshipId} {
       allow read: if true;
-      allow create, update, delete: if isAdmin();
+      allow create, update: if isAdmin() && hasRequiredScholarshipFields();
+      allow delete: if isAdmin();
     }
   }
 }
