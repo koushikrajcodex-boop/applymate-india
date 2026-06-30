@@ -36,9 +36,15 @@
       <h1>ApplyMate India Admin Panel</h1>
       <p id="adminEmail" class="last-updated">Checking admin access...</p>
 
-      <div class="notice-box">
-        Only authorized admins can manage scholarships. Student users should use the normal dashboard.
-      </div>
+     <div class="notice-box">
+  Only authorized admins can manage scholarships. Student users should use the normal dashboard.
+</div>
+
+<div class="notice-box">
+  <strong>Admin setup check:</strong>
+  If Add / Edit / Delete does not work, open Firebase Console → Firestore Database → Rules,
+  paste the latest firestore.rules from GitHub, and click Publish.
+</div>
     </section>
 
     <section id="adminLockedSection" class="content-card hidden">
