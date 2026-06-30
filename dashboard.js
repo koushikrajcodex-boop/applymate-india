@@ -456,9 +456,10 @@ renderComparison();
     return;
   }
 
-  latestRecommendedScholarships = matches;
-renderBestMatch(matches[0]);
-    const profileParts = [
+    latestRecommendedScholarships = matches;
+  renderBestMatch(matches[0]);
+
+  const profileParts = [
     normalizedProfile.state,
     normalizedProfile.education,
     normalizedProfile.category,
@@ -472,9 +473,8 @@ renderBestMatch(matches[0]);
       : ""
   ].filter(Boolean);
 
-    recommendationSummary.textContent =
+  recommendationSummary.textContent =
     `You are eligible for ${matches.length} scholarship${matches.length === 1 ? "" : "s"} based on your profile${profileParts.length ? `: ${profileParts.join(", ")}.` : "."}`;
-
   applyRecommendationFilters();
   renderComparison();
   refreshNotifications();
