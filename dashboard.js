@@ -95,6 +95,7 @@ const STATUS_LABELS = {
 };
 let currentUser = null;
 let latestProfile = {};
+let availableScholarships = scholarships;
 let latestRecommendedScholarships = [];
 let filteredRecommendedScholarships = [];
 let compareScholarships = [];
