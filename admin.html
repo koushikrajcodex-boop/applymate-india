@@ -67,9 +67,55 @@
       overflow-wrap: anywhere;
     }
 
+    .bulk-assistant-preview {
+      display: grid;
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .bulk-preview-card {
+      padding: 16px;
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid var(--border);
+      box-shadow: var(--shadow);
+    }
+
+    .bulk-preview-card h3 {
+      margin: 8px 0 10px;
+      line-height: 1.25;
+    }
+
+    .bulk-preview-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+      margin-top: 12px;
+    }
+
+    .bulk-preview-grid p {
+      margin: 0;
+      padding: 10px;
+      border-radius: 12px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+      color: #475467;
+      font-size: 0.92rem;
+    }
+
+    .bulk-preview-grid strong {
+      display: block;
+      color: var(--text);
+      margin-bottom: 4px;
+    }
+
     @media (max-width: 900px) {
       .admin-assistant-layout {
         grid-template-columns: 1fr;
+      }
+
+      .bulk-preview-grid {
+        grid-template-columns: repeat(2, 1fr);
       }
     }
 
@@ -80,6 +126,10 @@
 
       .assistant-extracted-item span {
         text-align: left;
+      }
+
+      .bulk-preview-grid {
+        grid-template-columns: 1fr;
       }
     }
   </style>
@@ -269,6 +319,50 @@
               <p class="mini-note">Extracted fields will appear here after filling.</p>
             </div>
           </aside>
+        </div>
+      </section>
+
+      <section class="content-card admin-assistant-card">
+        <div class="card-heading">
+          <div>
+            <span class="tagline">Bulk Assistant</span>
+            <h2>Bulk Scholarship Import Assistant</h2>
+            <p class="mini-note">
+              Paste many scholarships at once. Separate each scholarship using three dashes: ---
+            </p>
+          </div>
+        </div>
+
+        <div class="notice-box">
+          <strong>Bulk safe mode:</strong>
+          Preview first. Import skips duplicate scholarship names already found in Firestore.
+        </div>
+
+        <div class="admin-assistant-layout">
+          <div class="field full">
+            <label for="bulkAssistantPrompt">Paste multiple scholarships</label>
+            <textarea id="bulkAssistantPrompt" rows="12" placeholder="Add Scholarship One...&#10;State national...&#10;---&#10;Add Scholarship Two...&#10;State telangana..."></textarea>
+          </div>
+
+          <aside class="admin-assistant-actions">
+            <h3>Bulk Actions</h3>
+            <p class="mini-note">
+              Preview checks extracted fields. Import writes new scholarships to Firestore.
+            </p>
+
+            <div class="button-row assistant-button-row">
+              <button id="bulkAssistantPreviewBtn" type="button">Preview All</button>
+              <button id="bulkAssistantImportBtn" class="secondary-btn" type="button">Import All</button>
+              <button id="bulkAssistantExampleBtn" class="secondary-btn" type="button">Use Bulk Example</button>
+              <button id="bulkAssistantClearBtn" class="secondary-btn" type="button">Clear</button>
+            </div>
+
+            <p id="bulkAssistantMessage" class="mini-note"></p>
+          </aside>
+        </div>
+
+        <div id="bulkAssistantPreview" class="bulk-assistant-preview">
+          <p class="mini-note">Bulk preview will appear here.</p>
         </div>
       </section>
 
@@ -672,7 +766,6 @@ Income note: Family income rules should be verified on the official AICTE / NSP 
       if (text.includes("ews") || text.includes("ebc")) values.push("ews");
       if (text.includes("minority") || text.includes("minorities")) values.push("minority");
       if (text.includes("kapu")) values.push("kapu");
-      if (text.includes("disabled") || text.includes("disability")) values.push("disabled");
       return unique(values.length ? values : ["general", "sc", "st", "obc", "ews", "minority"]);
     }
 
@@ -815,6 +908,443 @@ Income note: Family income rules should be verified on the official AICTE / NSP 
     }
 
     function formatNumber(value) {
+      const number = Number(value || 0);
+      return Number.isFinite(number) ? number.toLocaleString("en-IN") : "0";
+    }
+  </script>
+
+  <script type="module">
+    import { auth, db } from "./firebase-config.js";
+    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+    import {
+      collection,
+      getDocs,
+      addDoc,
+      serverTimestamp
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
+
+    const bulkAdminEmails = [
+      "lastwarrior324@gmail.com",
+      "koushikrajcodex@gmail.com"
+    ];
+
+    const bulkPrompt = document.getElementById("bulkAssistantPrompt");
+    const bulkPreviewBtn = document.getElementById("bulkAssistantPreviewBtn");
+    const bulkImportBtn = document.getElementById("bulkAssistantImportBtn");
+    const bulkExampleBtn = document.getElementById("bulkAssistantExampleBtn");
+    const bulkClearBtn = document.getElementById("bulkAssistantClearBtn");
+    const bulkMessage = document.getElementById("bulkAssistantMessage");
+    const bulkPreview = document.getElementById("bulkAssistantPreview");
+
+    let bulkCurrentUser = null;
+    let latestBulkScholarships = [];
+
+    const bulkExample = `Add AICTE Swanath Scholarship for orphan and eligible wards.
+State national.
+Education engineering, degree.
+Gender any.
+Amount ₹50,000 per year.
+Income limit ₹8,00,000.
+Categories general, sc, st, obc, ews, minority.
+Disability any.
+Source AICTE.
+Deadline check AICTE / NSP portal.
+Priority 94.
+Eligibility: For eligible students covered under AICTE Swanath scheme rules.
+Income note: Family income rules must be verified on the official AICTE / NSP portal.
+---
+Add PM-USP Central Sector Scheme of Scholarship for College and University Students.
+State national.
+Education degree, engineering, pg.
+Gender any.
+Amount Varies as per official rules.
+Income limit ₹4,50,000.
+Categories general, sc, st, obc, ews, minority.
+Disability any.
+Source National Scholarship Portal.
+Deadline check National Scholarship Portal.
+Priority 90.
+Eligibility: For meritorious students from economically weaker families pursuing college or university education.
+Income note: Annual family income should be within ₹4,50,000 or as per latest NSP notification.`;
+
+    onAuthStateChanged(auth, (user) => {
+      bulkCurrentUser = user;
+    });
+
+    bulkPreviewBtn?.addEventListener("click", () => {
+      latestBulkScholarships = parseBulkText(bulkPrompt?.value || "");
+      renderBulkPreview(latestBulkScholarships);
+      showBulkMessage(`Preview ready: ${latestBulkScholarships.length} scholarship${latestBulkScholarships.length === 1 ? "" : "s"} detected.`);
+    });
+
+    bulkExampleBtn?.addEventListener("click", () => {
+      if (bulkPrompt) {
+        bulkPrompt.value = bulkExample;
+        bulkPrompt.focus();
+      }
+      showBulkMessage("Bulk example added. Click Preview All.");
+    });
+
+    bulkClearBtn?.addEventListener("click", () => {
+      if (bulkPrompt) bulkPrompt.value = "";
+      latestBulkScholarships = [];
+      renderBulkPreview([]);
+      showBulkMessage("");
+    });
+
+    bulkImportBtn?.addEventListener("click", async () => {
+      await importBulkScholarships();
+    });
+
+    async function importBulkScholarships() {
+      if (!bulkCurrentUser || !bulkAdminEmails.includes(String(bulkCurrentUser.email || "").toLowerCase())) {
+        showBulkMessage("You are not allowed to import scholarships.", true);
+        return;
+      }
+
+      const parsed = latestBulkScholarships.length
+        ? latestBulkScholarships
+        : parseBulkText(bulkPrompt?.value || "");
+
+      if (parsed.length === 0) {
+        showBulkMessage("No valid scholarships found. Use --- between scholarships.", true);
+        return;
+      }
+
+      renderBulkPreview(parsed);
+
+      const confirmed = window.confirm(`Import ${parsed.length} scholarship${parsed.length === 1 ? "" : "s"} to Firestore? Duplicate names will be skipped.`);
+      if (!confirmed) return;
+
+      setBulkButtonBusy(true);
+      showBulkMessage("Importing scholarships...");
+
+      let added = 0;
+      let skipped = 0;
+      let failed = 0;
+
+      try {
+        const snapshot = await getDocs(collection(db, "scholarships"));
+        const existingNames = new Set(
+          snapshot.docs.map((documentSnapshot) => normalizeBulkName(documentSnapshot.data().name))
+        );
+
+        for (const scholarship of parsed) {
+          const normalizedName = normalizeBulkName(scholarship.name);
+
+          if (!normalizedName || existingNames.has(normalizedName)) {
+            skipped += 1;
+            continue;
+          }
+
+          try {
+            await addDoc(collection(db, "scholarships"), {
+              ...scholarship,
+              sourceType: "bulk-assistant",
+              createdAt: serverTimestamp(),
+              updatedAt: serverTimestamp(),
+              createdBy: bulkCurrentUser.email || "",
+              updatedBy: bulkCurrentUser.email || ""
+            });
+
+            existingNames.add(normalizedName);
+            added += 1;
+          } catch (error) {
+            console.error("Bulk scholarship import failed:", error);
+            failed += 1;
+          }
+        }
+
+        showBulkMessage(`Import completed. Added: ${added}, skipped duplicates: ${skipped}, failed: ${failed}. Refresh admin analytics to see updated counts.`);
+        document.getElementById("refreshAdminBtn")?.click();
+      } catch (error) {
+        console.error("Bulk import error:", error);
+        showBulkMessage("Bulk import failed. Check Firestore rules and try again.", true);
+      } finally {
+        setBulkButtonBusy(false);
+      }
+    }
+
+    function parseBulkText(rawText) {
+      return String(rawText || "")
+        .split(/\n\s*---+\s*\n/)
+        .map((block) => block.trim())
+        .filter(Boolean)
+        .map(parseBulkScholarship)
+        .filter((scholarship) => scholarship.name);
+    }
+
+    function parseBulkScholarship(rawText) {
+      const text = rawText.toLowerCase();
+      const lines = rawText.split("\n").map((line) => line.trim()).filter(Boolean);
+      const sourceName = getBulkSource(rawText, text);
+      const state = getBulkState(text);
+      const education = getBulkEducation(text);
+      const categories = getBulkCategories(text);
+      const genders = getBulkGenders(text);
+      const disability = getBulkDisability(text);
+      const maxIncome = getBulkIncome(rawText);
+      const name = getBulkName(rawText, lines);
+
+      return {
+        name,
+        state,
+        stateLabel: getBulkStateLabel(state),
+        status: text.includes("draft") ? "draft" : text.includes("closed") ? "closed" : "active",
+        amount: getBulkAmount(rawText),
+        maxIncome,
+        minPercentage: getBulkPercentage(rawText),
+        deadline: getBulkValue(rawText, ["deadline", "last date", "closing date"]) || getBulkDefaultDeadline(sourceName),
+        deadlineDate: getBulkDate(rawText),
+        link: getBulkLink(rawText),
+        education,
+        categories,
+        genders,
+        disability,
+        eligibilityNote: getBulkValue(rawText, ["eligibility", "eligibility note", "eligible"]) || makeBulkEligibility(name, education, categories, disability),
+        incomeNote: getBulkValue(rawText, ["income note", "income rule"]) || makeBulkIncomeNote(maxIncome),
+        priority: getBulkPriority(rawText, sourceName, disability, genders, state),
+        sourceName
+      };
+    }
+
+    function renderBulkPreview(items) {
+      if (!bulkPreview) return;
+      bulkPreview.replaceChildren();
+
+      if (!items.length) {
+        const empty = document.createElement("p");
+        empty.className = "mini-note";
+        empty.textContent = "Bulk preview will appear here.";
+        bulkPreview.appendChild(empty);
+        return;
+      }
+
+      items.forEach((scholarship, index) => {
+        const card = document.createElement("article");
+        card.className = "bulk-preview-card";
+
+        const badge = document.createElement("span");
+        badge.className = `admin-status-badge admin-status-${scholarship.status}`;
+        badge.textContent = `${index + 1}. ${scholarship.status}`;
+
+        const title = document.createElement("h3");
+        title.textContent = scholarship.name;
+
+        const grid = document.createElement("div");
+        grid.className = "bulk-preview-grid";
+
+        [
+          ["State", scholarship.stateLabel],
+          ["Amount", scholarship.amount],
+          ["Income", scholarship.maxIncome ? `₹${formatBulkNumber(scholarship.maxIncome)}` : "Not set"],
+          ["Education", scholarship.education.join(", ")],
+          ["Categories", scholarship.categories.join(", ")],
+          ["Gender", scholarship.genders.join(", ")],
+          ["Disability", scholarship.disability],
+          ["Priority", scholarship.priority],
+          ["Source", scholarship.sourceName]
+        ].forEach(([label, value]) => {
+          const item = document.createElement("p");
+          const strong = document.createElement("strong");
+          strong.textContent = label;
+          const span = document.createElement("span");
+          span.textContent = value || "Not detected";
+          item.append(strong, span);
+          grid.appendChild(item);
+        });
+
+        card.append(badge, title, grid);
+        bulkPreview.appendChild(card);
+      });
+    }
+
+    function getBulkName(rawText, lines) {
+      const labelled = getBulkValue(rawText, ["scholarship name", "name"]);
+      if (labelled) return cleanBulk(labelled, 180);
+      const firstLine = lines[0] || "";
+      return cleanBulk(firstLine.replace(/^add\s+/i, "").replace(/^create\s+/i, "").replace(/^publish\s+/i, ""), 180);
+    }
+
+    function getBulkState(text) {
+      if (text.includes("telangana") || text.includes("epass")) return "telangana";
+      if (text.includes("andhra") || text.includes("jnanabhumi")) return "andhra-pradesh";
+      return "national";
+    }
+
+    function getBulkStateLabel(state) {
+      if (state === "andhra-pradesh") return "Andhra Pradesh";
+      if (state === "telangana") return "Telangana";
+      return "National";
+    }
+
+    function getBulkAmount(rawText) {
+      const labelled = getBulkValue(rawText, ["amount", "scholarship amount"]);
+      if (labelled) return cleanBulk(labelled, 100);
+      const match = rawText.match(/₹\s?[0-9,]+|rs\.?\s?[0-9,]+|inr\s?[0-9,]+/i);
+      return match ? match[0].replace(/rs\.?|inr/i, "₹") : "Varies as per official rules";
+    }
+
+    function getBulkIncome(rawText) {
+      const labelled = getBulkValue(rawText, ["income limit", "max income", "maximum income", "family income", "annual income"]);
+      const source = labelled || rawText;
+      const match = source.match(/[0-9][0-9,]*/);
+      return match ? toBulkNumber(match[0]) : 0;
+    }
+
+    function getBulkPercentage(rawText) {
+      const labelled = getBulkValue(rawText, ["minimum percentage", "min percentage", "percentage", "marks", "min marks"]);
+      const source = labelled || rawText;
+      const match = source.match(/[0-9]{1,3}\s?%|[0-9]{1,3}/);
+      return match ? Math.min(toBulkNumber(match[0]), 100) : 0;
+    }
+
+    function getBulkDate(rawText) {
+      const iso = rawText.match(/20[0-9]{2}-[0-9]{1,2}-[0-9]{1,2}/);
+      if (iso) return normalizeBulkDateParts(iso[0].split("-"));
+      const indian = rawText.match(/[0-9]{1,2}[-/][0-9]{1,2}[-/]20[0-9]{2}/);
+      if (!indian) return "";
+      const parts = indian[0].split(/[-/]/);
+      return normalizeBulkDateParts([parts[2], parts[1], parts[0]]);
+    }
+
+    function getBulkLink(rawText) {
+      const match = rawText.match(/https?:\/\/[^\s]+/i);
+      return match ? match[0] : "";
+    }
+
+    function getBulkEducation(text) {
+      const values = [];
+      if (text.includes("school") || text.includes("pre matric") || text.includes("pre-matric")) values.push("school");
+      if (text.includes("intermediate") || text.includes("inter")) values.push("intermediate");
+      if (text.includes("degree") || text.includes("college") || text.includes("ug")) values.push("degree");
+      if (text.includes("engineering") || text.includes("technical") || text.includes("aicte") || text.includes("btech")) values.push("engineering");
+      if (text.includes("pg") || text.includes("post graduation") || text.includes("postgraduate")) values.push("pg");
+      return uniqueBulk(values.length ? values : ["degree", "engineering"]);
+    }
+
+    function getBulkCategories(text) {
+      const values = [];
+      if (text.includes("general") || text.includes("all categor")) values.push("general");
+      if (hasBulkWord(text, "sc")) values.push("sc");
+      if (hasBulkWord(text, "st")) values.push("st");
+      if (text.includes("obc") || hasBulkWord(text, "bc")) values.push("obc");
+      if (text.includes("ews") || text.includes("ebc")) values.push("ews");
+      if (text.includes("minority") || text.includes("minorities")) values.push("minority");
+      if (text.includes("kapu")) values.push("kapu");
+      return uniqueBulk(values.length ? values : ["general", "sc", "st", "obc", "ews", "minority"]);
+    }
+
+    function getBulkGenders(text) {
+      if (text.includes("girl") || text.includes("female") || text.includes("women") || text.includes("woman")) return ["female"];
+      if (text.includes("boy") || text.includes("male")) return ["male"];
+      return ["any"];
+    }
+
+    function getBulkDisability(text) {
+      if (text.includes("specially abled") || text.includes("differently abled") || text.includes("disabled") || text.includes("disability")) return "yes";
+      if (text.includes("not disability") || text.includes("not disabled")) return "no";
+      return "any";
+    }
+
+    function getBulkSource(rawText, text) {
+      const labelled = getBulkValue(rawText, ["source", "source name", "portal"]);
+      if (labelled) return cleanBulk(labelled, 100);
+      if (text.includes("aicte")) return "AICTE";
+      if (text.includes("jnanabhumi")) return "Official Jnanabhumi Portal";
+      if (text.includes("epass")) return "Official Telangana ePASS Portal";
+      if (text.includes("nsp") || text.includes("national scholarship portal")) return "National Scholarship Portal";
+      return "Official Portal";
+    }
+
+    function getBulkPriority(rawText, sourceName, disability, genders, state) {
+      const labelled = getBulkValue(rawText, ["priority", "priority score"]);
+      if (labelled) return Math.max(0, Math.min(toBulkNumber(labelled), 100));
+      if (disability === "yes") return 92;
+      if (genders.includes("female")) return 92;
+      if (sourceName.toLowerCase().includes("aicte")) return 90;
+      if (state === "national") return 86;
+      return 82;
+    }
+
+    function getBulkDefaultDeadline(sourceName) {
+      const source = sourceName.toLowerCase();
+      if (source.includes("aicte")) return "Check AICTE / NSP portal";
+      if (source.includes("jnanabhumi")) return "Check official Jnanabhumi portal";
+      if (source.includes("epass")) return "Check official Telangana ePASS portal";
+      if (source.includes("national scholarship")) return "Check National Scholarship Portal";
+      return "Check official portal";
+    }
+
+    function makeBulkEligibility(name, education, categories, disability) {
+      const disabilityText = disability === "yes" ? " This scholarship is disability-specific." : "";
+      return `For eligible students applying under ${name}. Education levels: ${education.join(", ")}. Categories: ${categories.join(", ")}.${disabilityText} Verify final rules on the official portal.`;
+    }
+
+    function makeBulkIncomeNote(maxIncome) {
+      return maxIncome > 0
+        ? `Annual family income should be within ₹${formatBulkNumber(maxIncome)} or as per latest official rules.`
+        : "Income rules should be verified on the official portal.";
+    }
+
+    function getBulkValue(rawText, labels) {
+      const lines = rawText.split("\n");
+      for (const line of lines) {
+        const lower = line.toLowerCase();
+        for (const label of labels) {
+          const labelText = label.toLowerCase();
+          if (lower.startsWith(`${labelText}:`) || lower.startsWith(`${labelText} -`)) {
+            return line.slice(label.length + 1).trim();
+          }
+        }
+      }
+      return "";
+    }
+
+    function setBulkButtonBusy(isBusy) {
+      if (!bulkImportBtn) return;
+      if (isBusy) {
+        bulkImportBtn.dataset.originalText = bulkImportBtn.textContent;
+        bulkImportBtn.textContent = "Importing...";
+        bulkImportBtn.disabled = true;
+        return;
+      }
+      bulkImportBtn.textContent = bulkImportBtn.dataset.originalText || "Import All";
+      bulkImportBtn.disabled = false;
+    }
+
+    function showBulkMessage(message, isError = false) {
+      if (!bulkMessage) return;
+      bulkMessage.textContent = message;
+      bulkMessage.style.color = isError ? "#b42318" : "#067647";
+    }
+
+    function normalizeBulkName(value) {
+      return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
+    }
+
+    function normalizeBulkDateParts(parts) {
+      return `${parts[0]}-${String(parts[1]).padStart(2, "0")}-${String(parts[2]).padStart(2, "0")}`;
+    }
+
+    function hasBulkWord(text, word) {
+      return text.split(/[^a-z0-9]+/).includes(word);
+    }
+
+    function cleanBulk(value, maxLength = 500) {
+      return String(value || "").replace(/\s+/g, " ").trim().slice(0, maxLength);
+    }
+
+    function toBulkNumber(value) {
+      const number = Number(String(value || "").replace(/[^0-9.]/g, ""));
+      return Number.isFinite(number) ? number : 0;
+    }
+
+    function uniqueBulk(values) {
+      return [...new Set(values.filter(Boolean))];
+    }
+
+    function formatBulkNumber(value) {
       const number = Number(value || 0);
       return Number.isFinite(number) ? number.toLocaleString("en-IN") : "0";
     }
