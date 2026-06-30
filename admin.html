@@ -10,7 +10,79 @@
 
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="admin.css?v=admin4" />
-  <link rel="stylesheet" href="admin-assistant.css?v=assistant1" />
+
+  <style>
+    .admin-assistant-card {
+      border: 1px solid #c7d7fe;
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
+    .admin-assistant-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
+      gap: 22px;
+      align-items: start;
+      margin-top: 18px;
+    }
+
+    .admin-assistant-actions {
+      padding: 20px;
+      border-radius: 20px;
+      border: 1px solid var(--border);
+      background: #ffffff;
+      box-shadow: var(--shadow);
+    }
+
+    .admin-assistant-actions h3 {
+      margin-bottom: 8px;
+    }
+
+    .assistant-button-row {
+      margin-top: 16px;
+    }
+
+    .admin-assistant-extracted {
+      display: grid;
+      gap: 10px;
+      margin-top: 16px;
+    }
+
+    .assistant-extracted-item {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 12px;
+      border-radius: 14px;
+      background: #f8fafc;
+      border: 1px solid var(--border);
+    }
+
+    .assistant-extracted-item strong {
+      color: var(--text);
+    }
+
+    .assistant-extracted-item span {
+      color: #475467;
+      text-align: right;
+      overflow-wrap: anywhere;
+    }
+
+    @media (max-width: 900px) {
+      .admin-assistant-layout {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 620px) {
+      .assistant-extracted-item {
+        flex-direction: column;
+      }
+
+      .assistant-extracted-item span {
+        text-align: left;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -170,24 +242,23 @@
 
         <div class="notice-box">
           <strong>Safe mode:</strong>
-          This assistant does not use any public API key in the browser. It extracts fields from your text, fills the form, and lets you review before saving.
+          The assistant works inside your browser and does not expose any AI API key. It fills the form, then you review and save.
         </div>
 
         <div class="admin-assistant-layout">
           <div class="field full">
             <label for="adminAssistantPrompt">Tell the assistant what scholarship to add</label>
-            <textarea id="adminAssistantPrompt" rows="8" placeholder="Example: Add AICTE Pragati Scholarship for girl students. State national. Education engineering. Gender female. Amount ₹50,000 per year. Income limit ₹8,00,000. Categories general, sc, st, obc, minority. Source AICTE. Deadline check AICTE / NSP portal."></textarea>
+            <textarea id="adminAssistantPrompt" rows="8" placeholder="Example: Add AICTE Pragati Scholarship for girl students. State national. Education engineering. Gender female. Amount ₹50,000 per year. Income limit ₹8,00,000. Categories general, sc, st, obc, ews, minority. Source AICTE. Deadline check AICTE / NSP portal."></textarea>
           </div>
 
           <aside class="admin-assistant-actions">
             <h3>Assistant Actions</h3>
             <p class="mini-note">
-              Use Fill Form first, then review the live preview and click Save Scholarship.
+              Fill the form first, review the live preview, then click Save Scholarship.
             </p>
 
             <div class="button-row assistant-button-row">
               <button id="adminAssistantFillBtn" type="button">Fill Form</button>
-              <button id="adminAssistantFillSaveBtn" class="secondary-btn" type="button">Fill + Save</button>
               <button id="adminAssistantExampleBtn" class="secondary-btn" type="button">Use Example</button>
               <button id="adminAssistantClearBtn" class="secondary-btn" type="button">Clear</button>
             </div>
@@ -423,6 +494,330 @@
   </footer>
 
   <script type="module" src="admin.js?v=admin4"></script>
-  <script src="admin-assistant.js?v=assistant1"></script>
+  <script>
+    const assistantPrompt = document.getElementById("adminAssistantPrompt");
+    const assistantFillBtn = document.getElementById("adminAssistantFillBtn");
+    const assistantExampleBtn = document.getElementById("adminAssistantExampleBtn");
+    const assistantClearBtn = document.getElementById("adminAssistantClearBtn");
+    const assistantMessage = document.getElementById("adminAssistantMessage");
+    const assistantExtracted = document.getElementById("adminAssistantExtracted");
+
+    const assistantExample = `Add AICTE Pragati Scholarship for girl students.
+State national.
+Education engineering.
+Gender female.
+Amount ₹50,000 per year.
+Income limit ₹8,00,000.
+Categories general, sc, st, obc, ews, minority.
+Disability any.
+Source AICTE.
+Deadline check AICTE / NSP portal.
+Priority 92.
+Eligibility: For girl students pursuing technical education in AICTE approved institutions.
+Income note: Family income rules should be verified on the official AICTE / NSP portal.`;
+
+    assistantFillBtn?.addEventListener("click", () => {
+      fillFormWithAssistant();
+    });
+
+    assistantExampleBtn?.addEventListener("click", () => {
+      if (assistantPrompt) {
+        assistantPrompt.value = assistantExample;
+        assistantPrompt.focus();
+      }
+      showAssistantMessage("Example added. Click Fill Form to auto-fill fields.");
+    });
+
+    assistantClearBtn?.addEventListener("click", () => {
+      if (assistantPrompt) assistantPrompt.value = "";
+      showAssistantMessage("");
+      renderAssistantExtracted(null);
+    });
+
+    function fillFormWithAssistant() {
+      const rawText = assistantPrompt?.value.trim() || "";
+
+      if (!rawText) {
+        showAssistantMessage("Paste scholarship details first.", true);
+        return;
+      }
+
+      const data = parseAssistantScholarship(rawText);
+
+      if (!data.name) {
+        showAssistantMessage("Could not detect scholarship name. Start with: Add Scholarship Name.", true);
+        return;
+      }
+
+      setField("editingScholarshipId", "");
+      setField("adminScholarshipName", data.name);
+      setField("adminScholarshipState", data.state);
+      setField("adminScholarshipStatus", data.status);
+      setField("adminScholarshipAmount", data.amount);
+      setField("adminScholarshipIncome", data.maxIncome);
+      setField("adminScholarshipMinPercentage", data.minPercentage);
+      setField("adminScholarshipDeadline", data.deadline);
+      setField("adminScholarshipDeadlineDate", data.deadlineDate);
+      setField("adminScholarshipLink", data.link);
+      setField("adminScholarshipEducation", data.education.join(", "));
+      setField("adminScholarshipCategories", data.categories.join(", "));
+      setField("adminScholarshipGenders", data.genders.join(", "));
+      setField("adminScholarshipDisability", data.disability);
+      setField("adminScholarshipEligibility", data.eligibilityNote);
+      setField("adminScholarshipIncomeNote", data.incomeNote);
+      setField("adminScholarshipPriority", data.priority);
+      setField("adminScholarshipSource", data.sourceName);
+
+      renderAssistantExtracted(data);
+      showAssistantMessage("Form filled. Review the preview, then click Save Scholarship.");
+    }
+
+    function parseAssistantScholarship(rawText) {
+      const text = rawText.toLowerCase();
+      const lines = rawText.split("\n").map((line) => line.trim()).filter(Boolean);
+      const sourceName = getSource(rawText, text);
+      const state = getState(text);
+      const education = getEducation(text);
+      const categories = getCategories(text);
+      const genders = getGenders(text);
+      const disability = getDisability(text);
+      const maxIncome = getIncome(rawText);
+      const name = getName(rawText, lines);
+
+      return {
+        name,
+        state,
+        status: text.includes("draft") ? "draft" : text.includes("closed") ? "closed" : "active",
+        amount: getAmount(rawText),
+        maxIncome,
+        minPercentage: getPercentage(rawText),
+        deadline: getValueByLabels(rawText, ["deadline", "last date", "closing date"]) || getDefaultDeadline(sourceName),
+        deadlineDate: getDate(rawText),
+        link: getLink(rawText),
+        education,
+        categories,
+        genders,
+        disability,
+        eligibilityNote: getValueByLabels(rawText, ["eligibility", "eligibility note", "eligible"]) || makeEligibility(name, education, categories, disability),
+        incomeNote: getValueByLabels(rawText, ["income note", "income rule"]) || makeIncomeNote(maxIncome),
+        priority: getPriority(rawText, sourceName, disability, genders, state),
+        sourceName
+      };
+    }
+
+    function getName(rawText, lines) {
+      const labelled = getValueByLabels(rawText, ["scholarship name", "name"]);
+      if (labelled) return clean(labelled, 180);
+      const firstLine = lines[0] || "";
+      return clean(firstLine.replace(/^add\s+/i, "").replace(/^create\s+/i, "").replace(/^publish\s+/i, ""), 180);
+    }
+
+    function getState(text) {
+      if (text.includes("telangana") || text.includes("epass")) return "telangana";
+      if (text.includes("andhra") || text.includes("jnanabhumi")) return "andhra-pradesh";
+      return "national";
+    }
+
+    function getAmount(rawText) {
+      const labelled = getValueByLabels(rawText, ["amount", "scholarship amount"]);
+      if (labelled) return clean(labelled, 100);
+      const match = rawText.match(/₹\s?[0-9,]+|rs\.?\s?[0-9,]+|inr\s?[0-9,]+/i);
+      return match ? match[0].replace(/rs\.?|inr/i, "₹") : "Varies as per official rules";
+    }
+
+    function getIncome(rawText) {
+      const labelled = getValueByLabels(rawText, ["income limit", "max income", "maximum income", "family income", "annual income"]);
+      const source = labelled || rawText;
+      const match = source.match(/[0-9][0-9,]*/);
+      return match ? toNumber(match[0]) : 0;
+    }
+
+    function getPercentage(rawText) {
+      const labelled = getValueByLabels(rawText, ["minimum percentage", "min percentage", "percentage", "marks", "min marks"]);
+      const source = labelled || rawText;
+      const match = source.match(/[0-9]{1,3}\s?%|[0-9]{1,3}/);
+      return match ? Math.min(toNumber(match[0]), 100) : 0;
+    }
+
+    function getDate(rawText) {
+      const iso = rawText.match(/20[0-9]{2}-[0-9]{1,2}-[0-9]{1,2}/);
+      if (iso) return normalizeDateParts(iso[0].split("-"));
+      const indian = rawText.match(/[0-9]{1,2}[-/][0-9]{1,2}[-/]20[0-9]{2}/);
+      if (!indian) return "";
+      const parts = indian[0].split(/[-/]/);
+      return normalizeDateParts([parts[2], parts[1], parts[0]]);
+    }
+
+    function getLink(rawText) {
+      const match = rawText.match(/https?:\/\/[^\s]+/i);
+      return match ? match[0] : "";
+    }
+
+    function getEducation(text) {
+      const values = [];
+      if (text.includes("school") || text.includes("pre matric") || text.includes("pre-matric")) values.push("school");
+      if (text.includes("intermediate") || text.includes("inter")) values.push("intermediate");
+      if (text.includes("degree") || text.includes("college") || text.includes("ug")) values.push("degree");
+      if (text.includes("engineering") || text.includes("technical") || text.includes("aicte") || text.includes("btech")) values.push("engineering");
+      if (text.includes("pg") || text.includes("post graduation") || text.includes("postgraduate")) values.push("pg");
+      return unique(values.length ? values : ["degree", "engineering"]);
+    }
+
+    function getCategories(text) {
+      const values = [];
+      if (text.includes("general") || text.includes("all categor")) values.push("general");
+      if (hasWord(text, "sc")) values.push("sc");
+      if (hasWord(text, "st")) values.push("st");
+      if (text.includes("obc") || hasWord(text, "bc")) values.push("obc");
+      if (text.includes("ews") || text.includes("ebc")) values.push("ews");
+      if (text.includes("minority") || text.includes("minorities")) values.push("minority");
+      if (text.includes("kapu")) values.push("kapu");
+      if (text.includes("disabled") || text.includes("disability")) values.push("disabled");
+      return unique(values.length ? values : ["general", "sc", "st", "obc", "ews", "minority"]);
+    }
+
+    function getGenders(text) {
+      if (text.includes("girl") || text.includes("female") || text.includes("women") || text.includes("woman")) return ["female"];
+      if (text.includes("boy") || text.includes("male")) return ["male"];
+      return ["any"];
+    }
+
+    function getDisability(text) {
+      if (text.includes("specially abled") || text.includes("differently abled") || text.includes("disabled") || text.includes("disability")) return "yes";
+      if (text.includes("not disability") || text.includes("not disabled")) return "no";
+      return "any";
+    }
+
+    function getSource(rawText, text) {
+      const labelled = getValueByLabels(rawText, ["source", "source name", "portal"]);
+      if (labelled) return clean(labelled, 100);
+      if (text.includes("aicte")) return "AICTE";
+      if (text.includes("jnanabhumi")) return "Official Jnanabhumi Portal";
+      if (text.includes("epass")) return "Official Telangana ePASS Portal";
+      if (text.includes("nsp") || text.includes("national scholarship portal")) return "National Scholarship Portal";
+      return "Official Portal";
+    }
+
+    function getPriority(rawText, sourceName, disability, genders, state) {
+      const labelled = getValueByLabels(rawText, ["priority", "priority score"]);
+      if (labelled) return Math.max(0, Math.min(toNumber(labelled), 100));
+      if (disability === "yes") return 92;
+      if (genders.includes("female")) return 92;
+      if (sourceName.toLowerCase().includes("aicte")) return 90;
+      if (state === "national") return 86;
+      return 82;
+    }
+
+    function getDefaultDeadline(sourceName) {
+      const source = sourceName.toLowerCase();
+      if (source.includes("aicte")) return "Check AICTE / NSP portal";
+      if (source.includes("jnanabhumi")) return "Check official Jnanabhumi portal";
+      if (source.includes("epass")) return "Check official Telangana ePASS portal";
+      if (source.includes("national scholarship")) return "Check National Scholarship Portal";
+      return "Check official portal";
+    }
+
+    function makeEligibility(name, education, categories, disability) {
+      const disabilityText = disability === "yes" ? " This scholarship is disability-specific." : "";
+      return `For eligible students applying under ${name}. Education levels: ${education.join(", ")}. Categories: ${categories.join(", ")}.${disabilityText} Verify final rules on the official portal.`;
+    }
+
+    function makeIncomeNote(maxIncome) {
+      return maxIncome > 0
+        ? `Annual family income should be within ₹${formatNumber(maxIncome)} or as per latest official rules.`
+        : "Income rules should be verified on the official portal.";
+    }
+
+    function getValueByLabels(rawText, labels) {
+      const lines = rawText.split("\n");
+      for (const line of lines) {
+        const lower = line.toLowerCase();
+        for (const label of labels) {
+          const labelText = label.toLowerCase();
+          if (lower.startsWith(`${labelText}:`) || lower.startsWith(`${labelText} -`)) {
+            return line.slice(label.length + 1).trim();
+          }
+        }
+      }
+      return "";
+    }
+
+    function setField(id, value) {
+      const field = document.getElementById(id);
+      if (!field) return;
+      field.value = String(value ?? "");
+      field.dispatchEvent(new Event("input", { bubbles: true }));
+      field.dispatchEvent(new Event("change", { bubbles: true }));
+    }
+
+    function renderAssistantExtracted(data) {
+      if (!assistantExtracted) return;
+      assistantExtracted.replaceChildren();
+
+      if (!data) {
+        const empty = document.createElement("p");
+        empty.className = "mini-note";
+        empty.textContent = "Extracted fields will appear here after filling.";
+        assistantExtracted.appendChild(empty);
+        return;
+      }
+
+      const fields = [
+        ["Name", data.name],
+        ["State", data.state],
+        ["Amount", data.amount],
+        ["Income", data.maxIncome ? `₹${formatNumber(data.maxIncome)}` : "Not set"],
+        ["Education", data.education.join(", ")],
+        ["Categories", data.categories.join(", ")],
+        ["Gender", data.genders.join(", ")],
+        ["Disability", data.disability],
+        ["Priority", data.priority],
+        ["Source", data.sourceName]
+      ];
+
+      fields.forEach(([label, value]) => {
+        const item = document.createElement("div");
+        item.className = "assistant-extracted-item";
+        const strong = document.createElement("strong");
+        strong.textContent = label;
+        const span = document.createElement("span");
+        span.textContent = value || "Not detected";
+        item.append(strong, span);
+        assistantExtracted.appendChild(item);
+      });
+    }
+
+    function showAssistantMessage(message, isError = false) {
+      if (!assistantMessage) return;
+      assistantMessage.textContent = message;
+      assistantMessage.style.color = isError ? "#b42318" : "#067647";
+    }
+
+    function normalizeDateParts(parts) {
+      return `${parts[0]}-${String(parts[1]).padStart(2, "0")}-${String(parts[2]).padStart(2, "0")}`;
+    }
+
+    function hasWord(text, word) {
+      return text.split(/[^a-z0-9]+/).includes(word);
+    }
+
+    function clean(value, maxLength = 500) {
+      return String(value || "").replace(/\s+/g, " ").trim().slice(0, maxLength);
+    }
+
+    function toNumber(value) {
+      const number = Number(String(value || "").replace(/[^0-9.]/g, ""));
+      return Number.isFinite(number) ? number : 0;
+    }
+
+    function unique(values) {
+      return [...new Set(values.filter(Boolean))];
+    }
+
+    function formatNumber(value) {
+      const number = Number(value || 0);
+      return Number.isFinite(number) ? number.toLocaleString("en-IN") : "0";
+    }
+  </script>
 </body>
 </html>
