@@ -952,3 +952,15 @@ footer {
     width: fit-content;
   }
 }
+#bestMatchBox {
+  margin: 1rem 0;
+}
+
+#bestMatchBox .notice-box {
+  border-left: 4px solid #ff8a00;
+}
+
+#bestMatchBox strong {
+  display: inline-block;
+  margin-bottom: 0.4rem;
+}
