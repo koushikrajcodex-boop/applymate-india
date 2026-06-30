@@ -7,6 +7,10 @@ let issues = [];
 const ids = ["hTotal","hVisible","hIssues","hDuplicates","hExpired","hLinks","hDeadline","hVerify"];
 const $ = (id) => document.getElementById(id);
 
+$("healthContent")?.classList.remove("hidden");
+$("healthLocked")?.classList.add("hidden");
+if ($("healthAdminEmail")) $("healthAdminEmail").textContent = "Read-only Firestore health check";
+
 $("refreshHealthBtn")?.addEventListener("click", runHealthCheck);
 $("healthSearch")?.addEventListener("input", renderIssues);
 $("healthIssueFilter")?.addEventListener("change", renderIssues);
