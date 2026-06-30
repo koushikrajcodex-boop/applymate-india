@@ -6,6 +6,8 @@ const labelBox = document.getElementById("activeScholarshipHomeLabel");
 const updatedBox = document.getElementById("activeScholarshipHomeUpdated");
 const heroStatCards = [...document.querySelectorAll(".hero-stats > div")];
 
+upgradeHomeScholarshipLinks();
+
 if (countBox || labelBox || updatedBox || heroStatCards.length) {
   loadCount();
 }
@@ -36,6 +38,17 @@ async function loadCount() {
     setHeroStat(2, "—", "New this month");
     if (updatedBox) updatedBox.textContent = "Open the scholarship directory for the latest active list.";
   }
+}
+
+function upgradeHomeScholarshipLinks() {
+  document.querySelectorAll('a[href="scholarships.html"]').forEach((link) => {
+    if (link.textContent.toLowerCase().includes("scholarship")) {
+      link.href = "scholarships-live.html";
+      if (link.textContent.trim() === "View Scholarships") link.textContent = "View Live Scholarships";
+      if (link.textContent.trim() === "Open Scholarship Directory") link.textContent = "Open Live Directory";
+      if (link.textContent.trim() === "Explore Scholarship Directory") link.textContent = "Explore Live Directory";
+    }
+  });
 }
 
 function setHeroStat(index, value, label) {
