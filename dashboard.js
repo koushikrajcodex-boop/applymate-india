@@ -450,8 +450,22 @@ function renderRecommendations(profile) {
 
   latestRecommendedScholarships = matches;
 
-  recommendationSummary.textContent =
-    `You are eligible for these ${matches.length} scholarships based on your saved profile.`;
+    const profileParts = [
+    normalizedProfile.state,
+    normalizedProfile.education,
+    normalizedProfile.category,
+    normalizedProfile.gender,
+    normalizedProfile.disability === "yes" ? "disability: yes" : "",
+    Number.isFinite(normalizedProfile.income)
+      ? `income ₹${formatIndianNumber(normalizedProfile.income)}`
+      : "",
+    normalizedProfile.percentage !== null
+      ? `marks ${normalizedProfile.percentage}%`
+      : ""
+  ].filter(Boolean);
+
+  recommendationSummary.textContent
+    `You are eligible for ${matches.lenth} scholarship${matches.length === 1 ? "" : "s"} based on your profile${profileParts.length ? `: ${profileParts.join(", ")}.` : "."}`;
 
   applyRecommendationFilters();
   renderComparison();
