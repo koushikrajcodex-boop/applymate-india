@@ -7,6 +7,7 @@ import {
   normalizeText,
   parsePercentage
 } from "../dashboard/utils.js";
+import { normalizeHttpUrl } from "../dashboard/url-utils.js";
 
 assert.equal(normalizeText("  Andhra Pradesh  "), "andhra pradesh");
 assert.deepEqual(normalizeArray(["UG", " PG "]), ["ug", "pg"]);
@@ -20,5 +21,9 @@ assert.equal(getMatchQuality(95), "🟢 Excellent Match");
 assert.equal(getMatchQuality(80), "🔵 Very Good Match");
 assert.equal(getMatchQuality(65), "🟡 Good Match");
 assert.equal(getMatchQuality(40), "⚪ Possible Match");
+assert.equal(normalizeHttpUrl("https://scholarships.gov.in"), "https://scholarships.gov.in/");
+assert.equal(normalizeHttpUrl("javascript:alert(1)"), "");
+assert.equal(normalizeHttpUrl("not-a-url"), "");
+assert.equal(normalizeHttpUrl(""), "");
 
 console.log("Dashboard utility tests passed.");
