@@ -13,19 +13,41 @@ service cloud.firestore {
 
     function isAdmin() {
       return isSignedIn()
-        && request.auth.token.email in [
-          "lastwarrior324@gmail.com",
-          "koushikrajcodex@gmail.com"
-        ];
+        && (
+          request.auth.token.admin == true ||
+          request.auth.token.email in [
+            "lastwarrior324@gmail.com",
+            "koushikrajcodex@gmail.com"
+          ]
+        );
+    }
+
+    function optionalString(value, maxLength) {
+      return value == null || (value is string && value.size() <= maxLength);
+    }
+
+    function requiredString(value, minLength, maxLength) {
+      return value is string
+        && value.size() >= minLength
+        && value.size() <= maxLength;
+    }
+
+    function optionalTimestamp(value) {
+      return value == null || value is timestamp;
     }
 
     function isValidUrl(value) {
       return value is string
         && value.size() >= 12
+        && value.size() <= 500
         && (
           value.matches('https://.*') ||
           value.matches('http://.*')
         );
+    }
+
+    function optionalUrl(value) {
+      return value == null || value == "" || isValidUrl(value);
     }
 
     function isValidIsoDate(value) {
@@ -33,31 +55,175 @@ service cloud.firestore {
         && value.matches('20[0-9][0-9]-[0-1][0-9]-[0-3][0-9]');
     }
 
+    function optionalIsoDate(value) {
+      return value == null || value == "" || isValidIsoDate(value);
+    }
+
+    function isValidApplicationStatus(value) {
+      return value in [
+        "Not Applied",
+        "Applied",
+        "Under Review",
+        "Approved",
+        "Rejected"
+      ];
+    }
+
+    function isValidUserDocument(userId) {
+      return request.resource.data.keys().hasOnly([
+          "email",
+          "name",
+          "state",
+          "education",
+          "year",
+          "category",
+          "gender",
+          "disability",
+          "income",
+          "percentage",
+          "profileCompleted",
+          "createdAt",
+          "updatedAt",
+          "readNotificationKeys",
+          "notificationsReadAt"
+        ])
+        && optionalString(request.resource.data.email, 254)
+        && (
+          !("email" in request.resource.data) ||
+          request.resource.data.email == "" ||
+          request.resource.data.email == request.auth.token.email
+        )
+        && optionalString(request.resource.data.name, 100)
+        && optionalString(request.resource.data.state, 80)
+        && optionalString(request.resource.data.education, 80)
+        && optionalString(request.resource.data.year, 40)
+        && optionalString(request.resource.data.category, 80)
+        && optionalString(request.resource.data.gender, 40)
+        && optionalString(request.resource.data.disability, 20)
+        && optionalString(request.resource.data.income, 20)
+        && (
+          !("income" in request.resource.data) ||
+          request.resource.data.income == "" ||
+          request.resource.data.income.matches('[0-9]{1,12}')
+        )
+        && optionalString(request.resource.data.percentage, 30)
+        && request.resource.data.profileCompleted is bool
+        && optionalTimestamp(request.resource.data.createdAt)
+        && optionalTimestamp(request.resource.data.updatedAt)
+        && (
+          !("readNotificationKeys" in request.resource.data) ||
+          request.resource.data.readNotificationKeys is list &&
+          request.resource.data.readNotificationKeys.size() <= 200
+        )
+        && optionalTimestamp(request.resource.data.notificationsReadAt);
+    }
+
+    function isValidSavedScholarship() {
+      return request.resource.data.keys().hasOnly([
+          "name",
+          "link",
+          "deadline",
+          "deadlineDate",
+          "source",
+          "createdAt"
+        ])
+        && requiredString(request.resource.data.name, 1, 200)
+        && optionalUrl(request.resource.data.link)
+        && optionalString(request.resource.data.deadline, 160)
+        && optionalIsoDate(request.resource.data.deadlineDate)
+        && optionalString(request.resource.data.source, 80)
+        && optionalTimestamp(request.resource.data.createdAt);
+    }
+
+    function isValidApplication() {
+      return request.resource.data.keys().hasOnly([
+          "name",
+          "status",
+          "note",
+          "createdAt",
+          "updatedAt"
+        ])
+        && requiredString(request.resource.data.name, 1, 200)
+        && isValidApplicationStatus(request.resource.data.status)
+        && optionalString(request.resource.data.note, 1000)
+        && optionalTimestamp(request.resource.data.createdAt)
+        && optionalTimestamp(request.resource.data.updatedAt);
+    }
+
     function hasRequiredScholarshipFields() {
-      return request.resource.data.name is string
-        && request.resource.data.name.size() > 2
-        && request.resource.data.status == "active"
-        && request.resource.data.link is string
-        && isValidUrl(request.resource.data.link)
+      return request.resource.data.keys().hasOnly([
+          "id",
+          "name",
+          "status",
+          "state",
+          "stateLabel",
+          "education",
+          "categories",
+          "genders",
+          "disability",
+          "maxIncome",
+          "minPercentage",
+          "amount",
+          "deadline",
+          "deadlineDate",
+          "link",
+          "sourceName",
+          "eligibilityNote",
+          "incomeNote",
+          "priority",
+          "createdAt",
+          "updatedAt",
+          "lastVerifiedAt"
+        ])
+        && requiredString(request.resource.data.name, 3, 200)
+        && request.resource.data.status in ["active", "draft", "expired", "archived"]
+        && optionalString(request.resource.data.state, 80)
+        && optionalString(request.resource.data.stateLabel, 120)
+        && request.resource.data.education is list
+        && request.resource.data.education.size() <= 20
+        && request.resource.data.categories is list
+        && request.resource.data.categories.size() <= 20
+        && request.resource.data.genders is list
+        && request.resource.data.genders.size() <= 10
+        && optionalString(request.resource.data.disability, 20)
+        && request.resource.data.maxIncome is number
+        && request.resource.data.maxIncome >= 0
+        && request.resource.data.maxIncome <= 100000000
+        && request.resource.data.minPercentage is number
+        && request.resource.data.minPercentage >= 0
+        && request.resource.data.minPercentage <= 100
+        && optionalString(request.resource.data.amount, 160)
+        && optionalString(request.resource.data.deadline, 160)
         && request.resource.data.deadlineDate is string
         && isValidIsoDate(request.resource.data.deadlineDate)
-        && request.resource.data.sourceName is string
-        && request.resource.data.sourceName.size() > 1
-        && request.resource.data.eligibilityNote is string
-        && request.resource.data.eligibilityNote.size() > 10
-        && request.resource.data.incomeNote is string
-        && request.resource.data.incomeNote.size() > 5;
+        && request.resource.data.link is string
+        && isValidUrl(request.resource.data.link)
+        && requiredString(request.resource.data.sourceName, 2, 120)
+        && requiredString(request.resource.data.eligibilityNote, 10, 1000)
+        && requiredString(request.resource.data.incomeNote, 5, 500)
+        && request.resource.data.priority is number
+        && request.resource.data.priority >= 0
+        && request.resource.data.priority <= 100
+        && optionalTimestamp(request.resource.data.createdAt)
+        && optionalTimestamp(request.resource.data.updatedAt)
+        && optionalTimestamp(request.resource.data.lastVerifiedAt);
     }
 
     match /users/{userId} {
-      allow read, write: if isOwner(userId);
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId) && isValidUserDocument(userId);
+      allow delete: if isOwner(userId);
 
       match /savedScholarships/{docId} {
-        allow read, write: if isOwner(userId);
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidSavedScholarship();
+        allow delete: if isOwner(userId);
       }
 
       match /applications/{docId} {
-        allow read, write: if isOwner(userId);
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidApplication();
+        allow delete: if isOwner(userId);
       }
     }
 
