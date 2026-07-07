@@ -51,60 +51,14 @@ service cloud.firestore {
       return value is timestamp;
     }
 
-    function hasOnlyUserProfileFields() {
-      return request.resource.data.keys().hasOnly([
-        "email",
-        "name",
-        "state",
-        "education",
-        "year",
-        "category",
-        "gender",
-        "disability",
-        "income",
-        "percentage",
-        "profileCompleted",
-        "createdAt",
-        "updatedAt",
-        "readNotificationKeys",
-        "notificationsReadAt"
-      ]);
-    }
-
+    // User profile documents may contain fields from older app versions.
+    // Keep ownership and authenticated email protection, but do not reject
+    // a profile merely because a legacy field still exists in the document.
     function isValidUserProfile() {
-      return hasOnlyUserProfileFields() &&
-        request.resource.data.email is string &&
-        request.resource.data.email == request.auth.token.email &&
-        request.resource.data.email.size() <= 320 &&
-        (!('name' in request.resource.data) ||
-          (request.resource.data.name is string && request.resource.data.name.size() <= 100)) &&
-        (!('state' in request.resource.data) ||
-          (request.resource.data.state is string && request.resource.data.state.size() <= 80)) &&
-        (!('education' in request.resource.data) ||
-          (request.resource.data.education is string && request.resource.data.education.size() <= 80)) &&
-        (!('year' in request.resource.data) ||
-          (request.resource.data.year is string && request.resource.data.year.size() <= 30)) &&
-        (!('category' in request.resource.data) ||
-          (request.resource.data.category is string && request.resource.data.category.size() <= 60)) &&
-        (!('gender' in request.resource.data) ||
-          (request.resource.data.gender is string && request.resource.data.gender.size() <= 30)) &&
-        (!('disability' in request.resource.data) ||
-          (request.resource.data.disability is string && request.resource.data.disability.size() <= 30)) &&
-        (!('income' in request.resource.data) ||
-          (request.resource.data.income is string && request.resource.data.income.size() <= 30)) &&
-        (!('percentage' in request.resource.data) ||
-          (request.resource.data.percentage is string && request.resource.data.percentage.size() <= 30)) &&
-        (!('profileCompleted' in request.resource.data) ||
-          request.resource.data.profileCompleted is bool) &&
-        (!('createdAt' in request.resource.data) ||
-          isValidTimestamp(request.resource.data.createdAt)) &&
-        (!('updatedAt' in request.resource.data) ||
-          isValidTimestamp(request.resource.data.updatedAt)) &&
-        (!('readNotificationKeys' in request.resource.data) ||
-          (request.resource.data.readNotificationKeys is list &&
-           request.resource.data.readNotificationKeys.size() <= 300)) &&
-        (!('notificationsReadAt' in request.resource.data) ||
-          isValidTimestamp(request.resource.data.notificationsReadAt));
+      return request.auth.token.email is string &&
+             request.resource.data.email is string &&
+             request.resource.data.email == request.auth.token.email &&
+             request.resource.data.email.size() <= 320;
     }
 
     function hasOnlySavedScholarshipFields() {
@@ -295,7 +249,8 @@ service cloud.firestore {
           (request.resource.data.applicationWindow is string &&
            isValidApplicationWindow(request.resource.data.applicationWindow))) &&
         (!('academicYear' in request.resource.data) ||
-          (request.resource.data.academicYear is string && request.resource.data.academicYear.size() <= 30)) &&
+          (request.resource.data.academicYear is string &&
+           request.resource.data.academicYear.size() <= 30)) &&
         (!('verifiedOn' in request.resource.data) ||
           isEmptyOrValidIsoDate(request.resource.data.verifiedOn)) &&
         (!('verificationNote' in request.resource.data) ||
@@ -304,13 +259,15 @@ service cloud.firestore {
         (!('lastChecked' in request.resource.data) ||
           isEmptyOrValidIsoDate(request.resource.data.lastChecked)) &&
         (!('sourceType' in request.resource.data) ||
-          (request.resource.data.sourceType is string && request.resource.data.sourceType.size() <= 80)) &&
+          (request.resource.data.sourceType is string &&
+           request.resource.data.sourceType.size() <= 80)) &&
         (!('createdAt' in request.resource.data) ||
           isValidTimestamp(request.resource.data.createdAt)) &&
         (!('updatedAt' in request.resource.data) ||
           isValidTimestamp(request.resource.data.updatedAt)) &&
         (!('createdBy' in request.resource.data) ||
-          (request.resource.data.createdBy is string && request.resource.data.createdBy.size() <= 320)) &&
+          (request.resource.data.createdBy is string &&
+           request.resource.data.createdBy.size() <= 320)) &&
         (!('updatedBy' in request.resource.data) ||
           (request.resource.data.updatedBy is string &&
            request.resource.data.updatedBy == request.auth.token.email));
