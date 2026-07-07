@@ -31,5 +31,8 @@ jobs:
       - name: Check inline JavaScript syntax
         run: node scripts/check-inline-scripts.mjs
 
+      - name: Check database rules regressions
+        run: node tests/firestore-rules-regression.mjs
+
       - name: Run repository integrity check
         run: node scripts/check-integrity.mjs
