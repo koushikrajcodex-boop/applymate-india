@@ -1,0 +1,83 @@
+name: Static checks
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+
+permissions:
+  contents: read
+
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r -d '' file; do
+            echo "Checking ${file}"
+            node --check "${file}"
+          done < <(
+            find . \
+              -type f \
+              -name '*.js' \
+              -not -path './.git/*' \
+              -print0
+          )
+
+      - name: Check required files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          test -f index.html
+          test -f login.html
+          test -f dashboard.html
+          test -f firebase-config.js
+          test -f firestore.rules
+          test -f firebase.json
+          test -f sitemap.xml
+          test -f robots.txt
+
+      - name: Reject unfinished placeholders
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if grep \
+            -R \
+            --line-number \
+            --include='*.js' \
+            --include='*.html' \
+            --include='*.css' \
+            'PASTE_YOUR_\|TODO_API_KEY\|YOUR_FIREBASE' \
+            .; then
+            echo "Unfinished placeholder found."
+            exit 1
+          fi
+
+      - name: Check basic HTML files
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          while IFS= read -r -d '' file; do
+            echo "Checking ${file}"
+            grep -qi '<!doctype html' "${file}"
+            grep -qi '<title>' "${file}"
+            grep -qi '<meta name="description"' "${file}"
+          done < <(
+            find . \
+              -maxdepth 1 \
+              -type f \
+              -name '*.html' \
+              -print0
+          )
