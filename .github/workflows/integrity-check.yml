@@ -19,5 +19,14 @@ jobs:
         with:
           node-version: 22
 
+      - name: Check JavaScript syntax
+        shell: bash
+        run: |
+          set -euo pipefail
+          while IFS= read -r -d '' file; do
+            echo "Checking $file"
+            node --check "$file"
+          done < <(find . -type f \( -name '*.js' -o -name '*.mjs' \) -not -path './.git/*' -print0)
+
       - name: Run repository integrity check
         run: node scripts/check-integrity.mjs
