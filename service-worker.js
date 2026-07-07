@@ -1,4 +1,4 @@
-const CACHE_NAME = "applymate-india-v3";
+const CACHE_NAME = "applymate-india-v4";
 const OFFLINE_URL = "offline.html";
 
 const CORE_ASSETS = [
@@ -16,11 +16,14 @@ const CORE_ASSETS = [
 
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches
-      .open(CACHE_NAME)
-      .then((cache) => cache.addAll(CORE_ASSETS))
-      .then(() => self.skipWaiting())
+    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS))
   );
+});
+
+self.addEventListener("message", (event) => {
+  if (event.data && event.data.type === "ACTIVATE_NEW_VERSION") {
+    self.skipWaiting();
+  }
 });
 
 self.addEventListener("activate", (event) => {
@@ -42,8 +45,6 @@ self.addEventListener("fetch", (event) => {
   if (request.method !== "GET") return;
 
   const requestUrl = new URL(request.url);
-
-  // Firebase, Google CDN, and other external requests must always use the network.
   if (requestUrl.origin !== self.location.origin) return;
 
   if (request.mode === "navigate") {
