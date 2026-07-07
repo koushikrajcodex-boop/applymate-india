@@ -36,7 +36,7 @@ service cloud.firestore {
     function hasRequiredScholarshipFields() {
       return request.resource.data.name is string
         && request.resource.data.name.size() > 2
-        && request.resource.data.status == "active"
+        && request.resource.data.status in ["active", "draft", "closed"]
         && request.resource.data.link is string
         && isValidUrl(request.resource.data.link)
         && request.resource.data.deadlineDate is string
