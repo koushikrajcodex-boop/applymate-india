@@ -22,3 +22,9 @@ if (window.location.pathname.endsWith("/admin.html") || window.location.pathname
     console.error("Admin verification workflow failed to load:", error);
   });
 }
+
+if (window.location.pathname.endsWith("/dashboard.html") || window.location.pathname.endsWith("dashboard.html")) {
+  import("./dashboard-deadlines.js").catch((error) => {
+    console.error("Dashboard deadline intelligence failed to load:", error);
+  });
+}
