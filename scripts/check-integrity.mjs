@@ -94,6 +94,27 @@ function checkServiceWorkerCache() {
   }
 }
 
+function checkPrivatePageIndexing() {
+  const privatePages = [
+    "login.html",
+    "dashboard.html",
+    "admin.html",
+    "admin-health.html",
+    "active-import.html"
+  ];
+
+  for (const page of privatePages) {
+    if (!exists(page)) continue;
+
+    const source = read(page);
+    const hasNoindex = /<meta\s+name=["']robots["']\s+content=["'][^"']*noindex[^"']*["']\s*\/?>/i.test(source);
+
+    if (!hasNoindex) {
+      fail(`Private page must include a robots noindex meta tag: ${page}`);
+    }
+  }
+}
+
 function checkHtmlLinks() {
   const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith(".html"));
 
@@ -132,6 +153,7 @@ checkRequiredFiles();
 checkManifest();
 checkSitemap();
 checkServiceWorkerCache();
+checkPrivatePageIndexing();
 checkHtmlLinks();
 
 if (warnings.length > 0) {
