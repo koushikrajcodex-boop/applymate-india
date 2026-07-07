@@ -1,4 +1,4 @@
-const CACHE_NAME = "applymate-india-v4";
+const CACHE_NAME = "applymate-india-v5";
 const OFFLINE_URL = "offline.html";
 
 const CORE_ASSETS = [
@@ -14,9 +14,30 @@ const CORE_ASSETS = [
   "icons/icon-512.svg"
 ];
 
+const OFFLINE_PUBLIC_PAGES = [
+  "scholarships.html",
+  "guides.html",
+  "about.html",
+  "privacy.html",
+  "disclaimer.html",
+  "editorial-policy.html",
+  "contact.html",
+  "nsp-otr-guide.html",
+  "scholarship-status-guide.html",
+  "engineering-scholarships.html",
+  "girl-student-scholarships.html",
+  "documents-needed-for-scholarships.html"
+];
+
 self.addEventListener("install", (event) => {
   event.waitUntil(
-    caches.open(CACHE_NAME).then((cache) => cache.addAll(CORE_ASSETS))
+    caches.open(CACHE_NAME).then(async (cache) => {
+      await cache.addAll(CORE_ASSETS);
+
+      await Promise.allSettled(
+        OFFLINE_PUBLIC_PAGES.map((page) => cache.add(page))
+      );
+    })
   );
 });
 
