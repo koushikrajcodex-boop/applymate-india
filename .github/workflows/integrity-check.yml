@@ -28,5 +28,8 @@ jobs:
             node --check "$file"
           done < <(find . -type f \( -name '*.js' -o -name '*.mjs' \) -not -path './.git/*' -print0)
 
+      - name: Check inline JavaScript syntax
+        run: node scripts/check-inline-scripts.mjs
+
       - name: Run repository integrity check
         run: node scripts/check-integrity.mjs
