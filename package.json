@@ -1,0 +1,9 @@
+{
+  "name": "applymate-india",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "check:js": "node --check *.js"
+  }
+}
