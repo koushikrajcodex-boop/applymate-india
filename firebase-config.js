@@ -16,3 +16,9 @@ const app = initializeApp(firebaseConfig);
 
 export const auth = getAuth(app);
 export const db = getFirestore(app);
+
+if (window.location.pathname.endsWith("/admin.html") || window.location.pathname.endsWith("admin.html")) {
+  import("./admin-verification.js").catch((error) => {
+    console.error("Admin verification workflow failed to load:", error);
+  });
+}
