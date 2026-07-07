@@ -1,5 +1,8 @@
 import { auth, db } from "./firebase-config.js";
-import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import {
+  onAuthStateChanged,
+  signOut
+} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const ADMIN_EMAILS = ["lastwarrior324@gmail.com", "koushikrajcodex@gmail.com"];
@@ -17,15 +20,42 @@ $("healthSearch")?.addEventListener("input", renderIssues);
 $("healthIssueFilter")?.addEventListener("change", renderIssues);
 $("healthStatusFilter")?.addEventListener("change", renderIssues);
 $("exportHealthBtn")?.addEventListener("click", exportReport);
+$("healthLogoutBtn")?.addEventListener("click", async () => {
+  const button = $("healthLogoutBtn");
+
+  if (button) {
+    button.disabled = true;
+    button.textContent = "Logging out...";
+  }
+
+  try {
+    await signOut(auth);
+    window.location.replace("login.html");
+  } catch (error) {
+    console.error("Admin health logout failed:", error);
+
+    if (button) {
+      button.disabled = false;
+      button.textContent = "Logout";
+    }
+
+    alert("Could not log out. Please try again.");
+  }
+});
 
 onAuthStateChanged(auth, async (user) => {
-  const email = String(user?.email || "").toLowerCase();
+  if (!user) {
+    window.location.replace("login.html");
+    return;
+  }
+
+  const email = String(user.email || "").toLowerCase();
   isAdmin = ADMIN_EMAILS.includes(email);
 
   if (!isAdmin) {
     $("healthContent")?.classList.add("hidden");
     $("healthLocked")?.classList.remove("hidden");
-    if ($("healthAdminEmail")) $("healthAdminEmail").textContent = user ? `Logged in as ${user.email}` : "Login required";
+    if ($("healthAdminEmail")) $("healthAdminEmail").textContent = `Logged in as ${user.email}`;
     return;
   }
 
@@ -38,11 +68,17 @@ onAuthStateChanged(auth, async (user) => {
 async function runHealthCheck() {
   const list = $("healthIssueList");
   if (list) list.innerHTML = "<p class='mini-note'>Checking Firestore data...</p>";
-  const snapshot = await getDocs(collection(db, "scholarships"));
-  records = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
-  issues = findIssues(records);
-  renderSummary();
-  renderIssues();
+
+  try {
+    const snapshot = await getDocs(collection(db, "scholarships"));
+    records = snapshot.docs.map((doc) => ({ id: doc.id, ...doc.data() }));
+    issues = findIssues(records);
+    renderSummary();
+    renderIssues();
+  } catch (error) {
+    console.error("Admin health check failed:", error);
+    if (list) list.innerHTML = "<p class='mini-note'>Could not load scholarship data. Please try again.</p>";
+  }
 }
 
 function findIssues(items) {
@@ -123,10 +159,12 @@ function card(issue) {
 function exportReport() {
   if (!isAdmin) return;
   const data = JSON.stringify({ generatedAt: new Date().toISOString(), total: records.length, issues }, null, 2);
+  const url = URL.createObjectURL(new Blob([data], { type: "application/json" }));
   const a = document.createElement("a");
-  a.href = URL.createObjectURL(new Blob([data], { type: "application/json" }));
+  a.href = url;
   a.download = "applymate-health-report.json";
   a.click();
+  URL.revokeObjectURL(url);
 }
 
 function add(out, item, type, message) { out.push({ item, type, message }); }
