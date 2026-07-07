@@ -5,7 +5,8 @@ The dashboard currently combines authentication, profile management, scholarship
 ## Phase 1
 
 - Add `dashboard/constants.js` for shared limits, labels, and statuses.
-- Add `dashboard/utils.js` for pure reusable helper functions.
+- Add `dashboard/utils.js` for pure reusable text, score, percentage, and number helpers.
+- Add `dashboard/url-utils.js` for safe HTTP/HTTPS URL normalization.
 - Add unit tests for the extracted utility behavior.
 
 These files are introduced without changing the live dashboard entry point, keeping this phase low-risk.
