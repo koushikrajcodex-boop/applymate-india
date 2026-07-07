@@ -1,15 +1,19 @@
 {
+  "id": "./",
   "name": "ApplyMate India",
   "short_name": "ApplyMate",
   "description": "Find scholarships, save options, and track applications for Indian students.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
   "background_color": "#ffffff",
   "theme_color": "#2563eb",
   "orientation": "portrait-primary",
   "categories": ["education", "productivity"],
   "lang": "en-IN",
+  "dir": "ltr",
+  "prefer_related_applications": false,
   "icons": [
     {
       "src": "icons/icon-192.svg",
@@ -22,6 +26,47 @@
       "sizes": "512x512",
       "type": "image/svg+xml",
       "purpose": "any maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Find Scholarships",
+      "short_name": "Scholarships",
+      "description": "Browse available scholarship opportunities.",
+      "url": "./scholarships.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Student Dashboard",
+      "short_name": "Dashboard",
+      "description": "Open saved scholarships and application tracking.",
+      "url": "./dashboard.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
+    },
+    {
+      "name": "Scholarship Guides",
+      "short_name": "Guides",
+      "description": "Read application and eligibility guides.",
+      "url": "./guides.html",
+      "icons": [
+        {
+          "src": "icons/icon-192.svg",
+          "sizes": "192x192",
+          "type": "image/svg+xml"
+        }
+      ]
     }
   ]
 }
