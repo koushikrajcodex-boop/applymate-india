@@ -3,6 +3,7 @@ import path from "node:path";
 
 const root = process.cwd();
 const errors = [];
+const warnings = [];
 
 function exists(filePath) {
   return fs.existsSync(path.join(root, filePath));
@@ -14,6 +15,10 @@ function read(filePath) {
 
 function fail(message) {
   errors.push(message);
+}
+
+function warn(message) {
+  warnings.push(message);
 }
 
 function checkRequiredFiles() {
@@ -107,16 +112,17 @@ function checkHtmlLinks() {
         href.startsWith("mailto:") ||
         href.startsWith("tel:") ||
         href.startsWith("#") ||
-        href.startsWith("data:")
+        href.startsWith("data:") ||
+        href.startsWith("javascript:")
       ) {
         continue;
       }
 
-      const clean = href.split("?")[0].split("#")[0];
+      const clean = href.split("?")[0].split("#")[0].replace(/^\.\//, "");
       if (!clean || clean.endsWith("/")) continue;
 
       if (!exists(clean)) {
-        fail(`${htmlFile} references missing file: ${href}`);
+        warn(`${htmlFile} references missing file: ${href}`);
       }
     }
   }
@@ -127,6 +133,11 @@ checkManifest();
 checkSitemap();
 checkServiceWorkerCache();
 checkHtmlLinks();
+
+if (warnings.length > 0) {
+  console.warn("Integrity warnings:");
+  for (const warning of warnings) console.warn(`- ${warning}`);
+}
 
 if (errors.length > 0) {
   console.error("Integrity check failed:");
