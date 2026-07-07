@@ -4,6 +4,9 @@
   const DISMISS_DAYS = 7;
   let deferredPrompt = null;
   let banner = null;
+  let updateBanner = null;
+  let waitingWorker = null;
+  let reloading = false;
 
   if (head && !document.querySelector('link[rel="manifest"]')) {
     const manifest = document.createElement("link");
@@ -27,10 +30,38 @@
   }
 
   if ("serviceWorker" in navigator) {
-    window.addEventListener("load", () => {
-      navigator.serviceWorker.register("service-worker.js").catch((error) => {
+    window.addEventListener("load", async () => {
+      try {
+        const registration = await navigator.serviceWorker.register("service-worker.js");
+
+        if (registration.waiting) {
+          waitingWorker = registration.waiting;
+          showUpdateBanner();
+        }
+
+        registration.addEventListener("updatefound", () => {
+          const installingWorker = registration.installing;
+          if (!installingWorker) return;
+
+          installingWorker.addEventListener("statechange", () => {
+            if (
+              installingWorker.state === "installed" &&
+              navigator.serviceWorker.controller
+            ) {
+              waitingWorker = registration.waiting || installingWorker;
+              showUpdateBanner();
+            }
+          });
+        });
+
+        navigator.serviceWorker.addEventListener("controllerchange", () => {
+          if (reloading) return;
+          reloading = true;
+          window.location.reload();
+        });
+      } catch (error) {
         console.warn("ApplyMate service worker registration failed:", error);
-      });
+      }
     });
   }
 
@@ -48,6 +79,52 @@
     removeBanner();
     localStorage.removeItem(DISMISS_KEY);
   });
+
+  function showUpdateBanner() {
+    if (updateBanner || !waitingWorker || !document.body) return;
+
+    updateBanner = document.createElement("aside");
+    updateBanner.className = "pwa-install-banner";
+    updateBanner.setAttribute("role", "status");
+    updateBanner.setAttribute("aria-label", "ApplyMate update available");
+
+    const title = document.createElement("h2");
+    title.textContent = "New ApplyMate version available";
+
+    const message = document.createElement("p");
+    message.textContent = "Refresh now to use the latest improvements.";
+
+    const actions = document.createElement("div");
+    actions.className = "pwa-install-actions";
+
+    const refreshButton = document.createElement("button");
+    refreshButton.type = "button";
+    refreshButton.className = "pwa-install-primary";
+    refreshButton.textContent = "Update now";
+    refreshButton.addEventListener("click", activateUpdate);
+
+    const laterButton = document.createElement("button");
+    laterButton.type = "button";
+    laterButton.className = "pwa-install-secondary";
+    laterButton.textContent = "Later";
+    laterButton.addEventListener("click", removeUpdateBanner);
+
+    actions.append(refreshButton, laterButton);
+    updateBanner.append(title, message, actions);
+    document.body.appendChild(updateBanner);
+  }
+
+  function activateUpdate() {
+    if (!waitingWorker) return;
+    waitingWorker.postMessage({ type: "ACTIVATE_NEW_VERSION" });
+  }
+
+  function removeUpdateBanner() {
+    if (updateBanner) {
+      updateBanner.remove();
+      updateBanner = null;
+    }
+  }
 
   function showInstallBanner() {
     if (banner || !deferredPrompt || !document.body) return;
@@ -100,7 +177,7 @@
     try {
       localStorage.setItem(DISMISS_KEY, String(Date.now()));
     } catch {
-      // Ignore unavailable storage and simply hide the prompt for this page view.
+      // Ignore unavailable storage and hide the prompt for this page view.
     }
 
     removeBanner();
