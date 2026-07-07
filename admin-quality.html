@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Admin Quality Dashboard - ApplyMate India</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+    <div class="nav-links">
+      <a href="admin.html">Admin Panel</a>
+      <a href="admin-quality.html">Data Quality</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html">Home</a>
+    </div>
+  </nav>
+
+  <main class="content-page" id="adminContent">
+    <section class="content-card">
+      <h1>Admin Data Quality Dashboard</h1>
+      <p class="mini-note">Only configured admin accounts can load scholarship quality results.</p>
+      <div class="notice-box">
+        Use this page before publishing or importing large scholarship batches. It checks data completeness, duplicate names, verification freshness, official links, and deadline consistency.
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India administration tools.</p>
+  </footer>
+
+  <script type="module" src="firebase-config.js"></script>
+  <script type="module" src="admin-quality.js"></script>
+</body>
+</html>
