@@ -12,59 +12,336 @@ service cloud.firestore {
     }
 
     function isAdmin() {
-      return isSignedIn()
-        && request.auth.token.email in [
-          "lastwarrior324@gmail.com",
-          "koushikrajcodex@gmail.com"
-        ];
-    }
-
-    function isValidUrl(value) {
-      return value is string
-        && value.size() >= 12
-        && (
-          value.matches('https://.*') ||
-          value.matches('http://.*')
+      return isSignedIn() &&
+        (
+          request.auth.token.admin == true ||
+          request.auth.token.email in [
+            "lastwarrior324@gmail.com",
+            "koushikrajcodex@gmail.com"
+          ]
         );
     }
 
+    function isValidUrl(value) {
+      return value is string &&
+             value.size() >= 12 &&
+             value.size() <= 2000 &&
+             (
+               value.matches('https://.*') ||
+               value.matches('http://.*')
+             );
+    }
+
+    function isEmptyOrValidUrl(value) {
+      return value is string &&
+             (value == "" || isValidUrl(value));
+    }
+
     function isValidIsoDate(value) {
-      return value is string
-        && value.matches('20[0-9][0-9]-[0-1][0-9]-[0-3][0-9]');
+      return value is string &&
+             value.matches('20[0-9][0-9]-[0-1][0-9]-[0-3][0-9]');
+    }
+
+    function isEmptyOrValidIsoDate(value) {
+      return value is string &&
+             (value == "" || isValidIsoDate(value));
+    }
+
+    function isValidTimestamp(value) {
+      return value is timestamp;
+    }
+
+    function hasOnlyUserProfileFields() {
+      return request.resource.data.keys().hasOnly([
+        "email",
+        "name",
+        "state",
+        "education",
+        "year",
+        "category",
+        "gender",
+        "disability",
+        "income",
+        "percentage",
+        "profileCompleted",
+        "createdAt",
+        "updatedAt",
+        "readNotificationKeys",
+        "notificationsReadAt"
+      ]);
+    }
+
+    function isValidUserProfile() {
+      return hasOnlyUserProfileFields() &&
+        request.resource.data.email is string &&
+        request.resource.data.email == request.auth.token.email &&
+        request.resource.data.email.size() <= 320 &&
+        (!('name' in request.resource.data) ||
+          (request.resource.data.name is string && request.resource.data.name.size() <= 100)) &&
+        (!('state' in request.resource.data) ||
+          (request.resource.data.state is string && request.resource.data.state.size() <= 80)) &&
+        (!('education' in request.resource.data) ||
+          (request.resource.data.education is string && request.resource.data.education.size() <= 80)) &&
+        (!('year' in request.resource.data) ||
+          (request.resource.data.year is string && request.resource.data.year.size() <= 30)) &&
+        (!('category' in request.resource.data) ||
+          (request.resource.data.category is string && request.resource.data.category.size() <= 60)) &&
+        (!('gender' in request.resource.data) ||
+          (request.resource.data.gender is string && request.resource.data.gender.size() <= 30)) &&
+        (!('disability' in request.resource.data) ||
+          (request.resource.data.disability is string && request.resource.data.disability.size() <= 30)) &&
+        (!('income' in request.resource.data) ||
+          (request.resource.data.income is string && request.resource.data.income.size() <= 30)) &&
+        (!('percentage' in request.resource.data) ||
+          (request.resource.data.percentage is string && request.resource.data.percentage.size() <= 30)) &&
+        (!('profileCompleted' in request.resource.data) ||
+          request.resource.data.profileCompleted is bool) &&
+        (!('createdAt' in request.resource.data) ||
+          isValidTimestamp(request.resource.data.createdAt)) &&
+        (!('updatedAt' in request.resource.data) ||
+          isValidTimestamp(request.resource.data.updatedAt)) &&
+        (!('readNotificationKeys' in request.resource.data) ||
+          (request.resource.data.readNotificationKeys is list &&
+           request.resource.data.readNotificationKeys.size() <= 300)) &&
+        (!('notificationsReadAt' in request.resource.data) ||
+          isValidTimestamp(request.resource.data.notificationsReadAt));
+    }
+
+    function hasOnlySavedScholarshipFields() {
+      return request.resource.data.keys().hasOnly([
+        "name",
+        "link",
+        "deadline",
+        "deadlineDate",
+        "source",
+        "createdAt"
+      ]);
+    }
+
+    function isValidSavedScholarship() {
+      return hasOnlySavedScholarshipFields() &&
+        request.resource.data.keys().hasAll([
+          "name",
+          "link",
+          "deadline",
+          "deadlineDate",
+          "source",
+          "createdAt"
+        ]) &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() >= 1 &&
+        request.resource.data.name.size() <= 200 &&
+        isEmptyOrValidUrl(request.resource.data.link) &&
+        request.resource.data.deadline is string &&
+        request.resource.data.deadline.size() <= 160 &&
+        isEmptyOrValidIsoDate(request.resource.data.deadlineDate) &&
+        request.resource.data.source is string &&
+        request.resource.data.source.size() <= 80 &&
+        isValidTimestamp(request.resource.data.createdAt);
+    }
+
+    function hasOnlyApplicationFields() {
+      return request.resource.data.keys().hasOnly([
+        "name",
+        "status",
+        "note",
+        "createdAt",
+        "updatedAt"
+      ]);
+    }
+
+    function isValidApplicationStatus(status) {
+      return status in [
+        "Not Applied",
+        "Applied",
+        "Under Review",
+        "Approved",
+        "Rejected"
+      ];
+    }
+
+    function isValidApplication() {
+      return hasOnlyApplicationFields() &&
+        request.resource.data.keys().hasAll([
+          "name",
+          "status",
+          "note",
+          "createdAt",
+          "updatedAt"
+        ]) &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() >= 1 &&
+        request.resource.data.name.size() <= 200 &&
+        request.resource.data.status is string &&
+        isValidApplicationStatus(request.resource.data.status) &&
+        request.resource.data.note is string &&
+        request.resource.data.note.size() <= 1000 &&
+        isValidTimestamp(request.resource.data.createdAt) &&
+        isValidTimestamp(request.resource.data.updatedAt);
+    }
+
+    function hasOnlyScholarshipFields() {
+      return request.resource.data.keys().hasOnly([
+        "name",
+        "state",
+        "stateLabel",
+        "status",
+        "amount",
+        "maxIncome",
+        "minPercentage",
+        "deadline",
+        "deadlineDate",
+        "link",
+        "education",
+        "categories",
+        "genders",
+        "disability",
+        "eligibilityNote",
+        "incomeNote",
+        "priority",
+        "sourceName",
+        "applicationWindow",
+        "academicYear",
+        "verifiedOn",
+        "verificationNote",
+        "lastChecked",
+        "sourceType",
+        "createdAt",
+        "updatedAt",
+        "createdBy",
+        "updatedBy"
+      ]);
     }
 
     function hasRequiredScholarshipFields() {
-      return request.resource.data.name is string
-        && request.resource.data.name.size() > 2
-        && request.resource.data.status in ["active", "draft", "closed"]
-        && request.resource.data.link is string
-        && isValidUrl(request.resource.data.link)
-        && request.resource.data.deadlineDate is string
-        && isValidIsoDate(request.resource.data.deadlineDate)
-        && request.resource.data.sourceName is string
-        && request.resource.data.sourceName.size() > 1
-        && request.resource.data.eligibilityNote is string
-        && request.resource.data.eligibilityNote.size() > 10
-        && request.resource.data.incomeNote is string
-        && request.resource.data.incomeNote.size() > 5;
+      return request.resource.data.keys().hasAll([
+        "name",
+        "state",
+        "stateLabel",
+        "status",
+        "amount",
+        "maxIncome",
+        "minPercentage",
+        "deadline",
+        "deadlineDate",
+        "link",
+        "education",
+        "categories",
+        "genders",
+        "disability",
+        "eligibilityNote",
+        "incomeNote",
+        "priority",
+        "sourceName"
+      ]);
+    }
+
+    function isValidScholarshipStatus(status) {
+      return status in ["active", "draft", "closed"];
+    }
+
+    function isValidApplicationWindow(value) {
+      return value in ["open", "upcoming", "closed", "verify"];
+    }
+
+    function isValidScholarship() {
+      return hasOnlyScholarshipFields() &&
+        hasRequiredScholarshipFields() &&
+        request.resource.data.name is string &&
+        request.resource.data.name.size() >= 3 &&
+        request.resource.data.name.size() <= 200 &&
+        request.resource.data.state is string &&
+        request.resource.data.state.size() <= 80 &&
+        request.resource.data.stateLabel is string &&
+        request.resource.data.stateLabel.size() <= 100 &&
+        request.resource.data.status is string &&
+        isValidScholarshipStatus(request.resource.data.status) &&
+        request.resource.data.amount is string &&
+        request.resource.data.amount.size() <= 120 &&
+        request.resource.data.maxIncome is number &&
+        request.resource.data.maxIncome >= 0 &&
+        request.resource.data.maxIncome <= 100000000 &&
+        request.resource.data.minPercentage is number &&
+        request.resource.data.minPercentage >= 0 &&
+        request.resource.data.minPercentage <= 100 &&
+        request.resource.data.deadline is string &&
+        request.resource.data.deadline.size() <= 160 &&
+        isValidIsoDate(request.resource.data.deadlineDate) &&
+        isValidUrl(request.resource.data.link) &&
+        request.resource.data.education is list &&
+        request.resource.data.education.size() >= 1 &&
+        request.resource.data.education.size() <= 30 &&
+        request.resource.data.categories is list &&
+        request.resource.data.categories.size() >= 1 &&
+        request.resource.data.categories.size() <= 30 &&
+        request.resource.data.genders is list &&
+        request.resource.data.genders.size() >= 1 &&
+        request.resource.data.genders.size() <= 10 &&
+        request.resource.data.disability is string &&
+        request.resource.data.disability in ["any", "yes", "no"] &&
+        request.resource.data.eligibilityNote is string &&
+        request.resource.data.eligibilityNote.size() >= 11 &&
+        request.resource.data.eligibilityNote.size() <= 1200 &&
+        request.resource.data.incomeNote is string &&
+        request.resource.data.incomeNote.size() >= 6 &&
+        request.resource.data.incomeNote.size() <= 800 &&
+        request.resource.data.priority is number &&
+        request.resource.data.priority >= 0 &&
+        request.resource.data.priority <= 100 &&
+        request.resource.data.sourceName is string &&
+        request.resource.data.sourceName.size() >= 2 &&
+        request.resource.data.sourceName.size() <= 120 &&
+        (!('applicationWindow' in request.resource.data) ||
+          (request.resource.data.applicationWindow is string &&
+           isValidApplicationWindow(request.resource.data.applicationWindow))) &&
+        (!('academicYear' in request.resource.data) ||
+          (request.resource.data.academicYear is string && request.resource.data.academicYear.size() <= 30)) &&
+        (!('verifiedOn' in request.resource.data) ||
+          isEmptyOrValidIsoDate(request.resource.data.verifiedOn)) &&
+        (!('verificationNote' in request.resource.data) ||
+          (request.resource.data.verificationNote is string &&
+           request.resource.data.verificationNote.size() <= 1000)) &&
+        (!('lastChecked' in request.resource.data) ||
+          isEmptyOrValidIsoDate(request.resource.data.lastChecked)) &&
+        (!('sourceType' in request.resource.data) ||
+          (request.resource.data.sourceType is string && request.resource.data.sourceType.size() <= 80)) &&
+        (!('createdAt' in request.resource.data) ||
+          isValidTimestamp(request.resource.data.createdAt)) &&
+        (!('updatedAt' in request.resource.data) ||
+          isValidTimestamp(request.resource.data.updatedAt)) &&
+        (!('createdBy' in request.resource.data) ||
+          (request.resource.data.createdBy is string && request.resource.data.createdBy.size() <= 320)) &&
+        (!('updatedBy' in request.resource.data) ||
+          (request.resource.data.updatedBy is string &&
+           request.resource.data.updatedBy == request.auth.token.email));
     }
 
     match /users/{userId} {
-      allow read, write: if isOwner(userId);
+      allow read: if isOwner(userId);
+      allow create, update: if isOwner(userId) && isValidUserProfile();
+      allow delete: if isOwner(userId);
 
       match /savedScholarships/{docId} {
-        allow read, write: if isOwner(userId);
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidSavedScholarship();
+        allow delete: if isOwner(userId);
       }
 
       match /applications/{docId} {
-        allow read, write: if isOwner(userId);
+        allow read: if isOwner(userId);
+        allow create, update: if isOwner(userId) && isValidApplication();
+        allow delete: if isOwner(userId);
       }
     }
 
     match /scholarships/{scholarshipId} {
       allow read: if true;
-      allow create, update: if isAdmin() && hasRequiredScholarshipFields();
+      allow create, update: if isAdmin() && isValidScholarship();
       allow delete: if isAdmin();
+    }
+
+    match /{document=**} {
+      allow read, write: if false;
     }
   }
 }
