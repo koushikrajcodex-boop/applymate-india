@@ -115,6 +115,27 @@ function checkPrivatePageIndexing() {
   }
 }
 
+function checkDuplicateHtmlIds() {
+  const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith(".html"));
+
+  for (const htmlFile of htmlFiles) {
+    const source = read(htmlFile);
+    const counts = new Map();
+
+    for (const match of source.matchAll(/\bid\s*=\s*["']([^"']+)["']/gi)) {
+      const id = match[1].trim();
+      if (!id) continue;
+      counts.set(id, (counts.get(id) || 0) + 1);
+    }
+
+    for (const [id, count] of counts) {
+      if (count > 1) {
+        fail(`${htmlFile} contains duplicate id "${id}" (${count} occurrences).`);
+      }
+    }
+  }
+}
+
 function checkHtmlLinks() {
   const htmlFiles = fs.readdirSync(root).filter((file) => file.endsWith(".html"));
 
@@ -154,6 +175,7 @@ checkManifest();
 checkSitemap();
 checkServiceWorkerCache();
 checkPrivatePageIndexing();
+checkDuplicateHtmlIds();
 checkHtmlLinks();
 
 if (warnings.length > 0) {
