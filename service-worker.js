@@ -1,4 +1,4 @@
-const CACHE_NAME = "applymate-india-v2";
+const CACHE_NAME = "applymate-india-v3";
 const OFFLINE_URL = "offline.html";
 
 const CORE_ASSETS = [
@@ -9,6 +9,7 @@ const CORE_ASSETS = [
   "assistant.css",
   "manifest.webmanifest",
   "pwa-register.js",
+  "pwa-install.css",
   "icons/icon-192.svg",
   "icons/icon-512.svg"
 ];
@@ -50,7 +51,7 @@ self.addEventListener("fetch", (event) => {
     return;
   }
 
-  event.respondWith(staleWhileRevalidate(request));
+  event.respondWith(staleWhileRevalidate(event));
 });
 
 async function networkFirstPage(request) {
@@ -59,7 +60,7 @@ async function networkFirstPage(request) {
 
     if (response.ok) {
       const cache = await caches.open(CACHE_NAME);
-      cache.put(request, response.clone());
+      await cache.put(request, response.clone());
     }
 
     return response;
@@ -72,14 +73,15 @@ async function networkFirstPage(request) {
   }
 }
 
-async function staleWhileRevalidate(request) {
+async function staleWhileRevalidate(event) {
+  const request = event.request;
   const cache = await caches.open(CACHE_NAME);
   const cachedResponse = await cache.match(request);
 
   const networkResponsePromise = fetch(request)
-    .then((response) => {
+    .then(async (response) => {
       if (response.ok) {
-        cache.put(request, response.clone());
+        await cache.put(request, response.clone());
       }
 
       return response;
@@ -87,13 +89,9 @@ async function staleWhileRevalidate(request) {
     .catch(() => null);
 
   if (cachedResponse) {
-    eventWaitUntilSafe(networkResponsePromise);
+    event.waitUntil(networkResponsePromise.then(() => undefined));
     return cachedResponse;
   }
 
   return (await networkResponsePromise) || Response.error();
-}
-
-function eventWaitUntilSafe(promise) {
-  promise.catch(() => undefined);
 }
