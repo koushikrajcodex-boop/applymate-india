@@ -11,8 +11,20 @@ service cloud.firestore {
       return isSignedIn() && request.auth.uid == userId;
     }
 
-    function isAdmin() {
+    function isAdminEmail() {
+      return isSignedIn() &&
+             request.auth.token.email is string &&
+             request.auth.token.email in [
+               "koushikrajcodex@gmail.com"
+             ];
+    }
+
+    function isAdminClaim() {
       return isSignedIn() && request.auth.token.admin == true;
+    }
+
+    function isAdmin() {
+      return isAdminClaim() || isAdminEmail();
     }
 
     function isValidUrl(value) {
@@ -44,9 +56,6 @@ service cloud.firestore {
       return value is timestamp;
     }
 
-    // User profile documents may contain fields from older app versions.
-    // Keep ownership and authenticated email protection, but do not reject
-    // a profile merely because a legacy field still exists in the document.
     function isValidUserProfile() {
       return request.auth.token.email is string &&
              request.resource.data.email is string &&
