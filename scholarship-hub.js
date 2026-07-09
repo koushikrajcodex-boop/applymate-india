@@ -1,4 +1,5 @@
 import { db } from "./firebase-config.js";
+import { getLastVerifiedText, getOfficialSourceUrl, isVerifiedActiveScholarship } from "./scholarship-verification.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const $ = (id) => document.getElementById(id);
@@ -25,9 +26,7 @@ async function loadScholarships() {
     const snapshot = await getDocs(collection(db, "scholarships"));
     scholarships = snapshot.docs
       .map((docSnap) => ({ id: docSnap.id, ...docSnap.data() }))
-      .filter((item) => item.status === "active")
-      .filter((item) => item.applicationWindow !== "closed")
-      .filter((item) => !isExpired(item.deadlineDate));
+      .filter(isVerifiedActiveScholarship);
     updateStats();
     renderFeatured();
     render();
@@ -41,7 +40,7 @@ function updateStats() {
   $("statActive").textContent = scholarships.length;
   $("statWeek").textContent = scholarships.filter((item) => daysLeft(item.deadlineDate) <= 7).length;
   $("statNew").textContent = scholarships.filter(isNew).length;
-  $("statVerified").textContent = scholarships.filter((item) => item.verifiedOn || item.lastChecked).length;
+  $("statVerified").textContent = scholarships.length;
 }
 
 function renderFeatured() {
@@ -72,21 +71,22 @@ function render() {
     return daysLeft(a.deadlineDate) - daysLeft(b.deadlineDate);
   });
 
-  $("hubCount").textContent = `Showing ${visible.length} of ${scholarships.length} active scholarships`;
-  $("hubCards").innerHTML = visible.length ? visible.map(bigCard).join("") : "<p class='mini-note'>No active scholarships match these filters. Try reset.</p>";
+  $("hubCount").textContent = `Showing ${visible.length} of ${scholarships.length} verified active scholarships`;
+  $("hubCards").innerHTML = visible.length ? visible.map(bigCard).join("") : "<p class='mini-note'>No verified active scholarships match these filters. Try reset.</p>";
   document.querySelectorAll("[data-compare]").forEach((button) => {
     button.addEventListener("click", () => toggleCompare(button.dataset.compare));
   });
 }
 
 function smallCard(title, item) {
-  if (!item) return `<article class="hub-small"><span class="badge">${escapeHtml(title)}</span><h3>No record found</h3><p>Add more active scholarships from admin.</p></article>`;
-  return `<article class="hub-small"><span class="badge">${escapeHtml(title)}</span><h3>${escapeHtml(item.name)}</h3><p>${formatDays(item.deadlineDate)} • ${escapeHtml(item.sourceName || "Official source")}</p><a class="text-btn" href="#results">View details</a></article>`;
+  if (!item) return `<article class="hub-small"><span class="badge">${escapeHtml(title)}</span><h3>No record found</h3><p>Add more verified active scholarships from admin.</p></article>`;
+  return `<article class="hub-small"><span class="badge">${escapeHtml(title)}</span><h3>${escapeHtml(item.name)}</h3><p>${formatDays(item.deadlineDate)} • Last verified: ${escapeHtml(getLastVerifiedText(item))}</p><a class="text-btn" href="#results">View details</a></article>`;
 }
 
 function bigCard(item) {
   const isSelected = selected.includes(item.id);
-  return `<article class="hub-card"><div class="hub-badges"><span class="badge">${escapeHtml(item.stateLabel || labelState(item.state))}</span><span class="badge">✔ Verified ${escapeHtml(item.verifiedOn || "")}</span>${isNew(item) ? "<span class='badge'>🆕 New</span>" : ""}<span class="badge">⏳ ${formatDays(item.deadlineDate)}</span></div><h3>${escapeHtml(item.name)}</h3><p class="info"><strong>Eligibility:</strong> ${escapeHtml(item.eligibilityNote || "Verify on official portal.")}</p><div class="hub-meta"><p><strong>Amount</strong>${escapeHtml(item.amount || "Varies")}</p><p><strong>Deadline</strong>${escapeHtml(item.deadline || "Check portal")}</p><p><strong>Education</strong>${escapeHtml(toArray(item.education).join(", ") || "Any")}</p><p><strong>Categories</strong>${escapeHtml(toArray(item.categories).join(", ") || "Any")}</p><p><strong>Income</strong>${incomeText(item.maxIncome)}</p><p><strong>Source</strong>${escapeHtml(item.sourceName || "Official source")}</p></div><div class="button-row">${officialButton(item.link)}<button class="secondary-btn" type="button" data-compare="${escapeHtml(item.id)}">${isSelected ? "Remove compare" : "Compare"}</button><a class="secondary-btn" href="dashboard.html">Save / Track</a></div></article>`;
+  const officialUrl = getOfficialSourceUrl(item);
+  return `<article class="hub-card"><div class="hub-badges"><span class="badge">${escapeHtml(item.stateLabel || labelState(item.state))}</span><span class="badge">Last verified: ${escapeHtml(getLastVerifiedText(item))}</span>${isNew(item) ? "<span class='badge'>🆕 New</span>" : ""}<span class="badge">⏳ ${formatDays(item.deadlineDate)}</span></div><h3>${escapeHtml(item.name)}</h3><p class="info"><strong>Eligibility:</strong> ${escapeHtml(item.eligibilityNote || "Verify on official portal.")}</p><div class="hub-meta"><p><strong>Amount</strong>${escapeHtml(item.amount || "Varies")}</p><p><strong>Deadline</strong>${escapeHtml(item.deadline || "Check portal")}</p><p><strong>Education</strong>${escapeHtml(toArray(item.education).join(", ") || "Any")}</p><p><strong>Categories</strong>${escapeHtml(toArray(item.categories).join(", ") || "Any")}</p><p><strong>Income</strong>${incomeText(item.maxIncome)}</p><p><strong>Source</strong>${escapeHtml(item.sourceName || "Official source")}</p><p><strong>Last verified</strong>${escapeHtml(getLastVerifiedText(item))}</p></div><div class="button-row">${officialButton(officialUrl)}<button class="secondary-btn" type="button" data-compare="${escapeHtml(item.id)}">${isSelected ? "Remove compare" : "Compare"}</button><a class="secondary-btn" href="dashboard.html">Save / Track</a></div></article>`;
 }
 
 function toggleCompare(id) {
@@ -103,7 +103,7 @@ function showComparison() {
     return;
   }
   $("compareBox").style.display = "block";
-  $("compareTable").innerHTML = `<table class="compare-table"><tr><th>Field</th>${items.map((item) => `<th>${escapeHtml(item.name)}</th>`).join("")}</tr><tr><td>Amount</td>${items.map((item) => `<td>${escapeHtml(item.amount || "Varies")}</td>`).join("")}</tr><tr><td>Deadline</td>${items.map((item) => `<td>${escapeHtml(item.deadline || "Check portal")}<br>${formatDays(item.deadlineDate)}</td>`).join("")}</tr><tr><td>Eligibility</td>${items.map((item) => `<td>${escapeHtml(item.eligibilityNote || "Verify on portal")}</td>`).join("")}</tr><tr><td>Official Link</td>${items.map((item) => `<td>${officialButton(item.link)}</td>`).join("")}</tr></table>`;
+  $("compareTable").innerHTML = `<table class="compare-table"><tr><th>Field</th>${items.map((item) => `<th>${escapeHtml(item.name)}</th>`).join("")}</tr><tr><td>Amount</td>${items.map((item) => `<td>${escapeHtml(item.amount || "Varies")}</td>`).join("")}</tr><tr><td>Deadline</td>${items.map((item) => `<td>${escapeHtml(item.deadline || "Check portal")}<br>${formatDays(item.deadlineDate)}</td>`).join("")}</tr><tr><td>Last verified</td>${items.map((item) => `<td>${escapeHtml(getLastVerifiedText(item))}</td>`).join("")}</tr><tr><td>Eligibility</td>${items.map((item) => `<td>${escapeHtml(item.eligibilityNote || "Verify on portal")}</td>`).join("")}</tr><tr><td>Official Link</td>${items.map((item) => `<td>${officialButton(getOfficialSourceUrl(item))}</td>`).join("")}</tr></table>`;
   $("compareBox").scrollIntoView({ behavior: "smooth" });
 }
 
@@ -134,10 +134,6 @@ function daysLeft(deadlineDate) {
   const today = new Date();
   today.setHours(0, 0, 0, 0);
   return Math.ceil((date.getTime() - today.getTime()) / 86400000);
-}
-
-function isExpired(deadlineDate) {
-  return daysLeft(deadlineDate) < 0;
 }
 
 function formatDays(deadlineDate) {

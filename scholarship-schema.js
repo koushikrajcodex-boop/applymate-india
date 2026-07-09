@@ -52,7 +52,7 @@ export function createVerifiedScholarshipRecord(input = {}) {
     minPercentage: toNumber(input.minPercentage),
     deadline: clean(input.deadline || "Check official portal"),
     deadlineDate: clean(input.deadlineDate),
-    link: clean(input.link),
+    link: clean(input.link || input.sourceUrl),
     education: toArray(input.education),
     categories: toArray(input.categories),
     genders: toArray(input.genders).length ? toArray(input.genders) : ["any"],
@@ -74,17 +74,30 @@ export function isScholarshipVisibleToStudents(record = {}) {
   if (record.status !== SCHOLARSHIP_STATUS.ACTIVE) return false;
   if (record.applicationWindow === APPLICATION_WINDOW.CLOSED) return false;
   if (isPastDate(record.deadlineDate)) return false;
+  if (!isVerifiedActiveScholarship(record)) return false;
   return true;
+}
+
+export function isVerifiedActiveScholarship(record = {}) {
+  if (record.status !== SCHOLARSHIP_STATUS.ACTIVE) return true;
+  return Boolean(
+    isValidIsoDate(record.verifiedOn) &&
+    clean(record.sourceName) &&
+    isValidUrl(record.sourceUrl || record.link)
+  );
 }
 
 export function getScholarshipQualityWarnings(record = {}) {
   const warnings = [];
 
   if (!clean(record.name)) warnings.push("Missing scholarship name.");
-  if (!clean(record.link)) warnings.push("Missing official link.");
+  if (!isValidUrl(record.sourceUrl || record.link)) warnings.push("Missing valid official source URL.");
   if (!clean(record.sourceName)) warnings.push("Missing official source name.");
-  if (!clean(record.verifiedOn)) warnings.push("Missing verified date.");
+  if (!isValidIsoDate(record.verifiedOn)) warnings.push("Missing valid verified date.");
   if (!clean(record.verificationNote)) warnings.push("Missing verification note.");
+  if (record.status === SCHOLARSHIP_STATUS.ACTIVE && !isVerifiedActiveScholarship(record)) {
+    warnings.push("Active scholarship must have verifiedOn, sourceName, and sourceUrl/link before publishing.");
+  }
   if (record.status === SCHOLARSHIP_STATUS.ACTIVE && normalizeApplicationWindow(record.applicationWindow) === APPLICATION_WINDOW.CLOSED) {
     warnings.push("Closed scholarship should not be active.");
   }
@@ -133,12 +146,29 @@ function clampNumber(value, min, max, fallback) {
   return Math.max(min, Math.min(number, max));
 }
 
+function isValidIsoDate(value) {
+  const text = clean(value);
+  return /^20\d{2}-[01]\d-[0-3]\d$/.test(text);
+}
+
 function isPastDate(value) {
   const text = clean(value);
   if (!text) return false;
   const date = new Date(`${text}T23:59:59`);
   if (Number.isNaN(date.getTime())) return false;
   return date.getTime() < Date.now();
+}
+
+function isValidUrl(value) {
+  const text = clean(value);
+  if (!text) return false;
+
+  try {
+    const url = new URL(text);
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
+  }
 }
 
 function getTodayString() {

@@ -146,6 +146,7 @@ service cloud.firestore {
         "deadline",
         "deadlineDate",
         "link",
+        "sourceUrl",
         "education",
         "categories",
         "genders",
@@ -198,9 +199,24 @@ service cloud.firestore {
       return value in ["open", "upcoming", "closed", "verify"];
     }
 
+    function hasValidActiveVerification() {
+      return request.resource.data.status != "active" ||
+        (
+          ('verifiedOn' in request.resource.data) &&
+          isValidIsoDate(request.resource.data.verifiedOn) &&
+          request.resource.data.sourceName is string &&
+          request.resource.data.sourceName.size() >= 2 &&
+          (
+            (('sourceUrl' in request.resource.data) && isValidUrl(request.resource.data.sourceUrl)) ||
+            isValidUrl(request.resource.data.link)
+          )
+        );
+    }
+
     function isValidScholarship() {
       return hasOnlyScholarshipFields() &&
         hasRequiredScholarshipFields() &&
+        hasValidActiveVerification() &&
         request.resource.data.name is string &&
         request.resource.data.name.size() >= 3 &&
         request.resource.data.name.size() <= 200 &&
@@ -222,6 +238,7 @@ service cloud.firestore {
         request.resource.data.deadline.size() <= 160 &&
         isValidIsoDate(request.resource.data.deadlineDate) &&
         isValidUrl(request.resource.data.link) &&
+        (!('sourceUrl' in request.resource.data) || isValidUrl(request.resource.data.sourceUrl)) &&
         request.resource.data.education is list &&
         request.resource.data.education.size() >= 1 &&
         request.resource.data.education.size() <= 30 &&

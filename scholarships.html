@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
   <title>Scholarship Directory India - ApplyMate India</title>
-  <meta name="description" content="Explore Indian scholarships from ApplyMate India, including live admin-added scholarships from Firestore plus national, state, engineering, category, disability, girls, and income-based scholarship entries." />
+  <meta name="description" content="Explore verified active Indian scholarships from ApplyMate India, including live Firestore records with official source links and last verified dates." />
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/scholarships.html" />
 
@@ -134,12 +134,12 @@
   <main class="content-page">
 
     <section class="content-card">
-      <span class="tagline">Phase 3 • Live Scholarship Directory</span>
+      <span class="tagline">Phase 3 • Verified Live Scholarship Directory</span>
       <h1>Indian Scholarship Directory</h1>
-      <span class="last-updated">Last updated: June 2026</span>
+      <span class="last-updated">Last updated: 9 July 2026</span>
 
       <p>
-        This page now loads live scholarships from the ApplyMate India Firestore database. Scholarships added from the Admin Panel or Bulk Assistant appear here when they are Active / Published.
+        This page loads verified active scholarships from the ApplyMate India Firestore database. Scholarships appear here only when they are active, not closed, not expired, and include a valid source plus last verified date.
       </p>
 
       <p>
@@ -166,8 +166,8 @@
         </a>
 
         <a class="guide-card" href="scholarships.html#live-directory">
-          <h2>All Live Scholarships</h2>
-          <p>View all scholarships uploaded from the admin panel and bulk import assistant.</p>
+          <h2>All Verified Scholarships</h2>
+          <p>View verified active scholarships uploaded from the admin panel and bulk import assistant.</p>
         </a>
 
         <a class="guide-card" href="dashboard.html">
@@ -179,9 +179,9 @@
 
     <section class="content-card" id="engineering">
       <span class="tagline">Live From Firestore</span>
-      <h2 id="live-directory">Live Scholarship Directory</h2>
+      <h2 id="live-directory">Verified Scholarship Directory</h2>
       <p class="mini-note">
-        These cards are loaded from Firestore. Admin and Bulk Assistant uploads appear here when status is active.
+        These cards are loaded from Firestore and filtered to verified active records only.
       </p>
 
       <div class="directory-toolbar">
@@ -239,15 +239,15 @@
       </div>
 
       <div id="liveScholarshipList" class="live-directory-grid">
-        <p class="mini-note">Loading live scholarships...</p>
+        <p class="mini-note">Loading verified scholarships...</p>
       </div>
     </section>
 
     <section class="content-card">
-      <span class="tagline">Static Reference</span>
+      <span class="tagline">Official Portal Reference</span>
       <h2>Official Portal Reference</h2>
       <p>
-        The live directory above is the main dynamic student directory. These official portals are useful for final verification.
+        The verified live directory above is the main dynamic student directory. These official portals are useful for final verification.
       </p>
 
       <article class="scholarship">
@@ -299,6 +299,7 @@
 
   <script type="module">
     import { db } from "./firebase-config.js";
+    import { getLastVerifiedText, getOfficialSourceUrl, isVerifiedActiveScholarship } from "./scholarship-verification.js";
     import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
     const searchBox = document.getElementById("liveScholarshipSearch");
@@ -336,16 +337,16 @@
         const snapshot = await getDocs(collection(db, "scholarships"));
         allScholarships = snapshot.docs
           .map((item) => ({ id: item.id, ...item.data() }))
-          .filter((item) => item.status === "active")
+          .filter(isVerifiedActiveScholarship)
           .sort((a, b) => Number(b.priority || 0) - Number(a.priority || 0));
 
-        sourceBox.textContent = allScholarships.length ? "Source: Firestore live data" : "No active Firestore data";
+        sourceBox.textContent = allScholarships.length ? "Source: verified Firestore data" : "No verified active Firestore data";
         renderLiveDirectory();
       } catch (error) {
         console.warn("Firestore directory load failed", error);
         allScholarships = [];
         sourceBox.textContent = "Firestore unavailable";
-        listBox.innerHTML = "<p class='mini-note'>Could not load live scholarships. Static portal links are still available below.</p>";
+        listBox.innerHTML = "<p class='mini-note'>Could not load verified scholarships. Static portal links are still available below.</p>";
       }
     }
 
@@ -377,16 +378,16 @@
         return searchOk && stateOk && educationOk && categoryOk;
       });
 
-      countBox.textContent = `Showing ${visible.length} of ${allScholarships.length} scholarships`;
+      countBox.textContent = `Showing ${visible.length} of ${allScholarships.length} verified scholarships`;
       listBox.replaceChildren();
 
       if (!allScholarships.length) {
-        listBox.innerHTML = "<p class='mini-note'>No active Firestore scholarships found yet. Add scholarships from Admin Panel → Bulk Scholarship Import Assistant.</p>";
+        listBox.innerHTML = "<p class='mini-note'>No verified active Firestore scholarships found yet. Add verified scholarships from Admin Panel → Bulk Scholarship Import Assistant.</p>";
         return;
       }
 
       if (!visible.length) {
-        listBox.innerHTML = "<p class='mini-note'>No live scholarships match these filters. Try Reset Filters.</p>";
+        listBox.innerHTML = "<p class='mini-note'>No verified scholarships match these filters. Try Reset Filters.</p>";
         return;
       }
 
@@ -400,6 +401,7 @@
       const badges = document.createElement("div");
       badges.className = "live-card-badges";
       badges.append(makeBadge(item.stateLabel || titleCase(item.state || "National")));
+      badges.append(makeBadge(`Last verified: ${getLastVerifiedText(item)}`));
       badges.append(makeBadge(item.sourceType === "bulk-assistant" ? "Bulk Added" : "Admin Added"));
 
       const title = document.createElement("h3");
@@ -417,14 +419,16 @@
       addMeta(meta, "Education", toArray(item.education).join(", ") || "Any");
       addMeta(meta, "Categories", toArray(item.categories).join(", ") || "Any");
       addMeta(meta, "Source", item.sourceName || "Official portal");
+      addMeta(meta, "Last verified", getLastVerifiedText(item));
 
       const buttons = document.createElement("div");
       buttons.className = "button-row";
+      const officialUrl = getOfficialSourceUrl(item);
 
-      if (String(item.link || "").startsWith("http")) {
+      if (officialUrl) {
         const official = document.createElement("a");
         official.className = "text-btn";
-        official.href = item.link;
+        official.href = officialUrl;
         official.target = "_blank";
         official.rel = "noopener noreferrer";
         official.textContent = "Open Official Link";
@@ -471,5 +475,6 @@
       return String(value || "").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
     }
   </script>
+  <script src="assistant.js"></script>
 </body>
 </html>
