@@ -3,1351 +3,142 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
   <title>Admin Panel - ApplyMate India</title>
-  <meta name="description" content="Admin panel for ApplyMate India to manage scholarships, import data, preview listings, and view analytics." />
+  <meta name="description" content="Custom-claim protected admin panel for ApplyMate India scholarship management." />
   <meta name="robots" content="noindex, nofollow" />
-
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="admin.css?v=admin4" />
-
-  <style>
-    .admin-assistant-card {
-      border: 1px solid #c7d7fe;
-      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
-    }
-
-    .admin-assistant-layout {
-      display: grid;
-      grid-template-columns: minmax(0, 1.35fr) minmax(280px, 0.75fr);
-      gap: 22px;
-      align-items: start;
-      margin-top: 18px;
-    }
-
-    .admin-assistant-actions {
-      padding: 20px;
-      border-radius: 20px;
-      border: 1px solid var(--border);
-      background: #ffffff;
-      box-shadow: var(--shadow);
-    }
-
-    .admin-assistant-actions h3 {
-      margin-bottom: 8px;
-    }
-
-    .assistant-button-row {
-      margin-top: 16px;
-    }
-
-    .admin-assistant-extracted {
-      display: grid;
-      gap: 10px;
-      margin-top: 16px;
-    }
-
-    .assistant-extracted-item {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 12px;
-      border-radius: 14px;
-      background: #f8fafc;
-      border: 1px solid var(--border);
-    }
-
-    .assistant-extracted-item strong {
-      color: var(--text);
-    }
-
-    .assistant-extracted-item span {
-      color: #475467;
-      text-align: right;
-      overflow-wrap: anywhere;
-    }
-
-    .bulk-assistant-preview {
-      display: grid;
-      gap: 14px;
-      margin-top: 16px;
-    }
-
-    .bulk-preview-card {
-      padding: 16px;
-      border-radius: 18px;
-      background: #ffffff;
-      border: 1px solid var(--border);
-      box-shadow: var(--shadow);
-    }
-
-    .bulk-preview-card h3 {
-      margin: 8px 0 10px;
-      line-height: 1.25;
-    }
-
-    .bulk-preview-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 10px;
-      margin-top: 12px;
-    }
-
-    .bulk-preview-grid p {
-      margin: 0;
-      padding: 10px;
-      border-radius: 12px;
-      background: #f8fafc;
-      border: 1px solid var(--border);
-      color: #475467;
-      font-size: 0.92rem;
-    }
-
-    .bulk-preview-grid strong {
-      display: block;
-      color: var(--text);
-      margin-bottom: 4px;
-    }
-
-    @media (max-width: 900px) {
-      .admin-assistant-layout {
-        grid-template-columns: 1fr;
-      }
-
-      .bulk-preview-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    @media (max-width: 620px) {
-      .assistant-extracted-item {
-        flex-direction: column;
-      }
-
-      .assistant-extracted-item span {
-        text-align: left;
-      }
-
-      .bulk-preview-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <link rel="stylesheet" href="admin.css?v=admin5" />
 </head>
 <body>
-
   <div class="page-bg"></div>
 
   <nav class="navbar">
-    <a class="logo" href="index.html">
-      <span class="logo-icon">A</span>
-      <span>ApplyMate India Admin</span>
-    </a>
-
+    <a class="logo" href="index.html"><span class="logo-icon">A</span><span>ApplyMate India Admin</span></a>
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="dashboard.html">Student Dashboard</a>
+      <a href="admin-health.html">Data Health</a>
       <a href="contact.html">Contact</a>
       <button id="adminLogoutBtn" class="secondary-btn" type="button">Logout</button>
     </div>
   </nav>
 
   <main class="content-page">
-
     <section class="content-card admin-hero">
       <span class="tagline">Admin Access</span>
       <h1>ApplyMate India Admin Panel</h1>
-      <p id="adminEmail" class="last-updated">Checking admin access...</p>
-
+      <p id="adminEmail" class="last-updated">Checking Firebase custom claim...</p>
       <div class="notice-box">
-        Only authorized admins can manage scholarships. Student users should use the normal dashboard.
+        Admin access requires Firebase Authentication custom claim <code>admin == true</code>. Personal email allow-lists are no longer used.
       </div>
-
       <div class="notice-box">
-        <strong>Admin setup check:</strong>
-        If Add / Edit / Delete does not work, open Firebase Console → Firestore Database → Rules,
-        paste the latest firestore.rules from GitHub, and click Publish.
+        Active scholarships require deadline date, official link, source name, and verification metadata before Firestore accepts them.
       </div>
     </section>
 
     <section id="adminLockedSection" class="content-card hidden">
-      <h2>Access Denied</h2>
-      <p class="mini-note">
-        You are logged in, but this account is not allowed to access the admin panel.
-      </p>
-
-      <div class="button-row">
-        <a class="text-btn" href="dashboard.html">Go to Student Dashboard</a>
-      </div>
+      <h2>Access denied</h2>
+      <p class="mini-note">This account does not have the Firebase custom claim <code>admin == true</code>.</p>
+      <div class="button-row"><a class="text-btn" href="dashboard.html">Go to Student Dashboard</a></div>
     </section>
 
     <section id="adminContent" class="hidden">
-
       <section class="content-card">
         <div class="card-heading">
-          <div>
-            <h2>Admin Analytics</h2>
-            <p class="mini-note">
-              Quick overview of scholarships and admin-managed data.
-            </p>
-          </div>
-
-          <button id="refreshAdminBtn" class="secondary-btn" type="button">
-            Refresh
-          </button>
+          <div><h2>Admin Analytics</h2><p class="mini-note">Live Firestore scholarship overview.</p></div>
+          <button id="refreshAdminBtn" class="secondary-btn" type="button">Refresh</button>
         </div>
-
         <div class="admin-stats-grid">
-          <div class="admin-stat-card">
-            <span>Total Scholarships</span>
-            <strong id="totalScholarshipsCount">0</strong>
-          </div>
-
-          <div class="admin-stat-card">
-            <span>Active / Published</span>
-            <strong id="activeScholarshipsCount">0</strong>
-          </div>
-
-          <div class="admin-stat-card">
-            <span>Draft Scholarships</span>
-            <strong id="draftScholarshipsCount">0</strong>
-          </div>
-
-          <div class="admin-stat-card">
-            <span>Closed Scholarships</span>
-            <strong id="closedScholarshipsCount">0</strong>
-          </div>
-
-          <div class="admin-stat-card">
-            <span>National Scholarships</span>
-            <strong id="nationalScholarshipsCount">0</strong>
-          </div>
-
-          <div class="admin-stat-card">
-            <span>State Scholarships</span>
-            <strong id="stateScholarshipsCount">0</strong>
-          </div>
-
-          <div class="admin-stat-card">
-            <span>With Deadline Date</span>
-            <strong id="deadlineScholarshipsCount">0</strong>
-          </div>
-
-          <div class="admin-stat-card">
-            <span>Firestore Source</span>
-            <strong id="firestoreSourceCount">0</strong>
-          </div>
+          <div class="admin-stat-card"><span>Total Scholarships</span><strong id="totalScholarshipsCount">0</strong></div>
+          <div class="admin-stat-card"><span>Active / Published</span><strong id="activeScholarshipsCount">0</strong></div>
+          <div class="admin-stat-card"><span>Draft Scholarships</span><strong id="draftScholarshipsCount">0</strong></div>
+          <div class="admin-stat-card"><span>Closed Scholarships</span><strong id="closedScholarshipsCount">0</strong></div>
+          <div class="admin-stat-card"><span>National Scholarships</span><strong id="nationalScholarshipsCount">0</strong></div>
+          <div class="admin-stat-card"><span>State Scholarships</span><strong id="stateScholarshipsCount">0</strong></div>
+          <div class="admin-stat-card"><span>With Deadline Date</span><strong id="deadlineScholarshipsCount">0</strong></div>
+          <div class="admin-stat-card"><span>Firestore Source</span><strong id="firestoreSourceCount">0</strong></div>
         </div>
       </section>
 
       <section class="content-card">
-        <div class="card-heading">
-          <div>
-            <h2>Admin Tools</h2>
-            <p class="mini-note">
-              Import local scholarship data, export backups, and refresh Firestore data.
-            </p>
-          </div>
-        </div>
-
+        <div class="card-heading"><div><h2>Admin Tools</h2><p class="mini-note">Export backups, refresh data, and clear filters. Static local import has been removed.</p></div></div>
         <div class="admin-tool-grid">
-          <div class="admin-tool-card">
-            <h3>Import Local Scholarships</h3>
-            <p class="mini-note">
-              Copies scholarships from scholarships-data.js into Firestore. Duplicate names are skipped.
-            </p>
-            <button id="importLocalScholarshipsBtn" type="button">Import Local Data</button>
-          </div>
-
-          <div class="admin-tool-card">
-            <h3>Export Backup</h3>
-            <p class="mini-note">
-              Downloads current Firestore scholarships as a JSON backup file.
-            </p>
-            <button id="exportScholarshipsBtn" class="secondary-btn" type="button">Export JSON</button>
-          </div>
-
-          <div class="admin-tool-card">
-            <h3>Clear Filters</h3>
-            <p class="mini-note">
-              Reset search and status filters in the manage section.
-            </p>
-            <button id="clearAdminFiltersBtn" class="secondary-btn" type="button">Clear Filters</button>
-          </div>
+          <div class="admin-tool-card"><h3>Export Backup</h3><p class="mini-note">Downloads current Firestore scholarships as JSON.</p><button id="exportScholarshipsBtn" class="secondary-btn" type="button">Export JSON</button></div>
+          <div class="admin-tool-card"><h3>Clear Filters</h3><p class="mini-note">Reset search and status filters.</p><button id="clearAdminFiltersBtn" class="secondary-btn" type="button">Clear Filters</button></div>
+          <div class="admin-tool-card"><h3>Data Health</h3><p class="mini-note">Review duplicates, expired active records, missing links, and verification issues.</p><a class="text-btn" href="admin-health.html">Open Health Dashboard</a></div>
         </div>
-
         <p id="adminToolMessage" class="mini-note"></p>
       </section>
 
       <section class="content-card admin-assistant-card">
-        <div class="card-heading">
-          <div>
-            <span class="tagline">Admin Assistant</span>
-            <h2>Scholarship Auto-Fill Assistant</h2>
-            <p class="mini-note">
-              Paste or type scholarship details in normal English. The assistant fills the admin form automatically for review.
-            </p>
-          </div>
-        </div>
-
-        <div class="notice-box">
-          <strong>Safe mode:</strong>
-          The assistant works inside your browser and does not expose any AI API key. It fills the form, then you review and save.
-        </div>
-
+        <div class="card-heading"><div><span class="tagline">Bulk Assistant</span><h2>Bulk Scholarship Import Assistant</h2><p class="mini-note">Paste multiple scholarships separated by a line containing <code>---</code>. Preview first, then import verified Firestore records.</p></div></div>
         <div class="admin-assistant-layout">
-          <div class="field full">
-            <label for="adminAssistantPrompt">Tell the assistant what scholarship to add</label>
-            <textarea id="adminAssistantPrompt" rows="8" placeholder="Example: Add AICTE Pragati Scholarship for girl students. State national. Education engineering. Gender female. Amount ₹50,000 per year. Income limit ₹8,00,000. Categories general, sc, st, obc, ews, minority. Source AICTE. Deadline check AICTE / NSP portal."></textarea>
-          </div>
-
-          <aside class="admin-assistant-actions">
-            <h3>Assistant Actions</h3>
-            <p class="mini-note">
-              Fill the form first, review the live preview, then click Save Scholarship.
-            </p>
-
-            <div class="button-row assistant-button-row">
-              <button id="adminAssistantFillBtn" type="button">Fill Form</button>
-              <button id="adminAssistantExampleBtn" class="secondary-btn" type="button">Use Example</button>
-              <button id="adminAssistantClearBtn" class="secondary-btn" type="button">Clear</button>
-            </div>
-
-            <p id="adminAssistantMessage" class="mini-note"></p>
-
-            <div id="adminAssistantExtracted" class="admin-assistant-extracted">
-              <p class="mini-note">Extracted fields will appear here after filling.</p>
-            </div>
-          </aside>
-        </div>
-      </section>
-
-      <section class="content-card admin-assistant-card">
-        <div class="card-heading">
-          <div>
-            <span class="tagline">Bulk Assistant</span>
-            <h2>Bulk Scholarship Import Assistant</h2>
-            <p class="mini-note">
-              Paste many scholarships at once. Separate each scholarship using three dashes: ---
-            </p>
-          </div>
-        </div>
-
-        <div class="notice-box">
-          <strong>Bulk safe mode:</strong>
-          Preview first. Import skips duplicate scholarship names already found in Firestore.
-        </div>
-
-        <div class="admin-assistant-layout">
-          <div class="field full">
-            <label for="bulkAssistantPrompt">Paste multiple scholarships</label>
-            <textarea id="bulkAssistantPrompt" rows="12" placeholder="Add Scholarship One...&#10;State national...&#10;---&#10;Add Scholarship Two...&#10;State telangana..."></textarea>
-          </div>
-
+          <div class="field full"><label for="bulkAssistantPrompt">Paste multiple scholarships</label><textarea id="bulkAssistantPrompt" rows="12" placeholder="Scholarship name&#10;State national&#10;Education engineering&#10;Categories general, obc&#10;Deadline date 2099-12-31&#10;Official link https://...&#10;Source Official Portal&#10;Eligibility ...&#10;---&#10;Second scholarship..."></textarea></div>
           <aside class="admin-assistant-actions">
             <h3>Bulk Actions</h3>
-            <p class="mini-note">
-              Preview checks extracted fields. Import writes new scholarships to Firestore.
-            </p>
-
+            <p class="mini-note">Preview checks extracted fields. Import skips duplicate names already found in Firestore.</p>
             <div class="button-row assistant-button-row">
               <button id="bulkAssistantPreviewBtn" type="button">Preview All</button>
               <button id="bulkAssistantImportBtn" class="secondary-btn" type="button">Import All</button>
-              <button id="bulkAssistantExampleBtn" class="secondary-btn" type="button">Use Bulk Example</button>
+              <button id="bulkAssistantExampleBtn" class="secondary-btn" type="button">Use Example</button>
               <button id="bulkAssistantClearBtn" class="secondary-btn" type="button">Clear</button>
             </div>
-
             <p id="bulkAssistantMessage" class="mini-note"></p>
           </aside>
         </div>
-
-        <div id="bulkAssistantPreview" class="bulk-assistant-preview">
-          <p class="mini-note">Bulk preview will appear here.</p>
-        </div>
+        <div id="bulkAssistantPreview" class="bulk-assistant-preview"><p class="mini-note">Bulk preview will appear here.</p></div>
       </section>
 
       <section class="content-card">
-        <div class="card-heading">
-          <div>
-            <h2>Add / Edit Scholarship</h2>
-            <p class="mini-note">
-              Add official scholarship details. Active scholarships are shown to students on the dashboard.
-            </p>
-          </div>
-
-          <button id="clearScholarshipFormBtn" class="secondary-btn" type="button">
-            Clear Form
-          </button>
-        </div>
-
+        <div class="card-heading"><div><h2>Add / Edit Scholarship</h2><p class="mini-note">Add official scholarship details. Active scholarships are saved only after verification fields are present.</p></div><button id="clearScholarshipFormBtn" class="secondary-btn" type="button">Clear Form</button></div>
         <input type="hidden" id="editingScholarshipId" />
-
         <div class="admin-editor-layout">
-
           <div class="admin-editor-form">
-
             <div class="form-grid">
-              <div class="field full">
-                <label for="adminScholarshipName">Scholarship Name</label>
-                <input type="text" id="adminScholarshipName" placeholder="Example: AICTE Pragati Scholarship" />
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipState">State</label>
-                <select id="adminScholarshipState">
-                  <option value="">Select state</option>
-                  <option value="national">National</option>
-                  <option value="andhra-pradesh">Andhra Pradesh</option>
-                  <option value="telangana">Telangana</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipStatus">Publish Status</label>
-                <select id="adminScholarshipStatus">
-                  <option value="active">Active / Published</option>
-                  <option value="draft">Draft</option>
-                  <option value="closed">Closed</option>
-                </select>
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipAmount">Amount</label>
-                <input type="text" id="adminScholarshipAmount" placeholder="Example: ₹50,000 or Varies" />
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipIncome">Max Income Limit</label>
-                <input type="number" id="adminScholarshipIncome" placeholder="Example: 200000" />
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipMinPercentage">Minimum Percentage</label>
-                <input type="number" id="adminScholarshipMinPercentage" placeholder="Example: 50" />
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipDeadline">Deadline Text</label>
-                <input type="text" id="adminScholarshipDeadline" placeholder="Example: Check official portal" />
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipDeadlineDate">Deadline Date</label>
-                <input type="date" id="adminScholarshipDeadlineDate" />
-              </div>
-
-              <div class="field full">
-                <label for="adminScholarshipLink">Official Link</label>
-                <input type="url" id="adminScholarshipLink" placeholder="https://..." />
-                <span class="mini-note">Optional but recommended. Use official portal links only.</span>
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipEducation">Education Levels</label>
-                <input type="text" id="adminScholarshipEducation" placeholder="school, intermediate, degree, engineering, pg" />
-                <span class="mini-note">Use comma-separated values.</span>
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipCategories">Categories</label>
-                <input type="text" id="adminScholarshipCategories" placeholder="general, sc, st, obc, ews, minority" />
-                <span class="mini-note">Use comma-separated values.</span>
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipGenders">Genders</label>
-                <input type="text" id="adminScholarshipGenders" placeholder="any, male, female" />
-                <span class="mini-note">Use comma-separated values.</span>
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipDisability">Disability Rule</label>
-                <select id="adminScholarshipDisability">
-                  <option value="any">Any</option>
-                  <option value="yes">Only specially abled students</option>
-                  <option value="no">Not disability-specific</option>
-                </select>
-              </div>
-
-              <div class="field full">
-                <label for="adminScholarshipEligibility">Eligibility Note</label>
-                <textarea id="adminScholarshipEligibility" rows="4" placeholder="Write short eligibility details..."></textarea>
-              </div>
-
-              <div class="field full">
-                <label for="adminScholarshipIncomeNote">Income Note</label>
-                <textarea id="adminScholarshipIncomeNote" rows="3" placeholder="Write income rule details..."></textarea>
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipPriority">Priority Score</label>
-                <input type="number" id="adminScholarshipPriority" placeholder="Example: 90" />
-              </div>
-
-              <div class="field">
-                <label for="adminScholarshipSource">Source Name</label>
-                <input type="text" id="adminScholarshipSource" placeholder="Example: NSP / AICTE / Jnanabhumi" />
-              </div>
+              <div class="field full"><label for="adminScholarshipName">Scholarship Name</label><input type="text" id="adminScholarshipName" placeholder="Example: AICTE Pragati Scholarship" /></div>
+              <div class="field"><label for="adminScholarshipState">State</label><select id="adminScholarshipState"><option value="national">National</option><option value="andhra-pradesh">Andhra Pradesh</option><option value="telangana">Telangana</option></select></div>
+              <div class="field"><label for="adminScholarshipStatus">Publish Status</label><select id="adminScholarshipStatus"><option value="draft">Draft</option><option value="active">Active / Published</option><option value="closed">Closed</option></select></div>
+              <div class="field"><label for="adminScholarshipAmount">Amount</label><input type="text" id="adminScholarshipAmount" placeholder="Example: ₹50,000 or Varies" /></div>
+              <div class="field"><label for="adminScholarshipIncome">Max Income Limit</label><input type="number" id="adminScholarshipIncome" placeholder="Example: 200000" /></div>
+              <div class="field"><label for="adminScholarshipMinPercentage">Minimum Percentage</label><input type="number" id="adminScholarshipMinPercentage" placeholder="Example: 50" /></div>
+              <div class="field"><label for="adminScholarshipDeadline">Deadline Text</label><input type="text" id="adminScholarshipDeadline" placeholder="Example: 31 December 2026" /></div>
+              <div class="field"><label for="adminScholarshipDeadlineDate">Deadline Date</label><input type="date" id="adminScholarshipDeadlineDate" /></div>
+              <div class="field full"><label for="adminScholarshipLink">Official Link</label><input type="url" id="adminScholarshipLink" placeholder="https://..." /><span class="mini-note">Required. Use official portal links only.</span></div>
+              <div class="field"><label for="adminScholarshipEducation">Education Levels</label><input type="text" id="adminScholarshipEducation" placeholder="school, intermediate, degree, engineering, pg" /></div>
+              <div class="field"><label for="adminScholarshipCategories">Categories</label><input type="text" id="adminScholarshipCategories" placeholder="general, sc, st, obc, ews, minority" /></div>
+              <div class="field"><label for="adminScholarshipGenders">Genders</label><input type="text" id="adminScholarshipGenders" value="any" placeholder="any, male, female" /></div>
+              <div class="field"><label for="adminScholarshipDisability">Disability Rule</label><select id="adminScholarshipDisability"><option value="any">Any</option><option value="yes">Only specially abled students</option><option value="no">Not disability-specific</option></select></div>
+              <div class="field full"><label for="adminScholarshipEligibility">Eligibility Note</label><textarea id="adminScholarshipEligibility" rows="4" placeholder="Write short eligibility details..."></textarea></div>
+              <div class="field full"><label for="adminScholarshipIncomeNote">Income Note</label><textarea id="adminScholarshipIncomeNote" rows="3" placeholder="Write income rule details..."></textarea></div>
+              <div class="field"><label for="adminScholarshipPriority">Priority Score</label><input type="number" id="adminScholarshipPriority" value="50" placeholder="Example: 90" /></div>
+              <div class="field"><label for="adminScholarshipSource">Source Name</label><input type="text" id="adminScholarshipSource" placeholder="Example: NSP / AICTE / Jnanabhumi" /></div>
             </div>
-
-            <div class="button-row">
-              <button id="saveScholarshipAdminBtn" type="button">Save Scholarship</button>
-              <button id="duplicateFormBtn" class="secondary-btn" type="button">Duplicate Current Form</button>
-            </div>
-
+            <div class="button-row"><button id="saveScholarshipAdminBtn" type="button">Save Scholarship</button><button id="duplicateFormBtn" class="secondary-btn" type="button">Duplicate Current Form</button></div>
             <p id="adminFormMessage" class="mini-note"></p>
           </div>
-
-          <aside class="admin-preview-panel">
-            <span class="tagline">Live Preview</span>
-            <h3>Student Card Preview</h3>
-            <div id="adminLivePreview" class="admin-live-preview"></div>
-          </aside>
-
+          <aside class="admin-preview-panel"><span class="tagline">Live Preview</span><h3>Student Card Preview</h3><div id="adminLivePreview" class="admin-live-preview"></div></aside>
         </div>
       </section>
 
       <section class="content-card">
-        <div class="card-heading">
-          <div>
-            <h2>Manage Scholarships</h2>
-            <p class="mini-note">
-              View, edit, duplicate, publish, archive, and delete scholarships added through the admin panel.
-            </p>
-          </div>
-        </div>
-
-        <div class="filter-panel">
-          <div class="form-grid">
-            <div class="field full">
-              <label for="adminSearch">Search Scholarships</label>
-              <input type="search" id="adminSearch" placeholder="Search by name, state, source, category..." />
-            </div>
-
-            <div class="field">
-              <label for="adminFilterState">Filter State</label>
-              <select id="adminFilterState">
-                <option value="">All states</option>
-                <option value="national">National</option>
-                <option value="andhra-pradesh">Andhra Pradesh</option>
-                <option value="telangana">Telangana</option>
-              </select>
-            </div>
-
-            <div class="field">
-              <label for="adminFilterStatus">Filter Status</label>
-              <select id="adminFilterStatus">
-                <option value="">All statuses</option>
-                <option value="active">Active / Published</option>
-                <option value="draft">Draft</option>
-                <option value="closed">Closed</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
+        <div class="card-heading"><div><h2>Manage Scholarships</h2><p class="mini-note">View, edit, duplicate, publish, archive, and delete Firestore scholarships.</p></div></div>
+        <div class="filter-panel"><div class="form-grid"><div class="field full"><label for="adminSearch">Search Scholarships</label><input type="search" id="adminSearch" placeholder="Search by name, state, source, category..." /></div><div class="field"><label for="adminFilterState">Filter State</label><select id="adminFilterState"><option value="">All states</option><option value="national">National</option><option value="andhra-pradesh">Andhra Pradesh</option><option value="telangana">Telangana</option></select></div><div class="field"><label for="adminFilterStatus">Filter Status</label><select id="adminFilterStatus"><option value="">All statuses</option><option value="active">Active / Published</option><option value="draft">Draft</option><option value="closed">Closed</option></select></div></div></div>
         <p id="adminScholarshipCount" class="mini-note"></p>
         <div id="adminScholarshipList"></div>
       </section>
 
       <section class="content-card">
-        <div class="card-heading">
-          <div>
-            <h2>Session Activity Log</h2>
-            <p class="mini-note">
-              Shows actions completed in this admin session.
-            </p>
-          </div>
-
-          <button id="clearActivityLogBtn" class="secondary-btn" type="button">
-            Clear Log
-          </button>
-        </div>
-
-        <div id="adminActivityLog" class="admin-activity-log">
-          <p class="mini-note">No admin activity yet.</p>
-        </div>
+        <div class="card-heading"><div><h2>Session Activity Log</h2><p class="mini-note">Shows actions completed in this admin session.</p></div><button id="clearActivityLogBtn" class="secondary-btn" type="button">Clear Log</button></div>
+        <div id="adminActivityLog" class="admin-activity-log"><p class="mini-note">No admin activity yet.</p></div>
       </section>
-
     </section>
-
   </main>
 
   <footer>
-    <p>
-      ApplyMate India Admin Panel. Manage scholarship data carefully and verify official sources before publishing.
-    </p>
-
-    <div class="footer-links">
-      <a href="index.html">Home</a>
-      <a href="dashboard.html">Student Dashboard</a>
-      <a href="privacy.html">Privacy Policy</a>
-      <a href="disclaimer.html">Disclaimer</a>
-      <a href="contact.html">Contact</a>
-    </div>
+    <p>ApplyMate India Admin Panel. Manage scholarship data carefully and verify official sources before publishing.</p>
+    <div class="footer-links"><a href="index.html">Home</a><a href="dashboard.html">Student Dashboard</a><a href="admin-health.html">Admin Health</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></div>
   </footer>
 
-  <script type="module" src="admin.js?v=admin4"></script>
-  <script>
-    const assistantPrompt = document.getElementById("adminAssistantPrompt");
-    const assistantFillBtn = document.getElementById("adminAssistantFillBtn");
-    const assistantExampleBtn = document.getElementById("adminAssistantExampleBtn");
-    const assistantClearBtn = document.getElementById("adminAssistantClearBtn");
-    const assistantMessage = document.getElementById("adminAssistantMessage");
-    const assistantExtracted = document.getElementById("adminAssistantExtracted");
-
-    const assistantExample = `Add AICTE Pragati Scholarship for girl students.
-State national.
-Education engineering.
-Gender female.
-Amount ₹50,000 per year.
-Income limit ₹8,00,000.
-Categories general, sc, st, obc, ews, minority.
-Disability any.
-Source AICTE.
-Deadline check AICTE / NSP portal.
-Priority 92.
-Eligibility: For girl students pursuing technical education in AICTE approved institutions.
-Income note: Family income rules should be verified on the official AICTE / NSP portal.`;
-
-    assistantFillBtn?.addEventListener("click", () => {
-      fillFormWithAssistant();
-    });
-
-    assistantExampleBtn?.addEventListener("click", () => {
-      if (assistantPrompt) {
-        assistantPrompt.value = assistantExample;
-        assistantPrompt.focus();
-      }
-      showAssistantMessage("Example added. Click Fill Form to auto-fill fields.");
-    });
-
-    assistantClearBtn?.addEventListener("click", () => {
-      if (assistantPrompt) assistantPrompt.value = "";
-      showAssistantMessage("");
-      renderAssistantExtracted(null);
-    });
-
-    function fillFormWithAssistant() {
-      const rawText = assistantPrompt?.value.trim() || "";
-
-      if (!rawText) {
-        showAssistantMessage("Paste scholarship details first.", true);
-        return;
-      }
-
-      const data = parseAssistantScholarship(rawText);
-
-      if (!data.name) {
-        showAssistantMessage("Could not detect scholarship name. Start with: Add Scholarship Name.", true);
-        return;
-      }
-
-      setField("editingScholarshipId", "");
-      setField("adminScholarshipName", data.name);
-      setField("adminScholarshipState", data.state);
-      setField("adminScholarshipStatus", data.status);
-      setField("adminScholarshipAmount", data.amount);
-      setField("adminScholarshipIncome", data.maxIncome);
-      setField("adminScholarshipMinPercentage", data.minPercentage);
-      setField("adminScholarshipDeadline", data.deadline);
-      setField("adminScholarshipDeadlineDate", data.deadlineDate);
-      setField("adminScholarshipLink", data.link);
-      setField("adminScholarshipEducation", data.education.join(", "));
-      setField("adminScholarshipCategories", data.categories.join(", "));
-      setField("adminScholarshipGenders", data.genders.join(", "));
-      setField("adminScholarshipDisability", data.disability);
-      setField("adminScholarshipEligibility", data.eligibilityNote);
-      setField("adminScholarshipIncomeNote", data.incomeNote);
-      setField("adminScholarshipPriority", data.priority);
-      setField("adminScholarshipSource", data.sourceName);
-
-      renderAssistantExtracted(data);
-      showAssistantMessage("Form filled. Review the preview, then click Save Scholarship.");
-    }
-
-    function parseAssistantScholarship(rawText) {
-      const text = rawText.toLowerCase();
-      const lines = rawText.split("\n").map((line) => line.trim()).filter(Boolean);
-      const sourceName = getSource(rawText, text);
-      const state = getState(text);
-      const education = getEducation(text);
-      const categories = getCategories(text);
-      const genders = getGenders(text);
-      const disability = getDisability(text);
-      const maxIncome = getIncome(rawText);
-      const name = getName(rawText, lines);
-
-      return {
-        name,
-        state,
-        status: text.includes("draft") ? "draft" : text.includes("closed") ? "closed" : "active",
-        amount: getAmount(rawText),
-        maxIncome,
-        minPercentage: getPercentage(rawText),
-        deadline: getValueByLabels(rawText, ["deadline", "last date", "closing date"]) || getDefaultDeadline(sourceName),
-        deadlineDate: getDate(rawText),
-        link: getLink(rawText),
-        education,
-        categories,
-        genders,
-        disability,
-        eligibilityNote: getValueByLabels(rawText, ["eligibility", "eligibility note", "eligible"]) || makeEligibility(name, education, categories, disability),
-        incomeNote: getValueByLabels(rawText, ["income note", "income rule"]) || makeIncomeNote(maxIncome),
-        priority: getPriority(rawText, sourceName, disability, genders, state),
-        sourceName
-      };
-    }
-
-    function getName(rawText, lines) {
-      const labelled = getValueByLabels(rawText, ["scholarship name", "name"]);
-      if (labelled) return clean(labelled, 180);
-      const firstLine = lines[0] || "";
-      return clean(firstLine.replace(/^add\s+/i, "").replace(/^create\s+/i, "").replace(/^publish\s+/i, ""), 180);
-    }
-
-    function getState(text) {
-      if (text.includes("telangana") || text.includes("epass")) return "telangana";
-      if (text.includes("andhra") || text.includes("jnanabhumi")) return "andhra-pradesh";
-      return "national";
-    }
-
-    function getAmount(rawText) {
-      const labelled = getValueByLabels(rawText, ["amount", "scholarship amount"]);
-      if (labelled) return clean(labelled, 100);
-      const match = rawText.match(/₹\s?[0-9,]+|rs\.?\s?[0-9,]+|inr\s?[0-9,]+/i);
-      return match ? match[0].replace(/rs\.?|inr/i, "₹") : "Varies as per official rules";
-    }
-
-    function getIncome(rawText) {
-      const labelled = getValueByLabels(rawText, ["income limit", "max income", "maximum income", "family income", "annual income"]);
-      const source = labelled || rawText;
-      const match = source.match(/[0-9][0-9,]*/);
-      return match ? toNumber(match[0]) : 0;
-    }
-
-    function getPercentage(rawText) {
-      const labelled = getValueByLabels(rawText, ["minimum percentage", "min percentage", "percentage", "marks", "min marks"]);
-      const source = labelled || rawText;
-      const match = source.match(/[0-9]{1,3}\s?%|[0-9]{1,3}/);
-      return match ? Math.min(toNumber(match[0]), 100) : 0;
-    }
-
-    function getDate(rawText) {
-      const iso = rawText.match(/20[0-9]{2}-[0-9]{1,2}-[0-9]{1,2}/);
-      if (iso) return normalizeDateParts(iso[0].split("-"));
-      const indian = rawText.match(/[0-9]{1,2}[-/][0-9]{1,2}[-/]20[0-9]{2}/);
-      if (!indian) return "";
-      const parts = indian[0].split(/[-/]/);
-      return normalizeDateParts([parts[2], parts[1], parts[0]]);
-    }
-
-    function getLink(rawText) {
-      const match = rawText.match(/https?:\/\/[^\s]+/i);
-      return match ? match[0] : "";
-    }
-
-    function getEducation(text) {
-      const values = [];
-      if (text.includes("school") || text.includes("pre matric") || text.includes("pre-matric")) values.push("school");
-      if (text.includes("intermediate") || text.includes("inter")) values.push("intermediate");
-      if (text.includes("degree") || text.includes("college") || text.includes("ug")) values.push("degree");
-      if (text.includes("engineering") || text.includes("technical") || text.includes("aicte") || text.includes("btech")) values.push("engineering");
-      if (text.includes("pg") || text.includes("post graduation") || text.includes("postgraduate")) values.push("pg");
-      return unique(values.length ? values : ["degree", "engineering"]);
-    }
-
-    function getCategories(text) {
-      const values = [];
-      if (text.includes("general") || text.includes("all categor")) values.push("general");
-      if (hasWord(text, "sc")) values.push("sc");
-      if (hasWord(text, "st")) values.push("st");
-      if (text.includes("obc") || hasWord(text, "bc")) values.push("obc");
-      if (text.includes("ews") || text.includes("ebc")) values.push("ews");
-      if (text.includes("minority") || text.includes("minorities")) values.push("minority");
-      if (text.includes("kapu")) values.push("kapu");
-      return unique(values.length ? values : ["general", "sc", "st", "obc", "ews", "minority"]);
-    }
-
-    function getGenders(text) {
-      if (text.includes("girl") || text.includes("female") || text.includes("women") || text.includes("woman")) return ["female"];
-      if (text.includes("boy") || text.includes("male")) return ["male"];
-      return ["any"];
-    }
-
-    function getDisability(text) {
-      if (text.includes("specially abled") || text.includes("differently abled") || text.includes("disabled") || text.includes("disability")) return "yes";
-      if (text.includes("not disability") || text.includes("not disabled")) return "no";
-      return "any";
-    }
-
-    function getSource(rawText, text) {
-      const labelled = getValueByLabels(rawText, ["source", "source name", "portal"]);
-      if (labelled) return clean(labelled, 100);
-      if (text.includes("aicte")) return "AICTE";
-      if (text.includes("jnanabhumi")) return "Official Jnanabhumi Portal";
-      if (text.includes("epass")) return "Official Telangana ePASS Portal";
-      if (text.includes("nsp") || text.includes("national scholarship portal")) return "National Scholarship Portal";
-      return "Official Portal";
-    }
-
-    function getPriority(rawText, sourceName, disability, genders, state) {
-      const labelled = getValueByLabels(rawText, ["priority", "priority score"]);
-      if (labelled) return Math.max(0, Math.min(toNumber(labelled), 100));
-      if (disability === "yes") return 92;
-      if (genders.includes("female")) return 92;
-      if (sourceName.toLowerCase().includes("aicte")) return 90;
-      if (state === "national") return 86;
-      return 82;
-    }
-
-    function getDefaultDeadline(sourceName) {
-      const source = sourceName.toLowerCase();
-      if (source.includes("aicte")) return "Check AICTE / NSP portal";
-      if (source.includes("jnanabhumi")) return "Check official Jnanabhumi portal";
-      if (source.includes("epass")) return "Check official Telangana ePASS portal";
-      if (source.includes("national scholarship")) return "Check National Scholarship Portal";
-      return "Check official portal";
-    }
-
-    function makeEligibility(name, education, categories, disability) {
-      const disabilityText = disability === "yes" ? " This scholarship is disability-specific." : "";
-      return `For eligible students applying under ${name}. Education levels: ${education.join(", ")}. Categories: ${categories.join(", ")}.${disabilityText} Verify final rules on the official portal.`;
-    }
-
-    function makeIncomeNote(maxIncome) {
-      return maxIncome > 0
-        ? `Annual family income should be within ₹${formatNumber(maxIncome)} or as per latest official rules.`
-        : "Income rules should be verified on the official portal.";
-    }
-
-    function getValueByLabels(rawText, labels) {
-      const lines = rawText.split("\n");
-      for (const line of lines) {
-        const lower = line.toLowerCase();
-        for (const label of labels) {
-          const labelText = label.toLowerCase();
-          if (lower.startsWith(`${labelText}:`) || lower.startsWith(`${labelText} -`)) {
-            return line.slice(label.length + 1).trim();
-          }
-        }
-      }
-      return "";
-    }
-
-    function setField(id, value) {
-      const field = document.getElementById(id);
-      if (!field) return;
-      field.value = String(value ?? "");
-      field.dispatchEvent(new Event("input", { bubbles: true }));
-      field.dispatchEvent(new Event("change", { bubbles: true }));
-    }
-
-    function renderAssistantExtracted(data) {
-      if (!assistantExtracted) return;
-      assistantExtracted.replaceChildren();
-
-      if (!data) {
-        const empty = document.createElement("p");
-        empty.className = "mini-note";
-        empty.textContent = "Extracted fields will appear here after filling.";
-        assistantExtracted.appendChild(empty);
-        return;
-      }
-
-      const fields = [
-        ["Name", data.name],
-        ["State", data.state],
-        ["Amount", data.amount],
-        ["Income", data.maxIncome ? `₹${formatNumber(data.maxIncome)}` : "Not set"],
-        ["Education", data.education.join(", ")],
-        ["Categories", data.categories.join(", ")],
-        ["Gender", data.genders.join(", ")],
-        ["Disability", data.disability],
-        ["Priority", data.priority],
-        ["Source", data.sourceName]
-      ];
-
-      fields.forEach(([label, value]) => {
-        const item = document.createElement("div");
-        item.className = "assistant-extracted-item";
-        const strong = document.createElement("strong");
-        strong.textContent = label;
-        const span = document.createElement("span");
-        span.textContent = value || "Not detected";
-        item.append(strong, span);
-        assistantExtracted.appendChild(item);
-      });
-    }
-
-    function showAssistantMessage(message, isError = false) {
-      if (!assistantMessage) return;
-      assistantMessage.textContent = message;
-      assistantMessage.style.color = isError ? "#b42318" : "#067647";
-    }
-
-    function normalizeDateParts(parts) {
-      return `${parts[0]}-${String(parts[1]).padStart(2, "0")}-${String(parts[2]).padStart(2, "0")}`;
-    }
-
-    function hasWord(text, word) {
-      return text.split(/[^a-z0-9]+/).includes(word);
-    }
-
-    function clean(value, maxLength = 500) {
-      return String(value || "").replace(/\s+/g, " ").trim().slice(0, maxLength);
-    }
-
-    function toNumber(value) {
-      const number = Number(String(value || "").replace(/[^0-9.]/g, ""));
-      return Number.isFinite(number) ? number : 0;
-    }
-
-    function unique(values) {
-      return [...new Set(values.filter(Boolean))];
-    }
-
-    function formatNumber(value) {
-      const number = Number(value || 0);
-      return Number.isFinite(number) ? number.toLocaleString("en-IN") : "0";
-    }
-  </script>
-
-  <script type="module">
-    import { auth, db } from "./firebase-config.js";
-    import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
-    import {
-      collection,
-      getDocs,
-      addDoc,
-      serverTimestamp
-    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-
-    const bulkAdminEmails = [
-      "lastwarrior324@gmail.com",
-      "koushikrajcodex@gmail.com"
-    ];
-
-    const bulkPrompt = document.getElementById("bulkAssistantPrompt");
-    const bulkPreviewBtn = document.getElementById("bulkAssistantPreviewBtn");
-    const bulkImportBtn = document.getElementById("bulkAssistantImportBtn");
-    const bulkExampleBtn = document.getElementById("bulkAssistantExampleBtn");
-    const bulkClearBtn = document.getElementById("bulkAssistantClearBtn");
-    const bulkMessage = document.getElementById("bulkAssistantMessage");
-    const bulkPreview = document.getElementById("bulkAssistantPreview");
-
-    let bulkCurrentUser = null;
-    let latestBulkScholarships = [];
-
-    const bulkExample = `Add AICTE Swanath Scholarship for orphan and eligible wards.
-State national.
-Education engineering, degree.
-Gender any.
-Amount ₹50,000 per year.
-Income limit ₹8,00,000.
-Categories general, sc, st, obc, ews, minority.
-Disability any.
-Source AICTE.
-Deadline check AICTE / NSP portal.
-Priority 94.
-Eligibility: For eligible students covered under AICTE Swanath scheme rules.
-Income note: Family income rules must be verified on the official AICTE / NSP portal.
----
-Add PM-USP Central Sector Scheme of Scholarship for College and University Students.
-State national.
-Education degree, engineering, pg.
-Gender any.
-Amount Varies as per official rules.
-Income limit ₹4,50,000.
-Categories general, sc, st, obc, ews, minority.
-Disability any.
-Source National Scholarship Portal.
-Deadline check National Scholarship Portal.
-Priority 90.
-Eligibility: For meritorious students from economically weaker families pursuing college or university education.
-Income note: Annual family income should be within ₹4,50,000 or as per latest NSP notification.`;
-
-    onAuthStateChanged(auth, (user) => {
-      bulkCurrentUser = user;
-    });
-
-    bulkPreviewBtn?.addEventListener("click", () => {
-      latestBulkScholarships = parseBulkText(bulkPrompt?.value || "");
-      renderBulkPreview(latestBulkScholarships);
-      showBulkMessage(`Preview ready: ${latestBulkScholarships.length} scholarship${latestBulkScholarships.length === 1 ? "" : "s"} detected.`);
-    });
-
-    bulkExampleBtn?.addEventListener("click", () => {
-      if (bulkPrompt) {
-        bulkPrompt.value = bulkExample;
-        bulkPrompt.focus();
-      }
-      showBulkMessage("Bulk example added. Click Preview All.");
-    });
-
-    bulkClearBtn?.addEventListener("click", () => {
-      if (bulkPrompt) bulkPrompt.value = "";
-      latestBulkScholarships = [];
-      renderBulkPreview([]);
-      showBulkMessage("");
-    });
-
-    bulkImportBtn?.addEventListener("click", async () => {
-      await importBulkScholarships();
-    });
-
-    async function importBulkScholarships() {
-      if (!bulkCurrentUser || !bulkAdminEmails.includes(String(bulkCurrentUser.email || "").toLowerCase())) {
-        showBulkMessage("You are not allowed to import scholarships.", true);
-        return;
-      }
-
-      const parsed = latestBulkScholarships.length
-        ? latestBulkScholarships
-        : parseBulkText(bulkPrompt?.value || "");
-
-      if (parsed.length === 0) {
-        showBulkMessage("No valid scholarships found. Use --- between scholarships.", true);
-        return;
-      }
-
-      renderBulkPreview(parsed);
-
-      const confirmed = window.confirm(`Import ${parsed.length} scholarship${parsed.length === 1 ? "" : "s"} to Firestore? Duplicate names will be skipped.`);
-      if (!confirmed) return;
-
-      setBulkButtonBusy(true);
-      showBulkMessage("Importing scholarships...");
-
-      let added = 0;
-      let skipped = 0;
-      let failed = 0;
-
-      try {
-        const snapshot = await getDocs(collection(db, "scholarships"));
-        const existingNames = new Set(
-          snapshot.docs.map((documentSnapshot) => normalizeBulkName(documentSnapshot.data().name))
-        );
-
-        for (const scholarship of parsed) {
-          const normalizedName = normalizeBulkName(scholarship.name);
-
-          if (!normalizedName || existingNames.has(normalizedName)) {
-            skipped += 1;
-            continue;
-          }
-
-          try {
-            await addDoc(collection(db, "scholarships"), {
-              ...scholarship,
-              sourceType: "bulk-assistant",
-              createdAt: serverTimestamp(),
-              updatedAt: serverTimestamp(),
-              createdBy: bulkCurrentUser.email || "",
-              updatedBy: bulkCurrentUser.email || ""
-            });
-
-            existingNames.add(normalizedName);
-            added += 1;
-          } catch (error) {
-            console.error("Bulk scholarship import failed:", error);
-            failed += 1;
-          }
-        }
-
-        showBulkMessage(`Import completed. Added: ${added}, skipped duplicates: ${skipped}, failed: ${failed}. Refresh admin analytics to see updated counts.`);
-        document.getElementById("refreshAdminBtn")?.click();
-      } catch (error) {
-        console.error("Bulk import error:", error);
-        showBulkMessage("Bulk import failed. Check Firestore rules and try again.", true);
-      } finally {
-        setBulkButtonBusy(false);
-      }
-    }
-
-    function parseBulkText(rawText) {
-      return String(rawText || "")
-        .split(/\n\s*---+\s*\n/)
-        .map((block) => block.trim())
-        .filter(Boolean)
-        .map(parseBulkScholarship)
-        .filter((scholarship) => scholarship.name);
-    }
-
-    function parseBulkScholarship(rawText) {
-      const text = rawText.toLowerCase();
-      const lines = rawText.split("\n").map((line) => line.trim()).filter(Boolean);
-      const sourceName = getBulkSource(rawText, text);
-      const state = getBulkState(text);
-      const education = getBulkEducation(text);
-      const categories = getBulkCategories(text);
-      const genders = getBulkGenders(text);
-      const disability = getBulkDisability(text);
-      const maxIncome = getBulkIncome(rawText);
-      const name = getBulkName(rawText, lines);
-
-      return {
-        name,
-        state,
-        stateLabel: getBulkStateLabel(state),
-        status: text.includes("draft") ? "draft" : text.includes("closed") ? "closed" : "active",
-        amount: getBulkAmount(rawText),
-        maxIncome,
-        minPercentage: getBulkPercentage(rawText),
-        deadline: getBulkValue(rawText, ["deadline", "last date", "closing date"]) || getBulkDefaultDeadline(sourceName),
-        deadlineDate: getBulkDate(rawText),
-        link: getBulkLink(rawText),
-        education,
-        categories,
-        genders,
-        disability,
-        eligibilityNote: getBulkValue(rawText, ["eligibility", "eligibility note", "eligible"]) || makeBulkEligibility(name, education, categories, disability),
-        incomeNote: getBulkValue(rawText, ["income note", "income rule"]) || makeBulkIncomeNote(maxIncome),
-        priority: getBulkPriority(rawText, sourceName, disability, genders, state),
-        sourceName
-      };
-    }
-
-    function renderBulkPreview(items) {
-      if (!bulkPreview) return;
-      bulkPreview.replaceChildren();
-
-      if (!items.length) {
-        const empty = document.createElement("p");
-        empty.className = "mini-note";
-        empty.textContent = "Bulk preview will appear here.";
-        bulkPreview.appendChild(empty);
-        return;
-      }
-
-      items.forEach((scholarship, index) => {
-        const card = document.createElement("article");
-        card.className = "bulk-preview-card";
-
-        const badge = document.createElement("span");
-        badge.className = `admin-status-badge admin-status-${scholarship.status}`;
-        badge.textContent = `${index + 1}. ${scholarship.status}`;
-
-        const title = document.createElement("h3");
-        title.textContent = scholarship.name;
-
-        const grid = document.createElement("div");
-        grid.className = "bulk-preview-grid";
-
-        [
-          ["State", scholarship.stateLabel],
-          ["Amount", scholarship.amount],
-          ["Income", scholarship.maxIncome ? `₹${formatBulkNumber(scholarship.maxIncome)}` : "Not set"],
-          ["Education", scholarship.education.join(", ")],
-          ["Categories", scholarship.categories.join(", ")],
-          ["Gender", scholarship.genders.join(", ")],
-          ["Disability", scholarship.disability],
-          ["Priority", scholarship.priority],
-          ["Source", scholarship.sourceName]
-        ].forEach(([label, value]) => {
-          const item = document.createElement("p");
-          const strong = document.createElement("strong");
-          strong.textContent = label;
-          const span = document.createElement("span");
-          span.textContent = value || "Not detected";
-          item.append(strong, span);
-          grid.appendChild(item);
-        });
-
-        card.append(badge, title, grid);
-        bulkPreview.appendChild(card);
-      });
-    }
-
-    function getBulkName(rawText, lines) {
-      const labelled = getBulkValue(rawText, ["scholarship name", "name"]);
-      if (labelled) return cleanBulk(labelled, 180);
-      const firstLine = lines[0] || "";
-      return cleanBulk(firstLine.replace(/^add\s+/i, "").replace(/^create\s+/i, "").replace(/^publish\s+/i, ""), 180);
-    }
-
-    function getBulkState(text) {
-      if (text.includes("telangana") || text.includes("epass")) return "telangana";
-      if (text.includes("andhra") || text.includes("jnanabhumi")) return "andhra-pradesh";
-      return "national";
-    }
-
-    function getBulkStateLabel(state) {
-      if (state === "andhra-pradesh") return "Andhra Pradesh";
-      if (state === "telangana") return "Telangana";
-      return "National";
-    }
-
-    function getBulkAmount(rawText) {
-      const labelled = getBulkValue(rawText, ["amount", "scholarship amount"]);
-      if (labelled) return cleanBulk(labelled, 100);
-      const match = rawText.match(/₹\s?[0-9,]+|rs\.?\s?[0-9,]+|inr\s?[0-9,]+/i);
-      return match ? match[0].replace(/rs\.?|inr/i, "₹") : "Varies as per official rules";
-    }
-
-    function getBulkIncome(rawText) {
-      const labelled = getBulkValue(rawText, ["income limit", "max income", "maximum income", "family income", "annual income"]);
-      const source = labelled || rawText;
-      const match = source.match(/[0-9][0-9,]*/);
-      return match ? toBulkNumber(match[0]) : 0;
-    }
-
-    function getBulkPercentage(rawText) {
-      const labelled = getBulkValue(rawText, ["minimum percentage", "min percentage", "percentage", "marks", "min marks"]);
-      const source = labelled || rawText;
-      const match = source.match(/[0-9]{1,3}\s?%|[0-9]{1,3}/);
-      return match ? Math.min(toBulkNumber(match[0]), 100) : 0;
-    }
-
-    function getBulkDate(rawText) {
-      const iso = rawText.match(/20[0-9]{2}-[0-9]{1,2}-[0-9]{1,2}/);
-      if (iso) return normalizeBulkDateParts(iso[0].split("-"));
-      const indian = rawText.match(/[0-9]{1,2}[-/][0-9]{1,2}[-/]20[0-9]{2}/);
-      if (!indian) return "";
-      const parts = indian[0].split(/[-/]/);
-      return normalizeBulkDateParts([parts[2], parts[1], parts[0]]);
-    }
-
-    function getBulkLink(rawText) {
-      const match = rawText.match(/https?:\/\/[^\s]+/i);
-      return match ? match[0] : "";
-    }
-
-    function getBulkEducation(text) {
-      const values = [];
-      if (text.includes("school") || text.includes("pre matric") || text.includes("pre-matric")) values.push("school");
-      if (text.includes("intermediate") || text.includes("inter")) values.push("intermediate");
-      if (text.includes("degree") || text.includes("college") || text.includes("ug")) values.push("degree");
-      if (text.includes("engineering") || text.includes("technical") || text.includes("aicte") || text.includes("btech")) values.push("engineering");
-      if (text.includes("pg") || text.includes("post graduation") || text.includes("postgraduate")) values.push("pg");
-      return uniqueBulk(values.length ? values : ["degree", "engineering"]);
-    }
-
-    function getBulkCategories(text) {
-      const values = [];
-      if (text.includes("general") || text.includes("all categor")) values.push("general");
-      if (hasBulkWord(text, "sc")) values.push("sc");
-      if (hasBulkWord(text, "st")) values.push("st");
-      if (text.includes("obc") || hasBulkWord(text, "bc")) values.push("obc");
-      if (text.includes("ews") || text.includes("ebc")) values.push("ews");
-      if (text.includes("minority") || text.includes("minorities")) values.push("minority");
-      if (text.includes("kapu")) values.push("kapu");
-      return uniqueBulk(values.length ? values : ["general", "sc", "st", "obc", "ews", "minority"]);
-    }
-
-    function getBulkGenders(text) {
-      if (text.includes("girl") || text.includes("female") || text.includes("women") || text.includes("woman")) return ["female"];
-      if (text.includes("boy") || text.includes("male")) return ["male"];
-      return ["any"];
-    }
-
-    function getBulkDisability(text) {
-      if (text.includes("specially abled") || text.includes("differently abled") || text.includes("disabled") || text.includes("disability")) return "yes";
-      if (text.includes("not disability") || text.includes("not disabled")) return "no";
-      return "any";
-    }
-
-    function getBulkSource(rawText, text) {
-      const labelled = getBulkValue(rawText, ["source", "source name", "portal"]);
-      if (labelled) return cleanBulk(labelled, 100);
-      if (text.includes("aicte")) return "AICTE";
-      if (text.includes("jnanabhumi")) return "Official Jnanabhumi Portal";
-      if (text.includes("epass")) return "Official Telangana ePASS Portal";
-      if (text.includes("nsp") || text.includes("national scholarship portal")) return "National Scholarship Portal";
-      return "Official Portal";
-    }
-
-    function getBulkPriority(rawText, sourceName, disability, genders, state) {
-      const labelled = getBulkValue(rawText, ["priority", "priority score"]);
-      if (labelled) return Math.max(0, Math.min(toBulkNumber(labelled), 100));
-      if (disability === "yes") return 92;
-      if (genders.includes("female")) return 92;
-      if (sourceName.toLowerCase().includes("aicte")) return 90;
-      if (state === "national") return 86;
-      return 82;
-    }
-
-    function getBulkDefaultDeadline(sourceName) {
-      const source = sourceName.toLowerCase();
-      if (source.includes("aicte")) return "Check AICTE / NSP portal";
-      if (source.includes("jnanabhumi")) return "Check official Jnanabhumi portal";
-      if (source.includes("epass")) return "Check official Telangana ePASS portal";
-      if (source.includes("national scholarship")) return "Check National Scholarship Portal";
-      return "Check official portal";
-    }
-
-    function makeBulkEligibility(name, education, categories, disability) {
-      const disabilityText = disability === "yes" ? " This scholarship is disability-specific." : "";
-      return `For eligible students applying under ${name}. Education levels: ${education.join(", ")}. Categories: ${categories.join(", ")}.${disabilityText} Verify final rules on the official portal.`;
-    }
-
-    function makeBulkIncomeNote(maxIncome) {
-      return maxIncome > 0
-        ? `Annual family income should be within ₹${formatBulkNumber(maxIncome)} or as per latest official rules.`
-        : "Income rules should be verified on the official portal.";
-    }
-
-    function getBulkValue(rawText, labels) {
-      const lines = rawText.split("\n");
-      for (const line of lines) {
-        const lower = line.toLowerCase();
-        for (const label of labels) {
-          const labelText = label.toLowerCase();
-          if (lower.startsWith(`${labelText}:`) || lower.startsWith(`${labelText} -`)) {
-            return line.slice(label.length + 1).trim();
-          }
-        }
-      }
-      return "";
-    }
-
-    function setBulkButtonBusy(isBusy) {
-      if (!bulkImportBtn) return;
-      if (isBusy) {
-        bulkImportBtn.dataset.originalText = bulkImportBtn.textContent;
-        bulkImportBtn.textContent = "Importing...";
-        bulkImportBtn.disabled = true;
-        return;
-      }
-      bulkImportBtn.textContent = bulkImportBtn.dataset.originalText || "Import All";
-      bulkImportBtn.disabled = false;
-    }
-
-    function showBulkMessage(message, isError = false) {
-      if (!bulkMessage) return;
-      bulkMessage.textContent = message;
-      bulkMessage.style.color = isError ? "#b42318" : "#067647";
-    }
-
-    function normalizeBulkName(value) {
-      return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
-    }
-
-    function normalizeBulkDateParts(parts) {
-      return `${parts[0]}-${String(parts[1]).padStart(2, "0")}-${String(parts[2]).padStart(2, "0")}`;
-    }
-
-    function hasBulkWord(text, word) {
-      return text.split(/[^a-z0-9]+/).includes(word);
-    }
-
-    function cleanBulk(value, maxLength = 500) {
-      return String(value || "").replace(/\s+/g, " ").trim().slice(0, maxLength);
-    }
-
-    function toBulkNumber(value) {
-      const number = Number(String(value || "").replace(/[^0-9.]/g, ""));
-      return Number.isFinite(number) ? number : 0;
-    }
-
-    function uniqueBulk(values) {
-      return [...new Set(values.filter(Boolean))];
-    }
-
-    function formatBulkNumber(value) {
-      const number = Number(value || 0);
-      return Number.isFinite(number) ? number.toLocaleString("en-IN") : "0";
-    }
-  </script>
+  <script type="module" src="admin.js?v=admin5"></script>
 </body>
 </html>
