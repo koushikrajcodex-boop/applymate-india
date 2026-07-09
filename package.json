@@ -5,7 +5,12 @@
   "type": "module",
   "scripts": {
     "test": "node tests/scholarship-validator.test.js && node tests/scholarship-schema.test.js && node tests/live-count.test.js",
-    "validate:data": "node tools/validate-scholarship-data.js"
+    "validate:data": "node tools/validate-scholarship-data.js",
+    "radar": "node tools/scholarship-radar.mjs",
+    "radar:write": "node tools/scholarship-radar.mjs --write-firestore"
+  },
+  "dependencies": {
+    "firebase-admin": "^13.0.0"
   },
   "devDependencies": {}
 }
