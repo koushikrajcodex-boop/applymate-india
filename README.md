@@ -12,10 +12,13 @@ ApplyMate India helps students discover verified scholarships, check possible el
 | Scholarship verification | Active records require verification data |
 | Student dashboard | Firestore-only scholarship data |
 | Main admin panel | Firebase custom-claim protected |
+| Admin state support | Shared all-India state config |
+| Admin bulk import | Parses all 28 states, 8 UTs, and National |
 | Admin data health | Firebase custom-claim protected |
 | Data quality tests | Enabled in CI |
 | Static legacy dataset | Deleted |
 | Canonical directory | `scholarships.html` |
+| Legacy hub page | Redirects to canonical directory |
 
 See [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the full cleanup status.
 
@@ -27,6 +30,9 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 
 - Firestore-backed scholarship eligibility filtering
 - Verified active scholarship directory with official source links
+- Shared state dropdowns for National, all 28 Indian states, and 8 Union Territories
+- Admin add/edit support for all India states and Union Territories
+- Bulk scholarship import assistant with all-state detection
 - Visible `Last verified` dates on public scholarship cards
 - Keyword search and filters
 - Document checklist planner
@@ -52,8 +58,9 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - Added hard validation for active scholarship verification.
 - Added Firestore rules for verified active scholarship writes.
 - Added unit tests for validator, schema, and live count logic.
-- Consolidated `scholarships-live.html` into the canonical directory.
-- Merged the homepage polish patch into `live-count.js` and deleted the patch file.
+- Consolidated `scholarships-live.html` and `scholarship-hub.html` into the canonical directory.
+- Removed obsolete hub and polish standalone scripts after merging or redirecting their behavior.
+- Moved static checks into `.github/workflows/static-checks.yml`.
 
 ## Technology
 
@@ -69,12 +76,13 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 ## Project structure
 
 - `index.html`, `script.js`, `home-finder-data.js`: public scholarship finder
+- `states.js`, `state-dropdowns.js`: shared all-India state/UT/National dropdown configuration
 - `scholarships.html`: canonical verified scholarship directory
-- `scholarship-hub.html`, `scholarship-hub.js`: discovery and comparison hub
+- `scholarship-hub.html`, `scholarships-live.html`: redirect pages kept for old links
 - `login.html`, `auth.js`: account registration and login
 - `dashboard.html`, `dashboard.js`: private student dashboard and Firestore-only recommendations
 - `dashboard-insights.js`: optional dashboard intelligence and verified insight cards
-- `admin.html`, `admin.js`: custom-claim protected admin scholarship management
+- `admin.html`, `admin.js`: custom-claim protected admin scholarship management and bulk import
 - `admin-health.html`, `admin-health.js`: custom-claim protected admin data health dashboard
 - `scholarship-validator.js`, `scholarship-schema.js`, `scholarship-verification.js`: data quality and verification logic
 - `live-count.js`, `live-count-utils.js`: homepage live stats and testable count helpers
@@ -82,6 +90,7 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - `firestore.rules`: Firestore access and validation rules
 - `package.json`: test scripts
 - `.github/workflows/data-quality.yml`: automated unit tests and data validation
+- `.github/workflows/static-checks.yml`: basic JavaScript syntax and required-file checks
 
 ## Run locally
 
