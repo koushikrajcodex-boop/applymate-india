@@ -1,70 +1,140 @@
 [
   {
-    "name": "National scholarships official PDFs",
-    "query": "student scholarship guidelines notification filetype:pdf",
+    "name": "National Scholarship Portal schemes",
+    "query": "National Scholarship Portal scholarships schemes students",
     "state": "National",
     "category": "any",
     "course": "any"
   },
   {
-    "name": "NSP scholarship schemes",
-    "query": "National Scholarship Portal scholarship scheme guidelines notification",
+    "name": "Buddy4Study scholarships",
+    "query": "Buddy4Study scholarships India students engineering degree school",
     "state": "National",
     "category": "any",
     "course": "any"
+  },
+  {
+    "name": "Vidyasaarathi scholarships",
+    "query": "Vidyasaarathi scholarships India students scheme apply",
+    "state": "National",
+    "category": "any",
+    "course": "degree engineering diploma"
+  },
+  {
+    "name": "Foundation For Excellence scholarship",
+    "query": "Foundation For Excellence scholarship India engineering medical students",
+    "state": "National",
+    "category": "any",
+    "course": "engineering medical degree"
   },
   {
     "name": "AICTE scholarships",
-    "query": "AICTE scholarship guidelines notification Pragati Saksham Swanath filetype:pdf",
+    "query": "AICTE scholarship Pragati Saksham Swanath guidelines notification",
     "state": "National",
     "category": "any",
-    "course": "engineering"
+    "course": "engineering technical"
   },
   {
     "name": "UGC scholarships",
-    "query": "UGC scholarship fellowship guidelines notification filetype:pdf",
+    "query": "UGC scholarship fellowship guidelines notification students",
     "state": "National",
     "category": "any",
     "course": "degree pg"
   },
   {
+    "name": "HDFC scholarships",
+    "query": "HDFC Bank scholarship ECSS students India",
+    "state": "National",
+    "category": "any",
+    "course": "school degree"
+  },
+  {
+    "name": "Tata scholarships",
+    "query": "Tata Trusts scholarship India students education",
+    "state": "National",
+    "category": "any",
+    "course": "degree pg"
+  },
+  {
+    "name": "Reliance Foundation scholarships",
+    "query": "Reliance Foundation scholarships India undergraduate postgraduate students",
+    "state": "National",
+    "category": "any",
+    "course": "degree pg"
+  },
+  {
+    "name": "Aditya Birla scholarships",
+    "query": "Aditya Birla scholarship India students",
+    "state": "National",
+    "category": "any",
+    "course": "degree management engineering law"
+  },
+  {
     "name": "Andhra Pradesh scholarships",
-    "query": "Andhra Pradesh student scholarship guidelines Jnanabhumi notification filetype:pdf",
+    "query": "Andhra Pradesh student scholarship Jnanabhumi notification",
     "state": "Andhra Pradesh",
     "category": "any",
     "course": "degree engineering post matric"
   },
   {
     "name": "Telangana scholarships",
-    "query": "Telangana ePASS scholarship guidelines notification filetype:pdf",
+    "query": "Telangana ePASS scholarship students notification",
     "state": "Telangana",
     "category": "any",
     "course": "degree engineering post matric"
   },
   {
+    "name": "Maharashtra scholarships",
+    "query": "MahaDBT scholarship Maharashtra students post matric",
+    "state": "Maharashtra",
+    "category": "any",
+    "course": "post matric degree"
+  },
+  {
+    "name": "Karnataka scholarships",
+    "query": "Karnataka SSP scholarship students post matric",
+    "state": "Karnataka",
+    "category": "any",
+    "course": "post matric degree"
+  },
+  {
+    "name": "Rajasthan scholarships",
+    "query": "Rajasthan SJE scholarship students post matric",
+    "state": "Rajasthan",
+    "category": "any",
+    "course": "post matric degree"
+  },
+  {
+    "name": "Delhi scholarships",
+    "query": "Delhi scholarship SC ST OBC students higher education",
+    "state": "Delhi",
+    "category": "SC ST OBC",
+    "course": "school degree"
+  },
+  {
     "name": "OBC scholarships",
-    "query": "OBC scholarship guidelines notification non creamy layer filetype:pdf",
+    "query": "OBC scholarship non creamy layer students India",
     "state": "National",
     "category": "OBC",
     "course": "any"
   },
   {
     "name": "SC ST scholarships",
-    "query": "SC ST post matric scholarship guidelines notification filetype:pdf",
+    "query": "SC ST post matric scholarship students India",
     "state": "National",
     "category": "SC ST",
     "course": "post matric"
   },
   {
     "name": "Minority scholarships",
-    "query": "minority scholarship guidelines notification student filetype:pdf",
+    "query": "minority scholarship students India scheme apply",
     "state": "National",
     "category": "minority",
     "course": "any"
   },
   {
     "name": "EWS scholarships",
-    "query": "EWS scholarship guidelines notification student filetype:pdf",
+    "query": "EWS scholarship students India education",
     "state": "National",
     "category": "EWS",
     "course": "any"
