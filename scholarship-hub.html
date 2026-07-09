@@ -3,49 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scholarship Hub India - ApplyMate India</title>
-  <meta name="description" content="Discover active Indian scholarships with live filters, verified badges, deadline countdowns, and comparison tools on ApplyMate India." />
-  <meta name="robots" content="index, follow" />
+  <title>Redirecting to Scholarship Directory - ApplyMate India</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="refresh" content="0; url=scholarships.html#live-directory" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/scholarships.html" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="assistant.css" />
-  <style>
-    .hub-stats,.hub-filters,.hub-grid,.hub-featured{display:grid;gap:14px}.hub-stats{grid-template-columns:repeat(4,1fr)}.hub-filters{grid-template-columns:1.4fr repeat(4,1fr)}.hub-grid{grid-template-columns:repeat(2,1fr)}.hub-featured{grid-template-columns:repeat(3,1fr)}.hub-stat,.hub-card,.hub-small{border:1px solid var(--border);border-radius:20px;background:#fff;padding:16px;box-shadow:var(--shadow)}.hub-stat strong{display:block;font-size:1.8rem;color:var(--primary)}.hub-badges{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}.hub-meta{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:12px 0}.hub-meta p{margin:0;padding:10px;border:1px solid var(--border);border-radius:12px;background:#f8fafc}.compare-box{display:none}.table-wrap{overflow-x:auto}.compare-table{width:100%;min-width:720px;border-collapse:collapse}.compare-table th,.compare-table td{border:1px solid var(--border);padding:10px;text-align:left;vertical-align:top}@media(max-width:900px){.hub-stats,.hub-filters,.hub-grid,.hub-featured,.hub-meta{grid-template-columns:1fr}}
-  </style>
 </head>
 <body>
-  <div class="page-bg"></div>
-  <nav class="navbar">
-    <a class="logo" href="index.html"><span class="logo-icon">A</span><span>ApplyMate India</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a><a href="scholarship-hub.html">Scholarship Hub</a><a href="scholarships-live.html">Live Directory</a><a href="guides.html">Guides</a><a href="dashboard.html">Dashboard</a><a href="login.html">Login</a>
-    </div>
-  </nav>
   <main class="content-page">
     <section class="content-card">
-      <span class="tagline">ApplyMate Scholarship Hub</span>
-      <h1>Discover, compare, save, and track active scholarships.</h1>
-      <p>A product-level scholarship discovery page built on live Firestore records. It shows active opportunities, deadlines, verified dates, filters, and comparison support.</p>
-      <div class="button-row"><a class="text-btn" href="#results">Browse Scholarships</a><a class="secondary-btn" href="dashboard.html">Personalized Dashboard</a><a class="secondary-btn" href="contact.html">Report Wrong Info</a></div>
+      <span class="tagline">Redirect</span>
+      <h1>Scholarship Hub moved</h1>
+      <p>The scholarship hub is now consolidated into the main verified Scholarship Directory.</p>
+      <p class="mini-note">Redirecting to the verified directory...</p>
+      <div class="button-row">
+        <a class="text-btn" href="scholarships.html#live-directory">Open Scholarship Directory</a>
+      </div>
     </section>
-    <section class="content-card">
-      <h2>Live Stats</h2>
-      <div class="hub-stats"><div class="hub-stat"><strong id="statActive">0</strong><span>Active</span></div><div class="hub-stat"><strong id="statWeek">0</strong><span>Closing this week</span></div><div class="hub-stat"><strong id="statNew">0</strong><span>New this month</span></div><div class="hub-stat"><strong id="statVerified">0</strong><span>Verified</span></div></div>
-    </section>
-    <section class="content-card">
-      <h2>Featured Scholarships</h2>
-      <div id="featured" class="hub-featured"><p class="mini-note">Loading...</p></div>
-    </section>
-    <section class="content-card" id="results">
-      <h2>Search Active Scholarships</h2>
-      <div class="hub-filters"><div class="field"><label for="hubSearch">Search</label><input id="hubSearch" type="search" placeholder="engineering, girls, SC, AICTE, NSP..." /></div><div class="field"><label for="hubState">State</label><select id="hubState"><option value="">All</option><option value="national">National</option><option value="andhra-pradesh">Andhra Pradesh</option><option value="telangana">Telangana</option></select></div><div class="field"><label for="hubEducation">Education</label><select id="hubEducation"><option value="">All</option><option value="school">School</option><option value="intermediate">Intermediate</option><option value="degree">Degree</option><option value="engineering">Engineering</option><option value="pg">PG</option></select></div><div class="field"><label for="hubCategory">Category</label><select id="hubCategory"><option value="">All</option><option value="general">General</option><option value="sc">SC</option><option value="st">ST</option><option value="obc">OBC</option><option value="ews">EWS</option><option value="minority">Minority</option><option value="disabled">Disability</option><option value="girls">Girls</option></select></div><div class="field"><label for="hubSort">Sort</label><select id="hubSort"><option value="deadline">Deadline soon</option><option value="priority">Recommended</option><option value="new">Newly added</option><option value="amount">Highest amount</option></select></div></div>
-      <div class="button-row"><button id="hubReset" class="secondary-btn" type="button">Reset Filters</button><button id="hubCompareBtn" type="button">Compare Selected</button></div>
-      <p id="hubCount" class="mini-note">Loading active scholarships...</p>
-      <div id="hubCards" class="hub-grid"></div>
-    </section>
-    <section id="compareBox" class="content-card compare-box"><h2>Compare Scholarships</h2><div id="compareTable" class="table-wrap"></div></section>
   </main>
-  <footer><p>© 2026 ApplyMate India. Always verify final details on official portals.</p></footer>
-  <script type="module" src="scholarship-hub.js?v=1"></script>
-  <script src="assistant.js"></script>
+  <script>
+    window.location.replace("scholarships.html#live-directory");
+  </script>
 </body>
 </html>
