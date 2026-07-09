@@ -2,18 +2,26 @@
 
 Date: 2026-07-09
 
-This file gives a visible repo-level summary of the current production-readiness cleanup.
+This file gives a visible repo-level summary of the production-readiness cleanup.
+
+## Cleanup status
+
+**Status: Complete for the requested cleanup scope.**
+
+The remaining work is operational, not code cleanup: deploy the latest Firestore rules and assign Firebase custom claims to real admin users.
 
 ## Completed reliability work
 
 ### Data source cleanup
 
 - Homepage scholarship finder no longer uses an embedded static scholarship list.
-- Firestore is the primary source for student-facing scholarship records.
+- Firestore is the single source for student-facing scholarship records.
 - `home-finder-override.js` has been removed.
-- `scholarships-live.html` now redirects to the canonical directory section in `scholarships.html#live-directory`.
 - `home-polish.js` has been merged into `live-count.js` and removed.
-- `tools/validate-scholarship-data.js` no longer treats `scholarships-data.js` as an open dataset candidate.
+- `scholarships-live.html` redirects to the canonical directory section in `scholarships.html#live-directory`.
+- `tools/validate-scholarship-data.js` no longer treats legacy static files as dataset candidates.
+- `scholarships-data.js` has been deleted.
+- `dashboard.js` and `admin.js` no longer import `scholarships-data.js`.
 
 ### Verification enforcement
 
@@ -25,6 +33,7 @@ This file gives a visible repo-level summary of the current production-readiness
 
 - `firestore.rules` uses Firebase custom claims for admin write/delete access.
 - Personal admin email allow-lists were removed from Firestore rules.
+- The main `admin.html` / `admin.js` panel uses claim-based admin access.
 - `admin-health.html` / `admin-health.js` use claim-based admin access.
 - `docs/admin-custom-claims.md` documents the required `admin == true` custom claim.
 
@@ -36,23 +45,6 @@ This file gives a visible repo-level summary of the current production-readiness
 - Live count tests use a fixed date and confirm expired scholarships are excluded.
 - Existing Data Quality GitHub Action runs tests on PRs and pushes to `main`.
 
-## Known remaining blockers
-
-These are intentionally tracked instead of being hidden:
-
-1. `admin.js` still needs a precise custom-claims patch.
-   - It is a large module controlling add/edit/delete/import/export behavior.
-   - A blind replacement could break working admin flows.
-   - Track in Issue #44.
-
-2. `dashboard.js` and `admin.js` still import the retired compatibility shim `scholarships-data.js`.
-   - The shim no longer contains real data.
-   - Remove those imports in a precise patch before deleting the file.
-   - Track in Issue #42.
-
-3. `dashboard.js` and `dashboard-insights.js` should be consolidated or clearly separated.
-   - Current intended split: `dashboard.js` owns core dashboard CRUD; `dashboard-insights.js` owns optional insight cards.
-
 ## Production checklist
 
 - [x] Firestore-first public scholarship finder
@@ -60,15 +52,24 @@ These are intentionally tracked instead of being hidden:
 - [x] Last verified visibility on updated public cards
 - [x] Data quality tests in CI
 - [x] Canonical scholarship directory
+- [x] Main admin panel custom-claim access
 - [x] Admin health custom-claim access
-- [ ] Main admin panel custom-claim patch
-- [ ] Remove final `scholarships-data.js` imports
-- [ ] Delete `scholarships-data.js` after imports are removed
-- [ ] Dashboard file responsibility cleanup
+- [x] Remove final `scholarships-data.js` imports
+- [x] Delete `scholarships-data.js`
+- [x] Remove legacy homepage patch file
+- [x] Remove local static import UI from admin panel
 
-## Current recommendation
+## Operational checklist before real production use
 
-Do not add more public feature pages until the two remaining internal cleanup tasks are finished:
+- [ ] Deploy latest Firestore rules.
+- [ ] Set Firebase custom claim `{ "admin": true }` for real admin users.
+- [ ] Sign out and sign back in after claims are set.
+- [ ] Add/update verified scholarship records in Firestore with official links and deadline dates.
+- [ ] Run `npm test` before future merges.
 
-1. Patch `admin.js` with custom claims.
-2. Remove final `scholarships-data.js` imports and delete the shim.
+## Current architecture decision
+
+- `dashboard.js` owns the core dashboard: profile, saved scholarships, application tracker, comparison, and recommendations.
+- `dashboard-insights.js` owns optional insight cards above the core recommendation list.
+- `scholarships.html` is the canonical public scholarship directory.
+- `scholarship-hub.html` remains a separate discovery/comparison hub.
