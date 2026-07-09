@@ -9,7 +9,7 @@
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="admin.css?v=admin5" />
   <style>
-    .bot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.bot-stat{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-stat strong{display:block;font-size:1.8rem;margin-top:6px}.bot-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.bot-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-card h3{margin:8px 0}.bot-status{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef4ff;color:#1d4ed8;font-weight:800;font-size:.8rem}.bot-status.good{background:#ecfdf3;color:#067647}.bot-status.warn{background:#fffbeb;color:#92400e}.bot-status.bad{background:#fff1f3;color:#be123c}.bot-mini{font-size:.9rem;color:var(--muted)}.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.feature-pill{padding:10px 12px;border:1px solid var(--border);border-radius:14px;background:#f8fafc;font-size:.86rem;font-weight:750}.step-box{padding:14px;border:1px solid var(--border);border-radius:16px;background:#fff}.step-box h3{margin:0 0 6px}.warning-box{padding:14px;border-radius:16px;background:#fffbeb;border:1px solid #fde68a;color:#92400e}@media(max-width:900px){.bot-grid,.bot-result-grid,.small-grid{grid-template-columns:1fr}}
+    .bot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.bot-stat{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-stat strong{display:block;font-size:1.8rem;margin-top:6px}.bot-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.bot-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-card h3{margin:8px 0}.bot-status{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef4ff;color:#1d4ed8;font-weight:800;font-size:.8rem}.bot-status.good{background:#ecfdf3;color:#067647}.bot-status.warn{background:#fffbeb;color:#92400e}.bot-status.bad{background:#fff1f3;color:#be123c}.bot-mini{font-size:.9rem;color:var(--muted)}.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.feature-pill{padding:10px 12px;border:1px solid var(--border);border-radius:14px;background:#f8fafc;font-size:.86rem;font-weight:750}.step-box{padding:14px;border:1px solid var(--border);border-radius:16px;background:#fff}.step-box h3{margin:0 0 6px}.warning-box{padding:14px;border-radius:16px;background:#fffbeb;border:1px solid #fde68a;color:#92400e}.success-box{padding:14px;border-radius:16px;background:#ecfdf3;border:1px solid #bbf7d0;color:#067647}.pack-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}@media(max-width:900px){.bot-grid,.bot-result-grid,.small-grid,.pack-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
@@ -21,10 +21,10 @@
 
   <main class="content-page">
     <section class="content-card admin-hero">
-      <span class="tagline">GitHub Actions Based Automation</span>
+      <span class="tagline">GitHub Actions Based Automation v2</span>
       <h1>Bulk Scholarship Auto Import Bot</h1>
-      <p class="last-updated">No browser scraping. No admin-page importing. The GitHub Action discovers scholarships and imports them to Firestore as review drafts.</p>
-      <div class="notice-box">This page is now only a dashboard for the automated Action. Run <strong>Bulk Scholarship Auto Import</strong> in GitHub Actions. It discovers scholarship sources, skips duplicates, imports draft records to Firestore, and writes the report shown here.</div>
+      <p class="last-updated">No browser scraping. No admin-page importing. The GitHub Action discovers scholarships by source pack and imports them to Firestore as review drafts.</p>
+      <div class="notice-box">Run <strong>Bulk Scholarship Auto Import</strong> in GitHub Actions. Choose a source pack, run dry-run first, then run real import. This dashboard explains secret status, added/skipped/failed records, and discovered source packs.</div>
       <div class="button-row">
         <button id="bulkOpenActionBtn" type="button">Open Bulk Import Action</button>
         <button id="bulkLoadReportBtn" class="secondary-btn" type="button">Refresh Report</button>
@@ -35,13 +35,28 @@
     </section>
 
     <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">Setup Checker</span><h2>Firebase secret status</h2><p class="mini-note">The browser cannot read GitHub secrets directly, so this checks the latest Action report.</p></div></div>
+      <div class="small-grid">
+        <div class="step-box"><h3>FIREBASE_SERVICE_ACCOUNT_JSON</h3><p><span id="bulkSecretFirebase" class="bot-status warn">unknown</span></p><p class="mini-note">Required for Firestore write access.</p></div>
+        <div class="step-box"><h3>FIREBASE_PROJECT_ID</h3><p><span id="bulkSecretProject" class="bot-status warn">unknown</span></p><p class="mini-note">Recommended; otherwise service-account project is used.</p></div>
+        <div class="step-box"><h3>Current Pack</h3><p><span id="bulkCurrentPack" class="bot-status good">not selected</span></p><p class="mini-note">Shown after the Action generates a report/feed.</p></div>
+      </div>
+      <p id="bulkReportExplainer" class="success-box">Report explainer loads here after refresh.</p>
+    </section>
+
+    <section class="content-card">
       <div class="card-heading"><div><span class="tagline">How it works</span><h2>One-click bulk import flow</h2></div></div>
       <div class="small-grid">
-        <div class="step-box"><h3>1. Run Action</h3><p class="mini-note">GitHub Actions → Bulk Scholarship Auto Import → Run workflow.</p></div>
-        <div class="step-box"><h3>2. Auto Import</h3><p class="mini-note">The Action runs discovery and imports records into Firestore as draft/review.</p></div>
-        <div class="step-box"><h3>3. Review Later</h3><p class="mini-note">Imported records are not active by default. They stay safe as drafts until verified.</p></div>
+        <div class="step-box"><h3>1. Choose Pack</h3><p class="mini-note">GitHub Actions → Bulk Scholarship Auto Import → choose source_pack.</p></div>
+        <div class="step-box"><h3>2. Dry Run</h3><p class="mini-note">Run dry_run=true first. It checks discovery without writing Firestore.</p></div>
+        <div class="step-box"><h3>3. Real Import</h3><p class="mini-note">Run dry_run=false. Records import as draft/review and duplicates are skipped.</p></div>
       </div>
-      <p class="warning-box">Required once: add <strong>FIREBASE_SERVICE_ACCOUNT_JSON</strong> and <strong>FIREBASE_PROJECT_ID</strong> in GitHub Actions secrets. Without that, the dashboard can show feeds, but Firestore import cannot happen.</p>
+      <p class="warning-box">Required once: add <strong>FIREBASE_SERVICE_ACCOUNT_JSON</strong> and <strong>FIREBASE_PROJECT_ID</strong> in GitHub Actions secrets. Without that, dry-run works but Firestore import cannot happen.</p>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">Source Packs</span><h2>Choose what the Action should import</h2><p class="mini-note">Use these exact values in the GitHub Action source_pack dropdown.</p></div></div>
+      <div id="bulkSourcePacks" class="pack-grid"><p class="mini-note">Loading source packs...</p></div>
     </section>
 
     <section class="content-card">
@@ -80,6 +95,6 @@
   </main>
 
   <footer><p>ApplyMate India Bulk Scholarship Auto Import Bot. Auto-imports stay as draft/review until verified.</p></footer>
-  <script type="module" src="scholarship-bots-panel.js?v=bulk-import-dashboard1"></script>
+  <script type="module" src="scholarship-bots-panel.js?v=bulk-import-dashboard2"></script>
 </body>
 </html>
