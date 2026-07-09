@@ -1,3 +1,5 @@
+import("./state-dropdowns.js").catch((error) => console.warn("State dropdown config failed to load", error));
+
 const CONTACT_EMAIL = "koushikrajcodex@gmail.com";
 
 window.findScholarships = findScholarships;
