@@ -16,18 +16,21 @@ export function getActiveScholarshipStats(items = [], now = new Date()) {
 }
 
 export function isExpired(deadlineDate, now = new Date()) {
-  if (!deadlineDate) return false;
   const left = daysLeft(deadlineDate, now);
   return Number.isFinite(left) && left < 0;
 }
 
 export function daysLeft(deadlineDate, now = new Date()) {
   if (!deadlineDate) return Infinity;
-  const date = new Date(`${deadlineDate}T23:59:59`);
-  if (Number.isNaN(date.getTime())) return Infinity;
+
+  const deadline = new Date(`${deadlineDate}T00:00:00`);
+  if (Number.isNaN(deadline.getTime())) return Infinity;
+
   const today = new Date(now);
   today.setHours(0, 0, 0, 0);
-  return Math.ceil((date.getTime() - today.getTime()) / 86400000);
+  deadline.setHours(0, 0, 0, 0);
+
+  return Math.round((deadline.getTime() - today.getTime()) / 86400000);
 }
 
 export function isNewThisMonth(item, now = new Date()) {
