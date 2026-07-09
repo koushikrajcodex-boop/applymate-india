@@ -1,3 +1,5 @@
+import { getStateLabel, isKnownStateSlug } from "./states.js";
+
 export const SCHOLARSHIP_STATUS = Object.freeze({
   ACTIVE: "active",
   DRAFT: "draft",
@@ -41,11 +43,12 @@ export const SCHOLARSHIP_REQUIRED_FIELDS = Object.freeze([
 export function createVerifiedScholarshipRecord(input = {}) {
   const status = normalizeStatus(input.status);
   const applicationWindow = normalizeApplicationWindow(input.applicationWindow);
+  const state = normalizeStateSlug(input.state || "national");
 
   return {
     name: clean(input.name),
-    state: clean(input.state || "national"),
-    stateLabel: clean(input.stateLabel || "National"),
+    state,
+    stateLabel: clean(input.stateLabel || getStateLabel(state)),
     status,
     amount: clean(input.amount || "Varies as per official rules"),
     maxIncome: toNumber(input.maxIncome),
@@ -78,6 +81,11 @@ export function validateScholarshipRecord(record = {}) {
       errors.push(`Missing required field: ${field}`);
     }
   });
+
+  const state = normalizeStateSlug(record.state || "national");
+  if (record.state && !isKnownStateSlug(state)) {
+    errors.push("Invalid scholarship state.");
+  }
 
   if (record.status && ![SCHOLARSHIP_STATUS.ACTIVE, SCHOLARSHIP_STATUS.DRAFT, SCHOLARSHIP_STATUS.CLOSED].includes(record.status)) {
     errors.push("Invalid scholarship status.");
@@ -122,8 +130,10 @@ export function isVerifiedActiveScholarship(record = {}) {
 
 export function getScholarshipQualityWarnings(record = {}) {
   const warnings = [];
+  const state = normalizeStateSlug(record.state || "national");
 
   if (!clean(record.name)) warnings.push("Missing scholarship name.");
+  if (!isKnownStateSlug(state)) warnings.push("Unknown scholarship state.");
   if (!isValidUrl(record.sourceUrl || record.link)) warnings.push("Missing valid official source URL.");
   if (!clean(record.sourceName)) warnings.push("Missing official source name.");
   if (!isValidIsoDate(record.verifiedOn)) warnings.push("Missing valid verified date.");
@@ -151,6 +161,10 @@ function normalizeApplicationWindow(value) {
   const text = clean(value).toLowerCase();
   if (["open", "upcoming", "verify", "closed"].includes(text)) return text;
   return APPLICATION_WINDOW.VERIFY;
+}
+
+function normalizeStateSlug(value) {
+  return clean(value || "national").toLowerCase();
 }
 
 function toArray(value) {
