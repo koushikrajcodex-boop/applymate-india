@@ -122,11 +122,11 @@ function card(title, item) {
 function actions() {
   const row = document.createElement("div");
   row.className = "button-row";
-  const hub = document.createElement("a");
-  hub.className = "secondary-btn";
-  hub.href = "scholarship-hub.html";
-  hub.textContent = "Open Scholarship Hub";
-  row.appendChild(hub);
+  const directory = document.createElement("a");
+  directory.className = "secondary-btn";
+  directory.href = "scholarships.html#live-directory";
+  directory.textContent = "Open Scholarship Directory";
+  row.appendChild(directory);
   return row;
 }
 
