@@ -1,8 +1,8 @@
 import { auth, db } from "./firebase-config.js";
+import { checkAdminAccess } from "./admin-access.js";
 import { getStateLabel, INDIA_STATE_OPTIONS, isKnownStateSlug } from "./states.js";
 import { isVerifiedActiveScholarship } from "./scholarship-verification.js";
 import {
-  getIdTokenResult,
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
@@ -18,6 +18,7 @@ const STATUSES = Object.freeze(["missing", "duplicate", "invalid"]);
 
 let currentAdminUser = null;
 let isAdmin = false;
+let currentAdminAccess = null;
 let currentRecords = [];
 let analyzedCandidates = [];
 
@@ -53,10 +54,10 @@ onAuthStateChanged(auth, async (user) => {
   currentAdminUser = user;
 
   try {
-    const token = await getIdTokenResult(user, true);
-    isAdmin = token?.claims?.admin === true;
+    currentAdminAccess = await checkAdminAccess(user);
+    isAdmin = currentAdminAccess.allowed;
   } catch (error) {
-    console.error("Discovery admin claim check failed", error);
+    console.error("Discovery admin access check failed", error);
     window.location.replace("dashboard.html?adminAccess=error");
     return;
   }
@@ -70,7 +71,8 @@ onAuthStateChanged(auth, async (user) => {
 
   els.locked?.classList.add("hidden");
   els.content?.classList.remove("hidden");
-  if (els.adminEmail) els.adminEmail.textContent = `Admin: ${user.email || "custom-claim user"}`;
+  const via = currentAdminAccess?.viaEmail ? "admin email" : "custom claim";
+  if (els.adminEmail) els.adminEmail.textContent = `Admin: ${user.email || "approved admin"} (${via})`;
   setupEvents();
   await loadCoverage();
 });
@@ -102,7 +104,7 @@ async function loadCoverage() {
     console.error("Discovery coverage load failed", error);
     currentRecords = [];
     renderCoverage();
-    setMessage("Could not load current Firestore records. Check admin claim and Firestore rules.", true);
+    setMessage("Could not load current Firestore records. Confirm Firestore rules allow your approved admin email.", true);
   }
 }
 
@@ -312,7 +314,7 @@ function candidateCard(item) {
 }
 
 async function importCandidates(mode) {
-  if (!isAdmin) return;
+  if (!isAdmin) return setMessage("Admin access required.", true);
   if (!analyzedCandidates.length) return setMessage("Analyze candidates before importing.", true);
 
   const importable = analyzedCandidates.filter((item) => item.discoveryStatus === "missing");
@@ -342,7 +344,7 @@ async function importCandidates(mode) {
     await loadCoverage();
   } catch (error) {
     console.error("Discovery import failed", error);
-    setMessage("Import failed. Check Firestore rules and candidate fields.", true);
+    setMessage("Import failed. Confirm Firestore rules allow your approved admin email and candidate fields are valid.", true);
   } finally {
     setBusy(activeOnly ? els.importActiveBtn : els.importDraftsBtn, false);
   }
