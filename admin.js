@@ -1,4 +1,6 @@
+import "./state-dropdowns.js";
 import { auth, db } from "./firebase-config.js";
+import { getStateLabel, INDIA_STATE_OPTIONS, isKnownStateSlug } from "./states.js";
 import {
   getIdTokenResult,
   onAuthStateChanged,
@@ -16,12 +18,6 @@ import {
 
 const $ = (id) => document.getElementById(id);
 const today = () => new Date().toISOString().slice(0, 10);
-
-const stateLabels = {
-  national: "National",
-  "andhra-pradesh": "Andhra Pradesh",
-  telangana: "Telangana"
-};
 
 let currentAdminUser = null;
 let isClaimAdmin = false;
@@ -215,7 +211,7 @@ async function saveScholarship() {
 }
 
 function collectForm() {
-  const state = clean(els.adminScholarshipState?.value || "national") || "national";
+  const state = normalizeStateSlug(els.adminScholarshipState?.value || "national");
   const status = clean(els.adminScholarshipStatus?.value || "draft") || "draft";
   const deadlineDate = value(els.adminScholarshipDeadlineDate);
   const link = normalizeUrl(value(els.adminScholarshipLink));
@@ -224,7 +220,7 @@ function collectForm() {
   return {
     name: trim(value(els.adminScholarshipName), 200),
     state,
-    stateLabel: stateLabels[state] || "National",
+    stateLabel: getStateLabel(state),
     status,
     amount: trim(value(els.adminScholarshipAmount), 120) || "Varies as per official rules",
     maxIncome: number(value(els.adminScholarshipIncome)),
@@ -235,7 +231,7 @@ function collectForm() {
     sourceUrl: link,
     education: list(value(els.adminScholarshipEducation)),
     categories: list(value(els.adminScholarshipCategories)),
-    genders: list(value(els.adminScholarshipGenders)).length ? list(value(els.adminScholarshipGenders)) : ["any"],
+    genders: listOrDefault(value(els.adminScholarshipGenders), ["any"]),
     disability: clean(value(els.adminScholarshipDisability)) || "any",
     eligibilityNote: trim(value(els.adminScholarshipEligibility), 1200),
     incomeNote: trim(value(els.adminScholarshipIncomeNote), 800),
@@ -259,7 +255,7 @@ function validateForm(item) {
   if (!item.genders.length) return focusMessage(els.adminScholarshipGenders, "Add at least one gender value, such as any.");
   if (!item.eligibilityNote || item.eligibilityNote.length < 11) return focusMessage(els.adminScholarshipEligibility, "Eligibility note must be at least 11 characters.");
   if (!item.incomeNote || item.incomeNote.length < 6) return focusMessage(els.adminScholarshipIncomeNote, "Income note must be at least 6 characters.");
-  if (!["national", "andhra-pradesh", "telangana"].includes(item.state)) return "Select a valid state.";
+  if (!isKnownStateSlug(item.state)) return "Select a valid state.";
   if (!["active", "draft", "closed"].includes(item.status)) return "Select a valid status.";
   if (!["any", "yes", "no"].includes(item.disability)) return "Select a valid disability rule.";
   return "";
@@ -292,7 +288,7 @@ function renderList() {
       <span class="badge">${escapeHtml(item.status || "draft")}</span>
       <span class="badge">Last verified: ${escapeHtml(item.verifiedOn || "not set")}</span>
       <h3>${escapeHtml(item.name || "Unnamed scholarship")}</h3>
-      <p class="info"><strong>State:</strong> ${escapeHtml(item.stateLabel || item.state || "National")}</p>
+      <p class="info"><strong>State:</strong> ${escapeHtml(item.stateLabel || getStateLabel(item.state || "national"))}</p>
       <p class="info"><strong>Deadline:</strong> ${escapeHtml(item.deadline || "Check portal")} ${item.deadlineDate ? `(${escapeHtml(item.deadlineDate)})` : ""}</p>
       <p class="info"><strong>Source:</strong> ${escapeHtml(item.sourceName || "Official Portal")}</p>
       <p class="info"><strong>Eligibility:</strong> ${escapeHtml(item.eligibilityNote || "")}</p>
@@ -316,7 +312,7 @@ function loadIntoForm(id, duplicate) {
   selectedEditId = duplicate ? "" : id;
   set(els.editingScholarshipId, selectedEditId);
   set(els.adminScholarshipName, duplicate ? `${item.name || "Scholarship"} Copy` : item.name);
-  set(els.adminScholarshipState, item.state || "national");
+  set(els.adminScholarshipState, normalizeStateSlug(item.state || "national"));
   set(els.adminScholarshipStatus, item.status || "draft");
   set(els.adminScholarshipAmount, item.amount || "");
   set(els.adminScholarshipIncome, item.maxIncome || "");
@@ -371,6 +367,7 @@ function renderPreview() {
   els.adminLivePreview.innerHTML = `
     <article class="scholarship">
       <span class="badge">${escapeHtml(item.status || "draft")}</span>
+      <span class="badge">${escapeHtml(item.stateLabel)}</span>
       <span class="badge">Last verified: ${escapeHtml(item.verifiedOn)}</span>
       <h3>${escapeHtml(item.name || "Scholarship preview")}</h3>
       <p class="info"><strong>Amount:</strong> ${escapeHtml(item.amount)}</p>
@@ -411,7 +408,31 @@ function clearFilters() {
 
 function setupBulkAssistant() {
   els.bulkAssistantExampleBtn?.addEventListener("click", () => {
-    set(els.bulkAssistantPrompt, `AICTE Pragati Scholarship\nState national\nEducation engineering\nCategories general, sc, st, obc, ews, minority\nGender female\nAmount ₹50,000 per year\nIncome limit 800000\nDeadline date 2099-12-31\nOfficial link https://www.aicte-india.org/\nSource AICTE\nEligibility For girl students pursuing technical education in AICTE approved institutions.\nIncome note Family income rules should be verified on official portal.`);
+    set(els.bulkAssistantPrompt, `AICTE Pragati Scholarship
+State national
+Education engineering
+Categories general, sc, st, obc, ews, minority
+Gender female
+Amount ₹50,000 per year
+Income limit 800000
+Deadline date 2099-12-31
+Official link https://www.aicte-india.org/
+Source AICTE
+Eligibility For girl students pursuing technical education in AICTE approved institutions.
+Income note Family income rules should be verified on official portal.
+---
+Karnataka Student Support Scholarship
+State Karnataka
+Education degree, engineering
+Categories general, obc, ews
+Gender any
+Amount Varies as per official rules
+Income limit 250000
+Deadline date 2099-12-31
+Official link https://scholarships.gov.in/
+Source Official Portal
+Eligibility For eligible students as per official notification.
+Income note Check official income rules before applying.`);
   });
   els.bulkAssistantClearBtn?.addEventListener("click", () => {
     set(els.bulkAssistantPrompt, "");
@@ -430,22 +451,24 @@ function parseBulk() {
 }
 
 function parseBlock(block) {
-  const lower = block.toLowerCase();
   const first = block.split("\n").map((line) => line.trim()).filter(Boolean)[0] || "Scholarship";
+  const state = resolveStateSlug(findLine(block, "state") || block);
+  const link = findUrl(block) || "https://scholarships.gov.in/";
+
   return {
     ...collectForm(),
     name: first.replace(/^add\s+/i, "").slice(0, 180),
-    state: lower.includes("telangana") ? "telangana" : lower.includes("andhra") ? "andhra-pradesh" : "national",
-    stateLabel: lower.includes("telangana") ? "Telangana" : lower.includes("andhra") ? "Andhra Pradesh" : "National",
+    state,
+    stateLabel: getStateLabel(state),
     amount: findLine(block, "amount") || "Varies as per official rules",
     maxIncome: number(findLine(block, "income") || 0),
     deadlineDate: findDate(block) || "2099-12-31",
-    link: findUrl(block) || "https://scholarships.gov.in/",
-    sourceUrl: findUrl(block) || "https://scholarships.gov.in/",
+    link,
+    sourceUrl: link,
     sourceName: findLine(block, "source") || "Official Portal",
-    education: list(findLine(block, "education")) || ["any"],
-    categories: list(findLine(block, "categories")) || ["general"],
-    genders: list(findLine(block, "gender")) || ["any"],
+    education: listOrDefault(findLine(block, "education"), ["any"]),
+    categories: listOrDefault(findLine(block, "categories") || findLine(block, "category"), ["general"]),
+    genders: listOrDefault(findLine(block, "gender") || findLine(block, "genders"), ["any"]),
     eligibilityNote: findLine(block, "eligibility") || "Verify eligibility on official portal before applying.",
     incomeNote: findLine(block, "income note") || "Verify income rules on official portal."
   };
@@ -455,7 +478,7 @@ function previewBulk() {
   const records = parseBulk();
   if (!els.bulkAssistantPreview) return;
   if (!records.length) return showBulkMessage("Paste scholarship blocks first.", true);
-  els.bulkAssistantPreview.innerHTML = records.map((item) => `<article class="bulk-preview-card"><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.sourceName)} • ${escapeHtml(item.deadlineDate)}</p></article>`).join("");
+  els.bulkAssistantPreview.innerHTML = records.map((item) => `<article class="bulk-preview-card"><h3>${escapeHtml(item.name)}</h3><p>${escapeHtml(item.stateLabel)} • ${escapeHtml(item.sourceName)} • ${escapeHtml(item.deadlineDate)}</p></article>`).join("");
   showBulkMessage(`Previewed ${records.length} scholarships. Review before import.`);
 }
 
@@ -463,10 +486,20 @@ async function importBulk() {
   const records = parseBulk();
   if (!records.length) return showBulkMessage("Nothing to import.", true);
   let imported = 0;
+  let skipped = 0;
+
   for (const item of records) {
-    if (allScholarships.some((existing) => clean(existing.name) === clean(item.name))) continue;
+    if (allScholarships.some((existing) => clean(existing.name) === clean(item.name))) {
+      skipped += 1;
+      continue;
+    }
+
     const error = validateForm(item);
-    if (error) continue;
+    if (error) {
+      skipped += 1;
+      continue;
+    }
+
     await addDoc(collection(db, "scholarships"), {
       ...item,
       sourceType: "bulk-assistant",
@@ -477,7 +510,8 @@ async function importBulk() {
     });
     imported += 1;
   }
-  showBulkMessage(`Imported ${imported} new scholarships.`);
+
+  showBulkMessage(`Imported ${imported} new scholarships.${skipped ? ` Skipped ${skipped} duplicate or invalid records.` : ""}`);
   await loadScholarships();
 }
 
@@ -491,6 +525,40 @@ function getFormFields() {
   ].filter(Boolean);
 }
 
+function resolveStateSlug(value) {
+  const text = normalizeText(value);
+  const slugged = slugText(text);
+  const direct = INDIA_STATE_OPTIONS.find((state) => state.slug === slugged || slugText(state.label) === slugged);
+  if (direct) return direct.slug;
+
+  const paddedText = ` ${text} ${slugged.replaceAll("-", " ")} `;
+  const match = INDIA_STATE_OPTIONS.find((state) => {
+    const label = normalizeText(state.label);
+    const slugWords = state.slug.replaceAll("-", " ");
+    return paddedText.includes(` ${label} `) || paddedText.includes(` ${slugWords} `);
+  });
+
+  return match?.slug || "national";
+}
+
+function normalizeStateSlug(value) {
+  const resolved = resolveStateSlug(value || "national");
+  return isKnownStateSlug(resolved) ? resolved : "national";
+}
+
+function normalizeText(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/&/g, "and")
+    .replace(/[^a-z0-9]+/g, " ")
+    .replace(/\s+/g, " ")
+    .trim();
+}
+
+function slugText(value) {
+  return normalizeText(value).replace(/\s+/g, "-");
+}
+
 function value(element) { return element?.value?.trim() || ""; }
 function set(element, value) { if (element) element.value = value ?? ""; }
 function setText(element, value) { if (element) element.textContent = String(value ?? "0"); }
@@ -499,6 +567,7 @@ function trim(value, max) { return String(value || "").replace(/\s+/g, " ").trim
 function number(value) { const n = Number(String(value || "").replace(/[^0-9.]/g, "")); return Number.isFinite(n) ? n : 0; }
 function clamp(value, min, max) { return Math.max(min, Math.min(max, Number.isFinite(value) ? value : min)); }
 function list(value) { return String(value || "").split(",").map(clean).filter(Boolean); }
+function listOrDefault(value, fallback) { const items = list(value); return items.length ? items : fallback; }
 function arr(value) { return Array.isArray(value) ? value.map(clean).filter(Boolean) : list(value); }
 function normalizeUrl(value) { try { const url = new URL(String(value || "").trim()); return ["http:", "https:"].includes(url.protocol) ? url.href : ""; } catch { return ""; } }
 function focusMessage(element, message) { element?.focus(); return message; }
@@ -509,7 +578,7 @@ function showBulkMessage(message, danger = false) { showMessage(els.bulkAssistan
 function showMessage(element, message, danger) { if (!element) return; element.textContent = message || ""; element.style.color = danger ? "#b42318" : ""; }
 function setListMessage(message) { if (els.adminScholarshipList) els.adminScholarshipList.innerHTML = `<p class="mini-note">${escapeHtml(message)}</p>`; }
 function addActivity(message) { if (els.adminActivityLog) els.adminActivityLog.insertAdjacentHTML("afterbegin", `<p class="mini-note">${new Date().toLocaleTimeString("en-IN")} — ${escapeHtml(message)}</p>`); }
-function findLine(text, label) { const rx = new RegExp(`${label}\\s*:?\\s*(.+)`, "i"); return text.match(rx)?.[1]?.trim() || ""; }
+function findLine(text, label) { const rx = new RegExp(`^\\s*${label}\\s*:?\\s*(.+)$`, "im"); return text.match(rx)?.[1]?.trim() || ""; }
 function findDate(text) { return text.match(/20\d{2}-\d{2}-\d{2}/)?.[0] || ""; }
 function findUrl(text) { return text.match(/https?:\/\/\S+/)?.[0]?.replace(/[).,]+$/, "") || ""; }
 function escapeHtml(value) { return String(value || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;"); }
