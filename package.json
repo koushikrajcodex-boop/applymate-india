@@ -7,7 +7,9 @@
     "test": "node tests/scholarship-validator.test.js && node tests/scholarship-schema.test.js && node tests/live-count.test.js",
     "validate:data": "node tools/validate-scholarship-data.js",
     "radar": "node tools/scholarship-radar.mjs",
-    "radar:write": "node tools/scholarship-radar.mjs --write-firestore"
+    "radar:write": "node tools/scholarship-radar.mjs --write-firestore",
+    "discover:scholarships": "node scripts/auto-discover-scholarships.mjs",
+    "import:discovered": "node scripts/bulk-import-discovered-scholarships.mjs"
   },
   "dependencies": {
     "firebase-admin": "^13.0.0"
