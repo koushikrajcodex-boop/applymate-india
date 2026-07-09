@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scholarship Comparison Lab - ApplyMate India</title>
+  <meta name="description" content="Compare Indian scholarships side by side by eligibility, income limit, documents, source, deadline note, and official link." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/comparison-lab.html" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .compare-controls { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; margin: 16px 0; }
+    .compare-controls select { width: 100%; }
+    .comparison-table-wrap { overflow-x: auto; margin-top: 16px; }
+    .comparison-table { width: 100%; min-width: 760px; border-collapse: collapse; background: #fff; border-radius: 18px; overflow: hidden; }
+    .comparison-table th, .comparison-table td { border: 1px solid var(--border); padding: 13px; text-align: left; vertical-align: top; }
+    .comparison-table th { background: #f8fafc; }
+    .comparison-table td:first-child { font-weight: 700; background: #f8fafc; width: 180px; }
+    .compare-empty { padding: 18px; border-radius: 14px; background: #fffaeb; color: #b54708; }
+    .compare-tip-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 14px; }
+    .compare-tip-grid article { padding: 15px; border: 1px solid var(--border); border-radius: 15px; background: #fff; }
+    @media (max-width: 760px) { .compare-controls, .compare-tip-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="comparison-lab.html">Compare</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="platform-status.html">Platform Status</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <span class="tagline">Decision Tool</span>
+      <h1>Scholarship Comparison Lab</h1>
+      <p>Pick up to three scholarships and compare them side by side before deciding what to save, track, or apply for.</p>
+      <div class="notice-box">Comparison helps shortlist schemes, but final eligibility and deadline must always be checked on the official portal.</div>
+    </section>
+
+    <section class="content-card">
+      <h2>Choose scholarships</h2>
+      <div class="compare-controls">
+        <label>Option 1<select id="compareOne"></select></label>
+        <label>Option 2<select id="compareTwo"></select></label>
+        <label>Option 3<select id="compareThree"></select></label>
+      </div>
+      <div class="button-row">
+        <button id="compareBtn" type="button">Compare Selected</button>
+        <button id="clearCompareBtn" type="button" class="secondary-btn">Clear</button>
+      </div>
+      <div id="comparisonOutput" class="comparison-table-wrap"></div>
+    </section>
+
+    <section class="content-card">
+      <h2>How to choose smarter</h2>
+      <div class="compare-tip-grid">
+        <article><strong>Start with eligibility</strong><p class="mini-note">Do not waste time on schemes that do not match your course, category, gender, disability status, or income range.</p></article>
+        <article><strong>Check documents early</strong><p class="mini-note">Income, caste/category, bonafide, marks memo, and bank details often take time to arrange.</p></article>
+        <article><strong>Prefer official clarity</strong><p class="mini-note">A scheme with a clear official source and deadline is safer than a vague scholarship listing.</p></article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India helps students compare scholarship options before applying.</p>
+    <div class="footer-links">
+      <a href="scholarships.html">Scholarships</a>
+      <a href="guides.html">Guides</a>
+      <a href="editorial-policy.html">Editorial Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="comparison-lab.js"></script>
+</body>
+</html>
