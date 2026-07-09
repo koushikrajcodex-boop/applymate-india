@@ -14,6 +14,7 @@ ApplyMate India helps students discover verified scholarships, check possible el
 | Main admin panel | Firebase custom-claim protected |
 | Admin state support | Shared all-India state config |
 | Admin bulk import | Parses all 28 states, 8 UTs, and National |
+| Discovery Assistant | Detects missing pasted official-source scholarships and imports safe records |
 | Admin data health | Firebase custom-claim protected |
 | Data quality tests | Enabled in CI |
 | Static legacy dataset | Deleted |
@@ -33,6 +34,9 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - Shared state dropdowns for National, all 28 Indian states, and 8 Union Territories
 - Admin add/edit support for all India states and Union Territories
 - Bulk scholarship import assistant with all-state detection
+- Admin Scholarship Discovery Assistant for detecting missing records from official-source text or JSON
+- Duplicate detection by normalized scholarship name and official source URL
+- Draft import for uncertain records and verified-active import for complete live records
 - Visible `Last verified` dates on public scholarship cards
 - Keyword search and filters
 - Document checklist planner
@@ -60,6 +64,7 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - Added unit tests for validator, schema, and live count logic.
 - Consolidated `scholarships-live.html` and `scholarship-hub.html` into the canonical directory.
 - Removed obsolete hub and polish standalone scripts after merging or redirecting their behavior.
+- Added an admin-only Discovery Assistant for finding missing scholarships from official-source text/JSON.
 - Moved static checks into `.github/workflows/static-checks.yml`.
 
 ## Technology
@@ -73,6 +78,18 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - GitHub Pages
 - GitHub Actions
 
+## Admin workflow
+
+Recommended scholarship management flow:
+
+1. Open `admin.html`.
+2. Use `scholarship-discovery.html` to paste official-source scholarship text or JSON.
+3. Analyze candidates and import missing records as drafts or verified active records.
+4. Use `admin-health.html` to review duplicates, expired active records, missing links, weak verification, and incomplete eligibility data.
+5. Confirm published records on `scholarships.html#live-directory`.
+
+The Discovery Assistant intentionally does not blindly scrape the internet from GitHub Pages. Static hosting cannot safely run private web crawling or use secret AI/search API keys. Instead, it validates official-source content that an admin provides and prevents duplicate or incomplete records from entering Firestore.
+
 ## Project structure
 
 - `index.html`, `script.js`, `home-finder-data.js`: public scholarship finder
@@ -83,6 +100,7 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - `dashboard.html`, `dashboard.js`: private student dashboard and Firestore-only recommendations
 - `dashboard-insights.js`: optional dashboard intelligence and verified insight cards
 - `admin.html`, `admin.js`: custom-claim protected admin scholarship management and bulk import
+- `scholarship-discovery.html`, `scholarship-discovery.js`: admin-only missing-scholarship discovery and import assistant
 - `admin-health.html`, `admin-health.js`: custom-claim protected admin data health dashboard
 - `scholarship-validator.js`, `scholarship-schema.js`, `scholarship-verification.js`: data quality and verification logic
 - `live-count.js`, `live-count-utils.js`: homepage live stats and testable count helpers
