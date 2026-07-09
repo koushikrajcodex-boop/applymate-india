@@ -3,163 +3,42 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scholarship Discovery Assistant - ApplyMate India</title>
+  <title>Scholarship Bots Panel - ApplyMate India</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Admin-only scholarship discovery assistant with manual source bots, auto checker, and Firestore import tools." />
+  <meta name="description" content="Admin-only scholarship bots panel for ApplyMate India." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="admin.css?v=admin5" />
   <style>
-    .discovery-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:start}.discovery-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.discovery-stat,.bot-card,.radar-pill{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.discovery-stat strong,.radar-pill strong{display:block;font-size:1.7rem;color:var(--primary)}.bot-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.bot-card h3{margin:6px 0}.bot-card p{font-size:.9rem}.candidate-list{display:grid;gap:14px;margin-top:18px}.candidate-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.candidate-card h3{margin:8px 0}.candidate-badges{display:flex;gap:8px;flex-wrap:wrap}.candidate-badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef4ff;border:1px solid #c7d7fe;color:#1d4ed8;font-weight:700;font-size:.85rem}.candidate-badge.ok{background:#ecfdf3;border-color:#bbf7d0;color:#067647}.candidate-badge.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}.candidate-badge.bad{background:#fff1f3;border-color:#fecdd3;color:#be123c}.candidate-badge.skip{background:#f8fafc;border-color:#cbd5e1;color:#475569}.discovery-template{font-size:.92rem;white-space:pre-wrap}.discovery-actions{position:sticky;top:16px}.source-link-list{display:grid;gap:8px}.source-link-list a{word-break:break-word}.radar-box{display:grid;gap:12px}.radar-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.radar-pill strong{font-size:1.25rem}@media(max-width:1000px){.bot-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:900px){.discovery-grid,.discovery-stats,.radar-summary-grid,.bot-grid{grid-template-columns:1fr}.discovery-actions{position:static}}
+    .bot-panel-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:14px}.bot-workspace{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start}.bot-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.bot-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-card h3{margin:6px 0}.bot-status{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef4ff;color:#1d4ed8;font-weight:800;font-size:.8rem}.bot-status.good{background:#ecfdf3;color:#067647}.bot-status.warn{background:#fffbeb;color:#92400e}.bot-status.bad{background:#fff1f3;color:#be123c}.bot-mini{font-size:.9rem;color:var(--muted)}@media(max-width:1000px){.bot-panel-grid,.bot-result-grid{grid-template-columns:repeat(2,1fr)}.bot-workspace{grid-template-columns:1fr}}@media(max-width:640px){.bot-panel-grid,.bot-result-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="page-bg"></div>
-
-  <nav class="navbar">
-    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Bots</span></a>
-    <div class="nav-links">
-      <a href="admin.html">Admin Panel</a>
-      <a href="admin-health.html">Data Health</a>
-      <a href="scholarships.html#live-directory">Directory</a>
-      <a href="index.html">Home</a>
-      <button id="discoveryLogoutBtn" class="secondary-btn" type="button">Logout</button>
-    </div>
-  </nav>
-
+  <nav class="navbar"><a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Bots Panel</span></a><div class="nav-links"><a href="admin.html">Admin Panel</a><a href="admin-health.html">Data Health</a><a href="dashboard.html">Dashboard</a><a href="index.html">Home</a></div></nav>
   <main class="content-page">
-    <section class="content-card admin-hero">
-      <span class="tagline">Manual Bots + Auto Checker</span>
-      <h1>Scholarship Bot Console</h1>
-      <p id="discoveryAdminEmail" class="last-updated">Checking admin access...</p>
-      <div class="notice-box">
-        Use source bots to open official portals, paste official scholarship text, auto-check quality, skip duplicates, then bulk-add safe records to Firestore.
-      </div>
-    </section>
-
-    <section id="discoveryLocked" class="content-card hidden">
-      <h2>Access denied</h2>
-      <p class="mini-note">This page is only for approved admin accounts.</p>
-      <a class="text-btn" href="dashboard.html">Go to Student Dashboard</a>
-    </section>
-
-    <section id="discoveryContent" class="hidden">
-      <section class="content-card">
-        <div class="card-heading">
-          <div>
-            <h2>Current Firestore Coverage</h2>
-            <p class="mini-note">Loaded from live <code>scholarships</code>. Duplicates are detected by normalized name and source URL.</p>
-          </div>
-          <button id="refreshDiscoveryBtn" class="secondary-btn" type="button">Refresh Firestore Data</button>
-        </div>
-        <div class="discovery-stats">
-          <div class="discovery-stat"><span>Total records</span><strong id="coverageTotal">—</strong></div>
-          <div class="discovery-stat"><span>Active verified</span><strong id="coverageActive">—</strong></div>
-          <div class="discovery-stat"><span>Unique names</span><strong id="coverageNames">—</strong></div>
-          <div class="discovery-stat"><span>Unique sources</span><strong id="coverageSources">—</strong></div>
-        </div>
-      </section>
-
-      <section class="content-card">
-        <div class="card-heading">
-          <div>
-            <h2>Manual Source Bots</h2>
-            <p class="mini-note">Pick a bot. It opens the official portal and fills the correct template. Paste official text, then click Analyze + Auto Check.</p>
-          </div>
-        </div>
-        <div class="bot-grid">
-          <article class="bot-card"><span class="tagline">Official</span><h3>NSP Bot</h3><p>National scholarships, central schemes, minority/social category schemes.</p><button id="botNspBtn" type="button">Start NSP Bot</button></article>
-          <article class="bot-card"><span class="tagline">Official</span><h3>AICTE Bot</h3><p>Pragati, Saksham, technical education scholarships and updates.</p><button id="botAicteBtn" type="button">Start AICTE Bot</button></article>
-          <article class="bot-card"><span class="tagline">AP</span><h3>Jnanabhumi Bot</h3><p>Andhra Pradesh fee reimbursement and state scholarship updates.</p><button id="botApBtn" type="button">Start AP Bot</button></article>
-          <article class="bot-card"><span class="tagline">TG</span><h3>ePASS Bot</h3><p>Telangana post-matric, pre-matric, and reimbursement updates.</p><button id="botTgBtn" type="button">Start TG Bot</button></article>
-          <article class="bot-card"><span class="tagline">Official</span><h3>UGC Bot</h3><p>UG/PG scholarships, fellowships, and higher education support.</p><button id="botUgcBtn" type="button">Start UGC Bot</button></article>
-        </div>
-      </section>
-
-      <section class="content-card radar-box">
-        <div class="card-heading">
-          <div>
-            <h2>Radar Report</h2>
-            <p class="mini-note">This shows the latest GitHub Action scan report. Manual bots are better when you want fast controlled growth.</p>
-          </div>
-          <button id="loadRadarBtn" class="secondary-btn" type="button">Load Radar Report</button>
-        </div>
-        <div class="radar-summary-grid">
-          <div class="radar-pill"><span>Auto Active</span><strong id="radarAutoActive">0</strong></div>
-          <div class="radar-pill"><span>Auto Draft</span><strong id="radarAutoDraft">0</strong></div>
-          <div class="radar-pill"><span>Review</span><strong id="radarReview">0</strong></div>
-          <div class="radar-pill"><span>Skip</span><strong id="radarSkip">0</strong></div>
-        </div>
-        <p id="radarMessage" class="mini-note">Radar report not loaded yet.</p>
-      </section>
-
-      <section class="content-card">
-        <div class="discovery-grid">
-          <div>
-            <h2>Bot Workspace</h2>
-            <p class="mini-note">Paste official portal text, tables, or JSON. Separate multiple scholarships with a line containing <code>---</code>.</p>
-            <div class="form-grid">
-              <div class="field"><label for="defaultDiscoverySource">Default source name</label><input id="defaultDiscoverySource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" /></div>
-              <div class="field"><label for="defaultDiscoveryUrl">Default official URL</label><input id="defaultDiscoveryUrl" type="url" placeholder="https://official-portal.example" /></div>
-              <div class="field full"><label for="discoveryInput">Scholarship source text or JSON</label><textarea id="discoveryInput" rows="15" placeholder="Bot will fill a template here. Paste official text and click Analyze + Auto Check."></textarea></div>
-            </div>
-            <div class="button-row">
-              <button id="analyzeDiscoveryBtn" type="button">Analyze + Auto Check</button>
-              <button id="exampleDiscoveryBtn" class="secondary-btn" type="button">Use Example</button>
-              <button id="clearDiscoveryBtn" class="secondary-btn" type="button">Clear</button>
-            </div>
-            <p id="discoveryMessage" class="mini-note"></p>
-          </div>
-
-          <aside class="content-card discovery-actions">
-            <span class="tagline">Auto Adders</span>
-            <h3>Bulk import by confidence</h3>
-            <p class="mini-note">Auto Active imports only safe, complete, high-confidence official records. Auto Draft imports usable official records needing small edits.</p>
-            <div class="button-row">
-              <button id="importAutoActiveBtn" type="button">Import Auto Active</button>
-              <button id="importAutoDraftBtn" class="secondary-btn" type="button">Import Auto Drafts</button>
-            </div>
-            <div class="button-row">
-              <button id="importDraftsBtn" class="secondary-btn" type="button">Import All Missing as Drafts</button>
-              <button id="importActiveBtn" type="button">Import Verified Active Only</button>
-            </div>
-            <hr />
-            <h3>Bot rule</h3>
-            <p class="mini-note">Don’t paste random blog data. Paste from official portals or official PDFs only.</p>
-          </aside>
-        </div>
-      </section>
-
-      <section class="content-card">
-        <div class="card-heading">
-          <div>
-            <h2>Bot Results</h2>
-            <p id="candidateSummary" class="mini-note">Start a source bot or paste official text to see auto-safe, draft, duplicate, and invalid records.</p>
-          </div>
-        </div>
-        <div id="candidateList" class="candidate-list"><p class="mini-note">No candidates analyzed yet.</p></div>
-      </section>
-
-      <section class="content-card">
-        <h2>Recommended paste format</h2>
-        <pre class="notice-box discovery-template">Scholarship Name
-State Maharashtra
+    <section class="content-card admin-hero"><span class="tagline">Bots Panel</span><h1>Scholarship Bots Panel</h1><p id="botPanelAdminEmail" class="last-updated">Checking admin access...</p><div class="notice-box">Pick a bot, paste official portal/PDF text, auto-check it, then import safe records into Firestore.</div><div class="button-row"><button id="botPanelRefreshBtn" class="secondary-btn" type="button">Refresh Firestore Coverage</button><a class="secondary-btn" href="admin.html">Back to Admin</a></div><p id="botPanelCoverage" class="mini-note">Coverage loading...</p></section>
+    <section id="botPanelLocked" class="content-card hidden"><h2>Login required</h2><p class="mini-note">Use your approved admin email to access bots.</p><a class="text-btn" href="login.html?redirect=scholarship-discovery.html">Admin Login</a></section>
+    <section id="botPanelContent" class="hidden">
+      <section class="content-card"><div class="card-heading"><div><span class="tagline">Source Bots</span><h2>Choose official source bot</h2><p class="mini-note">Each bot opens the official portal and fills the correct template. Paste only official source data.</p></div></div><div class="bot-panel-grid"><article class="bot-card"><span class="bot-status">Official</span><h3>NSP Bot</h3><p class="bot-mini">National Scholarship Portal schemes.</p><button type="button" data-bot-source="nsp">Start NSP Bot</button></article><article class="bot-card"><span class="bot-status">Official</span><h3>AICTE Bot</h3><p class="bot-mini">Pragati, Saksham, technical scholarships.</p><button type="button" data-bot-source="aicte">Start AICTE Bot</button></article><article class="bot-card"><span class="bot-status warn">AP</span><h3>Jnanabhumi Bot</h3><p class="bot-mini">Andhra Pradesh scholarship data.</p><button type="button" data-bot-source="ap">Start AP Bot</button></article><article class="bot-card"><span class="bot-status warn">TG</span><h3>ePASS Bot</h3><p class="bot-mini">Telangana ePASS scholarship data.</p><button type="button" data-bot-source="tg">Start TG Bot</button></article><article class="bot-card"><span class="bot-status">Official</span><h3>UGC Bot</h3><p class="bot-mini">UGC scholarships and fellowships.</p><button type="button" data-bot-source="ugc">Start UGC Bot</button></article></div></section>
+      <section class="content-card"><div class="bot-workspace"><div><h2>Bot Workspace</h2><div class="form-grid"><div class="field"><label for="botPanelSource">Default source name</label><input id="botPanelSource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" /></div><div class="field"><label for="botPanelUrl">Default official URL</label><input id="botPanelUrl" type="url" placeholder="https://official-portal.example" /></div><div class="field full"><label for="botPanelInput">Official scholarship text / JSON</label><textarea id="botPanelInput" rows="15" placeholder="Click a bot, paste official scholarship text here, then Analyze + Auto Check"></textarea></div></div><div class="button-row"><button id="botPanelAnalyzeBtn" type="button">Analyze + Auto Check</button><button id="botPanelClearBtn" class="secondary-btn" type="button">Clear</button></div><p id="botPanelMessage" class="mini-note"></p></div><aside class="content-card"><span class="tagline">Import Actions</span><h3>Bulk import</h3><p class="mini-note">Auto Active = safest records only. Auto Drafts = usable records needing review.</p><div class="button-row"><button id="botPanelImportActiveBtn" type="button">Import Auto Active</button><button id="botPanelImportDraftBtn" class="secondary-btn" type="button">Import Auto Drafts</button><button id="botPanelImportSafeDraftsBtn" class="secondary-btn" type="button">Import Safe as Drafts</button></div></aside></div></section>
+      <section class="content-card"><div class="card-heading"><div><h2>Bot Results</h2><p class="mini-note">Review every card before import. Duplicates and expired records are skipped.</p></div></div><div id="botPanelResults" class="bot-result-grid"><p class="mini-note">No results yet.</p></div></section>
+      <section class="content-card"><h2>Paste format</h2><pre class="notice-box">Scholarship Name
+State National
 Education engineering, degree
-Categories general, obc, ews
+Categories general, sc, st, obc, ews, minority
 Gender any
-Amount ₹50,000
-Income limit 250000
+Amount Varies as per official rules
+Income limit 0
 Deadline date 2026-12-31
 Official link https://official-portal.example/scheme
 Source Official Portal
-Eligibility Short eligibility details from official source.
-Income note Family income rule from official source.
+Eligibility Paste official eligibility details here.
+Income note Paste official income rule here.
 ---
-Second Scholarship...</pre>
-      </section>
+Second Scholarship...</pre></section>
     </section>
   </main>
-
-  <footer><p>ApplyMate India Bot Console. Use official sources only and verify before publishing.</p></footer>
-  <script type="module" src="scholarship-discovery.js?v=manual-bots1"></script>
+  <footer><p>ApplyMate India Scholarship Bots Panel. Use official sources only.</p></footer>
+  <script type="module" src="scholarship-bots-panel.js?v=panel1"></script>
 </body>
 </html>
