@@ -15,7 +15,7 @@
   <style>
     .directory-toolbar {
       display: grid;
-      grid-template-columns: 1.4fr repeat(3, minmax(150px, 0.7fr));
+      grid-template-columns: 1.4fr repeat(4, minmax(150px, 0.7fr));
       gap: 14px;
       align-items: end;
       margin-top: 18px;
@@ -298,7 +298,9 @@
   </footer>
 
   <script type="module">
+    import "./state-dropdowns.js";
     import { db } from "./firebase-config.js";
+    import { daysLeft, isNewThisMonth } from "./live-count-utils.js";
     import { getLastVerifiedText, getOfficialSourceUrl, isVerifiedActiveScholarship } from "./scholarship-verification.js";
     import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
@@ -310,16 +312,20 @@
     const countBox = document.getElementById("liveScholarshipCount");
     const sourceBox = document.getElementById("liveScholarshipSource");
     const resetBtn = document.getElementById("resetLiveScholarshipFilters");
+    const toolbar = document.querySelector(".directory-toolbar");
 
     let allScholarships = [];
+
+    addSortControl();
+    addStatsStrip();
 
     if (window.location.hash === "#engineering") {
       educationFilter.value = "engineering";
     }
 
-    [searchBox, stateFilter, educationFilter, categoryFilter].forEach((item) => {
-      item.addEventListener("input", renderLiveDirectory);
-      item.addEventListener("change", renderLiveDirectory);
+    [searchBox, stateFilter, educationFilter, categoryFilter, document.getElementById("liveScholarshipSort")].forEach((item) => {
+      item?.addEventListener("input", renderLiveDirectory);
+      item?.addEventListener("change", renderLiveDirectory);
     });
 
     resetBtn.addEventListener("click", () => {
@@ -327,6 +333,8 @@
       stateFilter.value = "";
       educationFilter.value = "";
       categoryFilter.value = "";
+      const sortFilter = document.getElementById("liveScholarshipSort");
+      if (sortFilter) sortFilter.value = "priority";
       renderLiveDirectory();
     });
 
@@ -341,12 +349,14 @@
           .sort((a, b) => Number(b.priority || 0) - Number(a.priority || 0));
 
         sourceBox.textContent = allScholarships.length ? "Source: verified Firestore data" : "No verified active Firestore data";
+        updateSmartStats(allScholarships);
         renderLiveDirectory();
       } catch (error) {
         console.warn("Firestore directory load failed", error);
         allScholarships = [];
         sourceBox.textContent = "Firestore unavailable";
         listBox.innerHTML = "<p class='mini-note'>Could not load verified scholarships. Static portal links are still available below.</p>";
+        updateSmartStats([]);
       }
     }
 
@@ -378,7 +388,8 @@
         return searchOk && stateOk && educationOk && categoryOk;
       });
 
-      countBox.textContent = `Showing ${visible.length} of ${allScholarships.length} verified scholarships`;
+      const sortedVisible = sortScholarships(visible);
+      countBox.textContent = `Showing ${sortedVisible.length} of ${allScholarships.length} verified active scholarships`;
       listBox.replaceChildren();
 
       if (!allScholarships.length) {
@@ -386,12 +397,12 @@
         return;
       }
 
-      if (!visible.length) {
+      if (!sortedVisible.length) {
         listBox.innerHTML = "<p class='mini-note'>No verified scholarships match these filters. Try Reset Filters.</p>";
         return;
       }
 
-      visible.forEach((item) => listBox.appendChild(makeCard(item)));
+      sortedVisible.forEach((item) => listBox.appendChild(makeCard(item)));
     }
 
     function makeCard(item) {
@@ -401,8 +412,15 @@
       const badges = document.createElement("div");
       badges.className = "live-card-badges";
       badges.append(makeBadge(item.stateLabel || titleCase(item.state || "National")));
+      badges.append(makeBadge("✔ Verified"));
       badges.append(makeBadge(`Last verified: ${getLastVerifiedText(item)}`));
       badges.append(makeBadge(item.sourceType === "bulk-assistant" ? "Bulk Added" : "Admin Added"));
+
+      const left = daysLeft(item.deadlineDate);
+      if (Number.isFinite(left)) {
+        badges.append(makeBadge(left < 0 ? "Expired" : left === 0 ? "⏰ Last day" : `⏳ ${left} days left`));
+      }
+      if (isNewThisMonth(item)) badges.append(makeBadge("🆕 New / Priority"));
 
       const title = document.createElement("h3");
       title.textContent = item.name || "Unnamed Scholarship";
@@ -445,6 +463,56 @@
       return card;
     }
 
+    function addSortControl() {
+      if (!toolbar || document.getElementById("liveScholarshipSort")) return;
+      const field = document.createElement("div");
+      field.className = "field";
+      field.innerHTML = `
+        <label for="liveScholarshipSort">Sort</label>
+        <select id="liveScholarshipSort">
+          <option value="priority">Recommended</option>
+          <option value="deadline">Deadline soon</option>
+          <option value="new">Newly added</option>
+          <option value="verified">Recently verified</option>
+          <option value="amount">Highest amount</option>
+        </select>
+      `;
+      toolbar.appendChild(field);
+    }
+
+    function addStatsStrip() {
+      if (document.getElementById("directorySmartStats")) return;
+      const stats = document.createElement("div");
+      stats.id = "directorySmartStats";
+      stats.className = "directory-status";
+      stats.innerHTML = `
+        <span class="directory-count-pill" id="smartActiveCount">Active: loading</span>
+        <span class="directory-count-pill" id="smartClosingCount">Closing this week: loading</span>
+        <span class="directory-count-pill" id="smartNewCount">New this month: loading</span>
+        <span class="directory-count-pill" id="smartVerifiedCount">Verified: loading</span>
+      `;
+      const statusRow = document.querySelector(".directory-status");
+      statusRow?.after(stats);
+    }
+
+    function updateSmartStats(items) {
+      setText("smartActiveCount", `Active: ${items.length}`);
+      setText("smartClosingCount", `Closing this week: ${items.filter((item) => daysLeft(item.deadlineDate) >= 0 && daysLeft(item.deadlineDate) <= 7).length}`);
+      setText("smartNewCount", `New this month: ${items.filter(isNewThisMonth).length}`);
+      setText("smartVerifiedCount", `Verified: ${items.filter((item) => item.verifiedOn || item.lastChecked).length}`);
+    }
+
+    function sortScholarships(items) {
+      const mode = document.getElementById("liveScholarshipSort")?.value || "priority";
+      return [...items].sort((a, b) => {
+        if (mode === "deadline") return daysLeft(a.deadlineDate) - daysLeft(b.deadlineDate);
+        if (mode === "amount") return extractMoney(b.amount) - extractMoney(a.amount);
+        if (mode === "new") return dateRank(b.createdAt || b.verifiedOn || b.lastChecked) - dateRank(a.createdAt || a.verifiedOn || a.lastChecked);
+        if (mode === "verified") return dateRank(b.verifiedOn || b.lastChecked) - dateRank(a.verifiedOn || a.lastChecked);
+        return Number(b.priority || 0) - Number(a.priority || 0);
+      });
+    }
+
     function makeBadge(text) {
       const badge = document.createElement("span");
       badge.className = "badge";
@@ -463,6 +531,11 @@
       return String(value || "").split(",").map(clean).filter(Boolean);
     }
 
+    function setText(id, value) {
+      const node = document.getElementById(id);
+      if (node) node.textContent = value;
+    }
+
     function clean(value) {
       return String(value || "").trim().toLowerCase().replaceAll("  ", " ");
     }
@@ -473,6 +546,19 @@
 
     function safe(value) {
       return String(value || "").replaceAll("<", "&lt;").replaceAll(">", "&gt;");
+    }
+
+    function extractMoney(text) {
+      const numbers = String(text || "").match(/[0-9][0-9,]{2,}/g) || [];
+      return numbers.map((number) => Number(number.replace(/,/g, ""))).sort((a, b) => b - a)[0] || 0;
+    }
+
+    function dateRank(value) {
+      if (value?.toDate) return value.toDate().getTime();
+      const text = String(value || "").slice(0, 10);
+      if (!text) return 0;
+      const date = new Date(`${text}T00:00:00`);
+      return Number.isNaN(date.getTime()) ? 0 : date.getTime();
     }
   </script>
   <script src="assistant.js"></script>
