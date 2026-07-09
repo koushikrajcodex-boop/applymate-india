@@ -1,199 +1,340 @@
 # ApplyMate India
 
-**Production-focused scholarship finder and application tracker for Indian students.**
+**Production-focused scholarship finder, recommendation dashboard, admin system, and application tracker for Indian students.**
 
-ApplyMate India helps students discover verified scholarships, check possible eligibility, plan applications, prepare documents, compare options, save scholarships, and track application progress.
+ApplyMate India helps students discover verified scholarships, check possible eligibility, save scholarships, compare options, prepare documents, plan applications, and track application progress.
 
-## Current status
+This README is written as a progress report so a parent, mentor, teacher, or another AI tool can quickly understand what has been built and what still needs review.
 
-| Area | Status |
+---
+
+## 1. Project summary
+
+| Item | Details |
 | --- | --- |
-| Public scholarship finder | Firestore-backed |
-| Scholarship verification | Active records require verification data |
-| Student dashboard | Firestore-only scholarship data |
-| Main admin panel | Firebase custom-claim protected |
-| Admin state support | Shared all-India state config |
-| Admin bulk import | Parses all 28 states, 8 UTs, and National |
-| Discovery Assistant | Detects missing pasted official-source scholarships and imports safe records |
-| Admin data health | Firebase custom-claim protected |
-| Data quality tests | Enabled in CI |
-| Static legacy dataset | Deleted |
-| Canonical directory | `scholarships.html` |
-| Legacy hub page | Redirects to canonical directory |
+| Project name | ApplyMate India |
+| Purpose | Help Indian students find and manage scholarship opportunities |
+| Current stage | Phase 2 / production hardening in progress |
+| Frontend | HTML, CSS, JavaScript modules |
+| Backend services | Firebase Authentication and Cloud Firestore |
+| Hosting | GitHub Pages |
+| Repo owner | `koushikrajcodex-boop` |
+| Live site | https://koushikrajcodex-boop.github.io/applymate-india/ |
+| Main public directory | `scholarships.html` |
+| Main admin page | `admin.html` |
+| Link analyzer / scholarship import helper | `scholarship-discovery.html` |
 
-See [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the full cleanup status.
+---
 
-## Live demo
+## 2. Current progress status
 
-https://koushikrajcodex-boop.github.io/applymate-india/
+| Area | Status | Notes |
+| --- | --- | --- |
+| Public homepage | Working | Public landing page and scholarship finder are present. |
+| Login / Register | Working | Firebase Authentication is connected. |
+| Student dashboard | Working | Uses Firestore-backed scholarship data. |
+| Public scholarship directory | Working | `scholarships.html` is the canonical verified directory. |
+| Scholarship recommendations | Implemented | Eligibility filtering is based on profile and scholarship fields. |
+| Saved scholarships | Implemented | Students can save scholarships for later. |
+| Application tracker | Implemented | Tracks application status such as Not Applied, Applied, Under Review, Approved, Rejected. |
+| Scholarship comparison | Implemented / in progress | Comparison tools exist and should be tested with real records. |
+| Document checklist | Implemented | Helps students plan required documents. |
+| Admin panel | Implemented | Admin can add, edit, duplicate, publish, close, and delete scholarship records. |
+| Bulk import assistant | Implemented | Parses pasted scholarship text and imports validated records. |
+| Data health dashboard | Implemented | Checks duplicates, expired active records, missing links, weak verification, and incomplete data. |
+| Link analyzer bot | Implemented, needs real-world testing | Tries to read official scholarship links and auto-fill the Add Scholarship format. Uses fallback pasted text when websites block reading. |
+| Scholarship Radar Pro | Implemented | GitHub Actions scanner/report system for official sources and Firestore drafts/active records when secrets are configured. |
+| Firestore rules | Updated in repo | Must be deployed separately to Firebase Console/CLI. |
+| PWA / service worker | Implemented | Cache was bumped during bot/debug work. |
+| CI checks | Implemented | Data quality and static checks exist through GitHub Actions. |
 
-## Key features
+---
 
-- Firestore-backed scholarship eligibility filtering
-- Verified active scholarship directory with official source links
-- Shared state dropdowns for National, all 28 Indian states, and 8 Union Territories
-- Admin add/edit support for all India states and Union Territories
-- Bulk scholarship import assistant with all-state detection
-- Admin Scholarship Discovery Assistant for detecting missing records from official-source text or JSON
-- Duplicate detection by normalized scholarship name and official source URL
-- Draft import for uncertain records and verified-active import for complete live records
-- Visible `Last verified` dates on public scholarship cards
-- Keyword search and filters
-- Document checklist planner
-- Application roadmap planner
-- Apply First priority planner
-- Scholarship comparison tools
-- Firebase email/password authentication
-- Private student profile dashboard
-- Saved scholarships
-- Application tracker
-- Custom-claim protected admin panel
-- Admin data health dashboard
-- Data quality tests through GitHub Actions
-- Responsive interface
+## 3. Main features completed
 
-## Reliability upgrades completed
+### Student-side features
 
-- Removed the homepage static scholarship array.
-- Deleted the old static scholarship dataset shim.
-- Removed final `scholarships-data.js` imports from dashboard/admin code.
-- Rebuilt the main admin panel around Firebase custom claims.
-- Removed personal admin email allow-lists from code and Firestore rules.
-- Added hard validation for active scholarship verification.
-- Added Firestore rules for verified active scholarship writes.
-- Added unit tests for validator, schema, and live count logic.
-- Consolidated `scholarships-live.html` and `scholarship-hub.html` into the canonical directory.
-- Removed obsolete hub and polish standalone scripts after merging or redirecting their behavior.
-- Added an admin-only Discovery Assistant for finding missing scholarships from official-source text/JSON.
-- Moved static checks into `.github/workflows/static-checks.yml`.
+- Firebase email/password login and registration.
+- Student profile/dashboard.
+- Firestore-backed scholarship recommendations.
+- Scholarship search and filters.
+- Saved scholarships / bookmark option.
+- Application tracker with statuses:
+  - Not Applied
+  - Applied
+  - Under Review
+  - Approved
+  - Rejected
+- Scholarship comparison tools.
+- Document checklist planner.
+- Application roadmap planner.
+- Apply-first priority planner.
+- Responsive UI for mobile and desktop.
 
-## Technology
+### Admin-side features
 
-- HTML
-- CSS
-- JavaScript modules
+- Admin panel at `admin.html`.
+- Add/edit scholarship form.
+- Draft, active, and closed scholarship statuses.
+- Active scholarships require verification fields before being accepted by Firestore rules.
+- Bulk scholarship import assistant.
+- Admin data health dashboard.
+- Duplicate detection by normalized scholarship name and source URL.
+- Expired active scholarship detection.
+- Export backup as JSON.
+
+### Automation / bot features
+
+- `scholarship-discovery.html` is now a **Scholarship Link Analyzer**.
+- It accepts an official scholarship URL.
+- It tries to read the page and auto-fill the Add Scholarship format.
+- If the site blocks reading or returns weak dynamic content, it asks the admin to paste official page/PDF text.
+- It prevents low-quality extraction from being auto-published.
+- It avoids using URLs as fake scholarship names or eligibility text.
+- It classifies generated records as:
+  - Auto Active
+  - Auto Draft
+  - Review
+  - Duplicate
+  - Expired
+
+---
+
+## 4. Important technical note about the Link Analyzer
+
+The Link Analyzer works best with clean official scholarship detail pages or official PDF text.
+
+Some government sites, especially dynamic/filter pages like NSP scheme filters, may not expose real scholarship text to browser JavaScript. In that case, the analyzer intentionally refuses to create a fake scholarship record and asks the admin to paste the official scheme text manually.
+
+This is safer than blindly scraping and adding wrong data.
+
+Example of weak link behavior:
+
+```text
+NSP filter/dynamic page detected → paste exact official scheme text/PDF text → Analyze Pasted Text → import draft/active after review
+```
+
+---
+
+## 5. Scholarship data safety model
+
+ApplyMate India uses a safety-first model:
+
+1. Public students should only see verified active scholarships.
+2. Uncertain or incomplete scholarships should be saved as drafts.
+3. Duplicate records should be skipped.
+4. Expired records should be closed or skipped.
+5. Every active scholarship should have:
+   - name
+   - state
+   - amount
+   - deadline date
+   - official link
+   - source name
+   - eligibility note
+   - income note
+   - verification metadata
+
+---
+
+## 6. Key project files
+
+| File | Purpose |
+| --- | --- |
+| `index.html`, `script.js` | Public homepage and finder logic |
+| `login.html`, `auth.js` | Firebase login/register |
+| `dashboard.html`, `dashboard.js` | Student dashboard and recommendations |
+| `scholarships.html` | Canonical public scholarship directory |
+| `admin.html`, `admin.js` | Admin scholarship management |
+| `scholarship-discovery.html` | Link Analyzer and official-text import helper |
+| `scholarship-bots-panel.js` | Link analyzer extraction, parsing, classification, and import logic |
+| `admin-health.html`, `admin-health.js` | Admin data quality dashboard |
+| `states.js` | Shared Indian states/UT/National configuration |
+| `scholarship-validator.js` | Scholarship validation logic |
+| `scholarship-schema.js` | Scholarship schema helpers |
+| `scholarship-verification.js` | Verified active scholarship checks |
+| `firestore.rules` | Firestore security and validation rules |
+| `tools/scholarship-radar.mjs` | Scholarship Radar Pro scanner/checker |
+| `.github/workflows/scholarship-radar.yml` | Daily/manual radar workflow |
+| `.github/workflows/data-quality.yml` | Data quality checks |
+| `.github/workflows/static-checks.yml` | Static syntax/required-file checks |
+
+---
+
+## 7. Firebase setup needed
+
+Firebase services used:
+
 - Firebase Authentication
 - Cloud Firestore
 - Firebase security rules
-- GitHub Pages
-- GitHub Actions
 
-## Admin workflow
+Required Firebase setup:
 
-Recommended scholarship management flow:
-
-1. Open `admin.html`.
-2. Use `scholarship-discovery.html` to paste official-source scholarship text or JSON.
-3. Analyze candidates and import missing records as drafts or verified active records.
-4. Use `admin-health.html` to review duplicates, expired active records, missing links, weak verification, and incomplete eligibility data.
-5. Confirm published records on `scholarships.html#live-directory`.
-
-The Discovery Assistant intentionally does not blindly scrape the internet from GitHub Pages. Static hosting cannot safely run private web crawling or use secret AI/search API keys. Instead, it validates official-source content that an admin provides and prevents duplicate or incomplete records from entering Firestore.
-
-## Project structure
-
-- `index.html`, `script.js`, `home-finder-data.js`: public scholarship finder
-- `states.js`, `state-dropdowns.js`: shared all-India state/UT/National dropdown configuration
-- `scholarships.html`: canonical verified scholarship directory
-- `scholarship-hub.html`, `scholarships-live.html`: redirect pages kept for old links
-- `login.html`, `auth.js`: account registration and login
-- `dashboard.html`, `dashboard.js`: private student dashboard and Firestore-only recommendations
-- `dashboard-insights.js`: optional dashboard intelligence and verified insight cards
-- `admin.html`, `admin.js`: custom-claim protected admin scholarship management and bulk import
-- `scholarship-discovery.html`, `scholarship-discovery.js`: admin-only missing-scholarship discovery and import assistant
-- `admin-health.html`, `admin-health.js`: custom-claim protected admin data health dashboard
-- `scholarship-validator.js`, `scholarship-schema.js`, `scholarship-verification.js`: data quality and verification logic
-- `live-count.js`, `live-count-utils.js`: homepage live stats and testable count helpers
-- `firebase-config.js`: Firebase web client configuration
-- `firestore.rules`: Firestore access and validation rules
-- `package.json`: test scripts
-- `.github/workflows/data-quality.yml`: automated unit tests and data validation
-- `.github/workflows/static-checks.yml`: basic JavaScript syntax and required-file checks
-
-## Run locally
-
-Because the project uses JavaScript modules, serve it through a local web server instead of opening the HTML files directly.
-
-With Python:
-
-```bash
-python -m http.server 8000
-```
-
-Then open:
+1. Enable Email/Password login.
+2. Add GitHub Pages domain to Firebase authorized domains.
+3. Deploy `firestore.rules` to Firebase.
+4. Ensure the admin account has admin permission.
+5. If using GitHub Actions Firestore write automation, add this GitHub repository secret:
 
 ```text
-http://localhost:8000/
+FIREBASE_SERVICE_ACCOUNT_JSON
 ```
 
-Add `localhost` to Firebase Authentication's authorized domains if required.
+Do not commit service-account keys to the repository.
 
-## Test locally
+---
 
-```bash
-npm test
-npm run validate:data
-```
+## 8. Firestore rules note
 
-## Firebase setup
+The repo contains updated `firestore.rules`, but Firebase does not automatically use the repo file unless rules are deployed.
 
-1. Create or open the `applymate-india` project in Firebase.
-2. Enable Email/Password under Authentication → Sign-in method.
-3. Create a Cloud Firestore database.
-4. Confirm that `firebase-config.js` contains the correct web-app configuration.
-5. Add the GitHub Pages domain to Authentication → Settings → Authorized domains.
-6. Deploy the included Firestore rules.
-7. Set admin users through Firebase custom claims, not email allow-lists.
-
-Install the Firebase CLI and sign in:
-
-```bash
-npm install -g firebase-tools
-firebase login
-```
-
-Deploy only the Firestore rules:
+Deploy rules with Firebase CLI:
 
 ```bash
 firebase deploy --only firestore:rules --project applymate-india
 ```
 
-## Admin custom claims
+Or paste the rules manually in Firebase Console → Firestore Database → Rules → Publish.
 
-Admin accounts must have this Firebase Authentication custom claim:
+---
 
-```json
-{
-  "admin": true
-}
+## 9. GitHub Actions / automation
+
+### Scholarship Radar Pro
+
+The repository includes a workflow:
+
+```text
+.github/workflows/scholarship-radar.yml
 ```
 
-Firestore admin writes are protected by:
+It can:
 
-```js
-request.auth.token.admin == true
+- scan official scholarship sources listed in `data/scholarship-sources.json`
+- create candidate reports
+- skip duplicates
+- skip expired records
+- add safe active records to Firestore when configured
+- add uncertain records as drafts
+- close expired active scholarships
+
+It requires `FIREBASE_SERVICE_ACCOUNT_JSON` to write to Firestore.
+
+### Quality checks
+
+The project also includes CI checks for:
+
+- JavaScript/static file sanity
+- required file presence
+- data validation
+- scholarship schema logic
+
+---
+
+## 10. How to test the project
+
+### Test public user flow
+
+1. Open the live site.
+2. Register/login.
+3. Complete or update student profile.
+4. Open dashboard.
+5. Check recommendations.
+6. Save a scholarship.
+7. Track an application.
+8. Open public directory and test filters.
+
+### Test admin flow
+
+1. Open `admin.html`.
+2. Login with admin account.
+3. Add a scholarship as draft.
+4. Add required verification fields.
+5. Publish as active.
+6. Confirm it appears in `scholarships.html`.
+7. Open `admin-health.html` and check quality warnings.
+
+### Test link analyzer flow
+
+1. Open `scholarship-discovery.html`.
+2. Paste a clean official scholarship detail URL.
+3. Click `Fetch Link + Auto Fill Format`.
+4. If blocked, paste official page/PDF text into fallback.
+5. Click `Analyze Pasted Text`.
+6. Review generated format.
+7. Import as draft or active only if confidence is good.
+
+---
+
+## 11. Known limitations
+
+- GitHub Pages is static hosting, so it cannot safely run private server-side crawling.
+- Browser JavaScript may be blocked by CORS when trying to read government websites.
+- NSP filter pages are dynamic and may not expose specific scholarship details directly.
+- Link Analyzer should be treated as an assistant, not an authority.
+- Final scholarship details must always be verified on the official portal before publishing.
+- Firestore rules must be deployed separately after updating the repo.
+- GitHub Actions Firestore writes require a correctly configured service-account secret.
+
+---
+
+## 12. Recommended next improvements
+
+1. Add a Cloud Function or Firebase backend endpoint for safer server-side link extraction.
+2. Add OCR/PDF parsing for official scholarship PDFs.
+3. Add an admin approval queue for Link Analyzer drafts.
+4. Add email or in-app deadline reminders.
+5. Add logs showing who imported or edited each scholarship.
+6. Add more automated tests for admin import and Link Analyzer parsing.
+7. Add real scholarship seed data from official sources.
+8. Improve SEO pages and scholarship guide pages for organic traffic.
+9. Add user notification preferences.
+10. Add analytics for most viewed/saved scholarships.
+
+---
+
+## 13. Suggested prompt for an AI reviewer
+
+A parent, mentor, or reviewer can copy this prompt into another AI tool:
+
+```text
+Review this GitHub repository and evaluate the student's progress:
+
+Repository: https://github.com/koushikrajcodex-boop/applymate-india
+Live site: https://koushikrajcodex-boop.github.io/applymate-india/
+
+Please check:
+1. Whether the project idea is useful and realistic.
+2. Whether the implementation matches the README progress report.
+3. Whether Firebase Authentication and Firestore usage look correct.
+4. Whether Firestore rules are safe.
+5. Whether the admin panel and scholarship import flow are logically designed.
+6. Whether the Link Analyzer is safe or likely to create wrong data.
+7. What bugs, security issues, or production problems remain.
+8. What the student should improve next.
+9. Give a progress rating out of 10 for a B.Tech CSE student project.
 ```
 
-See [`docs/admin-custom-claims.md`](docs/admin-custom-claims.md).
+---
 
-## Security notes
+## 14. Security notes
 
-- The Firebase web API key is a client identifier, not a server secret.
-- Restrict the key to the Firebase APIs and authorized website domains used by this project.
-- Firestore rules permit authenticated users to access only their own profile, saved scholarships, and applications.
-- Admin scholarship writes require Firebase custom claims.
-- Active scholarships require verification data before publishing.
-- Keep `firestore.rules` in version control and deploy it after every rules change.
-- Never place service-account keys or private credentials in this repository.
+- The Firebase web API key is not a server secret, but it should still be restricted in Google Cloud/Firebase settings.
+- Never commit Firebase service-account JSON or private keys.
+- Admin writes must be protected by Firestore rules.
+- Active scholarship records must include official source and verification metadata.
+- Students should only be able to access their own profile, saved scholarships, and application records.
+- Public scholarship data should be read-only for normal users.
 
-## Deployment
+---
 
-The static website is deployed through GitHub Pages from the `main` branch. Firestore rules are deployed separately with the Firebase CLI.
-
-## Important notice
+## 15. Important notice
 
 ApplyMate India is not an official scholarship portal. Scholarship rules, deadlines, income limits, and required documents may change. Always verify final details on the relevant official portal before applying.
 
-## Contact
+---
 
-koushikrajcodex@gmail.com
+## 16. Contact
+
+Project maintainer: `koushikrajcodex@gmail.com`
