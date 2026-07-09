@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>AI Scholarship Assistant - ApplyMate India</title>
+  <meta name="description" content="Use ApplyMate India's AI-style scholarship assistant to describe your student profile and find possible verified scholarship matches from Firestore." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/ai-scholarship-assistant.html" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="assistant.css" />
+
+  <style>
+    .ai-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(280px, .9fr);
+      gap: 18px;
+      align-items: start;
+    }
+
+    .ai-panel {
+      position: sticky;
+      top: 16px;
+    }
+
+    .ai-result-grid {
+      display: grid;
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .ai-match-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+      background: #fff;
+      box-shadow: var(--shadow);
+    }
+
+    .ai-badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-bottom: 10px;
+    }
+
+    .ai-badge {
+      display: inline-flex;
+      align-items: center;
+      border-radius: 999px;
+      padding: 6px 10px;
+      background: #eef4ff;
+      border: 1px solid #c7d7fe;
+      color: #1d4ed8;
+      font-size: .86rem;
+      font-weight: 700;
+    }
+
+    .ai-badge.good {
+      background: #ecfdf3;
+      border-color: #bbf7d0;
+      color: #067647;
+    }
+
+    .ai-badge.warn {
+      background: #fffbeb;
+      border-color: #fde68a;
+      color: #92400e;
+    }
+
+    .ai-profile-box {
+      display: grid;
+      gap: 8px;
+      margin-top: 12px;
+    }
+
+    .ai-profile-row {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      border-bottom: 1px dashed var(--border);
+      padding-bottom: 8px;
+      font-size: .94rem;
+    }
+
+    .ai-profile-row strong {
+      color: var(--text);
+    }
+
+    @media (max-width: 900px) {
+      .ai-layout {
+        grid-template-columns: 1fr;
+      }
+
+      .ai-panel {
+        position: static;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="ai-scholarship-assistant.html">AI Assistant</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="login.html">Login</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card admin-hero">
+      <span class="tagline">Phase 3 • AI-style Matching</span>
+      <h1>AI Scholarship Assistant</h1>
+      <p>
+        Describe yourself like a normal student message. ApplyMate will understand your state, course,
+        category, gender, income, marks, and disability status, then match you with verified scholarships from Firestore.
+      </p>
+      <div class="notice-box">
+        This is a free AI-style rules assistant. It does not send your data to any paid AI API. Always verify final eligibility on official scholarship portals.
+      </div>
+    </section>
+
+    <section class="content-card">
+      <div class="ai-layout">
+        <div>
+          <h2>Tell ApplyMate about you</h2>
+          <p class="mini-note">
+            Example: I am a female B.Tech CSE student from Andhra Pradesh, OBC category,
+            family income ₹1.8 lakh, 82%, no disability.
+          </p>
+
+          <div class="form-grid">
+            <div class="field full">
+              <label for="aiProfileInput">Your student profile</label>
+              <textarea id="aiProfileInput" rows="9" placeholder="I am a B.Tech CSE student from Andhra Pradesh. My category is OBC, family income is 180000, marks are 82%, female, no disability."></textarea>
+            </div>
+          </div>
+
+          <div class="button-row">
+            <button id="aiFindBtn" type="button">Find My Scholarships</button>
+            <button id="aiExampleBtn" type="button" class="secondary-btn">Use Example</button>
+            <button id="aiClearBtn" type="button" class="secondary-btn">Clear</button>
+          </div>
+
+          <p id="aiMessage" class="mini-note">Loading verified scholarships...</p>
+        </div>
+
+        <aside class="content-card ai-panel">
+          <span class="tagline">Detected Profile</span>
+          <h3>What ApplyMate understood</h3>
+          <div id="aiProfileBox" class="ai-profile-box">
+            <p class="mini-note">Enter your profile and click Find My Scholarships.</p>
+          </div>
+          <hr />
+          <h3>Improve accuracy</h3>
+          <p class="mini-note">
+            Include state, course, category, gender, income, percentage/CGPA, and disability status.
+          </p>
+          <a class="text-btn" href="login.html">Login to save and track scholarships</a>
+        </aside>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <h2>AI Match Results</h2>
+          <p id="aiSummary" class="mini-note">Results will appear here.</p>
+        </div>
+      </div>
+      <div id="aiResults" class="ai-result-grid">
+        <p class="mini-note">No results yet.</p>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>How this assistant decides matches</h2>
+      <p>
+        ApplyMate compares your details against each verified active scholarship's state, education,
+        category, gender, disability rule, income limit, percentage rule, deadline, and priority score.
+      </p>
+      <p>
+        It is designed as a fast starting point for students, not a final official decision. The final answer always belongs to the official portal or scholarship authority.
+      </p>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India is an informational student helper. Always verify details on official portals.</p>
+    <div class="footer-links">
+      <a href="scholarships.html">Scholarships</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="guides.html">Guides</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+    </div>
+  </footer>
+
+  <script type="module" src="ai-scholarship-assistant.js?v=phase3-1"></script>
+</body>
+</html>
