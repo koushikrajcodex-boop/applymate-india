@@ -1,5 +1,3 @@
-import { getStateLabel } from "./states.js";
-
 const CONTACT_EMAIL = "koushikrajcodex@gmail.com";
 
 window.findScholarships = findScholarships;
@@ -37,7 +35,7 @@ function findScholarships() {
     .filter(Boolean)
     .sort((a, b) => b.score - a.score);
 
-  const selectedStateLabel = state === "any" ? "Any State" : getStateLabel(state);
+  const selectedStateLabel = state === "any" ? "Any State" : labelState(state);
   const hasStateSpecificResults = state === "any" || matches.some((scholarship) => scholarship.state === state);
   const hasNationalFallback = state !== "any" && matches.some((scholarship) => scholarship.state === "national");
 
@@ -211,7 +209,7 @@ function normalizeScholarship(item) {
   return {
     ...item,
     state: item.state || "national",
-    stateLabel: item.stateLabel || getStateLabel(item.state || "national"),
+    stateLabel: item.stateLabel || labelState(item.state || "national"),
     education: normalizeArray(item.education).length ? normalizeArray(item.education) : ["any"],
     categories: categories.length ? categories : ["general"],
     maxIncome: Number(item.maxIncome || 99999999) || 99999999,
@@ -270,6 +268,10 @@ function categoryAliases(category) {
     girls: ["female"],
     disabled: ["disability"]
   }[category] || [];
+}
+
+function labelState(state) {
+  return window.ApplyMateStates?.getStateLabel?.(state) || "National";
 }
 
 function clean(value) {
