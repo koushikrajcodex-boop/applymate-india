@@ -4,7 +4,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "test": "node tests/scholarship-validator.test.js",
+    "test": "node tests/scholarship-validator.test.js && node tests/scholarship-schema.test.js && node tests/live-count.test.js",
     "validate:data": "node tools/validate-scholarship-data.js"
   },
   "devDependencies": {}

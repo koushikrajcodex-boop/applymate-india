@@ -1,5 +1,6 @@
 import "./home-polish.js?v=1";
 import { db } from "./firebase-config.js";
+import { getActiveScholarshipStats } from "./live-count-utils.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 const countBox = document.getElementById("activeScholarshipHomeCount");
@@ -16,21 +17,15 @@ if (countBox || labelBox || updatedBox || heroStatCards.length) {
 async function loadCount() {
   try {
     const snapshot = await getDocs(collection(db, "scholarships"));
-    const active = snapshot.docs
-      .map((item) => ({ id: item.id, ...item.data() }))
-      .filter((item) => item.status === "active")
-      .filter((item) => item.applicationWindow !== "closed")
-      .filter((item) => !isExpired(item.deadlineDate));
+    const items = snapshot.docs.map((item) => ({ id: item.id, ...item.data() }));
+    const stats = getActiveScholarshipStats(items);
 
-    const closingSoon = active.filter((item) => daysLeft(item.deadlineDate) >= 0 && daysLeft(item.deadlineDate) <= 7);
-    const newThisMonth = active.filter(isNewThisMonth);
+    setHeroStat(0, stats.activeCount > 0 ? `${stats.activeCount}+` : "0", stats.activeCount === 1 ? "Active scholarship" : "Active scholarships");
+    setHeroStat(1, String(stats.closingSoonCount), "Closing this week");
+    setHeroStat(2, String(stats.newThisMonthCount), "New this month");
 
-    setHeroStat(0, active.length > 0 ? `${active.length}+` : "0", active.length === 1 ? "Active scholarship" : "Active scholarships");
-    setHeroStat(1, String(closingSoon.length), "Closing this week");
-    setHeroStat(2, String(newThisMonth.length), "New this month");
-
-    if (countBox) countBox.textContent = active.length > 0 ? `${active.length}+` : "0";
-    if (labelBox) labelBox.textContent = active.length === 1 ? "Active scholarship" : "Active scholarships";
+    if (countBox) countBox.textContent = stats.activeCount > 0 ? `${stats.activeCount}+` : "0";
+    if (labelBox) labelBox.textContent = stats.activeCount === 1 ? "Active scholarship" : "Active scholarships";
     if (updatedBox) updatedBox.textContent = `Live stats from Firestore • ${new Date().toLocaleString("en-IN")}`;
   } catch (error) {
     console.warn("Live scholarship count failed", error);
@@ -62,28 +57,4 @@ function setHeroStat(index, value, label) {
   const span = card.querySelector("span");
   if (strong) strong.textContent = value;
   if (span) span.textContent = label;
-}
-
-function isExpired(deadlineDate) {
-  if (!deadlineDate) return false;
-  const left = daysLeft(deadlineDate);
-  return Number.isFinite(left) && left < 0;
-}
-
-function daysLeft(deadlineDate) {
-  if (!deadlineDate) return Infinity;
-  const date = new Date(`${deadlineDate}T23:59:59`);
-  if (Number.isNaN(date.getTime())) return Infinity;
-  const today = new Date();
-  today.setHours(0, 0, 0, 0);
-  return Math.ceil((date.getTime() - today.getTime()) / 86400000);
-}
-
-function isNewThisMonth(item) {
-  const dateText = item.createdAt?.toDate ? item.createdAt.toDate().toISOString().slice(0, 10) : item.verifiedOn || item.lastChecked || "";
-  if (!dateText) return false;
-  const date = new Date(`${dateText}T00:00:00`);
-  if (Number.isNaN(date.getTime())) return false;
-  const now = new Date();
-  return date.getFullYear() === now.getFullYear() && date.getMonth() === now.getMonth();
 }

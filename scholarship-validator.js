@@ -8,6 +8,8 @@ export function validateScholarships(scholarships) {
     };
   }
 
+  checkDuplicateNames(scholarships, errors);
+
   scholarships.forEach((scholarship, index) => {
     const label = scholarship?.name || `Scholarship at index ${index}`;
 
@@ -36,6 +38,22 @@ export function validateScholarships(scholarships) {
   };
 }
 
+function checkDuplicateNames(items, errors) {
+  const seen = new Map();
+
+  items.forEach((item, index) => {
+    const key = normalizeName(item?.name);
+    if (!key) return;
+
+    if (seen.has(key)) {
+      errors.push(`${item.name}: duplicate scholarship name also appears at index ${seen.get(key)}`);
+      return;
+    }
+
+    seen.set(key, index);
+  });
+}
+
 function checkActiveVerificationGate(item, label, errors) {
   if (item?.status !== "active") return;
 
@@ -49,6 +67,10 @@ function checkActiveVerificationGate(item, label, errors) {
 
   if (!isValidUrl(item.sourceUrl || item.link)) {
     errors.push(`${label}: active scholarships must include a valid sourceUrl or link`);
+  }
+
+  if (isPastDate(item.deadlineDate)) {
+    errors.push(`${label}: active scholarships cannot have an expired deadlineDate`);
   }
 }
 
@@ -78,6 +100,13 @@ function isValidIsoDate(value) {
   return typeof value === "string" && /^20\d{2}-[01]\d-[0-3]\d$/.test(value.trim());
 }
 
+function isPastDate(value) {
+  if (!isValidIsoDate(value)) return false;
+  const date = new Date(`${value}T23:59:59`);
+  if (Number.isNaN(date.getTime())) return false;
+  return date.getTime() < Date.now();
+}
+
 function isValidUrl(value) {
   if (typeof value !== "string" || value.trim() === "") return false;
 
@@ -87,4 +116,11 @@ function isValidUrl(value) {
   } catch {
     return false;
   }
+}
+
+function normalizeName(value) {
+  return String(value || "")
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, " ")
+    .trim();
 }
