@@ -2,6 +2,8 @@ import { db } from "./firebase-config.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
 window.applymateLiveFinderData = [];
+window.applymateLiveFinderLoaded = false;
+window.applymateLiveFinderError = "";
 
 async function loadApplyMateLiveFinderData() {
   try {
@@ -12,17 +14,30 @@ async function loadApplyMateLiveFinderData() {
       .filter((item) => item.applicationWindow !== "closed")
       .filter((item) => !isExpired(item.deadlineDate));
 
-    const finder = document.getElementById("finder");
-    if (finder && !document.getElementById("liveFinderDataNote")) {
-      const note = document.createElement("div");
-      note.id = "liveFinderDataNote";
-      note.className = "notice-box";
-      note.textContent = `Live Firestore data loaded: ${window.applymateLiveFinderData.length} active scholarships available.`;
-      finder.appendChild(note);
-    }
+    updateFinderDataNote(`Live Firestore data loaded: ${window.applymateLiveFinderData.length} active scholarships available.`);
   } catch (error) {
+    window.applymateLiveFinderError = error?.message || "Firestore unavailable";
     console.warn("ApplyMate live finder data unavailable", error);
+    updateFinderDataNote("Live Firestore scholarships could not be loaded right now. Try again later or open the Scholarship Hub.");
+  } finally {
+    window.applymateLiveFinderLoaded = true;
+    window.dispatchEvent(new CustomEvent("applymate:finder-data-loaded"));
   }
+}
+
+function updateFinderDataNote(message) {
+  const finder = document.getElementById("finder");
+  if (!finder) return;
+
+  let note = document.getElementById("liveFinderDataNote");
+  if (!note) {
+    note = document.createElement("div");
+    note.id = "liveFinderDataNote";
+    note.className = "notice-box";
+    finder.appendChild(note);
+  }
+
+  note.textContent = message;
 }
 
 function isExpired(deadlineDate) {
