@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scholarship Discovery Assistant - ApplyMate India</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Admin-only scholarship discovery assistant for finding missing verified scholarships and importing them into Firestore." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css?v=admin5" />
+  <style>
+    .discovery-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:start}.discovery-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.discovery-stat{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.discovery-stat strong{display:block;font-size:1.7rem;color:var(--primary)}.candidate-list{display:grid;gap:14px;margin-top:18px}.candidate-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.candidate-card h3{margin:8px 0}.candidate-badges{display:flex;gap:8px;flex-wrap:wrap}.candidate-badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef4ff;border:1px solid #c7d7fe;color:#1d4ed8;font-weight:700;font-size:.85rem}.candidate-badge.ok{background:#ecfdf3;border-color:#bbf7d0;color:#067647}.candidate-badge.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}.candidate-badge.bad{background:#fff1f3;border-color:#fecdd3;color:#be123c}.discovery-template{font-size:.92rem;white-space:pre-wrap}.discovery-actions{position:sticky;top:16px}.source-link-list{display:grid;gap:8px}.source-link-list a{word-break:break-word}@media(max-width:900px){.discovery-grid,.discovery-stats{grid-template-columns:1fr}.discovery-actions{position:static}}
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Discovery</span></a>
+    <div class="nav-links">
+      <a href="admin.html">Admin Panel</a>
+      <a href="admin-health.html">Data Health</a>
+      <a href="scholarships.html#live-directory">Scholarship Directory</a>
+      <a href="index.html">Home</a>
+      <button id="discoveryLogoutBtn" class="secondary-btn" type="button">Logout</button>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card admin-hero">
+      <span class="tagline">Admin AI-style Tool</span>
+      <h1>Scholarship Discovery Assistant</h1>
+      <p id="discoveryAdminEmail" class="last-updated">Checking Firebase custom claim...</p>
+      <div class="notice-box">
+        This tool does not blindly scrape or publish random web data. Paste text or JSON copied from official portals, and it will detect missing scholarships by comparing them with Firestore, validate live/verified fields, and import only the safe records you choose.
+      </div>
+    </section>
+
+    <section id="discoveryLocked" class="content-card hidden">
+      <h2>Access denied</h2>
+      <p class="mini-note">This page is only for accounts with Firebase custom claim <code>admin == true</code>.</p>
+      <a class="text-btn" href="dashboard.html">Go to Student Dashboard</a>
+    </section>
+
+    <section id="discoveryContent" class="hidden">
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>Current Firestore Coverage</h2>
+            <p class="mini-note">Loaded from the live <code>scholarships</code> collection. Duplicates are detected by normalized name and official source URL.</p>
+          </div>
+          <button id="refreshDiscoveryBtn" class="secondary-btn" type="button">Refresh Firestore Data</button>
+        </div>
+        <div class="discovery-stats">
+          <div class="discovery-stat"><span>Total records</span><strong id="coverageTotal">—</strong></div>
+          <div class="discovery-stat"><span>Active verified</span><strong id="coverageActive">—</strong></div>
+          <div class="discovery-stat"><span>Unique names</span><strong id="coverageNames">—</strong></div>
+          <div class="discovery-stat"><span>Unique sources</span><strong id="coverageSources">—</strong></div>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <div class="discovery-grid">
+          <div>
+            <h2>Paste official-source scholarships</h2>
+            <p class="mini-note">Use this for official portal text, tables, JSON arrays, or AI-generated structured output. Separate multiple text records with a line containing <code>---</code>.</p>
+            <div class="form-grid">
+              <div class="field">
+                <label for="defaultDiscoverySource">Default source name</label>
+                <input id="defaultDiscoverySource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" />
+              </div>
+              <div class="field">
+                <label for="defaultDiscoveryUrl">Default official URL</label>
+                <input id="defaultDiscoveryUrl" type="url" placeholder="https://official-portal.example" />
+              </div>
+              <div class="field full">
+                <label for="discoveryInput">Scholarship source text or JSON</label>
+                <textarea id="discoveryInput" rows="15" placeholder="Scholarship name&#10;State Karnataka&#10;Education engineering, degree&#10;Categories general, obc, ews&#10;Gender any&#10;Amount ₹50,000&#10;Income limit 250000&#10;Deadline date 2026-12-31&#10;Official link https://...&#10;Source Official Portal&#10;Eligibility ...&#10;Income note ...&#10;---&#10;Second scholarship..."></textarea>
+              </div>
+            </div>
+            <div class="button-row">
+              <button id="analyzeDiscoveryBtn" type="button">Analyze Missing Scholarships</button>
+              <button id="exampleDiscoveryBtn" class="secondary-btn" type="button">Use Example</button>
+              <button id="clearDiscoveryBtn" class="secondary-btn" type="button">Clear</button>
+            </div>
+            <p id="discoveryMessage" class="mini-note"></p>
+          </div>
+
+          <aside class="content-card discovery-actions">
+            <span class="tagline">Import Actions</span>
+            <h3>Safe import rules</h3>
+            <p class="mini-note">Draft import is best for uncertain data. Verified active import only accepts missing records with name, future deadline date, official source URL, source name, education, categories, eligibility note, and income note.</p>
+            <div class="button-row">
+              <button id="importDraftsBtn" class="secondary-btn" type="button">Import Missing as Drafts</button>
+              <button id="importActiveBtn" type="button">Import Verified Active Only</button>
+            </div>
+            <hr />
+            <h3>Official search shortcuts</h3>
+            <p class="mini-note">Use these to find official scholarship pages manually, then paste text here for validation.</p>
+            <div class="source-link-list">
+              <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">National Scholarship Portal</a>
+              <a href="https://www.aicte-india.org/" target="_blank" rel="noopener noreferrer">AICTE Official Site</a>
+              <a href="https://jnanabhumi.ap.gov.in/" target="_blank" rel="noopener noreferrer">AP Jnanabhumi</a>
+              <a href="https://telanganaepass.cgg.gov.in/" target="_blank" rel="noopener noreferrer">Telangana ePASS</a>
+            </div>
+          </aside>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>Discovery Results</h2>
+            <p id="candidateSummary" class="mini-note">Analyze source text to see missing, duplicate, and invalid records.</p>
+          </div>
+        </div>
+        <div id="candidateList" class="candidate-list">
+          <p class="mini-note">No candidates analyzed yet.</p>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <h2>Recommended paste format</h2>
+        <pre class="notice-box discovery-template">Scholarship Name
+State Maharashtra
+Education engineering, degree
+Categories general, obc, ews
+Gender any
+Amount ₹50,000
+Income limit 250000
+Deadline date 2026-12-31
+Official link https://official-portal.example/scheme
+Source Official Portal
+Eligibility Short eligibility details from official source.
+Income note Family income rule from official source.
+---
+Second Scholarship...</pre>
+      </section>
+    </section>
+  </main>
+
+  <footer><p>ApplyMate India Discovery Assistant. Use official sources only and verify before publishing.</p></footer>
+  <script type="module" src="scholarship-discovery.js?v=1"></script>
+</body>
+</html>
