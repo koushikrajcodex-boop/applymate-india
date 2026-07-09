@@ -1,4 +1,4 @@
-const CACHE_NAME = "applymate-india-v5";
+const CACHE_NAME = "applymate-india-v8-bots";
 const OFFLINE_URL = "offline.html";
 
 const CORE_ASSETS = [
@@ -7,6 +7,7 @@ const CORE_ASSETS = [
   "offline.html",
   "style.css",
   "assistant.css",
+  "admin.css",
   "manifest.webmanifest",
   "pwa-register.js",
   "pwa-install.css",
@@ -30,6 +31,7 @@ const OFFLINE_PUBLIC_PAGES = [
 ];
 
 self.addEventListener("install", (event) => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then(async (cache) => {
       await cache.addAll(CORE_ASSETS);
@@ -78,7 +80,7 @@ self.addEventListener("fetch", (event) => {
 
 async function networkFirstPage(request) {
   try {
-    const response = await fetch(request);
+    const response = await fetch(request, { cache: "no-store" });
 
     if (response.ok) {
       const cache = await caches.open(CACHE_NAME);
