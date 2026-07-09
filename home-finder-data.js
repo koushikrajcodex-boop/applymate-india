@@ -1,3 +1,4 @@
+import "./state-dropdowns.js";
 import { db } from "./firebase-config.js";
 import { isVerifiedActiveScholarship } from "./scholarship-verification.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
