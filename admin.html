@@ -19,6 +19,7 @@
       <a href="dashboard.html">Student Dashboard</a>
       <a href="scholarship-discovery.html">Discovery Assistant</a>
       <a href="admin-health.html">Data Health</a>
+      <a href="login.html?redirect=admin.html">Admin Login</a>
       <a href="contact.html">Contact</a>
       <button id="adminLogoutBtn" class="secondary-btn" type="button">Logout</button>
     </div>
@@ -39,8 +40,11 @@
 
     <section id="adminLockedSection" class="content-card hidden">
       <h2>Access denied</h2>
-      <p class="mini-note">This account is not approved for admin access.</p>
-      <div class="button-row"><a class="text-btn" href="dashboard.html">Go to Student Dashboard</a></div>
+      <p class="mini-note">Login with the approved admin email to access this secret admin page.</p>
+      <div class="button-row">
+        <a class="text-btn" href="login.html?redirect=admin.html">Admin Login</a>
+        <a class="secondary-btn" href="dashboard.html">Go to Student Dashboard</a>
+      </div>
     </section>
 
     <section id="adminContent" class="hidden">
@@ -138,7 +142,7 @@
 
   <footer>
     <p>ApplyMate India Admin Panel. Manage scholarship data carefully and verify official sources before publishing.</p>
-    <div class="footer-links"><a href="index.html">Home</a><a href="dashboard.html">Student Dashboard</a><a href="scholarship-discovery.html">Discovery Assistant</a><a href="admin-health.html">Admin Health</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="dashboard.html">Student Dashboard</a><a href="scholarship-discovery.html">Discovery Assistant</a><a href="admin-health.html">Admin Health</a><a href="login.html?redirect=admin.html">Admin Login</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></div>
   </footer>
 
   <script type="module" src="admin.js?v=admin-email1"></script>
