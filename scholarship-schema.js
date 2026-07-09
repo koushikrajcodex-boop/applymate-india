@@ -70,6 +70,39 @@ export function createVerifiedScholarshipRecord(input = {}) {
   };
 }
 
+export function validateScholarshipRecord(record = {}) {
+  const errors = [];
+
+  SCHOLARSHIP_REQUIRED_FIELDS.forEach((field) => {
+    if (!hasMeaningfulValue(record[field])) {
+      errors.push(`Missing required field: ${field}`);
+    }
+  });
+
+  if (record.status && ![SCHOLARSHIP_STATUS.ACTIVE, SCHOLARSHIP_STATUS.DRAFT, SCHOLARSHIP_STATUS.CLOSED].includes(record.status)) {
+    errors.push("Invalid scholarship status.");
+  }
+
+  if (record.applicationWindow && !Object.values(APPLICATION_WINDOW).includes(record.applicationWindow)) {
+    errors.push("Invalid application window.");
+  }
+
+  if (record.link && !isValidUrl(record.link)) {
+    errors.push("Invalid official link.");
+  }
+
+  if (record.verifiedOn && !isValidIsoDate(record.verifiedOn)) {
+    errors.push("Invalid verifiedOn date.");
+  }
+
+  getScholarshipQualityWarnings(record).forEach((warning) => errors.push(warning));
+
+  return {
+    valid: errors.length === 0,
+    errors
+  };
+}
+
 export function isScholarshipVisibleToStudents(record = {}) {
   if (record.status !== SCHOLARSHIP_STATUS.ACTIVE) return false;
   if (record.applicationWindow === APPLICATION_WINDOW.CLOSED) return false;
@@ -144,6 +177,12 @@ function clampNumber(value, min, max, fallback) {
   const number = toNumber(value);
   if (!Number.isFinite(number)) return fallback;
   return Math.max(min, Math.min(number, max));
+}
+
+function hasMeaningfulValue(value) {
+  if (Array.isArray(value)) return value.length > 0;
+  if (typeof value === "number") return Number.isFinite(value);
+  return clean(value) !== "";
 }
 
 function isValidIsoDate(value) {
