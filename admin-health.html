@@ -29,14 +29,14 @@
     <section class="content-card">
       <span class="tagline">Admin Quality Control</span>
       <h1>Scholarship Data Health Dashboard</h1>
-      <p id="healthAdminEmail" class="last-updated">Checking admin access...</p>
+      <p id="healthAdminEmail" class="last-updated">Checking admin claim...</p>
       <div class="notice-box">Use this dashboard before publishing or importing large batches. It flags expired active records, duplicates, missing official links, weak verification, and incomplete eligibility data.</div>
       <div class="button-row"><button id="refreshHealthBtn" type="button">Run Health Check</button><button id="exportHealthBtn" class="secondary-btn" type="button">Export Report JSON</button></div>
     </section>
 
     <section id="healthLocked" class="content-card hidden">
       <h2>Access denied</h2>
-      <p class="mini-note">This page is only for ApplyMate India admin accounts.</p>
+      <p class="mini-note">This page is only for accounts with the Firebase custom claim <code>admin == true</code>.</p>
       <a class="text-btn" href="dashboard.html">Go to Student Dashboard</a>
     </section>
 
@@ -69,6 +69,7 @@
   </main>
 
   <footer><p>ApplyMate India Admin Health Dashboard. Fix data issues before students rely on records.</p></footer>
-  <script type="module" src="admin-health.js?v=1"></script>
+  <script type="module" src="admin-claims-guard.js"></script>
+  <script type="module" src="admin-health.js?v=2"></script>
 </body>
 </html>
