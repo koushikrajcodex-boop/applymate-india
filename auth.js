@@ -18,10 +18,13 @@ const registerBtn = document.getElementById("registerBtn");
 const loginBtn = document.getElementById("loginBtn");
 const forgotPasswordBtn = document.getElementById("forgotPasswordBtn");
 const authMessage = document.getElementById("authMessage");
+const redirectNotice = document.getElementById("redirectNotice");
+const redirectTarget = getSafeRedirectTarget();
 
 registerBtn?.addEventListener("click", register);
 loginBtn?.addEventListener("click", login);
 forgotPasswordBtn?.addEventListener("click", resetPassword);
+showRedirectNotice();
 
 passwordInput?.addEventListener("keydown", (event) => {
   if (event.key === "Enter") {
@@ -76,7 +79,7 @@ async function register() {
     showMessage("Account created successfully. Redirecting...");
 
     window.setTimeout(() => {
-      window.location.replace("dashboard.html");
+      redirectAfterAuth();
     }, 500);
   } catch (error) {
     console.error("Registration error:", error);
@@ -102,7 +105,7 @@ async function login() {
     showMessage("Login successful. Redirecting...");
 
     window.setTimeout(() => {
-      window.location.replace("dashboard.html");
+      redirectAfterAuth();
     }, 500);
   } catch (error) {
     console.error("Login error:", error);
@@ -173,6 +176,83 @@ function isValidEmail(email) {
 
   emailInput.value = email;
   return emailInput.checkValidity();
+}
+
+function redirectAfterAuth() {
+  window.location.replace(redirectTarget || "dashboard.html");
+}
+
+function showRedirectNotice() {
+  if (!redirectNotice || !redirectTarget) return;
+
+  if (redirectTarget.startsWith("admin")) {
+    redirectNotice.textContent = "Admin login required. Use the approved admin email to continue to the secret admin page.";
+    return;
+  }
+
+  redirectNotice.textContent = "Login required. You will be sent back after successful login.";
+}
+
+function getSafeRedirectTarget() {
+  const params = new URLSearchParams(window.location.search);
+  const requestedTarget = params.get("redirect") || params.get("next") || params.get("continue") || getReferrerRedirectTarget();
+  return sanitizeRedirectTarget(requestedTarget);
+}
+
+function getReferrerRedirectTarget() {
+  try {
+    if (!document.referrer) return "";
+
+    const referrerUrl = new URL(document.referrer);
+    if (referrerUrl.origin !== window.location.origin) return "";
+
+    const referrerFile = referrerUrl.pathname.split("/").pop() || "";
+    const adminPages = new Set([
+      "admin.html",
+      "admin-health.html",
+      "scholarship-discovery.html"
+    ]);
+
+    if (!adminPages.has(referrerFile)) return "";
+    return `${referrerFile}${referrerUrl.search}${referrerUrl.hash}`;
+  } catch (error) {
+    console.warn("Could not read redirect referrer", error);
+    return "";
+  }
+}
+
+function sanitizeRedirectTarget(target) {
+  const value = String(target || "").trim();
+  if (!value) return "";
+
+  if (
+    value.includes("://") ||
+    value.startsWith("//") ||
+    value.startsWith("/") ||
+    value.includes("..") ||
+    /[\r\n]/.test(value)
+  ) {
+    return "";
+  }
+
+  try {
+    const url = new URL(value, window.location.href);
+    if (url.origin !== window.location.origin) return "";
+
+    const page = url.pathname.split("/").pop() || "";
+    const allowedPages = new Set([
+      "dashboard.html",
+      "admin.html",
+      "admin-health.html",
+      "scholarship-discovery.html"
+    ]);
+
+    if (!allowedPages.has(page)) return "";
+    return `${page}${url.search}${url.hash}`;
+  } catch (error) {
+    console.warn("Invalid redirect target", error);
+    return "";
+  }
 }
 
 function setAuthButtonsBusy(isBusy) {
