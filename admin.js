@@ -1,8 +1,8 @@
 import "./state-dropdowns.js";
 import { auth, db } from "./firebase-config.js";
+import { checkAdminAccess } from "./admin-access.js";
 import { getStateLabel, INDIA_STATE_OPTIONS, isKnownStateSlug } from "./states.js";
 import {
-  getIdTokenResult,
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
@@ -20,7 +20,8 @@ const $ = (id) => document.getElementById(id);
 const today = () => new Date().toISOString().slice(0, 10);
 
 let currentAdminUser = null;
-let isClaimAdmin = false;
+let hasAdminAccess = false;
+let currentAdminAccess = null;
 let allScholarships = [];
 let filteredScholarships = [];
 let selectedEditId = "";
@@ -91,15 +92,15 @@ onAuthStateChanged(auth, async (user) => {
   currentAdminUser = user;
 
   try {
-    const token = await getIdTokenResult(user, true);
-    isClaimAdmin = token?.claims?.admin === true;
+    currentAdminAccess = await checkAdminAccess(user);
+    hasAdminAccess = currentAdminAccess.allowed;
   } catch (error) {
-    console.error("Admin claim check failed", error);
+    console.error("Admin access check failed", error);
     window.location.replace("dashboard.html?adminAccess=error");
     return;
   }
 
-  if (!isClaimAdmin) {
+  if (!hasAdminAccess) {
     window.location.replace("dashboard.html?adminAccess=denied");
     return;
   }
@@ -113,7 +114,8 @@ onAuthStateChanged(auth, async (user) => {
 function showAdminView(user) {
   els.adminLockedSection?.classList.add("hidden");
   els.adminContent?.classList.remove("hidden");
-  if (els.adminEmail) els.adminEmail.textContent = `Admin: ${user.email || "custom-claim user"}`;
+  const via = currentAdminAccess?.viaEmail ? "admin email" : "custom claim";
+  if (els.adminEmail) els.adminEmail.textContent = `Admin: ${user.email || "approved admin"} (${via})`;
 }
 
 function setupEvents() {
@@ -148,7 +150,7 @@ function setupEvents() {
 }
 
 async function loadScholarships() {
-  if (!isClaimAdmin) return;
+  if (!hasAdminAccess) return;
   setListMessage("Loading scholarships from Firestore...");
 
   try {
@@ -162,12 +164,12 @@ async function loadScholarships() {
     console.error("Admin load failed", error);
     allScholarships = [];
     updateStats();
-    setListMessage("Could not load Firestore scholarships. Confirm rules are deployed and your account has admin custom claim.");
+    setListMessage("Could not load Firestore scholarships. Confirm Firestore rules are deployed and this account is the approved admin email or has admin custom claim.");
   }
 }
 
 async function saveScholarship() {
-  if (!isClaimAdmin) return showFormMessage("Admin custom claim required.", true);
+  if (!hasAdminAccess) return showFormMessage("Admin access required.", true);
 
   const scholarship = collectForm();
   const validationError = validateForm(scholarship);
@@ -204,7 +206,7 @@ async function saveScholarship() {
     await loadScholarships();
   } catch (error) {
     console.error("Admin save failed", error);
-    showFormMessage("Could not save. Active scholarships require deadline date, source name, official link, and verification date.", true);
+    showFormMessage("Could not save. Confirm Firestore rules are deployed for your admin email and all verification fields are valid.", true);
   } finally {
     setBusy(els.saveScholarshipAdminBtn, false);
   }
@@ -334,7 +336,7 @@ function loadIntoForm(id, duplicate) {
 }
 
 async function deleteScholarship(id) {
-  if (!isClaimAdmin || !id) return;
+  if (!hasAdminAccess || !id) return;
   const item = allScholarships.find((record) => record.id === id);
   if (!confirm(`Delete ${item?.name || "this scholarship"}?`)) return;
   await deleteDoc(doc(db, "scholarships", id));
@@ -483,6 +485,7 @@ function previewBulk() {
 }
 
 async function importBulk() {
+  if (!hasAdminAccess) return showBulkMessage("Admin access required.", true);
   const records = parseBulk();
   if (!records.length) return showBulkMessage("Nothing to import.", true);
   let imported = 0;
