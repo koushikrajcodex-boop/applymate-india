@@ -10,13 +10,14 @@ ApplyMate India helps students discover verified scholarships, check possible el
 | --- | --- |
 | Public scholarship finder | Firestore-backed |
 | Scholarship verification | Active records require verification data |
-| Student dashboard | Firebase Auth + Firestore |
-| Admin data health | Custom-claim protected |
+| Student dashboard | Firestore-only scholarship data |
+| Main admin panel | Firebase custom-claim protected |
+| Admin data health | Firebase custom-claim protected |
 | Data quality tests | Enabled in CI |
-| Static legacy dataset | Retired as a compatibility shim |
+| Static legacy dataset | Deleted |
 | Canonical directory | `scholarships.html` |
 
-See [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the full cleanup status and remaining tracked blockers.
+See [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the full cleanup status.
 
 ## Live demo
 
@@ -36,6 +37,7 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - Private student profile dashboard
 - Saved scholarships
 - Application tracker
+- Custom-claim protected admin panel
 - Admin data health dashboard
 - Data quality tests through GitHub Actions
 - Responsive interface
@@ -43,13 +45,15 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 ## Reliability upgrades completed
 
 - Removed the homepage static scholarship array.
-- Retired the old static scholarship dataset path.
+- Deleted the old static scholarship dataset shim.
+- Removed final `scholarships-data.js` imports from dashboard/admin code.
+- Rebuilt the main admin panel around Firebase custom claims.
+- Removed personal admin email allow-lists from code and Firestore rules.
 - Added hard validation for active scholarship verification.
 - Added Firestore rules for verified active scholarship writes.
 - Added unit tests for validator, schema, and live count logic.
 - Consolidated `scholarships-live.html` into the canonical directory.
 - Merged the homepage polish patch into `live-count.js` and deleted the patch file.
-- Removed personal admin email allow-list from `firestore.rules`.
 
 ## Technology
 
@@ -68,10 +72,10 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - `scholarships.html`: canonical verified scholarship directory
 - `scholarship-hub.html`, `scholarship-hub.js`: discovery and comparison hub
 - `login.html`, `auth.js`: account registration and login
-- `dashboard.html`, `dashboard.js`: private student dashboard
-- `dashboard-insights.js`: dashboard intelligence and verified insight cards
-- `admin.html`, `admin.js`: admin scholarship management
-- `admin-health.html`, `admin-health.js`: admin data health dashboard
+- `dashboard.html`, `dashboard.js`: private student dashboard and Firestore-only recommendations
+- `dashboard-insights.js`: optional dashboard intelligence and verified insight cards
+- `admin.html`, `admin.js`: custom-claim protected admin scholarship management
+- `admin-health.html`, `admin-health.js`: custom-claim protected admin data health dashboard
 - `scholarship-validator.js`, `scholarship-schema.js`, `scholarship-verification.js`: data quality and verification logic
 - `live-count.js`, `live-count-utils.js`: homepage live stats and testable count helpers
 - `firebase-config.js`: Firebase web client configuration
