@@ -1,0 +1,31 @@
+name: Scholarship Radar
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "30 3 * * *"
+
+permissions:
+  contents: write
+
+jobs:
+  radar:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: Run scholarship radar auto checker
+        run: node tools/scholarship-radar.mjs
+
+      - name: Commit generated candidates
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: "Update scholarship radar candidates"
+          file_pattern: data/discovery-candidates.json
