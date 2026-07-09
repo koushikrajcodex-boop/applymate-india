@@ -6,7 +6,6 @@ import { validateScholarships } from "../scholarship-validator.js";
 const candidates = [
   "data/scholarships.json",
   "data/scholarships.js",
-  "scholarships-data.js",
   "scholarship-data.js"
 ];
 
