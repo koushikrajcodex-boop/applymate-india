@@ -5,11 +5,29 @@ const ROOT = process.cwd();
 const SEEDS_PATH = path.join(ROOT, "data", "scholarship-discovery-seeds.json");
 const OUT_JSON = path.join(ROOT, "data", "auto-discovered-scholarships.json");
 const OUT_LEGACY = path.join(ROOT, "data", "auto-discovered-scholarships.legacy.txt");
-const MAX_RESULTS_PER_SEED = Number(process.env.MAX_RESULTS_PER_SEED || 10);
-const OFFICIAL_FILTER = "site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in";
+const MAX_RESULTS_PER_SEED = Number(process.env.MAX_RESULTS_PER_SEED || 8);
+const OFFICIAL_FILTER = "site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org";
+
+const TRUSTED_PORTALS = [
+  { title: "National Scholarship Portal", url: "https://scholarships.gov.in/", snippet: "Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scholarship scheme listings, OTR, applications, and status checks.", state: "National", category: "any", course: "any", sourceName: "National Scholarship Portal", official: true },
+  { title: "AICTE Pragati, Saksham and Swanath Scholarships", url: "https://www.aicte-india.org/schemes/students-development-schemes", snippet: "AICTE student development schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.", state: "National", category: "any", course: "engineering technical", sourceName: "AICTE", official: true },
+  { title: "UGC Scholarships and Fellowships", url: "https://www.ugc.gov.in/", snippet: "UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.", state: "National", category: "any", course: "degree pg", sourceName: "UGC", official: true },
+  { title: "AP Jnanabhumi Scholarships", url: "https://jnanabhumi.ap.gov.in/", snippet: "Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.", state: "Andhra Pradesh", category: "SC ST BC minority EBC", course: "post matric degree engineering", sourceName: "AP Jnanabhumi", official: true },
+  { title: "Telangana ePASS Scholarships", url: "https://telanganaepass.cgg.gov.in/", snippet: "Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify current application windows and eligibility on the portal.", state: "Telangana", category: "SC ST BC EBC minority", course: "post matric degree engineering", sourceName: "Telangana ePASS", official: true },
+  { title: "MahaDBT Scholarship Portal", url: "https://mahadbt.maharashtra.gov.in/", snippet: "Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.", state: "Maharashtra", category: "any", course: "post matric degree", sourceName: "MahaDBT", official: true },
+  { title: "Karnataka State Scholarship Portal", url: "https://ssp.postmatric.karnataka.gov.in/", snippet: "Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.", state: "Karnataka", category: "SC ST OBC minority", course: "post matric degree", sourceName: "Karnataka SSP", official: true },
+  { title: "Rajasthan SJE Scholarship Portal", url: "https://sjmsnew.rajasthan.gov.in/", snippet: "Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.", state: "Rajasthan", category: "SC ST OBC EWS", course: "post matric degree", sourceName: "Rajasthan SJE", official: true },
+  { title: "Buddy4Study Scholarship Listings", url: "https://www.buddy4study.com/scholarships", snippet: "Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.", state: "National", category: "any", course: "school degree engineering medical pg", sourceName: "Buddy4Study", official: false },
+  { title: "Vidyasaarathi Scholarship Portal", url: "https://www.vidyasaarathi.co.in/Vidyasaarathi/", snippet: "NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.", state: "National", category: "any", course: "degree diploma engineering", sourceName: "Vidyasaarathi", official: false },
+  { title: "Foundation For Excellence Scholarship", url: "https://ffe.org/scholarships/", snippet: "Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.", state: "National", category: "any", course: "engineering medical professional", sourceName: "Foundation For Excellence", official: false },
+  { title: "HDFC Bank Parivartan ECSS Scholarship", url: "https://www.hdfcbank.com/personal/resources/learning-centre/pay/hdfc-bank-parivartans-educational-crisis-scholarship-support-ecss", snippet: "HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.", state: "National", category: "any", course: "school degree pg", sourceName: "HDFC Bank", official: false },
+  { title: "Reliance Foundation Scholarships", url: "https://scholarships.reliancefoundation.org/", snippet: "Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.", state: "National", category: "any", course: "degree pg", sourceName: "Reliance Foundation", official: false },
+  { title: "Tata Trusts Education Grants", url: "https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants", snippet: "Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.", state: "National", category: "any", course: "degree pg", sourceName: "Tata Trusts", official: false },
+  { title: "Aditya Birla Scholarship Programme", url: "https://www.adityabirlascholars.net/", snippet: "Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.", state: "National", category: "any", course: "engineering management law", sourceName: "Aditya Birla Scholars", official: false }
+];
 
 const seeds = JSON.parse(await fs.readFile(SEEDS_PATH, "utf8"));
-const discovered = [];
+const discovered = TRUSTED_PORTALS.map((portal) => portalRecord(portal, "curated_trusted_portal"));
 const errors = [];
 
 for (const seed of seeds) {
@@ -24,14 +42,16 @@ for (const seed of seeds) {
   }
 }
 
-const unique = dedupe(discovered).sort((a, b) => b.score - a.score).slice(0, 120);
+const unique = dedupe(discovered).sort((a, b) => b.score - a.score).slice(0, 160);
 const generatedAt = new Date().toISOString();
 
 const payload = {
   generatedAt,
   generatedBy: "ApplyMate GitHub Actions auto-discovery",
-  note: "Review before publishing. Search snippets can be incomplete or stale.",
+  note: "Review before publishing. Curated portal entries are discovery drafts; search snippets can be incomplete or stale.",
   total: unique.length,
+  curatedPortalCount: TRUSTED_PORTALS.length,
+  searchErrorCount: errors.length,
   errors,
   records: unique
 };
@@ -41,10 +61,37 @@ await fs.writeFile(OUT_JSON, `${JSON.stringify(payload, null, 2)}\n`, "utf8");
 await fs.writeFile(OUT_LEGACY, unique.map(toLegacyBlock).join("\n---\n"), "utf8");
 
 console.log(`Wrote ${unique.length} records to ${OUT_JSON}`);
-if (errors.length) console.log(`Completed with ${errors.length} search error(s).`);
+console.log(`Curated trusted portal records: ${TRUSTED_PORTALS.length}`);
+if (errors.length) console.log(`Completed with ${errors.length} search error(s), but curated fallback records were still written.`);
+
+function portalRecord(portal, source) {
+  const url = portal.url;
+  const title = portal.title;
+  const snippet = portal.snippet;
+  return {
+    id: hash(`${url}|${title}`),
+    title,
+    url,
+    snippet,
+    score: portal.official ? 92 : 76,
+    official: Boolean(portal.official),
+    pdf: isPdfUrl(url),
+    scholarshipy: true,
+    seedName: portal.sourceName || title,
+    seedState: portal.state || "National",
+    seedCategory: portal.category || "any",
+    seedCourse: portal.course || "any",
+    searchQuery: "curated trusted scholarship portal",
+    searchSource: source,
+    discoveredAt: new Date().toISOString(),
+    status: "review",
+    suggestedAction: "verify_official_source_then_import_draft"
+  };
+}
 
 function buildQuery(seed) {
-  return [seed.query, seed.state, seed.category, seed.course, "scholarship", "guidelines notification scheme", OFFICIAL_FILTER]
+  const filter = seed.trustedOnly ? "site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org OR site:scholarships.reliancefoundation.org" : OFFICIAL_FILTER;
+  return [seed.query, seed.state, seed.category, seed.course, "scholarship", "guidelines notification scheme", filter]
     .filter(Boolean)
     .join(" ")
     .replace(/\s+/g, " ")
@@ -80,7 +127,7 @@ async function fetchText(url) {
       method: "GET",
       signal: controller.signal,
       headers: {
-        "User-Agent": "ApplyMateIndiaScholarshipDiscovery/1.0",
+        "User-Agent": "ApplyMateIndiaScholarshipDiscovery/2.0",
         Accept: "text/plain,text/markdown,text/html,*/*"
       }
     });
@@ -124,17 +171,20 @@ function addResult(output, seen, rawUrl, rawTitle, rawSnippet, query, seed, sour
   const url = cleanUrl(rawUrl);
   if (!url || seen.has(url) || isSearchUtilityUrl(url)) return;
   const text = `${rawTitle} ${rawSnippet} ${url}`;
-  const scholarshipy = /(scholarship|scheme|fellowship|stipend|grant|guideline|notification|post matric|pre matric|merit|tuition|financial assistance)/i.test(text);
+  const scholarshipy = /(scholarship|scheme|fellowship|stipend|grant|guideline|notification|post matric|pre matric|merit|tuition|financial assistance|education support|student support)/i.test(text);
   const official = isOfficialUrl(url);
+  const trusted = isTrustedPortalUrl(url);
   const pdf = isPdfUrl(url);
-  if (!scholarshipy && !official && !pdf) return;
+  if (!scholarshipy && !official && !trusted && !pdf) return;
   seen.add(url);
 
   let score = 20;
   if (official) score += 35;
+  if (trusted) score += 22;
   if (pdf) score += 15;
   if (scholarshipy) score += 25;
   if (/gov\.in|nic\.in|scholarships\.gov\.in|aicte|ugc/i.test(url)) score += 10;
+  if (/buddy4study|vidyasaarathi|ffe\.org|reliancefoundation|tatatrusts|hdfcbank|adityabirlascholars/i.test(url)) score += 8;
   if (/login|signin|captcha|javascript|accounts\.google|webcache|translate\.google/i.test(url)) score -= 30;
 
   const title = clean(rawTitle || titleFromUrl(url)).slice(0, 180);
@@ -147,6 +197,7 @@ function addResult(output, seen, rawUrl, rawTitle, rawSnippet, query, seed, sour
     snippet,
     score: clamp(score, 0, 100),
     official,
+    trustedPortal: trusted,
     pdf,
     scholarshipy,
     seedName: seed.name,
@@ -174,16 +225,16 @@ function dedupe(records) {
 function toLegacyBlock(item) {
   return [
     `Scholarship Name ${cleanTitle(item.title)}`,
-    `State ${guessState(`${item.title} ${item.snippet} ${item.url}`)}`,
-    `Education ${guessEducation(`${item.title} ${item.snippet}`).join(", ")}`,
-    `Categories ${guessCategories(`${item.title} ${item.snippet}`).join(", ")}`,
+    `State ${guessState(`${item.title} ${item.snippet} ${item.url} ${item.seedState || ""}`)}`,
+    `Education ${guessEducation(`${item.title} ${item.snippet} ${item.seedCourse || ""}`).join(", ")}`,
+    `Categories ${guessCategories(`${item.title} ${item.snippet} ${item.seedCategory || ""}`).join(", ")}`,
     "Gender any",
     `Amount ${extractAmount(item.snippet)}`,
     `Income limit ${extractIncome(item.snippet)}`,
     `Deadline date ${extractDate(item.snippet)}`,
     `Official link ${item.url}`,
     `Source ${sourceNameFromUrl(item.url)}`,
-    `Eligibility Auto-discovered from official-looking web result. Verify official page/PDF before publishing. Seed: ${item.seedName}. Snippet: ${item.snippet}`,
+    `Eligibility Auto-discovered from ${item.searchSource}. Verify provider page/PDF before publishing. Seed: ${item.seedName}. Snippet: ${item.snippet}`,
     `Income note ${extractIncomeNote(item.snippet)}`
   ].join("\n");
 }
@@ -196,17 +247,18 @@ function hash(value) {
 function normalizeUrl(v) { try { const url = new URL(String(v || "").trim()); return ["http:", "https:"].includes(url.protocol) ? url.href : ""; } catch { return ""; } }
 function cleanUrl(url) { return normalizeUrl(String(url || "").replace(/[).,;]+$/, "").trim()); }
 function isOfficialUrl(url) { try { const host = new URL(url).hostname.toLowerCase().replace(/^www\./, ""); return /(^|\.)(gov\.in|nic\.in|ac\.in)$/.test(host) || /scholarships\.gov\.in|aicte-india\.org|ugc\.gov\.in|education\.gov\.in|tribal\.nic\.in|minorityaffairs\.gov\.in/.test(host); } catch { return false; } }
+function isTrustedPortalUrl(url) { try { const host = new URL(url).hostname.toLowerCase().replace(/^www\./, ""); return /buddy4study\.com|vidyasaarathi\.co\.in|ffe\.org|scholarships\.reliancefoundation\.org|tatatrusts\.org|hdfcbank\.com|adityabirlascholars\.net/.test(host); } catch { return false; } }
 function isPdfUrl(url) { try { return new URL(url).pathname.toLowerCase().endsWith(".pdf"); } catch { return /\.pdf(?:$|[?#])/i.test(String(url || "")); } }
 function isSearchUtilityUrl(url) { return /google\.com\/search|bing\.com\/search|duckduckgo\.com|s\.jina\.ai|r\.jina\.ai|webcache|translate\.google/.test(url); }
-function cleanTitle(title) { return clean(title).replace(/\s*-\s*(PDF|Official|Notification).*$/i, "").slice(0, 160) || "Scholarship details needed"; }
+function cleanTitle(title) { return clean(title).replace(/\s*[-|]\s*(PDF|Official|Notification).*$/i, "").slice(0, 160) || "Scholarship details needed"; }
 function titleFromUrl(url, fallback = "") { try { const u = new URL(url); const last = decodeURIComponent(u.pathname.split("/").filter(Boolean).pop() || u.hostname); return clean(fallback).slice(0, 140) || clean(last.replace(/[-_]/g, " ").replace(/\.pdf$/i, "")); } catch { return clean(fallback) || "Scholarship result"; } }
-function sourceNameFromUrl(url) { try { const host = new URL(url).hostname.replace(/^www\./, ""); if (host.includes("scholarships.gov.in")) return "National Scholarship Portal"; if (host.includes("aicte")) return "AICTE"; if (host.includes("jnanabhumi")) return "AP Jnanabhumi"; if (host.includes("telanganaepass")) return "Telangana ePASS"; if (host.includes("ugc")) return "UGC"; if (host.includes("andaman") || host.includes("and.nic")) return "Andaman and Nicobar Administration"; return host.split(".").slice(0, 2).join("."); } catch { return "Official Portal"; } }
-function guessState(text) { const t = String(text || "").toLowerCase(); if (/andhra pradesh|jnanabhumi|\bap\b/.test(t)) return "Andhra Pradesh"; if (/telangana|epass/.test(t)) return "Telangana"; if (/andaman|nicobar|port blair/.test(t)) return "Andaman and Nicobar Islands"; if (/karnataka/.test(t)) return "Karnataka"; if (/tamil nadu/.test(t)) return "Tamil Nadu"; if (/kerala/.test(t)) return "Kerala"; if (/maharashtra/.test(t)) return "Maharashtra"; if (/odisha|orissa/.test(t)) return "Odisha"; if (/west bengal/.test(t)) return "West Bengal"; return "National"; }
-function guessEducation(text) { const t = norm(text); const out = []; if (/school|class|pre matric/.test(t)) out.push("school"); if (/intermediate|senior secondary|10 2|class xii/.test(t)) out.push("intermediate"); if (/degree|graduation|graduate|undergraduate|ug/.test(t)) out.push("degree"); if (/engineering|btech|technology|polytechnic|diploma|iti/.test(t)) out.push("engineering"); if (/medicine|medical|nursing|pharmacy/.test(t)) out.push("medical"); if (/post graduate|pg|masters|m tech|m phil|phd|post doctoral/.test(t)) out.push("pg"); return out.length ? [...new Set(out)] : ["any"]; }
-function guessCategories(text) { const t = norm(text); const out = []; if (/general|open category/.test(t)) out.push("general"); if (/\bsc\b|scheduled caste/.test(t)) out.push("sc"); if (/\bst\b|scheduled tribe/.test(t)) out.push("st"); if (/\bobc\b|other backward class|backward class/.test(t)) out.push("obc"); if (/ews|economically weaker/.test(t)) out.push("ews"); if (/minority|muslim|christian|sikh|buddhist|jain|parsi/.test(t)) out.push("minority"); return out.length ? [...new Set(out)] : ["general", "sc", "st", "obc", "ews", "minority"]; }
+function sourceNameFromUrl(url) { try { const host = new URL(url).hostname.replace(/^www\./, ""); if (host.includes("scholarships.gov.in")) return "National Scholarship Portal"; if (host.includes("aicte")) return "AICTE"; if (host.includes("jnanabhumi")) return "AP Jnanabhumi"; if (host.includes("telanganaepass")) return "Telangana ePASS"; if (host.includes("ugc")) return "UGC"; if (host.includes("buddy4study")) return "Buddy4Study"; if (host.includes("vidyasaarathi")) return "Vidyasaarathi"; if (host.includes("ffe.org")) return "Foundation For Excellence"; if (host.includes("reliancefoundation")) return "Reliance Foundation"; if (host.includes("tatatrusts")) return "Tata Trusts"; if (host.includes("hdfcbank")) return "HDFC Bank"; if (host.includes("adityabirlascholars")) return "Aditya Birla Scholars"; if (host.includes("andaman") || host.includes("and.nic")) return "Andaman and Nicobar Administration"; return host.split(".").slice(0, 2).join("."); } catch { return "Official Portal"; } }
+function guessState(text) { const t = String(text || "").toLowerCase(); if (/andhra pradesh|jnanabhumi|\bap\b/.test(t)) return "Andhra Pradesh"; if (/telangana|epass/.test(t)) return "Telangana"; if (/andaman|nicobar|port blair/.test(t)) return "Andaman and Nicobar Islands"; if (/karnataka|ssp/.test(t)) return "Karnataka"; if (/tamil nadu/.test(t)) return "Tamil Nadu"; if (/kerala/.test(t)) return "Kerala"; if (/maharashtra|mahadbt/.test(t)) return "Maharashtra"; if (/odisha|orissa/.test(t)) return "Odisha"; if (/west bengal/.test(t)) return "West Bengal"; if (/rajasthan|sje/.test(t)) return "Rajasthan"; if (/delhi/.test(t)) return "Delhi"; return "National"; }
+function guessEducation(text) { const t = norm(text); const out = []; if (/school|class|pre matric/.test(t)) out.push("school"); if (/intermediate|senior secondary|10 2|class xii/.test(t)) out.push("intermediate"); if (/degree|graduation|graduate|undergraduate|ug/.test(t)) out.push("degree"); if (/engineering|btech|technology|technical|polytechnic|diploma|iti/.test(t)) out.push("engineering"); if (/medicine|medical|nursing|pharmacy/.test(t)) out.push("medical"); if (/post graduate|pg|masters|m tech|m phil|phd|post doctoral/.test(t)) out.push("pg"); return out.length ? [...new Set(out)] : ["any"]; }
+function guessCategories(text) { const t = norm(text); const out = []; if (/general|open category/.test(t)) out.push("general"); if (/\bsc\b|scheduled caste/.test(t)) out.push("sc"); if (/\bst\b|scheduled tribe/.test(t)) out.push("st"); if (/\bobc\b|other backward class|backward class|\bbc\b/.test(t)) out.push("obc"); if (/ews|economically weaker|ebc/.test(t)) out.push("ews"); if (/minority|muslim|christian|sikh|buddhist|jain|parsi/.test(t)) out.push("minority"); return out.length ? [...new Set(out)] : ["general", "sc", "st", "obc", "ews", "minority"]; }
 function extractAmount(text) { const amount = String(text || "").match(/(?:₹|rs\.?)\s*([0-9][0-9,]*(?:\.\d+)?)/i)?.[1]?.replace(/,/g, "") || ""; const freq = /per\s+month|monthly|p\.m\./i.test(text) ? " per month" : /per\s+annum|per\s+year|annually|yearly|p\.a\./i.test(text) ? " per year" : ""; return amount ? `Rs.${amount}${freq}` : "Varies as per official rules"; }
 function extractIncome(text) { return String(text || "").match(/(?:income\s+limit|annual\s+income|family\s+income|max(?:imum)?\s+income|not\s+exceed)[^₹\d]{0,100}(?:₹|rs\.?\s?)?([0-9][0-9,]{3,})/i)?.[1]?.replace(/,/g, "") || "0"; }
-function extractIncomeNote(text) { const hit = around(text, /(income\s+limit|annual income|family income|max(?:imum)? income|not exceed)/i, 350); if (hit) return hit; if (/non[-\s]?creamy layer/i.test(text)) return "OBC non-creamy layer rule found. Verify exact income rule from official notification."; return "Verify income rules on official portal."; }
+function extractIncomeNote(text) { const hit = around(text, /(income\s+limit|annual income|family income|max(?:imum)? income|not exceed|financial need|economically needy)/i, 350); if (hit) return hit; if (/non[-\s]?creamy layer/i.test(text)) return "OBC non-creamy layer rule found. Verify exact income rule from official notification."; return "Verify income rules on provider/official portal."; }
 function extractDate(text) { return date(findDate(text)); }
 function findDate(text) { return String(text || "").match(/20\d{2}-[01]\d-[0-3]\d/)?.[0] || String(text || "").match(/[0-3]?\d[/-][01]?\d[/-]20\d{2}/)?.[0] || String(text || "").match(/[0-3]?\d\s+(?:Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+20\d{2}/i)?.[0] || ""; }
 function date(v) { const s = String(v || "").trim(); if (!s) return ""; const iso = s.match(/20\d{2}-[01]\d-[0-3]\d/)?.[0]; if (iso) return iso; const n = s.match(/([0-3]?\d)[/-]([01]?\d)[/-](20\d{2})/); if (n) return `${n[3]}-${n[2].padStart(2, "0")}-${n[1].padStart(2, "0")}`; const m = s.match(/([0-3]?\d)\s+(Jan|Feb|Mar|Apr|May|Jun|Jul|Aug|Sep|Sept|Oct|Nov|Dec)[a-z]*\s+(20\d{2})/i); if (!m) return ""; const mm = { jan: "01", feb: "02", mar: "03", apr: "04", may: "05", jun: "06", jul: "07", aug: "08", sep: "09", sept: "09", oct: "10", nov: "11", dec: "12" }; return `${m[3]}-${mm[m[2].toLowerCase().slice(0, 4)] || mm[m[2].toLowerCase().slice(0, 3)]}-${m[1].padStart(2, "0")}`; }
