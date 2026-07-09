@@ -17,7 +17,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="dashboard.html">Student Dashboard</a>
-      <a href="#adminBotsSection">Bots</a>
+      <a href="scholarship-bots-panel.html">Bots Panel</a>
       <a href="admin-health.html">Data Health</a>
       <a href="login.html?redirect=admin.html">Admin Login</a>
       <a href="contact.html">Contact</a>
@@ -37,7 +37,7 @@
         Active scholarships require deadline date, official link, source name, and verification metadata before Firestore accepts them.
       </div>
       <div class="button-row">
-        <a class="text-btn" href="#adminBotsSection">🚀 Open Scholarship Bots</a>
+        <a class="text-btn" href="scholarship-bots-panel.html?v=panel1">🤖 Open Separate Bots Panel</a>
         <a class="secondary-btn" href="#adminContent">Admin Tools</a>
       </div>
     </section>
@@ -70,62 +70,14 @@
       </section>
 
       <section class="content-card">
-        <div class="card-heading"><div><h2>Admin Tools</h2><p class="mini-note">Run source bots, export backups, refresh data, and clear filters.</p></div></div>
+        <div class="card-heading"><div><h2>Admin Tools</h2><p class="mini-note">Open the dedicated bots panel, export backups, refresh data, and clear filters.</p></div></div>
         <div class="admin-tool-grid">
-          <div class="admin-tool-card"><h3>Scholarship Bots</h3><p class="mini-note">Use NSP, AICTE, Jnanabhumi, ePASS, and UGC bots directly inside this admin panel.</p><a class="text-btn" href="#adminBotsSection">Open Bots Section</a></div>
+          <div class="admin-tool-card"><h3>Separate Bots Panel</h3><p class="mini-note">A dedicated page for NSP, AICTE, Jnanabhumi, ePASS, and UGC bots. Use this instead of the embedded admin section.</p><a class="text-btn" href="scholarship-bots-panel.html?v=panel1">Open Separate Bots Panel</a></div>
           <div class="admin-tool-card"><h3>Export Backup</h3><p class="mini-note">Downloads current Firestore scholarships as JSON.</p><button id="exportScholarshipsBtn" class="secondary-btn" type="button">Export JSON</button></div>
           <div class="admin-tool-card"><h3>Clear Filters</h3><p class="mini-note">Reset search and status filters.</p><button id="clearAdminFiltersBtn" class="secondary-btn" type="button">Clear Filters</button></div>
           <div class="admin-tool-card"><h3>Data Health</h3><p class="mini-note">Review duplicates, expired active records, missing links, and verification issues.</p><a class="text-btn" href="admin-health.html">Open Health Dashboard</a></div>
         </div>
         <p id="adminToolMessage" class="mini-note"></p>
-      </section>
-
-      <section id="adminBotsSection" class="content-card">
-        <div class="card-heading">
-          <div>
-            <span class="tagline">Manual Bots</span>
-            <h2>Scholarship Source Bots</h2>
-            <p class="mini-note">Pick a bot, paste official portal/PDF text, auto-check it, then import safe records into Firestore. Use official sources only.</p>
-            <p id="adminBotCoverage" class="mini-note">Bot coverage loading...</p>
-          </div>
-          <button id="adminBotRefreshBtn" class="secondary-btn" type="button">Refresh Bot Coverage</button>
-        </div>
-
-        <div class="admin-tool-grid">
-          <div class="admin-tool-card"><h3>NSP Bot</h3><p class="mini-note">National Scholarship Portal, central schemes, minority/social category schemes.</p><button type="button" data-admin-bot="nsp">Start NSP Bot</button></div>
-          <div class="admin-tool-card"><h3>AICTE Bot</h3><p class="mini-note">Pragati, Saksham, technical education scholarships and AICTE updates.</p><button type="button" data-admin-bot="aicte">Start AICTE Bot</button></div>
-          <div class="admin-tool-card"><h3>AP Jnanabhumi Bot</h3><p class="mini-note">Andhra Pradesh fee reimbursement and state scholarship updates.</p><button type="button" data-admin-bot="ap">Start AP Bot</button></div>
-          <div class="admin-tool-card"><h3>Telangana ePASS Bot</h3><p class="mini-note">Telangana pre/post matric and reimbursement scholarship updates.</p><button type="button" data-admin-bot="tg">Start TG Bot</button></div>
-          <div class="admin-tool-card"><h3>UGC Bot</h3><p class="mini-note">UG/PG scholarships, fellowships, and higher education support notices.</p><button type="button" data-admin-bot="ugc">Start UGC Bot</button></div>
-        </div>
-
-        <div class="admin-assistant-layout">
-          <div>
-            <div class="form-grid">
-              <div class="field"><label for="adminBotSource">Default source name</label><input id="adminBotSource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" /></div>
-              <div class="field"><label for="adminBotUrl">Default official URL</label><input id="adminBotUrl" type="url" placeholder="https://official-portal.example" /></div>
-              <div class="field full"><label for="adminBotInput">Official scholarship text / table / JSON</label><textarea id="adminBotInput" rows="13" placeholder="Click a bot above. Paste official scholarship text here. Separate multiple scholarships using a line with ---"></textarea></div>
-            </div>
-            <div class="button-row">
-              <button id="adminBotAnalyzeBtn" type="button">Analyze + Auto Check</button>
-              <button id="adminBotClearBtn" class="secondary-btn" type="button">Clear Bot Workspace</button>
-            </div>
-            <p id="adminBotMessage" class="mini-note"></p>
-          </div>
-
-          <aside class="admin-assistant-actions">
-            <h3>Bot Import Actions</h3>
-            <p class="mini-note">Auto Active imports only complete high-confidence official records. Auto Draft imports usable official records needing review.</p>
-            <div class="button-row assistant-button-row">
-              <button id="adminBotImportAutoActiveBtn" type="button">Import Auto Active</button>
-              <button id="adminBotImportAutoDraftBtn" class="secondary-btn" type="button">Import Auto Drafts</button>
-              <button id="adminBotImportAllDraftsBtn" class="secondary-btn" type="button">Import All Safe as Drafts</button>
-              <button id="adminBotImportVerifiedActiveBtn" type="button">Import Verified Active Only</button>
-            </div>
-          </aside>
-        </div>
-
-        <div id="adminBotResults" class="admin-tool-grid"><p class="mini-note">No bot results yet.</p></div>
       </section>
 
       <section class="content-card admin-assistant-card">
@@ -194,10 +146,9 @@
 
   <footer>
     <p>ApplyMate India Admin Panel. Manage scholarship data carefully and verify official sources before publishing.</p>
-    <div class="footer-links"><a href="index.html">Home</a><a href="dashboard.html">Student Dashboard</a><a href="#adminBotsSection">Bots</a><a href="admin-health.html">Admin Health</a><a href="login.html?redirect=admin.html">Admin Login</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="dashboard.html">Student Dashboard</a><a href="scholarship-bots-panel.html?v=panel1">Bots Panel</a><a href="admin-health.html">Admin Health</a><a href="login.html?redirect=admin.html">Admin Login</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></div>
   </footer>
 
   <script type="module" src="admin.js?v=admin-email1"></script>
-  <script type="module" src="admin-bots.js?v=embedded-bots1"></script>
 </body>
 </html>
