@@ -1,29 +1,68 @@
 {
+  "version": 1,
   "updatedAt": "2026-07-09",
+  "publishConfidence": 90,
+  "draftConfidence": 70,
   "sources": [
     {
       "name": "National Scholarship Portal",
+      "enabled": true,
+      "state": "national",
+      "defaultState": "national",
       "url": "https://scholarships.gov.in/",
       "trust": "official",
-      "defaultState": "national"
+      "trustedDomains": ["scholarships.gov.in"],
+      "defaultEducation": ["school", "intermediate", "degree", "engineering", "pg"],
+      "defaultCategories": ["general", "sc", "st", "obc", "ews", "minority"],
+      "defaultGenders": ["any"]
     },
     {
       "name": "AICTE Official Site",
+      "enabled": true,
+      "state": "national",
+      "defaultState": "national",
       "url": "https://www.aicte-india.org/",
       "trust": "official",
-      "defaultState": "national"
+      "trustedDomains": ["aicte-india.org", "www.aicte-india.org"],
+      "defaultEducation": ["engineering", "degree", "pg"],
+      "defaultCategories": ["general", "sc", "st", "obc", "ews", "minority"],
+      "defaultGenders": ["any"]
     },
     {
       "name": "AP Jnanabhumi",
+      "enabled": true,
+      "state": "andhra-pradesh",
+      "defaultState": "andhra-pradesh",
       "url": "https://jnanabhumi.ap.gov.in/",
       "trust": "official",
-      "defaultState": "andhra-pradesh"
+      "trustedDomains": ["jnanabhumi.ap.gov.in"],
+      "defaultEducation": ["school", "intermediate", "degree", "engineering", "pg"],
+      "defaultCategories": ["sc", "st", "obc", "ews", "minority", "kapu"],
+      "defaultGenders": ["any"]
     },
     {
       "name": "Telangana ePASS",
+      "enabled": true,
+      "state": "telangana",
+      "defaultState": "telangana",
       "url": "https://telanganaepass.cgg.gov.in/",
       "trust": "official",
-      "defaultState": "telangana"
+      "trustedDomains": ["telanganaepass.cgg.gov.in"],
+      "defaultEducation": ["school", "intermediate", "degree", "engineering", "pg"],
+      "defaultCategories": ["sc", "st", "obc", "ews", "minority"],
+      "defaultGenders": ["any"]
+    },
+    {
+      "name": "UGC Official Site",
+      "enabled": true,
+      "state": "national",
+      "defaultState": "national",
+      "url": "https://www.ugc.gov.in/",
+      "trust": "official",
+      "trustedDomains": ["ugc.gov.in", "www.ugc.gov.in"],
+      "defaultEducation": ["degree", "pg"],
+      "defaultCategories": ["general", "sc", "st", "obc", "ews", "minority"],
+      "defaultGenders": ["any"]
     }
   ]
 }
