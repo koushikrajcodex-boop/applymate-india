@@ -1,7 +1,16 @@
-name: Scholarship Radar
+name: Scholarship Radar Pro
 
 on:
   workflow_dispatch:
+    inputs:
+      write_firestore:
+        description: "Write safe auto-checked records to Firestore"
+        required: true
+        default: "true"
+        type: choice
+        options:
+          - "true"
+          - "false"
   schedule:
     - cron: "30 3 * * *"
 
@@ -21,11 +30,19 @@ jobs:
         with:
           node-version: "20"
 
-      - name: Run scholarship radar auto checker
-        run: node tools/scholarship-radar.mjs
+      - name: Install radar dependencies
+        run: npm install --no-audit --no-fund
 
-      - name: Commit generated candidates
+      - name: Run auto checker and automatic Firestore adder
+        run: node tools/scholarship-radar.mjs --write-firestore
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          RADAR_WRITE_FIRESTORE: ${{ github.event.inputs.write_firestore || 'true' }}
+          RADAR_MAX_LINKS_PER_SOURCE: "18"
+          RADAR_MAX_DETAIL_PAGES_PER_SOURCE: "8"
+
+      - name: Commit radar reports
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: "Update scholarship radar candidates"
-          file_pattern: data/discovery-candidates.json
+          commit_message: "Update scholarship radar reports"
+          file_pattern: data/discovery-candidates.json data/radar-report.json package-lock.json
