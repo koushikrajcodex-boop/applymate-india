@@ -8,6 +8,9 @@
   <meta name="description" content="Private admin entry page for ApplyMate India." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="admin.css?v=admin5" />
+  <style>
+    .private-login-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(280px,.75fr);gap:20px;align-items:start}.private-login-card{padding:20px;border:1px solid var(--border);border-radius:20px;background:#fff;box-shadow:var(--shadow)}.private-login-card .field{margin-bottom:14px}.private-admin-note{font-size:.94rem;color:#667085}.private-admin-toolbar{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}@media(max-width:850px){.private-login-grid{grid-template-columns:1fr}}
+  </style>
 </head>
 <body>
   <div class="page-bg"></div>
@@ -18,23 +21,54 @@
       <h1>ApplyMate India Private Admin</h1>
       <p id="privateAdminStatus" class="last-updated">Checking access...</p>
       <div class="notice-box">
-        This page is hidden from search engines and only opens tools for the approved admin email.
+        Login here with the approved admin email. This hidden page is only an entry gate; Firebase Auth and Firestore rules still protect the real admin tools.
+      </div>
+    </section>
+
+    <section id="privateLoginSection" class="content-card hidden">
+      <div class="private-login-grid">
+        <div>
+          <h2>Admin Login</h2>
+          <p class="mini-note">Use your Firebase Email/Password account: <strong>koushikrajcodex@gmail.com</strong></p>
+          <form id="privateLoginForm" class="private-login-card">
+            <div class="field full">
+              <label for="privateAdminEmail">Email</label>
+              <input id="privateAdminEmail" type="email" autocomplete="email" value="koushikrajcodex@gmail.com" required />
+            </div>
+            <div class="field full">
+              <label for="privateAdminPassword">Password</label>
+              <input id="privateAdminPassword" type="password" autocomplete="current-password" placeholder="Enter admin password" required />
+            </div>
+            <div class="button-row">
+              <button id="privateLoginBtn" type="submit">Login & Unlock Admin</button>
+              <a class="secondary-btn" href="login.html">Normal Login Page</a>
+            </div>
+            <p id="privateLoginMessage" class="mini-note"></p>
+          </form>
+        </div>
+
+        <aside class="content-card">
+          <span class="tagline">Access Rules</span>
+          <h3>Only approved admin</h3>
+          <p class="private-admin-note">This page unlocks tools only when Firebase reports the signed-in email as <strong>koushikrajcodex@gmail.com</strong> or an admin custom claim exists.</p>
+          <p class="private-admin-note">After login, use Admin Panel, Discovery Assistant, and Data Health from this same page.</p>
+        </aside>
       </div>
     </section>
 
     <section id="privateDenied" class="content-card hidden">
       <h2>Access denied</h2>
-      <p class="mini-note">Only the approved admin email can use this private entry page.</p>
+      <p id="privateDeniedMessage" class="mini-note">Only the approved admin email can use this private entry page.</p>
       <div class="button-row">
-        <a class="text-btn" href="login.html">Login</a>
-        <a class="secondary-btn" href="dashboard.html">Student Dashboard</a>
+        <button id="privateDeniedLogoutBtn" class="secondary-btn" type="button">Logout and try admin email</button>
+        <a class="text-btn" href="dashboard.html">Student Dashboard</a>
       </div>
     </section>
 
     <section id="privateAdminContent" class="hidden">
       <section class="content-card">
         <h2>Admin Tools</h2>
-        <p class="mini-note">Use these links after signing in as <strong>koushikrajcodex@gmail.com</strong>.</p>
+        <p id="privateAdminWho" class="mini-note">Admin session ready.</p>
         <div class="guide-list">
           <a class="guide-card" href="admin.html">
             <h2>Main Admin Panel</h2>
@@ -56,8 +90,9 @@
             <p>Check what students will see after verified active records are published.</p>
           </a>
         </div>
-        <div class="button-row">
+        <div class="private-admin-toolbar">
           <button id="privateAdminLogoutBtn" class="secondary-btn" type="button">Logout</button>
+          <button id="privateAdminRefreshBtn" class="secondary-btn" type="button">Recheck Access</button>
         </div>
       </section>
     </section>
@@ -70,41 +105,141 @@
   <script type="module">
     import { auth } from "./firebase-config.js";
     import { checkAdminAccess } from "./admin-access.js";
-    import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+    import {
+      onAuthStateChanged,
+      signInWithEmailAndPassword,
+      signOut
+    } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
     const status = document.getElementById("privateAdminStatus");
+    const loginSection = document.getElementById("privateLoginSection");
+    const loginForm = document.getElementById("privateLoginForm");
+    const emailInput = document.getElementById("privateAdminEmail");
+    const passwordInput = document.getElementById("privateAdminPassword");
+    const loginBtn = document.getElementById("privateLoginBtn");
+    const loginMessage = document.getElementById("privateLoginMessage");
     const denied = document.getElementById("privateDenied");
+    const deniedMessage = document.getElementById("privateDeniedMessage");
+    const deniedLogout = document.getElementById("privateDeniedLogoutBtn");
     const content = document.getElementById("privateAdminContent");
+    const who = document.getElementById("privateAdminWho");
     const logout = document.getElementById("privateAdminLogoutBtn");
+    const refresh = document.getElementById("privateAdminRefreshBtn");
+
+    let latestUser = null;
 
     onAuthStateChanged(auth, async (user) => {
+      latestUser = user;
+      await renderAccess(user);
+    });
+
+    loginForm?.addEventListener("submit", async (event) => {
+      event.preventDefault();
+      const email = emailInput?.value?.trim() || "";
+      const password = passwordInput?.value || "";
+
+      if (!email || !password) {
+        showLoginMessage("Enter email and password.", true);
+        return;
+      }
+
+      setLoginBusy(true);
+      showLoginMessage("Signing in...");
+
+      try {
+        await signInWithEmailAndPassword(auth, email, password);
+        showLoginMessage("Signed in. Checking admin access...");
+      } catch (error) {
+        console.error("Private admin login failed", error);
+        showLoginMessage(readableAuthError(error), true);
+      } finally {
+        setLoginBusy(false);
+      }
+    });
+
+    logout?.addEventListener("click", logoutAndReset);
+    deniedLogout?.addEventListener("click", logoutAndReset);
+    refresh?.addEventListener("click", async () => {
+      if (latestUser) await renderAccess(latestUser, true);
+    });
+
+    async function renderAccess(user, force = false) {
       if (!user) {
-        if (status) status.textContent = "Please login with the approved admin email.";
-        denied?.classList.remove("hidden");
+        setStatus("Login with approved admin email to continue.");
+        loginSection?.classList.remove("hidden");
+        denied?.classList.add("hidden");
         content?.classList.add("hidden");
         return;
       }
 
-      const access = await checkAdminAccess(user);
+      setStatus("Checking admin access...");
 
-      if (!access.allowed || !access.viaEmail) {
-        if (status) status.textContent = `Denied for ${user.email || "this account"}. Use the approved admin email.`;
-        denied?.classList.remove("hidden");
+      try {
+        const access = await checkAdminAccess(user);
+
+        if (!access.allowed) {
+          setStatus(`Signed in as ${user.email || "unknown"}, but not approved.`);
+          if (deniedMessage) deniedMessage.textContent = `Denied for ${user.email || "this account"}. Logout and use koushikrajcodex@gmail.com.`;
+          loginSection?.classList.add("hidden");
+          denied?.classList.remove("hidden");
+          content?.classList.add("hidden");
+          return;
+        }
+
+        const via = access.viaEmail ? "approved admin email" : "custom claim";
+        setStatus(`Private admin access granted: ${access.email || user.email}`);
+        if (who) who.textContent = `Logged in as ${access.email || user.email} using ${via}.`;
+        loginSection?.classList.add("hidden");
+        denied?.classList.add("hidden");
+        content?.classList.remove("hidden");
+
+        if (force) showLoginMessage("Access rechecked successfully.");
+      } catch (error) {
+        console.error("Private access check failed", error);
+        setStatus("Could not check admin access. Try logging in again.");
+        loginSection?.classList.remove("hidden");
+        denied?.classList.add("hidden");
         content?.classList.add("hidden");
-        return;
       }
+    }
 
-      if (status) status.textContent = `Private admin access granted: ${access.email}`;
-      denied?.classList.add("hidden");
-      content?.classList.remove("hidden");
-    });
+    async function logoutAndReset() {
+      try {
+        await signOut(auth);
+      } finally {
+        passwordInput.value = "";
+        showLoginMessage("Logged out. Login with the approved admin email.");
+        setStatus("Login with approved admin email to continue.");
+        loginSection?.classList.remove("hidden");
+        denied?.classList.add("hidden");
+        content?.classList.add("hidden");
+      }
+    }
 
-    logout?.addEventListener("click", async () => {
-      logout.disabled = true;
-      logout.textContent = "Logging out...";
-      await signOut(auth);
-      window.location.replace("login.html");
-    });
+    function setStatus(message) {
+      if (status) status.textContent = message;
+    }
+
+    function showLoginMessage(message, danger = false) {
+      if (!loginMessage) return;
+      loginMessage.textContent = message || "";
+      loginMessage.style.color = danger ? "#b42318" : "";
+    }
+
+    function setLoginBusy(busy) {
+      if (!loginBtn) return;
+      loginBtn.disabled = busy;
+      loginBtn.textContent = busy ? "Logging in..." : "Login & Unlock Admin";
+    }
+
+    function readableAuthError(error) {
+      const code = error?.code || "";
+      if (code.includes("invalid-credential") || code.includes("wrong-password")) return "Wrong email or password.";
+      if (code.includes("user-not-found")) return "No Firebase account found for this email.";
+      if (code.includes("too-many-requests")) return "Too many attempts. Wait a bit and try again.";
+      if (code.includes("network-request-failed")) return "Network error. Check internet and try again.";
+      return "Login failed. Check email/password and Firebase Email/Password sign-in.";
+    }
   </script>
 </body>
 </html>
