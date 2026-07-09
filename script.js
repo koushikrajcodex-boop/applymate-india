@@ -137,7 +137,7 @@ function renderResults(results, emptyState = {}) {
 
         <div class="button-row">
           <button onclick="clearFilters()">Reset Filters</button>
-          <a href="scholarship-hub.html" class="secondary-btn">Open Scholarship Hub</a>
+          <a href="scholarships.html#live-directory" class="secondary-btn">Open Scholarship Directory</a>
           <a href="guides.html" class="secondary-btn">Read Scholarship Guides</a>
         </div>
 
