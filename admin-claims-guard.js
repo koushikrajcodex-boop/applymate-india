@@ -1,8 +1,6 @@
 import { auth } from "./firebase-config.js";
-import {
-  getIdTokenResult,
-  onAuthStateChanged
-} from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+import { checkAdminAccess } from "./admin-access.js";
+import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 
 const LOCK_TIMEOUT_MS = 4000;
 let resolved = false;
@@ -21,10 +19,9 @@ onAuthStateChanged(auth, async (user) => {
   }
 
   try {
-    const token = await getIdTokenResult(user, true);
-    const isAdmin = token?.claims?.admin === true;
+    const access = await checkAdminAccess(user);
 
-    if (!isAdmin) {
+    if (!access.allowed) {
       resolved = true;
       window.clearTimeout(timeout);
       window.location.replace("dashboard.html?adminAccess=denied");
@@ -32,12 +29,13 @@ onAuthStateChanged(auth, async (user) => {
     }
 
     window.applymateAdminClaimReady = true;
-    window.applymateAdminClaim = true;
-    window.dispatchEvent(new CustomEvent("applymate:admin-claim-ready"));
+    window.applymateAdminClaim = access.allowed;
+    window.applymateAdminAccess = access;
+    window.dispatchEvent(new CustomEvent("applymate:admin-claim-ready", { detail: access }));
     resolved = true;
     window.clearTimeout(timeout);
   } catch (error) {
-    console.error("Admin claim check failed", error);
+    console.error("Admin access check failed", error);
     resolved = true;
     window.clearTimeout(timeout);
     window.location.replace("dashboard.html?adminAccess=error");
@@ -45,6 +43,6 @@ onAuthStateChanged(auth, async (user) => {
 });
 
 function showGuardMessage(message) {
-  const adminEmail = document.getElementById("adminEmail") || document.getElementById("healthAdminEmail");
+  const adminEmail = document.getElementById("adminEmail") || document.getElementById("healthAdminEmail") || document.getElementById("discoveryAdminEmail");
   if (adminEmail) adminEmail.textContent = message;
 }
