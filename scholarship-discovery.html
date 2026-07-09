@@ -5,22 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Scholarship Discovery Assistant - ApplyMate India</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Admin-only scholarship discovery assistant for finding missing verified scholarships and importing them into Firestore." />
+  <meta name="description" content="Admin-only scholarship discovery assistant with manual source bots, auto checker, and Firestore import tools." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="admin.css?v=admin5" />
   <style>
-    .discovery-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:start}.discovery-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.discovery-stat{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.discovery-stat strong{display:block;font-size:1.7rem;color:var(--primary)}.candidate-list{display:grid;gap:14px;margin-top:18px}.candidate-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.candidate-card h3{margin:8px 0}.candidate-badges{display:flex;gap:8px;flex-wrap:wrap}.candidate-badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef4ff;border:1px solid #c7d7fe;color:#1d4ed8;font-weight:700;font-size:.85rem}.candidate-badge.ok{background:#ecfdf3;border-color:#bbf7d0;color:#067647}.candidate-badge.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}.candidate-badge.bad{background:#fff1f3;border-color:#fecdd3;color:#be123c}.candidate-badge.skip{background:#f8fafc;border-color:#cbd5e1;color:#475569}.discovery-template{font-size:.92rem;white-space:pre-wrap}.discovery-actions{position:sticky;top:16px}.source-link-list{display:grid;gap:8px}.source-link-list a{word-break:break-word}.radar-box{display:grid;gap:12px}.radar-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.radar-pill{padding:12px;border:1px solid var(--border);border-radius:16px;background:#fff}.radar-pill strong{display:block;font-size:1.25rem;color:var(--primary)}@media(max-width:900px){.discovery-grid,.discovery-stats,.radar-summary-grid{grid-template-columns:1fr}.discovery-actions{position:static}}
+    .discovery-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:start}.discovery-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.discovery-stat,.bot-card,.radar-pill{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.discovery-stat strong,.radar-pill strong{display:block;font-size:1.7rem;color:var(--primary)}.bot-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.bot-card h3{margin:6px 0}.bot-card p{font-size:.9rem}.candidate-list{display:grid;gap:14px;margin-top:18px}.candidate-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.candidate-card h3{margin:8px 0}.candidate-badges{display:flex;gap:8px;flex-wrap:wrap}.candidate-badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef4ff;border:1px solid #c7d7fe;color:#1d4ed8;font-weight:700;font-size:.85rem}.candidate-badge.ok{background:#ecfdf3;border-color:#bbf7d0;color:#067647}.candidate-badge.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}.candidate-badge.bad{background:#fff1f3;border-color:#fecdd3;color:#be123c}.candidate-badge.skip{background:#f8fafc;border-color:#cbd5e1;color:#475569}.discovery-template{font-size:.92rem;white-space:pre-wrap}.discovery-actions{position:sticky;top:16px}.source-link-list{display:grid;gap:8px}.source-link-list a{word-break:break-word}.radar-box{display:grid;gap:12px}.radar-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.radar-pill strong{font-size:1.25rem}@media(max-width:1000px){.bot-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:900px){.discovery-grid,.discovery-stats,.radar-summary-grid,.bot-grid{grid-template-columns:1fr}.discovery-actions{position:static}}
   </style>
 </head>
 <body>
   <div class="page-bg"></div>
 
   <nav class="navbar">
-    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Discovery</span></a>
+    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Bots</span></a>
     <div class="nav-links">
       <a href="admin.html">Admin Panel</a>
       <a href="admin-health.html">Data Health</a>
-      <a href="scholarships.html#live-directory">Scholarship Directory</a>
+      <a href="scholarships.html#live-directory">Directory</a>
       <a href="index.html">Home</a>
       <button id="discoveryLogoutBtn" class="secondary-btn" type="button">Logout</button>
     </div>
@@ -28,11 +28,11 @@
 
   <main class="content-page">
     <section class="content-card admin-hero">
-      <span class="tagline">Scholarship Radar Pro</span>
-      <h1>Scholarship Discovery Assistant</h1>
+      <span class="tagline">Manual Bots + Auto Checker</span>
+      <h1>Scholarship Bot Console</h1>
       <p id="discoveryAdminEmail" class="last-updated">Checking admin access...</p>
       <div class="notice-box">
-        Radar checks official sources, scores confidence, skips risky/expired items, and lets you bulk-add safe scholarships to Firestore as active or draft records.
+        Use source bots to open official portals, paste official scholarship text, auto-check quality, skip duplicates, then bulk-add safe records to Firestore.
       </div>
     </section>
 
@@ -47,7 +47,7 @@
         <div class="card-heading">
           <div>
             <h2>Current Firestore Coverage</h2>
-            <p class="mini-note">Loaded from the live <code>scholarships</code> collection. Duplicates are detected by normalized name and official source URL.</p>
+            <p class="mini-note">Loaded from live <code>scholarships</code>. Duplicates are detected by normalized name and source URL.</p>
           </div>
           <button id="refreshDiscoveryBtn" class="secondary-btn" type="button">Refresh Firestore Data</button>
         </div>
@@ -59,13 +59,29 @@
         </div>
       </section>
 
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>Manual Source Bots</h2>
+            <p class="mini-note">Pick a bot. It opens the official portal and fills the correct template. Paste official text, then click Analyze + Auto Check.</p>
+          </div>
+        </div>
+        <div class="bot-grid">
+          <article class="bot-card"><span class="tagline">Official</span><h3>NSP Bot</h3><p>National scholarships, central schemes, minority/social category schemes.</p><button id="botNspBtn" type="button">Start NSP Bot</button></article>
+          <article class="bot-card"><span class="tagline">Official</span><h3>AICTE Bot</h3><p>Pragati, Saksham, technical education scholarships and updates.</p><button id="botAicteBtn" type="button">Start AICTE Bot</button></article>
+          <article class="bot-card"><span class="tagline">AP</span><h3>Jnanabhumi Bot</h3><p>Andhra Pradesh fee reimbursement and state scholarship updates.</p><button id="botApBtn" type="button">Start AP Bot</button></article>
+          <article class="bot-card"><span class="tagline">TG</span><h3>ePASS Bot</h3><p>Telangana post-matric, pre-matric, and reimbursement updates.</p><button id="botTgBtn" type="button">Start TG Bot</button></article>
+          <article class="bot-card"><span class="tagline">Official</span><h3>UGC Bot</h3><p>UG/PG scholarships, fellowships, and higher education support.</p><button id="botUgcBtn" type="button">Start UGC Bot</button></article>
+        </div>
+      </section>
+
       <section class="content-card radar-box">
         <div class="card-heading">
           <div>
-            <h2>Radar Auto Checker Queue</h2>
-            <p class="mini-note">Generated by the daily GitHub Action from official source pages. Load this queue, then import only auto-safe candidates.</p>
+            <h2>Radar Report</h2>
+            <p class="mini-note">This shows the latest GitHub Action scan report. Manual bots are better when you want fast controlled growth.</p>
           </div>
-          <button id="loadRadarBtn" type="button">Load Radar Candidates</button>
+          <button id="loadRadarBtn" class="secondary-btn" type="button">Load Radar Report</button>
         </div>
         <div class="radar-summary-grid">
           <div class="radar-pill"><span>Auto Active</span><strong id="radarAutoActive">0</strong></div>
@@ -73,27 +89,18 @@
           <div class="radar-pill"><span>Review</span><strong id="radarReview">0</strong></div>
           <div class="radar-pill"><span>Skip</span><strong id="radarSkip">0</strong></div>
         </div>
-        <p id="radarMessage" class="mini-note">Radar candidates not loaded yet.</p>
+        <p id="radarMessage" class="mini-note">Radar report not loaded yet.</p>
       </section>
 
       <section class="content-card">
         <div class="discovery-grid">
           <div>
-            <h2>Paste official-source scholarships</h2>
-            <p class="mini-note">Use this for official portal text, radar JSON, tables, or AI-generated structured output. Separate multiple text records with a line containing <code>---</code>.</p>
+            <h2>Bot Workspace</h2>
+            <p class="mini-note">Paste official portal text, tables, or JSON. Separate multiple scholarships with a line containing <code>---</code>.</p>
             <div class="form-grid">
-              <div class="field">
-                <label for="defaultDiscoverySource">Default source name</label>
-                <input id="defaultDiscoverySource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" />
-              </div>
-              <div class="field">
-                <label for="defaultDiscoveryUrl">Default official URL</label>
-                <input id="defaultDiscoveryUrl" type="url" placeholder="https://official-portal.example" />
-              </div>
-              <div class="field full">
-                <label for="discoveryInput">Scholarship source text or JSON</label>
-                <textarea id="discoveryInput" rows="15" placeholder="Scholarship name&#10;State Karnataka&#10;Education engineering, degree&#10;Categories general, obc, ews&#10;Gender any&#10;Amount ₹50,000&#10;Income limit 250000&#10;Deadline date 2026-12-31&#10;Official link https://...&#10;Source Official Portal&#10;Eligibility ...&#10;Income note ...&#10;---&#10;Second scholarship..."></textarea>
-              </div>
+              <div class="field"><label for="defaultDiscoverySource">Default source name</label><input id="defaultDiscoverySource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" /></div>
+              <div class="field"><label for="defaultDiscoveryUrl">Default official URL</label><input id="defaultDiscoveryUrl" type="url" placeholder="https://official-portal.example" /></div>
+              <div class="field full"><label for="discoveryInput">Scholarship source text or JSON</label><textarea id="discoveryInput" rows="15" placeholder="Bot will fill a template here. Paste official text and click Analyze + Auto Check."></textarea></div>
             </div>
             <div class="button-row">
               <button id="analyzeDiscoveryBtn" type="button">Analyze + Auto Check</button>
@@ -106,7 +113,7 @@
           <aside class="content-card discovery-actions">
             <span class="tagline">Auto Adders</span>
             <h3>Bulk import by confidence</h3>
-            <p class="mini-note">Auto Active imports only high-confidence official candidates. Auto Draft imports medium-confidence official candidates. Review/skip candidates are blocked.</p>
+            <p class="mini-note">Auto Active imports only safe, complete, high-confidence official records. Auto Draft imports usable official records needing small edits.</p>
             <div class="button-row">
               <button id="importAutoActiveBtn" type="button">Import Auto Active</button>
               <button id="importAutoDraftBtn" class="secondary-btn" type="button">Import Auto Drafts</button>
@@ -116,14 +123,8 @@
               <button id="importActiveBtn" type="button">Import Verified Active Only</button>
             </div>
             <hr />
-            <h3>Official search shortcuts</h3>
-            <p class="mini-note">Use these to find official scholarship pages manually if radar marks a source for review.</p>
-            <div class="source-link-list">
-              <a href="https://scholarships.gov.in/" target="_blank" rel="noopener noreferrer">National Scholarship Portal</a>
-              <a href="https://www.aicte-india.org/" target="_blank" rel="noopener noreferrer">AICTE Official Site</a>
-              <a href="https://jnanabhumi.ap.gov.in/" target="_blank" rel="noopener noreferrer">AP Jnanabhumi</a>
-              <a href="https://telanganaepass.cgg.gov.in/" target="_blank" rel="noopener noreferrer">Telangana ePASS</a>
-            </div>
+            <h3>Bot rule</h3>
+            <p class="mini-note">Don’t paste random blog data. Paste from official portals or official PDFs only.</p>
           </aside>
         </div>
       </section>
@@ -131,13 +132,11 @@
       <section class="content-card">
         <div class="card-heading">
           <div>
-            <h2>Discovery Results</h2>
-            <p id="candidateSummary" class="mini-note">Analyze source text or load radar candidates to see missing, duplicate, skipped, and auto-safe records.</p>
+            <h2>Bot Results</h2>
+            <p id="candidateSummary" class="mini-note">Start a source bot or paste official text to see auto-safe, draft, duplicate, and invalid records.</p>
           </div>
         </div>
-        <div id="candidateList" class="candidate-list">
-          <p class="mini-note">No candidates analyzed yet.</p>
-        </div>
+        <div id="candidateList" class="candidate-list"><p class="mini-note">No candidates analyzed yet.</p></div>
       </section>
 
       <section class="content-card">
@@ -160,7 +159,7 @@ Second Scholarship...</pre>
     </section>
   </main>
 
-  <footer><p>ApplyMate India Discovery Assistant. Use official sources only and verify before publishing.</p></footer>
-  <script type="module" src="scholarship-discovery.js?v=radar1"></script>
+  <footer><p>ApplyMate India Bot Console. Use official sources only and verify before publishing.</p></footer>
+  <script type="module" src="scholarship-discovery.js?v=manual-bots1"></script>
 </body>
 </html>
