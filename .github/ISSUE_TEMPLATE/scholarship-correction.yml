@@ -1,0 +1,57 @@
+name: Scholarship correction
+description: Report an outdated or incorrect scholarship record
+labels: ["data-correction"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for helping improve ApplyMate India scholarship data. Please use official sources wherever possible.
+  - type: input
+    id: scholarship-name
+    attributes:
+      label: Scholarship name
+      description: Name of the scholarship that needs correction.
+      placeholder: Example: NSP Post Matric Scholarship
+    validations:
+      required: true
+  - type: input
+    id: official-link
+    attributes:
+      label: Official source link
+      description: Paste the official portal, notice, or government page link.
+      placeholder: https://...
+    validations:
+      required: true
+  - type: textarea
+    id: correction
+    attributes:
+      label: What should be corrected?
+      description: Explain the wrong value and the correct value.
+      placeholder: The deadline is shown as X, but the official portal says Y.
+    validations:
+      required: true
+  - type: input
+    id: date-checked
+    attributes:
+      label: Date checked
+      description: When did you verify this information?
+      placeholder: 2026-07-09
+    validations:
+      required: true
+  - type: dropdown
+    id: correction-type
+    attributes:
+      label: Correction type
+      multiple: true
+      options:
+        - Deadline
+        - Eligibility
+        - Income limit
+        - Documents
+        - Official link
+        - Status / application window
+        - Amount
+        - Duplicate record
+        - Other
+    validations:
+      required: true

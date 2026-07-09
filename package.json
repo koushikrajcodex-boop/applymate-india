@@ -1,0 +1,11 @@
+{
+  "name": "applymate-india",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "test": "node tests/scholarship-validator.test.js",
+    "validate:data": "node tools/validate-scholarship-data.js"
+  },
+  "devDependencies": {}
+}
