@@ -17,6 +17,7 @@
     <div class="nav-links">
       <a href="index.html">Home</a>
       <a href="dashboard.html">Student Dashboard</a>
+      <a href="scholarship-discovery.html">Discovery Assistant</a>
       <a href="admin-health.html">Data Health</a>
       <a href="contact.html">Contact</a>
       <button id="adminLogoutBtn" class="secondary-btn" type="button">Logout</button>
@@ -61,8 +62,9 @@
       </section>
 
       <section class="content-card">
-        <div class="card-heading"><div><h2>Admin Tools</h2><p class="mini-note">Export backups, refresh data, and clear filters. Static local import has been removed.</p></div></div>
+        <div class="card-heading"><div><h2>Admin Tools</h2><p class="mini-note">Discover missing scholarships, export backups, refresh data, and clear filters.</p></div></div>
         <div class="admin-tool-grid">
+          <div class="admin-tool-card"><h3>Discovery Assistant</h3><p class="mini-note">Paste official-source scholarship text or JSON, detect missing records, skip duplicates, and import safe records.</p><a class="text-btn" href="scholarship-discovery.html">Open Discovery Assistant</a></div>
           <div class="admin-tool-card"><h3>Export Backup</h3><p class="mini-note">Downloads current Firestore scholarships as JSON.</p><button id="exportScholarshipsBtn" class="secondary-btn" type="button">Export JSON</button></div>
           <div class="admin-tool-card"><h3>Clear Filters</h3><p class="mini-note">Reset search and status filters.</p><button id="clearAdminFiltersBtn" class="secondary-btn" type="button">Clear Filters</button></div>
           <div class="admin-tool-card"><h3>Data Health</h3><p class="mini-note">Review duplicates, expired active records, missing links, and verification issues.</p><a class="text-btn" href="admin-health.html">Open Health Dashboard</a></div>
@@ -136,7 +138,7 @@
 
   <footer>
     <p>ApplyMate India Admin Panel. Manage scholarship data carefully and verify official sources before publishing.</p>
-    <div class="footer-links"><a href="index.html">Home</a><a href="dashboard.html">Student Dashboard</a><a href="admin-health.html">Admin Health</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></div>
+    <div class="footer-links"><a href="index.html">Home</a><a href="dashboard.html">Student Dashboard</a><a href="scholarship-discovery.html">Discovery Assistant</a><a href="admin-health.html">Admin Health</a><a href="privacy.html">Privacy Policy</a><a href="disclaimer.html">Disclaimer</a><a href="contact.html">Contact</a></div>
   </footer>
 
   <script type="module" src="admin.js?v=admin5"></script>
