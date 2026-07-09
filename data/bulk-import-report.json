@@ -1,10 +1,19 @@
 {
   "generatedAt": "not-run-yet",
   "mode": "not-run-yet",
+  "sourcePack": "all",
+  "sourcePackLabel": "All Packs",
   "collection": "scholarships",
   "added": 0,
   "skipped": 0,
   "failed": 0,
+  "secretStatus": {
+    "firebaseServiceAccount": "unknown_until_action_runs",
+    "firebaseProjectId": "unknown_until_action_runs"
+  },
+  "explainer": "Run GitHub Actions > Bulk Scholarship Auto Import. First run dry_run=true, then run dry_run=false after Firebase secrets are added.",
   "errors": [],
-  "note": "Run GitHub Actions > Bulk Scholarship Auto Import to generate the first real report."
+  "imported": [],
+  "skippedRecords": [],
+  "note": "This report is updated by the Bulk Scholarship Auto Import workflow."
 }
