@@ -1,0 +1,29 @@
+{
+  "updatedAt": "2026-07-09",
+  "sources": [
+    {
+      "name": "National Scholarship Portal",
+      "url": "https://scholarships.gov.in/",
+      "trust": "official",
+      "defaultState": "national"
+    },
+    {
+      "name": "AICTE Official Site",
+      "url": "https://www.aicte-india.org/",
+      "trust": "official",
+      "defaultState": "national"
+    },
+    {
+      "name": "AP Jnanabhumi",
+      "url": "https://jnanabhumi.ap.gov.in/",
+      "trust": "official",
+      "defaultState": "andhra-pradesh"
+    },
+    {
+      "name": "Telangana ePASS",
+      "url": "https://telanganaepass.cgg.gov.in/",
+      "trust": "official",
+      "defaultState": "telangana"
+    }
+  ]
+}
