@@ -1,4 +1,243 @@
 {
-  "generatedAt": "2026-07-09T00:00:00.000Z",
-  "candidates": []
+  "generatedAt": "2026-07-09T12:19:30.774Z",
+  "candidates": [
+    {
+      "name": "National Scholarship Portal Manual Review Needed",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/",
+      "state": "national",
+      "deadlineDate": "",
+      "decision": "skipDuplicate",
+      "confidence": 55,
+      "issues": [
+        "Duplicate already exists: Post Matric Scholarship for Minorities",
+        "Weak scholarship name."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline.",
+        "Eligibility note is short."
+      ],
+      "duplicateName": "Post Matric Scholarship for Minorities",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "AICTE Official Site Manual Review Needed",
+      "sourceName": "AICTE Official Site",
+      "sourceUrl": "https://www.aicte-india.org/",
+      "state": "national",
+      "deadlineDate": "",
+      "decision": "skipDuplicate",
+      "confidence": 55,
+      "issues": [
+        "Duplicate already exists: AICTE Saksham Scholarship for Specially Abled Students",
+        "Weak scholarship name."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline.",
+        "Eligibility note is short."
+      ],
+      "duplicateName": "AICTE Saksham Scholarship for Specially Abled Students",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "AP Jnanabhumi Manual Review Needed",
+      "sourceName": "AP Jnanabhumi",
+      "sourceUrl": "https://jnanabhumi.ap.gov.in/",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "skipDuplicate",
+      "confidence": 55,
+      "issues": [
+        "Duplicate already exists: Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
+        "Weak scholarship name."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline.",
+        "Eligibility note is short."
+      ],
+      "duplicateName": "Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Scholarships",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/Scholarships.do",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-06-30",
+      "decision": "skipExpired",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Schemes & Policies",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/SchemesPolicies.do",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-06-30",
+      "decision": "skipExpired",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Scholarships Offered",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/SchoalrshipsOffered.do",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-06-30",
+      "decision": "skipExpired",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Scholarship Trans ID Details",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://treasury.telangana.gov.in/main/index.php?service=banktransiddetails",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-10-31",
+      "decision": "skipExpired",
+      "confidence": 62,
+      "issues": [
+        "Source is not official or not trusted."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Post Matric Scholarship Services",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/epassonlinelinks.do",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-10-31",
+      "decision": "skipExpired",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Pre Matric Scholarship Services",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/PrematricLinks.do",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-10-31",
+      "decision": "skipExpired",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Overseas Scholarship Services",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-04-30",
+      "decision": "skipExpired",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Advocates Stipend",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/SCAdvocatesServices.do",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2020-02-15",
+      "decision": "skipExpired",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "National Scholarship Portal",
+      "sourceName": "Telangana ePASS",
+      "sourceUrl": "https://scholarships.gov.in/",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2020-02-15",
+      "decision": "skipDuplicate",
+      "confidence": 62,
+      "issues": [
+        "Duplicate already exists: Post Matric Scholarship for Minorities",
+        "Source is not official or not trusted."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "Post Matric Scholarship for Minorities",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Fellowships",
+      "sourceName": "UGC Official Site",
+      "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-07-09",
+      "decision": "autoActive",
+      "confidence": 100,
+      "issues": [],
+      "warnings": [],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Scholarships",
+      "sourceName": "UGC Official Site",
+      "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-07-09",
+      "decision": "autoActive",
+      "confidence": 100,
+      "issues": [],
+      "warnings": [],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Web portal for Fellowship/Scholarship Legacy Cases",
+      "sourceName": "UGC Official Site",
+      "sourceUrl": "https://scholarship.canarabank.in/",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-07-09",
+      "decision": "review",
+      "confidence": 78,
+      "issues": [
+        "Source is not official or not trusted."
+      ],
+      "warnings": [],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    }
+  ]
 }
