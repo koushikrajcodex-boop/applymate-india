@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scholarship Application Roadmap Planner - ApplyMate India</title>
+  <meta name="description" content="Create a scholarship application roadmap with document preparation, deadline planning, verification steps, and final submission reminders for Indian students." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/application-roadmap.html" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .roadmap-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .roadmap-form { display: grid; gap: 12px; }
+    .roadmap-form label { display: grid; gap: 6px; }
+    .roadmap-summary { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+    .roadmap-stat { padding: 14px; border: 1px solid var(--border); border-radius: 14px; background: #fff; display: grid; gap: 4px; }
+    .roadmap-stat strong { font-size: 1.35rem; }
+    .roadmap-stat span { color: var(--muted); }
+    .roadmap-list { display: grid; gap: 12px; margin-top: 16px; }
+    .roadmap-step { padding: 16px; border: 1px solid var(--border); border-radius: 16px; background: #fff; display: grid; gap: 8px; }
+    .roadmap-step-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+    .roadmap-badge { border: 1px solid var(--border); border-radius: 999px; padding: 5px 10px; font-weight: 700; font-size: .85rem; }
+    .priority-high { background: #fff1f3; color: #c01048; }
+    .priority-medium { background: #fffaeb; color: #b54708; }
+    .priority-normal { background: #ecfdf3; color: #067647; }
+    .roadmap-warning { padding: 14px; border: 1px solid #fedf89; border-radius: 14px; background: #fffaeb; color: #93370d; }
+    @media (max-width: 820px) { .roadmap-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 560px) { .roadmap-summary { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="comparison-lab.html">Compare</a>
+      <a href="document-vault.html">Documents</a>
+      <a href="application-roadmap.html">Roadmap</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <span class="tagline">Deadline Planning</span>
+      <h1>Scholarship Application Roadmap Planner</h1>
+      <p>Turn a scholarship deadline into a clear action plan. Choose your deadline, portal type, and readiness level to get a practical checklist before submission.</p>
+      <div class="notice-box">This planner is a student helper, not an official portal. Always confirm dates, rules, and documents on the official scholarship website.</div>
+    </section>
+
+    <div class="roadmap-grid">
+      <section class="content-card">
+        <h2>Create your roadmap</h2>
+        <form id="roadmapForm" class="roadmap-form">
+          <label>Scholarship / portal name
+            <input id="scholarshipName" type="text" placeholder="Example: NSP, Jnanabhumi, ePASS, AICTE..." />
+          </label>
+          <label>Application deadline
+            <input id="deadlineDate" type="date" />
+          </label>
+          <label>Portal type
+            <select id="portalType">
+              <option value="government">Government portal</option>
+              <option value="college">College / institute submission</option>
+              <option value="private">Private scholarship</option>
+              <option value="renewal">Renewal application</option>
+            </select>
+          </label>
+          <label>Document readiness
+            <select id="readinessLevel">
+              <option value="low">Documents not ready</option>
+              <option value="medium" selected>Some documents ready</option>
+              <option value="high">Almost everything ready</option>
+            </select>
+          </label>
+          <label>Application stage
+            <select id="applicationStage">
+              <option value="not-started">Not started</option>
+              <option value="profile">Profile created</option>
+              <option value="draft">Application draft started</option>
+              <option value="submitted">Submitted, waiting for verification</option>
+            </select>
+          </label>
+          <div class="button-row">
+            <button type="submit">Build Roadmap</button>
+            <button id="resetRoadmapBtn" type="button" class="secondary-btn">Reset</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="content-card">
+        <h2>Roadmap health</h2>
+        <div id="roadmapSummary" class="roadmap-summary"></div>
+        <div id="roadmapWarning" class="roadmap-warning" hidden></div>
+        <p class="mini-note">No account is required. Your inputs are saved only in this browser for convenience.</p>
+      </section>
+    </div>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <h2>Your action plan</h2>
+          <p class="mini-note">Follow the highest priority steps first. Do not wait until the final day.</p>
+        </div>
+        <button id="copyRoadmapBtn" type="button" class="secondary-btn">Copy Roadmap</button>
+      </div>
+      <div id="roadmapOutput" class="roadmap-list"></div>
+    </section>
+
+    <section class="content-card">
+      <h2>Use with ApplyMate tools</h2>
+      <p>Use the document planner to prepare certificates, the comparison lab to choose scholarships, and the dashboard to save and track your applications.</p>
+      <div class="button-row">
+        <a class="secondary-btn" href="document-vault.html">Open Document Vault</a>
+        <a class="secondary-btn" href="comparison-lab.html">Compare Scholarships</a>
+        <a class="text-btn" href="dashboard.html">Track in Dashboard</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India helps students plan scholarship applications before submitting on official portals.</p>
+    <div class="footer-links">
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="editorial-policy.html">Editorial Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="application-roadmap.js"></script>
+</body>
+</html>
