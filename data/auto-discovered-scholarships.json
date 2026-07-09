@@ -1,8 +1,59 @@
 {
-  "generatedAt": "not-run-yet",
+  "generatedAt": "2026-07-09T15:03:44.471Z",
   "generatedBy": "ApplyMate GitHub Actions auto-discovery",
-  "note": "No automated discovery run has completed yet. Open GitHub Actions and run Scholarship Auto Discovery manually, or wait for the daily schedule.",
+  "note": "Review before publishing. Search snippets can be incomplete or stale.",
   "total": 0,
-  "errors": [],
+  "errors": [
+    {
+      "seed": "National scholarships official PDFs",
+      "query": "student scholarship guidelines notification filetype:pdf National any any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "NSP scholarship schemes",
+      "query": "National Scholarship Portal scholarship scheme guidelines notification National any any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "AICTE scholarships",
+      "query": "AICTE scholarship guidelines notification Pragati Saksham Swanath filetype:pdf National any engineering scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "UGC scholarships",
+      "query": "UGC scholarship fellowship guidelines notification filetype:pdf National any degree pg scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "Andhra Pradesh scholarships",
+      "query": "Andhra Pradesh student scholarship guidelines Jnanabhumi notification filetype:pdf Andhra Pradesh any degree engineering post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "Telangana scholarships",
+      "query": "Telangana ePASS scholarship guidelines notification filetype:pdf Telangana any degree engineering post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "OBC scholarships",
+      "query": "OBC scholarship guidelines notification non creamy layer filetype:pdf National OBC any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "SC ST scholarships",
+      "query": "SC ST post matric scholarship guidelines notification filetype:pdf National SC ST post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "Minority scholarships",
+      "query": "minority scholarship guidelines notification student filetype:pdf National minority any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    },
+    {
+      "seed": "EWS scholarships",
+      "query": "EWS scholarship guidelines notification student filetype:pdf National EWS any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in",
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+    }
+  ],
   "records": []
 }
