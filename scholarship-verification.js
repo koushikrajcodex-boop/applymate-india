@@ -1,3 +1,5 @@
+import "./state-dropdowns.js";
+
 export function isVerifiedActiveScholarship(record = {}) {
   return Boolean(
     record.status === "active" &&

@@ -1,3 +1,5 @@
+import("./state-dropdowns.js").catch((error) => console.warn("State dropdown config failed to load", error));
+
 const CONTACT_EMAIL = "koushikrajcodex@gmail.com";
 
 window.findScholarships = findScholarships;
@@ -35,7 +37,15 @@ function findScholarships() {
     .filter(Boolean)
     .sort((a, b) => b.score - a.score);
 
-  renderResults(matches);
+  const selectedStateLabel = state === "any" ? "Any State" : labelState(state);
+  const hasStateSpecificResults = state === "any" || matches.some((scholarship) => scholarship.state === state);
+  const hasNationalFallback = state !== "any" && matches.some((scholarship) => scholarship.state === "national");
+
+  renderResults(matches, {
+    selectedState: state,
+    selectedStateLabel,
+    nationalFallbackOnly: state !== "any" && !hasStateSpecificResults && hasNationalFallback
+  });
 }
 
 function scoreScholarship(scholarship, profile) {
@@ -100,13 +110,17 @@ function renderResults(results, emptyState = {}) {
   if (!resultSummary || !resultsContainer) return;
 
   if (results.length === 0) {
+    const selectedStateText = emptyState.selectedState && emptyState.selectedState !== "any"
+      ? ` for ${emptyState.selectedStateLabel}`
+      : "";
+
     resultSummary.innerHTML = `
       <div class="content-strip">
         <span class="badge">No Match Found</span>
-        <h2>${escapeHtml(emptyState.title || "No scholarships found for this combination.")}</h2>
+        <h2>${escapeHtml(emptyState.title || `No scholarships found${selectedStateText}.`)}</h2>
 
         <p>
-          ${escapeHtml(emptyState.message || "We could not find a matching active Firestore scholarship for your selected state, education, category, income range, or search keyword right now.")}
+          ${escapeHtml(emptyState.message || `We have not added verified state-specific scholarships${selectedStateText} for this combination yet. Select "Any State" or keep National scholarships enabled to see national-level options you may still be eligible for.`)}
         </p>
 
         <div class="notice-box">
@@ -137,6 +151,10 @@ function renderResults(results, emptyState = {}) {
     return;
   }
 
+  const fallbackNote = emptyState.nationalFallbackOnly
+    ? `<div class="notice-box">We have not added verified ${escapeHtml(emptyState.selectedStateLabel)}-specific scholarships for this filter yet. Showing National-level scholarships you may still be eligible for.</div>`
+    : "";
+
   resultSummary.innerHTML = `
     <div class="content-strip">
       <span class="badge">Possible Matches</span>
@@ -145,6 +163,7 @@ function renderResults(results, emptyState = {}) {
         These are possible matches from live Firestore data based on your selected details.
         Verify final eligibility on official portals before applying.
       </p>
+      ${fallbackNote}
     </div>
   `;
 
@@ -254,9 +273,7 @@ function categoryAliases(category) {
 }
 
 function labelState(state) {
-  if (state === "andhra-pradesh") return "Andhra Pradesh";
-  if (state === "telangana") return "Telangana";
-  return "National";
+  return window.ApplyMateStates?.getStateLabel?.(state) || "National";
 }
 
 function clean(value) {
