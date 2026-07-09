@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Account Center - ApplyMate India</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .account-center-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .account-stat-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 12px; margin-bottom: 16px; }
+    .account-stat, .account-detail-card, .diagnostic-check { padding: 15px; border: 1px solid var(--border); border-radius: 15px; background: #fff; }
+    .account-stat { display: grid; gap: 5px; }
+    .account-stat strong { font-size: 1.2rem; overflow-wrap: anywhere; }
+    .account-stat span { color: var(--muted); }
+    .diagnostics-list { display: grid; gap: 10px; margin-top: 14px; }
+    .diagnostic-check.passed { border-left: 5px solid #12b76a; }
+    .diagnostic-check.failed { border-left: 5px solid #f79009; }
+    .quality-success { padding: 14px; border-radius: 12px; background: #ecfdf3; color: #067647; }
+    @media (max-width: 900px) { .account-stat-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 700px) { .account-center-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 520px) { .account-stat-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+    <div class="nav-links">
+      <a href="dashboard.html">Dashboard</a>
+      <a href="application-intelligence.html">Application Intelligence</a>
+      <a href="account-center.html">Account Center</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <span class="tagline">Account Control</span>
+      <h1>Account & Diagnostics Center</h1>
+      <p>Review account information, export your ApplyMate data, reset browser preferences, and test whether key services are working.</p>
+      <div class="notice-box">Data export runs in your browser. Clearing browser preferences does not change cloud records.</div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <h2>Account Overview</h2>
+          <p class="mini-note">Summary of your signed-in ApplyMate account.</p>
+        </div>
+        <button id="exportAccountDataBtn" type="button">Export My Data</button>
+      </div>
+      <div id="accountStatus"><p class="mini-note">Checking account status...</p></div>
+    </section>
+
+    <div class="account-center-grid">
+      <section class="content-card">
+        <h2>Browser Preferences</h2>
+        <p class="mini-note">Reminder windows and interface settings may be saved in this browser.</p>
+        <div class="button-row">
+          <button id="clearLocalPreferencesBtn" type="button" class="secondary-btn">Clear Browser Preferences</button>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <div class="card-heading">
+          <div>
+            <h2>System Diagnostics</h2>
+            <p class="mini-note">Check browser support, connection state, authentication, and data reads.</p>
+          </div>
+          <button id="runDiagnosticsBtn" type="button" class="secondary-btn">Run Diagnostics</button>
+        </div>
+        <div id="diagnosticsResults" class="diagnostics-list">
+          <p class="mini-note">Run diagnostics when dashboard data does not load or a save action fails.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="content-card">
+      <h2>Privacy information</h2>
+      <p>ApplyMate stores profile, saved-scholarship, and tracker records under the signed-in account. Official applications are completed on official portals.</p>
+      <div class="button-row">
+        <a class="secondary-btn" href="privacy.html">Read Privacy Policy</a>
+        <a class="text-btn" href="contact.html">Contact Support</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India account tools.</p>
+  </footer>
+
+  <script type="module" src="account-center.js"></script>
+</body>
+</html>
