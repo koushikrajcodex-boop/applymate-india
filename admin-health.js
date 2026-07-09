@@ -1,11 +1,11 @@
 import { auth, db } from "./firebase-config.js";
 import {
+  getIdTokenResult,
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-const ADMIN_EMAILS = ["lastwarrior324@gmail.com", "koushikrajcodex@gmail.com"];
 let records = [];
 let issues = [];
 let isAdmin = false;
@@ -49,19 +49,25 @@ onAuthStateChanged(auth, async (user) => {
     return;
   }
 
-  const email = String(user.email || "").toLowerCase();
-  isAdmin = ADMIN_EMAILS.includes(email);
+  let token;
+  try {
+    token = await getIdTokenResult(user, true);
+  } catch (error) {
+    console.error("Admin health claim check failed:", error);
+    window.location.replace("dashboard.html?adminAccess=error");
+    return;
+  }
+
+  isAdmin = token?.claims?.admin === true;
 
   if (!isAdmin) {
-    $("healthContent")?.classList.add("hidden");
-    $("healthLocked")?.classList.remove("hidden");
-    if ($("healthAdminEmail")) $("healthAdminEmail").textContent = `Logged in as ${user.email}`;
+    window.location.replace("dashboard.html?adminAccess=denied");
     return;
   }
 
   $("healthContent")?.classList.remove("hidden");
   $("healthLocked")?.classList.add("hidden");
-  if ($("healthAdminEmail")) $("healthAdminEmail").textContent = `Admin: ${user.email}`;
+  if ($("healthAdminEmail")) $("healthAdminEmail").textContent = `Admin: ${user.email || "verified admin"}`;
   await runHealthCheck();
 });
 
@@ -97,9 +103,9 @@ function findIssues(items) {
     const active = item.status === "active";
     if (active && expired(item.deadlineDate)) add(out, item, "expired-active", "Active record has expired deadline date.");
     if (active && item.applicationWindow === "closed") add(out, item, "closed-window", "Active record has closed application window.");
-    if (active && !validUrl(item.link)) add(out, item, "missing-link", "Active record has no valid official link.");
+    if (active && !validUrl(item.sourceUrl || item.link)) add(out, item, "missing-link", "Active record has no valid official source URL.");
     if (active && !validDate(item.deadlineDate)) add(out, item, "missing-deadline", "Active record has no valid deadline date.");
-    if (active && !item.verifiedOn) add(out, item, "weak-verification", "Active record has no verifiedOn date.");
+    if (active && !validDate(item.verifiedOn)) add(out, item, "weak-verification", "Active record has no valid verifiedOn date.");
     if (active && !item.verificationNote) add(out, item, "weak-verification", "Active record has no verification note.");
     if (!item.eligibilityNote || String(item.eligibilityNote).length < 20) add(out, item, "missing-eligibility", "Eligibility note is missing or too short.");
     if (!item.incomeNote || String(item.incomeNote).length < 10) add(out, item, "income-risk", "Income note is missing or too short.");
@@ -111,7 +117,7 @@ function findIssues(items) {
 }
 
 function renderSummary() {
-  const visible = records.filter((x) => x.status === "active" && x.applicationWindow !== "closed" && !expired(x.deadlineDate)).length;
+  const visible = records.filter((x) => x.status === "active" && x.applicationWindow !== "closed" && !expired(x.deadlineDate) && validDate(x.verifiedOn) && validUrl(x.sourceUrl || x.link)).length;
   const uniqueBad = new Set(issues.map((x) => x.item.id)).size;
   const values = [records.length, visible, uniqueBad, count("duplicate-name"), count("expired-active"), count("missing-link"), count("missing-deadline"), count("weak-verification")];
   ids.forEach((id, i) => { if ($(id)) $(id).textContent = values[i]; });
