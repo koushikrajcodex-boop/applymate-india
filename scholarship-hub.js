@@ -1,4 +1,6 @@
+import "./state-dropdowns.js";
 import { db } from "./firebase-config.js";
+import { getStateLabel } from "./states.js";
 import { getLastVerifiedText, getOfficialSourceUrl, isVerifiedActiveScholarship } from "./scholarship-verification.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
@@ -122,9 +124,7 @@ function clean(value) {
 }
 
 function labelState(state) {
-  if (state === "andhra-pradesh") return "Andhra Pradesh";
-  if (state === "telangana") return "Telangana";
-  return "National";
+  return getStateLabel(state || "national");
 }
 
 function daysLeft(deadlineDate) {
