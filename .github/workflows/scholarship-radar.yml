@@ -17,6 +17,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: scholarship-radar-pro
+  cancel-in-progress: false
+
 jobs:
   radar:
     runs-on: ubuntu-latest
@@ -24,6 +28,8 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -46,8 +52,15 @@ jobs:
           RADAR_MAX_LINKS_PER_SOURCE: "18"
           RADAR_MAX_DETAIL_PAGES_PER_SOURCE: "8"
 
-      - name: Commit radar reports
-        uses: stefanzweifel/git-auto-commit-action@v5
-        with:
-          commit_message: "Update scholarship radar reports"
-          file_pattern: data/discovery-candidates.json data/radar-report.json package-lock.json
+      - name: Commit radar reports safely
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add data/discovery-candidates.json data/radar-report.json package-lock.json
+          if git diff --cached --quiet; then
+            echo "No radar report changes to commit."
+            exit 0
+          fi
+          git commit -m "Update scholarship radar reports"
+          git pull --rebase --autostash origin main
+          git push origin HEAD:main
