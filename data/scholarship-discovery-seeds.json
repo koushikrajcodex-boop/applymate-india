@@ -1,0 +1,72 @@
+[
+  {
+    "name": "National scholarships official PDFs",
+    "query": "student scholarship guidelines notification filetype:pdf",
+    "state": "National",
+    "category": "any",
+    "course": "any"
+  },
+  {
+    "name": "NSP scholarship schemes",
+    "query": "National Scholarship Portal scholarship scheme guidelines notification",
+    "state": "National",
+    "category": "any",
+    "course": "any"
+  },
+  {
+    "name": "AICTE scholarships",
+    "query": "AICTE scholarship guidelines notification Pragati Saksham Swanath filetype:pdf",
+    "state": "National",
+    "category": "any",
+    "course": "engineering"
+  },
+  {
+    "name": "UGC scholarships",
+    "query": "UGC scholarship fellowship guidelines notification filetype:pdf",
+    "state": "National",
+    "category": "any",
+    "course": "degree pg"
+  },
+  {
+    "name": "Andhra Pradesh scholarships",
+    "query": "Andhra Pradesh student scholarship guidelines Jnanabhumi notification filetype:pdf",
+    "state": "Andhra Pradesh",
+    "category": "any",
+    "course": "degree engineering post matric"
+  },
+  {
+    "name": "Telangana scholarships",
+    "query": "Telangana ePASS scholarship guidelines notification filetype:pdf",
+    "state": "Telangana",
+    "category": "any",
+    "course": "degree engineering post matric"
+  },
+  {
+    "name": "OBC scholarships",
+    "query": "OBC scholarship guidelines notification non creamy layer filetype:pdf",
+    "state": "National",
+    "category": "OBC",
+    "course": "any"
+  },
+  {
+    "name": "SC ST scholarships",
+    "query": "SC ST post matric scholarship guidelines notification filetype:pdf",
+    "state": "National",
+    "category": "SC ST",
+    "course": "post matric"
+  },
+  {
+    "name": "Minority scholarships",
+    "query": "minority scholarship guidelines notification student filetype:pdf",
+    "state": "National",
+    "category": "minority",
+    "course": "any"
+  },
+  {
+    "name": "EWS scholarships",
+    "query": "EWS scholarship guidelines notification student filetype:pdf",
+    "state": "National",
+    "category": "EWS",
+    "course": "any"
+  }
+]
