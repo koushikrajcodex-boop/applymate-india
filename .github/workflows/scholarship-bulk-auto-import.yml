@@ -1,0 +1,70 @@
+name: Bulk Scholarship Auto Import
+
+on:
+  workflow_dispatch:
+    inputs:
+      max_import:
+        description: "Maximum records to import"
+        required: false
+        default: "100"
+      dry_run:
+        description: "Run without writing to Firestore"
+        required: false
+        default: "false"
+        type: choice
+        options:
+          - "false"
+          - "true"
+  schedule:
+    - cron: "45 2 * * *"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: scholarship-bulk-auto-import
+  cancel-in-progress: false
+
+jobs:
+  discover-and-import:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          persist-credentials: true
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm install --omit=dev
+
+      - name: Discover scholarship sources
+        run: node scripts/auto-discover-scholarships.mjs
+
+      - name: Bulk import discovered scholarships to Firestore
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          MAX_IMPORT: ${{ inputs.max_import || '100' }}
+          DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          IMPORT_STATUS: draft
+          FIRESTORE_COLLECTION: scholarships
+        run: node scripts/bulk-import-discovered-scholarships.mjs
+
+      - name: Commit discovery and import reports
+        if: always()
+        run: |
+          git config user.name "applymate-bulk-import-bot"
+          git config user.email "applymate-bulk-import-bot@users.noreply.github.com"
+          git add data/auto-discovered-scholarships.json data/auto-discovered-scholarships.legacy.txt data/bulk-import-report.json || true
+          if git diff --cached --quiet; then
+            echo "No report changes to commit."
+          else
+            git commit -m "Update scholarship auto-import reports"
+            git push
+          fi
