@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Apply First Planner - ApplyMate India</title>
+  <meta name="description" content="Compare scholarship options by deadline urgency, eligibility confidence, document readiness, and benefit level to decide which scholarship to apply for first." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/apply-first.html" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .priority-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+    .priority-form { display: grid; gap: 12px; }
+    .priority-form label { display: grid; gap: 6px; }
+    .priority-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .priority-list { display: grid; gap: 12px; margin-top: 16px; }
+    .priority-card { padding: 16px; border: 1px solid var(--border); border-radius: 16px; background: #fff; display: grid; gap: 8px; }
+    .priority-top { display: flex; justify-content: space-between; align-items: center; gap: 12px; }
+    .priority-rank { display: inline-flex; align-items: center; justify-content: center; width: 34px; height: 34px; border-radius: 999px; background: #eff6ff; color: #1d4ed8; font-weight: 800; }
+    .priority-score { border: 1px solid var(--border); border-radius: 999px; padding: 6px 10px; font-weight: 800; }
+    .priority-high { background: #ecfdf3; color: #067647; }
+    .priority-medium { background: #fffaeb; color: #b54708; }
+    .priority-low { background: #fff1f3; color: #c01048; }
+    .score-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 10px; }
+    .score-pill { border: 1px solid var(--border); border-radius: 12px; padding: 10px; background: #f8fafc; display: grid; gap: 3px; }
+    .score-pill strong { font-size: 1rem; }
+    .score-pill span { color: var(--muted); font-size: .85rem; }
+    .empty-priority { padding: 18px; border: 1px dashed var(--border); border-radius: 16px; color: var(--muted); background: #fff; }
+    @media (max-width: 900px) { .priority-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 620px) { .score-grid { grid-template-columns: 1fr 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="comparison-lab.html">Compare</a>
+      <a href="apply-first.html">Apply First</a>
+      <a href="application-roadmap.html">Roadmap</a>
+      <a href="document-vault.html">Documents</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <span class="tagline">Decision Helper</span>
+      <h1>Apply First Planner</h1>
+      <p>Add the scholarships you are considering. The planner scores each one using deadline urgency, eligibility confidence, document readiness, and benefit level so you can decide what to apply for first.</p>
+      <div class="notice-box">This score is only a planning helper. Always verify final eligibility, deadlines, and documents on the official portal before applying.</div>
+    </section>
+
+    <div class="priority-grid">
+      <section class="content-card">
+        <h2>Add scholarship option</h2>
+        <form id="priorityForm" class="priority-form">
+          <label>Scholarship name
+            <input id="scholarshipName" type="text" placeholder="Example: NSP, AICTE, ePASS, Jnanabhumi..." required />
+          </label>
+          <label>Deadline
+            <input id="deadlineDate" type="date" />
+          </label>
+          <label>Eligibility confidence
+            <select id="eligibilityLevel">
+              <option value="3">Strong match</option>
+              <option value="2" selected>Possible match</option>
+              <option value="1">Not sure yet</option>
+            </select>
+          </label>
+          <label>Documents readiness
+            <select id="documentLevel">
+              <option value="3">All documents ready</option>
+              <option value="2" selected>Some documents ready</option>
+              <option value="1">Documents not ready</option>
+            </select>
+          </label>
+          <label>Benefit level
+            <select id="benefitLevel">
+              <option value="3">High value / important</option>
+              <option value="2" selected>Medium value</option>
+              <option value="1">Low value / optional</option>
+            </select>
+          </label>
+          <label>Effort required
+            <select id="effortLevel">
+              <option value="1">Low effort</option>
+              <option value="2" selected>Medium effort</option>
+              <option value="3">High effort</option>
+            </select>
+          </label>
+          <div class="priority-actions">
+            <button type="submit">Add Option</button>
+            <button id="clearAllBtn" type="button" class="secondary-btn">Clear All</button>
+          </div>
+        </form>
+      </section>
+
+      <section class="content-card">
+        <h2>How scoring works</h2>
+        <p class="mini-note">The planner gives extra weight to urgent deadlines, stronger eligibility, ready documents, and higher benefit. It subtracts a little for high effort.</p>
+        <ul>
+          <li><strong>Deadline:</strong> closer valid deadlines get more urgency points.</li>
+          <li><strong>Eligibility:</strong> strong matches rank higher than uncertain options.</li>
+          <li><strong>Documents:</strong> ready documents increase practical chance of applying on time.</li>
+          <li><strong>Benefit:</strong> higher-value scholarships move up the list.</li>
+        </ul>
+        <button id="copyPriorityBtn" type="button" class="secondary-btn">Copy Priority List</button>
+      </section>
+    </div>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <h2>Apply priority list</h2>
+          <p class="mini-note">Apply from top to bottom unless an official rule or deadline changes.</p>
+        </div>
+      </div>
+      <div id="priorityOutput" class="priority-list"></div>
+    </section>
+
+    <section class="content-card">
+      <h2>Next step after ranking</h2>
+      <p>Once you know what to apply for first, use the roadmap planner for deadlines and the document vault for checklist preparation.</p>
+      <div class="button-row">
+        <a class="secondary-btn" href="application-roadmap.html">Plan Application Roadmap</a>
+        <a class="secondary-btn" href="document-vault.html">Prepare Documents</a>
+        <a class="text-btn" href="scholarships.html">Find Scholarships</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India helps students prioritize scholarship applications before using official portals.</p>
+    <div class="footer-links">
+      <a href="scholarships.html">Scholarships</a>
+      <a href="application-roadmap.html">Roadmap</a>
+      <a href="document-vault.html">Documents</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+
+  <script src="apply-first.js"></script>
+</body>
+</html>
