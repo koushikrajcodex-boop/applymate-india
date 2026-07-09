@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Private Admin Access - ApplyMate India</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Private admin entry page for ApplyMate India." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css?v=admin5" />
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <main class="content-page">
+    <section class="content-card admin-hero">
+      <span class="tagline">Private Admin Entry</span>
+      <h1>ApplyMate India Private Admin</h1>
+      <p id="privateAdminStatus" class="last-updated">Checking access...</p>
+      <div class="notice-box">
+        This page is hidden from search engines and only opens tools for the approved admin email.
+      </div>
+    </section>
+
+    <section id="privateDenied" class="content-card hidden">
+      <h2>Access denied</h2>
+      <p class="mini-note">Only the approved admin email can use this private entry page.</p>
+      <div class="button-row">
+        <a class="text-btn" href="login.html">Login</a>
+        <a class="secondary-btn" href="dashboard.html">Student Dashboard</a>
+      </div>
+    </section>
+
+    <section id="privateAdminContent" class="hidden">
+      <section class="content-card">
+        <h2>Admin Tools</h2>
+        <p class="mini-note">Use these links after signing in as <strong>koushikrajcodex@gmail.com</strong>.</p>
+        <div class="guide-list">
+          <a class="guide-card" href="admin.html">
+            <h2>Main Admin Panel</h2>
+            <p>Add, edit, duplicate, publish, archive, and manage scholarship records.</p>
+          </a>
+
+          <a class="guide-card" href="scholarship-discovery.html">
+            <h2>Discovery Assistant</h2>
+            <p>Paste official-source text or JSON, detect missing scholarships, skip duplicates, and import safe records.</p>
+          </a>
+
+          <a class="guide-card" href="admin-health.html">
+            <h2>Data Health</h2>
+            <p>Review duplicates, expired active records, weak verification, and incomplete scholarship data.</p>
+          </a>
+
+          <a class="guide-card" href="scholarships.html#live-directory">
+            <h2>Public Scholarship Directory</h2>
+            <p>Check what students will see after verified active records are published.</p>
+          </a>
+        </div>
+        <div class="button-row">
+          <button id="privateAdminLogoutBtn" class="secondary-btn" type="button">Logout</button>
+        </div>
+      </section>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India private admin entry.</p>
+  </footer>
+
+  <script type="module">
+    import { auth } from "./firebase-config.js";
+    import { checkAdminAccess } from "./admin-access.js";
+    import { onAuthStateChanged, signOut } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
+
+    const status = document.getElementById("privateAdminStatus");
+    const denied = document.getElementById("privateDenied");
+    const content = document.getElementById("privateAdminContent");
+    const logout = document.getElementById("privateAdminLogoutBtn");
+
+    onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        if (status) status.textContent = "Please login with the approved admin email.";
+        denied?.classList.remove("hidden");
+        content?.classList.add("hidden");
+        return;
+      }
+
+      const access = await checkAdminAccess(user);
+
+      if (!access.allowed || !access.viaEmail) {
+        if (status) status.textContent = `Denied for ${user.email || "this account"}. Use the approved admin email.`;
+        denied?.classList.remove("hidden");
+        content?.classList.add("hidden");
+        return;
+      }
+
+      if (status) status.textContent = `Private admin access granted: ${access.email}`;
+      denied?.classList.add("hidden");
+      content?.classList.remove("hidden");
+    });
+
+    logout?.addEventListener("click", async () => {
+      logout.disabled = true;
+      logout.textContent = "Logging out...";
+      await signOut(auth);
+      window.location.replace("login.html");
+    });
+  </script>
+</body>
+</html>
