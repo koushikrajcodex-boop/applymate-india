@@ -2,7 +2,7 @@ import { db } from "./firebase-config.js";
 import { daysLeft, getActiveScholarshipStats, isNewThisMonth } from "./live-count-utils.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
-const QUERY_TIMEOUT_MS = 8000;
+const QUERY_TIMEOUT_MS = 5000;
 const countBox = document.getElementById("activeScholarshipHomeCount");
 const labelBox = document.getElementById("activeScholarshipHomeLabel");
 const updatedBox = document.getElementById("activeScholarshipHomeUpdated");
@@ -36,12 +36,12 @@ async function loadCountAndHighlights() {
     addHighlightsSection(stats.active);
   } catch (error) {
     console.warn("Live scholarship count failed", error);
-    setHeroStat(0, "Live", "Active scholarships");
+    setHeroStat(0, "—", "Active scholarships unavailable");
     setHeroStat(1, "—", "Closing this week");
     setHeroStat(2, "—", "New this month");
-    if (countBox) countBox.textContent = "Live";
-    if (labelBox) labelBox.textContent = "Scholarship directory";
-    if (updatedBox) updatedBox.textContent = "Live count is taking longer than expected. Open the scholarship directory for the latest verified list.";
+    if (countBox) countBox.textContent = "—";
+    if (labelBox) labelBox.textContent = "Active scholarships unavailable";
+    if (updatedBox) updatedBox.textContent = "Live count unavailable after 5 seconds. Open the scholarship directory for the latest verified list.";
   }
 }
 
