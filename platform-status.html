@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Platform Status & Trust - ApplyMate India</title>
+  <meta name="description" content="See ApplyMate India feature status, verification standards, privacy controls, and scholarship information limits." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/platform-status.html" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .status-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 16px; }
+    .status-card { padding: 18px; border: 1px solid var(--border); border-radius: 18px; background: #fff; }
+    .status-card h2 { margin-top: 0; }
+    .status-pill { display: inline-block; padding: 5px 10px; border-radius: 999px; font-weight: 700; font-size: .85rem; margin-bottom: 10px; }
+    .live { background: #ecfdf3; color: #067647; }
+    .partial { background: #fffaeb; color: #b54708; }
+    .planned { background: #eef4ff; color: #3538cd; }
+    .trust-list { display: grid; gap: 12px; }
+    .trust-list article { padding: 15px; border-radius: 15px; background: #f8fafc; }
+    @media (max-width: 900px) { .status-grid { grid-template-columns: repeat(2, 1fr); } }
+    @media (max-width: 620px) { .status-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="index.html">
+      <span class="logo-icon">A</span>
+      <span>ApplyMate India</span>
+    </a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="scholarships.html">Scholarships</a>
+      <a href="guides.html">Guides</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="platform-status.html">Platform Status</a>
+      <a href="privacy.html">Privacy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card">
+      <span class="tagline">Trust & Readiness</span>
+      <h1>Platform Status & Trust Center</h1>
+      <p>
+        ApplyMate India is built to help students discover, save, track, and understand scholarships. This page explains
+        what is live, what is still improving, and how scholarship information should be verified.
+      </p>
+      <div class="notice-box">
+        ApplyMate India is an informational student-help platform. Official scholarship portals remain the final source for applications and scheme rules.
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>Feature status</h2>
+      <div class="status-grid">
+        <article class="status-card"><span class="status-pill live">Live</span><h2>Login & Dashboard</h2><p>Students can sign in, save profile data, view recommendations, and manage scholarship planning.</p></article>
+        <article class="status-card"><span class="status-pill live">Live</span><h2>Recommendations</h2><p>Scholarships can be matched using profile fields such as state, education, category, gender, disability, and income.</p></article>
+        <article class="status-card"><span class="status-pill live">Live</span><h2>Tracker</h2><p>Students can track application status using Not Applied, Applied, Under Review, Approved, and Rejected states.</p></article>
+        <article class="status-card"><span class="status-pill live">Live</span><h2>Deadline Tools</h2><p>Saved scholarships can show deadline intelligence and Google Calendar reminder links when dates are available.</p></article>
+        <article class="status-card"><span class="status-pill live">Live</span><h2>Admin Review</h2><p>Admins have verification workflow and quality checks before scholarships are treated as ready.</p></article>
+        <article class="status-card"><span class="status-pill partial">Improving</span><h2>Scholarship Database</h2><p>More real scholarship records need to be added and verified before the platform reaches full coverage.</p></article>
+        <article class="status-card"><span class="status-pill planned">Planned</span><h2>Email Alerts</h2><p>Email delivery needs a backend service. Current reminders are dashboard and calendar based.</p></article>
+        <article class="status-card"><span class="status-pill live">Live</span><h2>Account Center</h2><p>Students can export data, check account status, clear browser preferences, and run diagnostics.</p></article>
+        <article class="status-card"><span class="status-pill live">Live</span><h2>Guides</h2><p>Public scholarship guides help students understand common portals, documents, and application preparation.</p></article>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>Verification standards</h2>
+      <div class="trust-list">
+        <article><strong>Official-source priority</strong><p class="mini-note">Scholarship records should include official links, source names, deadline dates where available, and student-friendly eligibility notes.</p></article>
+        <article><strong>Clear limits</strong><p class="mini-note">ApplyMate explains and organizes information; it does not guarantee selection, payment, approval, or portal availability.</p></article>
+        <article><strong>Correction path</strong><p class="mini-note">Every scholarship card should guide users to report corrections so outdated or incomplete information can be improved.</p></article>
+        <article><strong>Private tools</strong><p class="mini-note">Account exports, diagnostics, and application intelligence are private pages intended for signed-in users.</p></article>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <h2>What still makes the platform stronger?</h2>
+      <p>
+        The biggest future improvements are adding a larger verified scholarship database, backend email reminders,
+        admin audit logs, and richer scholarship comparison data. These should be added carefully with testing instead of rushing unstable features.
+      </p>
+      <div class="button-row">
+        <a class="secondary-btn" href="scholarships.html">Browse Scholarships</a>
+        <a class="text-btn" href="editorial-policy.html">Read Editorial Policy</a>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>ApplyMate India is transparent about platform status and scholarship information limits.</p>
+    <div class="footer-links">
+      <a href="about.html">About</a>
+      <a href="privacy.html">Privacy Policy</a>
+      <a href="disclaimer.html">Disclaimer</a>
+      <a href="editorial-policy.html">Editorial Policy</a>
+      <a href="contact.html">Contact</a>
+    </div>
+  </footer>
+</body>
+</html>
