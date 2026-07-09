@@ -12,14 +12,7 @@ service cloud.firestore {
     }
 
     function isAdmin() {
-      return isSignedIn() &&
-        (
-          request.auth.token.admin == true ||
-          request.auth.token.email in [
-            "lastwarrior324@gmail.com",
-            "koushikrajcodex@gmail.com"
-          ]
-        );
+      return isSignedIn() && request.auth.token.admin == true;
     }
 
     function isValidUrl(value) {
