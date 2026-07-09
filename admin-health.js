@@ -1,6 +1,6 @@
 import { auth, db } from "./firebase-config.js";
+import { checkAdminAccess } from "./admin-access.js";
 import {
-  getIdTokenResult,
   onAuthStateChanged,
   signOut
 } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
@@ -9,6 +9,7 @@ import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/
 let records = [];
 let issues = [];
 let isAdmin = false;
+let currentAdminAccess = null;
 
 const ids = ["hTotal","hVisible","hIssues","hDuplicates","hExpired","hLinks","hDeadline","hVerify"];
 const $ = (id) => document.getElementById(id);
@@ -49,16 +50,14 @@ onAuthStateChanged(auth, async (user) => {
     return;
   }
 
-  let token;
   try {
-    token = await getIdTokenResult(user, true);
+    currentAdminAccess = await checkAdminAccess(user);
+    isAdmin = currentAdminAccess.allowed;
   } catch (error) {
-    console.error("Admin health claim check failed:", error);
+    console.error("Admin health access check failed:", error);
     window.location.replace("dashboard.html?adminAccess=error");
     return;
   }
-
-  isAdmin = token?.claims?.admin === true;
 
   if (!isAdmin) {
     window.location.replace("dashboard.html?adminAccess=denied");
@@ -67,7 +66,8 @@ onAuthStateChanged(auth, async (user) => {
 
   $("healthContent")?.classList.remove("hidden");
   $("healthLocked")?.classList.add("hidden");
-  if ($("healthAdminEmail")) $("healthAdminEmail").textContent = `Admin: ${user.email || "verified admin"}`;
+  const via = currentAdminAccess?.viaEmail ? "admin email" : "custom claim";
+  if ($("healthAdminEmail")) $("healthAdminEmail").textContent = `Admin: ${user.email || "verified admin"} (${via})`;
   await runHealthCheck();
 });
 
@@ -83,7 +83,7 @@ async function runHealthCheck() {
     renderIssues();
   } catch (error) {
     console.error("Admin health check failed:", error);
-    if (list) list.innerHTML = "<p class='mini-note'>Could not load scholarship data. Please try again.</p>";
+    if (list) list.innerHTML = "<p class='mini-note'>Could not load scholarship data. Confirm Firestore rules allow your approved admin email.</p>";
   }
 }
 
