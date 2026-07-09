@@ -34,7 +34,12 @@ jobs:
         run: npm install --no-audit --no-fund
 
       - name: Run auto checker and automatic Firestore adder
-        run: node tools/scholarship-radar.mjs --write-firestore
+        run: |
+          if [ "${RADAR_WRITE_FIRESTORE}" = "true" ]; then
+            node tools/scholarship-radar.mjs --write-firestore
+          else
+            node tools/scholarship-radar.mjs
+          fi
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
           RADAR_WRITE_FIRESTORE: ${{ github.event.inputs.write_firestore || 'true' }}
