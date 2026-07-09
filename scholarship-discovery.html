@@ -3,32 +3,83 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Automated Scholarship Bot - ApplyMate India</title>
+  <title>Bulk Scholarship Auto Import - ApplyMate India</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Admin-only automated scholarship discovery and review bot for ApplyMate India." />
+  <meta name="description" content="Action-based bulk scholarship auto import dashboard for ApplyMate India." />
   <link rel="stylesheet" href="style.css" />
   <link rel="stylesheet" href="admin.css?v=admin5" />
   <style>
-    .link-analyzer-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start}.bot-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.bot-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-card h3{margin:6px 0}.bot-status{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef4ff;color:#1d4ed8;font-weight:800;font-size:.8rem}.bot-status.good{background:#ecfdf3;color:#067647}.bot-status.warn{background:#fffbeb;color:#92400e}.bot-status.bad{background:#fff1f3;color:#be123c}.bot-mini{font-size:.9rem;color:var(--muted)}.format-preview{font-size:.92rem;white-space:pre-wrap}.score-grid{display:flex;flex-wrap:wrap;gap:7px;margin:12px 0}.score-chip{display:inline-flex;align-items:center;border-radius:999px;padding:5px 9px;font-weight:800;font-size:.76rem}.score-chip.good{background:#ecfdf3;color:#067647}.score-chip.warn{background:#fffbeb;color:#92400e}.score-chip.bad{background:#fff1f3;color:#be123c}.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.feature-pill{padding:10px 12px;border:1px solid var(--border);border-radius:14px;background:#f8fafc;font-size:.86rem;font-weight:750}.check-row{display:flex;align-items:flex-start;gap:10px;padding:12px;border:1px solid var(--border);border-radius:14px;background:#fff}.check-row input{margin-top:4px}.search-links{display:flex;flex-wrap:wrap;gap:10px;margin-top:10px}.drop-zone{border:2px dashed var(--border);border-radius:18px;background:#f8fafc;padding:16px;text-align:center;margin-top:10px;cursor:pointer}.drop-zone strong{display:block;margin-bottom:4px}@media(max-width:900px){.link-analyzer-grid,.bot-result-grid,.small-grid{grid-template-columns:1fr}}
+    .bot-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.bot-stat{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-stat strong{display:block;font-size:1.8rem;margin-top:6px}.bot-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.bot-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-card h3{margin:8px 0}.bot-status{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef4ff;color:#1d4ed8;font-weight:800;font-size:.8rem}.bot-status.good{background:#ecfdf3;color:#067647}.bot-status.warn{background:#fffbeb;color:#92400e}.bot-status.bad{background:#fff1f3;color:#be123c}.bot-mini{font-size:.9rem;color:var(--muted)}.small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}.feature-pill{padding:10px 12px;border:1px solid var(--border);border-radius:14px;background:#f8fafc;font-size:.86rem;font-weight:750}.step-box{padding:14px;border:1px solid var(--border);border-radius:16px;background:#fff}.step-box h3{margin:0 0 6px}.warning-box{padding:14px;border-radius:16px;background:#fffbeb;border:1px solid #fde68a;color:#92400e}@media(max-width:900px){.bot-grid,.bot-result-grid,.small-grid{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="page-bg"></div>
-  <nav class="navbar"><a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Automated Bot</span></a><div class="nav-links"><a href="admin.html">Admin Panel</a><a href="admin-health.html">Data Health</a><a href="dashboard.html">Dashboard</a><a href="index.html">Home</a></div></nav>
+  <nav class="navbar">
+    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Bulk Import Bot</span></a>
+    <div class="nav-links"><a href="admin.html">Admin Panel</a><a href="admin-health.html">Data Health</a><a href="dashboard.html">Dashboard</a><a href="index.html">Home</a></div>
+  </nav>
+
   <main class="content-page">
-    <section class="content-card admin-hero"><span class="tagline">Automated + Search-first Scholarship Discovery</span><h1>Automated Scholarship Discovery Bot</h1><p id="botPanelAdminEmail" class="last-updated">Analyzer visible. Checking admin access for Firestore import...</p><div class="notice-box">The automation now uses official portals plus trusted scholarship portals like Buddy4Study, Vidyasaarathi, Foundation For Excellence, HDFC, Reliance Foundation, Tata Trusts and state portals. Even if search APIs return empty, curated trusted portal drafts are still saved for review.</div><div class="button-row"><button id="botPanelRefreshBtn" class="secondary-btn" type="button">Refresh Firestore Coverage</button><a class="secondary-btn" href="admin.html">Back to Admin</a></div><p id="botPanelCoverage" class="mini-note">Coverage loads after admin auth. Automated bot is ready.</p></section>
-    <section id="botPanelLocked" class="content-card hidden"><h2>Login required for Firestore import</h2><p class="mini-note">You can search and draft without login, but Firestore import requires approved admin login.</p><a class="text-btn" href="login.html?redirect=scholarship-discovery.html">Admin Login</a></section>
-    <section id="botPanelContent">
-      <section class="content-card"><div class="card-heading"><div><span class="tagline">Step 0</span><h2>Load automated discoveries</h2><p class="mini-note">Run the GitHub Action named <strong>Scholarship Auto Discovery</strong>. It now guarantees curated trusted portal draft records even if external search services fail.</p></div><div class="button-row"><button id="autoDiscoveryLoadBtn" type="button">Load Auto-Discovered Drafts</button><button id="autoDiscoveryOpenFeedBtn" class="secondary-btn" type="button">Open Discovery Feed</button></div></div><p id="autoDiscoveryStatus" class="mini-note"></p></section>
-      <section class="content-card"><div class="card-heading"><div><span class="tagline">Step 1</span><h2>Search official and trusted scholarship sources</h2><p class="mini-note">Use this when you want extra searching beyond the scheduled automation.</p></div></div><div class="form-grid"><div class="field full"><label for="webSearchQuery">What should the bot search?</label><input id="webSearchQuery" type="text" placeholder="Example: OBC engineering scholarship Andhra Pradesh guidelines" /></div><div class="field"><label for="webSearchState">State / UT</label><input id="webSearchState" type="text" placeholder="Example: Andhra Pradesh / National" /></div><div class="field"><label for="webSearchCategory">Category</label><input id="webSearchCategory" type="text" placeholder="Example: OBC / SC / ST / EWS / Minority" /></div><div class="field"><label for="webSearchCourse">Course / level</label><input id="webSearchCourse" type="text" placeholder="Example: engineering / degree / post matric" /></div><div class="field"><label class="check-row"><input id="webSearchOfficialOnly" type="checkbox" checked /><span><strong>Prefer official domains</strong><br><span class="mini-note">Adds gov.in, nic.in, ac.in, NSP, AICTE, UGC filters.</span></span></label></div><div class="field"><label class="check-row"><input id="webSearchPdfOnly" type="checkbox" /><span><strong>Prefer PDFs only</strong><br><span class="mini-note">Good for guidelines, notifications, circulars.</span></span></label></div></div><div class="button-row"><button id="webSearchBtn" type="button">Search Web</button><button id="webSearchPdfBtn" class="secondary-btn" type="button">Search Official PDFs</button><button id="webSearchOpenEnginesBtn" class="secondary-btn" type="button">Open Search Engines</button></div><p id="webSearchStatus" class="mini-note"></p><div id="webSearchFallbackLinks" class="search-links"></div></section>
-      <section class="content-card"><div class="card-heading"><div><span class="tagline">Step 2</span><h2>Search Results</h2><p class="mini-note">Select good official/trusted results. Use snippet drafts when portals block reading. Use deep analyze only when you want to attempt direct URL extraction.</p></div><div class="button-row"><button id="webSearchSnippetDraftBtn" type="button">Generate Drafts from Selected Results</button><button id="webSearchDeepAnalyzeBtn" class="secondary-btn" type="button">Deep Analyze Selected URLs</button></div></div><div id="webSearchResults" class="bot-result-grid"><p class="mini-note">No search results yet.</p></div></section>
-      <section class="content-card"><div class="card-heading"><div><span class="tagline">Manual / fallback</span><h2>Deep analyzer and PDF upload</h2><p class="mini-note">If automation/search finds a PDF but the site blocks direct analysis, open/download it and upload multiple PDFs here.</p></div></div><div class="link-analyzer-grid"><div><div class="form-grid"><div class="field full"><label for="linkBulkUrls">Selected / manual official URLs</label><textarea id="linkBulkUrls" rows="5" placeholder="Search bot fills this automatically for deep analysis. You can also paste URLs manually."></textarea></div><div class="field full"><label for="linkPdfFile">Upload official PDF guideline(s)</label><input id="linkPdfFile" type="file" accept="application/pdf,.pdf" multiple /><div id="linkDropZone" class="drop-zone"><strong>Drag & drop PDF files here</strong><span class="mini-note">Drop multiple PDFs, then click Analyze Uploaded PDF(s)/OCR.</span><p id="linkDropStatus" class="mini-note"></p></div></div><div class="field full"><label for="linkFallbackText">Paste official page/PDF/OCR text</label><textarea id="linkFallbackText" rows="8" placeholder="Copy official text from page/PDF and paste it here."></textarea></div><input id="linkAnalyzerUrl" type="hidden" /><input id="botPanelUrl" type="hidden" /><input id="botPanelSource" type="hidden" /></div><div class="button-row"><button id="linkBulkAnalyzeBtn" class="secondary-btn" type="button">Deep Analyze URLs</button><button id="linkPdfAnalyzeBtn" class="secondary-btn" type="button">Analyze Uploaded PDF(s)/OCR</button><button id="linkPastedAnalyzeBtn" class="secondary-btn" type="button">Analyze Pasted Text</button><button id="botPanelClearBtn" class="secondary-btn" type="button">Clear</button></div><p id="botPanelMessage" class="mini-note"></p></div><aside class="content-card"><span class="tagline">Import</span><h3>Draft-first workflow</h3><p class="mini-note">Automated discoveries and portal snippets should usually be imported as drafts, then verified with provider/official page before making active.</p><div class="small-grid"><span class="feature-pill">Daily Action</span><span class="feature-pill">Trusted portals</span><span class="feature-pill">Draft loader</span><span class="feature-pill">Web search</span><span class="feature-pill">PDF upload</span><span class="feature-pill">Import status</span></div><div class="button-row"><button id="botPanelImportActiveBtn" type="button">Import Auto Active</button><button id="botPanelImportDraftBtn" class="secondary-btn" type="button">Import Draft/Review</button><button id="botPanelImportSafeDraftsBtn" class="secondary-btn" type="button">Import Safe as Drafts</button></div></aside></div></section>
-      <section class="content-card"><h2>Generated structured format</h2><p class="mini-note">The bot fills this with draft records. You can edit before importing.</p><div class="form-grid"><div class="field full"><textarea id="botPanelInput" rows="16" class="format-preview" placeholder="Load auto-discoveries or search, then generate drafts"></textarea></div></div><div class="button-row"><button id="botPanelAnalyzeBtn" type="button">Re-Analyze Edited Format</button></div></section>
-      <section class="content-card"><div class="card-heading"><div><h2>Analyzer Results & Import Status</h2><p class="mini-note">After loading automation or generating drafts, review confidence, missing fields, duplicate warnings, and import status.</p></div></div><div id="botPanelResults" class="bot-result-grid"><p class="mini-note">No analyzer results yet.</p></div></section>
+    <section class="content-card admin-hero">
+      <span class="tagline">GitHub Actions Based Automation</span>
+      <h1>Bulk Scholarship Auto Import Bot</h1>
+      <p class="last-updated">No browser scraping. No admin-page importing. The GitHub Action discovers scholarships and imports them to Firestore as review drafts.</p>
+      <div class="notice-box">This page is now only a dashboard for the automated Action. Run <strong>Bulk Scholarship Auto Import</strong> in GitHub Actions. It discovers scholarship sources, skips duplicates, imports draft records to Firestore, and writes the report shown here.</div>
+      <div class="button-row">
+        <button id="bulkOpenActionBtn" type="button">Open Bulk Import Action</button>
+        <button id="bulkLoadReportBtn" class="secondary-btn" type="button">Refresh Report</button>
+        <button id="bulkOpenReportBtn" class="secondary-btn" type="button">Open Import Report JSON</button>
+        <button id="bulkOpenFeedBtn" class="secondary-btn" type="button">Open Discovery Feed</button>
+      </div>
+      <p id="bulkBotStatus" class="mini-note">Loading dashboard...</p>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">How it works</span><h2>One-click bulk import flow</h2></div></div>
+      <div class="small-grid">
+        <div class="step-box"><h3>1. Run Action</h3><p class="mini-note">GitHub Actions → Bulk Scholarship Auto Import → Run workflow.</p></div>
+        <div class="step-box"><h3>2. Auto Import</h3><p class="mini-note">The Action runs discovery and imports records into Firestore as draft/review.</p></div>
+        <div class="step-box"><h3>3. Review Later</h3><p class="mini-note">Imported records are not active by default. They stay safe as drafts until verified.</p></div>
+      </div>
+      <p class="warning-box">Required once: add <strong>FIREBASE_SERVICE_ACCOUNT_JSON</strong> and <strong>FIREBASE_PROJECT_ID</strong> in GitHub Actions secrets. Without that, the dashboard can show feeds, but Firestore import cannot happen.</p>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">Latest Firestore Import Report</span><h2>Bulk import status</h2></div></div>
+      <div class="bot-grid">
+        <div class="bot-stat"><span>Report generated</span><strong id="bulkReportGenerated">-</strong></div>
+        <div class="bot-stat"><span>Mode</span><strong id="bulkReportMode">-</strong></div>
+        <div class="bot-stat"><span>Added</span><strong id="bulkReportAdded">0</strong></div>
+        <div class="bot-stat"><span>Skipped duplicates</span><strong id="bulkReportSkipped">0</strong></div>
+        <div class="bot-stat"><span>Failed</span><strong id="bulkReportFailed">0</strong></div>
+        <div class="bot-stat"><span>Feed generated</span><strong id="bulkFeedGenerated">-</strong></div>
+        <div class="bot-stat"><span>Feed records</span><strong id="bulkFeedTotal">0</strong></div>
+        <div class="bot-stat"><span>Search errors</span><strong id="bulkFeedErrors">0</strong></div>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">Imported</span><h2>Recently added to Firestore</h2><p class="mini-note">These are records the Action added as draft/review.</p></div></div>
+      <div id="bulkImportedList" class="bot-result-grid"><p class="mini-note">Loading...</p></div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">Duplicates</span><h2>Skipped records</h2><p class="mini-note">Skipped to avoid duplicate scholarship documents.</p></div></div>
+      <div id="bulkSkippedList" class="bot-result-grid"><p class="mini-note">Loading...</p></div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">Discovery Feed</span><h2>Scholarship sources ready for import</h2><p class="mini-note">These are the discovered/curated records used by the bulk importer.</p></div><div><span class="bot-status good">Curated: <span id="bulkFeedCurated">0</span></span></div></div>
+      <div id="bulkFeedList" class="bot-result-grid"><p class="mini-note">Loading...</p></div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading"><div><span class="tagline">Errors</span><h2>Latest warnings/errors</h2><p class="mini-note">If import fails, check this and GitHub Actions logs.</p></div></div>
+      <div id="bulkErrorsList" class="bot-result-grid"><p class="mini-note">Loading...</p></div>
     </section>
   </main>
-  <footer><p>ApplyMate India Automated Scholarship Bot. Verify official sources before publishing.</p></footer>
-  <script>document.getElementById('botPanelContent')?.classList.remove('hidden');</script>
-  <script type="module" src="scholarship-bots-panel.js?v=auto-discovery1"></script>
+
+  <footer><p>ApplyMate India Bulk Scholarship Auto Import Bot. Auto-imports stay as draft/review until verified.</p></footer>
+  <script type="module" src="scholarship-bots-panel.js?v=bulk-import-dashboard1"></script>
 </body>
 </html>
