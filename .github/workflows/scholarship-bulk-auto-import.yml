@@ -28,6 +28,19 @@ on:
         options:
           - "false"
           - "true"
+      import_mode:
+        description: "AI publishing mode: auto_active publishes only high-confidence safe records; safe_draft keeps all as drafts"
+        required: false
+        default: "auto_active"
+        type: choice
+        options:
+          - "auto_active"
+          - "safe_draft"
+          - "review_only"
+      auto_publish_threshold:
+        description: "Minimum AI confidence required for auto-active publishing"
+        required: false
+        default: "90"
   schedule:
     - cron: "45 2 * * *"
 
@@ -39,7 +52,7 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  discover-and-import:
+  discover-import-and-track:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -60,25 +73,37 @@ jobs:
           SOURCE_PACK: ${{ inputs.source_pack || 'all' }}
         run: node scripts/auto-discover-scholarships-v2.mjs
 
-      - name: Bulk import discovered scholarships to Firestore
+      - name: AI import discovered scholarships to Firestore
         env:
           FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
           FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
           SOURCE_PACK: ${{ inputs.source_pack || 'all' }}
           MAX_IMPORT: ${{ inputs.max_import || '100' }}
           DRY_RUN: ${{ inputs.dry_run || 'false' }}
+          IMPORT_MODE: ${{ inputs.import_mode || 'auto_active' }}
+          AUTO_PUBLISH_THRESHOLD: ${{ inputs.auto_publish_threshold || '90' }}
           FIRESTORE_COLLECTION: scholarships
         run: node scripts/bulk-import-discovered-scholarships-v2.mjs
 
-      - name: Commit discovery and import reports
+      - name: AI track active scholarships and expire old records
+        if: ${{ (inputs.dry_run || 'false') == 'false' }}
+        env:
+          FIREBASE_SERVICE_ACCOUNT_JSON: ${{ secrets.FIREBASE_SERVICE_ACCOUNT_JSON }}
+          FIREBASE_PROJECT_ID: ${{ secrets.FIREBASE_PROJECT_ID }}
+          AUTO_PROMOTE_DRAFTS: "true"
+          AUTO_PUBLISH_THRESHOLD: ${{ inputs.auto_publish_threshold || '90' }}
+          FIRESTORE_COLLECTION: scholarships
+        run: node scripts/auto-track-scholarships-v2.mjs
+
+      - name: Commit discovery, import, and tracker reports
         if: always()
         run: |
-          git config user.name "applymate-bulk-import-bot"
-          git config user.email "applymate-bulk-import-bot@users.noreply.github.com"
-          git add data/auto-discovered-scholarships.json data/auto-discovered-scholarships.legacy.txt data/bulk-import-report.json || true
+          git config user.name "applymate-ai-scholarship-bot"
+          git config user.email "applymate-ai-scholarship-bot@users.noreply.github.com"
+          git add data/auto-discovered-scholarships.json data/auto-discovered-scholarships.legacy.txt data/bulk-import-report.json data/scholarship-ai-tracker-report.json || true
           if git diff --cached --quiet; then
             echo "No report changes to commit."
           else
-            git commit -m "Update scholarship auto-import reports"
+            git commit -m "Update scholarship AI bot reports"
             git push
           fi

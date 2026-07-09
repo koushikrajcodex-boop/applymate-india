@@ -3,29 +3,155 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Scholarship Link Analyzer - ApplyMate India</title>
+  <title>AI Scholarship Bot - ApplyMate India</title>
   <meta name="robots" content="noindex, nofollow" />
-  <meta name="description" content="Admin-only scholarship link analyzer for ApplyMate India." />
+  <meta name="description" content="Admin dashboard for the ApplyMate India AI scholarship auto import and tracker workflow." />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="admin.css?v=admin5" />
+  <link rel="stylesheet" href="admin.css?v=admin6" />
   <style>
-    .link-analyzer-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:18px;align-items:start}.bot-result-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}.bot-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-card h3{margin:6px 0}.bot-status{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef4ff;color:#1d4ed8;font-weight:800;font-size:.8rem}.bot-status.good{background:#ecfdf3;color:#067647}.bot-status.warn{background:#fffbeb;color:#92400e}.bot-status.bad{background:#fff1f3;color:#be123c}.bot-mini{font-size:.9rem;color:var(--muted)}.format-preview{font-size:.92rem;white-space:pre-wrap}@media(max-width:900px){.link-analyzer-grid,.bot-result-grid{grid-template-columns:1fr}}
+    .bot-kpi-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px;margin-top:16px}.bot-kpi{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-kpi span{display:block;color:var(--muted);font-size:.88rem}.bot-kpi strong{display:block;margin-top:6px;font-size:1.35rem}.bot-result-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.bot-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.bot-card h3{margin:6px 0}.bot-status{display:inline-flex;align-items:center;gap:6px;padding:6px 10px;border-radius:999px;background:#eef4ff;color:#1d4ed8;font-weight:800;font-size:.8rem}.bot-status.good{background:#ecfdf3;color:#067647}.bot-status.warn{background:#fffbeb;color:#92400e}.bot-status.bad{background:#fff1f3;color:#be123c}.bot-mini{font-size:.9rem;color:var(--muted);word-break:break-word}.bot-flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin-top:18px}.bot-flow div{padding:12px;border-radius:14px;border:1px solid var(--border);background:#f8fafc;text-align:center;font-weight:800}.bot-flow span{display:block;color:var(--muted);font-weight:600;font-size:.82rem;margin-top:4px}@media(max-width:900px){.bot-kpi-grid,.bot-result-grid,.bot-flow{grid-template-columns:1fr}}
   </style>
 </head>
 <body>
   <div class="page-bg"></div>
-  <nav class="navbar"><a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Link Analyzer</span></a><div class="nav-links"><a href="admin.html">Admin Panel</a><a href="admin-health.html">Data Health</a><a href="dashboard.html">Dashboard</a><a href="index.html">Home</a></div></nav>
+
+  <nav class="navbar">
+    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate AI Bot</span></a>
+    <div class="nav-links">
+      <a href="admin.html">Admin Panel</a>
+      <a href="admin-health.html">Data Health</a>
+      <a href="scholarships.html#live-directory">Live Directory</a>
+      <a href="dashboard.html">Dashboard</a>
+      <a href="index.html">Home</a>
+    </div>
+  </nav>
+
   <main class="content-page">
-    <section class="content-card admin-hero"><span class="tagline">Link Analyzer Bot</span><h1>Scholarship Link Analyzer</h1><p id="botPanelAdminEmail" class="last-updated">Analyzer visible. Checking admin access for Firestore import...</p><div class="notice-box">Paste an official scholarship URL. The analyzer will try to read the page, extract scholarship fields, and auto-fill the Add Scholarship format. If the official site blocks reading, paste the page/PDF text in the fallback box.</div><div class="button-row"><button id="botPanelRefreshBtn" class="secondary-btn" type="button">Refresh Firestore Coverage</button><a class="secondary-btn" href="admin.html">Back to Admin</a></div><p id="botPanelCoverage" class="mini-note">Coverage loads after admin auth. Link analyzer is ready.</p></section>
-    <section id="botPanelLocked" class="content-card hidden"><h2>Login required for Firestore import</h2><p class="mini-note">You can still use the analyzer, but Firestore import requires the approved admin login.</p><a class="text-btn" href="login.html?redirect=scholarship-bots-panel.html">Admin Login</a></section>
-    <section id="botPanelContent">
-      <section class="content-card"><div class="card-heading"><div><span class="tagline">Official URL to Format</span><h2>Analyze scholarship link</h2><p class="mini-note">Use official portals or official PDF/article pages only. Direct browser fetching may be blocked by some government sites because of CORS; fallback paste handles that.</p></div></div><div class="link-analyzer-grid"><div><div class="form-grid"><div class="field full"><label for="linkAnalyzerUrl">Official scholarship URL</label><input id="linkAnalyzerUrl" type="url" placeholder="https://official-portal.gov.in/scholarship-page" /></div><div class="field full"><label for="linkFallbackText">Fallback official page/PDF text</label><textarea id="linkFallbackText" rows="9" placeholder="If link fetch is blocked, copy text from the official page/PDF and paste it here."></textarea></div></div><div class="button-row"><button id="linkAnalyzeBtn" type="button">Fetch Link + Auto Fill Format</button><button id="linkPastedAnalyzeBtn" class="secondary-btn" type="button">Analyze Pasted Text</button><button id="botPanelClearBtn" class="secondary-btn" type="button">Clear</button></div><p id="botPanelMessage" class="mini-note"></p></div><aside class="content-card"><span class="tagline">Safety Rule</span><h3>Draft first, publish only when confident</h3><p class="mini-note">The analyzer auto-fills the format and classifies the result. Auto Active requires a valid official link, deadline date, eligibility, income note, and high confidence.</p><div class="button-row"><button id="botPanelImportActiveBtn" type="button">Import Auto Active</button><button id="botPanelImportDraftBtn" class="secondary-btn" type="button">Import Auto Drafts</button><button id="botPanelImportSafeDraftsBtn" type="button">Import Safe as Drafts</button></div></aside></div></section>
-      <section class="content-card"><h2>Auto-filled Add Scholarship Format</h2><p class="mini-note">This is the exact format generated from the link/text. You can edit it before importing.</p><div class="form-grid"><div class="field"><label for="botPanelSource">Default source name</label><input id="botPanelSource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" /></div><div class="field"><label for="botPanelUrl">Official URL</label><input id="botPanelUrl" type="url" placeholder="https://official-portal.example" /></div><div class="field full"><label for="botPanelInput">Generated format</label><textarea id="botPanelInput" rows="15" class="format-preview" placeholder="Paste a link above and click Fetch Link + Auto Fill Format"></textarea></div></div><div class="button-row"><button id="botPanelAnalyzeBtn" type="button">Re-Analyze Edited Format</button></div></section>
-      <section class="content-card"><div class="card-heading"><div><h2>Analyzer Results</h2><p class="mini-note">Review before import. Duplicates and expired records are skipped.</p></div></div><div id="botPanelResults" class="bot-result-grid"><p class="mini-note">No results yet.</p></div></section>
+    <section class="content-card admin-hero">
+      <span class="tagline">AI Auto Import + Tracker</span>
+      <h1>ApplyMate AI Scholarship Bot</h1>
+      <p id="bulkBotStatus" class="last-updated">Loading latest bot reports...</p>
+      <div class="notice-box">
+        This bot discovers scholarship sources, imports safe records to Firestore, auto-publishes only high-confidence active scholarships, and tracks expired deadlines automatically.
+      </div>
+      <div class="bot-flow">
+        <div>Discover<span>official + trusted sources</span></div>
+        <div>AI Score<span>confidence + trust checks</span></div>
+        <div>Import<span>active or review draft</span></div>
+        <div>Track<span>expire old records</span></div>
+        <div>Report<span>dashboard + JSON logs</span></div>
+      </div>
+      <div class="button-row">
+        <button id="bulkLoadReportBtn" type="button">Refresh Reports</button>
+        <button id="bulkOpenActionBtn" class="secondary-btn" type="button">Open GitHub Action</button>
+        <button id="bulkOpenReportBtn" class="secondary-btn" type="button">Open Import Report</button>
+        <button id="bulkOpenFeedBtn" class="secondary-btn" type="button">Open Discovery Feed</button>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <span class="tagline">Workflow Health</span>
+          <h2>Latest AI Import Report</h2>
+          <p id="bulkReportExplainer" class="mini-note">Loading import summary...</p>
+        </div>
+      </div>
+      <div class="bot-kpi-grid">
+        <div class="bot-kpi"><span>Generated</span><strong id="bulkReportGenerated">loading</strong></div>
+        <div class="bot-kpi"><span>Mode</span><strong id="bulkReportMode">loading</strong></div>
+        <div class="bot-kpi"><span>Added</span><strong id="bulkReportAdded">0</strong></div>
+        <div class="bot-kpi"><span>Refreshed / Duplicates</span><strong id="bulkReportUpdated">0</strong></div>
+        <div class="bot-kpi"><span>Skipped</span><strong id="bulkReportSkipped">0</strong></div>
+        <div class="bot-kpi"><span>Failed</span><strong id="bulkReportFailed">0</strong></div>
+        <div class="bot-kpi"><span>Active Candidates</span><strong id="bulkReportActiveCandidates">0</strong></div>
+        <div class="bot-kpi"><span>Review Drafts</span><strong id="bulkReportDraftCandidates">0</strong></div>
+      </div>
+      <div class="directory-status">
+        <span class="bot-status" id="bulkCurrentPack">not selected</span>
+        <span class="bot-status" id="bulkSecretFirebase">secret unknown</span>
+        <span class="bot-status" id="bulkSecretProject">project unknown</span>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <span class="tagline">AI Tracker</span>
+          <h2>Automatic Active Scholarship Tracker</h2>
+          <p class="mini-note">The tracker checks Firestore records, promotes safe drafts, flags weak records, and closes expired scholarships.</p>
+        </div>
+      </div>
+      <div class="bot-kpi-grid">
+        <div class="bot-kpi"><span>Generated</span><strong id="trackerGenerated">loading</strong></div>
+        <div class="bot-kpi"><span>Checked</span><strong id="trackerChecked">0</strong></div>
+        <div class="bot-kpi"><span>Active</span><strong id="trackerActive">0</strong></div>
+        <div class="bot-kpi"><span>Promoted</span><strong id="trackerPromoted">0</strong></div>
+        <div class="bot-kpi"><span>Expired</span><strong id="trackerExpired">0</strong></div>
+        <div class="bot-kpi"><span>Needs Review</span><strong id="trackerNeedsReview">0</strong></div>
+        <div class="bot-kpi"><span>Failed</span><strong id="trackerFailed">0</strong></div>
+        <div class="bot-kpi"><span>Threshold</span><strong id="trackerThreshold">90%</strong></div>
+      </div>
+      <div class="button-row">
+        <button id="bulkOpenTrackerBtn" class="secondary-btn" type="button">Open Tracker Report</button>
+      </div>
+      <div id="trackerList" class="bot-result-grid">
+        <p class="mini-note">Tracker actions will appear after the workflow runs.</p>
+      </div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <span class="tagline">Source Packs</span>
+          <h2>Choose what the bot should search</h2>
+          <p class="mini-note">Run the GitHub Action manually, choose one pack, and keep import_mode as auto_active for the smart safe mode.</p>
+        </div>
+      </div>
+      <div id="bulkSourcePacks" class="bot-result-grid"></div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div>
+          <span class="tagline">Discovery Feed</span>
+          <h2>Latest Discovered Scholarship Sources</h2>
+          <p class="mini-note">These are candidates found by source packs. Only safe records should become active.</p>
+        </div>
+      </div>
+      <div class="bot-kpi-grid">
+        <div class="bot-kpi"><span>Feed Generated</span><strong id="bulkFeedGenerated">loading</strong></div>
+        <div class="bot-kpi"><span>Total Sources</span><strong id="bulkFeedTotal">0</strong></div>
+        <div class="bot-kpi"><span>Curated Sources</span><strong id="bulkFeedCurated">0</strong></div>
+        <div class="bot-kpi"><span>Search Errors</span><strong id="bulkFeedErrors">0</strong></div>
+      </div>
+      <div id="bulkFeedList" class="bot-result-grid"></div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div><h2>Imported / Refreshed Records</h2><p class="mini-note">Added active scholarships and review drafts from the latest run.</p></div>
+      </div>
+      <div id="bulkImportedList" class="bot-result-grid"></div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div><h2>Skipped / Duplicate Records</h2><p class="mini-note">Duplicate records are refreshed instead of creating messy duplicates.</p></div>
+      </div>
+      <div id="bulkSkippedList" class="bot-result-grid"></div>
+    </section>
+
+    <section class="content-card">
+      <div class="card-heading">
+        <div><h2>Bot Errors</h2><p class="mini-note">If the Firebase secret is missing or a source blocks reading, it will show here.</p></div>
+      </div>
+      <div id="bulkErrorsList" class="bot-result-grid"></div>
     </section>
   </main>
-  <footer><p>ApplyMate India Scholarship Link Analyzer. Use official sources only.</p></footer>
-  <script>document.getElementById('botPanelContent')?.classList.remove('hidden');</script>
-  <script type="module" src="scholarship-bots-panel.js?v=link-analyzer1"></script>
+
+  <footer><p>ApplyMate India AI Scholarship Bot. Auto-published records still link students to official sources for final verification.</p></footer>
+
+  <script type="module" src="scholarship-bulk-import-dashboard.js?v=ai-tracker1"></script>
 </body>
 </html>
