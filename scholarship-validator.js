@@ -27,6 +27,7 @@ export function validateScholarships(scholarships) {
     checkString(scholarship, "eligibilityNote", label, errors);
     checkString(scholarship, "incomeNote", label, errors);
     checkNumber(scholarship, "priority", label, errors);
+    checkActiveVerificationGate(scholarship, label, errors);
   });
 
   return {
@@ -35,8 +36,24 @@ export function validateScholarships(scholarships) {
   };
 }
 
+function checkActiveVerificationGate(item, label, errors) {
+  if (item?.status !== "active") return;
+
+  if (!isValidIsoDate(item.verifiedOn)) {
+    errors.push(`${label}: active scholarships must include a valid verifiedOn date`);
+  }
+
+  if (!isNonEmptyString(item.sourceName)) {
+    errors.push(`${label}: active scholarships must include a sourceName`);
+  }
+
+  if (!isValidUrl(item.sourceUrl || item.link)) {
+    errors.push(`${label}: active scholarships must include a valid sourceUrl or link`);
+  }
+}
+
 function checkString(item, field, label, errors) {
-  if (typeof item?.[field] !== "string" || item[field].trim() === "") {
+  if (!isNonEmptyString(item?.[field])) {
     errors.push(`${label}: missing or invalid ${field}`);
   }
 }
@@ -50,5 +67,24 @@ function checkArray(item, field, label, errors) {
 function checkNumber(item, field, label, errors) {
   if (!Number.isFinite(Number(item?.[field]))) {
     errors.push(`${label}: missing or invalid ${field}`);
+  }
+}
+
+function isNonEmptyString(value) {
+  return typeof value === "string" && value.trim() !== "";
+}
+
+function isValidIsoDate(value) {
+  return typeof value === "string" && /^20\d{2}-[01]\d-[0-3]\d$/.test(value.trim());
+}
+
+function isValidUrl(value) {
+  if (typeof value !== "string" || value.trim() === "") return false;
+
+  try {
+    const url = new URL(value.trim());
+    return url.protocol === "http:" || url.protocol === "https:";
+  } catch {
+    return false;
   }
 }
