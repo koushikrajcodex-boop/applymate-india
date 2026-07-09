@@ -2,6 +2,7 @@ import { db } from "./firebase-config.js";
 import { daysLeft, getActiveScholarshipStats, isNewThisMonth } from "./live-count-utils.js";
 import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
+const QUERY_TIMEOUT_MS = 8000;
 const countBox = document.getElementById("activeScholarshipHomeCount");
 const labelBox = document.getElementById("activeScholarshipHomeLabel");
 const updatedBox = document.getElementById("activeScholarshipHomeUpdated");
@@ -16,7 +17,11 @@ if (countBox || labelBox || updatedBox || heroStatCards.length || main) {
 
 async function loadCountAndHighlights() {
   try {
-    const snapshot = await getDocs(collection(db, "scholarships"));
+    const snapshot = await withTimeout(
+      getDocs(collection(db, "scholarships")),
+      QUERY_TIMEOUT_MS,
+      "Firestore count query timed out"
+    );
     const items = snapshot.docs.map((item) => ({ id: item.id, ...item.data() }));
     const stats = getActiveScholarshipStats(items);
 
@@ -34,7 +39,9 @@ async function loadCountAndHighlights() {
     setHeroStat(0, "Live", "Active scholarships");
     setHeroStat(1, "—", "Closing this week");
     setHeroStat(2, "—", "New this month");
-    if (updatedBox) updatedBox.textContent = "Open the scholarship hub for the latest active list.";
+    if (countBox) countBox.textContent = "Live";
+    if (labelBox) labelBox.textContent = "Scholarship directory";
+    if (updatedBox) updatedBox.textContent = "Live count is taking longer than expected. Open the scholarship directory for the latest verified list.";
   }
 }
 
@@ -94,6 +101,15 @@ function upgradeHomeScholarshipLinks() {
     if (link.textContent.trim() === "Open Live Directory") link.textContent = "Open Verified Directory";
     if (link.textContent.trim() === "Explore Live Directory") link.textContent = "Explore Verified Directory";
   });
+}
+
+function withTimeout(promise, timeoutMs, message) {
+  let timeoutId;
+  const timeout = new Promise((_, reject) => {
+    timeoutId = window.setTimeout(() => reject(new Error(message)), timeoutMs);
+  });
+
+  return Promise.race([promise, timeout]).finally(() => window.clearTimeout(timeoutId));
 }
 
 function setHeroStat(index, value, label) {
