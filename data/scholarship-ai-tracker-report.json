@@ -1,0 +1,16 @@
+{
+  "generatedAt": "not-run-yet",
+  "mode": "not-run-yet",
+  "collection": "scholarships",
+  "checked": 0,
+  "active": 0,
+  "promoted": 0,
+  "expired": 0,
+  "needsReview": 0,
+  "failed": 0,
+  "autoPromoteDrafts": true,
+  "autoPublishThreshold": 90,
+  "explainer": "The AI tracker report will update after the GitHub Actions workflow runs.",
+  "actions": [],
+  "errors": []
+}
