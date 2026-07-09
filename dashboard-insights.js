@@ -1,6 +1,7 @@
 import "./pwa-register.js";
 import "./dashboard-calendar.js";
 import { auth, db } from "./firebase-config.js";
+import { getLastVerifiedText, getOfficialSourceUrl, isVerifiedActiveScholarship } from "./scholarship-verification.js";
 import { onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-auth.js";
 import { collection, doc, getDoc, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
 
@@ -23,9 +24,7 @@ onAuthStateChanged(auth, async (user) => {
     const dataSnap = await getDocs(collection(db, "scholarships"));
     const active = dataSnap.docs
       .map((item) => ({ id: item.id, ...item.data() }))
-      .filter((item) => item.status === "active")
-      .filter((item) => item.applicationWindow !== "closed")
-      .filter((item) => !expired(item.deadlineDate));
+      .filter(isVerifiedActiveScholarship);
 
     renderInsights(profile, active);
   } catch (error) {
@@ -56,7 +55,7 @@ function renderInsights(profile, scholarships) {
   box.replaceChildren();
   box.append(
     heading("Smart Dashboard Insights"),
-    text(`Checked ${scholarships.length} active scholarships and found ${matches.length} likely matches for your profile.`),
+    text(`Checked ${scholarships.length} verified active scholarships and found ${matches.length} likely matches for your profile.`),
     grid([card("Best match", best), card("Closing soon", soon), card("High value", high), card("Newly verified", fresh)]),
     actions()
   );
@@ -105,12 +104,13 @@ function card(title, item) {
     node.append(h, p);
     return node;
   }
-  p.textContent = `${item.name || "Scholarship"} • ${formatDays(item.deadlineDate)} • Score ${item.score || 0}%`;
+  p.textContent = `${item.name || "Scholarship"} • ${formatDays(item.deadlineDate)} • Last verified: ${getLastVerifiedText(item)} • Score ${item.score || 0}%`;
   node.append(h, p);
-  if (safeUrl(item.link)) {
+  const officialUrl = getOfficialSourceUrl(item);
+  if (officialUrl) {
     const a = document.createElement("a");
     a.className = "text-btn";
-    a.href = safeUrl(item.link);
+    a.href = officialUrl;
     a.target = "_blank";
     a.rel = "noopener noreferrer";
     a.textContent = "Official Link";
@@ -198,11 +198,6 @@ function aliases(category) {
   return { obc: ["bc", "ebc"], ews: ["ebc"], disabled: ["disability"] }[category] || [];
 }
 
-function expired(dateText) {
-  const left = daysLeft(dateText);
-  return Number.isFinite(left) && left < 0;
-}
-
 function daysLeft(dateText) {
   if (!dateText) return Infinity;
   const date = new Date(`${dateText}T23:59:59`);
@@ -229,15 +224,4 @@ function dateRank(item) {
   const text = item.createdAt?.toDate ? item.createdAt.toDate().toISOString().slice(0, 10) : item.verifiedOn || item.lastChecked || "";
   const date = text ? new Date(`${text}T00:00:00`) : new Date(0);
   return Number.isNaN(date.getTime()) ? 0 : date.getTime();
-}
-
-function safeUrl(value) {
-  const text = String(value || "").trim();
-  if (!text) return "";
-  try {
-    const url = new URL(text);
-    return url.protocol === "http:" || url.protocol === "https:" ? url.href : "";
-  } catch {
-    return "";
-  }
 }
