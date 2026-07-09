@@ -8,8 +8,8 @@
     "validate:data": "node tools/validate-scholarship-data.js",
     "radar": "node tools/scholarship-radar.mjs",
     "radar:write": "node tools/scholarship-radar.mjs --write-firestore",
-    "discover:scholarships": "node scripts/auto-discover-scholarships.mjs",
-    "import:discovered": "node scripts/bulk-import-discovered-scholarships.mjs"
+    "discover:scholarships": "node scripts/auto-discover-scholarships-v2.mjs",
+    "import:discovered": "node scripts/bulk-import-discovered-scholarships-v2.mjs"
   },
   "dependencies": {
     "firebase-admin": "^13.0.0"
