@@ -1,0 +1,24 @@
+{
+  "generatedAt": "2026-07-09T00:00:00.000Z",
+  "date": "2026-07-09",
+  "mode": "initial",
+  "firestore": {
+    "enabled": false,
+    "reason": "Radar has not run yet.",
+    "addedActive": 0,
+    "addedDraft": 0,
+    "skipped": 0,
+    "closedExpired": 0,
+    "errors": []
+  },
+  "sourceResults": [],
+  "totals": {
+    "total": 0,
+    "autoActive": 0,
+    "autoDraft": 0,
+    "review": 0,
+    "skipDuplicate": 0,
+    "skipExpired": 0
+  },
+  "candidates": []
+}
