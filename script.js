@@ -1,643 +1,99 @@
 const CONTACT_EMAIL = "koushikrajcodex@gmail.com";
-const LAST_VERIFIED = "28 June 2026";
 
-const scholarships = [
-  {
-    name: "Andhra Pradesh Post-Matric Scholarship - Jnanabhumi",
-    state: "andhra-pradesh",
-    stateLabel: "Andhra Pradesh",
-    education: ["intermediate", "degree", "engineering", "pg"],
-    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "kapu", "disabled"],
-    maxIncome: 200000,
-    deadline: "Check official Jnanabhumi portal",
-    link: "https://jnanabhumi.ap.gov.in/",
-    sourceName: "Official Jnanabhumi Portal",
-    eligibilityNote: "For eligible Andhra Pradesh post-matric students. Rules may vary by department and category.",
-    incomeNote: "Income rules can vary by category. Verify on Jnanabhumi.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Caste/category certificate if applicable",
-      "Bank passbook",
-      "Previous marks memo",
-      "College bonafide certificate"
-    ],
-    tags: ["ap", "andhra", "post matric", "fee reimbursement", "jnanabhumi"],
-    priority: 95
-  },
-  {
-    name: "Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
-    state: "andhra-pradesh",
-    stateLabel: "Andhra Pradesh",
-    education: ["school"],
-    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "kapu", "disabled"],
-    maxIncome: 200000,
-    deadline: "Check official Jnanabhumi portal",
-    link: "https://jnanabhumi.ap.gov.in/",
-    sourceName: "Official Jnanabhumi Portal",
-    eligibilityNote: "For eligible school students in Andhra Pradesh. Exact class/category rules should be checked officially.",
-    incomeNote: "Income/category rules can vary. Verify before applying.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Caste/category certificate if applicable",
-      "School bonafide certificate",
-      "Previous class marks memo",
-      "Bank account details"
-    ],
-    tags: ["ap", "andhra", "pre matric", "school", "jnanabhumi"],
-    priority: 82
-  },
-  {
-    name: "Telangana ePASS Post-Matric Scholarship",
-    state: "telangana",
-    stateLabel: "Telangana",
-    education: ["intermediate", "degree", "engineering", "pg"],
-    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "disabled"],
-    maxIncome: 200000,
-    deadline: "Check official Telangana ePASS portal",
-    link: "https://telanganaepass.cgg.gov.in/",
-    sourceName: "Official Telangana ePASS Portal",
-    eligibilityNote: "For eligible Telangana post-matric students from welfare categories.",
-    incomeNote: "Income limits can vary by category and current rules.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Caste/category certificate",
-      "SSC / 10th marks memo",
-      "Previous marks memo",
-      "Bank passbook",
-      "College bonafide certificate"
-    ],
-    tags: ["telangana", "ts", "epass", "post matric", "fee reimbursement"],
-    priority: 95
-  },
-  {
-    name: "Telangana ePASS Pre-Matric Scholarship",
-    state: "telangana",
-    stateLabel: "Telangana",
-    education: ["school"],
-    categories: ["sc", "st", "bc", "obc", "ebc", "ews", "minority", "disabled"],
-    maxIncome: 200000,
-    deadline: "Check official Telangana ePASS portal",
-    link: "https://telanganaepass.cgg.gov.in/",
-    sourceName: "Official Telangana ePASS Portal",
-    eligibilityNote: "For eligible school students in Telangana.",
-    incomeNote: "Verify current income and class rules on ePASS.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Caste/category certificate",
-      "School bonafide certificate",
-      "Previous class marks memo",
-      "Bank account details"
-    ],
-    tags: ["telangana", "ts", "epass", "pre matric", "school"],
-    priority: 82
-  },
-  {
-    name: "National Means-cum-Merit Scholarship Scheme - NMMSS",
-    state: "national",
-    stateLabel: "National",
-    education: ["school"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 350000,
-    deadline: "Check NSP / state education department",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible school students. Selection and rules depend on official notification.",
-    incomeNote: "Usually income-based. Verify state/NSP instructions.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "School certificate",
-      "Previous marks memo",
-      "Bank account details"
-    ],
-    tags: ["national", "nsp", "school", "merit", "nmms"],
-    priority: 88
-  },
-  {
-    name: "Central Sector Scheme of Scholarship for College and University Students",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree", "engineering", "pg"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 450000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible meritorious college/university students as per official rules.",
-    incomeNote: "Income limit and merit rules should be verified on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Marks memo",
-      "Bank passbook",
-      "College bonafide certificate"
-    ],
-    tags: ["national", "college", "degree", "university", "merit", "nsp"],
-    priority: 86
-  },
-  {
-    name: "AICTE Pragati Scholarship for Girl Students",
-    state: "national",
-    stateLabel: "National",
-    education: ["engineering"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews", "girls"],
-    maxIncome: 800000,
-    deadline: "Check AICTE / NSP portal",
-    link: "https://www.aicte-india.org/",
-    sourceName: "AICTE",
-    eligibilityNote: "For eligible girl students pursuing technical education as per AICTE rules.",
-    incomeNote: "Family income rules should be checked on official AICTE/NSP notification.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details",
-      "College bonafide certificate"
-    ],
-    tags: ["aicte", "pragati", "girls", "engineering", "technical"],
-    priority: 92
-  },
-  {
-    name: "AICTE Saksham Scholarship for Specially Abled Students",
-    state: "national",
-    stateLabel: "National",
-    education: ["engineering"],
-    categories: ["disabled"],
-    maxIncome: 800000,
-    deadline: "Check AICTE / NSP portal",
-    link: "https://www.aicte-india.org/",
-    sourceName: "AICTE",
-    eligibilityNote: "For eligible specially abled students pursuing technical education.",
-    incomeNote: "Verify latest income/disability conditions in official notification.",
-    documents: [
-      "Aadhaar card",
-      "Disability certificate",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["aicte", "saksham", "disabled", "engineering", "technical"],
-    priority: 92
-  },
-  {
-    name: "Post Matric Scholarship for Minorities",
-    state: "national",
-    stateLabel: "National",
-    education: ["intermediate", "degree", "engineering", "pg"],
-    categories: ["minority"],
-    maxIncome: 200000,
-    deadline: "Check NSP",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible minority community students as per official rules.",
-    incomeNote: "Income limit can change. Verify on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Community certificate if required",
-      "Marks memo",
-      "Bank account details"
-    ],
-    tags: ["minority", "nsp", "post matric", "national"],
-    priority: 84
-  },
-  {
-    name: "Scholarship for Students with Disabilities",
-    state: "national",
-    stateLabel: "National",
-    education: ["school", "intermediate", "degree", "engineering", "pg"],
-    categories: ["disabled"],
-    maxIncome: 250000,
-    deadline: "Check NSP",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible students with benchmark disabilities as per official scheme rules.",
-    incomeNote: "Income and disability rules should be verified officially.",
-    documents: [
-      "Aadhaar card",
-      "Disability certificate",
-      "Income certificate",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["disabled", "disability", "nsp", "national"],
-    priority: 88
-  }
-,
-  {
-    name: "AICTE Pragati Scholarship for Girl Students - Technical Diploma",
-    state: "national",
-    stateLabel: "National",
-    education: ["engineering"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews", "girls"],
-    maxIncome: 800000,
-    deadline: "Check AICTE / NSP portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / AICTE",
-    eligibilityNote: "For eligible girl students pursuing technical diploma education as per AICTE rules.",
-    incomeNote: "Family income rules should be verified on official AICTE/NSP notification.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details",
-      "Institution certificate"
-    ],
-    tags: ["aicte", "pragati", "girls", "diploma", "technical"],
-    priority: 90
-  },
-  {
-    name: "AICTE Saksham Scholarship for Specially Abled Students - Technical Diploma",
-    state: "national",
-    stateLabel: "National",
-    education: ["engineering"],
-    categories: ["disabled"],
-    maxIncome: 800000,
-    deadline: "Check AICTE / NSP portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / AICTE",
-    eligibilityNote: "For eligible specially abled students pursuing technical diploma education.",
-    incomeNote: "Verify latest income and disability conditions in official notification.",
-    documents: [
-      "Aadhaar card",
-      "Disability certificate",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["aicte", "saksham", "disabled", "diploma", "technical"],
-    priority: 90
-  },
-  {
-    name: "AICTE Swanath Scholarship Scheme - Technical Degree",
-    state: "national",
-    stateLabel: "National",
-    education: ["engineering"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check AICTE / NSP portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / AICTE",
-    eligibilityNote: "For eligible students under AICTE Swanath scheme conditions. Verify official criteria before applying.",
-    incomeNote: "Income and special eligibility rules should be verified on NSP/AICTE.",
-    documents: [
-      "Aadhaar card",
-      "Admission proof",
-      "Marks memo",
-      "Bank details",
-      "Relevant eligibility certificate",
-      "Institution certificate"
-    ],
-    tags: ["aicte", "swanath", "engineering", "technical", "welfare"],
-    priority: 89
-  },
-  {
-    name: "AICTE Swanath Scholarship Scheme - Technical Diploma",
-    state: "national",
-    stateLabel: "National",
-    education: ["engineering"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check AICTE / NSP portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / AICTE",
-    eligibilityNote: "For eligible technical diploma students under AICTE Swanath scheme conditions.",
-    incomeNote: "Income and special eligibility rules should be checked officially.",
-    documents: [
-      "Aadhaar card",
-      "Admission proof",
-      "Marks memo",
-      "Bank details",
-      "Relevant eligibility certificate",
-      "Institution certificate"
-    ],
-    tags: ["aicte", "swanath", "diploma", "technical", "welfare"],
-    priority: 88
-  },
-  {
-    name: "PM YASASVI Top Class Education in College for OBC, EBC and DNT Students",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree", "engineering", "pg"],
-    categories: ["bc", "obc", "ebc"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible OBC, EBC and DNT students as per PM YASASVI official scheme rules.",
-    incomeNote: "Income and category rules should be verified on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Category certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["pm yasasvi", "obc", "ebc", "dnt", "college", "nsp"],
-    priority: 87
-  },
-  {
-    name: "PM YASASVI Top Class Education in Schools for OBC, EBC and DNT Students",
-    state: "national",
-    stateLabel: "National",
-    education: ["school"],
-    categories: ["bc", "obc", "ebc"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible school students from OBC, EBC and DNT communities as per official scheme rules.",
-    incomeNote: "Verify latest income and school-level rules on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Income certificate",
-      "Category certificate",
-      "School certificate",
-      "Previous class marks memo",
-      "Bank details"
-    ],
-    tags: ["pm yasasvi", "school", "obc", "ebc", "dnt", "nsp"],
-    priority: 84
-  },
-  {
-    name: "Central Sector Scholarship of Top Class Education for SC Students",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree", "engineering", "pg"],
-    categories: ["sc"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible SC students pursuing higher education as per official scheme guidelines.",
-    incomeNote: "Income and institution/course rules should be verified officially.",
-    documents: [
-      "Aadhaar card",
-      "SC caste certificate",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["sc", "top class", "higher education", "nsp", "central sector"],
-    priority: 88
-  },
-  {
-    name: "National Fellowship and Scholarship for Higher Education of ST Students",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree", "engineering", "pg"],
-    categories: ["st"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal",
-    eligibilityNote: "For eligible ST students pursuing higher education under official Ministry of Tribal Affairs rules.",
-    incomeNote: "Verify latest eligibility and income rules on NSP.",
-    documents: [
-      "Aadhaar card",
-      "ST certificate",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["st", "tribal", "higher education", "nsp", "fellowship"],
-    priority: 88
-  },
-  {
-    name: "National Scholarship for Post Graduate Studies",
-    state: "national",
-    stateLabel: "National",
-    education: ["pg"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / UGC",
-    eligibilityNote: "For eligible postgraduate students as per UGC/NSP scheme rules.",
-    incomeNote: "Check official notification for latest eligibility and income rules.",
-    documents: [
-      "Aadhaar card",
-      "PG admission proof",
-      "Previous marks memo",
-      "Bank details",
-      "Institution certificate"
-    ],
-    tags: ["ugc", "post graduate", "pg", "national", "nsp"],
-    priority: 82
-  },
-  {
-    name: "Ishan Uday Special Scholarship Scheme for North Eastern Region",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree", "engineering", "pg"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / UGC",
-    eligibilityNote: "For eligible students from the North Eastern Region as per official scheme rules.",
-    incomeNote: "Verify domicile, income and course rules on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Domicile/residence proof",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["ishan uday", "north east", "ugc", "national", "nsp"],
-    priority: 81
-  },
-  {
-    name: "Prime Minister's Scholarship Scheme for Wards of States/UTs Police Personnel Martyred During Terror/Naxal Attacks",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree", "engineering", "pg"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / Ministry of Home Affairs",
-    eligibilityNote: "For eligible wards of States/UTs police personnel as per Ministry of Home Affairs scheme rules.",
-    incomeNote: "Special eligibility conditions should be verified on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Service/eligibility certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details",
-      "Institution certificate"
-    ],
-    tags: ["prime minister scholarship", "police", "mha", "national", "nsp"],
-    priority: 80
-  },
-  {
-    name: "Prime Minister's Scholarship Scheme for Central Armed Police Forces and Assam Rifles",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree", "engineering", "pg"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / Ministry of Home Affairs",
-    eligibilityNote: "For eligible wards of Central Armed Police Forces and Assam Rifles personnel as per official rules.",
-    incomeNote: "Special eligibility and service-related rules should be checked officially.",
-    documents: [
-      "Aadhaar card",
-      "Service/eligibility certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details",
-      "Institution certificate"
-    ],
-    tags: ["prime minister scholarship", "capf", "assam rifles", "mha", "nsp"],
-    priority: 80
-  },
-  {
-    name: "Financial Assistance for Education to Wards of Beedi/Cine/IOMC/LSDM Workers - Pre Matric",
-    state: "national",
-    stateLabel: "National",
-    education: ["school"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / Ministry of Labour & Employment",
-    eligibilityNote: "For eligible school students who are wards of specified worker groups as per official rules.",
-    incomeNote: "Worker category and income rules should be verified on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Worker identity/eligibility proof",
-      "Income certificate",
-      "School certificate",
-      "Bank details",
-      "Previous class marks memo"
-    ],
-    tags: ["labour", "beedi", "cine", "pre matric", "school", "nsp"],
-    priority: 78
-  },
-  {
-    name: "Financial Assistance for Education to Wards of Beedi/Cine/IOMC/LSDM Workers - Post Matric",
-    state: "national",
-    stateLabel: "National",
-    education: ["intermediate", "degree", "engineering", "pg"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / Ministry of Labour & Employment",
-    eligibilityNote: "For eligible post-matric students who are wards of specified worker groups as per official rules.",
-    incomeNote: "Worker category and income rules should be verified on NSP.",
-    documents: [
-      "Aadhaar card",
-      "Worker identity/eligibility proof",
-      "Income certificate",
-      "Admission proof",
-      "Marks memo",
-      "Bank details"
-    ],
-    tags: ["labour", "beedi", "cine", "post matric", "nsp"],
-    priority: 78
-  },
-  {
-    name: "ICAR National Talent Scholarship - Undergraduate",
-    state: "national",
-    stateLabel: "National",
-    education: ["degree"],
-    categories: ["general", "sc", "st", "bc", "obc", "minority", "ebc", "ews"],
-    maxIncome: 1000000,
-    deadline: "Check National Scholarship Portal",
-    link: "https://scholarships.gov.in/",
-    sourceName: "National Scholarship Portal / ICAR",
-    eligibilityNote: "For eligible undergraduate students under ICAR National Talent Scholarship rules.",
-    incomeNote: "Course, admission and eligibility rules should be checked on official portal.",
-    documents: [
-      "Aadhaar card",
-      "Admission proof",
-      "Marks memo",
-      "Bank details",
-      "Institution certificate"
-    ],
-    tags: ["icar", "agriculture", "national talent scholarship", "ug", "nsp"],
-    priority: 79
-  }];
+window.findScholarships = findScholarships;
+window.clearFilters = clearFilters;
+window.renderResults = renderResults;
+
+function getLiveScholarships() {
+  return Array.isArray(window.applymateLiveFinderData)
+    ? window.applymateLiveFinderData.map(normalizeScholarship)
+    : [];
+}
 
 function findScholarships() {
-  const state = document.getElementById("state").value;
-  const education = document.getElementById("education").value;
-  const category = document.getElementById("category").value;
-  const income = Number(document.getElementById("income").value);
-  const search = document.getElementById("search").value.trim().toLowerCase();
+  const liveScholarships = getLiveScholarships();
 
-  const matches = scholarships
-    .map((scholarship) => {
-      let score = scholarship.priority || 50;
+  if (!liveScholarships.length) {
+    const loaded = Boolean(window.applymateLiveFinderLoaded);
+    renderResults([], {
+      title: loaded ? "No active scholarships available." : "Scholarships are still loading.",
+      message: loaded
+        ? "No active Firestore scholarships are available right now. Please check again later or open official portals from the guides."
+        : "Firestore scholarship data is still loading. Wait a moment and try again."
+    });
+    return;
+  }
 
-      const stateMatch =
-        state === "any" ||
-        scholarship.state === state ||
-        scholarship.state === "national";
+  const state = value("state", "any");
+  const education = value("education", "school");
+  const category = value("category", "general");
+  const income = Number(value("income", "100000"));
+  const search = value("search", "").trim().toLowerCase();
 
-      const educationMatch = scholarship.education.includes(education);
-
-      const categoryMatch =
-        scholarship.categories.includes(category) ||
-        scholarship.categories.includes("general");
-
-      const incomeMatch = income <= scholarship.maxIncome;
-
-      if (!stateMatch || !educationMatch || !categoryMatch || !incomeMatch) {
-        return null;
-      }
-
-      if (scholarship.state === state) score += 20;
-      if (scholarship.education.includes(education)) score += 15;
-      if (scholarship.categories.includes(category)) score += 15;
-      if (income <= scholarship.maxIncome) score += 10;
-
-      if (search) {
-        const searchable = [
-          scholarship.name,
-          scholarship.stateLabel,
-          scholarship.eligibilityNote,
-          scholarship.incomeNote,
-          scholarship.sourceName,
-          ...scholarship.tags
-        ]
-          .join(" ")
-          .toLowerCase();
-
-        if (!searchable.includes(search)) {
-          return null;
-        }
-
-        score += 20;
-      }
-
-      return {
-        ...scholarship,
-        score
-      };
-    })
+  const matches = liveScholarships
+    .map((scholarship) => scoreScholarship(scholarship, { state, education, category, income, search }))
     .filter(Boolean)
     .sort((a, b) => b.score - a.score);
 
   renderResults(matches);
 }
 
-function renderResults(results) {
+function scoreScholarship(scholarship, profile) {
+  const education = normalizeArray(scholarship.education);
+  const categories = normalizeArray(scholarship.categories);
+  const maxIncome = Number(scholarship.maxIncome || 99999999) || 99999999;
+
+  const stateMatch =
+    profile.state === "any" ||
+    scholarship.state === profile.state ||
+    scholarship.state === "national";
+
+  const educationMatch = education.includes(profile.education) || education.includes("any");
+
+  const categoryMatch =
+    categories.includes(profile.category) ||
+    categories.includes("general") ||
+    categories.includes("any") ||
+    categoryAliases(profile.category).some((alias) => categories.includes(alias));
+
+  const incomeMatch = profile.income <= maxIncome || maxIncome >= 99999999;
+
+  if (!stateMatch || !educationMatch || !categoryMatch || !incomeMatch) {
+    return null;
+  }
+
+  let score = Number(scholarship.priority || 50);
+  if (scholarship.state === profile.state) score += 25;
+  if (education.includes(profile.education)) score += 20;
+  if (categories.includes(profile.category)) score += 20;
+  if (profile.income <= maxIncome) score += 10;
+
+  if (profile.search) {
+    const searchable = [
+      scholarship.name,
+      scholarship.stateLabel,
+      scholarship.sourceName,
+      scholarship.eligibilityNote,
+      scholarship.incomeNote,
+      scholarship.amount,
+      education.join(" "),
+      categories.join(" ")
+    ].join(" ").toLowerCase();
+
+    if (!searchable.includes(profile.search)) {
+      return null;
+    }
+
+    score += 20;
+  }
+
+  return {
+    ...scholarship,
+    score
+  };
+}
+
+function renderResults(results, emptyState = {}) {
   const resultSummary = document.getElementById("resultSummary");
   const resultsContainer = document.getElementById("results");
 
@@ -647,11 +103,10 @@ function renderResults(results) {
     resultSummary.innerHTML = `
       <div class="content-strip">
         <span class="badge">No Match Found</span>
-        <h2>No scholarships found for this combination.</h2>
+        <h2>${escapeHtml(emptyState.title || "No scholarships found for this combination.")}</h2>
 
         <p>
-          We could not find a matching scholarship for your selected state, education,
-          category, income range, or search keyword right now.
+          ${escapeHtml(emptyState.message || "We could not find a matching active Firestore scholarship for your selected state, education, category, income range, or search keyword right now.")}
         </p>
 
         <div class="notice-box">
@@ -668,7 +123,7 @@ function renderResults(results) {
 
         <div class="button-row">
           <button onclick="clearFilters()">Reset Filters</button>
-          <a href="login.html" class="secondary-btn">Create Account / Login</a>
+          <a href="scholarship-hub.html" class="secondary-btn">Open Scholarship Hub</a>
           <a href="guides.html" class="secondary-btn">Read Scholarship Guides</a>
         </div>
 
@@ -687,55 +142,125 @@ function renderResults(results) {
       <span class="badge">Possible Matches</span>
       <h2>You may be eligible for these ${results.length} scholarships.</h2>
       <p>
-        These are possible matches based on your selected details.
+        These are possible matches from live Firestore data based on your selected details.
         Verify final eligibility on official portals before applying.
       </p>
     </div>
   `;
 
-  resultsContainer.innerHTML = results
-    .map((scholarship) => {
-      const documents = scholarship.documents
-        .map((doc) => `<li>${escapeHtml(doc)}</li>`)
-        .join("");
+  resultsContainer.innerHTML = results.map(scholarshipCard).join("");
+}
 
-      return `
-        <article class="scholarship">
-          <span class="badge">${escapeHtml(scholarship.stateLabel)}</span>
-          <h3>${escapeHtml(scholarship.name)}</h3>
-
-          <p class="info"><strong>Eligibility note:</strong> ${escapeHtml(scholarship.eligibilityNote)}</p>
-          <p class="info"><strong>Income note:</strong> ${escapeHtml(scholarship.incomeNote)}</p>
-          <p class="info"><strong>Deadline:</strong> ${escapeHtml(scholarship.deadline)}</p>
-          <p class="info"><strong>Last verified:</strong> ${escapeHtml(LAST_VERIFIED)}</p>
-
-          <h4>Common documents</h4>
-          <ul>${documents}</ul>
-
-          <div class="button-row">
-            <a class="text-btn" href="${escapeHtml(scholarship.link)}" target="_blank" rel="noopener noreferrer">
-              Official Link
-            </a>
-
-            <a class="secondary-btn" href="mailto:${CONTACT_EMAIL}?subject=Correction for ${encodeURIComponent(scholarship.name)}">
-              Report Correction
-            </a>
-          </div>
-        </article>
-      `;
-    })
+function scholarshipCard(scholarship) {
+  const documents = normalizeDocuments(scholarship.documents)
+    .map((doc) => `<li>${escapeHtml(doc)}</li>`)
     .join("");
+
+  return `
+    <article class="scholarship">
+      <span class="badge">${escapeHtml(scholarship.stateLabel)}</span>
+      <h3>${escapeHtml(scholarship.name)}</h3>
+
+      <p class="info"><strong>Eligibility note:</strong> ${escapeHtml(scholarship.eligibilityNote)}</p>
+      <p class="info"><strong>Income note:</strong> ${escapeHtml(scholarship.incomeNote)}</p>
+      <p class="info"><strong>Deadline:</strong> ${escapeHtml(scholarship.deadline)}</p>
+      <p class="info"><strong>Last verified:</strong> ${escapeHtml(scholarship.verifiedOn || scholarship.lastChecked || "Check official source")}</p>
+
+      <h4>Common documents</h4>
+      <ul>${documents}</ul>
+
+      <div class="button-row">
+        ${officialLink(scholarship.link)}
+        <a class="secondary-btn" href="mailto:${CONTACT_EMAIL}?subject=Correction for ${encodeURIComponent(scholarship.name)}">
+          Report Correction
+        </a>
+      </div>
+    </article>
+  `;
+}
+
+function officialLink(link) {
+  if (!String(link || "").startsWith("http")) return "";
+  return `<a class="text-btn" href="${escapeHtml(link)}" target="_blank" rel="noopener noreferrer">Official Link</a>`;
+}
+
+function normalizeScholarship(item) {
+  const categories = normalizeArray(item.categories);
+  if (clean(item.gender) === "female" && !categories.includes("girls")) categories.push("girls");
+  if (item.disability === "yes" && !categories.includes("disabled")) categories.push("disabled");
+
+  return {
+    ...item,
+    state: item.state || "national",
+    stateLabel: item.stateLabel || labelState(item.state || "national"),
+    education: normalizeArray(item.education).length ? normalizeArray(item.education) : ["any"],
+    categories: categories.length ? categories : ["general"],
+    maxIncome: Number(item.maxIncome || 99999999) || 99999999,
+    deadline: item.deadline || "Check official portal",
+    link: item.link || item.sourceUrl || "",
+    sourceName: item.sourceName || "Official source",
+    eligibilityNote: item.eligibilityNote || "Verify eligibility on official portal.",
+    incomeNote: item.incomeNote || "Verify income rules on official portal.",
+    documents: normalizeDocuments(item.documents)
+  };
 }
 
 function clearFilters() {
-  document.getElementById("search").value = "";
-  document.getElementById("state").value = "any";
-  document.getElementById("education").value = "school";
-  document.getElementById("category").value = "general";
-  document.getElementById("income").value = "100000";
+  setValue("search", "");
+  setValue("state", "any");
+  setValue("education", "school");
+  setValue("category", "general");
+  setValue("income", "100000");
 
-  document.getElementById("resultSummary").innerHTML = "";
-  document.getElementById("results").innerHTML = "";
+  const resultSummary = document.getElementById("resultSummary");
+  const results = document.getElementById("results");
+  if (resultSummary) resultSummary.innerHTML = "";
+  if (results) results.innerHTML = "";
+}
+
+function value(id, fallback) {
+  return document.getElementById(id)?.value || fallback;
+}
+
+function setValue(id, nextValue) {
+  const element = document.getElementById(id);
+  if (element) element.value = nextValue;
+}
+
+function normalizeArray(value) {
+  if (Array.isArray(value)) return value.map(clean).filter(Boolean);
+  return String(value || "").split(",").map(clean).filter(Boolean);
+}
+
+function normalizeDocuments(value) {
+  const documents = Array.isArray(value)
+    ? value.filter(Boolean)
+    : String(value || "").split(",").map((item) => item.trim()).filter(Boolean);
+
+  return documents.length
+    ? documents
+    : ["Aadhaar card", "Income certificate if applicable", "Category certificate if applicable", "Previous marks memo", "Bank details"];
+}
+
+function categoryAliases(category) {
+  return {
+    bc: ["obc", "ebc"],
+    obc: ["bc", "ebc"],
+    ebc: ["ews", "obc", "bc"],
+    ews: ["ebc"],
+    girls: ["female"],
+    disabled: ["disability"]
+  }[category] || [];
+}
+
+function labelState(state) {
+  if (state === "andhra-pradesh") return "Andhra Pradesh";
+  if (state === "telangana") return "Telangana";
+  return "National";
+}
+
+function clean(value) {
+  return String(value || "").trim().toLowerCase();
 }
 
 function escapeHtml(value) {
