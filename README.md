@@ -1,24 +1,55 @@
 # ApplyMate India
 
-ApplyMate India is a scholarship finder and personal application-tracking web app for students in India.
+**Production-focused scholarship finder and application tracker for Indian students.**
+
+ApplyMate India helps students discover verified scholarships, check possible eligibility, plan applications, prepare documents, compare options, save scholarships, and track application progress.
+
+## Current status
+
+| Area | Status |
+| --- | --- |
+| Public scholarship finder | Firestore-backed |
+| Scholarship verification | Active records require verification data |
+| Student dashboard | Firebase Auth + Firestore |
+| Admin data health | Custom-claim protected |
+| Data quality tests | Enabled in CI |
+| Static legacy dataset | Retired as a compatibility shim |
+| Canonical directory | `scholarships.html` |
+
+See [`PROJECT_STATUS.md`](PROJECT_STATUS.md) for the full cleanup status and remaining tracked blockers.
 
 ## Live demo
 
 https://koushikrajcodex-boop.github.io/applymate-india/
 
-## Features
+## Key features
 
-- Scholarship eligibility filtering
-- Keyword search
-- Document checklists
-- Official application links
-- Scholarship guide pages
+- Firestore-backed scholarship eligibility filtering
+- Verified active scholarship directory with official source links
+- Visible `Last verified` dates on public scholarship cards
+- Keyword search and filters
+- Document checklist planner
+- Application roadmap planner
+- Apply First priority planner
+- Scholarship comparison tools
 - Firebase email/password authentication
 - Private student profile dashboard
 - Saved scholarships
 - Application tracker
-- WhatsApp sharing
+- Admin data health dashboard
+- Data quality tests through GitHub Actions
 - Responsive interface
+
+## Reliability upgrades completed
+
+- Removed the homepage static scholarship array.
+- Retired the old static scholarship dataset path.
+- Added hard validation for active scholarship verification.
+- Added Firestore rules for verified active scholarship writes.
+- Added unit tests for validator, schema, and live count logic.
+- Consolidated `scholarships-live.html` into the canonical directory.
+- Merged the homepage polish patch into `live-count.js` and deleted the patch file.
+- Removed personal admin email allow-list from `firestore.rules`.
 
 ## Technology
 
@@ -27,17 +58,26 @@ https://koushikrajcodex-boop.github.io/applymate-india/
 - JavaScript modules
 - Firebase Authentication
 - Cloud Firestore
+- Firebase security rules
 - GitHub Pages
+- GitHub Actions
 
 ## Project structure
 
-- `index.html`, `script.js`, `save-results.js`: public scholarship finder
+- `index.html`, `script.js`, `home-finder-data.js`: public scholarship finder
+- `scholarships.html`: canonical verified scholarship directory
+- `scholarship-hub.html`, `scholarship-hub.js`: discovery and comparison hub
 - `login.html`, `auth.js`: account registration and login
 - `dashboard.html`, `dashboard.js`: private student dashboard
+- `dashboard-insights.js`: dashboard intelligence and verified insight cards
+- `admin.html`, `admin.js`: admin scholarship management
+- `admin-health.html`, `admin-health.js`: admin data health dashboard
+- `scholarship-validator.js`, `scholarship-schema.js`, `scholarship-verification.js`: data quality and verification logic
+- `live-count.js`, `live-count-utils.js`: homepage live stats and testable count helpers
 - `firebase-config.js`: Firebase web client configuration
 - `firestore.rules`: Firestore access and validation rules
-- `firebase.json`: Firebase CLI configuration
-- `.github/workflows/static-checks.yml`: automated JavaScript checks
+- `package.json`: test scripts
+- `.github/workflows/data-quality.yml`: automated unit tests and data validation
 
 ## Run locally
 
@@ -57,6 +97,13 @@ http://localhost:8000/
 
 Add `localhost` to Firebase Authentication's authorized domains if required.
 
+## Test locally
+
+```bash
+npm test
+npm run validate:data
+```
+
 ## Firebase setup
 
 1. Create or open the `applymate-india` project in Firebase.
@@ -65,6 +112,7 @@ Add `localhost` to Firebase Authentication's authorized domains if required.
 4. Confirm that `firebase-config.js` contains the correct web-app configuration.
 5. Add the GitHub Pages domain to Authentication → Settings → Authorized domains.
 6. Deploy the included Firestore rules.
+7. Set admin users through Firebase custom claims, not email allow-lists.
 
 Install the Firebase CLI and sign in:
 
@@ -79,11 +127,31 @@ Deploy only the Firestore rules:
 firebase deploy --only firestore:rules --project applymate-india
 ```
 
+## Admin custom claims
+
+Admin accounts must have this Firebase Authentication custom claim:
+
+```json
+{
+  "admin": true
+}
+```
+
+Firestore admin writes are protected by:
+
+```js
+request.auth.token.admin == true
+```
+
+See [`docs/admin-custom-claims.md`](docs/admin-custom-claims.md).
+
 ## Security notes
 
 - The Firebase web API key is a client identifier, not a server secret.
 - Restrict the key to the Firebase APIs and authorized website domains used by this project.
 - Firestore rules permit authenticated users to access only their own profile, saved scholarships, and applications.
+- Admin scholarship writes require Firebase custom claims.
+- Active scholarships require verification data before publishing.
 - Keep `firestore.rules` in version control and deploy it after every rules change.
 - Never place service-account keys or private credentials in this repository.
 
