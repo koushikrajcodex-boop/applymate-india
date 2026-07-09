@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Scholarship Bot Console - ApplyMate India</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <meta name="description" content="Admin-only scholarship bot console with manual source bots, auto checker, and Firestore import tools." />
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="admin.css?v=admin5" />
+  <style>
+    .discovery-grid{display:grid;grid-template-columns:1.35fr .65fr;gap:18px;align-items:start}.discovery-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}.discovery-stat,.bot-card,.radar-pill{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.discovery-stat strong,.radar-pill strong{display:block;font-size:1.7rem;color:var(--primary)}.bot-grid{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}.bot-card h3{margin:6px 0}.bot-card p{font-size:.9rem}.candidate-list{display:grid;gap:14px;margin-top:18px}.candidate-card{padding:16px;border:1px solid var(--border);border-radius:18px;background:#fff;box-shadow:var(--shadow)}.candidate-card h3{margin:8px 0}.candidate-badges{display:flex;gap:8px;flex-wrap:wrap}.candidate-badge{display:inline-flex;padding:6px 10px;border-radius:999px;background:#eef4ff;border:1px solid #c7d7fe;color:#1d4ed8;font-weight:700;font-size:.85rem}.candidate-badge.ok{background:#ecfdf3;border-color:#bbf7d0;color:#067647}.candidate-badge.warn{background:#fffbeb;border-color:#fde68a;color:#92400e}.candidate-badge.bad{background:#fff1f3;border-color:#fecdd3;color:#be123c}.candidate-badge.skip{background:#f8fafc;border-color:#cbd5e1;color:#475569}.discovery-template{font-size:.92rem;white-space:pre-wrap}.discovery-actions{position:sticky;top:16px}.radar-box{display:grid;gap:12px}.radar-summary-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}.radar-pill strong{font-size:1.25rem}@media(max-width:1000px){.bot-grid{grid-template-columns:repeat(2,1fr)}}@media(max-width:900px){.discovery-grid,.discovery-stats,.radar-summary-grid,.bot-grid{grid-template-columns:1fr}.discovery-actions{position:static}}
+  </style>
+</head>
+<body>
+  <div class="page-bg"></div>
+
+  <nav class="navbar">
+    <a class="logo" href="admin.html"><span class="logo-icon">A</span><span>ApplyMate Bots</span></a>
+    <div class="nav-links">
+      <a href="admin.html">Admin Panel</a>
+      <a href="admin-health.html">Data Health</a>
+      <a href="scholarships.html#live-directory">Directory</a>
+      <a href="index.html">Home</a>
+      <button id="discoveryLogoutBtn" class="secondary-btn" type="button">Logout</button>
+    </div>
+  </nav>
+
+  <main class="content-page">
+    <section class="content-card admin-hero">
+      <span class="tagline">Manual Bots + Auto Checker</span>
+      <h1>Scholarship Bot Console</h1>
+      <p id="discoveryAdminEmail" class="last-updated">Checking admin access...</p>
+      <div class="notice-box">Use source bots to open official portals, paste official scholarship text, auto-check quality, skip duplicates, then bulk-add safe records to Firestore.</div>
+    </section>
+
+    <section id="discoveryLocked" class="content-card hidden">
+      <h2>Access denied</h2>
+      <p class="mini-note">This page is only for approved admin accounts.</p>
+      <a class="text-btn" href="dashboard.html">Go to Student Dashboard</a>
+    </section>
+
+    <section id="discoveryContent" class="hidden">
+      <section class="content-card">
+        <div class="card-heading"><div><h2>Current Firestore Coverage</h2><p class="mini-note">Loaded from live <code>scholarships</code>. Duplicates are detected by normalized name and source URL.</p></div><button id="refreshDiscoveryBtn" class="secondary-btn" type="button">Refresh Firestore Data</button></div>
+        <div class="discovery-stats">
+          <div class="discovery-stat"><span>Total records</span><strong id="coverageTotal">—</strong></div>
+          <div class="discovery-stat"><span>Active verified</span><strong id="coverageActive">—</strong></div>
+          <div class="discovery-stat"><span>Unique names</span><strong id="coverageNames">—</strong></div>
+          <div class="discovery-stat"><span>Unique sources</span><strong id="coverageSources">—</strong></div>
+        </div>
+      </section>
+
+      <section class="content-card">
+        <div class="card-heading"><div><h2>Manual Source Bots</h2><p class="mini-note">Pick a bot. It opens the official portal and fills the correct template. Paste official text, then click Analyze + Auto Check.</p></div></div>
+        <div class="bot-grid">
+          <article class="bot-card"><span class="tagline">Official</span><h3>NSP Bot</h3><p>National scholarships, central schemes, minority/social category schemes.</p><button id="botNspBtn" type="button">Start NSP Bot</button></article>
+          <article class="bot-card"><span class="tagline">Official</span><h3>AICTE Bot</h3><p>Pragati, Saksham, technical education scholarships and updates.</p><button id="botAicteBtn" type="button">Start AICTE Bot</button></article>
+          <article class="bot-card"><span class="tagline">AP</span><h3>Jnanabhumi Bot</h3><p>Andhra Pradesh fee reimbursement and state scholarship updates.</p><button id="botApBtn" type="button">Start AP Bot</button></article>
+          <article class="bot-card"><span class="tagline">TG</span><h3>ePASS Bot</h3><p>Telangana post-matric, pre-matric, and reimbursement updates.</p><button id="botTgBtn" type="button">Start TG Bot</button></article>
+          <article class="bot-card"><span class="tagline">Official</span><h3>UGC Bot</h3><p>UG/PG scholarships, fellowships, and higher education support.</p><button id="botUgcBtn" type="button">Start UGC Bot</button></article>
+        </div>
+      </section>
+
+      <section class="content-card radar-box">
+        <div class="card-heading"><div><h2>Radar Report</h2><p class="mini-note">This shows the latest GitHub Action scan report. Manual bots are better when you want fast controlled growth.</p></div><button id="loadRadarBtn" class="secondary-btn" type="button">Load Radar Report</button></div>
+        <div class="radar-summary-grid"><div class="radar-pill"><span>Auto Active</span><strong id="radarAutoActive">0</strong></div><div class="radar-pill"><span>Auto Draft</span><strong id="radarAutoDraft">0</strong></div><div class="radar-pill"><span>Review</span><strong id="radarReview">0</strong></div><div class="radar-pill"><span>Skip</span><strong id="radarSkip">0</strong></div></div>
+        <p id="radarMessage" class="mini-note">Radar report not loaded yet.</p>
+      </section>
+
+      <section class="content-card">
+        <div class="discovery-grid">
+          <div>
+            <h2>Bot Workspace</h2>
+            <p class="mini-note">Paste official portal text, tables, or JSON. Separate multiple scholarships with a line containing <code>---</code>.</p>
+            <div class="form-grid"><div class="field"><label for="defaultDiscoverySource">Default source name</label><input id="defaultDiscoverySource" type="text" placeholder="Example: NSP / AICTE / Jnanabhumi" /></div><div class="field"><label for="defaultDiscoveryUrl">Default official URL</label><input id="defaultDiscoveryUrl" type="url" placeholder="https://official-portal.example" /></div><div class="field full"><label for="discoveryInput">Scholarship source text or JSON</label><textarea id="discoveryInput" rows="15" placeholder="Bot will fill a template here. Paste official text and click Analyze + Auto Check."></textarea></div></div>
+            <div class="button-row"><button id="analyzeDiscoveryBtn" type="button">Analyze + Auto Check</button><button id="exampleDiscoveryBtn" class="secondary-btn" type="button">Use Example</button><button id="clearDiscoveryBtn" class="secondary-btn" type="button">Clear</button></div>
+            <p id="discoveryMessage" class="mini-note"></p>
+          </div>
+          <aside class="content-card discovery-actions"><span class="tagline">Auto Adders</span><h3>Bulk import by confidence</h3><p class="mini-note">Auto Active imports only safe, complete, high-confidence official records. Auto Draft imports usable official records needing small edits.</p><div class="button-row"><button id="importAutoActiveBtn" type="button">Import Auto Active</button><button id="importAutoDraftBtn" class="secondary-btn" type="button">Import Auto Drafts</button></div><div class="button-row"><button id="importDraftsBtn" class="secondary-btn" type="button">Import All Missing as Drafts</button><button id="importActiveBtn" type="button">Import Verified Active Only</button></div><hr /><h3>Bot rule</h3><p class="mini-note">Don’t paste random blog data. Paste from official portals or official PDFs only.</p></aside>
+        </div>
+      </section>
+
+      <section class="content-card"><div class="card-heading"><div><h2>Bot Results</h2><p id="candidateSummary" class="mini-note">Start a source bot or paste official text to see auto-safe, draft, duplicate, and invalid records.</p></div></div><div id="candidateList" class="candidate-list"><p class="mini-note">No candidates analyzed yet.</p></div></section>
+
+      <section class="content-card"><h2>Recommended paste format</h2><pre class="notice-box discovery-template">Scholarship Name
+State Maharashtra
+Education engineering, degree
+Categories general, obc, ews
+Gender any
+Amount ₹50,000
+Income limit 250000
+Deadline date 2026-12-31
+Official link https://official-portal.example/scheme
+Source Official Portal
+Eligibility Short eligibility details from official source.
+Income note Family income rule from official source.
+---
+Second Scholarship...</pre></section>
+    </section>
+  </main>
+
+  <footer><p>ApplyMate India Bot Console. Use official sources only and verify before publishing.</p></footer>
+  <script type="module" src="scholarship-discovery.js?v=manual-bots1"></script>
+</body>
+</html>
