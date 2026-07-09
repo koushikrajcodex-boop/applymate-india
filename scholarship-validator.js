@@ -1,3 +1,5 @@
+const VALID_SCHOLARSHIP_STATUSES = Object.freeze(["active", "draft", "closed"]);
+
 export function validateScholarships(scholarships) {
   const errors = [];
 
@@ -16,6 +18,8 @@ export function validateScholarships(scholarships) {
     checkString(scholarship, "name", label, errors);
     checkString(scholarship, "state", label, errors);
     checkString(scholarship, "stateLabel", label, errors);
+    checkString(scholarship, "status", label, errors);
+    checkStatus(scholarship, label, errors);
     checkArray(scholarship, "education", label, errors);
     checkArray(scholarship, "categories", label, errors);
     checkArray(scholarship, "genders", label, errors);
@@ -54,24 +58,31 @@ function checkDuplicateNames(items, errors) {
   });
 }
 
+function checkStatus(item, label, errors) {
+  const status = normalizeStatus(item?.status);
+  if (!VALID_SCHOLARSHIP_STATUSES.includes(status)) {
+    errors.push(`${label}: invalid status. Use active, draft, or closed`);
+  }
+}
+
 function checkActiveVerificationGate(item, label, errors) {
-  if (item?.status !== "active") return;
+  if (normalizeStatus(item?.status) !== "active") return;
 
   if (!isValidIsoDate(item.verifiedOn)) {
     errors.push(`${label}: active scholarships must include a valid verifiedOn date`);
   }
 
-  if (!isNonEmptyString(item.sourceName)) {
-    errors.push(`${label}: active scholarships must include a sourceName`);
-  }
-
-  if (!isValidUrl(item.sourceUrl || item.link)) {
-    errors.push(`${label}: active scholarships must include a valid sourceUrl or link`);
+  if (!hasValidSource(item)) {
+    errors.push(`${label}: active scholarships must include sourceName and a valid sourceUrl or link before publishing`);
   }
 
   if (isPastDate(item.deadlineDate)) {
     errors.push(`${label}: active scholarships cannot have an expired deadlineDate`);
   }
+}
+
+function hasValidSource(item) {
+  return isNonEmptyString(item?.sourceName) && isValidUrl(item?.sourceUrl || item?.link);
 }
 
 function checkString(item, field, label, errors) {
@@ -116,6 +127,10 @@ function isValidUrl(value) {
   } catch {
     return false;
   }
+}
+
+function normalizeStatus(value) {
+  return String(value || "").trim().toLowerCase();
 }
 
 function normalizeName(value) {
