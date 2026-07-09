@@ -3,117 +3,26 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Live Active Scholarships - ApplyMate India</title>
-  <meta name="description" content="Browse active verified scholarships on ApplyMate India with live stats, deadline countdowns, verified dates, and sorting." />
-  <meta name="robots" content="index, follow" />
+  <title>Redirecting to Scholarship Directory - ApplyMate India</title>
+  <meta name="robots" content="noindex, follow" />
+  <meta http-equiv="refresh" content="0; url=scholarships.html#live-directory" />
+  <link rel="canonical" href="https://koushikrajcodex-boop.github.io/applymate-india/scholarships.html" />
   <link rel="stylesheet" href="style.css" />
-  <link rel="stylesheet" href="assistant.css" />
-  <style>
-    .smart-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; margin-top: 18px; }
-    .smart-stat { padding: 16px; border-radius: 18px; background: #fff; border: 1px solid var(--border); box-shadow: var(--shadow); }
-    .smart-stat strong { display: block; font-size: 1.8rem; color: var(--primary); }
-    .smart-toolbar { display: grid; grid-template-columns: 1.3fr repeat(4, 1fr); gap: 14px; margin-top: 18px; align-items: end; }
-    .live-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; margin-top: 20px; }
-    .live-card { border: 1px solid var(--border); border-radius: 22px; padding: 20px; background: linear-gradient(180deg, #fff 0%, #f8fbff 100%); box-shadow: var(--shadow); }
-    .badge-row { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 10px; }
-    .meta-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; margin: 14px 0; }
-    .meta-grid p { margin: 0; padding: 10px; border-radius: 12px; background: #f8fafc; border: 1px solid var(--border); color: #475467; font-size: .92rem; }
-    .meta-grid strong { display: block; margin-bottom: 4px; color: var(--text); }
-    @media (max-width: 900px) { .smart-grid, .smart-toolbar, .live-grid, .meta-grid { grid-template-columns: 1fr; } }
-  </style>
 </head>
 <body>
-  <div class="page-bg"></div>
-  <nav class="navbar">
-    <a class="logo" href="index.html"><span class="logo-icon">A</span><span>ApplyMate India</span></a>
-    <div class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="scholarships-live.html">Live Scholarships</a>
-      <a href="scholarships.html">Classic Directory</a>
-      <a href="dashboard.html">Dashboard</a>
-      <a href="login.html">Login</a>
-    </div>
-  </nav>
-
   <main class="content-page">
     <section class="content-card">
-      <span class="tagline">Verified Active Directory</span>
-      <h1>Live Active Scholarships</h1>
-      <p>This page shows Firestore scholarships that are active, verified, not closed, and not expired. It adds deadline countdowns, last verified dates, new badges, and sorting.</p>
-      <div class="notice-box">Always verify final eligibility, deadlines, documents, and payment rules on the official portal before applying.</div>
-      <div class="smart-grid">
-        <div class="smart-stat"><strong id="statActive">0</strong><span>Verified active scholarships</span></div>
-        <div class="smart-stat"><strong id="statClosing">0</strong><span>Closing this week</span></div>
-        <div class="smart-stat"><strong id="statNew">0</strong><span>New this month</span></div>
-        <div class="smart-stat"><strong id="statVerified">0</strong><span>Verified records</span></div>
+      <span class="tagline">Redirect</span>
+      <h1>Live Scholarships moved</h1>
+      <p>The verified live scholarship directory is now consolidated into the main Scholarship Directory.</p>
+      <p class="mini-note">Redirecting to the verified directory...</p>
+      <div class="button-row">
+        <a class="text-btn" href="scholarships.html#live-directory">Open Scholarship Directory</a>
       </div>
-    </section>
-
-    <section class="content-card">
-      <h2>Search, Filter & Sort</h2>
-      <div class="smart-toolbar">
-        <div class="field"><label for="q">Search</label><input id="q" type="search" placeholder="Search name, source, category, amount..." /></div>
-        <div class="field"><label for="state">State</label><select id="state"><option value="">All</option><option value="national">National</option><option value="andhra-pradesh">Andhra Pradesh</option><option value="telangana">Telangana</option></select></div>
-        <div class="field"><label for="education">Education</label><select id="education"><option value="">All</option><option value="school">School</option><option value="intermediate">Intermediate</option><option value="degree">Degree</option><option value="engineering">Engineering</option><option value="pg">PG</option></select></div>
-        <div class="field"><label for="category">Category</label><select id="category"><option value="">All</option><option value="general">General</option><option value="sc">SC</option><option value="st">ST</option><option value="obc">OBC</option><option value="ews">EWS</option><option value="minority">Minority</option><option value="disabled">Disability</option></select></div>
-        <div class="field"><label for="sort">Sort</label><select id="sort"><option value="deadline">Deadline soon</option><option value="new">Newly added</option><option value="verified">Recently verified</option><option value="amount">Highest amount</option><option value="priority">Recommended</option></select></div>
-      </div>
-      <div class="button-row"><button id="reset" class="secondary-btn" type="button">Reset Filters</button><a class="secondary-btn" href="dashboard.html">Open Dashboard</a></div>
-      <p id="resultCount" class="mini-note">Loading scholarships...</p>
-      <div id="cards" class="live-grid"></div>
     </section>
   </main>
-
-  <footer><p>© 2026 ApplyMate India. Informational scholarship helper.</p></footer>
-
-  <script type="module">
-    import { db } from "./firebase-config.js";
-    import { getLastVerifiedText, getOfficialSourceUrl, isVerifiedActiveScholarship } from "./scholarship-verification.js";
-    import { collection, getDocs } from "https://www.gstatic.com/firebasejs/10.12.5/firebase-firestore.js";
-    const $ = (id) => document.getElementById(id);
-    let items = [];
-    const controls = ["q", "state", "education", "category", "sort"].map($);
-    controls.forEach((el) => el.addEventListener("input", render));
-    controls.forEach((el) => el.addEventListener("change", render));
-    $("reset").addEventListener("click", () => { controls.forEach((el) => el.value = ""); $("sort").value = "deadline"; render(); });
-    load();
-    async function load() {
-      try {
-        const snap = await getDocs(collection(db, "scholarships"));
-        items = snap.docs.map((d) => ({ id: d.id, ...d.data() })).filter(isVerifiedActiveScholarship);
-        updateStats(); render();
-      } catch (e) { console.warn(e); $("resultCount").textContent = "Could not load Firestore scholarships."; }
-    }
-    function updateStats() {
-      $("statActive").textContent = items.length;
-      $("statClosing").textContent = items.filter((x) => left(x.deadlineDate) <= 7).length;
-      $("statNew").textContent = items.filter(newMonth).length;
-      $("statVerified").textContent = items.length;
-    }
-    function render() {
-      const q = $("q").value.trim().toLowerCase(), st = $("state").value, ed = $("education").value, cat = $("category").value, sort = $("sort").value;
-      let visible = items.filter((x) => {
-        const edu = arr(x.education), cats = arr(x.categories);
-        const text = [x.name, x.sourceName, x.amount, x.deadline, x.eligibilityNote, x.incomeNote, edu.join(" "), cats.join(" ")].join(" ").toLowerCase();
-        return (!q || text.includes(q)) && (!st || x.state === st) && (!ed || edu.includes(ed)) && (!cat || cats.includes(cat));
-      });
-      visible.sort((a,b) => sort === "amount" ? money(b.amount) - money(a.amount) : sort === "priority" ? Number(b.priority||0)-Number(a.priority||0) : sort === "new" ? dateRank(b.createdAt, b.verifiedOn)-dateRank(a.createdAt, a.verifiedOn) : sort === "verified" ? dateRank(null,b.verifiedOn)-dateRank(null,a.verifiedOn) : left(a.deadlineDate)-left(b.deadlineDate));
-      $("resultCount").textContent = `Showing ${visible.length} of ${items.length} verified active scholarships`;
-      $("cards").innerHTML = visible.length ? visible.map(card).join("") : "<p class='mini-note'>No verified active scholarships match these filters.</p>";
-    }
-    function card(x) {
-      const l = left(x.deadlineDate), verified = `Last verified: ${esc(getLastVerifiedText(x))}`, newBadge = newMonth(x) ? "🆕 New" : "", officialUrl = getOfficialSourceUrl(x);
-      return `<article class="live-card"><div class="badge-row"><span class="badge">${esc(x.stateLabel || label(x.state))}</span><span class="badge">${verified}</span>${newBadge ? `<span class="badge">${newBadge}</span>` : ""}<span class="badge">${l === 0 ? "⏰ Last day" : l < 0 ? "Expired" : `⏳ ${l} days left`}</span></div><h3>${esc(x.name)}</h3><p class="info"><strong>Eligibility:</strong> ${esc(x.eligibilityNote || "Verify on official portal.")}</p><div class="meta-grid"><p><strong>Amount</strong>${esc(x.amount || "Varies")}</p><p><strong>Deadline</strong>${esc(x.deadline || "Check portal")}</p><p><strong>Education</strong>${esc(arr(x.education).join(", ") || "Any")}</p><p><strong>Categories</strong>${esc(arr(x.categories).join(", ") || "Any")}</p><p><strong>Income</strong>${Number(x.maxIncome||0)>0 && Number(x.maxIncome||0)<99999999 ? `₹${Number(x.maxIncome).toLocaleString("en-IN")}` : "Check official rules"}</p><p><strong>Source</strong>${esc(x.sourceName || "Official portal")}</p><p><strong>Last verified</strong>${esc(getLastVerifiedText(x))}</p></div><div class="button-row">${officialUrl ? `<a class="text-btn" href="${esc(officialUrl)}" target="_blank" rel="noopener noreferrer">Open Official Link</a>` : ""}<a class="secondary-btn" href="dashboard.html">Save / Track</a></div></article>`;
-    }
-    function arr(v){ return Array.isArray(v) ? v.map(clean).filter(Boolean) : String(v||"").split(",").map(clean).filter(Boolean); }
-    function clean(v){ return String(v||"").trim().toLowerCase(); }
-    function label(s){ return s === "andhra-pradesh" ? "Andhra Pradesh" : s === "telangana" ? "Telangana" : "National"; }
-    function left(d){ if(!d) return 99999; const x = new Date(`${d}T23:59:59`); if(Number.isNaN(x.getTime())) return 99999; const t = new Date(); t.setHours(0,0,0,0); return Math.ceil((x.getTime()-t.getTime())/86400000); }
-    function money(v){ const m = String(v||"").match(/[0-9][0-9,]{2,}/g)||[]; return m.map(n=>Number(n.replace(/,/g,""))).sort((a,b)=>b-a)[0]||0; }
-    function dateRank(createdAt, fallback){ const d = createdAt?.toDate ? createdAt.toDate() : fallback ? new Date(`${fallback}T00:00:00`) : new Date(0); return d.getTime ? d.getTime() : 0; }
-    function newMonth(x){ const r = dateRank(x.createdAt, x.verifiedOn || x.lastChecked); const d = new Date(r); const n = new Date(); return d.getFullYear() === n.getFullYear() && d.getMonth() === n.getMonth(); }
-    function esc(v){ return String(v||"").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;"); }
+  <script>
+    window.location.replace("scholarships.html#live-directory");
   </script>
-  <script src="assistant.js"></script>
 </body>
 </html>
