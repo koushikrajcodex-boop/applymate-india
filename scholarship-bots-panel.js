@@ -9,55 +9,69 @@ const $ = (id) => document.getElementById(id);
 const today = new Date().toISOString().slice(0, 10);
 const draftDeadline = "2099-12-31";
 
-const bots = {
-  nsp: { name: "National Scholarship Portal", url: "https://scholarships.gov.in/", state: "National", education: "school, intermediate, degree, engineering, pg", categories: "general, sc, st, obc, ews, minority", gender: "any", hint: "Paste official NSP scheme text or PDF text below." },
-  aicte: { name: "AICTE", url: "https://www.aicte-india.org/", state: "National", education: "engineering, diploma, degree, pg", categories: "general, sc, st, obc, ews, minority", gender: "any", hint: "Paste AICTE official scholarship notice text below." },
-  ap: { name: "AP Jnanabhumi", url: "https://jnanabhumi.ap.gov.in/", state: "Andhra Pradesh", education: "school, intermediate, degree, engineering, pg", categories: "sc, st, obc, ews, minority, kapu", gender: "any", hint: "Paste AP Jnanabhumi official scholarship details below." },
-  tg: { name: "Telangana ePASS", url: "https://telanganaepass.cgg.gov.in/", state: "Telangana", education: "school, intermediate, degree, engineering, pg", categories: "sc, st, obc, ews, minority", gender: "any", hint: "Paste Telangana ePASS official scholarship details below." },
-  ugc: { name: "UGC", url: "https://www.ugc.gov.in/", state: "National", education: "degree, pg", categories: "general, sc, st, obc, ews, minority", gender: "any", hint: "Paste UGC official scholarship/fellowship notice text below." }
-};
-
 let currentUser = null;
 let existing = [];
 let candidates = [];
 let adminReady = false;
 
 const els = {
-  email: $("botPanelAdminEmail"), locked: $("botPanelLocked"), content: $("botPanelContent"), coverage: $("botPanelCoverage"),
-  source: $("botPanelSource"), url: $("botPanelUrl"), input: $("botPanelInput"), message: $("botPanelMessage"), results: $("botPanelResults"),
-  refresh: $("botPanelRefreshBtn"), analyze: $("botPanelAnalyzeBtn"), clear: $("botPanelClearBtn"),
-  importActive: $("botPanelImportActiveBtn"), importDraft: $("botPanelImportDraftBtn"), importSafeDrafts: $("botPanelImportSafeDraftsBtn")
+  email: $("botPanelAdminEmail"),
+  locked: $("botPanelLocked"),
+  content: $("botPanelContent"),
+  coverage: $("botPanelCoverage"),
+  linkUrl: $("linkAnalyzerUrl"),
+  fallbackText: $("linkFallbackText"),
+  source: $("botPanelSource"),
+  url: $("botPanelUrl"),
+  input: $("botPanelInput"),
+  message: $("botPanelMessage"),
+  results: $("botPanelResults"),
+  refresh: $("botPanelRefreshBtn"),
+  fetchLink: $("linkAnalyzeBtn"),
+  analyzePasted: $("linkPastedAnalyzeBtn"),
+  analyze: $("botPanelAnalyzeBtn"),
+  clear: $("botPanelClearBtn"),
+  importActive: $("botPanelImportActiveBtn"),
+  importDraft: $("botPanelImportDraftBtn"),
+  importSafeDrafts: $("botPanelImportSafeDraftsBtn")
 };
 
 onAuthStateChanged(auth, async (user) => {
   currentUser = user;
-  if (!user) {
-    show(els.email, "Not logged in");
-    els.locked?.classList.remove("hidden");
-    els.content?.classList.add("hidden");
-    return;
-  }
-
-  const access = await checkAdminAccess(user);
-  if (!access.allowed) {
-    show(els.email, `Access denied: ${user.email || "unknown user"}`);
-    els.locked?.classList.remove("hidden");
-    els.content?.classList.add("hidden");
-    return;
-  }
-
-  adminReady = true;
-  show(els.email, `Admin: ${user.email || "approved admin"} (${access.viaEmail ? "admin email" : "custom claim"})`);
-  els.locked?.classList.add("hidden");
   els.content?.classList.remove("hidden");
   bindEvents();
-  await loadCoverage();
+
+  if (!user) {
+    show(els.email, "Analyzer ready. Login required only for Firestore import.");
+    els.locked?.classList.remove("hidden");
+    return;
+  }
+
+  try {
+    const access = await checkAdminAccess(user);
+    if (!access.allowed) {
+      show(els.email, `Analyzer ready. Firestore import denied for ${user.email || "this user"}.`);
+      els.locked?.classList.remove("hidden");
+      return;
+    }
+
+    adminReady = true;
+    show(els.email, `Admin: ${user.email || "approved admin"} (${access.viaEmail ? "admin email" : "custom claim"})`);
+    els.locked?.classList.add("hidden");
+    await loadCoverage();
+  } catch (error) {
+    console.error("Admin check failed", error);
+    show(els.email, "Analyzer ready. Admin check failed, so import may not work until rules/login are fixed.");
+  }
 });
 
 function bindEvents() {
-  document.querySelectorAll("[data-bot-source]").forEach((button) => button.addEventListener("click", () => startBot(button.dataset.botSource)));
+  if (bindEvents.done) return;
+  bindEvents.done = true;
   els.refresh?.addEventListener("click", loadCoverage);
-  els.analyze?.addEventListener("click", analyze);
+  els.fetchLink?.addEventListener("click", analyzeLink);
+  els.analyzePasted?.addEventListener("click", analyzeFallbackText);
+  els.analyze?.addEventListener("click", analyzeGeneratedFormat);
   els.clear?.addEventListener("click", clearWorkspace);
   els.importActive?.addEventListener("click", () => importRecords("active"));
   els.importDraft?.addEventListener("click", () => importRecords("draft"));
@@ -65,7 +79,7 @@ function bindEvents() {
 }
 
 async function loadCoverage() {
-  if (!adminReady) return;
+  if (!adminReady) return setMessage("Login with approved admin email to load Firestore coverage.", true);
   setMessage("Loading Firestore coverage...");
   try {
     const snapshot = await getDocs(collection(db, "scholarships"));
@@ -73,32 +87,109 @@ async function loadCoverage() {
     const active = existing.filter(isVerifiedActiveScholarship).length;
     const uniqueSources = new Set(existing.map((item) => normalizeUrl(item.sourceUrl || item.link)).filter(Boolean)).size;
     show(els.coverage, `${existing.length} total records • ${active} active verified • ${uniqueSources} unique sources`);
-    setMessage("Coverage loaded. Start a bot now.");
-    if (candidates.length) analyze();
+    setMessage("Coverage loaded. Paste a scholarship link now.");
+    if (candidates.length) analyzeGeneratedFormat();
   } catch (error) {
     console.error(error);
-    setMessage(`Coverage failed: ${error.message}. Deploy updated Firestore rules if this says permission-denied.`, true);
+    setMessage(`Coverage failed: ${error.message}. If permission-denied, deploy updated Firestore rules.`, true);
   }
 }
 
-function startBot(key) {
-  const bot = bots[key];
-  if (!bot) return;
-  setValue(els.source, bot.name);
-  setValue(els.url, bot.url);
-  setValue(els.input, `${bot.hint}\n\nScholarship Name\nState ${bot.state}\nEducation ${bot.education}\nCategories ${bot.categories}\nGender ${bot.gender}\nAmount Varies as per official rules\nIncome limit 0\nDeadline date YYYY-MM-DD\nOfficial link ${bot.url}\nSource ${bot.name}\nEligibility Paste official eligibility details here.\nIncome note Paste official income rule here.\n---\nSecond Scholarship...`);
-  window.open(bot.url, "_blank", "noopener,noreferrer");
-  setMessage(`${bot.name} Bot ready. Paste official data and replace YYYY-MM-DD before analyzing.`);
-  els.input?.focus();
+async function analyzeLink() {
+  const url = normalizeUrl(value(els.linkUrl));
+  if (!url) return setMessage("Paste a valid official scholarship URL first.", true);
+
+  setValue(els.url, url);
+  setValue(els.source, sourceNameFromUrl(url));
+  setMessage("Trying to fetch and read the official link...");
+
+  try {
+    const html = await fetchLinkHtml(url);
+    const pageText = htmlToReadableText(html);
+    if (pageText.length < 80) throw new Error("Page had too little readable text.");
+    const format = buildScholarshipFormat({ url, text: pageText, sourceName: sourceNameFromUrl(url) });
+    setValue(els.input, format);
+    setValue(els.fallbackText, pageText.slice(0, 4000));
+    analyzeGeneratedFormat();
+    setMessage("Link read successfully. Format auto-filled and analyzed.");
+  } catch (error) {
+    console.warn("Link fetch failed", error);
+    const starter = buildScholarshipFormat({ url, text: "", sourceName: sourceNameFromUrl(url), fetchFailed: true });
+    setValue(els.input, starter);
+    analyzeGeneratedFormat();
+    setMessage("The site blocked direct reading or returned unreadable content. Copy official page/PDF text into the fallback box and click Analyze Pasted Text.", true);
+  }
 }
 
-function analyze() {
-  const raw = els.input?.value || "";
+function analyzeFallbackText() {
+  const url = normalizeUrl(value(els.linkUrl) || value(els.url));
+  const text = value(els.fallbackText);
+  if (!text || text.length < 30) return setMessage("Paste official page/PDF text first.", true);
+  const sourceName = sourceNameFromUrl(url) || value(els.source) || "Official Portal";
+  setValue(els.source, sourceName);
+  if (url) setValue(els.url, url);
+  const format = buildScholarshipFormat({ url, text, sourceName });
+  setValue(els.input, format);
+  analyzeGeneratedFormat();
+  setMessage("Pasted official text converted into Add Scholarship format and analyzed.");
+}
+
+async function fetchLinkHtml(url) {
+  const controller = new AbortController();
+  const timeout = setTimeout(() => controller.abort(), 12000);
+  try {
+    const response = await fetch(url, {
+      method: "GET",
+      mode: "cors",
+      credentials: "omit",
+      cache: "no-store",
+      signal: controller.signal
+    });
+    if (!response.ok) throw new Error(`HTTP ${response.status}`);
+    return await response.text();
+  } finally {
+    clearTimeout(timeout);
+  }
+}
+
+function htmlToReadableText(html) {
+  const parser = new DOMParser();
+  const doc = parser.parseFromString(String(html || ""), "text/html");
+  doc.querySelectorAll("script,style,noscript,svg,iframe,nav,footer").forEach((node) => node.remove());
+  const meta = [
+    doc.querySelector("title")?.textContent || "",
+    doc.querySelector('meta[name="description"]')?.getAttribute("content") || "",
+    ...Array.from(doc.querySelectorAll("h1,h2,h3,th,td,p,li")).map((node) => node.textContent || "")
+  ].join("\n");
+  return clean(meta).slice(0, 14000);
+}
+
+function buildScholarshipFormat({ url, text, sourceName, fetchFailed = false }) {
+  const title = guessTitle(text, url);
+  const state = guessState(text, url);
+  const education = guessEducation(text);
+  const categories = guessCategories(text);
+  const gender = guessGender(text);
+  const amount = guessAmount(text);
+  const income = guessIncome(text);
+  const deadlineDate = guessDeadlineDate(text);
+  const eligibility = fetchFailed
+    ? "Direct link reading was blocked. Paste official eligibility text from the source and re-analyze before publishing."
+    : guessEligibility(text);
+  const incomeNote = fetchFailed
+    ? "Direct link reading was blocked. Paste official income rules from the source and re-analyze before publishing."
+    : guessIncomeNote(text);
+
+  return `Scholarship Name ${title}\nState ${state}\nEducation ${education}\nCategories ${categories}\nGender ${gender}\nAmount ${amount}\nIncome limit ${income}\nDeadline date ${deadlineDate || "YYYY-MM-DD"}\nOfficial link ${url || "https://official-portal.example/scheme"}\nSource ${sourceName || "Official Portal"}\nEligibility ${eligibility}\nIncome note ${incomeNote}`;
+}
+
+function analyzeGeneratedFormat() {
+  const raw = value(els.input);
   candidates = parse(raw).map(classify);
   render();
   const active = candidates.filter((item) => item.decision === "autoActive").length;
   const draft = candidates.filter((item) => item.decision === "autoDraft").length;
-  setMessage(candidates.length ? `Analyzed ${candidates.length}. Auto Active: ${active}. Auto Draft: ${draft}.` : "Paste official data first.", !candidates.length);
+  setMessage(candidates.length ? `Analyzed ${candidates.length}. Auto Active: ${active}. Auto Draft: ${draft}.` : "Generate or paste a format first.", !candidates.length);
 }
 
 function parse(raw) {
@@ -116,13 +207,13 @@ function fromJson(item) {
 
 function fromText(block) {
   const first = block.split("\n").map((x) => x.trim()).filter(Boolean).find((x) => !/paste official|yyyy-mm-dd/i.test(x)) || "";
-  const link = normalizeUrl(findUrl(block) || value(els.url));
-  return normalize({ name: clean(line(block, "scholarship name") || line(block, "name") || first), state: resolveState(line(block, "state") || block), amount: clean(line(block, "amount") || "Varies as per official rules"), maxIncome: num(line(block, "income limit") || line(block, "income") || 0), minPercentage: num(line(block, "minimum percentage") || line(block, "percentage") || 0), deadline: clean(line(block, "deadline") || line(block, "last date") || "Check official portal"), deadlineDate: date(line(block, "deadline date") || line(block, "last date") || findDate(block)), link, sourceUrl: link, education: list(line(block, "education") || line(block, "course") || line(block, "courses"), ["any"]), categories: list(line(block, "categories") || line(block, "category"), ["general"]), genders: list(line(block, "gender") || line(block, "genders"), ["any"]), disability: disability(line(block, "disability")), eligibilityNote: clean(line(block, "eligibility") || block.slice(0, 700) || "Verify eligibility on official portal before applying."), incomeNote: clean(line(block, "income note") || line(block, "income") || "Verify income rules on official portal."), sourceName: clean(line(block, "source") || value(els.source) || "Official Portal"), priority: 60 });
+  const link = normalizeUrl(line(block, "official link") || line(block, "link") || findUrl(block) || value(els.url));
+  return normalize({ name: clean(line(block, "scholarship name") || line(block, "name") || first.replace(/^Scholarship Name\s*/i, "")), state: resolveState(line(block, "state") || block), amount: clean(line(block, "amount") || "Varies as per official rules"), maxIncome: num(line(block, "income limit") || line(block, "income") || 0), minPercentage: num(line(block, "minimum percentage") || line(block, "percentage") || 0), deadline: clean(line(block, "deadline") || line(block, "last date") || "Check official portal"), deadlineDate: date(line(block, "deadline date") || line(block, "last date") || findDate(block)), link, sourceUrl: link, education: list(line(block, "education") || line(block, "course") || line(block, "courses"), ["any"]), categories: list(line(block, "categories") || line(block, "category"), ["general"]), genders: list(line(block, "gender") || line(block, "genders"), ["any"]), disability: disability(line(block, "disability")), eligibilityNote: clean(line(block, "eligibility") || block.slice(0, 700) || "Verify eligibility on official portal before applying."), incomeNote: clean(line(block, "income note") || line(block, "income") || "Verify income rules on official portal."), sourceName: clean(line(block, "source") || value(els.source) || sourceNameFromUrl(link) || "Official Portal"), priority: 60 });
 }
 
 function normalize(item) {
   const state = isKnownStateSlug(item.state) ? item.state : "national";
-  return { name: clean(item.name).slice(0, 200), state, stateLabel: getStateLabel(state), status: "draft", amount: clean(item.amount).slice(0, 120), maxIncome: num(item.maxIncome), minPercentage: clamp(num(item.minPercentage), 0, 100), deadline: clean(item.deadline || "Check official portal").slice(0, 160), deadlineDate: date(item.deadlineDate), link: normalizeUrl(item.link || item.sourceUrl), sourceUrl: normalizeUrl(item.sourceUrl || item.link), education: list(item.education, ["any"]), categories: list(item.categories, ["general"]), genders: list(item.genders, ["any"]), disability: disability(item.disability), eligibilityNote: clean(item.eligibilityNote).slice(0, 1200), incomeNote: clean(item.incomeNote).slice(0, 800), priority: clamp(num(item.priority || 60), 0, 100), sourceName: clean(item.sourceName || "Official Portal").slice(0, 120), applicationWindow: "open", academicYear: String(new Date().getFullYear()), verifiedOn: today, verificationNote: `Checked through Scholarship Bots Panel on ${today}. Verify official source before publishing widely.`, lastChecked: today };
+  return { name: clean(item.name).slice(0, 200), state, stateLabel: getStateLabel(state), status: "draft", amount: clean(item.amount || "Varies as per official rules").slice(0, 120), maxIncome: num(item.maxIncome), minPercentage: clamp(num(item.minPercentage), 0, 100), deadline: clean(item.deadline || "Check official portal").slice(0, 160), deadlineDate: date(item.deadlineDate), link: normalizeUrl(item.link || item.sourceUrl), sourceUrl: normalizeUrl(item.sourceUrl || item.link), education: list(item.education, ["any"]), categories: list(item.categories, ["general"]), genders: list(item.genders, ["any"]), disability: disability(item.disability), eligibilityNote: clean(item.eligibilityNote).slice(0, 1200), incomeNote: clean(item.incomeNote).slice(0, 800), priority: clamp(num(item.priority || 60), 0, 100), sourceName: clean(item.sourceName || "Official Portal").slice(0, 120), applicationWindow: "open", academicYear: String(new Date().getFullYear()), verifiedOn: today, verificationNote: `Checked through Scholarship Link Analyzer on ${today}. Verify official source before publishing widely.`, lastChecked: today };
 }
 
 function classify(item) {
@@ -132,13 +223,13 @@ function classify(item) {
   let score = 0;
   if (!duplicate) score += 12;
   if (isValidUrl(item.link)) score += 16;
-  if (item.name.length >= 8) score += 14;
+  if (item.name.length >= 8 && !/from official link/i.test(item.name)) score += 14;
   if (item.deadlineDate && !past(item.deadlineDate)) score += 16;
   if (item.sourceName.length >= 2) score += 8;
   if (item.education.length) score += 8;
   if (item.categories.length) score += 8;
-  if (item.eligibilityNote.length >= 60) score += 10;
-  if (item.incomeNote.length >= 20) score += 5;
+  if (item.eligibilityNote.length >= 60 && !/blocked/i.test(item.eligibilityNote)) score += 10;
+  if (item.incomeNote.length >= 20 && !/blocked/i.test(item.incomeNote)) score += 5;
   score -= errors.length * 10;
   score = clamp(Math.round(score), 0, 100);
   let decision = "review";
@@ -151,23 +242,23 @@ function classify(item) {
 
 function validate(item, strictDate) {
   const errors = [];
-  if (!item.name || item.name.length < 4) errors.push("Missing scholarship name.");
+  if (!item.name || item.name.length < 4 || /YYYY-MM-DD/i.test(item.name)) errors.push("Missing scholarship name.");
   if (!isValidUrl(item.link)) errors.push("Missing valid official link.");
   if (strictDate && !item.deadlineDate) errors.push("Missing YYYY-MM-DD deadline date.");
   if (item.deadlineDate && past(item.deadlineDate)) errors.push("Deadline expired.");
-  if (!item.eligibilityNote || item.eligibilityNote.length < 11) errors.push("Eligibility note too short.");
-  if (!item.incomeNote || item.incomeNote.length < 6) errors.push("Income note too short.");
+  if (!item.eligibilityNote || item.eligibilityNote.length < 11 || /blocked/i.test(item.eligibilityNote)) errors.push("Eligibility needs official text.");
+  if (!item.incomeNote || item.incomeNote.length < 6 || /blocked/i.test(item.incomeNote)) errors.push("Income note needs official text.");
   return errors;
 }
 
 function render() {
   if (!els.results) return;
   if (!candidates.length) { els.results.innerHTML = "<p class='mini-note'>No results yet.</p>"; return; }
-  els.results.innerHTML = candidates.map((item) => `<article class="bot-card"><span class="bot-status ${item.decision === "autoActive" ? "good" : item.decision === "autoDraft" ? "warn" : "bad"}">${escape(item.decision)} • ${item.score}%</span><h3>${escape(item.name)}</h3><p class="bot-mini"><strong>State:</strong> ${escape(item.stateLabel)} • <strong>Deadline:</strong> ${escape(item.deadlineDate || "missing")}</p><p class="bot-mini"><strong>Source:</strong> ${escape(item.sourceName)} ${item.link ? `• <a href="${escape(item.link)}" target="_blank" rel="noopener noreferrer">official link</a>` : ""}</p><p class="bot-mini"><strong>Eligibility:</strong> ${escape(item.eligibilityNote)}</p>${item.duplicateName ? `<p class="bot-mini"><strong>Duplicate:</strong> ${escape(item.duplicateName)}</p>` : ""}${item.errors.length ? `<ul>${item.errors.map((e) => `<li>${escape(e)}</li>`).join("")}</ul>` : "<p class='bot-mini'>Ready.</p>"}</article>`).join("");
+  els.results.innerHTML = candidates.map((item) => `<article class="bot-card"><span class="bot-status ${item.decision === "autoActive" ? "good" : item.decision === "autoDraft" ? "warn" : "bad"}">${escapeHtml(item.decision)} • ${item.score}%</span><h3>${escapeHtml(item.name)}</h3><p class="bot-mini"><strong>State:</strong> ${escapeHtml(item.stateLabel)} • <strong>Deadline:</strong> ${escapeHtml(item.deadlineDate || "missing")}</p><p class="bot-mini"><strong>Source:</strong> ${escapeHtml(item.sourceName)} ${item.link ? `• <a href="${escapeHtml(item.link)}" target="_blank" rel="noopener noreferrer">official link</a>` : ""}</p><p class="bot-mini"><strong>Eligibility:</strong> ${escapeHtml(item.eligibilityNote)}</p>${item.duplicateName ? `<p class="bot-mini"><strong>Duplicate:</strong> ${escapeHtml(item.duplicateName)}</p>` : ""}${item.errors.length ? `<ul>${item.errors.map((e) => `<li>${escapeHtml(e)}</li>`).join("")}</ul>` : "<p class='bot-mini'>Ready.</p>"}</article>`).join("");
 }
 
 async function importRecords(mode) {
-  if (!adminReady) return setMessage("Admin access required.", true);
+  if (!adminReady) return setMessage("Admin access required for Firestore import. Login with approved admin email.", true);
   let records = [];
   let status = "draft";
   if (mode === "active") { records = candidates.filter((x) => x.decision === "autoActive"); status = "active"; }
@@ -188,10 +279,22 @@ async function importRecords(mode) {
 function firestoreRecord(item, status) {
   const copy = { ...item };
   ["duplicateName", "errors", "score", "decision"].forEach((key) => delete copy[key]);
-  return { ...copy, status, deadlineDate: copy.deadlineDate || draftDeadline, deadline: copy.deadlineDate ? copy.deadline : "Needs official deadline verification", applicationWindow: status === "active" ? "open" : "verify", sourceType: "scholarship-bots-panel", verifiedOn: today, lastChecked: today, verificationNote: status === "active" ? `Published from Scholarship Bots Panel on ${today} after official-source check.` : `Saved as draft from Scholarship Bots Panel on ${today} for review.` };
+  return { ...copy, status, deadlineDate: copy.deadlineDate || draftDeadline, deadline: copy.deadlineDate ? copy.deadline : "Needs official deadline verification", applicationWindow: status === "active" ? "open" : "verify", sourceType: "scholarship-link-analyzer", verifiedOn: today, lastChecked: today, verificationNote: status === "active" ? `Published from Scholarship Link Analyzer on ${today} after official-source check.` : `Saved as draft from Scholarship Link Analyzer on ${today} for review.` };
 }
 
-function clearWorkspace() { setValue(els.source, ""); setValue(els.url, ""); setValue(els.input, ""); candidates = []; render(); setMessage("Cleared."); }
+function guessTitle(text, url) { const firstLine = clean(text).split(/(?<=[.!?])\s+|\n/).find((x) => /scholarship|scheme|fellowship|grant|stipend|pragati|saksham/i.test(x)); const domain = sourceNameFromUrl(url); return clean(firstLine || domain ? `${firstLine || "Scholarship"}` : "Scholarship from official link").replace(/\s*[-|].*$/, "").slice(0, 120) || "Scholarship from official link"; }
+function guessState(text, url) { const domain = String(url || "").toLowerCase(); if (domain.includes("jnanabhumi") || /andhra pradesh|\bap\b/i.test(text)) return "Andhra Pradesh"; if (domain.includes("telangana") || /telangana/i.test(text)) return "Telangana"; const found = INDIA_STATE_OPTIONS.find((s) => new RegExp(`\\b${escapeRegex(s.label)}\\b`, "i").test(text)); return found?.label || "National"; }
+function guessEducation(text) { const t = norm(text); const out = []; if (/school|class|pre matric|prematric/.test(t)) out.push("school"); if (/intermediate|inter/.test(t)) out.push("intermediate"); if (/degree|under graduate|undergraduate|ug/.test(t)) out.push("degree"); if (/engineering|btech|b e |technical|diploma/.test(t)) out.push("engineering"); if (/post graduate|postgraduate|pg|masters|m tech/.test(t)) out.push("pg"); return out.length ? [...new Set(out)].join(", ") : "any"; }
+function guessCategories(text) { const t = norm(text); const out = []; if (/general|open category/.test(t)) out.push("general"); if (/\bsc\b|scheduled caste/.test(t)) out.push("sc"); if (/\bst\b|scheduled tribe/.test(t)) out.push("st"); if (/\bobc\b|backward class|bc/.test(t)) out.push("obc"); if (/ews|economically weaker/.test(t)) out.push("ews"); if (/minority|muslim|christian|sikh|buddhist|jain|parsi/.test(t)) out.push("minority"); if (/kapu/.test(t)) out.push("kapu"); return out.length ? [...new Set(out)].join(", ") : "general, sc, st, obc, ews, minority"; }
+function guessGender(text) { const t = norm(text); if (/girl|female|women|woman/.test(t)) return "female"; if (/boy|male/.test(t)) return "male"; return "any"; }
+function guessAmount(text) { return text.match(/₹\s?[0-9][0-9,]*(?:\s?(?:per year|p\.a\.|annually|yearly))?/i)?.[0] || text.match(/rs\.?\s?[0-9][0-9,]*/i)?.[0] || "Varies as per official rules"; }
+function guessIncome(text) { const hit = text.match(/(?:income|annual income|family income)[^₹\d]{0,80}(?:₹|rs\.?\s?)?([0-9][0-9,]{3,})/i); return hit ? hit[1].replace(/,/g, "") : "0"; }
+function guessDeadlineDate(text) { return date(findDate(text)); }
+function guessEligibility(text) { return snippetAround(text, /(eligib|eligible|who can apply|criteria|student)/i, 700) || clean(text).slice(0, 700) || "Verify eligibility on official portal before applying."; }
+function guessIncomeNote(text) { return snippetAround(text, /(income|annual income|family income)/i, 450) || "Verify income rules on official portal."; }
+function snippetAround(text, regex, len) { const cleanText = clean(text); const match = cleanText.search(regex); if (match < 0) return ""; return cleanText.slice(Math.max(0, match - 80), match + len); }
+function sourceNameFromUrl(url) { try { const host = new URL(url).hostname.replace(/^www\./, ""); if (host.includes("scholarships.gov.in")) return "National Scholarship Portal"; if (host.includes("aicte")) return "AICTE"; if (host.includes("jnanabhumi")) return "AP Jnanabhumi"; if (host.includes("telanganaepass")) return "Telangana ePASS"; if (host.includes("ugc")) return "UGC"; return host.split(".").slice(0, 2).join("."); } catch { return "Official Portal"; } }
+function clearWorkspace() { setValue(els.linkUrl, ""); setValue(els.fallbackText, ""); setValue(els.source, ""); setValue(els.url, ""); setValue(els.input, ""); candidates = []; render(); setMessage("Cleared."); }
 function duplicateOf(item) { const n = normName(item.name), u = normalizeUrl(item.link); return existing.find((s) => (n && normName(s.name) === n) || (u && normalizeUrl(s.link || s.sourceUrl) === u)); }
 function resolveState(v) { const t = norm(v); const found = INDIA_STATE_OPTIONS.find((s) => s.slug === slug(t) || norm(s.label) === t || (` ${t} `).includes(` ${norm(s.label)} `) || (` ${t} `).includes(` ${s.slug.replaceAll("-", " ")} `)); return found?.slug || "national"; }
 function line(text, label) { return String(text || "").match(new RegExp(`^\\s*${label}\\s*:?\\s*(.+)$`, "im"))?.[1]?.trim() || ""; }
@@ -215,4 +318,5 @@ function value(el) { return el?.value?.trim() || ""; }
 function setValue(el, v) { if (el) el.value = v || ""; }
 function show(el, v) { if (el) el.textContent = v || ""; }
 function setMessage(v, bad = false) { show(els.message, v); if (els.message) els.message.style.color = bad ? "#b42318" : ""; }
-function escape(v) { return String(v || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;"); }
+function escapeRegex(value) { return String(value || "").replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
+function escapeHtml(v) { return String(v || "").replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;"); }
