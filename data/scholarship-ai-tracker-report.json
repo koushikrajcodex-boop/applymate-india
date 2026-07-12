@@ -1,16 +1,1017 @@
 {
-  "generatedAt": "not-run-yet",
-  "mode": "not-run-yet",
+  "generatedAt": "2026-07-12T05:46:51.236Z",
+  "mode": "tracker",
   "collection": "scholarships",
-  "checked": 0,
-  "active": 0,
+  "checked": 184,
+  "active": 73,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 0,
+  "needsReview": 163,
   "failed": 0,
   "autoPromoteDrafts": true,
-  "autoPublishThreshold": 90,
-  "explainer": "The AI tracker report will update after the GitHub Actions workflow runs.",
-  "actions": [],
+  "autoPublishThreshold": 85,
+  "explainer": "AI tracker checked 184 scholarship record(s), promoted 0, expired 0, flagged 163 for review, failed 0.",
+  "actions": [
+    {
+      "id": "03dA3PVA7PjzR7cuqcRT",
+      "name": "Foundation For Excellence Scholarship.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing real deadline date",
+      "aiConfidence": 73,
+      "deadlineDate": ""
+    },
+    {
+      "id": "1E7Aev27c3YKnKk1cket",
+      "name": "Title: National Renewable Energy Fellowship Scheme",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "1iVrrqfbakWmkPeBEim7",
+      "name": "Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "1vPsWJV9SAlzoGyn4JfC",
+      "name": "Fellowships",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-07-09"
+    },
+    {
+      "id": "2MdJaIXHWkZgQPDtoh9s",
+      "name": "Nilam Patel Bahushrut Foundation Scholarship.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "2TCmItazGqHXtMlOpZg2",
+      "name": "PM-USP Central Sector Scheme of Scholarship for College and University Students.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "3DiYIA5i353lfNrGxzTs",
+      "name": "Title: National Means-cum-Merit Scholarship Scheme",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "3tMRCnC83nsEfx3HLCTT",
+      "name": "Title: Stipend Scheme for Under Graduate and Post Graduate Studies in Indian Statistical Institute, Kolkata",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "5lUTS1zOYuCyCjODOIa2",
+      "name": "Fulbright-Nehru Postdoctoral Research Fellowships 2027-28",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-07-15"
+    },
+    {
+      "id": "6siTWrIVjwClnNnDMmJg",
+      "name": "Title: Prime Minister's Scholarship Scheme for Wards of States/UTs Police Personnel Martyred During Terror/Naxal Attacks",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "9koX18YSpl0rNgJrdD4P",
+      "name": "Pradhan Mantri Rashtriya Bal Puraskar 2026.",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "AEhqTjIBqK8HPskq4IaD",
+      "name": "Hubert H Humphrey Fellowship Program 2027-28",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-07-09"
+    },
+    {
+      "id": "AXLs1vD2Via5KwwLeb0k",
+      "name": "Fulbright-Nehru Academic and Professional Excellence Fellowships 2027-28",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-07-01"
+    },
+    {
+      "id": "By7GyqNXJU0H8vnqHId2",
+      "name": "AICTE PG Scholarship for GATE and GPAT qualified students.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "CdJCKtHS0hjup2X4iOp3",
+      "name": "New India Assurance Apprentice Stipend Opportunity 2026.",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "E2mHXlkkoiUJIZIEGsUa",
+      "name": "PRL Post-Doctoral Fellowship 2026",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-08-31"
+    },
+    {
+      "id": "EtNHzyMGUrO1hY9apgiL",
+      "name": "Title: ICSSR Doctoral Fellowship 2026-27",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "FP3ZGiBR81mtoXNttDEy",
+      "name": "Andhra Pradesh Post-Matric Scholarship - Jnanabhumi",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing real deadline date",
+      "aiConfidence": 90,
+      "deadlineDate": ""
+    },
+    {
+      "id": "FRQh8IrsDYmHVNp0b5f9",
+      "name": "Title: ICAR National Talent Scholarship UG",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "FtdKfmyhrTQrEEBv3au0",
+      "name": "AICTE Pragati Scholarship for Girl Students.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "FvblYYgdjeIcTHRQN8aM",
+      "name": "Title: Financial Assistance for Education to the Wards of Beedi/Cine/IOMC/LSDM Workers - Post Matric",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "HqxqRAuilIHastxFfl7i",
+      "name": "ICSSR Senior Fellowship 2026.",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "J1DG6dWx5vutPYd5ZvXZ",
+      "name": "Fulbright-Nehru Doctoral Research Fellowships 2027-28",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-07-01"
+    },
+    {
+      "id": "J5Ja7wbrLr6YXSapVfRy",
+      "name": "National Scholarship for Post Graduate Studies.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "JyWzheHkzSvKOdxrMtad",
+      "name": "Andhra Pradesh Jnanabhumi Pre Matric Scholarship.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "KJhUClYnfukWvcBnYCcT",
+      "name": "Buddy4Study Scholarship Support Program.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "KW5wX2lmPvAVWJWugBWC",
+      "name": "Title: Financial Assistance for Education to the Wards of Beedi/Cine/IOMC/LSDM Workers - Pre Matric",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "M166zPop43Zjst7cvgx0",
+      "name": "Title: Prime Minister's Scholarship Scheme for Central Armed Police Forces and Assam Rifles",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "M5BXBhj5D9GMVJmXvwZN",
+      "name": "Post Matric Scholarship for Minorities",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "NTpsEjugtzQFlYcFmkNw",
+      "name": "Keep India Smiling Foundational Scholarship.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "ORG1t2Sr78BDQsltoOcf",
+      "name": "Vidyasaarathi Scholarship.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "Of0RTir8O6SmttVoZB6Y",
+      "name": "Mi Scholarship for Undergraduate Students.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "PTr74Wykre1H0sNUkuAJ",
+      "name": "Title: Central Sector Scholarship of Top Class Education for SC Students",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "PoqiwBT6JuHcQIwmykUh",
+      "name": "Telangana ePASS Overseas Scholarship.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "Qpl6oTfHVQ76Wz1t0hW4",
+      "name": "Telangana ePASS Post-Matric Scholarship",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "RoAMxwHVJdDkwMRolfv9",
+      "name": "VISHWAS Vikram Sarabhai Postdoctoral Fellowship 2026",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-08-31"
+    },
+    {
+      "id": "RvunR4G4t5JtneBF4jHQ",
+      "name": "Rolls-Royce Unnati Scholarship for Women Engineering Students.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "SrnPX2LuJ1J7hf02OJDc",
+      "name": "LIC HFL Vidyadhan Scholarship.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "TPbrrppoYu3eBN5gPtyY",
+      "name": "Title: National Fellowship and Scholarship for Higher Education of ST Students - Scholarship",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "U5MaFjXlyO3ptSLJ5OL6",
+      "name": "Fulbright-Nehru International Education Administrators Award 2026-27",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-08-31"
+    },
+    {
+      "id": "USYy3CNOaGoBJwAUQbVb",
+      "name": "Title: PM YASASVI Central Sector Scheme of Top Class Education in College for OBC, EBC and DNT Students",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "VKa7057SqN7BQ7jZC7Rs",
+      "name": "NSP Pre Matric Scholarship for Students with Disabilities.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "Vcso6Yo5OgYq6UmoUijy",
+      "name": "Title: Fulbright-Nehru Postdoctoral Research Fellowships 2027-28",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "XL2B0C1fBV5w4my6LTvx",
+      "name": "Title: Hubert H. Humphrey Fellowship Program 2027-28",
+      "action": "flag",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "XqXKWaVcKWCYECUlIujB",
+      "name": "AICTE Saksham Scholarship for Specially Abled Students",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "ZJ1dEXei5Y6oZvKXaGN7",
+      "name": "AICTE Swanath Scholarship Scheme.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "ZOnQgXVxlFEC0e7V7H7m",
+      "name": "Additional Scholarship to OBC Students of Andaman and Nicobar Islands",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "ZdicQjEhc26baz43ht02",
+      "name": "Legrand Empowering Scholarship Program.",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name; missing real deadline date",
+      "aiConfidence": 0,
+      "deadlineDate": ""
+    },
+    {
+      "id": "aZNOS5eSxDcnHvhYIoWJ",
+      "name": "Fulbright Foreign Language Teaching Assistant Program 2027-28",
+      "action": "flag",
+      "statusBefore": "active",
+      "statusAfter": "active",
+      "reason": "missing trusted source URL/source name",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-08-10"
+    },
+    {
+      "id": "auto_13van45",
+      "name": "Graduate School Grants",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_13xvyn5",
+      "name": "**SC**.GOV - Home | **South Carolina**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_14fgt6u",
+      "name": "Home | Federal **Student** Aid",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1777dha",
+      "name": "gineering%20student%20scholarship%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India) T",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_187h6st",
+      "name": "Image 4: Close",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1a9dgai",
+      "name": "**Girl** - **Wikipedia**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1awac85",
+      "name": "Tata Trusts Education Grants",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 62,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1b0evy3",
+      "name": "**Buddy4Study** India Foundation — Making Quality Education ...",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1b5oeld",
+      "name": "Image 8: Drop an image here",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1b60emo",
+      "name": "a96-2458-2f78fed56bb1&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1c8fj3k",
+      "name": "Image 10: paste image link to search",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1f5zy6l",
+      "name": "Image 14: Site icon",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1gi6rwu",
+      "name": "Understanding **Minority** Group - Easy Sociology",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1h9zfcj",
+      "name": "619-2c36-673b2251673a&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1i69fvj",
+      "name": "Online College Grants",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1iq8b3c",
+      "name": "Image 5: Close",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1j21ybu",
+      "name": "Image 7: Drop an image here",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1jsohvh",
+      "name": "**Studocu** - Free Study Notes, Summaries & Exam Prep",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1kbff5d",
+      "name": "All",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1llbi4o",
+      "name": "Travel",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1lwf3wj",
+      "name": "Image 9",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1o4ek33",
+      "name": "$2,000 No Essay Scholarship",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1q2j0dl",
+      "name": "ime](javascript:) 1. [![Image 12: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 78,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1ql4moq",
+      "name": "One App for Multiple Scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1qsskh0",
+      "name": "Local scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1r08dzp",
+      "name": "**Engineering** - **Wikipedia**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1s7olix",
+      "name": "Reliance Foundation Scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 63,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1sozn8v",
+      "name": "Ultimate Scholarship Book | Deals on Ultimate Scholarship Book",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1tekxse",
+      "name": "Forbes.com",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1u5vgug",
+      "name": "b72-0642-f40f10566a6b&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1uylfjb",
+      "name": "Learn more",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1x5mknk",
+      "name": "Image 6",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1xfm6n7",
+      "name": "ww.bing.com/search?q=student%20scholarship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20Indi",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_2isjw",
+      "name": "Unusual Scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_37fmhx",
+      "name": "Buddy4Study Scholarship Listings",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 56,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_3umjuz",
+      "name": "Scholly Scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_5beorr",
+      "name": "06b-2e1b-811a0a0161ee&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_5gwllt",
+      "name": "(GOOGL.O) | **Stock** Price & Latest News | Reuters",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_5x1pbv",
+      "name": "928-1e96-5add822e6809&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_611s9y",
+      "name": "scholarships.net.in https://www.scholarships.net.in",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_632ash",
+      "name": "$580,000 Worth of Scholarships | Free Scholarship Applications",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_65a3r",
+      "name": "**Ugg boots on clearance** + FREE SHIPPING | **Zappos**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_73eah1",
+      "name": "google.com https://play.google.com › store › apps",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_7k3nal",
+      "name": "buddy4study.com https://www.buddy4study.com",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_agppqp",
+      "name": "Scholarships Available",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_d5a2l7",
+      "name": "CBSE Single Girl Child Scholarship",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date",
+      "aiConfidence": 87,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_dk6lb5",
+      "name": "Privacy",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_ev1t3l",
+      "name": "Scholarships For Females",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_g4gc3x",
+      "name": "$5,000 Grad School Scholarship",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_hgtbns",
+      "name": "MahaDBT Scholarship Portal",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date",
+      "aiConfidence": 88,
+      "deadlineDate": "2099-12-31"
+    }
+  ],
   "errors": []
 }
