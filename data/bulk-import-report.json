@@ -1,55 +1,64 @@
 {
-  "generatedAt": "2026-07-12T05:45:45.550Z",
+  "generatedAt": "2026-07-13T05:56:17.317Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 4,
-  "updated": 45,
+  "added": 5,
+  "updated": 42,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 49,
+  "draftCandidates": 47,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 4, refreshed 45, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 49.",
-  "feedGeneratedAt": "2026-07-12T05:44:02.804Z",
+  "explainer": "Import finished. Added 5, refreshed 42, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 47.",
+  "feedGeneratedAt": "2026-07-13T05:55:02.778Z",
   "imported": [
     {
-      "id": "auto_s1e316",
-      "name": "What does an engineer do? - CareerExplorer",
-      "link": "https://www.bing.com/ck/a?!&&p=5c3240cea1b41f362bb5d9855f8e9238504c17bc1a799175f8a1aeeb6ed90aa1JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=01d0245c-92d5-6d1f-3ae5-33c893e76c8c&u=a1aHR0cHM6Ly93d3cuY2FyZWVyZXhwbG9yZXIuY29tL2NhcmVlcnMvZW5naW5lZXIv&ntb=1",
+      "id": "auto_1j030pj",
+      "name": "FAFSA® Application | Federal **Student** Aid",
+      "link": "https://www.bing.com/ck/a?!&&p=ca9a38255ec25f5ab44e5cce71fdecf9b41b0a1fa3339eea5e3180096d7c542fJmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=09e42d1b-4797-6c3b-1af8-3a8e46c96dce&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi9oL2FwcGx5LWZvci1haWQvZmFmc2E&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 52,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_1g1zbos",
+      "name": "Jobs at HyperLink",
+      "link": "https://www.bing.com/ck/a?!&&p=e220f65d66116f1fd9bd16a32b71ed48d4a104289db496298eb4afeec446018cJmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=36b71193-aa3e-6ee4-222d-0606ab606f61&u=a1aHR0cHM6Ly9qb2JzLnBvbHltZXIuY28vaHlwZXJsaW5r&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 52,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_k2zd5w",
+      "name": "FACTS Management",
+      "link": "https://www.bing.com/ck/a?!&&p=ba969e554d0150abf6f0631e116a127b063727bcbc80a9efc3335b7658d4c2f0JmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=09e42d1b-4797-6c3b-1af8-3a8e46c96dce&u=a1aHR0cHM6Ly9mYWN0c21ndC5jb20vbG9naW4v&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
       "sourceTrust": "review"
     },
     {
-      "id": "auto_pxn9gp",
-      "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=ba796bbbe3aeda811d3aa2083dd33d61d57fd16029d42dac3df14805c94f61aeJmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=25cec30e-81e2-6511-212e-d49a80fa6457&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
+      "id": "auto_ug4cjx",
+      "name": "Get started with Family Link - Google For Families Help",
+      "link": "https://www.bing.com/ck/a?!&&p=26134c5f4697ce64344aa107df646d5798331346fe759d4531fdb6439efc4e26JmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=246194c3-ef6e-6d56-2979-8356ee256c4c&u=a1aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vZmFtaWxpZXMvYW5zd2VyLzcxMDEwMjU_aGw9ZW4&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
       "sourceTrust": "review"
     },
     {
-      "id": "auto_1a9dgai",
-      "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=32ad8414ed9341c70c54faf90efca160b4b1263898a7895134e45496ccbccea4JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=30a14123-b846-610d-0d2a-56b7b9e260b7&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_5gwllt",
-      "name": "(GOOGL.O) | **Stock** Price & Latest News | Reuters",
-      "link": "https://www.bing.com/ck/a?!&&p=7fc6163123d0d86df18f56c939c3874c3ea723e924f798dbacb095b56b042dc6JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=26e7191a-61ff-6ae5-36b5-0e8e60cf6bcb&u=a1aHR0cHM6Ly93d3cucmV1dGVycy5jb20vbWFya2V0cy9jb21wYW5pZXMvR09PR0wuTy8&ntb=1",
+      "id": "auto_1f9tbqh",
+      "name": "MAINEGIRL1 NOT GOING TO DM AND NOT ON FB – **Telegram**",
+      "link": "https://www.bing.com/ck/a?!&&p=2571723c6bf072a89a49020cd468570a71de0c35d31e24271455ef25e96a5d7fJmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=0ff790f1-2304-6df9-238b-876422926cf9&u=a1aHR0cHM6Ly90Lm1lL3MvTUFJTkVHSVI_YmVmb3JlPTEwNjI3NQ&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 34,
@@ -130,6 +139,14 @@
       "aiConfidence": 79
     },
     {
+      "id": "auto_nehlbf",
+      "name": "uly 2013, … 5. [![Image 16: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=",
+      "link": "https://www.incredibleindia.gov.in/",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 78
+    },
+    {
       "id": "auto_m45dvf",
       "name": "Rajasthan SJE Scholarship Portal",
       "link": "https://sjmsnew.rajasthan.gov.in/",
@@ -196,33 +213,9 @@
     {
       "id": "auto_14fgt6u",
       "name": "Home | Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=0ced895eb97ddf3b017e00365a744ce03adaf66d0312745dcb0deb37559b6a66JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=34d0158f-70e7-6acb-3309-021b71b66bd9&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=67293c983a27620ce80df0210ec308a696819d7bca3b3159f4c3269dc3866bfcJmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=09e42d1b-4797-6c3b-1af8-3a8e46c96dce&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_187h6st",
-      "name": "Image 4: Close",
-      "link": "https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_1iq8b3c",
-      "name": "Image 5: Close",
-      "link": "https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_1x5mknk",
-      "name": "Image 6",
-      "link": "https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg",
-      "status": "draft",
-      "reason": "same_url_already_exists",
       "aiConfidence": 52
     },
     {
@@ -258,72 +251,56 @@
       "aiConfidence": 52
     },
     {
-      "id": "auto_1777dha",
-      "name": "ng.com/search?q=minority%20scholarship%20students%20India%20scheme%20apply%20scholarship%20official%20trusted%20India) T",
-      "link": "http://www.bing.com/images",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_kt5mki",
-      "name": "Search",
-      "link": "http://www.bing.com/copilotsearch?q=minority+scholarship+students+India+scheme+apply+scholarship+official+trusted+India&FORM=CSSCOP",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_wzjenc",
-      "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=4f63d108b2cdb14e39956d0b2453b14877b6ab6dc66f994ab0d30cab64a88d3cJmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=29a9adde-fe15-6adb-29cf-ba4aff256b23&u=a1L2ltYWdlcy9zZWFyY2g_cT1taW5vcml0eStzY2hvbGFyc2hpcCtzdHVkZW50cytJbmRpYStzY2hlbWUrYXBwbHkrc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZGT1JNPUhEUlNDMg&ntb=1",
+      "id": "auto_j5kpbq",
+      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
+      "link": "https://www.bing.com/ck/a?!&&p=8c6c19c35ce52016a5ad82b1601e3ebd444104b0fa07b55133fbe11841a30f84JmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=327d1802-9d61-64ef-2ffe-0f979cbd65ab&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_1llbi4o",
-      "name": "Travel",
-      "link": "https://www.bing.com/ck/a?!&&p=9995004ca208b0ebed034049dab6ac3ab00df2e3e78d9c5aaa0dd1c95c1c053cJmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=29a9adde-fe15-6adb-29cf-ba4aff256b23&u=a1L3RyYXZlbC9zZWFyY2g_cT1taW5vcml0eStzY2hvbGFyc2hpcCtzdHVkZW50cytJbmRpYStzY2hlbWUrYXBwbHkrc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZtPXRyYXZlbCZGT1JNPVRIU0NPUA&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_1uc0we",
-      "name": "Some results have been removed",
-      "link": "https://www.bing.com/ck/a?!&&p=790188793c3ff3cb8a32ffb8da7b8561c32dff12b0d6b17b15585e0ff480c180JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=29a9adde-fe15-6adb-29cf-ba4aff256b23&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_1uylfjb",
-      "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=bae365976bf640a7fbdbe980331e0e7c2597800465aad98812bd37aeb8d125ccJmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=29a9adde-fe15-6adb-29cf-ba4aff256b23&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_r1edhd",
-      "name": "adb-29cf-ba4aff256b23&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=minority%20scholarship%20students%20India%20scheme%20apply%20scholarship%20official%20trusted%20India&form=CSBSBX",
-      "status": "draft",
-      "reason": "same_url_already_exists",
       "aiConfidence": 52
     },
     {
       "id": "auto_xgg8ck",
-      "name": "#)[Accessibility Feedback](http://www.bing.com/search?q=engineering%20student%20scholarship%20India%20AICTE%20corporate%",
+      "name": "rship%20official%20trusted%20India#)[Accessibility Feedback](http://www.bing.com/search?q=Telangana%20ePASS%20scholarshi",
       "link": "http://www.bing.com/?FORM=Z9FD1",
       "status": "draft",
       "reason": "same_url_already_exists",
       "aiConfidence": 42
     },
     {
+      "id": "auto_187h6st",
+      "name": "Image 4: Close",
+      "link": "https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1iq8b3c",
+      "name": "Image 5: Close",
+      "link": "https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1x5mknk",
+      "name": "Image 6",
+      "link": "https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1777dha",
+      "name": "2](http://www.bing.com/search?q=Telangana%20ePASS%20scholarship%20students%20scholarship%20official%20trusted%20India) T",
+      "link": "http://www.bing.com/images",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
       "id": "auto_1xfm6n7",
-      "name": "eering%20student%20scholarship%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India) [Rew",
+      "name": "ficial%20trusted%20India) To use Visual Search, enable the camera in this browser [](http://www.bing.com/images) [Reward",
       "link": "http://localhost/c204bf19f78776c25e5ce1a602bee57e",
       "status": "draft",
       "reason": "same_url_already_exists",
@@ -340,7 +317,7 @@
     {
       "id": "auto_kt5mki",
       "name": "Search",
-      "link": "http://www.bing.com/copilotsearch?q=engineering+student+scholarship+India+AICTE+corporate+foundation+scholarship+official+trusted+India&FORM=CSSCOP",
+      "link": "http://www.bing.com/copilotsearch?q=Telangana+ePASS+scholarship+students+scholarship+official+trusted+India&FORM=CSSCOP",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -348,15 +325,15 @@
     {
       "id": "auto_wzjenc",
       "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=0e6bcd2dc7540438c0cd1869de0b7126a46d70fa98bfcfeae655fd88312b7ba7JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=01d0245c-92d5-6d1f-3ae5-33c893e76c8c&u=a1L2ltYWdlcy9zZWFyY2g_cT1lbmdpbmVlcmluZytzdHVkZW50K3NjaG9sYXJzaGlwK0luZGlhK0FJQ1RFK2NvcnBvcmF0ZStmb3VuZGF0aW9uK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=037892afe5933a223f0cffed2dbf13cc8acdaa6a2564d05df7b36ae902adad97JmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=266966bd-c6b8-61e3-06c5-7128c75b6032&u=a1L2ltYWdlcy9zZWFyY2g_cT1UZWxhbmdhbmErZVBBU1Mrc2Nob2xhcnNoaXArc3R1ZGVudHMrc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZGT1JNPUhEUlNDMg&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_dk6lb5",
-      "name": "Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=ea71a8280afd3c92ffade98fa20a5ec0948810e4568a4488fa0bfe53bc850d38JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=01d0245c-92d5-6d1f-3ae5-33c893e76c8c&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=f0fd825cf7f9dd95899be425af08bb37af74e2b4bfe57121893db199ea674aeaJmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=266966bd-c6b8-61e3-06c5-7128c75b6032&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -364,58 +341,66 @@
     {
       "id": "auto_1uylfjb",
       "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=d0edd57da58711c68055f7e835bf246f41ebb3e8a348e57576701b81226cfe4dJmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=01d0245c-92d5-6d1f-3ae5-33c893e76c8c&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=88d2706d98dea69b4f641ae9728fa88fc37bc93217e38a08243b80996eeb4cf7JmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=266966bd-c6b8-61e3-06c5-7128c75b6032&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_5x1pbv",
-      "name": "d1f-3ae5-33c893e76c8c&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=engineering%20student%20scholarship%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "id": "auto_1u5vgug",
+      "name": "1e3-06c5-7128c75b6032&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "link": "http://www.bing.com/copilotsearch?q=Telangana%20ePASS%20scholarship%20students%20scholarship%20official%20trusted%20India&form=CSBSBX",
       "status": "draft",
       "reason": "same_url_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_13xvyn5",
-      "name": "**SC**.GOV - Home | **South Carolina**",
-      "link": "https://www.bing.com/ck/a?!&&p=38aa7c2f9cb298b1fd4c0ecf1e1f3b93f5a5d60cf43e031f2abc56a6c8159dc3JmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=29beedb9-8d3e-6b78-15f4-fa2d8cfb6a4b&u=a1aHR0cHM6Ly9zYy5nb3Yv&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
       "id": "auto_kt5mki",
       "name": "Search",
-      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP",
+      "link": "http://www.bing.com/copilotsearch?q=SC+ST+OBC+post+matric+scholarship+students+India+scholarship+official+trusted+India&FORM=CSSCOP",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
     },
     {
       "id": "auto_wzjenc",
       "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=759abb8fbefcc620da7186b53b9c9a6054fb64b42d000bb852e76d57c7f6484eJmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=26e7191a-61ff-6ae5-36b5-0e8e60cf6bcb&u=a1L2ltYWdlcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=0b1754609e36f553f55dee171a54863e307b2028a1525e9a2c92d29d9f680c63JmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=1fdc0771-1a54-6931-0365-10e41b226845&u=a1L2ltYWdlcy9zZWFyY2g_cT1TQytTVCtPQkMrcG9zdCttYXRyaWMrc2Nob2xhcnNoaXArc3R1ZGVudHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZGT1JNPUhEUlNDMg&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=70398a0c3b3e19d1cc48c68f8afde6fc3023cf62b16ec80fcea860ea85591780JmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=1fdc0771-1a54-6931-0365-10e41b226845&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
     },
     {
       "id": "auto_1uylfjb",
       "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=540b07d960e6076410465f9383a5a88dac90cca12612c263865cc0f7f4c85f6fJmltdHM9MTc4MzcyODAwMA&ptn=3&ver=2&hsh=4&fclid=26e7191a-61ff-6ae5-36b5-0e8e60cf6bcb&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=7e167cf86dc7d4e4bca94279a5fbd72303f2135589e7d7dbb337033898dbca3bJmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=1fdc0771-1a54-6931-0365-10e41b226845&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
     },
     {
-      "id": "auto_1b60emo",
-      "name": "ae5-36b5-0e8e60cf6bcb&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "id": "auto_5beorr",
+      "name": "931-0365-10e41b226845&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "link": "http://www.bing.com/copilotsearch?q=SC%20ST%20OBC%20post%20matric%20scholarship%20students%20India%20scholarship%20official%20trusted%20India&form=CSBSBX",
       "status": "draft",
       "reason": "same_url_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1a9dgai",
+      "name": "**Girl** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=3ba79928c9e1f15e6a9e0a97a76fcfd64de8aec33300a6eff82d4909f3556abdJmltdHM9MTc4MzgxNDQwMA&ptn=3&ver=2&hsh=4&fclid=0bfc25b7-f88d-6efb-243a-3222f9fe6f1c&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
     }
   ],
   "skippedRecords": [],

@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-12T05:46:51.236Z",
+  "generatedAt": "2026-07-13T05:57:24.645Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 184,
+  "checked": 189,
   "active": 73,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 163,
+  "needsReview": 168,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 184 scholarship record(s), promoted 0, expired 0, flagged 163 for review, failed 0.",
+  "explainer": "AI tracker checked 189 scholarship record(s), promoted 0, expired 0, flagged 168 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -623,6 +623,26 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1f9tbqh",
+      "name": "MAINEGIRL1 NOT GOING TO DM AND NOT ON FB – **Telegram**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1g1zbos",
+      "name": "Jobs at HyperLink",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1gi6rwu",
       "name": "Understanding **Minority** Group - Easy Sociology",
       "action": "flag",
@@ -655,6 +675,16 @@
     {
       "id": "auto_1iq8b3c",
       "name": "Image 5: Close",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1j030pj",
+      "name": "FAFSA® Application | Federal **Student** Aid",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -980,36 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_ev1t3l",
-      "name": "Scholarships For Females",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_g4gc3x",
-      "name": "$5,000 Grad School Scholarship",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_hgtbns",
-      "name": "MahaDBT Scholarship Portal",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date",
-      "aiConfidence": 88,
       "deadlineDate": "2099-12-31"
     }
   ],
