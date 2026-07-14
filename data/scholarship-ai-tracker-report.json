@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-13T05:57:24.645Z",
+  "generatedAt": "2026-07-14T05:19:15.742Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 189,
+  "checked": 201,
   "active": 73,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 168,
+  "needsReview": 180,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 189 scholarship record(s), promoted 0, expired 0, flagged 168 for review, failed 0.",
+  "explainer": "AI tracker checked 201 scholarship record(s), promoted 0, expired 0, flagged 180 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -633,6 +633,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1fx0gp0",
+      "name": "**letter****of****recommendation****for** scholarship",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1g1zbos",
       "name": "Jobs at HyperLink",
       "action": "flag",
@@ -715,6 +725,16 @@
     {
       "id": "auto_1kbff5d",
       "name": "All",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1kttgvi",
+      "name": "**indiana****scholarships**",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -853,6 +873,26 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1v8iwmg",
+      "name": "scholarship **for****international****students**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1vc663n",
+      "name": "**legit****scholarships****for****college****students**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1x5mknk",
       "name": "Image 6",
       "action": "flag",
@@ -873,8 +913,28 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_2dcdew",
+      "name": "**trustworthy** scholarship **websites**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_2isjw",
       "name": "Unusual Scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_350x56",
+      "name": "**Kyle Schwarber**'s 3 homers in tiebreaking **home run derby** lift National ...",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -945,66 +1005,6 @@
     {
       "id": "auto_632ash",
       "name": "$580,000 Worth of Scholarships | Free Scholarship Applications",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_65a3r",
-      "name": "**Ugg boots on clearance** + FREE SHIPPING | **Zappos**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_73eah1",
-      "name": "google.com https://play.google.com › store › apps",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_7k3nal",
-      "name": "buddy4study.com https://www.buddy4study.com",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_agppqp",
-      "name": "Scholarships Available",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_d5a2l7",
-      "name": "CBSE Single Girl Child Scholarship",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date",
-      "aiConfidence": 87,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_dk6lb5",
-      "name": "Privacy",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
