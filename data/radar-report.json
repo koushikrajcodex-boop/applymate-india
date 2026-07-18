@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-07-17T05:59:52.945Z",
-  "date": "2026-07-17",
+  "generatedAt": "2026-07-18T05:42:40.581Z",
+  "date": "2026-07-18",
   "mode": "auto-check-and-write",
   "firestore": {
     "enabled": true,
@@ -15,31 +15,31 @@
       "source": "National Scholarship Portal",
       "found": 1,
       "errors": 1,
-      "ms": 10517
+      "ms": 10515
     },
     {
       "source": "AICTE Official Site",
       "found": 1,
       "errors": 1,
-      "ms": 4930
+      "ms": 4940
     },
     {
       "source": "AP Jnanabhumi",
       "found": 1,
       "errors": 0,
-      "ms": 941
+      "ms": 975
     },
     {
       "source": "Telangana ePASS",
       "found": 9,
       "errors": 6,
-      "ms": 5083
+      "ms": 4935
     },
     {
       "source": "UGC Official Site",
       "found": 3,
       "errors": 0,
-      "ms": 4876
+      "ms": 2997
     }
   ],
   "totals": {
@@ -254,7 +254,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-17",
+      "deadlineDate": "2026-07-18",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -269,7 +269,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-17",
+      "deadlineDate": "2026-07-18",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -284,7 +284,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-17",
+      "deadlineDate": "2026-07-18",
       "decision": "review",
       "confidence": 78,
       "issues": [
