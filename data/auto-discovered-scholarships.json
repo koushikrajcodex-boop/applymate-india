@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-18T05:15:25.366Z",
+  "generatedAt": "2026-07-19T05:39:57.669Z",
   "generatedBy": "ApplyMate GitHub Actions auto-discovery",
   "note": "Review before publishing. Curated portal entries are discovery drafts; search snippets can be incomplete or stale.",
   "total": 15,
@@ -9,7 +9,7 @@
     {
       "seed": "National Scholarship Portal schemes",
       "query": "National Scholarship Portal scholarships schemes students National any any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: This operation was aborted"
     },
     {
       "seed": "Buddy4Study scholarships",
@@ -123,7 +123,7 @@
       "seedCourse": "any",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.579Z",
+      "discoveredAt": "2026-07-19T05:36:37.998Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -142,7 +142,7 @@
       "seedCourse": "engineering technical",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -161,7 +161,7 @@
       "seedCourse": "degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -180,7 +180,7 @@
       "seedCourse": "post matric degree engineering",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -199,7 +199,7 @@
       "seedCourse": "post matric degree engineering",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -218,7 +218,7 @@
       "seedCourse": "post matric degree",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -237,7 +237,7 @@
       "seedCourse": "post matric degree",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -256,7 +256,7 @@
       "seedCourse": "post matric degree",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -275,7 +275,7 @@
       "seedCourse": "school degree engineering medical pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -294,7 +294,7 @@
       "seedCourse": "degree diploma engineering",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -313,7 +313,7 @@
       "seedCourse": "engineering medical professional",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -332,7 +332,7 @@
       "seedCourse": "school degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -351,7 +351,7 @@
       "seedCourse": "degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -370,7 +370,7 @@
       "seedCourse": "degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -389,7 +389,7 @@
       "seedCourse": "engineering management law",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-18T05:11:36.580Z",
+      "discoveredAt": "2026-07-19T05:36:37.999Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     }
