@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-19T06:13:01.743Z",
+  "generatedAt": "2026-07-20T06:32:34.810Z",
   "candidates": [
     {
       "name": "National Scholarship Portal Manual Review Needed",
@@ -46,13 +46,14 @@
       "state": "andhra-pradesh",
       "deadlineDate": "",
       "decision": "skipDuplicate",
-      "confidence": 65,
+      "confidence": 55,
       "issues": [
         "Duplicate already exists: Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
         "Weak scholarship name."
       ],
       "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
+        "Missing future deadline date; draft will use placeholder deadline.",
+        "Eligibility note is short."
       ],
       "duplicateName": "Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
       "draftWillUsePlaceholderDeadline": false
@@ -204,7 +205,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-19",
+      "deadlineDate": "2026-07-20",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -219,7 +220,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-19",
+      "deadlineDate": "2026-07-20",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -234,7 +235,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-19",
+      "deadlineDate": "2026-07-20",
       "decision": "review",
       "confidence": 78,
       "issues": [
