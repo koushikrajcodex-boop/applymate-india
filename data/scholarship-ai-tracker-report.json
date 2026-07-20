@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-14T05:19:15.742Z",
+  "generatedAt": "2026-07-20T05:58:49.415Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 201,
-  "active": 73,
+  "checked": 276,
+  "active": 71,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 180,
+  "needsReview": 255,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 201 scholarship record(s), promoted 0, expired 0, flagged 180 for review, failed 0.",
+  "explainer": "AI tracker checked 276 scholarship record(s), promoted 0, expired 0, flagged 255 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -96,9 +96,9 @@
       "id": "5lUTS1zOYuCyCjODOIa2",
       "name": "Fulbright-Nehru Postdoctoral Research Fellowships 2027-28",
       "action": "flag",
-      "statusBefore": "active",
-      "statusAfter": "active",
-      "reason": "missing trusted source URL/source name",
+      "statusBefore": "closed",
+      "statusAfter": "closed",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-07-15"
     },
@@ -503,6 +503,36 @@
       "deadlineDate": "2026-08-10"
     },
     {
+      "id": "auto_10unw3s",
+      "name": "![Image 15: Global web icon",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_11g3j99",
+      "name": "minority **scholarships**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_12dxzsv",
+      "name": "**Andhra Pradesh** - **Wikipedia**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13van45",
       "name": "Graduate School Grants",
       "action": "flag",
@@ -523,6 +553,26 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_145f5ls",
+      "name": "**Engineering** | Journal | ScienceDirect.com by Elsevier",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_145tosp",
+      "name": "![Image 20: Global web icon",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_14fgt6u",
       "name": "Home | Federal **Student** Aid",
       "action": "flag",
@@ -530,6 +580,26 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_14jm7ux",
+      "name": "Image 9: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=97&pcl=fffff",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_16e6c8v",
+      "name": "Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=93&pcl=fffffa&o=6&pid",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 44,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -545,6 +615,16 @@
     {
       "id": "auto_187h6st",
       "name": "Image 4: Close",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1a66096",
+      "name": "![Image 16: Global web icon",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -579,7 +659,7 @@
       "statusBefore": "draft",
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
+      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -603,6 +683,36 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1betz8o",
+      "name": "Image 2: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=90&pcl=fffff",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1bndyvn",
+      "name": "**GIRL** | English meaning - Cambridge Dictionary",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1c6ma94",
+      "name": "ental sustainability. 6. [![Image 14: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 78,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1c8fj3k",
       "name": "Image 10: paste image link to search",
       "action": "flag",
@@ -610,6 +720,36 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1cywmm5",
+      "name": "KU **Engineering** | School of **Engineering**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1dhbsy3",
+      "name": "![Image 21: Global web icon",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1evmvte",
+      "name": "**ANDHRA** - aphistorycongress.com",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -663,6 +803,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1gynupa",
+      "name": "google.com https://play.google.com › store › apps › details",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1h9zfcj",
       "name": "619-2c36-673b2251673a&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
       "action": "flag",
@@ -670,6 +820,16 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1hh57hf",
+      "name": "**scholarships****for****undocumented** students",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -705,6 +865,16 @@
     {
       "id": "auto_1j21ybu",
       "name": "Image 7: Drop an image here",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1jho4ek",
+      "name": "![Image 17: Global web icon",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -763,6 +933,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1n9jjs1",
+      "name": "4: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=92&pcl=fffffa&o=6&",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1o4ek33",
       "name": "$2,000 No Essay Scholarship",
       "action": "flag",
@@ -773,6 +953,26 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1on1yu9",
+      "name": "** You will be … 5. [![Image 16: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1ptc99r",
+      "name": "mage 19: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=97&pcl=fffff",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 44,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1q2j0dl",
       "name": "ime](javascript:) 1. [![Image 12: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w",
       "action": "flag",
@@ -780,6 +980,16 @@
       "statusAfter": "draft",
       "reason": "missing real deadline date; AI confidence below 85%",
       "aiConfidence": 78,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1qg59q3",
+      "name": "we have helped … 10. [![Image 21: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 61,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -800,216 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1r08dzp",
-      "name": "**Engineering** - **Wikipedia**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1s7olix",
-      "name": "Reliance Foundation Scholarships",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 63,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1sozn8v",
-      "name": "Ultimate Scholarship Book | Deals on Ultimate Scholarship Book",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1tekxse",
-      "name": "Forbes.com",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1u5vgug",
-      "name": "b72-0642-f40f10566a6b&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1uc0we",
-      "name": "Some results have been removed",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1uylfjb",
-      "name": "Learn more",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1v8iwmg",
-      "name": "scholarship **for****international****students**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1vc663n",
-      "name": "**legit****scholarships****for****college****students**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1x5mknk",
-      "name": "Image 6",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1xfm6n7",
-      "name": "ww.bing.com/search?q=student%20scholarship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20Indi",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_2dcdew",
-      "name": "**trustworthy** scholarship **websites**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_2isjw",
-      "name": "Unusual Scholarships",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_350x56",
-      "name": "**Kyle Schwarber**'s 3 homers in tiebreaking **home run derby** lift National ...",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_37fmhx",
-      "name": "Buddy4Study Scholarship Listings",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 56,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_3umjuz",
-      "name": "Scholly Scholarships",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_5beorr",
-      "name": "06b-2e1b-811a0a0161ee&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_5gwllt",
-      "name": "(GOOGL.O) | **Stock** Price & Latest News | Reuters",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_5x1pbv",
-      "name": "928-1e96-5add822e6809&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_611s9y",
-      "name": "scholarships.net.in https://www.scholarships.net.in",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_632ash",
-      "name": "$580,000 Worth of Scholarships | Free Scholarship Applications",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
