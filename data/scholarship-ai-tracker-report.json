@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-20T05:58:49.415Z",
+  "generatedAt": "2026-07-21T05:40:38.988Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 276,
+  "checked": 279,
   "active": 71,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 255,
+  "needsReview": 258,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 276 scholarship record(s), promoted 0, expired 0, flagged 255 for review, failed 0.",
+  "explainer": "AI tracker checked 279 scholarship record(s), promoted 0, expired 0, flagged 258 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -873,6 +873,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1j4z9bd",
+      "name": "Jude Bellingham (@judebellingham) • Instagram photos and videos",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1jho4ek",
       "name": "![Image 17: Global web icon",
       "action": "flag",
@@ -995,16 +1005,6 @@
     {
       "id": "auto_1ql4moq",
       "name": "One App for Multiple Scholarships",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1qsskh0",
-      "name": "Local scholarships",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
