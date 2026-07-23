@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-21T05:40:38.988Z",
+  "generatedAt": "2026-07-23T05:44:14.776Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 279,
+  "checked": 287,
   "active": 71,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 258,
+  "needsReview": 266,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 279 scholarship record(s), promoted 0, expired 0, flagged 258 for review, failed 0.",
+  "explainer": "AI tracker checked 287 scholarship record(s), promoted 0, expired 0, flagged 266 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -593,6 +593,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_16dai2i",
+      "name": "Amazon Prime **Student**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_16e6c8v",
       "name": "Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=93&pcl=fffffa&o=6&pid",
       "action": "flag",
@@ -615,6 +625,16 @@
     {
       "id": "auto_187h6st",
       "name": "Image 4: Close",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_190okbb",
+      "name": "Scholarship portal for Indian students | Find online ... - **Buddy4Study**",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -680,6 +700,16 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1bc59nm",
+      "name": "Live Scholarship Applications 2026-27 – Apply Online Now - **Buddy4Study**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -893,6 +923,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1joyznw",
+      "name": "**Girl (2020 film**) - Wikipedia",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1jsohvh",
       "name": "**Studocu** - Free Study Notes, Summaries & Exam Prep",
       "action": "flag",
@@ -970,46 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1ptc99r",
-      "name": "mage 19: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=97&pcl=fffff",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 44,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1q2j0dl",
-      "name": "ime](javascript:) 1. [![Image 12: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 78,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1qg59q3",
-      "name": "we have helped … 10. [![Image 21: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 61,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1ql4moq",
-      "name": "One App for Multiple Scholarships",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     }
   ],
