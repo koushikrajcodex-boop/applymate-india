@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-23T05:44:14.776Z",
+  "generatedAt": "2026-07-25T05:34:29.657Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 287,
+  "checked": 299,
   "active": 71,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 266,
+  "needsReview": 278,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 287 scholarship record(s), promoted 0, expired 0, flagged 266 for review, failed 0.",
+  "explainer": "AI tracker checked 299 scholarship record(s), promoted 0, expired 0, flagged 278 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -523,6 +523,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_11r62yx",
+      "name": "What Do Engineers Do? | SNHU",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_12dxzsv",
       "name": "**Andhra Pradesh** - **Wikipedia**",
       "action": "flag",
@@ -783,6 +793,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1ewimyc",
+      "name": "Flights",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1f5zy6l",
       "name": "Image 14: Site icon",
       "action": "flag",
@@ -883,6 +903,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1isw0nm",
+      "name": "**scholarships****for** engineering **students**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1j030pj",
       "name": "FAFSA® Application | Federal **Student** Aid",
       "action": "flag",
@@ -943,6 +973,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1jufbv2",
+      "name": "Dynamically generating a QR code with PHP - Stack Overflow",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1kbff5d",
       "name": "All",
       "action": "flag",
@@ -965,46 +1005,6 @@
     {
       "id": "auto_1llbi4o",
       "name": "Travel",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1lwf3wj",
-      "name": "Image 9",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1n9jjs1",
-      "name": "4: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=92&pcl=fffffa&o=6&",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1o4ek33",
-      "name": "$2,000 No Essay Scholarship",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1on1yu9",
-      "name": "** You will be … 5. [![Image 16: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
