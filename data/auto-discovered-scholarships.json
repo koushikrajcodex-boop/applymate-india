@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-07-26T05:50:50.508Z",
+  "generatedAt": "2026-07-27T06:06:35.644Z",
   "generatedBy": "ApplyMate GitHub Actions auto-discovery",
   "note": "Review before publishing. Curated portal entries are discovery drafts; search snippets can be incomplete or stale.",
   "total": 15,
@@ -9,102 +9,102 @@
     {
       "seed": "National Scholarship Portal schemes",
       "query": "National Scholarship Portal scholarships schemes students National any any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Buddy4Study scholarships",
       "query": "Buddy4Study scholarships India students engineering degree school National any any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Vidyasaarathi scholarships",
       "query": "Vidyasaarathi scholarships India students scheme apply National any degree engineering diploma scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Foundation For Excellence scholarship",
       "query": "Foundation For Excellence scholarship India engineering medical students National any engineering medical degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "AICTE scholarships",
       "query": "AICTE scholarship Pragati Saksham Swanath guidelines notification National any engineering technical scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "UGC scholarships",
       "query": "UGC scholarship fellowship guidelines notification students National any degree pg scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "HDFC scholarships",
       "query": "HDFC Bank scholarship ECSS students India National any school degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Tata scholarships",
       "query": "Tata Trusts scholarship India students education National any degree pg scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Reliance Foundation scholarships",
       "query": "Reliance Foundation scholarships India undergraduate postgraduate students National any degree pg scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Aditya Birla scholarships",
       "query": "Aditya Birla scholarship India students National any degree management engineering law scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Andhra Pradesh scholarships",
       "query": "Andhra Pradesh student scholarship Jnanabhumi notification Andhra Pradesh any degree engineering post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Telangana scholarships",
       "query": "Telangana ePASS scholarship students notification Telangana any degree engineering post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Maharashtra scholarships",
       "query": "MahaDBT scholarship Maharashtra students post matric Maharashtra any post matric degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Karnataka scholarships",
       "query": "Karnataka SSP scholarship students post matric Karnataka any post matric degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Rajasthan scholarships",
       "query": "Rajasthan SJE scholarship students post matric Rajasthan any post matric degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Delhi scholarships",
       "query": "Delhi scholarship SC ST OBC students higher education Delhi SC ST OBC school degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "OBC scholarships",
       "query": "OBC scholarship non creamy layer students India National OBC any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "SC ST scholarships",
       "query": "SC ST post matric scholarship students India National SC ST post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "Minority scholarships",
       "query": "minority scholarship students India scheme apply National minority any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     },
     {
       "seed": "EWS scholarships",
       "query": "EWS scholarship students India education National EWS any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: no useful results | Jina Bing mirror: no useful results"
+      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: no useful results"
     }
   ],
   "records": [
@@ -123,7 +123,7 @@
       "seedCourse": "any",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -142,7 +142,7 @@
       "seedCourse": "engineering technical",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -161,7 +161,7 @@
       "seedCourse": "degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -180,7 +180,7 @@
       "seedCourse": "post matric degree engineering",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -199,7 +199,7 @@
       "seedCourse": "post matric degree engineering",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -218,7 +218,7 @@
       "seedCourse": "post matric degree",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -237,7 +237,7 @@
       "seedCourse": "post matric degree",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -256,7 +256,7 @@
       "seedCourse": "post matric degree",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -275,7 +275,7 @@
       "seedCourse": "school degree engineering medical pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -294,7 +294,7 @@
       "seedCourse": "degree diploma engineering",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -313,7 +313,7 @@
       "seedCourse": "engineering medical professional",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -332,7 +332,7 @@
       "seedCourse": "school degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -351,7 +351,7 @@
       "seedCourse": "degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -370,7 +370,7 @@
       "seedCourse": "degree pg",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     },
@@ -389,7 +389,7 @@
       "seedCourse": "engineering management law",
       "searchQuery": "curated trusted scholarship portal",
       "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-07-26T05:45:24.109Z",
+      "discoveredAt": "2026-07-27T06:04:14.108Z",
       "status": "review",
       "suggestedAction": "verify_official_source_then_import_draft"
     }
