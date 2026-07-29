@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-28T05:37:54.691Z",
+  "generatedAt": "2026-07-29T05:42:06.286Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 307,
+  "checked": 313,
   "active": 71,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 286,
+  "needsReview": 292,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 307 scholarship record(s), promoted 0, expired 0, flagged 286 for review, failed 0.",
+  "explainer": "AI tracker checked 313 scholarship record(s), promoted 0, expired 0, flagged 292 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -643,6 +643,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_190msdg",
+      "name": "Food Delivery | Restaurant Takeout | Order Food Online | Grubhub",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_190okbb",
       "name": "Scholarship portal for Indian students | Find online ... - **Buddy4Study**",
       "action": "flag",
@@ -853,6 +863,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1g35oo1",
+      "name": "of key socio-economic … 5. [![Image 13: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB7",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 78,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1gi6rwu",
       "name": "Understanding **Minority** Group - Easy Sociology",
       "action": "flag",
@@ -985,26 +1005,6 @@
     {
       "id": "auto_1jufbv2",
       "name": "Dynamically generating a QR code with PHP - Stack Overflow",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1kbff5d",
-      "name": "All",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1kttgvi",
-      "name": "**indiana****scholarships**",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
