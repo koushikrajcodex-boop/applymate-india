@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-30T05:30:56.803Z",
+  "generatedAt": "2026-07-31T05:55:58.586Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 370,
+  "checked": 408,
   "active": 71,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 349,
+  "needsReview": 387,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 370 scholarship record(s), promoted 0, expired 0, flagged 349 for review, failed 0.",
+  "explainer": "AI tracker checked 408 scholarship record(s), promoted 0, expired 0, flagged 387 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -509,7 +509,7 @@
       "statusBefore": "draft",
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
+      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -533,6 +533,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_11xzzw9",
+      "name": "4. [![Image 26: Global web icon](https://th.bing.com/th/id/ODF.YMKII0n4ZYVsUxdT2SogcA?w=32&h=32&qlt=91&pcl=fffffa&o=6&pi",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_121dn14",
       "name": "-funded programs to support economically disadvantaged **students** https://educationforallin**india**.com › **sc**-**st",
       "action": "flag",
@@ -550,6 +560,26 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_12fpr3c",
+      "name": "tatus Online in **Jnanabhumi****Andhra****Pradesh** ![Image 20: Video source site](blob:http://localhost/40abad26830086a",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_12x9ivx",
+      "name": "![Image 29: 🔥 AICTE Scholarship 2026-27 | Get Up To ₹50,000 Per Year | Apply Now! 🚀",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -610,6 +640,16 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_147yqyr",
+      "name": "* **Launched in:** Telangana 5. [![Image 16: Global web icon](https://th.bing.com/th/id/ODF.EdzN0ghmI5EbSslLicQPKQ?w=32&",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date",
+      "aiConfidence": 90,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -693,8 +733,28 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_17cluys",
+      "name": "ttps://th.bing.com/th/id/ODF.MTwH54_heOQQaoR5cL3KXg?w=32&h=32&qlt=91&pcl=fffffa&r=0&o=6&pid=1.2) National Portal of Indi",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_187h6st",
       "name": "Image 4: Close",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_18rjjgm",
+      "name": "FAQs ![Image 20",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -790,6 +850,16 @@
       "statusAfter": "draft",
       "reason": "missing real deadline date; AI confidence below 85%",
       "aiConfidence": 62,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1axex6u",
+      "name": "mage 19: Global web icon](https://th.bing.com/th/id/ODF._oU_f7wpgl9eCNTDmJ_sfw?w=32&h=32&qlt=90&pcl=fffffa&r=0&o=6&pid=1",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -940,76 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1ewimyc",
-      "name": "Flights",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1ewxrl4",
-      "name": "ards. **Students** may apply for one merit-based **scholarship** scheme and one or more welfare-based **scholarship** sc",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date",
-      "aiConfidence": 90,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1f5zy6l",
-      "name": "Image 14: Site icon",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1f6c620",
-      "name": "TS ePASS Scholarship 2026-27: Status & Apply - telanganainfo.in",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1f9tbqh",
-      "name": "MAINEGIRL1 NOT GOING TO DM AND NOT ON FB – **Telegram**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1fr3y11",
-      "name": "Image 24",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1ft6pxb",
-      "name": ",000 and ₹48,000 annually. Learn eligibility, benefits, application process, and key dates for these government-funded p",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
