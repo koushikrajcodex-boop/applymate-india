@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-07-31T05:55:58.586Z",
+  "generatedAt": "2026-08-01T05:46:06.571Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 408,
+  "checked": 445,
   "active": 71,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 387,
+  "needsReview": 424,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 408 scholarship record(s), promoted 0, expired 0, flagged 387 for review, failed 0.",
+  "explainer": "AI tracker checked 445 scholarship record(s), promoted 0, expired 0, flagged 424 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -503,6 +503,26 @@
       "deadlineDate": "2026-08-10"
     },
     {
+      "id": "auto_10q4uzh",
+      "name": "![Image 17: Global web icon](https://th.bing.com/th/id/ODF.gPl2M3rIs55UDzuYA7LNqA?w=32&h=32&qlt=93&pcl=fffffa&o=6&pid=1.",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_10r93e2",
+      "name": "cluding **AICTE**, HDFC Parivartan ECSS, and Infosys STEM Stars. Apply before October 30, 2025. https://www.buddy4study.",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_10unw3s",
       "name": "![Image 15: Global web icon",
       "action": "flag",
@@ -653,6 +673,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_14dq1gi",
+      "name": "Helpdesk",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_14fgt6u",
       "name": "Home | Federal **Student** Aid",
       "action": "flag",
@@ -673,6 +703,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_14n4usk",
+      "name": "AICTE Fellowship/Scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_14wpwa5",
       "name": "TS ePASS Scholarship — Telangana 2026 - schemesinindia.in",
       "action": "flag",
@@ -683,8 +723,38 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_14zt42p",
+      "name": "Students",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_15cn7y",
+      "name": "Scholarships - All India Council for Technical Education",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_15d4mv2",
       "name": "4MTUxNWYwN2UzZTc0ZDEz&rlid=251a356d032c1fd281515f07e3e74d13&ntb=1) * ![Image 15](https://th.bing.com/th/id/ODF.WXe4vtFZp",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_15sqtuk",
+      "name": "ST students applying for … 5. [![Image 18: Global web icon](https://th.bing.com/th/id/ODF.kaNHzd2M3b8sC9QjaNl0Ig?w=32&h=",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -745,6 +815,26 @@
     {
       "id": "auto_187h6st",
       "name": "Image 4: Close",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_18b6ncg",
+      "name": "$2,000 Scholarship - NO ESSAY | Deadline: August 31st, 2026",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_18q3ytm",
+      "name": "Scholarships for Engineering Students in India 2025 – Apply Now",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -843,6 +933,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_1auerrw",
+      "name": "Scholarships for UG Students in India 2026 | Full List",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_1awac85",
       "name": "Tata Trusts Education Grants",
       "action": "flag",
@@ -910,106 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 44,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1bgr4lo",
-      "name": "Image 12",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1bidz33",
-      "name": "Post-Matric Scholarship 2026-27 (NSP) — SC, ST, OBC & Minority",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1bmyrsc",
-      "name": "NSP : National Scholarship Portal",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1bndyvn",
-      "name": "**GIRL** | English meaning - Cambridge Dictionary",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1c6ma94",
-      "name": "ental sustainability. 6. [![Image 14: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 78,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1c8fj3k",
-      "name": "Image 10: paste image link to search",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1cywmm5",
-      "name": "KU **Engineering** | School of **Engineering**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1dhbsy3",
-      "name": "![Image 21: Global web icon",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1dkelq9",
-      "name": "Officer",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1evmvte",
-      "name": "**ANDHRA** - aphistorycongress.com",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     }
   ],
