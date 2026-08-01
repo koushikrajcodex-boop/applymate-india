@@ -1,74 +1,297 @@
 {
-  "generatedAt": "2026-07-31T06:28:58.552Z",
-  "date": "2026-07-31",
+  "generatedAt": "2026-08-01T06:14:29.382Z",
+  "date": "2026-08-01",
   "mode": "auto-check-and-write",
   "firestore": {
     "enabled": true,
-    "addedActive": 0,
-    "addedDraft": 0,
-    "skipped": 15,
+    "addedActive": 3,
+    "addedDraft": 10,
+    "skipped": 17,
     "closedExpired": 0,
     "errors": []
   },
   "sourceResults": [
     {
       "source": "National Scholarship Portal",
-      "found": 1,
-      "errors": 1,
-      "ms": 10512
+      "found": 18,
+      "errors": 0,
+      "ms": 6922
     },
     {
       "source": "AICTE Official Site",
       "found": 1,
       "errors": 1,
-      "ms": 4899
+      "ms": 4816
     },
     {
       "source": "AP Jnanabhumi",
       "found": 1,
       "errors": 0,
-      "ms": 942
+      "ms": 917
     },
     {
       "source": "Telangana ePASS",
       "found": 9,
       "errors": 6,
-      "ms": 5635
+      "ms": 5014
     },
     {
       "source": "UGC Official Site",
       "found": 3,
       "errors": 0,
-      "ms": 3730
+      "ms": 3100
     }
   ],
   "totals": {
-    "total": 15,
-    "autoActive": 0,
-    "autoDraft": 0,
-    "review": 1,
-    "skipDuplicate": 7,
+    "total": 30,
+    "autoActive": 3,
+    "autoDraft": 10,
+    "review": 2,
+    "skipDuplicate": 8,
     "skipExpired": 7
   },
   "candidates": [
     {
-      "name": "National Scholarship Portal Manual Review Needed",
+      "name": " Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
       "sourceName": "National Scholarship Portal",
-      "sourceUrl": "https://scholarships.gov.in/",
+      "sourceUrl": "https://scholarships.gov.in/home",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-10-31",
+      "decision": "autoActive",
+      "confidence": 100,
+      "issues": [],
+      "warnings": [],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": " Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/#",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-10-31",
+      "decision": "autoActive",
+      "confidence": 100,
+      "issues": [],
+      "warnings": [],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": " Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/Students",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-10-31",
+      "decision": "autoActive",
+      "confidence": 100,
+      "issues": [],
+      "warnings": [],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Apply For Scholarship",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/ApplicationForm/",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 71,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline.",
+        "Eligibility note is short."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "Schemes on NSP",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/All-Scholarships",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2026-06-01",
+      "decision": "skipDuplicate",
+      "confidence": 84,
+      "issues": [
+        "Duplicate already exists: Title: National Renewable Energy Fellowship Scheme"
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "Title: National Renewable Energy Fellowship Scheme",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "Scholarship Eligibility",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/scholarshipEligibility",
       "state": "national",
       "deadlineDate": "",
       "decision": "skipDuplicate",
-      "confidence": 55,
+      "confidence": 71,
       "issues": [
-        "Duplicate already exists: Post Matric Scholarship for Minorities",
-        "Weak scholarship name."
+        "Duplicate already exists: Scholarship Eligibility"
       ],
       "warnings": [
         "Missing future deadline date; draft will use placeholder deadline.",
         "Eligibility note is short."
       ],
-      "duplicateName": "Post Matric Scholarship for Minorities",
+      "duplicateName": "Scholarship Eligibility",
       "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/Aadhaar_Seva_Kendras.html",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://play.google.com/store/apps/details?id=in.gov.scholarships.nspotr&pli=1",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "review",
+      "confidence": 62,
+      "issues": [
+        "Source is not official or not trusted."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/Institutes",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/public/userManual/NSPInstituteKYCRegistrationUserManualV1.2.pdf",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/Officers",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "Nodal Officers (Scheme-wise)",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/nodalofficerList",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/public/nodalOfficersList/grievance_redressal_officer1.pdf",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/Public",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/onlineInstituteSearchIndex",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
+    },
+    {
+      "name": "List of Applicants Processed for Scholarships",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/onlineSanctionedList",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "autoDraft",
+      "confidence": 84,
+      "issues": [],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": true
     },
     {
       "name": "AICTE Official Site Manual Review Needed",
@@ -254,7 +477,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-31",
+      "deadlineDate": "2026-08-01",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -269,7 +492,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-31",
+      "deadlineDate": "2026-08-01",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -284,7 +507,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-31",
+      "deadlineDate": "2026-08-01",
       "decision": "review",
       "confidence": 78,
       "issues": [
