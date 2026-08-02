@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-01T05:46:06.571Z",
+  "generatedAt": "2026-08-02T05:46:53.860Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 445,
-  "active": 71,
+  "checked": 460,
+  "active": 74,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 424,
+  "needsReview": 436,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 445 scholarship record(s), promoted 0, expired 0, flagged 424 for review, failed 0.",
+  "explainer": "AI tracker checked 460 scholarship record(s), promoted 0, expired 0, flagged 436 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -111,6 +111,26 @@
       "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "7EapmG3xBqOjXPmP87Rn",
+      "name": "National Scholarship Portal Scholarship Update",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "9KHjhRWe0KeIMDRy9uSh",
+      "name": "National Scholarship Portal Scholarship Update",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2099-12-31"
     },
     {
       "id": "9koX18YSpl0rNgJrdD4P",
@@ -453,6 +473,16 @@
       "deadlineDate": "2026-06-30"
     },
     {
+      "id": "Xjotjeh6d2yiEah9TJDo",
+      "name": "List of Applicants Processed for Scholarships",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "XqXKWaVcKWCYECUlIujB",
       "name": "AICTE Saksham Scholarship for Specially Abled Students",
       "action": "flag",
@@ -461,6 +491,26 @@
       "reason": "missing real deadline date",
       "aiConfidence": 0,
       "deadlineDate": ""
+    },
+    {
+      "id": "YJD4ekzrYZrF3Xl3YyRf",
+      "name": "National Scholarship Portal Scholarship Update",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "Z9q6kSHwFO4BHvlpwnT3",
+      "name": "Nodal Officers (Scheme-wise)",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2099-12-31"
     },
     {
       "id": "ZJ1dEXei5Y6oZvKXaGN7",
@@ -595,6 +645,16 @@
     {
       "id": "auto_12x9ivx",
       "name": "![Image 29: 🔥 AICTE Scholarship 2026-27 | Get Up To ₹50,000 Per Year | Apply Now! 🚀",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_13f80f8",
+      "name": "**Buddy4Study**",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -950,66 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing real deadline date; AI confidence below 85%",
       "aiConfidence": 62,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1axex6u",
-      "name": "mage 19: Global web icon](https://th.bing.com/th/id/ODF._oU_f7wpgl9eCNTDmJ_sfw?w=32&h=32&qlt=90&pcl=fffffa&r=0&o=6&pid=1",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1b0evy3",
-      "name": "**Buddy4Study** India Foundation — Making Quality Education ...",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1b5oeld",
-      "name": "Image 8: Drop an image here",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1b60emo",
-      "name": "a96-2458-2f78fed56bb1&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1bc59nm",
-      "name": "Live Scholarship Applications 2026-27 – Apply Online Now - **Buddy4Study**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1betz8o",
-      "name": "Image 2: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=90&pcl=fffff",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 44,
       "deadlineDate": "2099-12-31"
     }
   ],
