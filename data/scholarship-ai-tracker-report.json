@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-02T05:46:53.860Z",
+  "generatedAt": "2026-08-03T06:02:58.755Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 460,
+  "checked": 469,
   "active": 74,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 436,
+  "needsReview": 445,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 460 scholarship record(s), promoted 0, expired 0, flagged 436 for review, failed 0.",
+  "explainer": "AI tracker checked 469 scholarship record(s), promoted 0, expired 0, flagged 445 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -773,6 +773,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_14tqyo5",
+      "name": "Foundation/ Trust",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_14wpwa5",
       "name": "TS ePASS Scholarship — Telangana 2026 - schemesinindia.in",
       "action": "flag",
@@ -820,6 +830,16 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_15tzxzx",
+      "name": "youtube.com https://m.youtube.com › watch",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -990,26 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1auerrw",
-      "name": "Scholarships for UG Students in India 2026 | Full List",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_1awac85",
-      "name": "Tata Trusts Education Grants",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 62,
       "deadlineDate": "2099-12-31"
     }
   ],
