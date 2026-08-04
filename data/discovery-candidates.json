@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-03T06:44:05.857Z",
+  "generatedAt": "2026-08-04T06:10:03.452Z",
   "candidates": [
     {
       "name": " Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
@@ -296,14 +296,13 @@
       "state": "andhra-pradesh",
       "deadlineDate": "",
       "decision": "skipDuplicate",
-      "confidence": 55,
+      "confidence": 65,
       "issues": [
         "Duplicate already exists: Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
         "Weak scholarship name."
       ],
       "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline.",
-        "Eligibility note is short."
+        "Missing future deadline date; draft will use placeholder deadline."
       ],
       "duplicateName": "Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
       "draftWillUsePlaceholderDeadline": false
@@ -455,7 +454,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-08-03",
+      "deadlineDate": "2026-08-04",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -470,7 +469,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-08-03",
+      "deadlineDate": "2026-08-04",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -485,7 +484,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-08-03",
+      "deadlineDate": "2026-08-04",
       "decision": "review",
       "confidence": 78,
       "issues": [
