@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-08T04:01:23.523Z",
+  "generatedAt": "2026-08-09T04:08:12.506Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 508,
+  "checked": 512,
   "active": 74,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 484,
+  "needsReview": 488,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 508 scholarship record(s), promoted 0, expired 0, flagged 484 for review, failed 0.",
+  "explainer": "AI tracker checked 512 scholarship record(s), promoted 0, expired 0, flagged 488 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -823,6 +823,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_156802e",
+      "name": "**Telangana** State Portal | Govt Services",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_15cn7y",
       "name": "Scholarships - All India Council for Technical Education",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_190okbb",
-      "name": "Scholarship portal for Indian students | Find online ... - **Buddy4Study**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
