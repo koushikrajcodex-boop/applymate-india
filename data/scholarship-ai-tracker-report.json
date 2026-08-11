@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-10T04:23:00.568Z",
+  "generatedAt": "2026-08-11T04:10:48.214Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 518,
-  "active": 74,
+  "checked": 522,
+  "active": 73,
   "promoted": 0,
-  "expired": 0,
-  "needsReview": 494,
+  "expired": 1,
+  "needsReview": 498,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 518 scholarship record(s), promoted 0, expired 0, flagged 494 for review, failed 0.",
+  "explainer": "AI tracker checked 522 scholarship record(s), promoted 0, expired 1, flagged 498 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -545,10 +545,10 @@
     {
       "id": "aZNOS5eSxDcnHvhYIoWJ",
       "name": "Fulbright Foreign Language Teaching Assistant Program 2027-28",
-      "action": "flag",
+      "action": "expire",
       "statusBefore": "active",
-      "statusAfter": "active",
-      "reason": "missing trusted source URL/source name",
+      "statusAfter": "closed",
+      "reason": "Deadline 2026-08-10 has passed. Marked closed automatically.",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-10"
     },
