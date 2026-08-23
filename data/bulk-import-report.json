@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-08-22T03:27:40.468Z",
+  "generatedAt": "2026-08-23T03:37:30.008Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
   "added": 2,
-  "updated": 43,
+  "updated": 40,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 45,
+  "draftCandidates": 42,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 2, refreshed 43, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 45.",
-  "feedGeneratedAt": "2026-08-22T03:25:57.153Z",
+  "explainer": "Import finished. Added 2, refreshed 40, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 42.",
+  "feedGeneratedAt": "2026-08-23T03:36:07.127Z",
   "imported": [
     {
-      "id": "auto_1wwenxx",
-      "name": "American **Girl**®: Shop 18” Dolls, Clothing, Playsets & More",
-      "link": "https://www.bing.com/ck/a?!&&p=b5fcedc17b572ed204208abf70c2e1eb516b13e97aeb0404279431580eaf9789JmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=2d0d979b-913a-603b-0be2-802690a3616d&u=a1aHR0cHM6Ly93d3cuYW1lcmljYW5naXJsLmNvbS8&ntb=1",
+      "id": "auto_1otzhcq",
+      "name": "DSA-2025-146: Security Update for Dell iDRAC9 Vulnerabilities",
+      "link": "https://www.bing.com/ck/a?!&&p=2f5bfb5800a3cca5301efd49ab30cc0a421dac1dcc2fa843965168cc3288fb66JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=1c69a97d-3af6-6aa7-2286-bec33b106b71&u=a1aHR0cHM6Ly93d3cuZGVsbC5jb20vc3VwcG9ydC9rYmRvYy9lbi11cy8wMDAyOTk2MjgvZHNhLTIwMjUtMTQ2LXNlY3VyaXR5LXVwZGF0ZS1mb3ItZGVsbC1pZHJhYzktdnVsbmVyYWJpbGl0aWVzP21zb2NraWQ9MWM2OWE5N2QzYWY2NmFhNzIyODZiZWMzM2IxMDZiNzE&ntb=1",
       "status": "draft",
       "sourcePack": "all",
-      "aiConfidence": 42,
+      "aiConfidence": 44,
       "sourceTrust": "review"
     },
     {
-      "id": "auto_yqmk00",
-      "name": "**Lakefront house on Lake Charlevoix South Arm** - Vrbo",
-      "link": "https://www.bing.com/ck/a?!&&p=a0651702b3aab428bf25702a5454b56d7fba1fbe42b45e207ec9737ff199a620JmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=0abf0332-4f1b-6f57-1ef8-148f4e036e20&u=a1aHR0cHM6Ly93d3cudnJiby5jb20vMjIyMjM0OD9tc29ja2lkPTBhYmYwMzMyNGYxYjZmNTcxZWY4MTQ4ZjRlMDM2ZTIw&ntb=1",
+      "id": "auto_1mftffq",
+      "name": "Ma Rainey's Black Bottom (2020) - IMDb",
+      "link": "https://www.bing.com/ck/a?!&&p=8531f1d3b459902832b828ef98673f92df12c98c511d40e4283a679446aabfa8JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=083c8d1d-e942-6104-0918-9aa3e856608a&u=a1aHR0cHM6Ly93d3cuaW1kYi5jb20vdGl0bGUvdHQxMDUxNDIyMi8&ntb=1",
       "status": "draft",
       "sourcePack": "all",
-      "aiConfidence": 34,
+      "aiConfidence": 42,
       "sourceTrust": "review"
     }
   ],
@@ -178,7 +178,15 @@
     {
       "id": "auto_14fgt6u",
       "name": "Home | Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=70fcf65ab8dc10dc3bb8611984149af692c0e96c691391f16ad7d331fe5a3526JmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=1cd803da-aef5-6bfd-06e3-1467afbb6aa8&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=6c7962dcdccf77ce4a2ded88446d9fcf567d25b2b64f88a25e4a5c3b4f196e96JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=2b9ee569-9708-6d43-01ea-f2d796df6cf1&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_1r08dzp",
+      "name": "**Engineering** - Wikipedia",
+      "link": "https://www.bing.com/ck/a?!&&p=d9315afa483deb96ed8bd7d105a98cd975c1b8c2320d72ebc95f4f1f9c5be053JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=2c8a095c-2fd0-6dee-028e-1ee22eda6c66&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
@@ -282,15 +290,15 @@
     {
       "id": "auto_wzjenc",
       "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=a85040ee6f7863209f714059abccf7d3dc6e70e8f20c6cef33d6589d0e3284f5JmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=3f5d50a3-1f84-6aa6-035a-471e1e3e6bb3&u=a1L2ltYWdlcy9zZWFyY2g_cT1taW5vcml0eStzY2hvbGFyc2hpcCtzdHVkZW50cytJbmRpYStzY2hlbWUrYXBwbHkrc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZGT1JNPUhEUlNDMg&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=fb6b94a176d428b200d9d9db374bdc6ab5b743fcc34c95dd7517eac4f03f376cJmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=0adffe19-0beb-6a1a-3c26-e9a70ad06ba1&u=a1L2ltYWdlcy9zZWFyY2g_cT1taW5vcml0eStzY2hvbGFyc2hpcCtzdHVkZW50cytJbmRpYStzY2hlbWUrYXBwbHkrc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZGT1JNPUhEUlNDMg&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
-      "id": "auto_x9efrr",
-      "name": "**MINORITY** | definition in the Cambridge English Dictionary",
-      "link": "https://www.bing.com/ck/a?!&&p=d85db28953058096c2aff10709a1832ed72ed662996b215f69395868fae4dbe3JmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=3f5d50a3-1f84-6aa6-035a-471e1e3e6bb3&u=a1aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvdXMvZGljdGlvbmFyeS9lbmdsaXNoL21pbm9yaXR5&ntb=1",
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=7d3056deb2c2e573f8081815df265db848f27c97849cb9f83ea8713bc809d826JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=0adffe19-0beb-6a1a-3c26-e9a70ad06ba1&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
@@ -298,7 +306,7 @@
     {
       "id": "auto_dk6lb5",
       "name": "Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=cc0b477bf7b2c7b21c2d3363ae68b38a2dddea26c6ca16868f387b6c71b6764bJmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=3f5d50a3-1f84-6aa6-035a-471e1e3e6bb3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=509b490865996f4a7b23fdf81d165ccffbbc32b60188e0f6b35197445716f190JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=0adffe19-0beb-6a1a-3c26-e9a70ad06ba1&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
@@ -306,31 +314,23 @@
     {
       "id": "auto_1uylfjb",
       "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=d7c43398c6876da31066f9dc767279ac153a1198c4c0f8eef4138f3d6d00e246JmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=3f5d50a3-1f84-6aa6-035a-471e1e3e6bb3&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=9c95a717baf5018071b5888ebc151cc65c543e02f231070d8c9dfa77250e0d29JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=0adffe19-0beb-6a1a-3c26-e9a70ad06ba1&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
       "id": "auto_r1edhd",
-      "name": "aa6-035a-471e1e3e6bb3&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "name": "a1a-3c26-e9a70ad06ba1&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
       "link": "http://www.bing.com/copilotsearch?q=minority%20scholarship%20students%20India%20scheme%20apply%20scholarship%20official%20trusted%20India&form=CSBSBX",
       "status": "draft",
       "reason": "same_url_already_exists",
       "aiConfidence": 52
     },
     {
-      "id": "auto_1r08dzp",
-      "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=a37e05afc733ff4e36aef78d7ee54c59297c1287f529c84aa9e95747b60628b4JmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=347a73ad-6bce-6718-1ffe-64106a5c6685&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
       "id": "auto_pxn9gp",
       "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=837b9fd58a5729e9ffe6e1c67c64ae4b09c6a4bc3e384a074e4b60f08a80d38aJmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=11e42fe3-43fd-674d-087b-385e4255667c&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=eb48980bdba83d608434b997a818a435217d7a25c2c9cb500af3fe28bda86effJmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=3914b087-a863-6a11-3801-a739a9896bf0&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -338,49 +338,25 @@
     {
       "id": "auto_1lwoa31",
       "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=85ef85b05a7a0eceec4cbf39b9958ee8079b4c9b2ebc3cd339d403b9ea0073bfJmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=2617772d-fe1d-60b7-336c-6090ff8661a3&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=2738cbf68250387558d5237c43fa4d8a4be8cfb718121c4f191db176ed158fc0JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=32feadba-523d-6516-0133-ba0453c66465&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Tb3V0aF9DYXJvbGluYQ&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_kt5mki",
-      "name": "Search",
-      "link": "http://www.bing.com/copilotsearch?q=girl+students+scholarship+India+engineering+school+scholarship+official+trusted+India&FORM=CSSCOP",
+      "id": "auto_bkunmy",
+      "name": "Home | **South Carolina** Department of Environmental Services",
+      "link": "https://www.bing.com/ck/a?!&&p=c27fe4de81ccd9fc1ebd08ceb568b77777cc4d391d9227a15a538804c9827751JmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=32feadba-523d-6516-0133-ba0453c66465&u=a1aHR0cHM6Ly93d3cuZGVzLnNjLmdvdi8&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_wzjenc",
-      "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=260d1bb24125d56bd21c47f26fb84a5838ab487a64b68044d3bb2dd6b45efadeJmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=2d0d979b-913a-603b-0be2-802690a3616d&u=a1L2ltYWdlcy9zZWFyY2g_cT1naXJsK3N0dWRlbnRzK3NjaG9sYXJzaGlwK0luZGlhK2VuZ2luZWVyaW5nK3NjaG9vbCtzY2hvbGFyc2hpcCtvZmZpY2lhbCt0cnVzdGVkK0luZGlhJkZPUk09SERSU0My&ntb=1",
+      "id": "auto_1a9dgai",
+      "name": "**Girl** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=66421b562d946f0dfe04bbb4dd8f9ebbcbc4a95aec1643278c857e88bd71fa3fJmltdHM9MTc4NzM1NjgwMA&ptn=3&ver=2&hsh=4&fclid=08a03155-1f9e-64a7-3d90-26eb1ed16526&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_dk6lb5",
-      "name": "Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=f25d9f85b411a9814af602502e47a9b969a00974eacc156d95dbf943c6879addJmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=2d0d979b-913a-603b-0be2-802690a3616d&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_1uylfjb",
-      "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=5b09a47d0c466009357c530ca731b15f3b06e984812ba1dcf64fb8dada9b830bJmltdHM9MTc4NzI3MDQwMA&ptn=3&ver=2&hsh=4&fclid=2d0d979b-913a-603b-0be2-802690a3616d&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_jsa7wx",
-      "name": "03b-0be2-802690a3616d&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=girl%20students%20scholarship%20India%20engineering%20school%20scholarship%20official%20trusted%20India&form=CSBSBX",
-      "status": "draft",
-      "reason": "same_url_already_exists",
       "aiConfidence": 42
     }
   ],
