@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-25T03:35:37.759Z",
+  "generatedAt": "2026-08-26T03:43:35.622Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 564,
+  "checked": 570,
   "active": 73,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 540,
+  "needsReview": 546,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 564 scholarship record(s), promoted 0, expired 0, flagged 540 for review, failed 0.",
+  "explainer": "AI tracker checked 570 scholarship record(s), promoted 0, expired 0, flagged 546 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -993,6 +993,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_18u2g7k",
+      "name": "Web",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_18xrpeq",
       "name": "https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=99&pcl=fffffa&o=6&pid=1.2) buddy4study",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 44,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_190msdg",
-      "name": "Food Delivery | Restaurant Takeout | Order Food Online | Grubhub",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
       "deadlineDate": "2099-12-31"
     }
   ],
