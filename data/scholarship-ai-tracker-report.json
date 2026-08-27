@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-26T03:43:35.622Z",
+  "generatedAt": "2026-08-27T13:10:29.796Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 570,
+  "checked": 572,
   "active": 73,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 546,
+  "needsReview": 548,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 570 scholarship record(s), promoted 0, expired 0, flagged 546 for review, failed 0.",
+  "explainer": "AI tracker checked 572 scholarship record(s), promoted 0, expired 0, flagged 548 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -673,6 +673,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_131wz1k",
+      "name": "linux - sed with special characters - Stack Overflow",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13f80f8",
       "name": "**Buddy4Study**",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_18xrpeq",
-      "name": "https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=99&pcl=fffffa&o=6&pid=1.2) buddy4study",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 44,
       "deadlineDate": "2099-12-31"
     }
   ],
