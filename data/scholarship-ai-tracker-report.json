@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-30T08:37:19.841Z",
+  "generatedAt": "2026-08-31T08:58:35.834Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 581,
+  "checked": 585,
   "active": 73,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 557,
+  "needsReview": 561,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 581 scholarship record(s), promoted 0, expired 0, flagged 557 for review, failed 0.",
+  "explainer": "AI tracker checked 585 scholarship record(s), promoted 0, expired 0, flagged 561 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -703,6 +703,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_13je8xt",
+      "name": "Gemini for Students — your AI study buddy from Google",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13jsndb",
       "name": "n](https://th.bing.com/th/id/ODF.MTwH54_heOQQaoR5cL3KXg?w=32&h=32&qlt=92&pcl=fffffa&o=6&pid=1.2) National Portal of Indi",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_18u2g7k",
-      "name": "Web",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     }
   ],
