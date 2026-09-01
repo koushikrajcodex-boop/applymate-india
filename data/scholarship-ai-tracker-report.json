@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-08-31T08:58:35.834Z",
+  "generatedAt": "2026-09-01T08:02:58.280Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 585,
-  "active": 73,
+  "checked": 588,
+  "active": 69,
   "promoted": 0,
-  "expired": 0,
-  "needsReview": 561,
+  "expired": 4,
+  "needsReview": 565,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 585 scholarship record(s), promoted 0, expired 0, flagged 561 for review, failed 0.",
+  "explainer": "AI tracker checked 588 scholarship record(s), promoted 0, expired 4, flagged 565 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -185,10 +185,10 @@
     {
       "id": "E2mHXlkkoiUJIZIEGsUa",
       "name": "PRL Post-Doctoral Fellowship 2026",
-      "action": "flag",
+      "action": "expire",
       "statusBefore": "active",
-      "statusAfter": "active",
-      "reason": "missing trusted source URL/source name",
+      "statusAfter": "closed",
+      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-31"
     },
@@ -385,10 +385,10 @@
     {
       "id": "RoAMxwHVJdDkwMRolfv9",
       "name": "VISHWAS Vikram Sarabhai Postdoctoral Fellowship 2026",
-      "action": "flag",
+      "action": "expire",
       "statusBefore": "active",
-      "statusAfter": "active",
-      "reason": "missing trusted source URL/source name",
+      "statusAfter": "closed",
+      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-31"
     },
@@ -425,10 +425,10 @@
     {
       "id": "U5MaFjXlyO3ptSLJ5OL6",
       "name": "Fulbright-Nehru International Education Administrators Award 2026-27",
-      "action": "flag",
+      "action": "expire",
       "statusBefore": "active",
-      "statusAfter": "active",
-      "reason": "missing trusted source URL/source name",
+      "statusAfter": "closed",
+      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-31"
     },
@@ -471,6 +471,16 @@
       "reason": "missing trusted source URL/source name; AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-06-30"
+    },
+    {
+      "id": "XYKPWFfPR80JLs3euyrO",
+      "name": "Financial Assistance for Education to Wards of Beedi Cine IOMC LSDM Workers Pre Matric 2026-27",
+      "action": "expire",
+      "statusBefore": "active",
+      "statusAfter": "closed",
+      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
+      "aiConfidence": 0,
+      "deadlineDate": "2026-08-31"
     },
     {
       "id": "Xjotjeh6d2yiEah9TJDo",
@@ -660,6 +670,16 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_12lnqaj",
+      "name": "工程（英文）",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -985,26 +1005,6 @@
     {
       "id": "auto_18b6ncg",
       "name": "$2,000 Scholarship - NO ESSAY | Deadline: August 31st, 2026",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_18q3ytm",
-      "name": "Scholarships for Engineering Students in India 2025 – Apply Now",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_18rjjgm",
-      "name": "FAQs ![Image 20",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
