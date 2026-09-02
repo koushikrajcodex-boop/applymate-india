@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-01T08:02:58.280Z",
+  "generatedAt": "2026-09-02T07:23:29.843Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 588,
+  "checked": 593,
   "active": 69,
   "promoted": 0,
-  "expired": 4,
-  "needsReview": 565,
+  "expired": 0,
+  "needsReview": 570,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 588 scholarship record(s), promoted 0, expired 4, flagged 565 for review, failed 0.",
+  "explainer": "AI tracker checked 593 scholarship record(s), promoted 0, expired 0, flagged 570 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -185,10 +185,10 @@
     {
       "id": "E2mHXlkkoiUJIZIEGsUa",
       "name": "PRL Post-Doctoral Fellowship 2026",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-31"
     },
@@ -385,10 +385,10 @@
     {
       "id": "RoAMxwHVJdDkwMRolfv9",
       "name": "VISHWAS Vikram Sarabhai Postdoctoral Fellowship 2026",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-31"
     },
@@ -425,10 +425,10 @@
     {
       "id": "U5MaFjXlyO3ptSLJ5OL6",
       "name": "Fulbright-Nehru International Education Administrators Award 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
+      "reason": "missing trusted source URL/source name; AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-31"
     },
@@ -475,10 +475,10 @@
     {
       "id": "XYKPWFfPR80JLs3euyrO",
       "name": "Financial Assistance for Education to Wards of Beedi Cine IOMC LSDM Workers Pre Matric 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-08-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-08-31"
     },
