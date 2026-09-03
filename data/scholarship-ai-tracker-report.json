@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-02T07:23:29.843Z",
+  "generatedAt": "2026-09-03T07:27:12.508Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 593,
+  "checked": 595,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 570,
+  "needsReview": 572,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 593 scholarship record(s), promoted 0, expired 0, flagged 570 for review, failed 0.",
+  "explainer": "AI tracker checked 595 scholarship record(s), promoted 0, expired 0, flagged 572 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -873,6 +873,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_156wp08",
+      "name": "Mahjong Games",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_15cn7y",
       "name": "Scholarships - All India Council for Technical Education",
       "action": "flag",
@@ -995,16 +1005,6 @@
     {
       "id": "auto_187h6st",
       "name": "Image 4: Close",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_18b6ncg",
-      "name": "$2,000 Scholarship - NO ESSAY | Deadline: August 31st, 2026",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
