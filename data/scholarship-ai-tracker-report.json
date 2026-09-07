@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-06T07:23:29.910Z",
+  "generatedAt": "2026-09-07T07:37:20.606Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 604,
+  "checked": 616,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 581,
+  "needsReview": 593,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 604 scholarship record(s), promoted 0, expired 0, flagged 581 for review, failed 0.",
+  "explainer": "AI tracker checked 616 scholarship record(s), promoted 0, expired 0, flagged 593 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -793,6 +793,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_14d4x3y",
+      "name": "Citizen Service Portal",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_14dq1gi",
       "name": "Helpdesk",
       "action": "flag",
@@ -953,6 +963,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_16jsjrn",
+      "name": "web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=96&pcl=fffffa&r=0&o=6&pid=1.",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 44,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_16ol1ks",
       "name": "**#girl** - TikTok",
       "action": "flag",
@@ -985,26 +1005,6 @@
     {
       "id": "auto_17bv1kl",
       "name": "Centre for Good Governance",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_17cluys",
-      "name": "ttps://th.bing.com/th/id/ODF.MTwH54_heOQQaoR5cL3KXg?w=32&h=32&qlt=91&pcl=fffffa&r=0&o=6&pid=1.2) National Portal of Indi",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_187h6st",
-      "name": "Image 4: Close",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
