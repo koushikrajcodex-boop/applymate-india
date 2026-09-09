@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-08T07:30:40.838Z",
+  "generatedAt": "2026-09-09T07:38:04.012Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 621,
+  "checked": 625,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 598,
+  "needsReview": 602,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 621 scholarship record(s), promoted 0, expired 0, flagged 598 for review, failed 0.",
+  "explainer": "AI tracker checked 625 scholarship record(s), promoted 0, expired 0, flagged 602 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -713,6 +713,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_13gf6k8",
+      "name": "**Daszyńskiego Ignacego 15** (ul), 43-450 **Ustroń**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13h40hc",
       "name": "![Image 23: Global web icon",
       "action": "flag",
@@ -993,18 +1003,8 @@
       "deadlineDate": "2099-12-31"
     },
     {
-      "id": "auto_1777dha",
-      "name": "gineering%20student%20scholarship%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India) T",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_17bv1kl",
-      "name": "Centre for Good Governance",
+      "id": "auto_16vfd5j",
+      "name": "Paint",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
