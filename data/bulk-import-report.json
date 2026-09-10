@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-09T07:35:08.257Z",
+  "generatedAt": "2026-09-10T07:31:50.709Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 4,
-  "updated": 34,
+  "added": 2,
+  "updated": 36,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
@@ -16,40 +16,22 @@
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 4, refreshed 34, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 38.",
-  "feedGeneratedAt": "2026-09-09T07:34:18.997Z",
+  "explainer": "Import finished. Added 2, refreshed 36, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 38.",
+  "feedGeneratedAt": "2026-09-10T07:31:05.919Z",
   "imported": [
     {
-      "id": "auto_16vfd5j",
-      "name": "Paint",
-      "link": "https://www.bing.com/ck/a?!&&p=1f4073b7eb246f0d8a0ce21b656baf8ae2cbbf8a669996673e6784e1ad4d7347JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=0fcf7940-da2a-61c4-21ef-6e8fdb23603b&u=a1aHR0cHM6Ly9wYWludC5qcy5vcmcv&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1au5u4d",
-      "name": "Types of **Engineering**: What Are They? Everything Explained | NU",
-      "link": "https://www.bing.com/ck/a?!&&p=b84d17752ee811b3b0e350f15e6ab5ae170c49248c429bfcd9bf0f9fe4da4e20JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=02775c1b-c522-6fe2-2422-4bd4c4b46ec3&u=a1aHR0cHM6Ly93d3cubnUuZWR1L2Jsb2cvdHlwZXMtb2YtZW5naW5lZXJpbmcv&ntb=1",
+      "id": "auto_1bcm05f",
+      "name": "**Portes** d’intérieur - **Portes** et fenêtres - **Homedepot.ca**",
+      "link": "https://www.bing.com/ck/a?!&&p=f509dabdc3fff0030186128c4c942aa1e6b7c6ba8a04826626f93cf5dbd3d0c2JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=1ee5c1eb-a617-6c8a-306d-d63ba7166d88&u=a1aHR0cHM6Ly93d3cuaG9tZWRlcG90LmNhL2ZyL2FjY3VlaWwvY2F0ZWdvcmllcy9wb3J0ZXMtZXQtZmVuZXRyZXMvcG9ydGVzLWRpbnRlcmlldXIuaHRtbD9tc29ja2lkPTFlZTVjMWViYTYxNzZjOGEzMDZkZDYzYmE3MTY2ZDg4&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
       "sourceTrust": "review"
     },
     {
-      "id": "auto_1t50tba",
-      "name": "I am an instructor who is using Turnitin. How do I ... - LibAnswers",
-      "link": "https://www.bing.com/ck/a?!&&p=e8c802b489d9edce0a2ead0c85955d3b53b11a537d3642da0817be78de052f9dJmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=2104ce34-3049-6cc7-320f-d9fb31f76d50&u=a1aHR0cHM6Ly9hcHVzLmxpYmFuc3dlcnMuY29tL3dyaXRpbmcvZmFxLzIzMjY&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_13gf6k8",
-      "name": "**Daszyńskiego Ignacego 15** (ul), 43-450 **Ustroń**",
-      "link": "https://www.bing.com/ck/a?!&&p=d29d9f3ce0e6e2b828cd88cc6a7f89626ec65a8d61f4a2116485d73aa59d1a73JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=333fac68-7055-643a-2ef7-bba771c36576&u=a1aHR0cHM6Ly9tYXBhLnRhcmdlby5wbC9kYXN6eW5za2llZ28taWduYWNlZ28tMTUtLXVsL3VzdHJvbi00My00NTAvdWxpY2E&ntb=1",
+      "id": "auto_1osygsg",
+      "name": "Contact Us - Microsoft Support",
+      "link": "https://www.bing.com/ck/a?!&&p=3247207eefac825ad8c74508ed57e794ef5389d9c07e6326e1c8e2d97fec8684JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=3a428729-3b8b-6072-074a-90f93a6d61aa&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vZW4tZ2IvY29udGFjdHVz&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 34,
@@ -194,24 +176,16 @@
       "aiConfidence": 56
     },
     {
-      "id": "auto_4lp1jw",
-      "name": "**Minority** | Definition & Facts | Britannica",
-      "link": "https://www.bing.com/ck/a?!&&p=905839ea2ad4399eac18167bc4b17cdfa7d8209f84511e1a14dbc2d61f1ba85eJmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=3aab4346-107c-630e-28a8-548911ba6220&u=a1aHR0cHM6Ly93d3cuYnJpdGFubmljYS5jb20vdG9waWMvbWlub3JpdHk&ntb=1",
+      "id": "auto_j5kpbq",
+      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
+      "link": "https://www.bing.com/ck/a?!&&p=e9170dba9b53a84ae143691c1770e15e5995852e9ec6eb829140558c7600bf00JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=28d0d0fc-20b3-65c9-0f70-c72c21ee641b&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
-      "id": "auto_ru9y17",
-      "name": "**Student** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=160fdc4614165ce351502aef1c2a6fa2ffff1505fbbc48a4598fcf4471d98433JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=08d1d4fe-b688-69c1-0dab-c331b7ec681f&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU3R1ZGVudA&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
       "id": "auto_xgg8ck",
-      "name": "#)[Accessibility Feedback](http://www.bing.com/search?q=engineering%20student%20scholarship%20India%20AICTE%20corporate%",
+      "name": "l%20trusted%20India#)[Accessibility Feedback](http://www.bing.com/search?q=student%20scholarship%20India%20guidelines%20",
       "link": "http://www.bing.com/?FORM=Z9FD1",
       "status": "draft",
       "reason": "same_url_already_exists",
@@ -219,7 +193,7 @@
     },
     {
       "id": "auto_1xfm6n7",
-      "name": "eering%20student%20scholarship%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India) [Rew",
+      "name": "ww.bing.com/search?q=student%20scholarship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20Indi",
       "link": "http://localhost/c204bf19f78776c25e5ce1a602bee57e",
       "status": "draft",
       "reason": "same_url_already_exists",
@@ -236,6 +210,54 @@
     {
       "id": "auto_kt5mki",
       "name": "Search",
+      "link": "http://www.bing.com/copilotsearch?q=student+scholarship+India+guidelines+notification+scholarship+official+trusted+India&FORM=CSSCOP",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_wzjenc",
+      "name": "Images",
+      "link": "https://www.bing.com/ck/a?!&&p=33f597fcd0bd1b3fa1d881cd1f329706074ecd11ddbbc490dd020726e712adfdJmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=149c71d3-83ce-6e7e-26b6-660382b76f91&u=a1L2ltYWdlcy9zZWFyY2g_cT1zdHVkZW50K3NjaG9sYXJzaGlwK0luZGlhK2d1aWRlbGluZXMrbm90aWZpY2F0aW9uK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=0f701496c199c3cd127c9bf75fe55db3a7db71da5d7cea06f3fb096f4d4d89f9JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=149c71d3-83ce-6e7e-26b6-660382b76f91&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_dk6lb5",
+      "name": "Privacy",
+      "link": "https://www.bing.com/ck/a?!&&p=8696acd2fa9f030abaebe3fe19ecfd38d81becdce2499fc5bdcb35efb62eead0JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=149c71d3-83ce-6e7e-26b6-660382b76f91&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uylfjb",
+      "name": "Learn more",
+      "link": "https://www.bing.com/ck/a?!&&p=eeccc73369f776183bc144d1fbb21d319463b9a0bafb7505685ac3f61c186f34JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=149c71d3-83ce-6e7e-26b6-660382b76f91&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1h9zfcj",
+      "name": "e7e-26b6-660382b76f91&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "link": "http://www.bing.com/copilotsearch?q=student%20scholarship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_kt5mki",
+      "name": "Search",
       "link": "http://www.bing.com/copilotsearch?q=engineering+student+scholarship+India+AICTE+corporate+foundation+scholarship+official+trusted+India&FORM=CSSCOP",
       "status": "draft",
       "reason": "same_name_already_exists",
@@ -244,7 +266,15 @@
     {
       "id": "auto_wzjenc",
       "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=f26728e2dd114c56c71577eddeafbada1a6102d31f8f5da069fc5a983ebc2018JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=02775c1b-c522-6fe2-2422-4bd4c4b46ec3&u=a1L2ltYWdlcy9zZWFyY2g_cT1lbmdpbmVlcmluZytzdHVkZW50K3NjaG9sYXJzaGlwK0luZGlhK0FJQ1RFK2NvcnBvcmF0ZStmb3VuZGF0aW9uK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=b997434eff322e3d43d8246355a0119e0717dd8cc570d74048c8199fb709b69fJmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=0f33c963-71ff-695b-1394-deb370f56803&u=a1L2ltYWdlcy9zZWFyY2g_cT1lbmdpbmVlcmluZytzdHVkZW50K3NjaG9sYXJzaGlwK0luZGlhK0FJQ1RFK2NvcnBvcmF0ZStmb3VuZGF0aW9uK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=b2af562db039f78c17bac6c82774493644e8dd351d441d69ecc372f2c33bc1b8JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=0f33c963-71ff-695b-1394-deb370f56803&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -252,7 +282,7 @@
     {
       "id": "auto_dk6lb5",
       "name": "Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=110595ed85b8b27f240ba7449ec4658204c8c53890d7303c4719726213f7e1b0JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=02775c1b-c522-6fe2-2422-4bd4c4b46ec3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=e88930bfef650038593b562cd6a865c40549e5398d61018eae712349d37d1d5cJmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=0f33c963-71ff-695b-1394-deb370f56803&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -260,63 +290,31 @@
     {
       "id": "auto_1uylfjb",
       "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=2b95fe8acc76b2ab3fa1e09abcb0495feb8a3f46a1a0e18522b0bfe7ea2eba7eJmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=02775c1b-c522-6fe2-2422-4bd4c4b46ec3&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=1f4f4a15d3b553e573a4d999fd78d166bad903b15ace578df38a932b5d684031JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=0f33c963-71ff-695b-1394-deb370f56803&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
       "id": "auto_5x1pbv",
-      "name": "fe2-2422-4bd4c4b46ec3&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "name": "95b-1394-deb370f56803&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
       "link": "http://www.bing.com/copilotsearch?q=engineering%20student%20scholarship%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India&form=CSBSBX",
       "status": "draft",
       "reason": "same_url_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_kt5mki",
-      "name": "Search",
-      "link": "http://www.bing.com/copilotsearch?q=Telangana+ePASS+scholarship+students+scholarship+official+trusted+India&FORM=CSSCOP",
+      "id": "auto_pxn9gp",
+      "name": "**Telangana** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=31dc6b962ca71a6b1731d6e064370a0652e7ad10a7f7af24d2727262e5657801JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=2b8ac80b-fe52-693c-1218-dfdbffb4682b&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_wzjenc",
-      "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=d57eb6b6189e96feb79706010be0eea7a8e5832881b1a5fdbe1b73a200adafbeJmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=0fcf7940-da2a-61c4-21ef-6e8fdb23603b&u=a1L2ltYWdlcy9zZWFyY2g_cT1UZWxhbmdhbmErZVBBU1Mrc2Nob2xhcnNoaXArc3R1ZGVudHMrc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZGT1JNPUhEUlNDMg&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_dk6lb5",
-      "name": "Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=74dde3da083f84693c2e6ccd3e24923b06b7cc0f9b299bbe515f31041f5b3064JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=0fcf7940-da2a-61c4-21ef-6e8fdb23603b&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_1uylfjb",
-      "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=fb7ed0d38a2d118dc7f90feaedb6f7210de989e934b1c58a2cd59d8d3c269546JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=0fcf7940-da2a-61c4-21ef-6e8fdb23603b&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_1u5vgug",
-      "name": "1c4-21ef-6e8fdb23603b&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=Telangana%20ePASS%20scholarship%20students%20scholarship%20official%20trusted%20India&form=CSBSBX",
-      "status": "draft",
-      "reason": "same_url_already_exists",
       "aiConfidence": 42
     },
     {
       "id": "auto_1lwoa31",
       "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=30c97ff8c7f9b814b6742669780048f2a1e317300ab48e733793ec551de08f44JmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=0e54a04c-e85a-6712-2777-b783e9536654&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=5be3061464546245041c7cf79cf3d57e76c752770fc3f054e205011bdd24b508JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=22aee03c-bbae-6008-09c5-f7ecba4b6129&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -324,7 +322,7 @@
     {
       "id": "auto_1a9dgai",
       "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=98a476388a31bda6d84f83608e015d650d7b425e526a7ba2f1fd8a8e9a349fdeJmltdHM9MTc4ODkxMjAwMA&ptn=3&ver=2&hsh=4&fclid=12752944-c506-6635-1a90-3e8bc49d67ff&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=245039ac3e742452974ad3df477167b2521fe70c4d1f659f42bfbe23521f00d6JmltdHM9MTc4ODk5ODQwMA&ptn=3&ver=2&hsh=4&fclid=028da245-f195-6fe3-258f-b595f0ab6e7d&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
