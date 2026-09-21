@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-20T08:00:35.249Z",
+  "generatedAt": "2026-09-21T08:18:01.652Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 657,
+  "checked": 658,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 634,
+  "needsReview": 635,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 657 scholarship record(s), promoted 0, expired 0, flagged 634 for review, failed 0.",
+  "explainer": "AI tracker checked 658 scholarship record(s), promoted 0, expired 0, flagged 635 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -613,6 +613,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_11j4cji",
+      "name": "SEGUNDO CREDITO **INFONAVIT** 2026: Créditos subsecuentes",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_11r62yx",
       "name": "What Do Engineers Do? | SNHU",
       "action": "flag",
@@ -995,16 +1005,6 @@
     {
       "id": "auto_16pcnju",
       "name": "mZmlsaWF0ZV9pZCUzZDEwMjA&rlid=3ea14b3641fc173cb1d521473bee4a8b&ntb=1) * ![Image 17: Site icon](https://r.bing.com/rp/HOe",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_16vfd5j",
-      "name": "Paint",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
