@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-21T08:18:01.652Z",
+  "generatedAt": "2026-09-22T08:02:28.079Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 658,
+  "checked": 662,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 635,
+  "needsReview": 639,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 658 scholarship record(s), promoted 0, expired 0, flagged 635 for review, failed 0.",
+  "explainer": "AI tracker checked 662 scholarship record(s), promoted 0, expired 0, flagged 639 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -563,6 +563,16 @@
       "deadlineDate": "2026-08-10"
     },
     {
+      "id": "auto_100incs",
+      "name": "Applied **Engineering** Degree Program »",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_10mrl7h",
       "name": "**Girl** Games",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_16pcnju",
-      "name": "mZmlsaWF0ZV9pZCUzZDEwMjA&rlid=3ea14b3641fc173cb1d521473bee4a8b&ntb=1) * ![Image 17: Site icon](https://r.bing.com/rp/HOe",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
