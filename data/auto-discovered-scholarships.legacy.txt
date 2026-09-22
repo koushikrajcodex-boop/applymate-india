@@ -1,571 +1,415 @@
 Scholarship Name National Scholarship Portal
 State National
 Education any
-Categories any
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://scholarships.gov.in/
 Source National Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scheme listings, OTR, applications, and status checks.
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: National Scholarship Portal. Snippet: Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scholarship scheme listings, OTR, applications, and status checks.
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name AICTE Student Development Schemes
+Scholarship Name AICTE Pragati, Saksham and Swanath Scholarships
 State National
-Education engineering technical
-Categories any
+Education engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.aicte-india.org/schemes/students-development-schemes
-Source AICTE Student Development Schemes
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: AICTE student schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name AP Jnanabhumi Scholarships
-State Andhra Pradesh
-Education post matric degree engineering
-Categories SC ST BC minority EBC
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://jnanabhumi.ap.gov.in/
-Source AP Jnanabhumi Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Telangana ePASS Scholarships
-State Telangana
-Education post matric degree engineering
-Categories SC ST BC EBC minority
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://telanganaepass.cgg.gov.in/
-Source Telangana ePASS Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify application windows and eligibility on the portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Pragati Scholarship for Girl Students
-State National
-Education engineering technical diploma degree
-Categories girls
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions
-Source Pragati Scholarship for Girl Students
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: AICTE Pragati is intended for girl students in technical education. Verify latest application route and eligibility on AICTE/NSP.
+Source AICTE
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: AICTE. Snippet: AICTE student development schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name UGC Scholarships and Fellowships
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.ugc.gov.in/
-Source UGC Scholarships and Fellowships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.
+Source UGC
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: UGC. Snippet: UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name AP Jnanabhumi Scholarships
+State Andhra Pradesh
+Education degree, engineering
+Categories sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://jnanabhumi.ap.gov.in/
+Source AP Jnanabhumi
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: AP Jnanabhumi. Snippet: Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name Telangana ePASS Scholarships
+State Telangana
+Education school, degree, engineering
+Categories sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://telanganaepass.cgg.gov.in/
+Source Telangana ePASS
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Telangana ePASS. Snippet: Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify current application windows and eligibility on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name MahaDBT Scholarship Portal
 State Maharashtra
-Education post matric degree
-Categories any
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://mahadbt.maharashtra.gov.in/
-Source MahaDBT Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.
+Source mahadbt.maharashtra
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: MahaDBT. Snippet: Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Karnataka State Scholarship Portal
 State Karnataka
-Education post matric degree
-Categories SC ST OBC minority
+Education degree
+Categories sc, st, obc, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://ssp.postmatric.karnataka.gov.in/
-Source Karnataka State Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.
+Source ssp.postmatric
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Karnataka SSP. Snippet: Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Rajasthan SJE Scholarship Portal
 State Rajasthan
-Education post matric degree
-Categories SC ST OBC EWS
+Education degree
+Categories sc, st, obc, ews
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://sjmsnew.rajasthan.gov.in/
-Source Rajasthan SJE Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name CBSE Single Girl Child Scholarship
-State National
-Education school
-Categories girls
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.cbse.gov.in/
-Source CBSE Single Girl Child Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: CBSE scholarship information for eligible single girl child students. Verify current notification and application window on CBSE.
+Source sjmsnew.rajasthan
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Rajasthan SJE. Snippet: Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Buddy4Study Scholarship Listings
 State National
-Education school degree engineering medical pg
-Categories any
+Education school, degree, engineering, medical, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.buddy4study.com/scholarships
-Source Buddy4Study Scholarship Listings
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.
+Source Buddy4Study
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Buddy4Study. Snippet: Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Vidyasaarathi Scholarship Portal
 State National
-Education degree diploma engineering
-Categories any
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.vidyasaarathi.co.in/Vidyasaarathi/
-Source Vidyasaarathi Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.
+Source Vidyasaarathi
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Vidyasaarathi. Snippet: NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Foundation For Excellence Scholarship
 State National
-Education engineering medical professional
-Categories any
+Education engineering, medical
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://ffe.org/scholarships/
-Source Foundation For Excellence Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
-Income note Verify income rules on provider/official portal.
+Source Foundation For Excellence
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Foundation For Excellence. Snippet: Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
+Income note Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
 ---
 Scholarship Name HDFC Bank Parivartan ECSS Scholarship
 State National
-Education school degree pg
-Categories any
+Education school, degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.hdfcbank.com/personal/resources/learning-centre/pay/hdfc-bank-parivartans-educational-crisis-scholarship-support-ecss
-Source HDFC Bank Parivartan ECSS Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
-Income note Verify income rules on provider/official portal.
+Source HDFC Bank
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: HDFC Bank. Snippet: HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
+Income note HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
 ---
 Scholarship Name Reliance Foundation Scholarships
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://scholarships.reliancefoundation.org/
-Source Reliance Foundation Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.
+Source Reliance Foundation
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Reliance Foundation. Snippet: Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Tata Trusts Education Grants
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants
-Source Tata Trusts Education Grants
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.
+Source Tata Trusts
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Tata Trusts. Snippet: Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Aditya Birla Scholarship Programme
 State National
-Education engineering management law
-Categories any
+Education engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.adityabirlascholars.net/
-Source Aditya Birla Scholarship Programme
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.
+Source Aditya Birla Scholars
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Aditya Birla Scholars. Snippet: Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name **Student** - Wikipedia
+Scholarship Name Home - Northshore Schools **Foundation**
 State National
-Education any
-Categories SC ST
+Education school, degree, engineering, medical
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=d1da337b3f029e5ead8496ac3f89dddc3b407cd872a24083ac62049cb4e47afeJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=156bc52d-432d-6892-20ba-d2f6428a69ef&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU3R1ZGVudA&ntb=1
-Source National scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: http://www.bing.com/search?q=student%20scholarship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20India Markdown Content: About 544,000 results 1. ## [**Student** - Wikipedia](https://www.bing.com/ck/a?!&&p=d1da337b3f029e5ead8496ac3f89dddc3b407cd872a24083ac62049cb4e47afeJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=156bc52d-432d-6892-20ba-d2f6428a69ef&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU3R1ZGVudA&ntb=1) In the U.S., a Junior is a student in the penultimate (usually third) year and a Senior is a student in the last (usually fourth) year of … 2. ## [Home | Federal **Student** Aid](https://www.bing.com/ck/a?!&&p=d34519eec1917c5204535d11244dd76b26d1f6bea7eda78a1cc21397439f18c0JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=156bc52d-432d-6892-20ba-d2f6428a69ef&u=a1aHR0cHM6Ly9zdHVkZ
+Official link https://www.bing.com/ck/a?!&&p=b53bdbd5a4f55b0ee834c7d03701736fbb2a618d607daf8b59df5c3fb10f82eaJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubm9ydGhzaG9yZXNjaG9vbHNmb3VuZGF0aW9uLm9yZy8&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Foundation For Excellence scholarship. Snippet: [Home - Northshore Schools **Foundation**](https://www.bing.com/ck/a?!&&p=b53bdbd5a4f55b0ee834c7d03701736fbb2a618d607daf8b59df5c3fb10f82eaJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubm9ydGhzaG9yZXNjaG9vbHNmb3VuZGF0aW9uLm9yZy8&ntb=1) Sep 21, 2020· We are the Northshore Schools Foundation Since our founding in 1995, we are the 501(c)(3) nonprofit organization … 2. ## [Biella **Foundation** — Grants & Funding | Grantable](https://www.bing.com/ck/a?!&&p=d7e66f62ff4ca4ce4a56c2856bff7ca7b2095adafb03e754dd9ba64f0cb45d9aJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9ncmFudGFibGUuY28vZnVuZGVycy9iaWVsbGEtZm91bmRhdGlvbi1tb3JnX2Y3NjQzMmJmNjdmMjQzNzFiMDJjM2YyNjY2ZWQ5ZDQ1&ntb=1) The Biella Foundation is a private 501 (c) (3) foundation established in 1988 and incorporated in Washington
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name **Engineering** - Wikipedia
+Scholarship Name Biella **Foundation** — Grants & Funding | Grantable
 State National
-Education engineering
-Categories SC ST
+Education degree, engineering, medical
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=721f4db95881e0b1c001cdc43b7bc335c5893847366d45b37c5f06d98002ac2fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=117d3677-bd2b-6585-082f-21acbcd464ee&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1
-Source Engineering scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: /search?q=engineering%20student%20scholarship%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India Markdown Content: About 241,000 results 1. ## [**Engineering** - Wikipedia](https://www.bing.com/ck/a?!&&p=721f4db95881e0b1c001cdc43b7bc335c5893847366d45b37c5f06d98002ac2fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=117d3677-bd2b-6585-082f-21acbcd464ee&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1) Engineering is the practice of systematically applying natural science and mathematics to design and improve systems, devices, or … 2. 4 days ago· Engineering information and connections for the global community of engineers. Find engineering webinars, research, … 3. ## [University of **Michigan**: College of **Engineering**](https://www.bing.com/ck/a?!&&p=7f7385c4
+Official link https://www.bing.com/ck/a?!&&p=d7e66f62ff4ca4ce4a56c2856bff7ca7b2095adafb03e754dd9ba64f0cb45d9aJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9ncmFudGFibGUuY28vZnVuZGVycy9iaWVsbGEtZm91bmRhdGlvbi1tb3JnX2Y3NjQzMmJmNjdmMjQzNzFiMDJjM2YyNjY2ZWQ5ZDQ1&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Foundation For Excellence scholarship. Snippet: [Biella **Foundation** — Grants & Funding | Grantable](https://www.bing.com/ck/a?!&&p=d7e66f62ff4ca4ce4a56c2856bff7ca7b2095adafb03e754dd9ba64f0cb45d9aJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9ncmFudGFibGUuY28vZnVuZGVycy9iaWVsbGEtZm91bmRhdGlvbi1tb3JnX2Y3NjQzMmJmNjdmMjQzNzFiMDJjM2YyNjY2ZWQ5ZDQ1&ntb=1) The Biella Foundation is a private 501 (c) (3) foundation established in 1988 and incorporated in Washington State. Based in Bothell, … 3. ## [**Foundation (TV series**) - Wikipedia](https://www.bing.com/ck/a?!&&p=9e6bc8d7afc6658408bb3a239739a632e8c346a6c2c4bc7d33a2b84253bff622JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Gb3VuZGF0aW9uXyhUVl9zZXJpZXMp&ntb=1) Foundation is an American science fiction television series created by David S. Goyer and J
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name SEGUNDO CREDITO **INFONAVIT** 2026: Créditos subsecuentes
-State Andhra Pradesh
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=8189b0fd006620f8e64b03a469254bf15aab2c6e4b551b9a0d1b1843b595241fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=2f939249-f053-680a-0a00-8592f1f869a3&u=a1aHR0cHM6Ly93d3cucHVudG9zZW5pbmZvbmF2aXQuY29tL2luZm9uYXZpdC1zZWd1bmRvLWNyZWRpdG8uaHRtbA&ntb=1
-Source AP scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: rce: http://www.bing.com/search?q=Andhra%20Pradesh%20Jnanabhumi%20scholarship%20students%20scholarship%20official%20trusted%20India Markdown Content: About 2,690 results 1. ## [SEGUNDO CREDITO **INFONAVIT** 2026: Créditos subsecuentes](https://www.bing.com/ck/a?!&&p=8189b0fd006620f8e64b03a469254bf15aab2c6e4b551b9a0d1b1843b595241fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=2f939249-f053-680a-0a00-8592f1f869a3&u=a1aHR0cHM6Ly93d3cucHVudG9zZW5pbmZvbmF2aXQuY29tL2luZm9uYXZpdC1zZWd1bmRvLWNyZWRpdG8uaHRtbA&ntb=1) SEGUNDO CRÉDITO INFONAVIT 2026 Actualizado al: 7/abril/2026 ¿Ya terminaste de pagar tu primer crédito Infonavit, sigues … 2. ## [Centro **de** Ayuda | **Infonavit**](https://www.bing.com/ck/a?!&&p=8e7efc002f5b5fede6f197a9d5b2fde59916d4404809354951f7f8b68d901b20JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=2
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name **Telangana** - **Wikipedia**
-State Andhra Pradesh
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=c113224a6cadca0c5cc05e22ace97600c22ff153a4e9b07dec74be36d683e00bJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=3e58135c-f192-6c3f-0432-0487f0236d43&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1
-Source Telangana scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: ing URL Source: http://www.bing.com/search?q=Telangana%20ePASS%20scholarship%20students%20scholarship%20official%20trusted%20India Markdown Content: About 102,000 sites 1. ## [**Telangana** - **Wikipedia**](https://www.bing.com/ck/a?!&&p=c113224a6cadca0c5cc05e22ace97600c22ff153a4e9b07dec74be36d683e00bJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=3e58135c-f192-6c3f-0432-0487f0236d43&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1) Telangana[a] is a state in southern India on the Deccan Plateau bordering Maharashtra and Chhattisgarh to the north and Andhra … 2. ## [**Telangana** | History, Map, Population, Capital, & Government](https://www.bing.com/ck/a?!&&p=e394d69fc98965be49ff5286b5a93119da60bd5284205ab7bc65aa622a09e697JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=3e58135c-f192-6c3f-0432-0487
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name **South Carolina** - **Wikipedia**
+Scholarship Name **Foundation (TV series**) - Wikipedia
 State National
-Education any
-Categories SC ST OBC
+Education degree, engineering, medical
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=d3e61b5c901f1db546c20f3d94c38fbfe14f5b2c69bd009cc805774836cdc408JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=26a6a2a1-c18c-6584-1050-b57ac0ce6423&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1
-Source SC ST OBC scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: //www.bing.com/search?q=SC%20ST%20OBC%20post%20matric%20scholarship%20students%20India%20scholarship%20official%20trusted%20India Markdown Content: About 488,000 results 1. ## [**South Carolina** - **Wikipedia**](https://www.bing.com/ck/a?!&&p=d3e61b5c901f1db546c20f3d94c38fbfe14f5b2c69bd009cc805774836cdc408JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=26a6a2a1-c18c-6584-1050-b57ac0ce6423&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1) South Carolina (/ ˌkærəˈlaɪnə / ⓘ KARR-ə-LY-nə) is a state in the Southeastern, South Atlantic and Deep South regions of the … 2. ## [**SC**.GOV - Home | **South Carolina**](https://www.bing.com/ck/a?!&&p=7388358e692d65ee78312a0f64d620847019b4e22c608846706d5ebd87a19efcJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=26a6a2a1-c18c-6584-1050-b57ac0ce6423&u=a1aH
+Official link https://www.bing.com/ck/a?!&&p=9e6bc8d7afc6658408bb3a239739a632e8c346a6c2c4bc7d33a2b84253bff622JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Gb3VuZGF0aW9uXyhUVl9zZXJpZXMp&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Foundation For Excellence scholarship. Snippet: [**Foundation (TV series**) - Wikipedia](https://www.bing.com/ck/a?!&&p=9e6bc8d7afc6658408bb3a239739a632e8c346a6c2c4bc7d33a2b84253bff622JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Gb3VuZGF0aW9uXyhUVl9zZXJpZXMp&ntb=1) Foundation is an American science fiction television series created by David S. Goyer and Josh Friedman for Apple TV+, based on … 4. ## [**Biella Foundation** | **Bothell**, **WA** | Cause IQ](https://www.bing.com/ck/a?!&&p=d2375c30193b880a7f0995f442839e2ea51e4babb81d546eec44a5da8b24ed1eJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cuY2F1c2VpcS5jb20vb3JnYW5pemF0aW9ucy9iaWVsbGEtZm91bmRhdGlvbiw5MTE0Mjg1MDgv&ntb=1) Dec 1, 2024· The Biella Foundation is a private foundation located in Kirkland, WA that awards grants to Acres Of Diamo
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name **Minority** | Definition & Facts | Britannica
+Scholarship Name **Biella Foundation** | **Bothell**, **WA** | Cause IQ
 State National
-Education any
-Categories SC ST minority
+Education degree, engineering, medical
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=7e9888e4ffd21edd2ec5707a58544071f540ae023af03f2beb4913a74a9f5c19JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=16288826-c9b7-6e9e-0452-9ffdc8f56fa4&u=a1aHR0cHM6Ly93d3cuYnJpdGFubmljYS5jb20vdG9waWMvbWlub3JpdHk&ntb=1
-Source Minority scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: http://www.bing.com/search?q=minority%20scholarship%20students%20India%20scheme%20apply%20scholarship%20official%20trusted%20India Markdown Content: About 33,600 results 1. ## [**Minority** | Definition & Facts | Britannica](https://www.bing.com/ck/a?!&&p=7e9888e4ffd21edd2ec5707a58544071f540ae023af03f2beb4913a74a9f5c19JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=16288826-c9b7-6e9e-0452-9ffdc8f56fa4&u=a1aHR0cHM6Ly93d3cuYnJpdGFubmljYS5jb20vdG9waWMvbWlub3JpdHk&ntb=1) Minority, a culturally, ethnically, or racially distinct group that coexists with but is subordinate to a more dominant group. As the term … 2. ## [**MINORITY** Definition & Meaning - **Merriam-Webster**](https://www.bing.com/ck/a?!&&p=f1d2a4299574eaafa8aaf611150f22b1240b8f89748f23b354a336146543b64fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=1628
+Official link https://www.bing.com/ck/a?!&&p=d2375c30193b880a7f0995f442839e2ea51e4babb81d546eec44a5da8b24ed1eJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cuY2F1c2VpcS5jb20vb3JnYW5pemF0aW9ucy9iaWVsbGEtZm91bmRhdGlvbiw5MTE0Mjg1MDgv&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Foundation For Excellence scholarship. Snippet: [**Biella Foundation** | **Bothell**, **WA** | Cause IQ](https://www.bing.com/ck/a?!&&p=d2375c30193b880a7f0995f442839e2ea51e4babb81d546eec44a5da8b24ed1eJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cuY2F1c2VpcS5jb20vb3JnYW5pemF0aW9ucy9iaWVsbGEtZm91bmRhdGlvbiw5MTE0Mjg1MDgv&ntb=1) Dec 1, 2024· The Biella Foundation is a private foundation located in Kirkland, WA that awards grants to Acres Of Diamonds. The … 5. ## [**FOUNDATION** Definition & Meaning - Merriam-Webster](https://www.bing.com/ck/a?!&&p=c2caa40ca12d42997d734cd2cbc7a07d75df98a8b9ae23a606b9b2f9113c8dbfJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L2ZvdW5kYXRpb24&ntb=1) 5 days ago· The meaning of FOUNDATION is the act of founding. How to use foundation in a sentence. 6.
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name **Girl** - **Wikipedia**
+Scholarship Name **FOUNDATION** Definition & Meaning - Merriam-Webster
 State National
-Education engineering school
-Categories SC ST girls
+Education school, degree, engineering, medical
+Categories ews
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=4135e0c94fb70d200c59a65af89a5e7a2b594ace3a35d27b5b2a56124817da8fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=0a609c84-f973-6458-270e-8b5ff8886564&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1
-Source Girls scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: p://www.bing.com/search?q=girl%20students%20scholarship%20India%20engineering%20school%20scholarship%20official%20trusted%20India Markdown Content: About 289,000 results 1. ## [**Girl** - **Wikipedia**](https://www.bing.com/ck/a?!&&p=4135e0c94fb70d200c59a65af89a5e7a2b594ace3a35d27b5b2a56124817da8fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=0a609c84-f973-6458-270e-8b5ff8886564&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1) A girl is a young female human, usually a child or an adolescent. While the term girl has other meanings, including young woman, [1] … 2. ## [**Maren Morris** - **GIRL** (Official Music Video) - **YouTube**](https://www.bing.com/ck/a?!&&p=487de1a5a791cc045f9a083dd44ea615b9f06494bd0b4865e36215854e9e529fJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=0a609c84-f973-6458-270e-8b5ff888
+Official link https://www.bing.com/ck/a?!&&p=c2caa40ca12d42997d734cd2cbc7a07d75df98a8b9ae23a606b9b2f9113c8dbfJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L2ZvdW5kYXRpb24&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Foundation For Excellence scholarship. Snippet: [**FOUNDATION** Definition & Meaning - Merriam-Webster](https://www.bing.com/ck/a?!&&p=c2caa40ca12d42997d734cd2cbc7a07d75df98a8b9ae23a606b9b2f9113c8dbfJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L2ZvdW5kYXRpb24&ntb=1) 5 days ago· The meaning of FOUNDATION is the act of founding. How to use foundation in a sentence. 6. ## [Scholarship **Foundation** of Northshore](https://www.bing.com/ck/a?!&&p=9895ec539fe8574334f04ee47e30129603f845dba6324a87f25554c94aa534e9JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9zZi1ucy5vcmcv&ntb=1) Subscribe Receive the Foundation newsletter — News from Hughes — published for scholarship families, supporters and Donor … 7. ## [About Us - **Northshore Schools Foundation**](https://www.bing.com/ck/a?!&&p=0a8
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name essibility Feedback](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholars
+Scholarship Name Scholarship **Foundation** of Northshore
 State National
-Education any
-Categories SC ST
+Education school, degree, engineering, medical
+Categories ews
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link http://www.bing.com/?FORM=Z9FD1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: essibility Feedback](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India#)[]( http://www.bing.com/?FORM=Z9FD1) [](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) ![Image 1: Close](https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg)![Image 2: Close](https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg) ![Image 3](https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg) The photos you provided may be used to improve Bing image processing services. [Privacy Policy](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted
+Official link https://www.bing.com/ck/a?!&&p=9895ec539fe8574334f04ee47e30129603f845dba6324a87f25554c94aa534e9JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9zZi1ucy5vcmcv&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Foundation For Excellence scholarship. Snippet: [Scholarship **Foundation** of Northshore](https://www.bing.com/ck/a?!&&p=9895ec539fe8574334f04ee47e30129603f845dba6324a87f25554c94aa534e9JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly9zZi1ucy5vcmcv&ntb=1) Subscribe Receive the Foundation newsletter — News from Hughes — published for scholarship families, supporters and Donor … 7. ## [About Us - **Northshore Schools Foundation**](https://www.bing.com/ck/a?!&&p=0a840a089a6339477edafcfbd8707a6854e37fddeab5e65ab761db7e718f24a5JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubm9ydGhzaG9yZXNjaG9vbHNmb3VuZGF0aW9uLm9yZy93aG8td2UtYXJlLw&ntb=1) Sep 21, 2020· About Us We are the Northshore Schools Foundation Since our founding in 1995, we are the 501(c)(3) nonprofit … 8. ## [**Thomas C Wright Foundation** | **Bothell**, **WA** | Cause
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Image 1: Close
+Scholarship Name f0&u=a1aHR0cHM6Ly9zZi1ucy5vcmcv&ntb=1) Subscribe Receive the Foundation newsletter — News from Hughes — published for scholarship families,
 State National
-Education any
-Categories SC ST
+Education school, degree, engineering, medical
+Categories ews
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: .com/?FORM=Z9FD1) [](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) ! [Image 1: Close](https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg)![Image 2: Close](https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg) ![Image 3](https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg) The photos you provided may be used to improve Bing image processing services. [Privacy Policy](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India#)|[Terms of Use](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India#) Can't use t
+Official link https://www.bing.com/ck/a?!&&p=0a840a089a6339477edafcfbd8707a6854e37fddeab5e65ab761db7e718f24a5JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubm9ydGhzaG9yZXNjaG9vbHNmb3VuZGF0aW9uLm9yZy93aG8td2UtYXJlLw&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Foundation For Excellence scholarship. Snippet: f0&u=a1aHR0cHM6Ly9zZi1ucy5vcmcv&ntb=1) Subscribe Receive the Foundation newsletter — News from Hughes — published for scholarship families, supporters and Donor … 7. ## [About Us - **Northshore Schools Foundation**]( https://www.bing.com/ck/a?!&&p=0a840a089a6339477edafcfbd8707a6854e37fddeab5e65ab761db7e718f24a5JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cubm9ydGhzaG9yZXNjaG9vbHNmb3VuZGF0aW9uLm9yZy93aG8td2UtYXJlLw&ntb=1) Sep 21, 2020· About Us We are the Northshore Schools Foundation Since our founding in 1995, we are the 501(c)(3) nonprofit … 8. ## [**Thomas C Wright Foundation** | **Bothell**, **WA** | Cause IQ](https://www.bing.com/ck/a?!&&p=b411f8876bb1d713d8b0128fa90cd49c6a3df9a6d9c9ab3fe0e3425db531ab6fJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=33c56f69-69ea-6094-2faf-78b5683861f0&u=a1aHR0cHM6Ly93d3cuY2F1c2VpcS5jb20vb3JnYW
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Image 2: Close
-State National
-Education any
-Categories SC ST
+Scholarship Name Login - Maharashtra
+State Maharashtra
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
-Deadline date 
-Official link https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: arathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) ![Image 1: Close](https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg)! [Image 2: Close](https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg) ![Image 3](https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg) The photos you provided may be used to improve Bing image processing services. [Privacy Policy](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India#)|[Terms of Use](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India#) Can't use this link. Check that your link starts with 'http://' or 'https://' to tr
+Deadline date 2026-09-30
+Official link https://www.bing.com/ck/a?!&&p=5bb1897c33ce35fb88dd111b955b042204018a8eb1f6e04847623899aee03d8eJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Lm1haGFyYXNodHJhLmdvdi5pbi9sb2dpbi9sb2dpbg&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [Login - Maharashtra](https://www.bing.com/ck/a?!&&p=5bb1897c33ce35fb88dd111b955b042204018a8eb1f6e04847623899aee03d8eJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Lm1haGFyYXNodHJhLmdvdi5pbi9sb2dpbi9sb2dpbg&ntb=1) The MahaDBT 1.0 Portal will remain active from 10 September to 30 September 2026 for disposal of pending applications pertaining … 2. Rajarshri Chhatrapati Shahu Maharaj Merit Scholarship Post-Matric Scholarship for persons with disability 3. ## [Maharashtra](https://www.bing.com/ck/a?!&&p=371bfc02ceeb7911e586b8062ec8ec87574b5fb350eb331cf9168afa16f3e997JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Lm1haGFyYXNodHJhLmdvdi5pbi8&ntb=1) Citizen Charter is now live on MahaDBT Portal- Users can check the expected timelines for application approval and down
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Image 3
-State National
-Education any
-Categories SC ST
+Scholarship Name Maharashtra
+State Maharashtra
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: p%20official%20trusted%20India) ![Image 1: Close](https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg)![Image 2: Close](https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg) ! [Image 3](https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg) The photos you provided may be used to improve Bing image processing services. [Privacy Policy](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India#)|[Terms of Use](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India#) Can't use this link. Check that your link starts with 'http://' or 'https://' to try again. Unable to process this search. Please try a different image or k
+Official link https://www.bing.com/ck/a?!&&p=371bfc02ceeb7911e586b8062ec8ec87574b5fb350eb331cf9168afa16f3e997JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Lm1haGFyYXNodHJhLmdvdi5pbi8&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [Maharashtra](https://www.bing.com/ck/a?!&&p=371bfc02ceeb7911e586b8062ec8ec87574b5fb350eb331cf9168afa16f3e997JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Lm1haGFyYXNodHJhLmdvdi5pbi8&ntb=1) Citizen Charter is now live on MahaDBT Portal- Users can check the expected timelines for application approval and download the … 4. ## [मुख्यपृष्ठ - **MahaDBT**](https://www.bing.com/ck/a?!&&p=279de3855b4b839abb71540842f9b8b3c5d8fb2be2e58ecd2b368045096a27a9JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi5tYWhhcmFzaHRyYS5nb3YuaW4v&ntb=1) आपल्याला झालेल्या गैरसोयीबद्दल आम्ही क्षमस्व आहोत| २०२६-२७ या ... 5. ## [**MahaDBT** – Login, Farmer & Student Scholarship Portal](https://www.bing.com/ck/a?!&&p=40081aec1c3fdc44d3802fe4237f53eaf9c4781fe0f7aac9dfa8917279a15a06JmltdHM9MTc5
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Image 4: Drop an image here
-State National
-Education any
-Categories SC ST
+Scholarship Name मुख्यपृष्ठ - **MahaDBT**
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://r.bing.com/rp/UusW4P7f5q9mXctgEuZhyIziufA.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: ain. Unable to process this search. Please try a different image or keywords. Try Visual Search Search, identify objects and text, translate, or solve problems using an image ! [Image 4: Drop an image here](https://r.bing.com/rp/UusW4P7f5q9mXctgEuZhyIziufA.svg)![Image 5: Drop an image here](https://r.bing.com/rp/4A9D07RlW6M7gPmPQQydX3khDJc.svg) Drag one or more images here,upload an image or open camera Drop image anywhere to start your search ![Image 6](https://r.bing.com/rp/OHA5u4HW70mLbGkOE41WRDXcYTY.svg) ![Image 7: paste image link to search](https://r.bing.com/rp/UzLAW1Q1WOatPD4L3XbeKD9b0Lg.svg) [Video 2](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) To use Visual Search, enable the camera in this
+Official link https://www.bing.com/ck/a?!&&p=279de3855b4b839abb71540842f9b8b3c5d8fb2be2e58ecd2b368045096a27a9JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi5tYWhhcmFzaHRyYS5nb3YuaW4v&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [मुख्यपृष्ठ - **MahaDBT**](https://www.bing.com/ck/a?!&&p=279de3855b4b839abb71540842f9b8b3c5d8fb2be2e58ecd2b368045096a27a9JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi5tYWhhcmFzaHRyYS5nb3YuaW4v&ntb=1) आपल्याला झालेल्या गैरसोयीबद्दल आम्ही क्षमस्व आहोत| २०२६-२७ या ... 5. ## [**MahaDBT** – Login, Farmer & Student Scholarship Portal](https://www.bing.com/ck/a?!&&p=40081aec1c3fdc44d3802fe4237f53eaf9c4781fe0f7aac9dfa8917279a15a06JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0LmluLw&ntb=1) MahaDBT Portal helps students and farmers in Maharashtra get scholarships and scheme benefits. Check MahaDBT Login, Farmer … 6. ## [**MahaDBT** Scholarship 2025-26: Application Process, Registration and ...](https://www.bing.com/ck/a?!&&p=56d17025d42a8fbf17c404354858caceecd1f2d
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Image 5: Drop an image here
-State National
-Education any
-Categories SC ST
+Scholarship Name **MahaDBT** – Login, Farmer & Student Scholarship Portal
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://r.bing.com/rp/4A9D07RlW6M7gPmPQQydX3khDJc.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: isual Search Search, identify objects and text, translate, or solve problems using an image ![Image 4: Drop an image here](https://r.bing.com/rp/UusW4P7f5q9mXctgEuZhyIziufA.svg)! [Image 5: Drop an image here](https://r.bing.com/rp/4A9D07RlW6M7gPmPQQydX3khDJc.svg) Drag one or more images here,upload an image or open camera Drop image anywhere to start your search ![Image 6](https://r.bing.com/rp/OHA5u4HW70mLbGkOE41WRDXcYTY.svg) ![Image 7: paste image link to search](https://r.bing.com/rp/UzLAW1Q1WOatPD4L3XbeKD9b0Lg.svg) [Video 2](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) To use Visual Search, enable the camera in this browser [](http://www.bing.com/images) [Rewards](javascript:void(0))[![Image 8: Pr
+Official link https://www.bing.com/ck/a?!&&p=40081aec1c3fdc44d3802fe4237f53eaf9c4781fe0f7aac9dfa8917279a15a06JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0LmluLw&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [**MahaDBT** – Login, Farmer & Student Scholarship Portal](https://www.bing.com/ck/a?!&&p=40081aec1c3fdc44d3802fe4237f53eaf9c4781fe0f7aac9dfa8917279a15a06JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0LmluLw&ntb=1) MahaDBT Portal helps students and farmers in Maharashtra get scholarships and scheme benefits. Check MahaDBT Login, Farmer … 6. ## [**MahaDBT** Scholarship 2025-26: Application Process, Registration and ...](https://www.bing.com/ck/a?!&&p=56d17025d42a8fbf17c404354858caceecd1f2d5d4a4daacd348ce5b77ee5f19JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0bWFoYWl0LmluLw&ntb=1) MahaDBT Scholarship 2025-26: Welcome to the MahaDBT portal it is the Direct Benefit Transfer portal of the government of … 7. ## [MahaIT Workflow](https://www.bing.com/ck/a?!&&p=88c0b
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Image 6
-State National
-Education any
-Categories SC ST
+Scholarship Name **MahaDBT** Scholarship 2025-26: Application Process, Registration and ...
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
-Deadline date 
-Official link https://r.bing.com/rp/OHA5u4HW70mLbGkOE41WRDXcYTY.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Drop an image here](https://r.bing.com/rp/4A9D07RlW6M7gPmPQQydX3khDJc.svg) Drag one or more images here,upload an image or open camera Drop image anywhere to start your search ! [Image 6](https://r.bing.com/rp/OHA5u4HW70mLbGkOE41WRDXcYTY.svg) ![Image 7: paste image link to search](https://r.bing.com/rp/UzLAW1Q1WOatPD4L3XbeKD9b0Lg.svg) [Video 2](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) To use Visual Search, enable the camera in this browser [](http://www.bing.com/images) [Rewards](javascript:void(0))[![Image 8: Profile Picture](blob:http://localhost/c204bf19f78776c25e5ce1a602bee57e)](javascript:void(0)) * [All](http://www.bing.com/?scope=web&FORM=HDRSC1) * [Web](https://www.bing.com/ck/a?!&&p=2d
+Deadline date 2026-09-30
+Official link https://www.bing.com/ck/a?!&&p=56d17025d42a8fbf17c404354858caceecd1f2d5d4a4daacd348ce5b77ee5f19JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0bWFoYWl0LmluLw&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [**MahaDBT** Scholarship 2025-26: Application Process, Registration and ...](https://www.bing.com/ck/a?!&&p=56d17025d42a8fbf17c404354858caceecd1f2d5d4a4daacd348ce5b77ee5f19JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0bWFoYWl0LmluLw&ntb=1) MahaDBT Scholarship 2025-26: Welcome to the MahaDBT portal it is the Direct Benefit Transfer portal of the government of … 7. ## [MahaIT Workflow](https://www.bing.com/ck/a?!&&p=88c0b1c9f88fb28bf698e0b52a17284ec224c70b3a4546a289d303c0956d6968JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9kYnR3b3JrZmxvdy5tYWhhb25saW5lLmdvdi5pbi8&ntb=1) The MahaDBT 1.0 Portal will remain active from 10 September to 30 September 2026 for disposal of pending applications pertaining … 8. ## [**MahaDBT** - **MahaDBT**](https://www.bing.com/ck/a?!&&p=4bc00
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Image 7: paste image link to search
-State National
-Education any
-Categories SC ST
+Scholarship Name **MahaDBT** - **MahaDBT**
+State Maharashtra
+Education school, degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://r.bing.com/rp/UzLAW1Q1WOatPD4L3XbeKD9b0Lg.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Jc.svg) Drag one or more images here,upload an image or open camera Drop image anywhere to start your search ![Image 6](https://r.bing.com/rp/OHA5u4HW70mLbGkOE41WRDXcYTY.svg) ! [Image 7: paste image link to search](https://r.bing.com/rp/UzLAW1Q1WOatPD4L3XbeKD9b0Lg.svg) [Video 2](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) To use Visual Search, enable the camera in this browser [](http://www.bing.com/images) [Rewards](javascript:void(0))[![Image 8: Profile Picture](blob:http://localhost/c204bf19f78776c25e5ce1a602bee57e)](javascript:void(0)) * [All](http://www.bing.com/?scope=web&FORM=HDRSC1) * [Web](https://www.bing.com/ck/a?!&&p=2d38199e88be4e4e2601801630857b03d7593c97b4a37c2056624e76de9c1edbJmltd
+Official link https://www.bing.com/ck/a?!&&p=4bc00a5e252485ea7cfbe94d64518477c94f9e9da74bde697d856ba993ec6918JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi11YXQtZGFzaGJvYXJkLnF1YW50ZWxhLmNvbS9tYWhhZGJ0&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [**MahaDBT** - **MahaDBT**](https://www.bing.com/ck/a?!&&p=4bc00a5e252485ea7cfbe94d64518477c94f9e9da74bde697d856ba993ec6918JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi11YXQtZGFzaGJvYXJkLnF1YW50ZWxhLmNvbS9tYWhhZGJ0&ntb=1) Notice Application acceptance of the new academic year 2025-26 has commenced from 30th June 2025 Application acceptance … 9. ## [MahaIT Portal](https://www.bing.com/ck/a?!&&p=07400ccdf4d804502df1d66c864c7c3566b4c1fbd5f71ded4ff6617b0676a02bJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly90ZXN0ZGJ0cHJlbWF0cmljYXBwLm1haGFpdGdvdi5pbi9Mb2dpbi9Mb2dpbg&ntb=1) Attention!!! For registration of applications for pre-matric schemes on MahaDBT portal, school principals should login by typing … 10. ## [**MahaDBT** | Social Justice & Special Assistance Department
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name udy%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) T
-State National
-Education any
-Categories SC ST
+Scholarship Name MahaIT Portal
+State Maharashtra
+Education school, degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link http://www.bing.com/images
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: udy%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) To use Visual Search, enable the camera in this browser []( http://www.bing.com/images) [Rewards](javascript:void(0))[![Image 8: Profile Picture](blob:http://localhost/c204bf19f78776c25e5ce1a602bee57e)](javascript:void(0)) * [All](http://www.bing.com/?scope=web&FORM=HDRSC1) * [Web](https://www.bing.com/ck/a?!&&p=2d38199e88be4e4e2601801630857b03d7593c97b4a37c2056624e76de9c1edbJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3NlYXJjaD9xPUJ1ZGR5NFN0dWR5K1ZpZHlhc2FhcmF0aGkrRm91bmRhdGlvbitGb3IrRXhjZWxsZW5jZStzY2hvbGFyc2hpcHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZ3ZWJzY3A9MSZGT1JNPUhEUldTQw&ntb=1) * [Search](http://www.bing.com/copilotsearch?q
+Official link https://www.bing.com/ck/a?!&&p=07400ccdf4d804502df1d66c864c7c3566b4c1fbd5f71ded4ff6617b0676a02bJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly90ZXN0ZGJ0cHJlbWF0cmljYXBwLm1haGFpdGdvdi5pbi9Mb2dpbi9Mb2dpbg&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [MahaIT Portal](https://www.bing.com/ck/a?!&&p=07400ccdf4d804502df1d66c864c7c3566b4c1fbd5f71ded4ff6617b0676a02bJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly90ZXN0ZGJ0cHJlbWF0cmljYXBwLm1haGFpdGdvdi5pbi9Mb2dpbi9Mb2dpbg&ntb=1) Attention!!! For registration of applications for pre-matric schemes on MahaDBT portal, school principals should login by typing … 10. ## [**MahaDBT** | Social Justice & Special Assistance Department | India](https://www.bing.com/ck/a?!&&p=bd65a32aa67170b63ac352bcb246316c22e987f52753ced6f2ab09507b81f21dJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9zanNhLm1haGFyYXNodHJhLmdvdi5pbi9lbi9zZXJ2aWNlL21haGFkYnQv&ntb=1) Jan 30, 2025· MahaDBT Aaple Sarkar DBT (Direct Benefit Transfer) is a portal launched by Government of Maharashtra to transfer …
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name fficial%20trusted%20India) To use Visual Search, enable the camera in this browser [](http://www.bing.com/images) [Rewar
-State National
-Education any
-Categories SC ST
+Scholarship Name 6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0bWFoYWl0LmluLw&ntb=1) MahaDBT Scholarship 2025-26: Welcome to the MahaDBT portal it is the Di
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
-Deadline date 
-Official link http://localhost/c204bf19f78776c25e5ce1a602bee57e
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: fficial%20trusted%20India) To use Visual Search, enable the camera in this browser [](http://www.bing.com/images) [Rewards](javascript:void(0))[![Image 8: Profile Picture](blob: http://localhost/c204bf19f78776c25e5ce1a602bee57e)](javascript:void(0)) * [All](http://www.bing.com/?scope=web&FORM=HDRSC1) * [Web](https://www.bing.com/ck/a?!&&p=2d38199e88be4e4e2601801630857b03d7593c97b4a37c2056624e76de9c1edbJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3NlYXJjaD9xPUJ1ZGR5NFN0dWR5K1ZpZHlhc2FhcmF0aGkrRm91bmRhdGlvbitGb3IrRXhjZWxsZW5jZStzY2hvbGFyc2hpcHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZ3ZWJzY3A9MSZGT1JNPUhEUldTQw&ntb=1) * [Search](http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official
+Deadline date 2026-09-30
+Official link https://www.bing.com/ck/a?!&&p=88c0b1c9f88fb28bf698e0b52a17284ec224c70b3a4546a289d303c0956d6968JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9kYnR3b3JrZmxvdy5tYWhhb25saW5lLmdvdi5pbi8&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: 6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0bWFoYWl0LmluLw&ntb=1) MahaDBT Scholarship 2025-26: Welcome to the MahaDBT portal it is the Direct Benefit Transfer portal of the government of … 7. ## [MahaIT Workflow]( https://www.bing.com/ck/a?!&&p=88c0b1c9f88fb28bf698e0b52a17284ec224c70b3a4546a289d303c0956d6968JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9kYnR3b3JrZmxvdy5tYWhhb25saW5lLmdvdi5pbi8&ntb=1) The MahaDBT 1.0 Portal will remain active from 10 September to 30 September 2026 for disposal of pending applications pertaining … 8. ## [**MahaDBT** - **MahaDBT**](https://www.bing.com/ck/a?!&&p=4bc00a5e252485ea7cfbe94d64518477c94f9e9da74bde697d856ba993ec6918JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=17cc0348-5713-6402-0f81-149456396580&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi11YXQtZGFzaGJvYXJkLnF1YW50ZWxhLmNvbS9tYWhhZGJ0&ntb=1) Notice Applicatio
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name All
-State National
-Education any
-Categories SC ST
+Scholarship Name Welcome to **Rajasthan**
+State Rajasthan
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link http://www.bing.com/?scope=web&FORM=HDRSC1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: rowser [](http://www.bing.com/images) [Rewards](javascript:void(0))[![Image 8: Profile Picture](blob:http://localhost/c204bf19f78776c25e5ce1a602bee57e)](javascript:void(0)) * [All](http://www.bing.com/?scope=web&FORM=HDRSC1) * [Web](https://www.bing.com/ck/a?!&&p=2d38199e88be4e4e2601801630857b03d7593c97b4a37c2056624e76de9c1edbJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3NlYXJjaD9xPUJ1ZGR5NFN0dWR5K1ZpZHlhc2FhcmF0aGkrRm91bmRhdGlvbitGb3IrRXhjZWxsZW5jZStzY2hvbGFyc2hpcHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZ3ZWJzY3A9MSZGT1JNPUhEUldTQw&ntb=1) * [Search](http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP) * [Images](https://www.bing.com/ck/a?!&&p=aa947
+Official link https://www.bing.com/ck/a?!&&p=53572699b1f8b6bad15d9a83fb1519fdd1065cd04d1ec8fe663c2c25343daac6JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=02637133-0a25-6670-104c-66ef0b846795&u=a1aHR0cHM6Ly93d3cudG91cmlzbS5yYWphc3RoYW4uZ292LmluLw&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Rajasthan scholarships. Snippet: [Welcome to **Rajasthan** - Official Website of Department of Tourism ...](https://www.bing.com/ck/a?!&&p=53572699b1f8b6bad15d9a83fb1519fdd1065cd04d1ec8fe663c2c25343daac6JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=02637133-0a25-6670-104c-66ef0b846795&u=a1aHR0cHM6Ly93d3cudG91cmlzbS5yYWphc3RoYW4uZ292LmluLw&ntb=1) Rajasthan Tourism website is state government's official portal for providing information on tourist destinations, tours and travels to … 4. Sep 2, 2026· Official Rajasthan State Portal providing information on government departments, schemes, services, tenders, … 5. ## [**History of Rajasthan** - **Wikipedia**](https://www.bing.com/ck/a?!&&p=1cde52736abc97717af5f2bc644bd9e940b62ed10fc6eb1be5e539845ae5db7aJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=02637133-0a25-6670-104c-66ef0b846795&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9IaXN0b3J5X29mX1JhamFzdGhhbg&ntb=1) T
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Web
-State National
-Education any
-Categories SC ST
+Scholarship Name destinations, tours and travels to … 4. Sep 2, 2026· Official Rajasthan State Portal providing information on government departments, scheme
+State Rajasthan
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=2d38199e88be4e4e2601801630857b03d7593c97b4a37c2056624e76de9c1edbJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3NlYXJjaD9xPUJ1ZGR5NFN0dWR5K1ZpZHlhc2FhcmF0aGkrRm91bmRhdGlvbitGb3IrRXhjZWxsZW5jZStzY2hvbGFyc2hpcHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZ3ZWJzY3A9MSZGT1JNPUhEUldTQw&ntb=1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: script:void(0))[![Image 8: Profile Picture](blob:http://localhost/c204bf19f78776c25e5ce1a602bee57e)](javascript:void(0)) * [All](http://www.bing.com/?scope=web&FORM=HDRSC1) * [Web](https://www.bing.com/ck/a?!&&p=2d38199e88be4e4e2601801630857b03d7593c97b4a37c2056624e76de9c1edbJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3NlYXJjaD9xPUJ1ZGR5NFN0dWR5K1ZpZHlhc2FhcmF0aGkrRm91bmRhdGlvbitGb3IrRXhjZWxsZW5jZStzY2hvbGFyc2hpcHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZ3ZWJzY3A9MSZGT1JNPUhEUldTQw&ntb=1) * [Search](http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP) * [Images](https://www.bing.com/ck/a?!&&p=aa947afe73e764d05a34d74160107d9ad0685eb2e14fd836aa0205d4dcf
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Search
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: J1ZGR5NFN0dWR5K1ZpZHlhc2FhcmF0aGkrRm91bmRhdGlvbitGb3IrRXhjZWxsZW5jZStzY2hvbGFyc2hpcHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZ3ZWJzY3A9MSZGT1JNPUhEUldTQw&ntb=1) * [Search](http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP) * [Images](https://www.bing.com/ck/a?!&&p=aa947afe73e764d05a34d74160107d9ad0685eb2e14fd836aa0205d4dcf6f85eJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L2ltYWdlcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1) * [Videos](https://www.bing.com/ck/a?!&&p=e30e164bbdfb10eee676521bdd2453b24155aea28a677d14c39df8ac73b
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Images
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=aa947afe73e764d05a34d74160107d9ad0685eb2e14fd836aa0205d4dcf6f85eJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L2ltYWdlcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: &ntb=1) * [Search](http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP) * [Images](https://www.bing.com/ck/a?!&&p=aa947afe73e764d05a34d74160107d9ad0685eb2e14fd836aa0205d4dcf6f85eJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L2ltYWdlcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1) * [Videos](https://www.bing.com/ck/a?!&&p=e30e164bbdfb10eee676521bdd2453b24155aea28a677d14c39df8ac73bd3ac6JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3ZpZGVvcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Flights
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=508a23900f151823b7489266890e89cce30cc8305f82f4bb11fb7cdd998d74c1JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3RyYXZlbC9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmbT1mbGlnaHRzJkZPUk09RkJTQ09Q&ntb=1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: aWNzP3E9QnVkZHk0U3R1ZHkrVmlkeWFzYWFyYXRoaStGb3VuZGF0aW9uK0ZvcitFeGNlbGxlbmNlK3NjaG9sYXJzaGlwcytJbmRpYStzY2hvbGFyc2hpcCtvZmZpY2lhbCt0cnVzdGVkK0luZGlhJkZPUk09U0hPUFRC&ntb=1) * [Flights](https://www.bing.com/ck/a?!&&p=508a23900f151823b7489266890e89cce30cc8305f82f4bb11fb7cdd998d74c1JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1L3RyYXZlbC9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmbT1mbGlnaHRzJkZPUk09RkJTQ09Q&ntb=1) * [Tools](javascript:void(0)) About 99,000 results Open links in new tab [Any time](javascript:) [All](http://www.bing.com/search?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&toHttps=1
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name ![Image 9: Global web icon
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://r.bing.com/rp/plaYEmwO88HvP_KfmhzEWegmC60.svg
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: dation+For+Excellence+scholarships+India+scholarship+official+trusted+India&filters=ex1%3a%22ez5_20352_20717%22&toHttps=1&redig=1008148D944247D38D8D017F26530364&FORM=000017) 1. [![Image 9: Global web icon](https://r.bing.com/rp/plaYEmwO88HvP_KfmhzEWegmC60.svg) tenki.jp https://tenki.jp](https://www.bing.com/ck/a?!&&p=d37d49ddba5e33d4e2f604776dd524471ea5e833e2cf2319620fee73dbdf2a5eJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cHM6Ly90ZW5raS5qcC8&ntb=1) ## [日本気象協会 **tenki.jp** / 全国**の天気**予報・地震・台風](https://www.bing.com/ck/a?!&&p=d37d49ddba5e33d4e2f604776dd524471ea5e833e2cf2319620fee73dbdf2a5eJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cHM6Ly90ZW5raS5qcC8&ntb=1) 1 day ago· 市区町村別のピンポイントな天気予報に加え、専門的な気象情報、地震・津波などの防災情報を提供します。 気象予
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Some results have been removed
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=4b3d5630756c6e24727a1909b8d33ddc926ec24aae53fe071068ca6bac0d148dJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: 2-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cHM6Ly9uZXdzLndlYi5uaGsva2lzaG91LXNhaWdhaS93ZWF0aGVyL3RvbW9ycm93Lw&ntb=1) Feb 9, 2026· 明日の天気・気温など全国各地の詳しい天気情報や気象・災害の解説、最新ニュースもお伝えします。 11. [Some results have been removed](https://www.bing.com/ck/a?!&&p=4b3d5630756c6e24727a1909b8d33ddc926ec24aae53fe071068ca6bac0d148dJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1) 12. #### Pagination * [1](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) * [2](http://www.bing.com/search?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&toHttps=1&redig=1008148D944
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Privacy
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=5e9ee7d27a97f5249caed16d8c91beed0639b20046c4935d67bef38514fa2daeJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: e+scholarships+India+scholarship+official+trusted+India&toHttps=1&redig=1008148D944247D38D8D017F26530364&FPIG=C4B9F9B91BC54EF8B4E16608031C0F4E&first=11&FORM=PORE "Next page") * [Privacy](https://www.bing.com/ck/a?!&&p=5e9ee7d27a97f5249caed16d8c91beed0639b20046c4935d67bef38514fa2daeJmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1) * [Terms](https://www.bing.com/ck/a?!&&p=bb90dc9a5916e7ccc28497fa0fbea53c23a6ff9581409fbf7a14ea65657e0967JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9MjQ2MzM4&ntb=1) Content was generated with AI. [Learn more](https://www.bing.com/ck/a?!&&p=d038f4a5ddd009113a92c338058b602ce10780c122a6befc6c
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Learn more
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=d038f4a5ddd009113a92c338058b602ce10780c122a6befc6c55055c60d3eab8JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9MjQ2MzM4&ntb=1) Content was generated with AI. [Learn more](https://www.bing.com/ck/a?!&&p=d038f4a5ddd009113a92c338058b602ce10780c122a6befc6c55055c60d3eab8JmltdHM9MTc4OTk0ODgwMA&ptn=3&ver=2&hsh=4&fclid=28e99c02-f1a7-6cb9-353f-8bd9f0606da3&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1) [Microsoft Bing - Search](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) [](http://www.bing.com/copilotsearch?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20Indi
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name soft Bing - Search](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarsh
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link http://www.bing.com/copilotsearch?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India&form=CSBSBX
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: soft Bing - Search](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) []( http://www.bing.com/copilotsearch?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India&form=CSBSBX) [](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India)
+Official link https://www.bing.com/ck/a?!&&p=1cde52736abc97717af5f2bc644bd9e940b62ed10fc6eb1be5e539845ae5db7aJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=02637133-0a25-6670-104c-66ef0b846795&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9IaXN0b3J5X29mX1JhamFzdGhhbg&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Rajasthan scholarships. Snippet: destinations, tours and travels to … 4. Sep 2, 2026· Official Rajasthan State Portal providing information on government departments, schemes, services, tenders, … 5. ## [**History of Rajasthan** - **Wikipedia**]( https://www.bing.com/ck/a?!&&p=1cde52736abc97717af5f2bc644bd9e940b62ed10fc6eb1be5e539845ae5db7aJmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=02637133-0a25-6670-104c-66ef0b846795&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9IaXN0b3J5X29mX1JhamFzdGhhbg&ntb=1) The history of human settlement in the western Indian state of Rajasthan dates back to about 100,000 years ago. Around 5000 to … 6. ## [**Rajasthan** - Simple English **Wikipedia**, the free encyclopedia](https://www.bing.com/ck/a?!&&p=d424e192d3429cedb8267478de3b5a888edbdf6a194ce70f98c0ced77923d884JmltdHM9MTc5MDAzNTIwMA&ptn=3&ver=2&hsh=4&fclid=02637133-0a25-6670-104c-66ef0b846795&u=a1aHR0cHM6Ly9zaW1wbGUubS53aWtpcGVkaWEub
 Income note Verify income rules on provider/official portal.
