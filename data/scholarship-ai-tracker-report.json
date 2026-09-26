@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-25T08:15:54.578Z",
+  "generatedAt": "2026-09-26T08:04:49.099Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 668,
+  "checked": 673,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 645,
+  "needsReview": 650,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 668 scholarship record(s), promoted 0, expired 0, flagged 645 for review, failed 0.",
+  "explainer": "AI tracker checked 673 scholarship record(s), promoted 0, expired 0, flagged 650 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -873,6 +873,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_14rc8gc",
+      "name": "twitch.tv https://www.twitch.tv",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 34,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_14tqyo5",
       "name": "Foundation/ Trust",
       "action": "flag",
@@ -900,6 +910,16 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_155a0z3",
+      "name": "Milldale Dental Clinic | ORA Dental",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     },
     {
@@ -990,26 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_16e6c8v",
-      "name": "Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=93&pcl=fffffa&o=6&pid",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 44,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_16jsjrn",
-      "name": "web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=96&pcl=fffffa&r=0&o=6&pid=1.",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 44,
       "deadlineDate": "2099-12-31"
     }
   ],
