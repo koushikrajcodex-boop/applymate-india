@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-09-26T08:04:49.099Z",
+  "generatedAt": "2026-09-27T08:38:24.728Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 673,
+  "checked": 675,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 650,
+  "needsReview": 652,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 673 scholarship record(s), promoted 0, expired 0, flagged 650 for review, failed 0.",
+  "explainer": "AI tracker checked 675 scholarship record(s), promoted 0, expired 0, flagged 652 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -653,6 +653,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_120y9vv",
+      "name": "**Fleet Fuel Card Controls**: Set **Spending** Limits That Prevent Waste",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_121dn14",
       "name": "-funded programs to support economically disadvantaged **students** https://educationforallin**india**.com › **sc**-**st",
       "action": "flag",
@@ -995,16 +1005,6 @@
     {
       "id": "auto_16d1q8s",
       "name": "What to Watch Right Now | Where To Stream the Best Movies",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_16dai2i",
-      "name": "Amazon Prime **Student**",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
