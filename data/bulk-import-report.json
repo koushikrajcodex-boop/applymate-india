@@ -1,28 +1,82 @@
 {
-  "generatedAt": "2026-09-28T08:59:09.638Z",
+  "generatedAt": "2026-09-29T09:05:38.469Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 1,
-  "updated": 24,
+  "added": 7,
+  "updated": 55,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 25,
+  "draftCandidates": 62,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 1, refreshed 24, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
-  "feedGeneratedAt": "2026-09-28T08:58:10.855Z",
+  "explainer": "Import finished. Added 7, refreshed 55, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 62.",
+  "feedGeneratedAt": "2026-09-29T09:04:01.702Z",
   "imported": [
     {
-      "id": "auto_7a7lyc",
-      "name": "知乎 - 有问题，就会有答案",
-      "link": "https://www.bing.com/ck/a?!&&p=2815d3ba385fdff7182b0e8cb4ed0ed9aa8872e1cfcccb598a3faae871079c36JmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=34472d4c-7a8b-6ed3-1059-3aae7b1b6fd4&u=a1aHR0cHM6Ly93d3cuemhpaHUuY29tLw&ntb=1",
+      "id": "auto_1962kp6",
+      "name": "NHN0dWR5Lw&ntb=1) 10. [![Image 21: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?",
+      "link": "https://video-app.buddy4study.com/",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 53,
+      "sourceTrust": "trusted"
+    },
+    {
+      "id": "auto_1h00hkf",
+      "name": "Cherokee neutral lands in Kansas. (To accompany bill H. R. No. 1074.).",
+      "link": "https://www.bing.com/ck/a?!&&p=8d4b2849a68911affd2c55569f15b5be506ac5b4b0fcc3619258a8f8c04f53aaJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=3aa3bda6-8580-626f-17cf-aa458417632d&u=a1aHR0cHM6Ly9kaWdpdGFsY29tbW9ucy5sYXcub3UuZWR1L2luZGlhbnNlcmlhbHNldC8xOTI4Lw&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 52,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_1yvrq3f",
+      "name": "obal web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=91&pcl=fffffa&o=6&pid=1",
+      "link": "https://www.bing.com/ck/a?!&&p=824c6cc69f661ea92bd197b120d65bcd8a518575b24b1f038146778fdecd0bb5JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cHM6Ly93d3cuYnVkZHk0c3R1ZHkuY29tL3JlZ2lzdGVy&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 44,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_xjwimt",
+      "name": "Federal **Student** Aid",
+      "link": "https://www.bing.com/ck/a?!&&p=adb588f5b7bcdb0635f96ae43633d6d56815d8e99e8ad087c16af9807d434fbfJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=10bbedd2-21a4-654b-10f4-fa3120476466&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 42,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_la5j1z",
+      "name": "Terms",
+      "link": "https://www.bing.com/ck/a?!&&p=008d6200743a46cc1d4c57a0ffe64ed3b6dc593d68c1c8c749c3c9af3a18cd61JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=3c7dca6e-36e9-6cf6-2726-dd8d37a16dda&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9MjQ2MzM4&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 42,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_1pih3vu",
+      "name": "mage 16: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=94&pcl=fffff",
+      "link": "https://www.bing.com/ck/a?!&&p=f110071fa5b4d8591da876c2b3cd8d561f5b95109e4661cc6328feb2242a505aJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cHM6Ly9hcHAuYnVkZHk0c3R1ZHkuY29tLw&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 42,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_4af60n",
+      "name": ". [![Image 19: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=97&pcl",
+      "link": "https://www.bing.com/ck/a?!&&p=6ae49c9b1c147d29a12e28e6df554fb27b828b56a41be3f8d3fc1b8f8396385dJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cHM6Ly93d3cueW91dHViZS5jb20vYnVkZHk0c3R1ZHk&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
@@ -151,6 +205,14 @@
       "aiConfidence": 62
     },
     {
+      "id": "auto_1qg59q3",
+      "name": "1ZHkuY29tLw&ntb=1) 5. [![Image 16: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?",
+      "link": "https://app.buddy4study.com/",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 61
+    },
+    {
       "id": "auto_37fmhx",
       "name": "Buddy4Study Scholarship Listings",
       "link": "https://www.buddy4study.com/scholarships",
@@ -167,33 +229,73 @@
       "aiConfidence": 56
     },
     {
-      "id": "auto_14fgt6u",
-      "name": "Home | Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=59d34df014b7037069e5e0b50cb38f8fd35ab8cc1a59f0b302bb8993d2ecfd2cJmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=357c7651-1b5f-6448-3d1d-61b31a906599&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
+      "id": "auto_6hh61a",
+      "name": "time](javascript:) 1. [![Image 12: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?",
+      "link": "https://www.buddy4study.com/",
       "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
+      "reason": "same_url_already_exists",
+      "aiConfidence": 50
     },
     {
-      "id": "auto_1r08dzp",
-      "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=ef03b91116088d58c00d04ca34412fdf51884ccfae3cdf1d4ae76640195c60beJmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=01e19fca-2f9d-65a3-0534-88282e78647b&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
+      "id": "auto_krtdse",
+      "name": "mhsPWVuLVVT&ntb=1) 4. [![Image 15: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?",
+      "link": "https://sms.buddy4study.com/",
       "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
+      "reason": "same_url_already_exists",
+      "aiConfidence": 50
     },
     {
-      "id": "auto_4lp1jw",
-      "name": "**Minority** | Definition & Facts | Britannica",
-      "link": "https://www.bing.com/ck/a?!&&p=d2ad0cb345b77803fd97bc2be6081341550cfdb184782c706d0c1b0c45527f5aJmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=2d4be811-39c7-665f-1cc7-fff3388f6769&u=a1aHR0cHM6Ly93d3cuYnJpdGFubmljYS5jb20vdG9waWMvbWlub3JpdHk&ntb=1",
+      "id": "auto_1j21ybu",
+      "name": "Image 7: Drop an image here",
+      "link": "https://r.bing.com/rp/UusW4P7f5q9mXctgEuZhyIziufA.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 44
+    },
+    {
+      "id": "auto_1b5oeld",
+      "name": "Image 8: Drop an image here",
+      "link": "https://r.bing.com/rp/4A9D07RlW6M7gPmPQQydX3khDJc.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 44
+    },
+    {
+      "id": "auto_1lwf3wj",
+      "name": "Image 9",
+      "link": "https://r.bing.com/rp/OHA5u4HW70mLbGkOE41WRDXcYTY.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 44
+    },
+    {
+      "id": "auto_1c8fj3k",
+      "name": "Image 10: paste image link to search",
+      "link": "https://r.bing.com/rp/UzLAW1Q1WOatPD4L3XbeKD9b0Lg.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 44
+    },
+    {
+      "id": "auto_i7nnt0",
+      "name": "![Image 13: Global web icon",
+      "link": "https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=91&pcl=fffffa&o=6&pid=1.2",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 44
+    },
+    {
+      "id": "auto_12dxzsv",
+      "name": "**Andhra Pradesh** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=541f3e86ef58e937fb1bb54e29d0ffcbd2632b17467975ce5a3e78fc985cf009JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=1c599e2d-6747-60bc-29c6-89ce66c161dc&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9BbmRocmFfUHJhZGVzaA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 52
+      "aiConfidence": 42
     },
     {
       "id": "auto_pxn9gp",
       "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=95fdcd8720ba4848ec6479b3b5413b7c36984fb8a80b806b08f070d7b78c0f31JmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=00bb8416-5822-6eee-0672-93f459116fc6&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=1941a4a8954408c1fd7e6645996d4a4abaca19393f98fa02a809b2c3d37fe117JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=093eb2ae-397a-69e2-1783-a54d38a468b8&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -201,25 +303,225 @@
     {
       "id": "auto_1lwoa31",
       "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=cafa3b2cd2b06a451d433449c6990c00682752139da116b88cb34fbee12801f9JmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=09dc1ecd-d6c6-6a75-2392-092fd7646b15&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=3ec5c474845f120a80f6427d80fe3eb448a7d42c4ce41b05da088889b5e6a8e0JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=0edf9efa-d96f-66a1-2418-8919d815679a&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Tb3V0aF9DYXJvbGluYQ&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_1a9dgai",
-      "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=a9a66afa004a0e0a32ccae5914f83a95e57a7885b10dc6d6eb7cfa481bee41bbJmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=2d3fad41-8ef8-62a9-2461-baa38fbd633b&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
+      "id": "auto_xgg8ck",
+      "name": "0trusted%20India#)[Accessibility Feedback](http://www.bing.com/search?q=girl%20students%20scholarship%20India%20engineer",
+      "link": "http://www.bing.com/?FORM=Z9FD1",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1xfm6n7",
+      "name": "m/search?q=girl%20students%20scholarship%20India%20engineering%20school%20scholarship%20official%20trusted%20India) [Rew",
+      "link": "http://localhost/c204bf19f78776c25e5ce1a602bee57e",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1kbff5d",
+      "name": "All",
+      "link": "http://www.bing.com/?scope=web&FORM=HDRSC1",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_kt5mki",
+      "name": "Search",
+      "link": "http://www.bing.com/copilotsearch?q=girl+students+scholarship+India+engineering+school+scholarship+official+trusted+India&FORM=CSSCOP",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_1osygsg",
-      "name": "Contact Us - Microsoft Support",
-      "link": "https://www.bing.com/ck/a?!&&p=2df0d5fb0851ac3e40651e97751048a0fad727abd84e1fd8b524d0fbb6ce43cdJmltdHM9MTc5MDU1MzYwMA&ptn=3&ver=2&hsh=4&fclid=2eeca3df-1dd0-6e44-3b5b-b43d1cb86f2e&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vZW4tZ2IvY29udGFjdHVz&ntb=1",
+      "id": "auto_wzjenc",
+      "name": "Images",
+      "link": "https://www.bing.com/ck/a?!&&p=cc3b1f9dd5dbbbc8bf7e25bd917b912b7a0a1e5f3d39c7fda8bfaeeb87270960JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=3c7dca6e-36e9-6cf6-2726-dd8d37a16dda&u=a1L2ltYWdlcy9zZWFyY2g_cT1naXJsK3N0dWRlbnRzK3NjaG9sYXJzaGlwK0luZGlhK2VuZ2luZWVyaW5nK3NjaG9vbCtzY2hvbGFyc2hpcCtvZmZpY2lhbCt0cnVzdGVkK0luZGlhJkZPUk09SERSU0My&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uuy7pd",
+      "name": "**Girl** - Simple English Wikipedia, the free encyclopedia",
+      "link": "https://www.bing.com/ck/a?!&&p=64ddf3047799666bf6d5e3d4c1df8ccc846c01c5b747ba3aad2e98391d246123JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=3c7dca6e-36e9-6cf6-2726-dd8d37a16dda&u=a1aHR0cHM6Ly9zaW1wbGUud2lraXBlZGlhLm9yZy93aWtpL0dpcmw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_dk6lb5",
+      "name": "Privacy",
+      "link": "https://www.bing.com/ck/a?!&&p=4f5a25180746b386b711d02cba16064073437542a0e3179bbda98c146da0a2f8JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=3c7dca6e-36e9-6cf6-2726-dd8d37a16dda&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uylfjb",
+      "name": "Learn more",
+      "link": "https://www.bing.com/ck/a?!&&p=fece18ef6c4ccf07483002a514b7735bdab82d385e7339b68d4b089ac3af606bJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=3c7dca6e-36e9-6cf6-2726-dd8d37a16dda&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_jsa7wx",
+      "name": "cf6-2726-dd8d37a16dda&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "link": "http://www.bing.com/copilotsearch?q=girl%20students%20scholarship%20India%20engineering%20school%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1a66096",
+      "name": "![Image 16: Global web icon",
+      "link": "https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=94&pcl=fffffa&o=6&pid=1.2",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_187h6st",
+      "name": "Image 4: Close",
+      "link": "https://r.bing.com/rp/fdVZU4ttbw8NDRm6H3I5BW3_vCo.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1iq8b3c",
+      "name": "Image 5: Close",
+      "link": "https://r.bing.com/rp/4L4QdyjTv0HYE2Ig2ol9eYoqxg8.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1x5mknk",
+      "name": "Image 6",
+      "link": "https://r.bing.com/rp/Fsa_OI0AplCnVoXGca8ALOo0S0s.svg",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1777dha",
+      "name": "udy%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) T",
+      "link": "http://www.bing.com/images",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_kt5mki",
+      "name": "Search",
+      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_wzjenc",
+      "name": "Images",
+      "link": "https://www.bing.com/ck/a?!&&p=f781bdcce3f42c855a77b82944286f6978f150ff971238dcac3584cb7160bdc9JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1L2ltYWdlcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_rj5rye",
+      "name": "![Image 14: Global web icon",
+      "link": "https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=92&pcl=fffffa&o=6&pid=1.2",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1vi4a16",
+      "name": "Y29tL3JlZ2lzdGVy&ntb=1) 3. [![Image 14: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB7",
+      "link": "https://play.google.com/",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1rn7mjw",
+      "name": "web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=92&pcl=fffffa&o=6&pid=1.2) g",
+      "link": "https://www.bing.com/ck/a?!&&p=731b146bcf53b7bd6136e59a4bf6d72683c4c10d1e07c061166e2d69203deeefJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cHM6Ly9wbGF5Lmdvb2dsZS5jb20vc3RvcmUvYXBwcy9kZXRhaWxzP2lkPWNvbS5idWR5NHN0dWR5LnVpJmhsPWVuLVVT&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1st68jy",
+      "name": "![Image 18: Global web icon",
+      "link": "https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=96&pcl=fffffa&o=6&pid=1.2",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_3342zn",
+      "name": "Hk0c3R1ZHktY29t&ntb=1) 7. [![Image 18: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74",
+      "link": "https://www.youtube.com/",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_g9pspo",
+      "name": "mage 18: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=96&pcl=fffff",
+      "link": "https://www.bing.com/ck/a?!&&p=43aa87f06fe71f70c10344c1778d68a477e42b1bd59a4604911378f445f7b0dbJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cHM6Ly93d3cueW91dHViZS5jb20vd2F0Y2g_dj1oQTFTbDQyc0pMTQ&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_s5xdye",
+      "name": "1: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=99&pcl=fffffa&o=6&",
+      "link": "https://www.bing.com/ck/a?!&&p=92a5b9bb45a6bbac2d3d35cf04fc6bbb9e20f72303b7c0cc2d3bb2b52ce81ca0JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cHM6Ly92aWRlby1hcHAuYnVkZHk0c3R1ZHkuY29tLw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=ed789db1ea81a3d41a398af0c211d3942492517f872847fbb54590cd3bcfd77dJmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_dk6lb5",
+      "name": "Privacy",
+      "link": "https://www.bing.com/ck/a?!&&p=93512ccf1471238ea734540974c0020f01637cd737f12dfa0e618b1835c1d2e7JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1uylfjb",
+      "name": "Learn more",
+      "link": "https://www.bing.com/ck/a?!&&p=95a0b455290501851a437fe779d65786af39718e6f8497e7eb233e84ae2ef6c4JmltdHM9MTc5MDY0MDAwMA&ptn=3&ver=2&hsh=4&fclid=178b33c9-394b-6757-1d95-242a38e866f0&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 34
+    },
+    {
+      "id": "auto_1b60emo",
+      "name": "757-1d95-242a38e866f0&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "status": "draft",
+      "reason": "same_url_already_exists",
       "aiConfidence": 34
     }
   ],
