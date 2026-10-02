@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-01T09:31:08.954Z",
+  "generatedAt": "2026-10-02T09:06:32.250Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 687,
+  "checked": 693,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 664,
+  "needsReview": 670,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 687 scholarship record(s), promoted 0, expired 0, flagged 664 for review, failed 0.",
+  "explainer": "AI tracker checked 693 scholarship record(s), promoted 0, expired 0, flagged 670 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -873,6 +873,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_14lmkn9",
+      "name": "Help",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_14n4usk",
       "name": "AICTE Fellowship/Scholarships",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_16d1q8s",
-      "name": "What to Watch Right Now | Where To Stream the Best Movies",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     }
   ],
