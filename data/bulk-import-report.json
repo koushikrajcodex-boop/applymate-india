@@ -1,49 +1,49 @@
 {
-  "generatedAt": "2026-10-08T09:30:20.349Z",
+  "generatedAt": "2026-10-09T09:39:49.295Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
   "added": 3,
-  "updated": 22,
+  "updated": 32,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 25,
+  "draftCandidates": 35,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 3, refreshed 22, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
-  "feedGeneratedAt": "2026-10-08T09:29:40.187Z",
+  "explainer": "Import finished. Added 3, refreshed 32, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 35.",
+  "feedGeneratedAt": "2026-10-09T09:39:13.986Z",
   "imported": [
     {
-      "id": "auto_gvhtzi",
-      "name": "Speedtest d’Ookla – le test de vitesse de connexion global",
-      "link": "https://www.bing.com/ck/a?!&&p=b9a6f0837773688bdc0c8782789152d4ff4d118bccecc2e82eff707f2184bf00JmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=060e2cf2-0e39-6561-1d46-3b1e0f1564b2&u=a1aHR0cHM6Ly93d3cuc3BlZWR0ZXN0Lm5ldC9mcg&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_njoz2x",
-      "name": "PROJECTS | My Site 1",
-      "link": "https://www.bing.com/ck/a?!&&p=2fd6977b54479a8964e790edcbdd1956a80e52ee350e385284470e94b8338091JmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=24fc0a9c-9a0b-6bd3-314b-1d709bdd6a83&u=a1aHR0cHM6Ly93d3cucHJlY2lzaW9uZmxvd2VuZy5jb20vcHJvamVjdHM&ntb=1",
+      "id": "auto_1ksizfo",
+      "name": "Please help! NCAA 09 or 10? - Operation Sports Forums",
+      "link": "https://www.bing.com/ck/a?!&&p=d83d824320a4ae8795e496fecf55024b09de809df9236329eb820d1459568176JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=3f211f1f-4f8b-6093-203e-08f24e2761c8&u=a1aHR0cHM6Ly9mb3J1bXMub3BlcmF0aW9uc3BvcnRzLmNvbS9mb3J1bXMvZm9ydW0vYmFza2V0YmFsbC9vdGhlci1iYXNrZXRiYWxsLWdhbWVzL25jYWEtYmFza2V0YmFsbC84NjU3MzAtcGxlYXNlLWhlbHAtbmNhYS0wOS1vci0xMA&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
       "sourceTrust": "review"
     },
     {
-      "id": "auto_1y4viuo",
-      "name": "Top charts - Chrome Web Store",
-      "link": "https://www.bing.com/ck/a?!&&p=56d9713900e08ec026322f453cf92798df4dfee93cd774927939e2dc497c4837JmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=1febd597-defd-6966-3a77-c27bdf3d68c0&u=a1aHR0cHM6Ly9jaHJvbWV3ZWJzdG9yZS5nb29nbGUuY29tL3RvcC1jaGFydHMvcG9wdWxhcg&ntb=1",
+      "id": "auto_8jf0oi",
+      "name": "AI Mode",
+      "link": "http://www.bing.com/copilotsearch?q=SC+ST+OBC+post+matric+scholarship+students+India+scholarship+official+trusted+India&FORM=CSSCOP",
       "status": "draft",
       "sourcePack": "all",
-      "aiConfidence": 34,
+      "aiConfidence": 42,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_18d581n",
+      "name": "Cleveland Clinic: Every Life Deserves World Class Care",
+      "link": "https://www.bing.com/ck/a?!&&p=4166315c8ab97dd18e9b19448717d7a34451fe131ddd163ef4b43ea1606cc6baJmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=38876668-7aca-6335-024e-71857b4162c8&u=a1aHR0cHM6Ly9teS5jbGV2ZWxhbmRjbGluaWMub3JnLw&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 42,
       "sourceTrust": "review"
     }
   ],
@@ -185,41 +185,121 @@
       "aiConfidence": 56
     },
     {
-      "id": "auto_14fgt6u",
-      "name": "Home | Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=0241f9b851b5e52ea60a1dc3c1cc90fd520464b7766f2e5cc30b6d49a194c81fJmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=2c93ffea-2c9c-68b7-1128-e8062d2c698b&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
       "id": "auto_j5kpbq",
       "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
-      "link": "https://www.bing.com/ck/a?!&&p=7fd4d76dcfa5ca179a47654d7e52c5e2631b67f000adce489a8d532b779d637fJmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=0435d10a-8ee1-62a8-36fa-c6e68f75638f&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=d34d47e70cd6a93d8cf69375d1fb4659e3df3588f6de4cf11cc914c7e8d4960eJmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=36cd8abd-e546-6bdd-1c8d-9d50e4f36a3f&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
-      "id": "auto_pxn9gp",
-      "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=62a752ce1bee86f7315f771644d1d49d387bc6d740954321bba7c7ee7e386cdbJmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=3322678a-3b31-6799-0c58-70663a8f66b7&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
+      "id": "auto_xjwimt",
+      "name": "Federal **Student** Aid",
+      "link": "https://www.bing.com/ck/a?!&&p=82998d2083eaf79c9afc14a96070121b866765f2872797bd09bff88675d67eb8JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=2f2bee44-2a6e-639c-3929-f9a92b2c621f&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_1lwoa31",
-      "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=e3f788345b6edad754928281397dbf4dac828cb173668b8368a6974e7625edeaJmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=188c1e9e-394f-6eb4-3365-097238fa6f6c&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "id": "auto_pxn9gp",
+      "name": "**Telangana** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=06314014b16981c7a0736922a7399702bed28245cd93c22a538cc5244a81bee7JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=2af8c29e-3983-6842-3566-d573381a6906&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_xgg8ck",
+      "name": "rusted%20India#)[Accessibility Feedback](http://www.bing.com/search?q=SC%20ST%20OBC%20post%20matric%20scholarship%20stud",
+      "link": "http://www.bing.com/?FORM=Z9FD1",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1xfm6n7",
+      "name": "search?q=SC%20ST%20OBC%20post%20matric%20scholarship%20students%20India%20scholarship%20official%20trusted%20India) [Rew",
+      "link": "http://localhost/c204bf19f78776c25e5ce1a602bee57e",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1kbff5d",
+      "name": "All",
+      "link": "http://www.bing.com/?scope=web&FORM=HDRSC1",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_18u2g7k",
+      "name": "Web",
+      "link": "https://www.bing.com/ck/a?!&&p=23f748831ed2b926dc51b285da0fb4454c9f2c447d5dae190651f2e74f50a32aJmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=1103cd5b-6108-62a6-1498-dab660e46399&u=a1L3NlYXJjaD9xPVNDK1NUK09CQytwb3N0K21hdHJpYytzY2hvbGFyc2hpcCtzdHVkZW50cytJbmRpYStzY2hvbGFyc2hpcCtvZmZpY2lhbCt0cnVzdGVkK0luZGlhJndlYnNjcD0xJkZPUk09SERSV1ND&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_wzjenc",
+      "name": "Images",
+      "link": "https://www.bing.com/ck/a?!&&p=54aa7cf63ce8da8640fdf4ee5596a3f5e3dda0bcd2826ba764f0da00b4c947d8JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=1103cd5b-6108-62a6-1498-dab660e46399&u=a1L2ltYWdlcy9zZWFyY2g_cT1TQytTVCtPQkMrcG9zdCttYXRyaWMrc2Nob2xhcnNoaXArc3R1ZGVudHMrSW5kaWErc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZGT1JNPUhEUlNDMg&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1ihmp8a",
+      "name": "**South Carolina** - Simple English **Wikipedia**, the free encyclopedia",
+      "link": "https://www.bing.com/ck/a?!&&p=be9a846ab238fa96a304d1788fc6ec22c168c8760bbd8dfd0c45f3bef394e215JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=1103cd5b-6108-62a6-1498-dab660e46399&u=a1aHR0cHM6Ly9zaW1wbGUubS53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_gdb96k",
+      "name": "Privacy and Cookies",
+      "link": "https://www.bing.com/ck/a?!&&p=ab75d92ac349c202a32c030400770dd2d7e5c0c86b6a79319d386f2191840e4eJmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=1103cd5b-6108-62a6-1498-dab660e46399&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_14lmkn9",
+      "name": "Help",
+      "link": "https://www.bing.com/ck/a?!&&p=35d03c8a11ffb7ac64f3fa0f24787d45b93d0795ff82ddda4ae1ac5f2a3b2e40JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=1103cd5b-6108-62a6-1498-dab660e46399&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvODJkMjA3MjEtMmQ2Zi00MDEyLWExM2QtZDE5MTBjY2YyMDNm&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1ff8t6u",
+      "name": "Consumer Health Privacy",
+      "link": "https://www.bing.com/ck/a?!&&p=e015bb2461d5bf1124851ac97a38bc73def0f186bb00fcb6bc17aff63aecb2f2JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=1103cd5b-6108-62a6-1498-dab660e46399&u=a1aHR0cHM6Ly9nby5taWNyb3NvZnQuY29tL2Z3bGluay8_bGlua2lkPTIyNTk4MTQ&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uylfjb",
+      "name": "Learn more",
+      "link": "https://www.bing.com/ck/a?!&&p=e93a079cf94c7f4ca8d182823b864ec0b93f18e82e2ae68ef012bd32b64bb763JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=1103cd5b-6108-62a6-1498-dab660e46399&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_5beorr",
+      "name": "2a6-1498-dab660e46399&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "link": "http://www.bing.com/copilotsearch?q=SC%20ST%20OBC%20post%20matric%20scholarship%20students%20India%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "status": "draft",
+      "reason": "same_url_already_exists",
       "aiConfidence": 42
     },
     {
       "id": "auto_1a9dgai",
       "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=e323c532711c455d9262dced730d880fef8bb020f615a5833e8fa21626377ce9JmltdHM9MTc5MTQxNzYwMA&ptn=3&ver=2&hsh=4&fclid=14a7e826-7cfd-69c3-3219-ffca7d016890&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=6428c4a8833ab4ca3e1ca02456c3ae6c8189829c1d16641cc2da96f34e9c2fd9JmltdHM9MTc5MTUwNDAwMA&ptn=3&ver=2&hsh=4&fclid=061e36f1-c420-6690-3c46-211cc57c6789&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
