@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-09T09:43:24.921Z",
+  "generatedAt": "2026-10-10T09:08:14.999Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 709,
+  "checked": 713,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 686,
+  "needsReview": 690,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 709 scholarship record(s), promoted 0, expired 0, flagged 686 for review, failed 0.",
+  "explainer": "AI tracker checked 713 scholarship record(s), promoted 0, expired 0, flagged 690 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -783,6 +783,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_13mdhry",
+      "name": "Corporate and Institutional Banking | **Standard Chartered**",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13van45",
       "name": "Graduate School Grants",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_168klk8",
-      "name": "Over 40 Women Grants",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
