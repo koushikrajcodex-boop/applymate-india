@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-11T09:23:57.527Z",
+  "generatedAt": "2026-10-12T09:51:42.512Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 718,
+  "checked": 722,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 695,
+  "needsReview": 699,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 718 scholarship record(s), promoted 0, expired 0, flagged 695 for review, failed 0.",
+  "explainer": "AI tracker checked 722 scholarship record(s), promoted 0, expired 0, flagged 699 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -633,8 +633,28 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_11mlrez",
+      "name": "**Coppa** Osteria Rice Village | Italian **Restaurant** in **Houston**, TX",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_11r62yx",
       "name": "What Do Engineers Do? | SNHU",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_11xc79t",
+      "name": "**Girl**: Definition, Meaning, and Examples - US Dictionary",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -990,26 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_15sqtuk",
-      "name": "ST students applying for … 5. [![Image 18: Global web icon](https://th.bing.com/th/id/ODF.kaNHzd2M3b8sC9QjaNl0Ig?w=32&h=",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_15tzxzx",
-      "name": "youtube.com https://m.youtube.com › watch",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
       "deadlineDate": "2099-12-31"
     }
   ],
