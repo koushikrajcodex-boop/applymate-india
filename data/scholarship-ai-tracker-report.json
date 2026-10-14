@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-13T09:49:10.474Z",
+  "generatedAt": "2026-10-14T08:06:38.588Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 725,
+  "checked": 729,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 702,
+  "needsReview": 706,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 725 scholarship record(s), promoted 0, expired 0, flagged 702 for review, failed 0.",
+  "explainer": "AI tracker checked 729 scholarship record(s), promoted 0, expired 0, flagged 706 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -573,6 +573,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_10gtpy7",
+      "name": "Speedtest by Ookla - The Global Broadband Speed Test",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_10mrl7h",
       "name": "**Girl** Games",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_15d4mv2",
-      "name": "4MTUxNWYwN2UzZTc0ZDEz&rlid=251a356d032c1fd281515f07e3e74d13&ntb=1) * ![Image 15](https://th.bing.com/th/id/ODF.WXe4vtFZp",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
