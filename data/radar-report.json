@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-10-16T08:23:46.109Z",
-  "date": "2026-10-16",
+  "generatedAt": "2026-10-17T07:58:06.580Z",
+  "date": "2026-10-17",
   "mode": "auto-check-and-write",
   "firestore": {
     "enabled": true,
@@ -15,31 +15,31 @@
       "source": "National Scholarship Portal",
       "found": 18,
       "errors": 0,
-      "ms": 7815
+      "ms": 6395
     },
     {
       "source": "AICTE Official Site",
       "found": 1,
       "errors": 1,
-      "ms": 4894
+      "ms": 4911
     },
     {
       "source": "AP Jnanabhumi",
       "found": 1,
-      "errors": 1,
-      "ms": 10090
+      "errors": 0,
+      "ms": 966
     },
     {
       "source": "Telangana ePASS",
       "found": 9,
       "errors": 6,
-      "ms": 5609
+      "ms": 6585
     },
     {
       "source": "UGC Official Site",
       "found": 3,
       "errors": 0,
-      "ms": 4448
+      "ms": 13634
     }
   ],
   "totals": {
@@ -346,14 +346,13 @@
       "state": "andhra-pradesh",
       "deadlineDate": "",
       "decision": "skipDuplicate",
-      "confidence": 55,
+      "confidence": 65,
       "issues": [
         "Duplicate already exists: Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
         "Weak scholarship name."
       ],
       "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline.",
-        "Eligibility note is short."
+        "Missing future deadline date; draft will use placeholder deadline."
       ],
       "duplicateName": "Andhra Pradesh Pre-Matric Scholarship - Jnanabhumi",
       "draftWillUsePlaceholderDeadline": false
@@ -505,7 +504,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-10-16",
+      "deadlineDate": "2026-10-17",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -520,7 +519,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-10-16",
+      "deadlineDate": "2026-10-17",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -535,7 +534,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.bank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-10-16",
+      "deadlineDate": "2026-10-17",
       "decision": "review",
       "confidence": 78,
       "issues": [
