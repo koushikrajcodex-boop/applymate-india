@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-10-20T08:00:51.641Z",
+  "generatedAt": "2026-10-21T08:06:02.877Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 735,
+  "checked": 781,
   "active": 69,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 712,
+  "needsReview": 758,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 735 scholarship record(s), promoted 0, expired 0, flagged 712 for review, failed 0.",
+  "explainer": "AI tracker checked 781 scholarship record(s), promoted 0, expired 0, flagged 758 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -623,6 +623,26 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_10y9wgi",
+      "name": "![Image 45: TS Epass Scholarship Fresh Application 2026-27 step by step |How to Apply TS Scholarship 2026 Telugu",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_11ajjzg",
+      "name": "![Image 6: ePass",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date",
+      "aiConfidence": 90,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_11g3j99",
       "name": "minority **scholarships**",
       "action": "flag",
@@ -763,6 +783,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_13czdd1",
+      "name": "Image 52",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13f80f8",
       "name": "**Buddy4Study**",
       "action": "flag",
@@ -833,6 +863,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_13x372n",
+      "name": "Image 50",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13xvyn5",
       "name": "**SC**.GOV - Home | **South Carolina**",
       "action": "flag",
@@ -855,6 +895,16 @@
     {
       "id": "auto_145tosp",
       "name": "![Image 20: Global web icon",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 52,
+      "deadlineDate": "2099-12-31"
+    },
+    {
+      "id": "auto_1473j9",
+      "name": "![Image 48: Global web icon",
       "action": "flag",
       "statusBefore": "draft",
       "statusAfter": "draft",
@@ -960,56 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_14zt42p",
-      "name": "Students",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_155a0z3",
-      "name": "Milldale Dental Clinic | ORA Dental",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_156802e",
-      "name": "**Telangana** State Portal | Govt Services",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_156wp08",
-      "name": "Mahjong Games",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 34,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_15cn7y",
-      "name": "Scholarships - All India Council for Technical Education",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     }
   ],
