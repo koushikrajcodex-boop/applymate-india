@@ -1,110 +1,52 @@
 {
-  "generatedAt": "2026-10-23T07:50:11.024Z",
-  "generatedBy": "ApplyMate GitHub Actions auto-discovery",
-  "note": "Review before publishing. Curated portal entries are discovery drafts; search snippets can be incomplete or stale.",
-  "total": 15,
-  "curatedPortalCount": 15,
-  "searchErrorCount": 20,
+  "generatedAt": "2026-10-23T07:57:04.277Z",
+  "generatedBy": "ApplyMate Discovery v2",
+  "sourcePack": "all",
+  "sourcePackLabel": "All Packs",
+  "note": "Review before publishing. Curated portal entries are discovery drafts; web search snippets can be incomplete or stale.",
+  "total": 17,
+  "curatedPortalCount": 17,
+  "searchErrorCount": 8,
   "errors": [
     {
-      "seed": "National Scholarship Portal schemes",
-      "query": "National Scholarship Portal scholarships schemes students National any any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
+      "seed": "National scholarships",
+      "query": "student scholarship India guidelines notification",
+      "error": "HTTP 403 | HTTP 403"
     },
     {
-      "seed": "Buddy4Study scholarships",
-      "query": "Buddy4Study scholarships India students engineering degree school National any any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
+      "seed": "Engineering scholarships",
+      "query": "engineering student scholarship India AICTE corporate foundation",
+      "error": "HTTP 403 | HTTP 403"
     },
     {
-      "seed": "Vidyasaarathi scholarships",
-      "query": "Vidyasaarathi scholarships India students scheme apply National any degree engineering diploma scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Foundation For Excellence scholarship",
-      "query": "Foundation For Excellence scholarship India engineering medical students National any engineering medical degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "AICTE scholarships",
-      "query": "AICTE scholarship Pragati Saksham Swanath guidelines notification National any engineering technical scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "UGC scholarships",
-      "query": "UGC scholarship fellowship guidelines notification students National any degree pg scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "HDFC scholarships",
-      "query": "HDFC Bank scholarship ECSS students India National any school degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Tata scholarships",
-      "query": "Tata Trusts scholarship India students education National any degree pg scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Reliance Foundation scholarships",
-      "query": "Reliance Foundation scholarships India undergraduate postgraduate students National any degree pg scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Aditya Birla scholarships",
-      "query": "Aditya Birla scholarship India students National any degree management engineering law scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Andhra Pradesh scholarships",
-      "query": "Andhra Pradesh student scholarship Jnanabhumi notification Andhra Pradesh any degree engineering post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
+      "seed": "AP scholarships",
+      "query": "Andhra Pradesh Jnanabhumi scholarship students",
+      "error": "HTTP 403 | HTTP 403"
     },
     {
       "seed": "Telangana scholarships",
-      "query": "Telangana ePASS scholarship students notification Telangana any degree engineering post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
+      "query": "Telangana ePASS scholarship students",
+      "error": "HTTP 403 | HTTP 403"
     },
     {
-      "seed": "Maharashtra scholarships",
-      "query": "MahaDBT scholarship Maharashtra students post matric Maharashtra any post matric degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Karnataka scholarships",
-      "query": "Karnataka SSP scholarship students post matric Karnataka any post matric degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Rajasthan scholarships",
-      "query": "Rajasthan SJE scholarship students post matric Rajasthan any post matric degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "Delhi scholarships",
-      "query": "Delhi scholarship SC ST OBC students higher education Delhi SC ST OBC school degree scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "OBC scholarships",
-      "query": "OBC scholarship non creamy layer students India National OBC any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
-    },
-    {
-      "seed": "SC ST scholarships",
-      "query": "SC ST post matric scholarship students India National SC ST post matric scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
+      "seed": "SC ST OBC scholarships",
+      "query": "SC ST OBC post matric scholarship students India",
+      "error": "HTTP 403 | HTTP 403"
     },
     {
       "seed": "Minority scholarships",
-      "query": "minority scholarship students India scheme apply National minority any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
+      "query": "minority scholarship students India scheme apply",
+      "error": "HTTP 403 | HTTP 403"
     },
     {
-      "seed": "EWS scholarships",
-      "query": "EWS scholarship students India education National EWS any scholarship guidelines notification scheme site:gov.in OR site:nic.in OR site:ac.in OR site:scholarships.gov.in OR site:aicte-india.org OR site:ugc.gov.in OR site:buddy4study.com OR site:vidyasaarathi.co.in OR site:ffe.org",
-      "error": "Jina Search: HTTP 401 | Jina Google mirror: HTTP 403 | Jina Bing mirror: HTTP 403"
+      "seed": "Girls scholarships",
+      "query": "girl students scholarship India engineering school",
+      "error": "HTTP 403 | HTTP 403"
+    },
+    {
+      "seed": "Private trusted scholarships",
+      "query": "Buddy4Study Vidyasaarathi Foundation For Excellence scholarships India",
+      "error": "HTTP 403 | HTTP 403"
     }
   ],
   "records": [
@@ -112,39 +54,135 @@
       "id": "auto_11zirw5",
       "title": "National Scholarship Portal",
       "url": "https://scholarships.gov.in/",
-      "snippet": "Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scholarship scheme listings, OTR, applications, and status checks.",
-      "score": 92,
+      "snippet": "Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scheme listings, OTR, applications, and status checks.",
+      "score": 96,
       "official": true,
+      "trustedPortal": false,
       "pdf": false,
       "scholarshipy": true,
       "seedName": "National Scholarship Portal",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "any",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.664Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "national",
+        "categories"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
-      "id": "auto_j9xshc",
-      "title": "AICTE Pragati, Saksham and Swanath Scholarships",
+      "id": "auto_s8y6sq",
+      "title": "AICTE Student Development Schemes",
       "url": "https://www.aicte-india.org/schemes/students-development-schemes",
-      "snippet": "AICTE student development schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.",
-      "score": 92,
+      "snippet": "AICTE student schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.",
+      "score": 94,
       "official": true,
+      "trustedPortal": false,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "AICTE",
+      "seedName": "AICTE Student Development Schemes",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "engineering technical",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.664Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "national",
+        "engineering",
+        "girls"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
+    },
+    {
+      "id": "auto_5lcnh3",
+      "title": "AP Jnanabhumi Scholarships",
+      "url": "https://jnanabhumi.ap.gov.in/",
+      "snippet": "Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.",
+      "score": 94,
+      "official": true,
+      "trustedPortal": false,
+      "pdf": false,
+      "scholarshipy": true,
+      "seedName": "AP Jnanabhumi Scholarships",
+      "seedState": "Andhra Pradesh",
+      "seedCategory": "SC ST BC minority EBC",
+      "seedCourse": "post matric degree engineering",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "ap_tel",
+        "categories",
+        "engineering"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
+      "status": "review",
+      "suggestedAction": "verify_source_then_import_draft"
+    },
+    {
+      "id": "auto_1wb3996",
+      "title": "Telangana ePASS Scholarships",
+      "url": "https://telanganaepass.cgg.gov.in/",
+      "snippet": "Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify application windows and eligibility on the portal.",
+      "score": 94,
+      "official": true,
+      "trustedPortal": false,
+      "pdf": false,
+      "scholarshipy": true,
+      "seedName": "Telangana ePASS Scholarships",
+      "seedState": "Telangana",
+      "seedCategory": "SC ST BC EBC minority",
+      "seedCourse": "post matric degree engineering",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "ap_tel",
+        "categories",
+        "engineering"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
+      "status": "review",
+      "suggestedAction": "verify_source_then_import_draft"
+    },
+    {
+      "id": "auto_josr8v",
+      "title": "Pragati Scholarship for Girl Students",
+      "url": "https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions",
+      "snippet": "AICTE Pragati is intended for girl students in technical education. Verify latest application route and eligibility on AICTE/NSP.",
+      "score": 94,
+      "official": true,
+      "trustedPortal": false,
+      "pdf": false,
+      "scholarshipy": true,
+      "seedName": "Pragati Scholarship for Girl Students",
+      "seedState": "National",
+      "seedCategory": "girls",
+      "seedCourse": "engineering technical diploma degree",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "girls",
+        "engineering",
+        "national"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
+      "status": "review",
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_lvt0g1",
@@ -153,245 +191,314 @@
       "snippet": "UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.",
       "score": 92,
       "official": true,
+      "trustedPortal": false,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "UGC",
+      "seedName": "UGC Scholarships and Fellowships",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "degree pg",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.664Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "national"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
-    },
-    {
-      "id": "auto_5lcnh3",
-      "title": "AP Jnanabhumi Scholarships",
-      "url": "https://jnanabhumi.ap.gov.in/",
-      "snippet": "Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.",
-      "score": 92,
-      "official": true,
-      "pdf": false,
-      "scholarshipy": true,
-      "seedName": "AP Jnanabhumi",
-      "seedState": "Andhra Pradesh",
-      "seedCategory": "SC ST BC minority EBC",
-      "seedCourse": "post matric degree engineering",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
-      "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
-    },
-    {
-      "id": "auto_1wb3996",
-      "title": "Telangana ePASS Scholarships",
-      "url": "https://telanganaepass.cgg.gov.in/",
-      "snippet": "Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify current application windows and eligibility on the portal.",
-      "score": 92,
-      "official": true,
-      "pdf": false,
-      "scholarshipy": true,
-      "seedName": "Telangana ePASS",
-      "seedState": "Telangana",
-      "seedCategory": "SC ST BC EBC minority",
-      "seedCourse": "post matric degree engineering",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
-      "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_hgtbns",
       "title": "MahaDBT Scholarship Portal",
       "url": "https://mahadbt.maharashtra.gov.in/",
       "snippet": "Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.",
-      "score": 92,
+      "score": 90,
       "official": true,
+      "trustedPortal": false,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "MahaDBT",
+      "seedName": "MahaDBT Scholarship Portal",
       "seedState": "Maharashtra",
       "seedCategory": "any",
       "seedCourse": "post matric degree",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "categories",
+        "national"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_whtgu9",
       "title": "Karnataka State Scholarship Portal",
       "url": "https://ssp.postmatric.karnataka.gov.in/",
       "snippet": "Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.",
-      "score": 92,
+      "score": 90,
       "official": true,
+      "trustedPortal": false,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Karnataka SSP",
+      "seedName": "Karnataka State Scholarship Portal",
       "seedState": "Karnataka",
       "seedCategory": "SC ST OBC minority",
       "seedCourse": "post matric degree",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "categories",
+        "engineering"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_m45dvf",
       "title": "Rajasthan SJE Scholarship Portal",
       "url": "https://sjmsnew.rajasthan.gov.in/",
       "snippet": "Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.",
-      "score": 92,
+      "score": 88,
       "official": true,
+      "trustedPortal": false,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Rajasthan SJE",
+      "seedName": "Rajasthan SJE Scholarship Portal",
       "seedState": "Rajasthan",
       "seedCategory": "SC ST OBC EWS",
       "seedCourse": "post matric degree",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "categories"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
+    },
+    {
+      "id": "auto_d5a2l7",
+      "title": "CBSE Single Girl Child Scholarship",
+      "url": "https://www.cbse.gov.in/",
+      "snippet": "CBSE scholarship information for eligible single girl child students. Verify current notification and application window on CBSE.",
+      "score": 88,
+      "official": true,
+      "trustedPortal": false,
+      "pdf": false,
+      "scholarshipy": true,
+      "seedName": "CBSE Single Girl Child Scholarship",
+      "seedState": "National",
+      "seedCategory": "girls",
+      "seedCourse": "school",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "girls",
+        "national"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
+      "status": "review",
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_37fmhx",
       "title": "Buddy4Study Scholarship Listings",
       "url": "https://www.buddy4study.com/scholarships",
       "snippet": "Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.",
-      "score": 76,
+      "score": 82,
       "official": false,
+      "trustedPortal": true,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Buddy4Study",
+      "seedName": "Buddy4Study Scholarship Listings",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "school degree engineering medical pg",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "private_trusted",
+        "national",
+        "engineering",
+        "girls",
+        "categories"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_qqgxma",
       "title": "Vidyasaarathi Scholarship Portal",
       "url": "https://www.vidyasaarathi.co.in/Vidyasaarathi/",
       "snippet": "NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.",
-      "score": 76,
+      "score": 82,
       "official": false,
+      "trustedPortal": true,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Vidyasaarathi",
+      "seedName": "Vidyasaarathi Scholarship Portal",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "degree diploma engineering",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "private_trusted",
+        "engineering",
+        "national"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_191zpay",
       "title": "Foundation For Excellence Scholarship",
       "url": "https://ffe.org/scholarships/",
       "snippet": "Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.",
-      "score": 76,
+      "score": 80,
       "official": false,
+      "trustedPortal": true,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Foundation For Excellence",
+      "seedName": "Foundation For Excellence Scholarship",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "engineering medical professional",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "private_trusted",
+        "engineering"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_x1h1cu",
       "title": "HDFC Bank Parivartan ECSS Scholarship",
       "url": "https://www.hdfcbank.com/personal/resources/learning-centre/pay/hdfc-bank-parivartans-educational-crisis-scholarship-support-ecss",
       "snippet": "HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.",
-      "score": 76,
+      "score": 80,
       "official": false,
+      "trustedPortal": true,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "HDFC Bank",
+      "seedName": "HDFC Bank Parivartan ECSS Scholarship",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "school degree pg",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "private_trusted",
+        "national",
+        "categories"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_1s7olix",
       "title": "Reliance Foundation Scholarships",
       "url": "https://scholarships.reliancefoundation.org/",
       "snippet": "Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.",
-      "score": 76,
+      "score": 80,
       "official": false,
+      "trustedPortal": true,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Reliance Foundation",
+      "seedName": "Reliance Foundation Scholarships",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "degree pg",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "private_trusted",
+        "national",
+        "engineering"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_1awac85",
       "title": "Tata Trusts Education Grants",
       "url": "https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants",
       "snippet": "Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.",
-      "score": 76,
+      "score": 78,
       "official": false,
+      "trustedPortal": true,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Tata Trusts",
+      "seedName": "Tata Trusts Education Grants",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "degree pg",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "private_trusted",
+        "national"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     },
     {
       "id": "auto_o1goxk",
       "title": "Aditya Birla Scholarship Programme",
       "url": "https://www.adityabirlascholars.net/",
       "snippet": "Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.",
-      "score": 76,
+      "score": 78,
       "official": false,
+      "trustedPortal": true,
       "pdf": false,
       "scholarshipy": true,
-      "seedName": "Aditya Birla Scholars",
+      "seedName": "Aditya Birla Scholarship Programme",
       "seedState": "National",
       "seedCategory": "any",
       "seedCourse": "engineering management law",
-      "searchQuery": "curated trusted scholarship portal",
-      "searchSource": "curated_trusted_portal",
-      "discoveredAt": "2026-10-23T07:50:05.665Z",
+      "sourcePack": "all",
+      "packs": [
+        "all",
+        "private_trusted",
+        "engineering"
+      ],
+      "searchQuery": "curated source pack",
+      "searchSource": "curated_source_pack",
+      "discoveredAt": "2026-10-23T07:57:04.277Z",
       "status": "review",
-      "suggestedAction": "verify_official_source_then_import_draft"
+      "suggestedAction": "verify_source_then_import_draft"
     }
   ]
 }
