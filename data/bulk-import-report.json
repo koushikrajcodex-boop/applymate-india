@@ -1,49 +1,31 @@
 {
-  "generatedAt": "2026-10-24T07:37:45.983Z",
+  "generatedAt": "2026-10-25T07:50:24.415Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 3,
-  "updated": 38,
+  "added": 1,
+  "updated": 39,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 41,
+  "draftCandidates": 40,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 3, refreshed 38, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 41.",
-  "feedGeneratedAt": "2026-10-24T07:36:30.170Z",
+  "explainer": "Import finished. Added 1, refreshed 39, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 40.",
+  "feedGeneratedAt": "2026-10-25T07:49:14.101Z",
   "imported": [
     {
-      "id": "auto_xd2av7",
-      "name": "Login - **Infinite Campus**",
-      "link": "https://www.bing.com/ck/a?!&&p=c8a321f65e587ed7f925bf55d1f4734111ec95d12a98469c5ff76eb2a3b88121JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=36c35331-a3a6-640e-3a60-44cda2a96505&u=a1aHR0cHM6Ly93d3cuaW5maW5pdGVjYW1wdXMuY29tL2xvZ2lu&ntb=1",
+      "id": "auto_1ltxyk0",
+      "name": "**Hospitals** | Hyderabad District, Government of Telangana | India",
+      "link": "https://www.bing.com/ck/a?!&&p=11d5ae2c5917366e43348e98c0131d90276b0a32b3e8b49fddad3dec9a2042c6JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=37f2864f-f18f-6877-149d-91b2f0d66929&u=a1aHR0cHM6Ly9oeWRlcmFiYWQudGVsYW5nYW5hLmdvdi5pbi9ob3NwaXRhbHMv&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_c8ttqj",
-      "name": "**GIRL** Definition & Meaning | **Dictionary**.com",
-      "link": "https://www.bing.com/ck/a?!&&p=a1aad7b3ffb86a05dc795656debec97264d8452b24f773db1992d2f358e444daJmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=1cda0ba1-942b-6be1-23db-1c5d95ff6a37&u=a1aHR0cHM6Ly93d3cuZGljdGlvbmFyeS5jb20vYnJvd3NlL2dpcmw&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_zvnw9t",
-      "name": "R61/T61 pickups - Gibson USA - Gibson Brands Forums",
-      "link": "https://www.bing.com/ck/a?!&&p=8a8204ecb1ba6e48be03d4e5487dd1f7edd926f6ed466f4965e1654c8b1a488bJmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=306fb961-3eef-625b-2be3-ae9d3fa863fd&u=a1aHR0cHM6Ly9mb3J1bS5naWJzb24uY29tL3RvcGljLzE0MjcxNS1yNjF0NjEtcGlja3Vwcy8&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 34,
       "sourceTrust": "review"
     }
   ],
@@ -187,7 +169,7 @@
     {
       "id": "auto_1r08dzp",
       "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=31670126853af2331a78e78b164eb6d565b0b4057fab1b0a0ab3870c07d3edd7JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=2f831d2e-0576-6387-0697-0ad204a0620d&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=1a1a95625e039bdf4cc0c8bacfebbdf2949277f1d8e60ab7c0a5eab04bf4c9baJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=226bd00f-818c-66fa-2632-c7f280ab6789&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
@@ -195,46 +177,54 @@
     {
       "id": "auto_j5kpbq",
       "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
-      "link": "https://www.bing.com/ck/a?!&&p=4683023564faac034e667c159fd267b4e7fab55e38d9cabe95bce0f8d45119bdJmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=27397791-a576-6216-1093-606da431632e&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=2c901c302ae341daf2ab6259e902430c0610ecd585ba96c0f1da2b8eea177c82JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=1639c5af-cb44-61f6-0885-d252ca1c6087&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
-      "id": "auto_1ewimyc",
-      "name": "Flights",
-      "link": "https://www.bing.com/ck/a?!&&p=d4ff07bf07dc5c99fae9d1253bd8de2c7ba36b111b648164697ba8f073f936c5JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=306fb961-3eef-625b-2be3-ae9d3fa863fd&u=a1L3RyYXZlbC9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmbT1mbGlnaHRzJkZPUk09RkJTQ09Q&ntb=1",
+      "id": "auto_i64p2h",
+      "name": "Scholarships 2026 - **Indian Students**, National and Study Abroad",
+      "link": "https://www.bing.com/ck/a?!&&p=e9206f7ae2ae2c6469f697447870fbee4d21caf722ca4a60d8b96f7203908d50JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=30c037fd-9c9e-61de-0265-20009db9606f&u=a1aHR0cHM6Ly93d3cuYnVkZHk0c3R1ZHkuY29tL3NjaG9sYXJzaGlwcw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_1kq32lj",
+      "name": "Scholarships for indian students",
+      "link": "https://www.bing.com/ck/a?!&&p=64ec5d73ad405e02aba84716dc81d5779fffba95cc236f4f52f5a48fb20af23aJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=30c037fd-9c9e-61de-0265-20009db9606f&u=a1aHR0cHM6Ly9hcHAuYnVkZHk0c3R1ZHkuY29tLw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_tl6f94",
+      "name": "Live Scholarship Applications 2026-27 – Apply Online Now",
+      "link": "https://www.bing.com/ck/a?!&&p=124efdf85793f448e2014ed97ecb2d032a21e1150f5c7e9e837eb185cbdd13ceJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=30c037fd-9c9e-61de-0265-20009db9606f&u=a1aHR0cHM6Ly93d3cuYnVkZHk0c3R1ZHkuY29tL29ubGluZS1hcHBsaWNhdGlvbi1mb3Jt&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_8o1h4w",
+      "name": "Scholarship portal for Indian students - **Buddy4Study**",
+      "link": "https://www.bing.com/ck/a?!&&p=8f591723b611cde4cd69451c9c4539bfc93dc02356086de63cd4b91da5144e87JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=30c037fd-9c9e-61de-0265-20009db9606f&u=a1aHR0cHM6Ly93d3cuYnVkZHk0c3R1ZHkuY29tL2xvZ2lu&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_1y6tjmd",
+      "name": "**Buddy4Study** - Scholarship Registration and Login",
+      "link": "https://www.bing.com/ck/a?!&&p=810627fa8e26942bfda886d7f6afc6a45965441da02d85cbd5120c0235d3b794JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=30c037fd-9c9e-61de-0265-20009db9606f&u=a1aHR0cHM6Ly93d3cuYnVkZHk0c3R1ZHkuY29tL3JlZ2lzdGVy&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 44
     },
     {
-      "id": "auto_12dxzsv",
-      "name": "**Andhra Pradesh** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=5f5a99e1bc0785aacf1a63cf60404fbc2d5ead20b8504bea7ab6fe3bfdcf1e91JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=3d0b02b9-ca88-664b-36e3-1545cb5067ad&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQW5kaHJhX1ByYWRlc2g&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_pxn9gp",
-      "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=881999f498a2d1419e5d5d28b14365e95175d0d63858e93a0134814512a0c2d6JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=02696051-a85a-6936-09bb-77ada92c6813&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_1lwoa31",
-      "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=b35d55231d36b55d3643d7835db9595e9534ed6b49be4161e85ee37430dac216JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=2fe096e7-7acc-6398-2a2c-811b7b206207&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Tb3V0aF9DYXJvbGluYQ&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
       "id": "auto_xgg8ck",
-      "name": "0trusted%20India#)[Accessibility Feedback](http://www.bing.com/search?q=girl%20students%20scholarship%20India%20engineer",
+      "name": "l%20trusted%20India#)[Accessibility Feedback](http://www.bing.com/search?q=student%20scholarship%20India%20guidelines%20",
       "link": "http://www.bing.com/?FORM=Z9FD1",
       "status": "draft",
       "reason": "same_url_already_exists",
@@ -242,7 +232,7 @@
     },
     {
       "id": "auto_1xfm6n7",
-      "name": "m/search?q=girl%20students%20scholarship%20India%20engineering%20school%20scholarship%20official%20trusted%20India) [Rew",
+      "name": ".com/search?q=student%20scholarship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20India) [Rew",
       "link": "http://localhost/c204bf19f78776c25e5ce1a602bee57e",
       "status": "draft",
       "reason": "same_url_already_exists",
@@ -259,7 +249,7 @@
     {
       "id": "auto_18u2g7k",
       "name": "Web",
-      "link": "https://www.bing.com/ck/a?!&&p=48d7274414f40f7d034e2913923d557011c8ba0d8b56132d14f0d0b67811e7c7JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=1cda0ba1-942b-6be1-23db-1c5d95ff6a37&u=a1L3NlYXJjaD9xPWdpcmwrc3R1ZGVudHMrc2Nob2xhcnNoaXArSW5kaWErZW5naW5lZXJpbmcrc2Nob29sK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmd2Vic2NwPTEmRk9STT1IRFJXU0M&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=a36ae795d56bccc9443567adcf0a1f4e8ab9f8f26c8fbd9154a071be59dc945bJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=1fc69584-76c2-6cc7-2d86-827977136d05&u=a1L3NlYXJjaD9xPXN0dWRlbnQrc2Nob2xhcnNoaXArSW5kaWErZ3VpZGVsaW5lcytub3RpZmljYXRpb24rc2Nob2xhcnNoaXArb2ZmaWNpYWwrdHJ1c3RlZCtJbmRpYSZ3ZWJzY3A9MSZGT1JNPUhEUldTQw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -267,7 +257,7 @@
     {
       "id": "auto_8jf0oi",
       "name": "AI Mode",
-      "link": "http://www.bing.com/copilotsearch?q=girl+students+scholarship+India+engineering+school+scholarship+official+trusted+India&FORM=CSSCOP",
+      "link": "http://www.bing.com/copilotsearch?q=student+scholarship+India+guidelines+notification+scholarship+official+trusted+India&FORM=CSSCOP",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -275,7 +265,15 @@
     {
       "id": "auto_wzjenc",
       "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=86d9cf4d19dc595fc13ec7fca4755f1700e4346d78189f6c19a55232475dc9b1JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=1cda0ba1-942b-6be1-23db-1c5d95ff6a37&u=a1L2ltYWdlcy9zZWFyY2g_cT1naXJsK3N0dWRlbnRzK3NjaG9sYXJzaGlwK0luZGlhK2VuZ2luZWVyaW5nK3NjaG9vbCtzY2hvbGFyc2hpcCtvZmZpY2lhbCt0cnVzdGVkK0luZGlhJkZPUk09SERSU0My&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=695ece2cea23ead8c949726d11cdaebc0126d95ab597c41c68919b1c39aac76fJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=1fc69584-76c2-6cc7-2d86-827977136d05&u=a1L2ltYWdlcy9zZWFyY2g_cT1zdHVkZW50K3NjaG9sYXJzaGlwK0luZGlhK2d1aWRlbGluZXMrbm90aWZpY2F0aW9uK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=f030942a06fff240e46ba616edc13adc3f79650a629d3f366b49b42eeb21da1cJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=1fc69584-76c2-6cc7-2d86-827977136d05&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -283,7 +281,7 @@
     {
       "id": "auto_dk6lb5",
       "name": "Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=c5e3a4c50ed9466d35c396bd8c61083f7aa6e0793ddf419a5fbddbf14be59014JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=1cda0ba1-942b-6be1-23db-1c5d95ff6a37&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=5f678aa408fe2c69f17eb491fa59685b9af843e542a05c72f7fc68320a3e9f99JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=1fc69584-76c2-6cc7-2d86-827977136d05&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -291,65 +289,57 @@
     {
       "id": "auto_1uylfjb",
       "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=ff9b1352b79fd84ff6d8b69880f3eec61e7f311b6af3b322adf4fbddaf298367JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=1cda0ba1-942b-6be1-23db-1c5d95ff6a37&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=29948a094f3997f11f60cab7bde71d7ba9e3c7a5bfb87bfa4c5ab77b0fedb0c5JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=1fc69584-76c2-6cc7-2d86-827977136d05&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_jsa7wx",
-      "name": "be1-23db-1c5d95ff6a37&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=girl%20students%20scholarship%20India%20engineering%20school%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "id": "auto_1h9zfcj",
+      "name": "cc7-2d86-827977136d05&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
+      "link": "http://www.bing.com/copilotsearch?q=student%20scholarship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20India&form=CSBSBX",
       "status": "draft",
       "reason": "same_url_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_8jf0oi",
-      "name": "AI Mode",
-      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP",
+      "id": "auto_pxn9gp",
+      "name": "**Telangana** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=f342c0f496a230892205b6ac2678cd1455315718ec87d9688f58ac0b2230efafJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=2ea03e88-24b1-63ec-15d5-297525c5621e&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
     },
     {
-      "id": "auto_wzjenc",
-      "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=e3daef493a47b35ed373f92e19b02693172c505a6cb4ccd3eb6891189e81790cJmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=306fb961-3eef-625b-2be3-ae9d3fa863fd&u=a1L2ltYWdlcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
+      "id": "auto_1uc0we",
+      "name": "Some results have been removed",
+      "link": "https://www.bing.com/ck/a?!&&p=4763011bcea08acab16c75e12eb0036108d3c1b7d2ee9326f9db81b37603978bJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=2ea03e88-24b1-63ec-15d5-297525c5621e&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9NjE3MzUw&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
     },
     {
-      "id": "auto_8w5jnm",
-      "name": "![Image 2: Global web icon",
-      "link": "https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=90&pcl=fffffa&o=6&pid=1.2",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_dk6lb5",
-      "name": "Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=d5b69de3f7d2d666be75e36a8c6264f0577653cda07ade085ffa39bda1e22096JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=306fb961-3eef-625b-2be3-ae9d3fa863fd&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "id": "auto_13xvyn5",
+      "name": "**SC**.GOV - Home | **South Carolina**",
+      "link": "https://www.bing.com/ck/a?!&&p=8f038faf231d2eca934e2fcf3dad007d8bb18db7df625643dc3ac7b6feeebfacJmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=11e8c40d-ad30-6fd3-009c-d3f0ac9e6ee1&u=a1aHR0cHM6Ly9zYy5nb3Yv&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
     },
     {
-      "id": "auto_1uylfjb",
-      "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=131357e87fadf0745a2b56a8ed85330c3946239398fba45193a0f6b27748d124JmltdHM9MTc5MjgwMDAwMA&ptn=3&ver=2&hsh=4&fclid=306fb961-3eef-625b-2be3-ae9d3fa863fd&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
+      "id": "auto_1a9dgai",
+      "name": "**Girl** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=69d9fa40d6e099fe04d7bd45405dae0eef9324ec5989c8985f69f9d6fa173000JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=1cdeff46-20ff-6679-1c48-e8bb210f67a0&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
+      "aiConfidence": 42
     },
     {
-      "id": "auto_1b60emo",
-      "name": "25b-2be3-ae9d3fa863fd&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India&form=CSBSBX",
+      "id": "auto_fl6zjk",
+      "name": "Login - **Buddy4Study**",
+      "link": "https://www.bing.com/ck/a?!&&p=b1f7f7c62202ff33d527210148933259c653dc43124ef2c1cb2bb7419dfc7047JmltdHM9MTc5Mjg4NjQwMA&ptn=3&ver=2&hsh=4&fclid=30c037fd-9c9e-61de-0265-20009db9606f&u=a1aHR0cHM6Ly93d3cuYnVkZHk0c3R1ZHkuY29tL3FuYS9sb2dpbg&ntb=1",
       "status": "draft",
-      "reason": "same_url_already_exists",
+      "reason": "same_name_already_exists",
       "aiConfidence": 34
     }
   ],
