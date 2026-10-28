@@ -1,40 +1,31 @@
 {
-  "generatedAt": "2026-10-27T08:24:18.154Z",
+  "generatedAt": "2026-10-28T09:00:25.527Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 2,
-  "updated": 33,
+  "added": 1,
+  "updated": 24,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 35,
+  "draftCandidates": 25,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 2, refreshed 33, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 35.",
-  "feedGeneratedAt": "2026-10-27T08:23:38.693Z",
+  "explainer": "Import finished. Added 1, refreshed 24, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
+  "feedGeneratedAt": "2026-10-28T09:00:02.568Z",
   "imported": [
     {
-      "id": "auto_1wtu9cl",
-      "name": "Fictionally Unhinged",
-      "link": "https://www.bing.com/ck/a?!&&p=e6444955a4aefac6c5f80db9d98b0e4af5342b128caba3d3a24817e9825e8b28JmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=2e122e96-372f-601e-0a9c-3969364c610b&u=a1aHR0cHM6Ly9maWN0aW9uYWxseXVuaGluZ2VkLm15c2hvcGlmeS5jb20v&ntb=1",
+      "id": "auto_bgm5vk",
+      "name": "**Seahawks Standings** | **Seattle Seahawks** – **seahawks.com**",
+      "link": "https://www.bing.com/ck/a?!&&p=62dc863969bc78455ba882538cd2b7ca153bb094536e28a1abe5cb246fd7c0f5JmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=20cd8bd4-4ad7-61be-3c48-93d44b256087&u=a1aHR0cHM6Ly93d3cuc2VhaGF3a3MuY29tL3RlYW0vc3RhbmRpbmdzLw&ntb=1",
       "status": "draft",
       "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_zkxd2c",
-      "name": "Get started with **Google Maps**",
-      "link": "https://www.bing.com/ck/a?!&&p=f04d579caffba5be159d4c93a0156a0c689b5bb1bfa5a06f78b8f34c3e0f50fdJmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0f77121f-2ebf-63fc-1aeb-05e02f3362a4&u=a1aHR0cHM6Ly9zdXBwb3J0Lmdvb2dsZS5jb20vbWFwcy9hbnN3ZXIvMTQ0MzQ5P2hsPWVuJmNvPUdFTklFLlBsYXRmb3JtJTNEQW5kcm9pZA&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 34,
+      "aiConfidence": 42,
       "sourceTrust": "review"
     }
   ],
@@ -176,25 +167,25 @@
       "aiConfidence": 56
     },
     {
+      "id": "auto_1r08dzp",
+      "name": "**Engineering** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=610cf2fa2e415121e797bfdbddfac1a5876ff95fc3f8b530b29eff19d3a06abfJmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=3a810943-6245-6548-1ea0-114363b764e4&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_j5kpbq",
+      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
+      "link": "https://www.bing.com/ck/a?!&&p=c6f949390c664da18cab9e2b8022832b6c1e8dc537a8a69aee40b603033ed399JmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=30bd3ec6-f6b7-64d6-28db-26c6f7556584&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
       "id": "auto_xjwimt",
       "name": "Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=f9b2804f18830e758eb3722d0115f20d08829722ef0e266e34d087369d84bff7JmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=16aa1c11-1681-6147-0843-0bee17646077&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_1r08dzp",
-      "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=23ffc893bf20c283fc5e2adbd8ab345b1fc4c9f6fc35ead93e5d9356d4a68d15JmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=08769c81-a4e1-65c2-3023-8b7ea57f6448&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_12dxzsv",
-      "name": "**Andhra Pradesh** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=a34c0a6bcba72d671dc561aa7c33bc7e309af7fe7e8542022b95f31fe682ab9cJmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=3df9b237-def1-6a5c-0c42-a5c8df3c6bd9&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9BbmRocmFfUHJhZGVzaA&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=9d77272f4152c9c21931cb094ecd4af9ff84b4e6451c5e0c0534564fc5175620JmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=364a46dd-9f2f-63d1-3895-5edd9eff62ad&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -202,7 +193,7 @@
     {
       "id": "auto_pxn9gp",
       "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=629088f1dbb4bffdf2a6beb0af36832063e3161cba65ec8a5243ee9b8aa11230JmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=226afb9f-b6bf-6060-0519-ec60b7b1617b&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=77b8e84ba1bb7972f70b45f89b980d93ec44a044cc8ab2676cc845a1ffc3bd53JmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=3ce90392-b595-620b-042a-1b92b4306320&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -210,7 +201,7 @@
     {
       "id": "auto_1lwoa31",
       "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=478a42cf52050b229ba6901946ab01152d0b5ef504a56305c1fc0949e3b27f52JmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=117df223-ce14-64c2-216a-e5dccf3b65fb&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=172de990bc40e95632ddb35f887b10037182ffd5abf527e98870ce0b620fcd48JmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=3930515e-3bae-6b8e-1d46-495e3a0f6ac1&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -218,89 +209,17 @@
     {
       "id": "auto_1a9dgai",
       "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=6dd8bff757f5e518ad7599d1233a715479620052b84ce800afb09fbf958ff7f2JmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=34c49311-2c62-61ab-200f-84ee2de96013&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=a08c5a799b7151e03072121d9f7f30e388fceb7a1cf4c7809e876b194ca40e1cJmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=31b324cd-6226-6918-37ff-3ccd635d68dd&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_xgg8ck",
-      "name": "essibility Feedback](http://www.bing.com/search?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholars",
-      "link": "http://www.bing.com/?FORM=Z9FD1",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_1xfm6n7",
-      "name": "%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India) [Rew",
-      "link": "http://localhost/c204bf19f78776c25e5ce1a602bee57e",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_1kbff5d",
-      "name": "All",
-      "link": "http://www.bing.com/?scope=web&FORM=HDRSC1",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_8jf0oi",
-      "name": "AI Mode",
-      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study+Vidyasaarathi+Foundation+For+Excellence+scholarships+India+scholarship+official+trusted+India&FORM=CSSCOP",
+      "id": "auto_1g2sy2r",
+      "name": "**Microsoft** - Official Home Page",
+      "link": "https://www.bing.com/ck/a?!&&p=bbfe4223f047da8a6fe9c3ed36db5ba17209684e4f6291ca16663036360ce0a9JmltdHM9MTc5MzE0NTYwMA&ptn=3&ver=2&hsh=4&fclid=2439d8a6-2ee0-6c6a-1e14-c0a62fb36df9&u=a1aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy8_bXNvY2tpZD0yNDM5ZDhhNjJlZTA2YzZhMWUxNGMwYTYyZmIzNmRmOQ&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_wzjenc",
-      "name": "Images",
-      "link": "https://www.bing.com/ck/a?!&&p=b81375c058346dbd29ee7f506419a01ae7a9d9a1135456c6824c71ff83f5271bJmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0f77121f-2ebf-63fc-1aeb-05e02f3362a4&u=a1L2ltYWdlcy9zZWFyY2g_cT1CdWRkeTRTdHVkeStWaWR5YXNhYXJhdGhpK0ZvdW5kYXRpb24rRm9yK0V4Y2VsbGVuY2Urc2Nob2xhcnNoaXBzK0luZGlhK3NjaG9sYXJzaGlwK29mZmljaWFsK3RydXN0ZWQrSW5kaWEmRk9STT1IRFJTQzI&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_gdb96k",
-      "name": "Privacy and Cookies",
-      "link": "https://www.bing.com/ck/a?!&&p=fa2a525ed26895360eefc888b039f12e8b3780f7b5f02d0330760be751a8f10aJmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0f77121f-2ebf-63fc-1aeb-05e02f3362a4&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_14lmkn9",
-      "name": "Help",
-      "link": "https://www.bing.com/ck/a?!&&p=9f90626f36f291ca325b58a17747b2e8748de9df8c621ccd83d58e839c8f398eJmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0f77121f-2ebf-63fc-1aeb-05e02f3362a4&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvODJkMjA3MjEtMmQ2Zi00MDEyLWExM2QtZDE5MTBjY2YyMDNm&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_1ff8t6u",
-      "name": "Consumer Health Privacy",
-      "link": "https://www.bing.com/ck/a?!&&p=3670ac7d54b8305a08f06ea991c69a8da849f204dbe39a85a3f499ead977f04bJmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0f77121f-2ebf-63fc-1aeb-05e02f3362a4&u=a1aHR0cHM6Ly9nby5taWNyb3NvZnQuY29tL2Z3bGluay8_bGlua2lkPTIyNTk4MTQ&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_1uylfjb",
-      "name": "Learn more",
-      "link": "https://www.bing.com/ck/a?!&&p=1f79f092eb704e41280e2c98c3b99a0e26a3d3e11e359314d2008b911be4271bJmltdHM9MTc5MzA1OTIwMA&ptn=3&ver=2&hsh=4&fclid=0f77121f-2ebf-63fc-1aeb-05e02f3362a4&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 34
-    },
-    {
-      "id": "auto_1b60emo",
-      "name": "3fc-1aeb-05e02f3362a4&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZD",
-      "link": "http://www.bing.com/copilotsearch?q=Buddy4Study%20Vidyasaarathi%20Foundation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India&form=CSBSBX",
-      "status": "draft",
-      "reason": "same_url_already_exists",
       "aiConfidence": 34
     }
   ],
