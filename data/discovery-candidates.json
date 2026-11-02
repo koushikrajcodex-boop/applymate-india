@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-01T10:43:15.262Z",
+  "generatedAt": "2026-11-02T11:32:28.019Z",
   "candidates": [
     {
       "name": " Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
@@ -457,11 +457,45 @@
       "draftWillUsePlaceholderDeadline": false
     },
     {
+      "name": "SAKSHAM",
+      "sourceName": "UGC Official Site",
+      "sourceUrl": "https://saksham.ugc.ac.in/",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-02-07",
+      "decision": "skipExpired",
+      "confidence": 62,
+      "issues": [
+        "Source is not official or not trusted."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
+      "name": "UGC Fellowship and Research Grants",
+      "sourceName": "UGC Official Site",
+      "sourceUrl": "https://frg.ugc.ac.in/",
+      "state": "andhra-pradesh",
+      "deadlineDate": "2025-02-07",
+      "decision": "skipExpired",
+      "confidence": 62,
+      "issues": [
+        "Source is not official or not trusted."
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "",
+      "draftWillUsePlaceholderDeadline": false
+    },
+    {
       "name": "Fellowships",
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-01",
+      "deadlineDate": "2026-11-02",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -476,7 +510,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-01",
+      "deadlineDate": "2026-11-02",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -491,7 +525,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.bank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-01",
+      "deadlineDate": "2026-11-02",
       "decision": "review",
       "confidence": 78,
       "issues": [
