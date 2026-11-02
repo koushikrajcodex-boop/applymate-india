@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-01T09:49:12.316Z",
+  "generatedAt": "2026-11-02T10:03:23.402Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 799,
+  "checked": 803,
   "active": 46,
   "promoted": 0,
-  "expired": 23,
-  "needsReview": 799,
+  "expired": 0,
+  "needsReview": 803,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 799 scholarship record(s), promoted 0, expired 23, flagged 799 for review, failed 0.",
+  "explainer": "AI tracker checked 803 scholarship record(s), promoted 0, expired 0, flagged 803 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -45,10 +45,10 @@
     {
       "id": "1pUfi1un8Ize4p8kUaM6",
       "name": "AICTE Saksham Scholarship Scheme for Specially Abled Students Technical Degree 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -105,10 +105,10 @@
     {
       "id": "5asSJVAxt1QdTXR7FlUg",
       "name": "Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -265,20 +265,20 @@
     {
       "id": "G3w0CBwaFXrxOh1YvDTv",
       "name": "ICAR National Talent Scholarship NTS PG 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
     {
       "id": "Guqopi9C6JzAC8wmfF1Z",
       "name": "ICAR National Talent Scholarship NTS UG 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -315,10 +315,10 @@
     {
       "id": "JS8fLCWBzM3r0ZYa30SL",
       "name": "AICTE Pragati Scholarship Scheme for Girl Students Technical Degree 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -355,20 +355,20 @@
     {
       "id": "KeH83nyGxDLh0J2hKg5X",
       "name": "Stipend Scheme for UG and PG Studies in Indian Statistical Institute Kolkata 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
     {
       "id": "Ltn3FVPP3kYr2TmftyM6",
       "name": "Prime Minister Scholarship Scheme for Wards of States and UTs Police Personnel Martyred During Terror and Naxal Attacks 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -405,20 +405,20 @@
     {
       "id": "NUDwM5OjKNaA52XDBOV3",
       "name": "AICTE Saksham Scholarship Scheme for Specially Abled Students Technical Diploma 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
     {
       "id": "NsRsKyJ1YcganxbPe1e6",
       "name": "Financial Assistance for Education to Wards of Beedi Cine IOMC LSDM Workers Post Matric 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -455,10 +455,10 @@
     {
       "id": "Pl75VeljtOBHDavepGdH",
       "name": "AICTE Pragati Scholarship Scheme for Girl Students Technical Diploma 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -535,10 +535,10 @@
     {
       "id": "UM0wBye9x5UQG5O7I5WI",
       "name": "Prime Minister Scholarship Scheme for Ministry of Railways 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -665,10 +665,10 @@
     {
       "id": "aWDaG4goImBa5JiiicG0",
       "name": "AICTE Swanath Scholarship Scheme Technical Degree 2026-27",
-      "action": "expire",
-      "statusBefore": "active",
+      "action": "flag",
+      "statusBefore": "closed",
       "statusAfter": "closed",
-      "reason": "Deadline 2026-10-31 has passed. Marked closed automatically.",
+      "reason": "AI confidence below 85%",
       "aiConfidence": 0,
       "deadlineDate": "2026-10-31"
     },
@@ -973,6 +973,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_13nb95r",
+      "name": "**StudentVUE** - Phoenix Union High School District",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_13van45",
       "name": "Graduate School Grants",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_145f5ls",
-      "name": "**Engineering** | Journal | ScienceDirect.com by Elsevier",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
