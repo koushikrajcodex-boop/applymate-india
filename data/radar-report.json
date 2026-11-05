@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-04T11:22:22.736Z",
-  "date": "2026-11-04",
+  "generatedAt": "2026-11-05T11:20:47.429Z",
+  "date": "2026-11-05",
   "mode": "auto-check-and-write",
   "firestore": {
     "enabled": true,
     "addedActive": 0,
     "addedDraft": 0,
-    "skipped": 32,
+    "skipped": 24,
     "closedExpired": 0,
     "errors": []
   },
@@ -15,40 +15,40 @@
       "source": "National Scholarship Portal",
       "found": 18,
       "errors": 0,
-      "ms": 6392
+      "ms": 7453
     },
     {
       "source": "AICTE Official Site",
       "found": 1,
       "errors": 1,
-      "ms": 10481
+      "ms": 10488
     },
     {
       "source": "AP Jnanabhumi",
       "found": 1,
       "errors": 1,
-      "ms": 10016
+      "ms": 7228
     },
     {
       "source": "Telangana ePASS",
-      "found": 9,
-      "errors": 6,
-      "ms": 6469
+      "found": 1,
+      "errors": 1,
+      "ms": 10021
     },
     {
       "source": "UGC Official Site",
       "found": 5,
       "errors": 0,
-      "ms": 3421
+      "ms": 4385
     }
   ],
   "totals": {
-    "total": 32,
+    "total": 24,
     "autoActive": 0,
     "autoDraft": 0,
     "review": 1,
-    "skipDuplicate": 22,
-    "skipExpired": 9
+    "skipDuplicate": 21,
+    "skipExpired": 2
   },
   "candidates": [
     {
@@ -365,145 +365,22 @@
       "draftWillUsePlaceholderDeadline": false
     },
     {
-      "name": "Scholarships",
+      "name": "Telangana ePASS Manual Review Needed",
       "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://telanganaepass.cgg.gov.in/Scholarships.do",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2025-06-30",
+      "sourceUrl": "https://telanganaepass.cgg.gov.in/",
+      "state": "telangana",
+      "deadlineDate": "",
       "decision": "skipDuplicate",
-      "confidence": 84,
+      "confidence": 55,
       "issues": [
-        "Duplicate already exists: Scholarships"
+        "Duplicate already exists: Telangana ePASS Post-Matric Scholarship",
+        "Weak scholarship name."
       ],
       "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
+        "Missing future deadline date; draft will use placeholder deadline.",
+        "Eligibility note is short."
       ],
-      "duplicateName": "Scholarships",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "Schemes & Policies",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://telanganaepass.cgg.gov.in/SchemesPolicies.do",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2025-06-30",
-      "decision": "skipExpired",
-      "confidence": 84,
-      "issues": [],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "Scholarships Offered",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://telanganaepass.cgg.gov.in/SchoalrshipsOffered.do",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2025-06-30",
-      "decision": "skipExpired",
-      "confidence": 84,
-      "issues": [],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "Scholarship Trans ID Details",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://treasury.telangana.gov.in/main/index.php?service=banktransiddetails",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2025-10-31",
-      "decision": "skipExpired",
-      "confidence": 62,
-      "issues": [
-        "Source is not official or not trusted."
-      ],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "Post Matric Scholarship Services",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://telanganaepass.cgg.gov.in/epassonlinelinks.do",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2025-10-31",
-      "decision": "skipExpired",
-      "confidence": 84,
-      "issues": [],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "Pre Matric Scholarship Services",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://telanganaepass.cgg.gov.in/PrematricLinks.do",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2025-10-31",
-      "decision": "skipExpired",
-      "confidence": 84,
-      "issues": [],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "Overseas Scholarship Services",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://telanganaepass.cgg.gov.in/OverseasLinks.do",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2026-07-08",
-      "decision": "skipExpired",
-      "confidence": 84,
-      "issues": [],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "Advocates Stipend",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://telanganaepass.cgg.gov.in/SCAdvocatesServices.do",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2020-02-15",
-      "decision": "skipExpired",
-      "confidence": 84,
-      "issues": [],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": false
-    },
-    {
-      "name": "National Scholarship Portal",
-      "sourceName": "Telangana ePASS",
-      "sourceUrl": "https://scholarships.gov.in/",
-      "state": "andhra-pradesh",
-      "deadlineDate": "2020-02-15",
-      "decision": "skipDuplicate",
-      "confidence": 62,
-      "issues": [
-        "Duplicate already exists: Post Matric Scholarship for Minorities",
-        "Source is not official or not trusted."
-      ],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
-      "duplicateName": "Post Matric Scholarship for Minorities",
+      "duplicateName": "Telangana ePASS Post-Matric Scholarship",
       "draftWillUsePlaceholderDeadline": false
     },
     {
@@ -545,7 +422,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-04",
+      "deadlineDate": "2026-11-05",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -560,7 +437,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-04",
+      "deadlineDate": "2026-11-05",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -575,7 +452,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.bank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-04",
+      "deadlineDate": "2026-11-05",
       "decision": "review",
       "confidence": 78,
       "issues": [
