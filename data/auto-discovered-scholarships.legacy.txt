@@ -1,324 +1,220 @@
 Scholarship Name National Scholarship Portal
 State National
 Education any
-Categories any
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://scholarships.gov.in/
 Source National Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scheme listings, OTR, applications, and status checks.
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: National Scholarship Portal. Snippet: Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scholarship scheme listings, OTR, applications, and status checks.
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name AICTE Student Development Schemes
+Scholarship Name AICTE Pragati, Saksham and Swanath Scholarships
 State National
-Education engineering technical
-Categories any
+Education engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.aicte-india.org/schemes/students-development-schemes
-Source AICTE Student Development Schemes
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: AICTE student schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name AP Jnanabhumi Scholarships
-State Andhra Pradesh
-Education post matric degree engineering
-Categories SC ST BC minority EBC
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://jnanabhumi.ap.gov.in/
-Source AP Jnanabhumi Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Telangana ePASS Scholarships
-State Telangana
-Education post matric degree engineering
-Categories SC ST BC EBC minority
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://telanganaepass.cgg.gov.in/
-Source Telangana ePASS Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify application windows and eligibility on the portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Pragati Scholarship for Girl Students
-State National
-Education engineering technical diploma degree
-Categories girls
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions
-Source Pragati Scholarship for Girl Students
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: AICTE Pragati is intended for girl students in technical education. Verify latest application route and eligibility on AICTE/NSP.
+Source AICTE
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: AICTE. Snippet: AICTE student development schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name UGC Scholarships and Fellowships
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.ugc.gov.in/
-Source UGC Scholarships and Fellowships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.
+Source UGC
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: UGC. Snippet: UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name AP Jnanabhumi Scholarships
+State Andhra Pradesh
+Education degree, engineering
+Categories sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://jnanabhumi.ap.gov.in/
+Source AP Jnanabhumi
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: AP Jnanabhumi. Snippet: Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name Telangana ePASS Scholarships
+State Telangana
+Education school, degree, engineering
+Categories sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://telanganaepass.cgg.gov.in/
+Source Telangana ePASS
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Telangana ePASS. Snippet: Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify current application windows and eligibility on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name MahaDBT Scholarship Portal
 State Maharashtra
-Education post matric degree
-Categories any
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://mahadbt.maharashtra.gov.in/
-Source MahaDBT Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.
+Source mahadbt.maharashtra
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: MahaDBT. Snippet: Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Karnataka State Scholarship Portal
 State Karnataka
-Education post matric degree
-Categories SC ST OBC minority
+Education degree
+Categories sc, st, obc, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://ssp.postmatric.karnataka.gov.in/
-Source Karnataka State Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.
+Source ssp.postmatric
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Karnataka SSP. Snippet: Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Rajasthan SJE Scholarship Portal
 State Rajasthan
-Education post matric degree
-Categories SC ST OBC EWS
+Education degree
+Categories sc, st, obc, ews
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://sjmsnew.rajasthan.gov.in/
-Source Rajasthan SJE Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name CBSE Single Girl Child Scholarship
-State National
-Education school
-Categories girls
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.cbse.gov.in/
-Source CBSE Single Girl Child Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: CBSE scholarship information for eligible single girl child students. Verify current notification and application window on CBSE.
+Source sjmsnew.rajasthan
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Rajasthan SJE. Snippet: Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Buddy4Study Scholarship Listings
 State National
-Education school degree engineering medical pg
-Categories any
+Education school, degree, engineering, medical, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.buddy4study.com/scholarships
-Source Buddy4Study Scholarship Listings
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.
+Source Buddy4Study
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Buddy4Study. Snippet: Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Vidyasaarathi Scholarship Portal
 State National
-Education degree diploma engineering
-Categories any
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.vidyasaarathi.co.in/Vidyasaarathi/
-Source Vidyasaarathi Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.
+Source Vidyasaarathi
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Vidyasaarathi. Snippet: NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Foundation For Excellence Scholarship
 State National
-Education engineering medical professional
-Categories any
+Education engineering, medical
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://ffe.org/scholarships/
-Source Foundation For Excellence Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
-Income note Verify income rules on provider/official portal.
+Source Foundation For Excellence
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Foundation For Excellence. Snippet: Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
+Income note Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
 ---
 Scholarship Name HDFC Bank Parivartan ECSS Scholarship
 State National
-Education school degree pg
-Categories any
+Education school, degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.hdfcbank.com/personal/resources/learning-centre/pay/hdfc-bank-parivartans-educational-crisis-scholarship-support-ecss
-Source HDFC Bank Parivartan ECSS Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
-Income note Verify income rules on provider/official portal.
+Source HDFC Bank
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: HDFC Bank. Snippet: HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
+Income note HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
 ---
 Scholarship Name Reliance Foundation Scholarships
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://scholarships.reliancefoundation.org/
-Source Reliance Foundation Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.
+Source Reliance Foundation
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Reliance Foundation. Snippet: Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Tata Trusts Education Grants
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants
-Source Tata Trusts Education Grants
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.
+Source Tata Trusts
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Tata Trusts. Snippet: Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Aditya Birla Scholarship Programme
 State National
-Education engineering management law
-Categories any
+Education engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.adityabirlascholars.net/
-Source Aditya Birla Scholarship Programme
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.
+Source Aditya Birla Scholars
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Aditya Birla Scholars. Snippet: Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name Federal **Student** Aid
+Scholarship Name :gov.in%20OR%20site:nic.in%20OR%20site:ac.in%20OR%20site:scholarships.gov.in%20OR%20site:aicte-india.org%20OR%20site:ugc.gov.in%20OR%20site:
 State National
-Education any
-Categories SC ST
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=b79928e342c613d9abbb9ca9519360d60740134e5e1a4a3e303c53dd16832c66JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=358b1205-ba32-6f3c-13c2-0a09bbdc6ecd&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1
-Source National scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: larship%20India%20guidelines%20notification%20scholarship%20official%20trusted%20India&toHttps=1&redig=87A59B7B9712488494490D7DE3F1A2D9 Markdown Content: 564,000 results 1. ## [Federal **Student** Aid](https://www.bing.com/ck/a?!&&p=b79928e342c613d9abbb9ca9519360d60740134e5e1a4a3e303c53dd16832c66JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=358b1205-ba32-6f3c-13c2-0a09bbdc6ecd&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1) Loading... 2. ## [**Student** - Wikipedia](https://www.bing.com/ck/a?!&&p=744443f002c7ccfb98257ec9d99193c48646868bbb88ae6f8447cdc085653b1fJmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=358b1205-ba32-6f3c-13c2-0a09bbdc6ecd&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU3R1ZGVudA&ntb=1) In the U.S., a Junior is a **student** in the penultimate (usually third) year and a Senior is a **student** in t
+Official link https://www.google.com/
+Source google.com
+Eligibility Auto-discovered from Jina Google mirror. Verify provider page/PDF before publishing. Seed: National Scholarship Portal schemes. Snippet: :gov.in%20OR%20site:nic.in%20OR%20site:ac.in%20OR%20site:scholarships.gov.in%20OR%20site:aicte-india.org%20OR%20site:ugc.gov.in%20OR%20site:buddy4study.com%20OR%20site:vidyasaarathi.co.in%20OR%20site:ffe.org Final URL: https://www.google.com/ Markdown Content: [About](https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header)[Store](https://store.google.com/US?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-US) [Gmail](https://mail.google.com/mail/&ogbl) [Images](https://www.google.com/imghp?hl=en&ogbl) [](https://www.google.com/intl/en/about/products) [Sign in](https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/&ec=futura_exp_og_so_72776762_e) What's on your mind? Waiting...Speak now Listening...Didn't get that. Try again Please check your microphone and audio levels. [Learn more](https://su
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name **Engineering** - Wikipedia
+Scholarship Name 0site:scholarships.gov.in%20OR%20site:aicte-india.org%20OR%20site:ugc.gov.in%20OR%20site:buddy4study.com%20OR%20site:vidyasaarathi.co.in%20O
 State National
-Education engineering
-Categories SC ST
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=e9d1a835761ed09c78b72cc9025e9361548d1da16be2e51b537e92ff46302d11JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=08a28f91-e0c1-63d8-17e5-979de1d3629c&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1
-Source Engineering scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: ip%20India%20AICTE%20corporate%20foundation%20scholarship%20official%20trusted%20India&toHttps=1&redig=7BC0A62B863140D39666F9810D6FB89E Markdown Content: 271,000 results 1. ## [**Engineering** - Wikipedia](https://www.bing.com/ck/a?!&&p=e9d1a835761ed09c78b72cc9025e9361548d1da16be2e51b537e92ff46302d11JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=08a28f91-e0c1-63d8-17e5-979de1d3629c&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1) Engineering is the practice of systematically applying natural science and mathematics to design and improve systems, devices, or … 2. ## [**Engineering** | Journal | ScienceDirect.com by Elsevier](https://www.bing.com/ck/a?!&&p=f39ea5ea32fba442aad0e70499f34bfca194174dc1f6bcce173ba1cd56394515JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=08a28f91-e0c1-63d8-17e5-979de1
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name **TXT File** - What is a .**txt file** and how do I open it? - FileInfo.com
-State Andhra Pradesh
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=f2a746de31bdfc80e4975e90a510bd9fb1875efeb5862d2066928c7228317eafJmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=04422c61-2213-6d92-06ec-346d23c46c26&u=a1aHR0cHM6Ly9maWxlaW5mby5jb20vZXh0ZW5zaW9uL3R4dA&ntb=1
-Source AP scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Pradesh%20Jnanabhumi%20scholarship%20students%20scholarship%20official%20trusted%20India&toHttps=1&redig=2EDF25EE8B514A009111F08D941EA765 Markdown Content: 3,460 results 1. ## [**TXT File** - What is a .**txt file** and how do I open it? - FileInfo.com](https://www.bing.com/ck/a?!&&p=f2a746de31bdfc80e4975e90a510bd9fb1875efeb5862d2066928c7228317eafJmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=04422c61-2213-6d92-06ec-346d23c46c26&u=a1aHR0cHM6Ly9maWxlaW5mby5jb20vZXh0ZW5zaW9uL3R4dA&ntb=1) May 2, 2022· A TXT file is a standard text document that contains plain text. It can be opened and edited in any text-editing or word … 2. ## [Text **File** Format | .**txt Extension** - GeeksforGeeks](https://www.bing.com/ck/a?!&&p=23569d555940a9836b73266b903ba95ec54660948174f9b1b25d34e75bb9fa06JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name **Telangana** - **Wikipedia**
-State Andhra Pradesh
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=707175e5d7825ffa400cd50b00b82944154663fba7d68498a2f184c87382bfd9JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3ec49eec-212b-6988-2618-86e0206768a7&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1
-Source Telangana scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: =Telangana%20ePASS%20scholarship%20students%20scholarship%20official%20trusted%20India&toHttps=1&redig=51631C855E34400195DC076341DCFEC6 Markdown Content: 102,000 results 1. ## [**Telangana** - **Wikipedia**](https://www.bing.com/ck/a?!&&p=707175e5d7825ffa400cd50b00b82944154663fba7d68498a2f184c87382bfd9JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3ec49eec-212b-6988-2618-86e0206768a7&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1) Telangana[a] is a state in southern India on the Deccan Plateau bordering Maharashtra and Chhattisgarh to the north and Andhra … 2. ## [**Telangana** | History, Map, Population, Capital, & Government](https://www.bing.com/ck/a?!&&p=00efbf4271980e7b6ab74f2019ce9f0a7250364f9fdd79cd183c5c2039344483JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3ec49eec-212b-6988-2618-8
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name **South Carolina** - **Wikipedia**
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=9dba7fb67206f134abdfaca92f0070accd802b6beee3128f7cc896c6e1c2dabcJmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=111d67d1-2a76-6951-3739-7fdd2b946843&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Tb3V0aF9DYXJvbGluYQ&ntb=1
-Source SC ST OBC scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: tric%20scholarship%20students%20India%20scholarship%20official%20trusted%20India&toHttps=1&redig=BCFB3DA1B5D0494584FE01993997EECF Markdown Content: About 316,000 results 1. ## [**South Carolina** - **Wikipedia**](https://www.bing.com/ck/a?!&&p=9dba7fb67206f134abdfaca92f0070accd802b6beee3128f7cc896c6e1c2dabcJmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=111d67d1-2a76-6951-3739-7fdd2b946843&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Tb3V0aF9DYXJvbGluYQ&ntb=1) South Carolina (/ ˌkærəˈlaɪnə / ⓘ KARR-ə-LY-nə) is a state in the Southeastern, South Atlantic and Deep South regions of the … 2. ## [**SC**.GOV - Home | **South Carolina**](https://www.bing.com/ck/a?!&&p=4e44d69cd2aab000da1fa671a0851b989e3dfcf8ee1d7484fa0eda223e4e9156JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=111d67d1-2a76-6951-3739-7fdd2b946843&u=a
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name **MINORITY** Definition & Meaning - **Merriam-Webster**
-State National
-Education any
-Categories SC ST EWS minority
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=e8b9948589c15003f3c4e8949b6e4cf33a1a9c52bc1c4990478d79acf35e54c4JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3e27ae3e-28c8-65b4-28e5-b63229a46470&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1
-Source Minority scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: olarship%20students%20India%20scheme%20apply%20scholarship%20official%20trusted%20India&toHttps=1&redig=2797F84AC361467DA0EABEC2D499701E Markdown Content: 52,200 results 1. ## [**MINORITY** Definition & Meaning - **Merriam-Webster**](https://www.bing.com/ck/a?!&&p=e8b9948589c15003f3c4e8949b6e4cf33a1a9c52bc1c4990478d79acf35e54c4JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3e27ae3e-28c8-65b4-28e5-b63229a46470&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1) Nov 2, 2026· The meaning of MINORITY is the smaller in number of two groups constituting a whole : a number or percentage … 2. ## [**Minority** | Definition & Facts | Britannica](https://www.bing.com/ck/a?!&&p=87575b22769c8f3ebca83f62fc35d9c17dc0b1800e3a711b5c6d6c4f75280523JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3e27ae3e
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name theGirl | Официальная группа медиа theGirl Официальный аккаунт …
-State National
-Education engineering school
-Categories SC ST girls
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=29e86c98a6619576aa2e96dfecbd172584bf792bf7fe6d632ecab29cb3e693c9JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=151c77ae-c91b-64e5-2172-6fa2c8ae65e5&u=a1aHR0cHM6Ly92ay5ydS90aGVnaXJscnVzc2lh&ntb=1
-Source Girls scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: ts%20scholarship%20India%20engineering%20school%20scholarship%20official%20trusted%20India&toHttps=1&redig=5219A05F7E8A4E3D9205C7489D33477F Markdown Content: 932 results 1. ## [theGirl | Официальная группа медиа theGirl Официальный аккаунт …](https://www.bing.com/ck/a?!&&p=29e86c98a6619576aa2e96dfecbd172584bf792bf7fe6d632ecab29cb3e693c9JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=151c77ae-c91b-64e5-2172-6fa2c8ae65e5&u=a1aHR0cHM6Ly92ay5ydS90aGVnaXJscnVzc2lh&ntb=1) Hey, girl! С тобой снова Поля — редактор theGirl. И, конечно же, твоя любимая рубрика #о_кино_с_полей 🤍 Сегодня в этом … 2. ## [Модная девушка | Привет, подружка! 2026 | ВКонтакте](https://www.bing.com/ck/a?!&&p=df4b3abc501621abaddf1747b702fb3da8c304e35ee90fcca9d5d24c8e3ad389JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=151c77ae-c91b-64e5-2172-6fa2
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name UPS account number for ebay account. | eBay Community Shipping
-State National
-Education any
-Categories SC ST
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.bing.com/ck/a?!&&p=c0c842e8991b6ba958ee0f8c316a4995a90077999de7fd43e5aeda2be88ad710JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3046860c-d3c2-6694-27a2-9e00d20767e9&u=a1aHR0cHM6Ly9jb21tdW5pdHkuZWJheS5jb20vZm9ydW0vc2hpcHBpbmctNTc5MjMvdG9waWMvdXBzLWFjY291bnQtbnVtYmVyLWZvci1lYmF5LWFjY291bnQtNDQyMDk2Lw&ntb=1
-Source Private trusted scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: dation%20For%20Excellence%20scholarships%20India%20scholarship%20official%20trusted%20India&toHttps=1&redig=965137D4C34F47688868D04D8461F680 Markdown Content: 50 results 1. ## [UPS account number for ebay account. | eBay Community Shipping](https://www.bing.com/ck/a?!&&p=c0c842e8991b6ba958ee0f8c316a4995a90077999de7fd43e5aeda2be88ad710JmltdHM9MTc5NDE4MjQwMA&ptn=3&ver=2&hsh=4&fclid=3046860c-d3c2-6694-27a2-9e00d20767e9&u=a1aHR0cHM6Ly9jb21tdW5pdHkuZWJheS5jb20vZm9ydW0vc2hpcHBpbmctNTc5MjMvdG9waWMvdXBzLWFjY291bnQtbnVtYmVyLWZvci1lYmF5LWFjY291bnQtNDQyMDk2Lw&ntb=1) Sep 26, 2022· Ebay UPS account number is the 6 digits right after the 1Z of the tracking number. Which is 14V534 Hope that works … 2. ## [buyer didn't receive item, but tracking shows it was delivered](https://www.bing.com/ck/a?!&&p=a53778914aefb203ee2f930cccf
+Official link https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header
+Source about.google
+Eligibility Auto-discovered from Jina Google mirror. Verify provider page/PDF before publishing. Seed: National Scholarship Portal schemes. Snippet: 0site:scholarships.gov.in%20OR%20site:aicte-india.org%20OR%20site:ugc.gov.in%20OR%20site:buddy4study.com%20OR%20site:vidyasaarathi.co.in%20OR%20site:ffe.org Final URL: https://www.google.com/ Markdown Content: [About]( https://about.google/?fg=1&utm_source=google-US&utm_medium=referral&utm_campaign=hp-header)[Store](https://store.google.com/US?utm_source=hp_header&utm_medium=google_ooo&utm_campaign=GS100042&hl=en-US) [Gmail](https://mail.google.com/mail/&ogbl) [Images](https://www.google.com/imghp?hl=en&ogbl) [](https://www.google.com/intl/en/about/products) [Sign in](https://accounts.google.com/ServiceLogin?hl=en&passive=true&continue=https://www.google.com/&ec=futura_exp_og_so_72776762_e) What's on your mind? Waiting...Speak now Listening...Didn't get that. Try again Please check your microphone and audio levels. [Learn more](https://support.google.com/chrome/?p=ui_voice_search)Please 
 Income note Verify income rules on provider/official portal.
