@@ -1,379 +1,37 @@
 {
-  "generatedAt": "2026-11-10T10:28:49.452Z",
+  "generatedAt": "2026-11-11T09:52:01.877Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 40,
+  "added": 2,
   "updated": 23,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 63,
+  "draftCandidates": 25,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 40, refreshed 23, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 63.",
-  "feedGeneratedAt": "2026-11-10T10:27:46.189Z",
+  "explainer": "Import finished. Added 2, refreshed 23, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
+  "feedGeneratedAt": "2026-11-11T09:51:45.038Z",
   "imported": [
     {
-      "id": "auto_fl4g1c",
-      "name": "ed India Loading... Show more ## Web results ### [ICCR Scholarships 2025-26 ![Image 7](blob:http://localhost/aef8eb7ad8c",
-      "link": "https://www.indiaingreece.gov.in/",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 80,
-      "sourceTrust": "official"
-    },
-    {
-      "id": "auto_q6pp27",
-      "name": "t: Up to ₹50,000 per year... ### [Scholarships for India's Brightest Students ![Image 12](blob:http://localhost/ff8b337c",
-      "link": "https://dasmail.reliancefoundation.org/",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 71,
-      "sourceTrust": "trusted"
-    },
-    {
-      "id": "auto_1ly86je",
-      "name": "holarships for SC, ST, and OBC students in India are centrally and state-sponsored schemes managed through government po",
-      "link": "https://www.google.com/goto?url=CAESZAHEIkXXUv3Ziht7zWGj87ACqMGHclA0AiH9oXjUoA3eK9eBiA7tzeiHnQwjr5I6l6uOWX5BMoZMv7Rj8TWiEVMDbPbsp8IwRdZdaLBZ2LZLQ_H-lpkphSFgQOwZL0REpEU0hXw",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_2slc2q",
-      "name": "students admitted to 1st year of AICTE-approved technical diplomas/degrees_. Benefit: Up to ₹50,000 per year... ### [Sch",
-      "link": "http://localhost/ff8b337c3dd09081a861431a3cb9a9c0",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_c5uyno",
-      "name": "Brightest Students ![Image 12](blob:http://localhost/ff8b337c3dd09081a861431a3cb9a9c0) Reliance Foundation Scholarships",
-      "link": "https://www.google.com/goto?url=CAESeQHEIkXXaqCHjxFiRzjR1ddr0Tgd7smgqRZ1f5_I9I93RhLyiYYofC57zOJ17i0pNrIHo87KBWG1664a4O_ttzBPa93ttUAJ31hqMDingFEwIVz6bewDYhBe7sWeUlhP4iupm4fr1Geq003EnFeZFAsC8dFEHREAlfA&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1vayd0i",
-      "name": "eeningform The Reliance Foundation _Scholarships_ aim to enable and propel _India's_ brightest youth, _Engineering_ are",
-      "link": "https://www.quora.com/What-scholarships-are-availa",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_rrwwuw",
-      "name": "opel _India's_ brightest youth, _Engineering_ are eligible to apply. Up to 60 undergraduates and 40... ### [https://www.",
-      "link": "http://localhost/f606af2523adbaf62b52ea9e738f8faf",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_biot3n",
-      "name": "9vzThjHmsfZPopv1ehab1mvbkcAxjr53v9NaDRHMqYyeiGu&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ) YouTu",
-      "link": "http://localhost/e1d2423d751e2b4d0d64a92cad3baa56",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_16n35or",
-      "name": "Scheme Guidelines of Scheme of Top Class ... National Scholarship Portal https://scholarships.gov.in › schemeGuidelines › T...",
-      "link": "https://www.google.com/goto?url=CAESlAEBxCJF17sW_BBixfJ7B9Gcb_6Ox5gfsgjm5b1y2cUkvO3EciG5TstIHGPpB4ao0wfKuJRhX-8JSX8Xfh0jRgPM96QSQESl3fMKq4IO3sDNg6GcoLXJCvjhhhNcL1lbFO65zdeR9Atu3FQ9vCeYFdaaZcj2GtANbGjjQVwQ6i-6fq3mTuyHzUlPLCoVzCqRyydKMvSp&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 52,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_20gzjc",
-      "name": "socialjustice.gov.in",
-      "link": "https://www.google.com/goto?url=CAESVwHEIkXXgABd2favbwZawxIz1zFPVdx8j1QeI1WvQ-PdC_zVBEojpPZPAqYSs0DBR2_ZQtfsCe8OimNH0uISbvAwrDHFqroEjfXdNwSpYamhkI7pUVEhSw",
+      "id": "auto_1c8yt2v",
+      "name": "**Student** with XL Dick - OnlyFans",
+      "link": "https://www.bing.com/ck/a?!&&p=75f79e9001050a5151a9a918604fa8bd0e966b30be399c03bbdb280fbc559f5dJmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=0ba48f5f-f54b-678e-377c-9751f49d666a&u=a1aHR0cHM6Ly9vbmx5ZmFucy5jb20vc3R1ZGVudF94bDIx&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
       "sourceTrust": "review"
     },
     {
-      "id": "auto_d8a5x4",
-      "name": "tribal.nic.in",
-      "link": "https://www.google.com/goto?url=CAESUQHEIkXXWyhMrX8l5JOqJE7yP_CFx2SLCpJ-aO1agp2q743ul1E0kK9C4wKFhZ_pUvRhXCn2hh9fu8fAMYsEpR7sAhH3myleNUDGX5KqWCLxjw",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1la61ay",
-      "name": "U0hXw) Key Eligibility & Income Criteria * **SC / ST Post-Matric Scholarships:** Generally cover students whose annual f",
-      "link": "https://www.google.com/goto?url=CAESjgEBxCJF13rq-jUbPkCF-2g_l1lE59z9aEbIOuwiOQC0dLNnK3fpQWc23X5uZHxnoijNWap1r3HGdQWFY95AbyBVtYvQljM9-MuhWeHxLwwVv167YkLAP2eAlbtPJ83qiFji1YhPe4xOHcAhR5ltDfhQEiVaJ5fOszJ0fgDXejMjySLFCqyKvyuLUT6WYvgI",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_km477l",
-      "name": "/ EBC Post-Matric Scholarships:** Generally require annual family income limits (such as up to **₹1,50,000** or **₹2,50,",
-      "link": "https://www.google.com/goto?url=CAESpgEBxCJF1-AKvolnW0tMdK0383ko7Ws8kiee0y6BoW6rHcuioZWOcnJ-P0Z_k4pxs6KaCt5LJAWEP0Kkn18Nbu9olBL2KYMrWUNhCnm98mkmxBQnZpFQpydfSI7qm5HPHov06UG0LPTrb7FbcnhCok_e0DMiXXrXK2sBkT0IyohKED3BLVTDSHeV7HDWGolygEKAovv-CPLQv7LWBJTdv26xfKza36_l",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_x38913",
-      "name": "Scheduled Caste ... July 22, 2026 — India Expands Scholarship Support for Scheduled Caste Students, Over 48 Million Bene",
-      "link": "http://localhost/0a942629c686711a5d4a400fe6de6912",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_x2m0q1",
-      "name": "Image 2",
-      "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSFQjJ9yBxGdEFHVT-UYPMjmzxiE16Ig_qjDtkXr57YkLdNKOEfBrm5NBj4jzXy9BIzW_5NWUC7I4GVwDHoWLkRcyHZXUzk1aEW-l1TtMnd6j96bcu1cqW73XNQLOrVGKSuHrsB7jx3I-zvjWyEnhFLCio",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_8csjku",
-      "name": "Image 4",
-      "link": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTgjgF-7KFoFhT-a_ie3B8RTKRsKapEKzLsZ30sI6k_7LFsCrE-oNmF96tMkj1pnTp1BCml_8tdRwMHrtEpTIV877k66z74iyfIAfvYWlVmpjQxh6aoRg9PtuUguv-xFHbkJx0qCl4NvuwdHNeCgDd5LKk",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_e9lbf0",
-      "name": "ering%20school%20scholarship%20official%20trusted%20India&gws_rd=ssl&sei=v_Hyar_cPN6JwbkPw5eduQ8)[Accessibility help](ht",
-      "link": "https://www.google.com/webhp?hl=en&sa=X&ved=2ahUKEwiJ6MPLmP2XAxXPibAFHd9REVUQPHoECAYQBA",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_fwi7z4",
-      "name": "elp](https://support.google.com/websearch/answer/181196?hl=en) [](https://www.google.com/webhp?hl=en&sa=X&ved=2ahUKEwiJ6",
-      "link": "https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=2ahUKEwiJ6MPLmP2XAxXPibAFHd9REVUQpYkNegQIBhAG",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1vactqc",
-      "name": "d9REVUQPHoECAYQBA \"Go to Google Home\") [](https://www.google.com/webhp?hl=en&ictx=0&sa=X&ved=2ahUKEwiJ6MPLmP2XAxXPibAFHd",
-      "link": "https://www.google.com/intl/en/about/products?tab=wh",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_9butmm",
-      "name": "&ictx=111) More # Search Results An AI Overview is not available for this search Can't generate an AI overview right now",
-      "link": "http://localhost/0e0179742486f883fe3d5d0c80302d59",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_jjgn02",
-      "name": "for this search Can't generate an AI overview right now. Try again later. Thinking Searching ![Image 1](blob:http://loca",
-      "link": "http://localhost/d332b32bd78098305c74a89f8230b488",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_f6rbkx",
-      "name": "ater. Thinking Searching ![Image 1](blob:http://localhost/0e0179742486f883fe3d5d0c80302d59) ![Image 2](blob:http://local",
-      "link": "http://localhost/aad433f15bd3b8c518ebcabab92824ed",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_14jmkfy",
-      "name": "42486f883fe3d5d0c80302d59) ![Image 2](blob:http://localhost/d332b32bd78098305c74a89f8230b488) ![Image 3](blob:http://loc",
-      "link": "http://localhost/6b0be727c4dcf0f0bacbdd63407e1d6a",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_kzvkhz",
-      "name": "bd78098305c74a89f8230b488) ![Image 3](blob:http://localhost/aad433f15bd3b8c518ebcabab92824ed) ![Image 4](blob:http://loc",
-      "link": "http://localhost/43d8d99a5a2e77cd0ab4dda02e893508",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_lsgdr8",
-      "name": "ly for girl students scholarship India engineering school scholarship official trusted India Loading... Show more ## Web",
-      "link": "http://localhost/aef8eb7ad8c49898de0c118f130cfbcd",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_6nvamp",
-      "name": "olarships 2025-26 ![Image 7](blob:http://localhost/aef8eb7ad8c49898de0c118f130cfbcd) Embassy of India, Athens, Greece ht",
-      "link": "https://www.google.com/goto?url=CAESfQHEIkXXMVvuJ5Kllha0QwqoV0wN1dg-cYCcXoGVW6iEZW4J533bqUuPhRBh4wewhZNGWz8PexMCQOqnsZeREHIwrPDrlX8aLggrWx70BcNLJ8iTVYmhg6YKKyv3xOrhuyTZsuXJYECbGo_rt7HDNqmDYkHn-PT4XIwKDGMa&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1xo6s77",
-      "name": "96El0fb6WPnDdt5oX_P7VLYQZ-ut4B-lbTkIfk&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ) ### [Top 5 Sch",
-      "link": "http://localhost/4c314a077400b1e6dd049f85e732d0af",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1cdehbi",
-      "name": "_RjU3tIQ) ### [Top 5 Scholarships for Engineering Students 2026-27 ![Image 8](blob:http://localhost/4c314a077400b1e6dd04",
-      "link": "https://www.google.com/goto?url=CAESaAHEIkXXVgY--vf0mQTFcjgtbNLYUKQXm_j35iRF3KMNdUxnw1v98qd740gMPzrPU8AOTmLBJB77X9xdRFYj_hDYKdX1MptHnQ3MmhWhXLHsw1p_oxRDTPgpdctpJP6Y4xBJJSZM7i6K&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_m2jfh0",
-      "name": "1MptHnQ3MmhWhXLHsw1p_oxRDTPgpdctpJP6Y4xBJJSZM7i6K&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ) You",
-      "link": "http://localhost/e5f6e6fd4b4bbbcd895327d1a1f82864",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_dr4whm",
-      "name": "rship** (Up to ₹2 Lakh) AICTE Pragati **Scholarship** (For **Girls** - ₹50k/Year) HDFC Badhte... ### [Catalyst Scholarsh",
-      "link": "http://localhost/e8727e79df64b83f663decb3dda44355",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_3xwv3t",
-      "name": "p Programme 2026 | [Win Fully Funded ... ![Image 10](blob:http://localhost/e8727e79df64b83f663decb3dda44355) Buddy4Study",
-      "link": "https://www.google.com/goto?url=CAESgwEBxCJF1_yeXq2MR1HyQ1cKMOZuUcDd1GOq6PsTbsLSof35h7W1Qn5VbU12nlWL0RxJ2aIT-NQtAFTscjDxQsSJN3zm2_VRcebqwY0X79_qd_o00EMx761hL_UkrCrAKHMX94W_CKdKMVd6poQ859i2QmKJgaKN5tvFSkXAIY820f2rLQ&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_16sru0a",
-      "name": "_financial assistance and mentorship to engineering students in India_. To know more , CLICK HERE. ### [Top Scholarships",
-      "link": "http://localhost/e646e2ef0a3ed9e7e018344771bc2645",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1l7thsr",
-      "name": "in India_. To know more , CLICK HERE. ### [Top Scholarships for Indian Tech Students (BTech, MCA ... ![Image 11](blob:ht",
-      "link": "https://coderstar.in/",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_2glnrp",
-      "name": "r Indian Tech Students (BTech, MCA ... ![Image 11](blob:http://localhost/e646e2ef0a3ed9e7e018344771bc2645) CoderStar htt",
-      "link": "https://www.google.com/goto?url=CAEShQEBxCJF10_nf6iRGlTXGvkeKkbNnRp47EUHpVTE2JAWbz_543feo2HTfpxChfbnyOtZcjBfGpAeLr2mHVynWKNMIzZzvrm8M_D7bi3AcidLbgxAH9Adx1YITwJ9YtHRkrZPoYF_4xmL1HHCNREmo7c0zvy4VFLsck4eAYgi_7PxCR1-1T56&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_lw5xzb",
-      "name": "p to 60 undergraduates and 40... ### [https://www.quora.com/What-scholarships-are-availa... ![Image 13](blob:http://loca",
-      "link": "https://www.google.com/goto?url=CAESjAEBxCJF1wz8gyjh_q0XQWElRy3LNKHdbFuTIH05kmRKzmDJ3BqYa3XONqeTUK8PmckofGPWkNHOzXPckwoLA6QzLPVFIHZhSr-pK1Q17DfXZlRZC8e87xDvJf-vcoFKbCVBFakpjzc74zdJhfBmaxAEg6jyOmeReChnsrgnV95J9acXjKomReO5CyFr6w&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_6htkdg",
-      "name": "Learn why",
-      "link": "https://support.google.com/webmasters/answer/7489871?hl=en",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1dt5usj",
-      "name": "en) ### [150 Plus NRIs Govt. Scholarships In India (SPDC Scheme) ![Image 14](blob:http://localhost/4c314a077400b1e6dd049",
-      "link": "https://www.google.com/goto?url=CAESaAHEIkXXUHcH6QpMH3-xEgUIlGDvDFvVjIlSWgrcaZPR83Nb6qeqYuLGHIsVyoIoWzXVMJPLpu-U-WDTW3ZsLeBXZV57a9vzThjHmsfZPopv1ehab1mvbkcAxjr53v9NaDRHMqYyeiGu&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_skjwsy",
-      "name": "er SC students for pursuing studies beyond 12th class. _el_ igible SC girl students 44 pages ### [Scholarship for School",
-      "link": "http://localhost/4498e9d052ec6ef38c43a88ff797143a",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1bbzorg",
-      "name": "ents 44 pages ### [Scholarship for School Students in India, List of Scholarships ![Image 16](blob:http://localhost/4498",
-      "link": "https://www.learningwithvodafoneidea.in/",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_usgy8q",
-      "name": "ndia, List of Scholarships ![Image 16](blob:http://localhost/4498e9d052ec6ef38c43a88ff797143a) Learning with Vodafone Id",
-      "link": "https://www.google.com/goto?url=CAEShgEBxCJF179oXGUcMzVJY9S2zDiRemtRrriK74djwcw-iw24zWr1JPon2UBg-01wuhcbHjf_6OB6KEDYqQz3C9Ar1aXP4eXo9ToKHtyX-QvXe3uVoefv78jw94KA-yh7O-sC83hrly2uyc7VFp4o20yU1caiUDdvo2XTR6vBfTvioorGhx5WAQ&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
+      "id": "auto_wd6q49",
+      "name": "Free **word fill in (word** fit) **printable** PDF **puzzles** - Smart **Puzzle** Books",
+      "link": "https://www.bing.com/ck/a?!&&p=678e93e09b644281e43e124db7849b1a48e6e9a0cc238c2446bdb5575ddf32afJmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=16e9c27f-91b3-6172-31d0-da7190846064&u=a1aHR0cHM6Ly9zbWFydHB1enpsZWJvb2tzLmNvbS93b3JkLWZpbGwtaW4tcHV6emxlLXByaW50YWJsZS8&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
@@ -431,11 +89,11 @@
     },
     {
       "id": "uXyVtZwYUxaWkmigzjRV",
-      "name": "jhhhNcL1lbFO65zdeR9Atu3FQ9vCeYFdaaZcj2GtANbGjjQVwQ6i-6fq3mTuyHzUlPLCoVzCqRyydKMvSp&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nn",
+      "name": "National Scholarship Portal",
       "link": "https://scholarships.gov.in/",
       "status": "active",
       "reason": "same_url_already_exists",
-      "aiConfidence": 80
+      "aiConfidence": 82
     },
     {
       "id": "auto_s8y6sq",
@@ -502,14 +160,6 @@
       "aiConfidence": 62
     },
     {
-      "id": "auto_6hh61a",
-      "name": "rls** - ₹50k/Year) HDFC Badhte... ### [Catalyst Scholarship Programme 2026 | [Win Fully Funded ... ![Image 10](blob:http",
-      "link": "https://www.buddy4study.com/",
-      "status": "draft",
-      "reason": "same_url_already_exists",
-      "aiConfidence": 61
-    },
-    {
       "id": "auto_37fmhx",
       "name": "Buddy4Study Scholarship Listings",
       "link": "https://www.buddy4study.com/scholarships",
@@ -526,44 +176,52 @@
       "aiConfidence": 56
     },
     {
-      "id": "auto_obrl03",
-      "name": "Image 3",
-      "link": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTDJVjjtCFbH1ww477D287He_8RIPoDbmQGGdWNSLjGvWj1nuNhFX_L8qH1JZrvunvaB0orpZoF4O-zXYUvpLfYAopETMUoCGnsdFC_6veyeKxQBenlAfs037RLSj1l-Jgij0IzB0yC3UoQuXYSc6ip6co",
+      "id": "auto_1r08dzp",
+      "name": "**Engineering** - Wikipedia",
+      "link": "https://www.bing.com/ck/a?!&&p=71ce7849fb6bba6b4888170dc5387f74c2ef1df04e4fbbeba019ab302c7b0871JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=2abbd206-c28a-682d-39b0-ca08c3d06913&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_j5kpbq",
+      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
+      "link": "https://www.bing.com/ck/a?!&&p=c4ff6e0a7fa26231712dcc9507e14472583557e8ef49f7caa641bb81a95f3e59JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=18542687-7022-6b83-1fd9-3e8971e86a9c&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 52
+    },
+    {
+      "id": "auto_pxn9gp",
+      "name": "**Telangana** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=5ccc13e033ec50645850cb0085bd78517b34da60c93fadcba9003041cec0fd50JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=32301be7-73d7-69c4-303e-03e9722268cc&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_1uylfjb",
-      "name": "Learn more",
-      "link": "https://support.google.com/websearch?p=ai_overviews",
+      "id": "auto_1lwoa31",
+      "name": "**South Carolina** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=89e94725199c854a2d956e7a2ed0c1e626a2f9349b6e00646a0f6d75d69efc65JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=2e9d6176-8308-66ac-030b-797882e267b8&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_vv9o2y",
-      "name": "Accessibility help",
-      "link": "https://support.google.com/websearch/answer/181196?hl=en",
+      "id": "auto_1a9dgai",
+      "name": "**Girl** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=69e8590bec1c11209412f551172e314a7cef6e1f6827f6c67f1fa8e2f67cbc75JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=0ecd92c9-3da4-6652-2753-8ac73c6e67da&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_ai3n9y",
-      "name": "Read more",
-      "link": "https://www.google.com/goto?url=CAES4gEBxCJF19ts17C6fvwLvtzSybmM9VNFrUfDcZaVe6CpAQha1s7fmENT1pXeihPaPxm0E7llLePizkISL4OfNPpzki8qvFjyLEyuYCXcfQeFB6GVPu9x-Rjne478sEzulO4r7SIOSFmSNKspzvesrQ5UKJ8jCyaXiBSwAk75-sZNrq03gb8omFU5Or2hZ0WcYIKjFtbPX3xYH1soMBCRp6XDsAjvHRJpRSndBEOeLzA_ousFvuZnQ7syEELvVqBnXycKOUnMag96El0fb6WPnDdt5oX_P7VLYQZ-ut4B-lbTkIfk&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
+      "id": "auto_1roii3v",
+      "name": "**Download Teams** Desktop and Mobile Apps | Microsoft **Teams**",
+      "link": "https://www.bing.com/ck/a?!&&p=c367a5789854bd2baf43e46251fd9720592fb9f8a6beffe7fbeacdacdd38307fJmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=37783518-1b60-65c4-1089-2d161a8b640f&u=a1aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy9taWNyb3NvZnQtdGVhbXMvZG93bmxvYWQtYXBwP21zb2NraWQ9Mzc3ODM1MTgxYjYwNjVjNDEwODkyZDE2MWE4YjY0MGY&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_ai3n9y",
-      "name": "Read more",
-      "link": "https://www.google.com/goto?url=CAES7gEBxCJF11fONul7Hkl58oxM_En3e6VXoK5kkgmZk77Efc-YRELXMyBkjiVWP5lI528UsafNTOaeGHNsC0fGLUHkxleTeNTh0sjGpkkibEHBneNGL0o_BvAi8QaqhAHsMyafEaCaoTHMpKd8P_yr5vznL6LCT9x_M4DCFwI2bm1Q95wtLYiiRg5ZLmZa4jXocDUqTg_sD-rJ3-wqhO5ceHrpXm1ahHVohpoZtWU82o2GtnQNvasFBVQYyAOzUhiM8AErOShxSfMA2SVwzMfDGoWNM9IYT65arVD2MZzA-t-peP4vGXxyK1VcM3NTjz3i&gsessionid=1PLdFcU1aRO0SjPeu5Xg8oy4nnOl6s59BJCxZh6FhYLyZ4_RjU3tIQ",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
+      "aiConfidence": 34
     }
   ],
   "skippedRecords": [],
