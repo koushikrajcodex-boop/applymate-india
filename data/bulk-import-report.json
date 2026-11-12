@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-11T09:52:01.877Z",
+  "generatedAt": "2026-11-12T10:20:52.971Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 2,
-  "updated": 23,
+  "added": 0,
+  "updated": 25,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
@@ -16,28 +16,9 @@
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 2, refreshed 23, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
-  "feedGeneratedAt": "2026-11-11T09:51:45.038Z",
-  "imported": [
-    {
-      "id": "auto_1c8yt2v",
-      "name": "**Student** with XL Dick - OnlyFans",
-      "link": "https://www.bing.com/ck/a?!&&p=75f79e9001050a5151a9a918604fa8bd0e966b30be399c03bbdb280fbc559f5dJmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=0ba48f5f-f54b-678e-377c-9751f49d666a&u=a1aHR0cHM6Ly9vbmx5ZmFucy5jb20vc3R1ZGVudF94bDIx&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_wd6q49",
-      "name": "Free **word fill in (word** fit) **printable** PDF **puzzles** - Smart **Puzzle** Books",
-      "link": "https://www.bing.com/ck/a?!&&p=678e93e09b644281e43e124db7849b1a48e6e9a0cc238c2446bdb5575ddf32afJmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=16e9c27f-91b3-6172-31d0-da7190846064&u=a1aHR0cHM6Ly9zbWFydHB1enpsZWJvb2tzLmNvbS93b3JkLWZpbGwtaW4tcHV6emxlLXByaW50YWJsZS8&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    }
-  ],
+  "explainer": "Import finished. Added 0, refreshed 25, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
+  "feedGeneratedAt": "2026-11-12T10:20:36.634Z",
+  "imported": [],
   "updatedRecords": [
     {
       "id": "FP3ZGiBR81mtoXNttDEy",
@@ -178,23 +159,39 @@
     {
       "id": "auto_1r08dzp",
       "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=71ce7849fb6bba6b4888170dc5387f74c2ef1df04e4fbbeba019ab302c7b0871JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=2abbd206-c28a-682d-39b0-ca08c3d06913&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=10936a24affe56c457da479ebf5bd303efe5a2d2cd2daf0418829623cfb40e2aJmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=0cc91f6e-8df9-693f-334d-07618c9d68df&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
       "id": "auto_j5kpbq",
-      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
-      "link": "https://www.bing.com/ck/a?!&&p=c4ff6e0a7fa26231712dcc9507e14472583557e8ef49f7caa641bb81a95f3e59JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=18542687-7022-6b83-1fd9-3e8971e86a9c&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
+      "name": "**MINORITY** Definition & Meaning - Merriam-Webster",
+      "link": "https://www.bing.com/ck/a?!&&p=35fb7faaba45eac98daa9484e837df9e9daab9e1240382c4cebae25c1d7ddec2JmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=2b543138-dab3-6d05-06d6-2937db6b6c92&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
+      "id": "auto_xjwimt",
+      "name": "Federal **Student** Aid",
+      "link": "https://www.bing.com/ck/a?!&&p=ec97e8f8bb9c4d2a954719bc2e2185e048b3c41b9152d35d458b59825b8a1f53JmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=064aad16-80d4-637d-0ce9-b51981086284&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1g2sy2r",
+      "name": "**Microsoft** - Official Home Page",
+      "link": "https://www.bing.com/ck/a?!&&p=9675f79221dd416613c1d06de77b64c9634c921ac188ef200b4bbab7613b4a92JmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=34b64676-403d-6a61-2e8a-5e7941ad6b9c&u=a1aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy8_bXNvY2tpZD0zNGI2NDY3NjQwM2Q2YTYxMmU4YTVlNzk0MWFkNmI5Yw&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
       "id": "auto_pxn9gp",
       "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=5ccc13e033ec50645850cb0085bd78517b34da60c93fadcba9003041cec0fd50JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=32301be7-73d7-69c4-303e-03e9722268cc&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=2f38b9922c2f0232b6f6fb7702a7f7ddcfa6ebbd942bb486a69b24d18901ffd5JmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=207c3bae-f2d5-6db7-15a6-23a1f3516c9b&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -202,7 +199,7 @@
     {
       "id": "auto_1lwoa31",
       "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=89e94725199c854a2d956e7a2ed0c1e626a2f9349b6e00646a0f6d75d69efc65JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=2e9d6176-8308-66ac-030b-797882e267b8&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=18f90df9847213c6c2f17519dbeca3b370e0b6fac5077131ce34e09311949289JmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=13c977c9-31b5-694c-389d-6fc630ee68f6&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Tb3V0aF9DYXJvbGluYQ&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -210,15 +207,15 @@
     {
       "id": "auto_1a9dgai",
       "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=69e8590bec1c11209412f551172e314a7cef6e1f6827f6c67f1fa8e2f67cbc75JmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=0ecd92c9-3da4-6652-2753-8ac73c6e67da&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=6bd8299f41c29d0840b40b98f433933c0a9d2e95aa68b831cb5f4a548b2f7a4bJmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=03752f7b-66a4-63b2-2643-377467616238&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_1roii3v",
-      "name": "**Download Teams** Desktop and Mobile Apps | Microsoft **Teams**",
-      "link": "https://www.bing.com/ck/a?!&&p=c367a5789854bd2baf43e46251fd9720592fb9f8a6beffe7fbeacdacdd38307fJmltdHM9MTc5NDM1NTIwMA&ptn=3&ver=2&hsh=4&fclid=37783518-1b60-65c4-1089-2d161a8b640f&u=a1aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy9taWNyb3NvZnQtdGVhbXMvZG93bmxvYWQtYXBwP21zb2NraWQ9Mzc3ODM1MTgxYjYwNjVjNDEwODkyZDE2MWE4YjY0MGY&ntb=1",
+      "id": "auto_1g2sy2r",
+      "name": "**Microsoft** - Official Home Page",
+      "link": "https://www.bing.com/ck/a?!&&p=334122a4fcb10102c664bc187f06d600e258a1b94c2527d5e3218f09471c53a2JmltdHM9MTc5NDQ0MTYwMA&ptn=3&ver=2&hsh=4&fclid=10c0dacf-2722-645b-1ad4-c2c026446575&u=a1aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy8_bXNvY2tpZD0xMGMwZGFjZjI3MjI2NDViMWFkNGMyYzAyNjQ0NjU3NQ&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 34
