@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-11-12T11:39:01.080Z",
-  "date": "2026-11-12",
+  "generatedAt": "2026-11-13T11:22:32.083Z",
+  "date": "2026-11-13",
   "mode": "auto-check-and-write",
   "firestore": {
     "enabled": true,
     "addedActive": 0,
-    "addedDraft": 1,
-    "skipped": 31,
+    "addedDraft": 0,
+    "skipped": 32,
     "closedExpired": 0,
     "errors": []
   },
@@ -15,39 +15,39 @@
       "source": "National Scholarship Portal",
       "found": 18,
       "errors": 0,
-      "ms": 4863
+      "ms": 7093
     },
     {
       "source": "AICTE Official Site",
       "found": 1,
       "errors": 1,
-      "ms": 10481
+      "ms": 10212
     },
     {
       "source": "AP Jnanabhumi",
       "found": 1,
       "errors": 1,
-      "ms": 4240
+      "ms": 10021
     },
     {
       "source": "Telangana ePASS",
       "found": 9,
       "errors": 6,
-      "ms": 5427
+      "ms": 4945
     },
     {
       "source": "UGC Official Site",
       "found": 5,
       "errors": 0,
-      "ms": 9267
+      "ms": 7698
     }
   ],
   "totals": {
     "total": 32,
     "autoActive": 0,
-    "autoDraft": 1,
+    "autoDraft": 0,
     "review": 1,
-    "skipDuplicate": 22,
+    "skipDuplicate": 23,
     "skipExpired": 8
   },
   "candidates": [
@@ -512,14 +512,16 @@
       "sourceUrl": "https://www.ugc.gov.in/saksham",
       "state": "andhra-pradesh",
       "deadlineDate": "",
-      "decision": "autoDraft",
+      "decision": "skipDuplicate",
       "confidence": 84,
-      "issues": [],
+      "issues": [
+        "Duplicate already exists: SAKSHAM"
+      ],
       "warnings": [
         "Missing future deadline date; draft will use placeholder deadline."
       ],
-      "duplicateName": "",
-      "draftWillUsePlaceholderDeadline": true
+      "duplicateName": "SAKSHAM",
+      "draftWillUsePlaceholderDeadline": false
     },
     {
       "name": "UGC Fellowship and Research Grants",
@@ -541,7 +543,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-12",
+      "deadlineDate": "2026-11-13",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -556,7 +558,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-12",
+      "deadlineDate": "2026-11-13",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -571,7 +573,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.bank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-12",
+      "deadlineDate": "2026-11-13",
       "decision": "review",
       "confidence": 78,
       "issues": [
