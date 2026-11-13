@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-12T10:24:46.477Z",
+  "generatedAt": "2026-11-13T10:06:15.469Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 868,
+  "checked": 871,
   "active": 46,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 868,
+  "needsReview": 871,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 868 scholarship record(s), promoted 0, expired 0, flagged 868 for review, failed 0.",
+  "explainer": "AI tracker checked 871 scholarship record(s), promoted 0, expired 0, flagged 871 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -191,6 +191,16 @@
       "reason": "missing trusted source URL/source name; missing real deadline date",
       "aiConfidence": 0,
       "deadlineDate": ""
+    },
+    {
+      "id": "CPQ6brof1qYNiQ8XG849",
+      "name": "SAKSHAM",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 0,
+      "deadlineDate": "2099-12-31"
     },
     {
       "id": "CdJCKtHS0hjup2X4iOp3",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 52,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_13xvyn5",
-      "name": "**SC**.GOV - Home | **South Carolina**",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
       "deadlineDate": "2099-12-31"
     }
   ],
