@@ -1,40 +1,40 @@
 {
-  "generatedAt": "2026-11-13T10:01:43.150Z",
+  "generatedAt": "2026-11-14T09:27:04.398Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
   "added": 2,
-  "updated": 23,
+  "updated": 22,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 25,
+  "draftCandidates": 24,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 2, refreshed 23, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
-  "feedGeneratedAt": "2026-11-13T10:01:24.893Z",
+  "explainer": "Import finished. Added 2, refreshed 22, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 24.",
+  "feedGeneratedAt": "2026-11-14T09:26:46.587Z",
   "imported": [
     {
-      "id": "auto_167ii2",
-      "name": "Geometry Customer Support",
-      "link": "https://www.bing.com/ck/a?!&&p=f843a16bc3147e96fd59cb39a4acbbbaaab4d716a563db47eec663bb49657a6aJmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=370649e6-13fd-60bc-0a90-51f6124561f1&u=a1aHR0cHM6Ly9oZWxwLmdlb21ldHJ5LmhvdXNlL2VuLVVT&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 44,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1c1fc5w",
-      "name": "Home | **South Carolina**",
-      "link": "https://www.bing.com/ck/a?!&&p=87489bb1e5fcdb5cf4f24d5d539c31e2286ce3150985379e918cd4dc2f4fc737JmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=2c2903c3-ac13-64ab-2ac3-1bd3ad6465d1&u=a1aHR0cHM6Ly9zYy5nb3Yv&ntb=1",
+      "id": "auto_191ubdy",
+      "name": "12 Exercises to **Improve** Your **Posture** - **Healthline**",
+      "link": "https://www.bing.com/ck/a?!&&p=6d211d785a75578bfcb2a508e9a3725ebd3414e8ba5dcca5247f0fae1f4d250eJmltdHM9MTc5NDYxNDQwMA&ptn=3&ver=2&hsh=4&fclid=1c1c5bfd-396c-67f1-0b97-43ec38fe661d&u=a1aHR0cHM6Ly93d3cuaGVhbHRobGluZS5jb20vaGVhbHRoL3Bvc3R1cmUtZXhlcmNpc2Vz&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 42,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_zw58pf",
+      "name": "**Amazon**.com. Spend less. Smile more.",
+      "link": "https://www.bing.com/ck/a?!&&p=548e9ee03bc1d456f04df4fca588ab0273d6e4446151e2fb952a3eb8072eab6bJmltdHM9MTc5NDYxNDQwMA&ptn=3&ver=2&hsh=4&fclid=33a727f7-939a-6120-0a60-3fe6929e60f5&u=a1aHR0cHM6Ly93d3cuYW1hem9uLmNvbS8&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 34,
       "sourceTrust": "review"
     }
   ],
@@ -176,17 +176,9 @@
       "aiConfidence": 56
     },
     {
-      "id": "auto_1r08dzp",
-      "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=31c28cc9b5b925b579c466e06f001088d688b4197bc738d1672194bf05d1bd2cJmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=03adb501-b2d7-6c82-11da-ad11b32b6d0e&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
       "id": "auto_j5kpbq",
       "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
-      "link": "https://www.bing.com/ck/a?!&&p=d5f9cae65ece59a50d8d37a00896bc9f153eefaa664698489a758e37916a53c4JmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=05e1ee38-f66c-6ed4-3eed-f628f7f86f61&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=528f9562453ac74ae4968afbe89b9e616e164a7278395973aed3cda4c1269be3JmltdHM9MTc5NDYxNDQwMA&ptn=3&ver=2&hsh=4&fclid=245252ce-d4de-67cc-376d-4adfd5c266d8&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
@@ -194,15 +186,7 @@
     {
       "id": "auto_xjwimt",
       "name": "Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=a3bf9592fd5087a2452e56b50122f39eb5dfeb3b7d6e51d5a6fc5b08a136f9e0JmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=13a0ac0f-d72e-6830-3d39-b41fd60b6911&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_12dxzsv",
-      "name": "**Andhra Pradesh** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=5ef1d3a11eacd432de6e68892013e7111cf7efc0168de39cc8cbe8514a056e60JmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=39781ef5-19af-6cee-1791-06e5188d6da7&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvQW5kaHJhX1ByYWRlc2g&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=cd0ae713fe4b7886d792d54c74051af9547b08f8cfde43297b4f0a7dbed87179JmltdHM9MTc5NDYxNDQwMA&ptn=3&ver=2&hsh=4&fclid=31b7916f-ddd7-61b6-39e4-897edc23609b&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -210,7 +194,15 @@
     {
       "id": "auto_pxn9gp",
       "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=5eb526c00156ebdf03caa78df3ca87e366ad3360cf89f0e7b631d8bd34ab7ae7JmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=2a96a63f-fb52-69fd-3ee5-be2ffa5668f0&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=029978630b9812d4f9e28a6f352447e9284ec5ae3427456209385ee5dface016JmltdHM9MTc5NDYxNDQwMA&ptn=3&ver=2&hsh=4&fclid=3348ba19-8793-65bc-34dc-a20886a56439&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1lwoa31",
+      "name": "**South Carolina** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=a5d0dfce57ff197db9c0efb455d1d0491116c51cbdf816dc7198b7ffb4b02a25JmltdHM9MTc5NDYxNDQwMA&ptn=3&ver=2&hsh=4&fclid=124e35d8-4b97-639f-3d8c-2dc94af2624d&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -218,7 +210,7 @@
     {
       "id": "auto_1a9dgai",
       "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=b8db92e2ba4b86b1acdea85f1e8a435e99c68912177050887da8325ba41ccf24JmltdHM9MTc5NDUyODAwMA&ptn=3&ver=2&hsh=4&fclid=0b108dfe-4c76-66c2-314c-95ee4d1f677b&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=c64442887f1186341c546dc21fdad4d8c6371c468fd5941606a6e671003be5c6JmltdHM9MTc5NDYxNDQwMA&ptn=3&ver=2&hsh=4&fclid=0ee0d815-16ce-6986-18cf-c004179f68e9&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
