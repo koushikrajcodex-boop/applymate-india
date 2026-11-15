@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-14T09:31:34.935Z",
+  "generatedAt": "2026-11-15T10:02:32.927Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 873,
+  "checked": 885,
   "active": 46,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 873,
+  "needsReview": 885,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 873 scholarship record(s), promoted 0, expired 0, flagged 873 for review, failed 0.",
+  "explainer": "AI tracker checked 885 scholarship record(s), promoted 0, expired 0, flagged 885 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -883,6 +883,16 @@
       "deadlineDate": "2099-12-31"
     },
     {
+      "id": "auto_12ihocg",
+      "name": "Check that your link starts with 'http://' or 'https://' to try again. Unable to process this search. Please try a diffe",
+      "action": "flag",
+      "statusBefore": "draft",
+      "statusAfter": "draft",
+      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
+      "aiConfidence": 42,
+      "deadlineDate": "2099-12-31"
+    },
+    {
       "id": "auto_12lnqaj",
       "name": "工程（英文）",
       "action": "flag",
@@ -1000,16 +1010,6 @@
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
       "aiConfidence": 42,
-      "deadlineDate": "2099-12-31"
-    },
-    {
-      "id": "auto_13x372n",
-      "name": "Image 50",
-      "action": "flag",
-      "statusBefore": "draft",
-      "statusAfter": "draft",
-      "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     }
   ],
