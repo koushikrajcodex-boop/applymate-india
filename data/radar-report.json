@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-11-15T11:21:07.797Z",
-  "date": "2026-11-15",
+  "generatedAt": "2026-11-16T11:53:12.557Z",
+  "date": "2026-11-16",
   "mode": "auto-check-and-write",
   "firestore": {
     "enabled": true,
@@ -15,31 +15,31 @@
       "source": "National Scholarship Portal",
       "found": 18,
       "errors": 0,
-      "ms": 5705
+      "ms": 5746
     },
     {
       "source": "AICTE Official Site",
       "found": 1,
       "errors": 1,
-      "ms": 10488
+      "ms": 10483
     },
     {
       "source": "AP Jnanabhumi",
       "found": 1,
       "errors": 1,
-      "ms": 2720
+      "ms": 10021
     },
     {
       "source": "Telangana ePASS",
       "found": 9,
       "errors": 6,
-      "ms": 5935
+      "ms": 6206
     },
     {
       "source": "UGC Official Site",
       "found": 5,
       "errors": 0,
-      "ms": 9480
+      "ms": 8721
     }
   ],
   "totals": {
@@ -52,36 +52,32 @@
   },
   "candidates": [
     {
-      "name": " Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
+      "name": " The PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students is now open for receiving Fresh applications",
       "sourceName": "National Scholarship Portal",
       "sourceUrl": "https://scholarships.gov.in/home",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-10-31",
+      "deadlineDate": "2026-11-30",
       "decision": "skipDuplicate",
-      "confidence": 84,
+      "confidence": 100,
       "issues": [
         "Duplicate already exists: Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria"
       ],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
+      "warnings": [],
       "duplicateName": "Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
       "draftWillUsePlaceholderDeadline": false
     },
     {
-      "name": " Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
+      "name": " The PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students is now open for receiving Fresh applications",
       "sourceName": "National Scholarship Portal",
       "sourceUrl": "https://scholarships.gov.in/#",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-10-31",
+      "deadlineDate": "2026-11-30",
       "decision": "skipDuplicate",
-      "confidence": 84,
+      "confidence": 100,
       "issues": [
         "Duplicate already exists: Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria"
       ],
-      "warnings": [
-        "Missing future deadline date; draft will use placeholder deadline."
-      ],
+      "warnings": [],
       "duplicateName": "Students may apply for one merit-based scholarship scheme and one or more welfare-based scholarship schemes from AY 2026–27, as per scheme eligibility criteria",
       "draftWillUsePlaceholderDeadline": false
     },
@@ -543,7 +539,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-15",
+      "deadlineDate": "2026-11-16",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -558,7 +554,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-15",
+      "deadlineDate": "2026-11-16",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -573,7 +569,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.bank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-15",
+      "deadlineDate": "2026-11-16",
       "decision": "review",
       "confidence": 78,
       "issues": [
