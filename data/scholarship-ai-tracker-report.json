@@ -1,16 +1,16 @@
 {
-  "generatedAt": "2026-11-16T10:15:59.306Z",
+  "generatedAt": "2026-11-17T11:17:09.396Z",
   "mode": "tracker",
   "collection": "scholarships",
-  "checked": 885,
+  "checked": 888,
   "active": 46,
   "promoted": 0,
   "expired": 0,
-  "needsReview": 885,
+  "needsReview": 888,
   "failed": 0,
   "autoPromoteDrafts": true,
   "autoPublishThreshold": 85,
-  "explainer": "AI tracker checked 885 scholarship record(s), promoted 0, expired 0, flagged 885 for review, failed 0.",
+  "explainer": "AI tracker checked 888 scholarship record(s), promoted 0, expired 0, flagged 888 for review, failed 0.",
   "actions": [
     {
       "id": "03dA3PVA7PjzR7cuqcRT",
@@ -889,7 +889,7 @@
       "statusBefore": "draft",
       "statusAfter": "draft",
       "reason": "missing trusted source URL/source name; missing real deadline date; AI confidence below 85%",
-      "aiConfidence": 42,
+      "aiConfidence": 52,
       "deadlineDate": "2099-12-31"
     },
     {
