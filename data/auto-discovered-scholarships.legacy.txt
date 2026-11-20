@@ -1,220 +1,311 @@
 Scholarship Name National Scholarship Portal
 State National
 Education any
-Categories any
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://scholarships.gov.in/
 Source National Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scheme listings, OTR, applications, and status checks.
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: National Scholarship Portal. Snippet: Government of India scholarship portal for central and state scholarship schemes. Use NSP for verified scholarship scheme listings, OTR, applications, and status checks.
 Income note Verify income rules on provider/official portal.
 ---
-Scholarship Name AICTE Student Development Schemes
+Scholarship Name AICTE Pragati, Saksham and Swanath Scholarships
 State National
-Education engineering technical
-Categories any
+Education engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.aicte-india.org/schemes/students-development-schemes
-Source AICTE Student Development Schemes
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: AICTE student schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name AP Jnanabhumi Scholarships
-State Andhra Pradesh
-Education post matric degree engineering
-Categories SC ST BC minority EBC
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://jnanabhumi.ap.gov.in/
-Source AP Jnanabhumi Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Telangana ePASS Scholarships
-State Telangana
-Education post matric degree engineering
-Categories SC ST BC EBC minority
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://telanganaepass.cgg.gov.in/
-Source Telangana ePASS Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify application windows and eligibility on the portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name Pragati Scholarship for Girl Students
-State National
-Education engineering technical diploma degree
-Categories girls
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.aicte-india.org/schemes/students-development-schemes/Pragati/General-Instructions
-Source Pragati Scholarship for Girl Students
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: AICTE Pragati is intended for girl students in technical education. Verify latest application route and eligibility on AICTE/NSP.
+Source AICTE
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: AICTE. Snippet: AICTE student development schemes including Pragati, Saksham and Swanath scholarships for technical education students. Verify current year guidelines on AICTE/NSP.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name UGC Scholarships and Fellowships
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.ugc.gov.in/
-Source UGC Scholarships and Fellowships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.
+Source UGC
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: UGC. Snippet: UGC scholarship and fellowship information for higher education students. Verify active schemes and notifications on UGC and NSP.
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name AP Jnanabhumi Scholarships
+State Andhra Pradesh
+Education degree, engineering
+Categories sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://jnanabhumi.ap.gov.in/
+Source AP Jnanabhumi
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: AP Jnanabhumi. Snippet: Andhra Pradesh Jnanabhumi portal for post-matric and related student scholarship services. Verify latest application status and scheme rules on the portal.
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name Telangana ePASS Scholarships
+State Telangana
+Education school, degree, engineering
+Categories sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://telanganaepass.cgg.gov.in/
+Source Telangana ePASS
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Telangana ePASS. Snippet: Telangana ePASS portal for pre-matric, post-matric and overseas scholarship services. Verify current application windows and eligibility on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name MahaDBT Scholarship Portal
 State Maharashtra
-Education post matric degree
-Categories any
+Education degree
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://mahadbt.maharashtra.gov.in/
-Source MahaDBT Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.
+Source mahadbt.maharashtra
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: MahaDBT. Snippet: Maharashtra DBT portal for student scholarship schemes. Verify department-wise schemes, eligibility and deadlines on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Karnataka State Scholarship Portal
 State Karnataka
-Education post matric degree
-Categories SC ST OBC minority
+Education degree
+Categories sc, st, obc, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://ssp.postmatric.karnataka.gov.in/
-Source Karnataka State Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.
+Source ssp.postmatric
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Karnataka SSP. Snippet: Karnataka State Scholarship Portal for post-matric scholarships. Verify scheme eligibility, status and deadlines on the portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Rajasthan SJE Scholarship Portal
 State Rajasthan
-Education post matric degree
-Categories SC ST OBC EWS
+Education degree
+Categories sc, st, obc, ews
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://sjmsnew.rajasthan.gov.in/
-Source Rajasthan SJE Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.
-Income note Verify income rules on provider/official portal.
----
-Scholarship Name CBSE Single Girl Child Scholarship
-State National
-Education school
-Categories girls
-Gender any
-Amount Varies as per official rules
-Income limit 0
-Deadline date 
-Official link https://www.cbse.gov.in/
-Source CBSE Single Girl Child Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: CBSE scholarship information for eligible single girl child students. Verify current notification and application window on CBSE.
+Source sjmsnew.rajasthan
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Rajasthan SJE. Snippet: Rajasthan Social Justice and Empowerment scholarship portal for state scholarship schemes. Verify current session dates and eligibility on official portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Buddy4Study Scholarship Listings
 State National
-Education school degree engineering medical pg
-Categories any
+Education school, degree, engineering, medical, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.buddy4study.com/scholarships
-Source Buddy4Study Scholarship Listings
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.
+Source Buddy4Study
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Buddy4Study. Snippet: Trusted scholarship listing platform with government, corporate, foundation and private scholarship opportunities. Use as discovery source and verify original provider before publishing.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Vidyasaarathi Scholarship Portal
 State National
-Education degree diploma engineering
-Categories any
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.vidyasaarathi.co.in/Vidyasaarathi/
-Source Vidyasaarathi Scholarship Portal
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.
+Source Vidyasaarathi
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Vidyasaarathi. Snippet: NSDL e-Gov Vidyasaarathi portal for corporate and foundation scholarship schemes. Use as discovery source and verify scheme details before publishing.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Foundation For Excellence Scholarship
 State National
-Education engineering medical professional
-Categories any
+Education engineering, medical
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://ffe.org/scholarships/
-Source Foundation For Excellence Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
-Income note Verify income rules on provider/official portal.
+Source Foundation For Excellence
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Foundation For Excellence. Snippet: Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
+Income note Foundation For Excellence supports academically bright and economically needy students pursuing professional higher education in India. Verify active application cycle on FFE.
 ---
 Scholarship Name HDFC Bank Parivartan ECSS Scholarship
 State National
-Education school degree pg
-Categories any
+Education school, degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.hdfcbank.com/personal/resources/learning-centre/pay/hdfc-bank-parivartans-educational-crisis-scholarship-support-ecss
-Source HDFC Bank Parivartan ECSS Scholarship
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
-Income note Verify income rules on provider/official portal.
+Source HDFC Bank
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: HDFC Bank. Snippet: HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
+Income note HDFC Bank Parivartan ECSS scholarship support for students facing financial need/crisis. Verify current application link and deadlines from HDFC/Buddy4Study.
 ---
 Scholarship Name Reliance Foundation Scholarships
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://scholarships.reliancefoundation.org/
-Source Reliance Foundation Scholarships
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.
+Source Reliance Foundation
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Reliance Foundation. Snippet: Reliance Foundation scholarships for undergraduate and postgraduate students. Verify active cycle, eligibility and benefits on official portal.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Tata Trusts Education Grants
 State National
-Education degree pg
-Categories any
+Education degree, pg
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.tatatrusts.org/our-work/individual-grants-programme/education-grants
-Source Tata Trusts Education Grants
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.
+Source Tata Trusts
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Tata Trusts. Snippet: Tata Trusts education grants and support programmes. Verify active grant windows and eligibility on Tata Trusts.
 Income note Verify income rules on provider/official portal.
 ---
 Scholarship Name Aditya Birla Scholarship Programme
 State National
-Education engineering management law
-Categories any
+Education engineering
+Categories general, sc, st, obc, ews, minority
 Gender any
 Amount Varies as per official rules
 Income limit 0
 Deadline date 
 Official link https://www.adityabirlascholars.net/
-Source Aditya Birla Scholarship Programme
-Eligibility Auto-discovered by source pack all. Verify source before publishing. Snippet: Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.
+Source Aditya Birla Scholars
+Eligibility Auto-discovered from curated_trusted_portal. Verify provider page/PDF before publishing. Seed: Aditya Birla Scholars. Snippet: Aditya Birla Scholarship Programme for selected institutions and students. Verify participating institutes and active process on official site.
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name ted only through the MahaDBT 2.0 Portal. The re-apply … 2. [![Image 3: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F
+State Maharashtra
+Education degree
+Categories st
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://mahadbt2.maharashtra.gov.in/
+Source mahadbt2.maharashtra
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: ted only through the MahaDBT 2.0 Portal. The re-apply … 2. [![Image 3: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=91&pcl=fffffa&o=6&pid=1.2) maharashtra.gov.in https://mahadbt2.maharashtra.gov.in › MahaDBT](https://www.bing.com/ck/a?!&&p=dd32e736196349f5e119e1dc1c7041902aac0c8ee10e2d2a93fda195de789808JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi5tYWhhcmFzaHRyYS5nb3YuaW4vTWFoYURCVA&ntb=1) ## [**MahaDBT** - **MahaDBT**](https://www.bing.com/ck/a?!&&p=dd32e736196349f5e119e1dc1c7041902aac0c8ee10e2d2a93fda195de789808JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9tYWhhZGJ0Mi5tYWhhcmFzaHRyYS5nb3YuaW4vTWFoYURCVA&ntb=1) Application acceptance (Fresh/Renewal) for academic year 2024–25 will continue until 31'st October 2025. The
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name portal allows students from Maharashtra state to apply … 9. [![Image 10: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://dbtworkflow.mahaonline.gov.in/
+Source dbtworkflow.mahaonline
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: portal allows students from Maharashtra state to apply … 9. [![Image 10: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=98&pcl=fffffa&o=6&pid=1.2) mahaonline.gov.in https://dbtworkflow.mahaonline.gov.in](https://www.bing.com/ck/a?!&&p=af270c0dfa91688838b6f340e41ec2e5d9fd8038e7cd32f7e18bbf58c49471b7JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9kYnR3b3JrZmxvdy5tYWhhb25saW5lLmdvdi5pbi8&ntb=1) ## [MahaIT Workflow](https://www.bing.com/ck/a?!&&p=af270c0dfa91688838b6f340e41ec2e5d9fd8038e7cd32f7e18bbf58c49471b7JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9kYnR3b3JrZmxvdy5tYWhhb25saW5lLmdvdi5pbi8&ntb=1) The MahaDBT 1.0 portal is currently active for acceptance of fresh applications for the Academic Year 2025-26. The re-apply … 10. [![Image 
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name AI Mode
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://www.bing.com/copilotsearch?q=MahaDBT+scholarship+Maharashtra+students+post+matric+Maharashtra+any+post+matric+degree+scholarship+guidelines+notification+scheme+site%3agov.in+OR+site%3anic.in+OR+site%3aac.in+OR+site%3ascholarships.gov.in+OR+site%3aaicte-india.org+OR+site%3augc.gov.in+OR+site%3abuddy4study.com+OR+site%3avidyasaarathi.co.in+OR+site%3affe.org&FORM=CSSCOP
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [AI Mode](https://www.bing.com/copilotsearch?q=MahaDBT+scholarship+Maharashtra+students+post+matric+Maharashtra+any+post+matric+degree+scholarship+guidelines+notification+scheme+site%3agov.in+OR+site%3anic.in+OR+site%3aac.in+OR+site%3ascholarships.gov.in+OR+site%3aaicte-india.org+OR+site%3augc.gov.in+OR+site%3abuddy4study.com+OR+site%3avidyasaarathi.co.in+OR+site%3affe.org&FORM=CSSCOP) * [Images](https://www.bing.com/ck/a?!&&p=191dff843091002be44cdb38b625a1e3ea1e42d2e17ee2a16e701b24cc0eaa31JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1L2ltYWdlcy9zZWFyY2g_cT1NYWhhREJUK3NjaG9sYXJzaGlwK01haGFyYXNodHJhK3N0dWRlbnRzK3Bvc3QrbWF0cmljK01haGFyYXNodHJhK2FueStwb3N0K21hdHJpYytkZWdyZWUrc2Nob2xhcnNoaXArZ3VpZGVsaW5lcytub3RpZmljYXRpb24rc2NoZW1lK3NpdGUlM2Fnb3YuaW4rT1Irc2l0ZSUzYW5pYy5pbitPUitzaXRlJTNhYWMuaW4rT1Irc2l0ZSUzYXNjaG9sYXJzaGlwcy5nb3YuaW4rT1Irc2l0ZSUzYWF
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name &ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://www.bing.com/copilotsearch?q=MahaDBT%20scholarship%20Maharashtra%20students%20post%20matric%20Maharashtra%20any%20post%20matric%20degree%20scholarship%20guidelines%20notification%20scheme%20site:gov.in%20OR%20site:nic.in%20OR%20site:ac.in%20OR%20site:scholarships.gov.in%20OR%20site:aicte-india.org%20OR%20site:ugc.gov.in%20OR%20site:buddy4study.com%20OR%20site:vidyasaarathi.co.in%20OR%20site:ffe.org&form=CSBSBX
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: &ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9zdXBwb3J0Lm1pY3Jvc29mdC5jb20vdG9waWMvaG93LWJpbmctZGVsaXZlcnMtc2VhcmNoLXJlc3VsdHMtZDE4ZmM4MTUtYWMzNy00NzIzLWJjNjctOTIyOWNlM2ViNmEzPw&ntb=1) []( https://www.bing.com/copilotsearch?q=MahaDBT%20scholarship%20Maharashtra%20students%20post%20matric%20Maharashtra%20any%20post%20matric%20degree%20scholarship%20guidelines%20notification%20scheme%20site:gov.in%20OR%20site:nic.in%20OR%20site:ac.in%20OR%20site:scholarships.gov.in%20OR%20site:aicte-india.org%20OR%20site:ugc.gov.in%20OR%20site:buddy4study.com%20OR%20site:vidyasaarathi.co.in%20OR%20site:ffe.org&form=CSBSBX) [All](https://www.bing.com/search?q=MahaDBT+scholarship+Maharashtra+students+post+matric+Maharashtra+any+post+matric+degree+scholarship+guidelines+notification+scheme+site%3agov.in+OR+site%3anic.in+OR+site%3aac.in+OR+site%3ascholarships.gov.in+OR+site%3aaic
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name **Telangana** - India, Dravidian, Decentralized | Britannica
+State Telangana
+Education degree, engineering
+Categories ews
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://www.bing.com/ck/a?!&&p=8c95db54d1ba0b1863f5c6be669b8e24720a822134f00099a90352ef8322d117JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=0af7c2d5-40b8-60e6-3eec-dac2411761e3&u=a1aHR0cHM6Ly93d3cuYnJpdGFubmljYS5jb20vcGxhY2UvVGVsZW5nYW5hL0dvdmVybm1lbnQtYW5kLXNvY2lldHk&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Telangana scholarships. Snippet: [**Telangana** - India, Dravidian, Decentralized | Britannica](https://www.bing.com/ck/a?!&&p=8c95db54d1ba0b1863f5c6be669b8e24720a822134f00099a90352ef8322d117JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=0af7c2d5-40b8-60e6-3eec-dac2411761e3&u=a1aHR0cHM6Ly93d3cuYnJpdGFubmljYS5jb20vcGxhY2UvVGVsZW5nYW5hL0dvdmVybm1lbnQtYW5kLXNvY2lldHk&ntb=1) 3 days ago· Telangana is a constituent unit of the Republic of India, and, as such, its government structure, like that of most Indian … 8. ## [**Telangana** Information Portal – Jobs, News & Schemes](https://www.bing.com/ck/a?!&&p=bf990bac4e00ead8c29e0de2d69fffaaabcdb072704f64d950b32d7de97e7794JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=0af7c2d5-40b8-60e6-3eec-dac2411761e3&u=a1aHR0cHM6Ly9uYXRlbGFuZ2FuYS5jb20v&ntb=1) We also provide detailed information about Telangana’s 33 districts, mandals, villages, PIN codes and electoral constituencies, …
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name **Telangana** Information Portal – Jobs, News & Schemes
+State Telangana
+Education degree, engineering
+Categories ews
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://www.bing.com/ck/a?!&&p=bf990bac4e00ead8c29e0de2d69fffaaabcdb072704f64d950b32d7de97e7794JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=0af7c2d5-40b8-60e6-3eec-dac2411761e3&u=a1aHR0cHM6Ly9uYXRlbGFuZ2FuYS5jb20v&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Telangana scholarships. Snippet: [**Telangana** Information Portal – Jobs, News & Schemes](https://www.bing.com/ck/a?!&&p=bf990bac4e00ead8c29e0de2d69fffaaabcdb072704f64d950b32d7de97e7794JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=0af7c2d5-40b8-60e6-3eec-dac2411761e3&u=a1aHR0cHM6Ly9uYXRlbGFuZ2FuYS5jb20v&ntb=1) We also provide detailed information about Telangana’s 33 districts, mandals, villages, PIN codes and electoral constituencies, … 9. ## [Bhu Bharati - **Telangana**](https://www.bing.com/ck/a?!&&p=c2a4faf2948cb4bf12af90810fed699f5c69dacb56a477b1b0f23e9a765bf2daJmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=0af7c2d5-40b8-60e6-3eec-dac2411761e3&u=a1aHR0cHM6Ly9iaHViaGFyYXRpLnRlbGFuZ2FuYS5nb3YuaW4vaG9tZVBhZ2U_bGFuZz1lbg&ntb=1) For assistance or inquiries, please contact our toll number at +91 40-29313999 (10 AM - 5 PM)
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name All
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://www.bing.com/?scope=web&FORM=HDRSC1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [All](https://www.bing.com/?scope=web&FORM=HDRSC1) * [AI Mode](https://www.bing.com/copilotsearch?q=MahaDBT+scholarship+Maharashtra+students+post+matric+Maharashtra+any+post+matric+degree+scholarship+guidelines+notification+scheme+site%3agov.in+OR+site%3anic.in+OR+site%3aac.in+OR+site%3ascholarships.gov.in+OR+site%3aaicte-india.org+OR+site%3augc.gov.in+OR+site%3abuddy4study.com+OR+site%3avidyasaarathi.co.in+OR+site%3affe.org&FORM=CSSCOP) * [Images](https://www.bing.com/ck/a?!&&p=191dff843091002be44cdb38b625a1e3ea1e42d2e17ee2a16e701b24cc0eaa31JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1L2ltYWdlcy9zZWFyY2g_cT1NYWhhREJUK3NjaG9sYXJzaGlwK01haGFyYXNodHJhK3N0dWRlbnRzK3Bvc3QrbWF0cmljK01haGFyYXNodHJhK2FueStwb3N0K21hdHJpYytkZWdyZWUrc2Nob2xhcnNoaXArZ3VpZGVsaW5lcytub3RpZmljYXRpb24rc2NoZW1lK3NpdGUlM2Fnb3YuaW4rT1Irc2l0ZSUzYW5pYy5pbitPUitzaXRlJTNhYWMuaW4r
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name Maharashtra
+State Maharashtra
+Education degree, engineering
+Categories general, sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://www.bing.com/ck/a?!&&p=e7df09a3c012c12c13e7436842d92de1438e92ea9f3b794faed53ad53d570529JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9tYWhhZGJ0Lm1haGFyYXNodHJhLmdvdi5pbi8&ntb=1
+Source bing.com
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [Maharashtra](https://www.bing.com/ck/a?!&&p=e7df09a3c012c12c13e7436842d92de1438e92ea9f3b794faed53ad53d570529JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9tYWhhZGJ0Lm1haGFyYXNodHJhLmdvdi5pbi8&ntb=1) Citizen Charter is now live on MahaDBT Portal- Users can check the expected timelines for application approval and download the … 5. [![Image 6: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=94&pcl=fffffa&o=6&pid=1.2) mahadbt.in https://mahadbt.in](https://www.bing.com/ck/a?!&&p=f62b5fdcdc93ea3c8c82a09ded177c2bb6a788ce149cd3dc25df2bf2e6114fc1JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9tYWhhZGJ0LmluLw&ntb=1) ## [**MahaDBT** – Login, Farmer & Student Scholarship Portal](https://www.bing.com/ck/a?!&&p=f62b5fdcdc93ea3c8c82a09ded177c2
+Income note Verify income rules on provider/official portal.
+---
+Scholarship Name ![Image 6: Global web icon
+State Maharashtra
+Education degree
+Categories general, sc, st, obc, ews, minority
+Gender any
+Amount Varies as per official rules
+Income limit 0
+Deadline date 
+Official link https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=94&pcl=fffffa&o=6&pid=1.2
+Source th.bing
+Eligibility Auto-discovered from Jina Bing mirror. Verify provider page/PDF before publishing. Seed: Maharashtra scholarships. Snippet: [![Image 6: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=32&h=32&qlt=94&pcl=fffffa&o=6&pid=1.2) mahadbt.in https://mahadbt.in](https://www.bing.com/ck/a?!&&p=f62b5fdcdc93ea3c8c82a09ded177c2bb6a788ce149cd3dc25df2bf2e6114fc1JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9tYWhhZGJ0LmluLw&ntb=1) ## [**MahaDBT** – Login, Farmer & Student Scholarship Portal](https://www.bing.com/ck/a?!&&p=f62b5fdcdc93ea3c8c82a09ded177c2bb6a788ce149cd3dc25df2bf2e6114fc1JmltdHM9MTc5NTEzMjgwMA&ptn=3&ver=2&hsh=4&fclid=29c4f78c-a8b1-6a49-1937-ef9ba93f6b17&u=a1aHR0cHM6Ly9tYWhhZGJ0LmluLw&ntb=1) MahaDBT (Maharashtra Direct Benefit Transfer) is an official online system by the Government of Maharashtra. It ensures that … 6. [![Image 7: Global web icon](https://th.bing.com/th/id/ODLS.A2450BEC-5595-40BA-9F13-D9EC6AB74B9F?w=3
 Income note Verify income rules on provider/official portal.
