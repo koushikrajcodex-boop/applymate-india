@@ -1,6 +1,23 @@
 {
-  "generatedAt": "2026-11-20T11:59:58.479Z",
+  "generatedAt": "2026-11-21T11:34:02.655Z",
   "candidates": [
+    {
+      "name": "National Scholarship Portal Scholarship Update",
+      "sourceName": "National Scholarship Portal",
+      "sourceUrl": "https://scholarships.gov.in/home",
+      "state": "andhra-pradesh",
+      "deadlineDate": "",
+      "decision": "skipDuplicate",
+      "confidence": 84,
+      "issues": [
+        "Duplicate already exists: National Scholarship Portal Scholarship Update"
+      ],
+      "warnings": [
+        "Missing future deadline date; draft will use placeholder deadline."
+      ],
+      "duplicateName": "National Scholarship Portal Scholarship Update",
+      "draftWillUsePlaceholderDeadline": false
+    },
     {
       "name": " The PM YASASVI Central Sector Scheme Of Top Class Education In Schools For OBC, EBC And DNT Students is now open for receiving Fresh applications",
       "sourceName": "National Scholarship Portal",
@@ -489,7 +506,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-20",
+      "deadlineDate": "2026-11-21",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -504,7 +521,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://www.ugc.gov.in/Home/student_Corner",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-20",
+      "deadlineDate": "2026-11-21",
       "decision": "skipDuplicate",
       "confidence": 100,
       "issues": [
@@ -519,7 +536,7 @@
       "sourceName": "UGC Official Site",
       "sourceUrl": "https://scholarship.canarabank.bank.in/",
       "state": "andhra-pradesh",
-      "deadlineDate": "2026-11-20",
+      "deadlineDate": "2026-11-21",
       "decision": "review",
       "confidence": 78,
       "issues": [
