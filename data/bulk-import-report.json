@@ -1,24 +1,43 @@
 {
-  "generatedAt": "2026-11-21T10:15:00.863Z",
+  "generatedAt": "2026-11-22T10:20:46.213Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 0,
-  "updated": 24,
+  "added": 2,
+  "updated": 23,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 24,
+  "draftCandidates": 25,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 0, refreshed 24, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 24.",
-  "feedGeneratedAt": "2026-11-21T10:14:36.201Z",
-  "imported": [],
+  "explainer": "Import finished. Added 2, refreshed 23, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
+  "feedGeneratedAt": "2026-11-22T10:20:26.454Z",
+  "imported": [
+    {
+      "id": "auto_1b315st",
+      "name": "**Portuguesemethodsec1**.html - Fernandez Music",
+      "link": "https://www.bing.com/ck/a?!&&p=70dc7ca71add76677303b04a31a60338e8ec96fe9c12e623952298a4bf6e8214JmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=05c0eb87-f7dd-6161-2a6b-f39ef6da6080&u=a1aHR0cHM6Ly93d3cuZmVybmFuZGV6bXVzaWMuY29tL1BvcnR1Z3Vlc2VtZXRob2RzZWMxLmh0bWw&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 42,
+      "sourceTrust": "review"
+    },
+    {
+      "id": "auto_v6xd0i",
+      "name": "CMV: People on fetlife are ugly and dull : r/changemyview - Reddit",
+      "link": "https://www.bing.com/ck/a?!&&p=084aef1907f76384118d223b4e895e7993f1779b65e55165897f03cd33c540a5JmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=26f352a4-5eea-600a-19bf-4abd5fc861ab&u=a1aHR0cHM6Ly93d3cucmVkZGl0LmNvbS9yL2NoYW5nZW15dmlldy9jb21tZW50cy8xYzNwZXk0L2Ntdl9wZW9wbGVfb25fZmV0bGlmZV9hcmVfdWdseV9hbmRfZHVsbC8&ntb=1",
+      "status": "draft",
+      "sourcePack": "all",
+      "aiConfidence": 42,
+      "sourceTrust": "review"
+    }
+  ],
   "updatedRecords": [
     {
       "id": "FP3ZGiBR81mtoXNttDEy",
@@ -157,9 +176,9 @@
       "aiConfidence": 56
     },
     {
-      "id": "auto_j5kpbq",
-      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
-      "link": "https://www.bing.com/ck/a?!&&p=3b5cd5300ad9081d1ac5e82d823011bb800c8deb929b9c0c72c65a5f10ce26b2JmltdHM9MTc5NTIxOTIwMA&ptn=3&ver=2&hsh=4&fclid=0f7d97e9-3fde-698a-3208-8ff13eda688e&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
+      "id": "auto_14fgt6u",
+      "name": "Home | Federal **Student** Aid",
+      "link": "https://www.bing.com/ck/a?!&&p=a762f7b6230a53d4df4cf360096a99e0ff8e658464fb68ee1855ab63bae24252JmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=19cf467d-8ac7-612a-3a07-5e648b7f6077&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
@@ -167,23 +186,23 @@
     {
       "id": "auto_1r08dzp",
       "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=54f61530610135e1a1ac5e960220f99464f5861a50d45af39682f11573bb6ee8JmltdHM9MTc5NTIxOTIwMA&ptn=3&ver=2&hsh=4&fclid=067cccef-2ec7-60e2-38b2-d4f72f00619b&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=cc0eb798c73e2b0f24f27c3ee11cc1b6787e186daf6006ee76aac612907073e2JmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=13f3108f-524b-646a-3d83-089653a065a6&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 42
+      "aiConfidence": 52
     },
     {
-      "id": "auto_1w6ymdt",
-      "name": "Andhrajyothi Telugu News: Latest Telugu News , Latest తెలుగు …",
-      "link": "https://www.bing.com/ck/a?!&&p=e4989bd8f29f3338b772b88e26915258a8c68b9f06028fd9b75473a48424309fJmltdHM9MTc5NTIxOTIwMA&ptn=3&ver=2&hsh=4&fclid=24f74b93-651c-6a75-1ace-538b64886be3&u=a1aHR0cHM6Ly93d3cuYW5kaHJhanlvdGh5LmNvbS8&ntb=1",
+      "id": "auto_j5kpbq",
+      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
+      "link": "https://www.bing.com/ck/a?!&&p=cde6d18bd3ec1e6563e3cdd1adc2263c8a3ad482287f26dd9ff0f5baf35fd015JmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=3f9f8d88-1b55-6316-39d4-95911a526271&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
-      "aiConfidence": 42
+      "aiConfidence": 52
     },
     {
       "id": "auto_pxn9gp",
       "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=c11d23875798f29a437066e03b9df02de72b5594db7101a4f43a51f00e095402JmltdHM9MTc5NTIxOTIwMA&ptn=3&ver=2&hsh=4&fclid=1b0572da-6b21-67b3-3f32-6ac26ae666d5&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=e81c1c4356c1366c70d254ef563684e3bb52764446c422a62370dcb8199a64acJmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=3bf4075d-aa89-6c5b-1f8c-1f44ab7c6d0a&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -191,7 +210,7 @@
     {
       "id": "auto_1lwoa31",
       "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=68fe3dee62ad0ccc9d40930ce91afcfb94782ab9e6996bb2dc493ef514701b98JmltdHM9MTc5NTIxOTIwMA&ptn=3&ver=2&hsh=4&fclid=2e6e73f2-9c1a-6dd3-120e-6bea9d856cb7&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=a280b93e8a94ec044da8649186d646524a5aba7ce3382dc93e544242d5c88ec2JmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=136a57f6-cdbd-6d15-1e6f-4fefcc976c50&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -199,18 +218,10 @@
     {
       "id": "auto_1a9dgai",
       "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=a4c6a8b7f7057cebc974664ee51b99265473324beed133c6616f11e004c2eaacJmltdHM9MTc5NTIxOTIwMA&ptn=3&ver=2&hsh=4&fclid=0df30a1d-a1c6-6aba-32ab-1205a03d6bcc&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9HaXJs&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=efe384b2be1ff521ad025ba5ddd03fe86fa62d73ba6ced0307af380ed6fc128cJmltdHM9MTc5NTMwNTYwMA&ptn=3&ver=2&hsh=4&fclid=2b204962-a447-6187-336a-517ba5b160d3&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
-    },
-    {
-      "id": "auto_1g2sy2r",
-      "name": "**Microsoft** - Official Home Page",
-      "link": "https://www.bing.com/ck/a?!&&p=cabdb5e22abac48d2bde2be42e0fea396d886675bb6a93f2c7b410f231e484c5JmltdHM9MTc5NTIxOTIwMA&ptn=3&ver=2&hsh=4&fclid=3cef7465-1170-61d9-15eb-6c7d104b6080&u=a1aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy8_bXNvY2tpZD0zY2VmNzQ2NTExNzA2MWQ5MTVlYjZjN2QxMDRiNjA4MA&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 34
     }
   ],
   "skippedRecords": [],
