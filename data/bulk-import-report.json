@@ -1,37 +1,37 @@
 {
-  "generatedAt": "2026-11-23T11:17:59.332Z",
+  "generatedAt": "2026-11-24T12:57:18.631Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
   "added": 2,
-  "updated": 23,
+  "updated": 27,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 25,
+  "draftCandidates": 29,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 2, refreshed 23, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 25.",
-  "feedGeneratedAt": "2026-11-23T11:17:43.549Z",
+  "explainer": "Import finished. Added 2, refreshed 27, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 29.",
+  "feedGeneratedAt": "2026-11-24T12:56:57.361Z",
   "imported": [
     {
-      "id": "auto_1des1vz",
-      "name": "**Walmart** Supercenter in **Springfield**, **IL** | Grocery, Electronics, Toys ...",
-      "link": "https://www.bing.com/ck/a?!&&p=4db240cb77c81891efcac9e7ef6acdebad88ac03ced85a965d322ac73cc7a467JmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=37a4f70a-ea69-67de-0a45-ef10ebc866b9&u=a1aHR0cHM6Ly93d3cud2FsbWFydC5jb20vc3RvcmUvMzYwMi1zcHJpbmdmaWVsZC1pbA&ntb=1",
+      "id": "auto_35noik",
+      "name": "**MINORITY**中文 (简体)翻译：剑桥词典 - Cambridge Dictionary",
+      "link": "https://www.bing.com/ck/a?!&&p=20f035b575e9a28e4cd94cbd6676717fc687633cd9b602ce367665e323b222aeJmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=1ea592c9-4179-629d-0514-8ad240e563e9&u=a1aHR0cHM6Ly9kaWN0aW9uYXJ5LmNhbWJyaWRnZS5vcmcvemhzLyVFOCVBRiU4RCVFNSU4NSVCOC8lRTglOEIlQjElRTglQUYlQUQtJUU2JUIxJTg5JUU4JUFGJUFELSVFNyVBRSU4MCVFNCVCRCU5My9taW5vcml0eQ&ntb=1",
       "status": "draft",
       "sourcePack": "all",
-      "aiConfidence": 42,
+      "aiConfidence": 52,
       "sourceTrust": "review"
     },
     {
-      "id": "auto_c07t0p",
-      "name": "Want a ‘Find us on Yelp’ sticker? Request one here",
-      "link": "https://www.bing.com/ck/a?!&&p=9e96227f25b0f6bf9667b11fb8ecd4e93d2e03ac6eff2d19ea545e7783a17532JmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=22d9216c-d989-63f1-1b7e-3976d87162bb&u=a1aHR0cHM6Ly9idXNpbmVzcy55ZWxwLmNvbS9yZXNvdXJjZXMvYXJ0aWNsZXMvd2FudC1hLWZpbmQtdXMtb24teWVscC1zdGlja2VyLXJlcXVlc3Qtb25lLWhlcmUvP2RvbWFpbj1sb2NhbC1idXNpbmVzcw&ntb=1",
+      "id": "auto_n3ze4u",
+      "name": "**Représentant des ventes** externes | Logiciels SaaS et ...",
+      "link": "https://www.bing.com/ck/a?!&&p=ab0916cbaa5a52c0d9d5280c481fd806a501f8f0d2d00afa180c75f9cb19f3c4JmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=2ef6be3a-96bd-665d-0941-a621971967b4&u=a1aHR0cHM6Ly9mci5nbGFzc2Rvb3IuY2Evam9iLWxpc3RpbmcvcmVwcsOpc2VudGFudC1kZXMtdmVudGVzLWV4dGVybmVzLWxvZ2ljaWVscy1zYWFzLWV0LXNvbHV0aW9ucy1yaC1xdcOpYmVjLXF1w6liZWMtcmFuZHN0YWQtSlZfS08wLDc3X0tFNzgsODYuaHRtP2psPTEwMTAzMzI1MzYyMTc&ntb=1",
       "status": "draft",
       "sourcePack": "all",
       "aiConfidence": 34,
@@ -178,7 +178,7 @@
     {
       "id": "auto_14fgt6u",
       "name": "Home | Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=643804e1af35031e50206a8b2673fc6065d89db0a487374c6d97889ef77a3604JmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=1943636b-bcb0-645e-1686-7b71bdd86596&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=fc8c41d5ffda200c5a4656f9c5026f9a0e142a3c6ac3f5817341de2330da1fa7JmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=3e837983-34d1-62b7-0906-6198359b63a1&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
@@ -186,31 +186,63 @@
     {
       "id": "auto_1r08dzp",
       "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=f4dce9aabe3efcd9c9e06b23d5b0c9690c1865a38f3c156aba298eb4a22eafe2JmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=21f8dd47-3611-639e-2eda-c55d375762ae&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=9556cd15594d680e2e1c07229df3dbafa4981999966dad5ae2681ae55105952eJmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=11ada8e7-3591-66ef-0b96-b0fc34db67d3&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 52
     },
     {
-      "id": "auto_j5kpbq",
-      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
-      "link": "https://www.bing.com/ck/a?!&&p=cbeb42296183977615571397d778578005fe1b920d7b448c7d5449e056d7a679JmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=2f12b47a-e6ef-6c83-3f9e-ac60e7f86d99&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_pxn9gp",
-      "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=b65391ebcbc1c8c5717ee83086fed0b73c1ab6ae00e7ff0485e8ada641e72766JmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=32c369d6-ed22-6a91-09b5-71ccec4c6b00&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1",
+      "id": "auto_1g2sy2r",
+      "name": "**Microsoft** - Official Home Page",
+      "link": "https://www.bing.com/ck/a?!&&p=78cd7ab6cb2a0df32ca894799a0a9db8c275e7ed1539b9a1823e49e355ca1fedJmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=0c853932-4ce3-6cfa-33db-21294d2e6dca&u=a1aHR0cHM6Ly93d3cubWljcm9zb2Z0LmNvbS9lbi11cy8_bXNvY2tpZD0wYzg1MzkzMjRjZTM2Y2ZhMzNkYjIxMjk0ZDJlNmRjYQ&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
     },
     {
-      "id": "auto_1lwoa31",
-      "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=4b706fc64754af8c97ab78a5038236874b115b6db053ee8b27a4c6c81f4e080cJmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=3623724a-9554-6fce-1919-6a5094cd6ebf&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvU291dGhfQ2Fyb2xpbmE&ntb=1",
+      "id": "auto_pxn9gp",
+      "name": "**Telangana** - **Wikipedia**",
+      "link": "https://www.bing.com/ck/a?!&&p=e8ca22009ece5e229102482386bd445736cad8099ed58eb6ef0de46aff8a54ecJmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=34b1fc92-18bb-6621-03ce-e48919f16723&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9UZWxhbmdhbmE&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_c9zox",
+      "name": "ww.bing.com/search?q=SC%20ST%20OBC%20post%20matric%20scholarship%20students%20India%20scholarship%20official%20trusted%2",
+      "link": "https://www.bing.com/?FORM=Z9FD1",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_1xfm6n7",
+      "name": "cholarship%20students%20India%20scholarship%20official%20trusted%20India&toHttps=1&redig=EEE0293494E54709B5F522221EA6F18",
+      "link": "http://localhost/c204bf19f78776c25e5ce1a602bee57e",
+      "status": "draft",
+      "reason": "same_url_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_ai3n9y",
+      "name": "Read more",
+      "link": "https://www.bing.com/ck/a?!&&p=d3cdfca7b71b269a493e55c3c77095db6943e701213fcac488cec41b6ff5e61aJmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=3b0e0694-88eb-65f7-3f24-1e8f897a6451&u=a1aHR0cHM6Ly9idXNpbmVzc2ZpbGluZ3Muc2MuZ292L2J1c2luZXNzZmlsaW5n&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_dk6lb5",
+      "name": "Privacy",
+      "link": "https://www.bing.com/ck/a?!&&p=e8385b31340e31554a83c73508af282bb80d9939ed4f71452f55082e45a329e0JmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=3b0e0694-88eb-65f7-3f24-1e8f897a6451&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSWQ9NTIxODM5&ntb=1",
+      "status": "draft",
+      "reason": "same_name_already_exists",
+      "aiConfidence": 42
+    },
+    {
+      "id": "auto_la5j1z",
+      "name": "Terms",
+      "link": "https://www.bing.com/ck/a?!&&p=cb7feefa63a1fceccad82141a8a4d9715f4bf5237634d7b563b246eec1f6db76JmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=3b0e0694-88eb-65f7-3f24-1e8f897a6451&u=a1aHR0cDovL2dvLm1pY3Jvc29mdC5jb20vZndsaW5rLz9MaW5rSUQ9MjQ2MzM4&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
@@ -218,7 +250,7 @@
     {
       "id": "auto_1a9dgai",
       "name": "**Girl** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=af1fa8a5b0843087026c5ec47758487c73f1d95f61b7337410c21da9c27fedc0JmltdHM9MTc5NTM5MjAwMA&ptn=3&ver=2&hsh=4&fclid=2086f461-a9aa-6f26-115c-ec7ba8316e9b&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
+      "link": "https://www.bing.com/ck/a?!&&p=ea38fc242b031b76808bbeeec050f0c72a3e797cd1a7641cd935fe7bb37ff668JmltdHM9MTc5NTQ3ODQwMA&ptn=3&ver=2&hsh=4&fclid=09686805-27fc-6b9a-12f3-701e26596a0c&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvR2lybA&ntb=1",
       "status": "draft",
       "reason": "same_name_already_exists",
       "aiConfidence": 42
