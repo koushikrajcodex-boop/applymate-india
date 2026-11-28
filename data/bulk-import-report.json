@@ -1,61 +1,24 @@
 {
-  "generatedAt": "2026-11-27T11:26:43.225Z",
+  "generatedAt": "2026-11-28T10:54:47.744Z",
   "mode": "import",
   "importMode": "auto_active",
   "sourcePack": "all",
   "sourcePackLabel": "All Packs",
   "collection": "scholarships",
-  "added": 4,
-  "updated": 22,
+  "added": 0,
+  "updated": 17,
   "skipped": 0,
   "failed": 0,
   "activeCandidates": 0,
-  "draftCandidates": 26,
+  "draftCandidates": 17,
   "autoPublishThreshold": 85,
   "secretStatus": {
     "firebaseServiceAccount": "present",
     "firebaseProjectId": "using-service-account-project"
   },
-  "explainer": "Import finished. Added 4, refreshed 22, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 26.",
-  "feedGeneratedAt": "2026-11-27T11:26:17.317Z",
-  "imported": [
-    {
-      "id": "auto_oi80t7",
-      "name": "uidai.gov.in https://myaadhaar.uidai.gov.in",
-      "link": "https://www.bing.com/ck/a?!&&p=844a63902a026e2cc73d7cb69750d09033e7d53bdf3acec88dbe109b1cdbc808JmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=32faaacc-8e73-6f78-2ee1-b2d28f616e73&u=a1aHR0cHM6Ly9teWFhZGhhYXIudWlkYWkuZ292LmluLw&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 44,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_1kzfo83",
-      "name": "Bezoek Dubai",
-      "link": "https://www.bing.com/ck/a?!&&p=3cb249cb241d2d6db31fbeb2a16c2b8283804101c4d6abdbedc37dd536a322ebJmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=1c65d551-656e-6b07-0d6f-cd4f64aa6a04&u=a1aHR0cHM6Ly93d3cudmlzaXRkdWJhaS5jb20vbmw&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_ts9sb",
-      "name": "COOL **GIRL** – смотреть видео онлайн в Моем Мире | Илья -------",
-      "link": "https://www.bing.com/ck/a?!&&p=1a73560c066217f8e6d5fac15e71951ffb6181ff7b214476d3187319ffd4d108JmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=30c44a58-6618-6b26-220b-5246672f6ad3&u=a1aHR0cHM6Ly9teS5tYWlsLnJ1L2xpc3QvODMzMC0wNy92aWRlby9fbXl2aWRlby8xNjcyMy5odG1s&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 42,
-      "sourceTrust": "review"
-    },
-    {
-      "id": "auto_9bmxtx",
-      "name": "myAadhaar - Unique Identification Authority of India | Government of …",
-      "link": "https://www.bing.com/ck/a?!&&p=6228714ab2c37c025d6993490200ab3f0ed23ac932c6921625b5086e855569edJmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=32faaacc-8e73-6f78-2ee1-b2d28f616e73&u=a1aHR0cHM6Ly9teWFhZGhhYXIudWlkYWkuZ292LmluL3NzdXAv&ntb=1",
-      "status": "draft",
-      "sourcePack": "all",
-      "aiConfidence": 34,
-      "sourceTrust": "review"
-    }
-  ],
+  "explainer": "Import finished. Added 0, refreshed 17, skipped 0, failed 0. Auto-active candidates: 0; review drafts: 17.",
+  "feedGeneratedAt": "2026-11-28T10:54:36.123Z",
+  "imported": [],
   "updatedRecords": [
     {
       "id": "FP3ZGiBR81mtoXNttDEy",
@@ -192,46 +155,6 @@
       "status": "draft",
       "reason": "same_url_already_exists",
       "aiConfidence": 56
-    },
-    {
-      "id": "auto_14fgt6u",
-      "name": "Home | Federal **Student** Aid",
-      "link": "https://www.bing.com/ck/a?!&&p=92a41348a1a9db8434718ee20e939391955146fb2dde0b836e43c98f5dad4c34JmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=183b7b8c-e0bb-6dcf-3d03-6392e1f16cdf&u=a1aHR0cHM6Ly9zdHVkZW50YWlkLmdvdi8&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_1r08dzp",
-      "name": "**Engineering** - Wikipedia",
-      "link": "https://www.bing.com/ck/a?!&&p=b4bd666479c485a0a471eb607325136d3d50bcfb60906e8aa365cc80ae8c5c0fJmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=2cb37d67-4de0-6043-3e7f-65794c34613e&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvRW5naW5lZXJpbmc&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_j5kpbq",
-      "name": "**MINORITY** Definition & Meaning - **Merriam-Webster**",
-      "link": "https://www.bing.com/ck/a?!&&p=4f64fca05c35170932f21d44f5e7c7e322ca99c3fee91b22c82057d59bf2d312JmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=32e84ee2-3da8-6587-13d7-56fc3c7a6402&u=a1aHR0cHM6Ly93d3cubWVycmlhbS13ZWJzdGVyLmNvbS9kaWN0aW9uYXJ5L21pbm9yaXR5&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 52
-    },
-    {
-      "id": "auto_pxn9gp",
-      "name": "**Telangana** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=bea35ed5f04eed3ccaa3957b6b014e71b584306ee571f56d81de19346f342fedJmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=38b142a1-b4aa-6466-1566-5abfb5b86524&u=a1aHR0cHM6Ly9lbi53aWtpcGVkaWEub3JnL3dpa2kvVGVsYW5nYW5h&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
-    },
-    {
-      "id": "auto_1lwoa31",
-      "name": "**South Carolina** - **Wikipedia**",
-      "link": "https://www.bing.com/ck/a?!&&p=b7d8309f42f26a31acfd1aa3ac622935713b1236f74e6bf95d230bff958f69b0JmltdHM9MTc5NTczNzYwMA&ptn=3&ver=2&hsh=4&fclid=311e0d2c-57db-644a-1eb9-153256bf6590&u=a1aHR0cHM6Ly9lbi5tLndpa2lwZWRpYS5vcmcvd2lraS9Tb3V0aF9DYXJvbGluYQ&ntb=1",
-      "status": "draft",
-      "reason": "same_name_already_exists",
-      "aiConfidence": 42
     }
   ],
   "skippedRecords": [],
